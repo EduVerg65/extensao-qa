@@ -1,32 +1,46 @@
-🧪 Testes-Manuais
+# 🧪 Documentação de QA — SIFIT
 
-Repositório dedicado ao estudo, prática e documentação de testes manuais de software, com foco em:
+Documentação de testes manuais do sistema **SIFIT**, desenvolvida como
+trabalho de extensão da disciplina de Qualidade de Software (UniALFA).
 
-Aprendizado de QA
-Organização de casos de teste
-Melhoria contínua na análise e cobertura de testes
-🎯 Objetivo
-Este projeto foi criado com o objetivo de:
+> Estrutura baseada no repositório modelo do Prof. Adnys Lougan.
+> A documentação do SIFIT contida neste repositório é de autoria própria.
 
-Consolidar conhecimentos de testes manuais
-Simular testes em sistemas reais e ambientes públicos
-Criar um portfólio técnico bem estruturado para futuras oportunidades profissionais
-🧱 Estrutura do repositório
-A estrutura está organizada por pastas, cada uma representando um sistema/teste diferente:
+## 📌 Sobre o sistema
 
-📁 OrangeHRM ↳ Casos de Teste, Cenários, Relatórios de Bug e Evidências
+## 🎯 Objetivo
 
+## 🧱 Estrutura do repositório
 
-🧪 Metodologia
-Técnicas aplicadas: Testes Positivos, Negativos, Exploratório, Funcional
-Ferramentas: Markdown, GitHub.
-Formatos: BDD (Gherkin), Tabelas e Checklist
-Processos: Planejamento de Teste, Execução e Relatório
+## 🔬 Metodologia
 
-📌 Status do Projeto
-✅ Ativo e em constante evolução 
-📋 Feedbacks são bem-vindos!
+**Técnicas aplicadas**
+- Testes funcionais — validação dos requisitos levantados
+- Testes positivos — fluxos com dados válidos
+- Testes negativos — validações, campos obrigatórios e limites
+- Testes exploratórios — investigação sem roteiro prévio
+- Verificação de persistência — conferência dos dados no banco
 
-🚀 Sites interessantes para prática
-OrangeHRM Demo (https://opensource-demo.orangehrmlive.com)
+**Formatos**
+- BDD (Gherkin) para cenários
+- Tabelas e checklists para casos de teste
 
+**Processo**
+Análise de requisitos → Planejamento → Execução → Registro de defeitos → Relatório
+
+## 🛠️ Ferramentas
+
+| Ferramenta | Uso |
+|---|---|
+| MySQL Workbench | Verificação da persistência dos dados |
+| Jam | Gravação de evidências em vídeo |
+| Markdown / GitHub | Documentação e versionamento |
+
+## 🔐 Ambiente
+
+Ambiente de homologação cedido pela instituição.
+Credenciais de acesso não versionadas neste repositório.
+
+## 📊 Status
+
+🚧 Em andamento
