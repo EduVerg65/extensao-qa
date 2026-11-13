@@ -1,10 +1,10 @@
 # 🧪 Plano de Testes — SIFIT
 
-**Atualização:** 12/11/2026
+**Atualização:** 13/11/2026 — inclusão do login com sucesso.
 
 **Padronização documental:** 13/11/2026, com resultados e pendências preservados.
 
-**Escopo:** CT-RF01 — Recuperação de senha; CT-RF02_ERRO — Perfil; CT-RF03 — Filtros da página Clientes.
+**Escopo:** CT-RF01 — Recuperação de senha; CT-RF02_ERRO — Perfil; CT-RF03 — Filtros da página Clientes; CT-RF04_loginComSucesso — Login.
 
 ## 📌 1. Identificação
 
@@ -13,14 +13,14 @@
 | Projeto | SIFIT — Sistema de gestão de academias. |
 | Tipo de teste | Funcional manual, com análise exploratória e de evidências. |
 | Versão avaliada | Não confirmada; registrar por caso no reteste. |
-| Funcionalidades | Recuperação de senha, Perfil e filtros da página Clientes. |
-| Situação | Três casos documentados e três defeitos abertos, com retestes pendentes. |
+| Funcionalidades | Recuperação de senha, Perfil, filtros da página Clientes e login com credenciais válidas. |
+| Situação | Quatro casos documentados: um aprovado conforme o Jam e três reprovados; três defeitos abertos com retestes pendentes. |
 
 ---
 
 ## 🎯 2. Objetivo
 
-Verificar o início da recuperação de acesso, a apresentação do perfil do usuário autenticado e a aplicação simultânea dos filtros de Clientes, mantendo a rastreabilidade entre requisitos, casos de teste, evidências e defeitos.
+Verificar o login com credenciais válidas e acesso ao dashboard, o início da recuperação de acesso, a apresentação do perfil do usuário autenticado e a aplicação simultânea dos filtros de Clientes, mantendo a rastreabilidade entre requisitos, casos de teste, evidências e defeitos.
 
 ---
 
@@ -28,6 +28,7 @@ Verificar o início da recuperação de acesso, a apresentação do perfil do us
 
 **Incluído:**
 
+- Login com credenciais válidas, senha mascarada, envio por Entrar, navegação para `/dashboard` e apresentação do menu e resumo da academia.
 - Disponibilidade da opção na tela de login, antes da autenticação.
 - Abertura do formulário ou da página de recuperação após o clique.
 - Observação da interface, das requisições de rede e dos erros de console.
@@ -38,6 +39,8 @@ Verificar o início da recuperação de acesso, a apresentação do perfil do us
 - Registro e reteste do BUG-003, com conferência da inclusão e exclusão de clientes em uma base conhecida e da integração conforme a arquitetura efetiva.
 
 **Limites da cobertura atual:**
+
+O CT-RF04_loginComSucesso foi aprovado conforme a gravação, sem nova execução nesta revisão. Não cobre credenciais inválidas, campos vazios, logout, expiração, persistência de Manter conectado, outros perfis ou exatidão dos dados exibidos no painel.
 
 As etapas de envio da solicitação, entrega de mensagem, uso de token e definição de nova senha dependem da abertura do fluxo e da definição de suas regras. Não estão cobertas pela execução gravada.
 
@@ -113,6 +116,21 @@ As técnicas previstas para o reteste não representam novas execuções realiza
 
 ---
 
+### CT-RF04_loginComSucesso — Login
+
+| Item | Definição |
+| --- | --- |
+| URL inicial / destino | `https://sifit.centrion.com.br/login` → `https://sifit.centrion.com.br/dashboard`. |
+| Backend | `https://backendsifit.centrion.com.br`; chamadas registradas: `POST /api/login` e `POST /api/verifica-token-logado`. |
+| Navegador / sistema / janela | Chrome 157.0.8103.51 / Windows 11 (x86) / 1536 × 742. |
+| Gravação | 13/11/2026; aproximadamente 12 segundos; autor Leonardo Barbosa. |
+| Versão / zoom / classificação do ambiente | Não informados; registrar antes de nova execução. |
+| Dados de teste | Conta ativa com credenciais válidas e acesso ao dashboard. Omitir senha e tokens das evidências compartilhadas. |
+| Preparação para nova execução | Iniciar sem sessão autenticada, preparar captura de rede e navegação e manter Manter conectado desmarcado, como na gravação. |
+| Fonte | [Jam](https://jam.dev/c/5e4a28be-4e80-43d3-9587-1b113723cc38), com metadados, cronologia e quadros consultados diretamente. |
+
+---
+
 ## 📋 7. Casos de teste e situação
 
 | Requisito | Caso de teste | Tipo | Resultado nas evidências | Defeito | Próxima ação |
@@ -120,6 +138,7 @@ As técnicas previstas para o reteste não representam novas execuções realiza
 | [RF01](Analise%20de%20requisitos.md#rf01--iniciar-recuperação-de-senha) | [CT-RF01 — Acionar "Esqueci minha senha"](Cenario_Teste/CT-RF01_Esqueci-senha.md) | Funcional / fluxo positivo, com análise exploratória de rede | Reprovado | [BUG-001](Relatorio-de-Bugs.md#bug-001--link-esqueci-minha-senha-não-executa-nenhuma-ação) | Corrigir e retestar. |
 | [RF02](Analise%20de%20requisitos.md#rf02--exibir-perfil-do-usuário-autenticado) | [CT-RF02_ERRO — Exibir Perfil](Cenario_Teste/CT-RF02_ERRO.md) | Funcional / interface, com análise do DOM e evidências | Reprovado | [BUG-002](Relatorio-de-Bugs.md#bug-002--perfil-com-dados-fictícios-campos-ausentes-e-layout-desconfigurado) | Corrigir e retestar. |
 | [RF03](Analise%20de%20requisitos.md#rf03--pesquisar-clientes-com-filtros-combinados) | [CT-RF03 — Filtrar Clientes](Cenario_Teste/CT-RF03_FILTRO_TelaClientes.md) | Funcional / filtros combinados, com análise de integração e evidências | Reprovado conforme o relato; sem nova execução | [BUG-003](Relatorio-de-Bugs.md#bug-003--filtros-combinados-da-página-clientes-não-restringem-a-listagem) | Investigar a causa, corrigir e executar a matriz de reteste. |
+| [RF04](Analise%20de%20requisitos.md#rf04--autenticar-usuário-com-credenciais-válidas) | [CT-RF04_loginComSucesso](Cenario_Teste/CT-RF04_loginComSucesso.md) | Funcional / fluxo positivo de autenticação | Aprovado conforme a gravação; sem nova execução | Nenhum identificado no fluxo avaliado | Utilizar como regressão em futuras versões. |
 
 ---
 
@@ -159,11 +178,24 @@ As técnicas previstas para o reteste não representam novas execuções realiza
 
 ---
 
+### CT-RF04_loginComSucesso
+
+1. Registrar data, URL, versão, navegador, resolução e zoom; usar conta de teste autorizada com acesso ao painel.
+2. Acessar `/login` sem sessão autenticada e preparar a captura de rede e navegação.
+3. Preencher Login e Senha válidos, mantendo **Manter conectado** desmarcado, e conferir a senha mascarada.
+4. Clicar em **Entrar** e acompanhar a conclusão da autenticação.
+5. Conferir a URL `/dashboard`, o menu de navegação e o resumo da academia visíveis. Correlacionar as chamadas de autenticação com o resultado visual; HTTP 200 isoladamente não aprova o caso.
+6. Registrar o resultado e as evidências sem senha ou tokens. Este procedimento é destinado à próxima execução; a aprovação atual se baseia no Jam de 13/11/2026.
+
+---
+
 ## 🚦 9. Critérios de entrada, saída e aceitação
 
 **Entrada:** ambiente acessível, opção visível e ferramentas de captura disponíveis. Para Perfil, sessão válida e conta de teste com dados conhecidos. Para Clientes, sessão válida, empresa identificada, regras dos filtros confirmadas e base com resultados esperados por combinação. Para o reteste, correção disponibilizada em uma versão identificável.
 
 **Saída da execução:** caso executado e resultado documentado com evidências. A execução reprovada pode ser encerrada com o defeito aberto.
+
+**Entrada e aprovação do login:** página acessível, conta de teste com credenciais válidas e acesso ao painel, sem sessão autenticada no início. Aprovar o CT-RF04_loginComSucesso quando o envio autenticar o usuário, navegar para `/dashboard` e exibir o menu e resumo da academia, com senha mascarada no formulário. A aprovação se limita a esse fluxo positivo.
 
 **Aceitação da correção:** todos os critérios do respectivo caso atendidos e reteste documentado. BUG-001, BUG-002 e BUG-003 permanecem abertos até a confirmação de suas correções. A aprovação do CT-RF01 não comprova a recuperação completa da senha; a do CT-RF02_ERRO não comprova persistência de alterações no perfil. Para CT-RF03, cada combinação deve incluir todos os clientes esperados e excluir os incompatíveis, com a matriz executada e o estado vazio validado.
 
@@ -176,6 +208,7 @@ As técnicas previstas para o reteste não representam novas execuções realiza
 | Análise documental do CT-RF01 | Registrada | 10/11/2026. |
 | Análise documental de Perfil e Clientes | Registrada | 12/11/2026. |
 | Padronização dos documentos | Realizada | 13/11/2026. |
+| Análise do Jam e inclusão do CT-RF04_loginComSucesso | Realizada; aprovado conforme a gravação | 13/11/2026, sem nova execução no sistema. |
 | Investigação e correção dos defeitos | Pendente | Depende da equipe responsável pela aplicação; sem data definida. |
 | Execução dos retestes | Pendente | Após correção em versão identificável e preparação dos dados. |
 | Atualização dos resultados e encerramento | Pendente | Após reteste e atendimento aos critérios de aceitação. |
@@ -207,12 +240,14 @@ BUG-001, BUG-002 e BUG-003 permanecem abertos. Após a correção, atualizar o c
 
 ## 📁 13. Entregáveis e documentos associados
 
-Os entregáveis são a análise de requisitos, este plano, os três cenários, as evidências disponíveis e os relatórios de bugs e resultados. As evidências de aprovação serão acrescentadas após os retestes.
+Os entregáveis são a análise de requisitos, este plano, os quatro cenários, as evidências disponíveis e os relatórios de bugs e resultados. O login possui evidência de aprovação no Jam; as evidências de aprovação dos demais casos serão acrescentadas após os retestes.
 
 - [Análise de requisitos](Analise%20de%20requisitos.md)
 - [Caso CT-RF01](Cenario_Teste/CT-RF01_Esqueci-senha.md)
 - [Caso CT-RF02_ERRO](Cenario_Teste/CT-RF02_ERRO.md)
 - [Caso CT-RF03](Cenario_Teste/CT-RF03_FILTRO_TelaClientes.md)
+- [Caso CT-RF04_loginComSucesso](Cenario_Teste/CT-RF04_loginComSucesso.md)
+- [Evidências do login com sucesso](Evidencias/CT-RF04_loginComSucesso/README.md)
 - [Evidências e limites do CT-RF03](Evidencias/CT-RF03_Filtros_Clientes/README.md)
 - [Relatório dos testes](Relatorio%20dos%20testes.md)
 - [Relatório de bugs](Relatorio-de-Bugs.md)

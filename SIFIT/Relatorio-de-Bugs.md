@@ -10,6 +10,8 @@
 
 **Padronização documental:** 13/11/2026, sem alteração do status dos defeitos.
 
+**Caso aprovado incluído em 13/11/2026:** [CT-RF04_loginComSucesso](Cenario_Teste/CT-RF04_loginComSucesso.md), vinculado ao RF04, não gerou defeito para o fluxo avaliado. O [Jam de login](https://jam.dev/c/5e4a28be-4e80-43d3-9587-1b113723cc38) mostra acesso ao dashboard após autenticação. Essa aprovação não altera os três bugs existentes; resultados e limites constam no [relatório dos testes](Relatorio%20dos%20testes.md).
+
 ## 📋 Resumo dos defeitos
 
 | ID | Funcionalidade afetada | Severidade / prioridade | Status | Caso relacionado |
