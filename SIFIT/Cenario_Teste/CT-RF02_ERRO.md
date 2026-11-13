@@ -1,6 +1,14 @@
-## Cenário 2: Exibição da tela de Perfil
+# 🧪 Cenário 02: Exibição da tela de Perfil
 
-### Caso de Teste 02: Carregamento dos dados e do layout do perfil.
+**Módulo:** Perfil do usuário
+
+**Status:** Reprovado conforme as evidências; reteste pendente.
+
+**Padronização documental:** 13/11/2026; análise original de 12/11/2026 preservada.
+
+---
+
+## Caso de Teste 02: Carregamento dos dados e do layout do perfil.
 
 | ID | Descrição |
 | --- | --- |
@@ -69,3 +77,7 @@ O [recorte do DOM fornecido](../Evidencias/CT-RF02_ERRO/recorte-dom.html) preser
 - [Jam — Tela de perfil do usuário com erro](https://jam.dev/c/c61241d5-bff5-4a0a-9684-991318f9b51c), com Info, Actions e quadro do vídeo em 00:05 consultados. A descrição curta do Jam menciona login, mas o título, as navegações e o conteúdo observado se referem ao perfil.
 
 A captura estática não mostra toda a página nem a barra horizontal; a análise de transbordamento também se apoia no relato e no quadro do Jam. Não foi estabelecido diagnóstico de rede ou console para este defeito. A consulta às evidências não equivale a uma nova execução ou a um reteste da aplicação.
+
+---
+
+[← Início](../../README.md) · [Requisitos](../Analise%20de%20requisitos.md) · [Plano de testes](../Plano%20de%20testes.md) · [Relatório de bugs](../Relatorio-de-Bugs.md)

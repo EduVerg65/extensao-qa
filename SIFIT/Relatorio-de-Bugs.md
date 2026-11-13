@@ -1,4 +1,4 @@
-# Relatório de Bugs — SIFIT
+# 🐞 Relatório de Bugs — SIFIT
 
 **Escopo:** CT-RF01 — Recuperação de senha; CT-RF02_ERRO — Perfil; CT-RF03 — Filtros da página Clientes
 
@@ -8,7 +8,21 @@
 
 **Atualização documental:** 12/11/2026
 
-### BUG-001 — Link "Esqueci minha senha" não executa nenhuma ação
+**Padronização documental:** 13/11/2026, sem alteração do status dos defeitos.
+
+## 📋 Resumo dos defeitos
+
+| ID | Funcionalidade afetada | Severidade / prioridade | Status | Caso relacionado |
+| --- | --- | --- | --- | --- |
+| [BUG-001](#bug-001--link-esqueci-minha-senha-não-executa-nenhuma-ação) | Recuperação de senha | Alta / Alta | Aberto | [CT-RF01](Cenario_Teste/CT-RF01_Esqueci-senha.md) |
+| [BUG-002](#bug-002--perfil-com-dados-fictícios-campos-ausentes-e-layout-desconfigurado) | Perfil do usuário | Alta / Alta, propostas | Aberto | [CT-RF02_ERRO](Cenario_Teste/CT-RF02_ERRO.md) |
+| [BUG-003](#bug-003--filtros-combinados-da-página-clientes-não-restringem-a-listagem) | Filtros de Clientes | Alta / Alta, propostas | Aberto | [CT-RF03](Cenario_Teste/CT-RF03_FILTRO_TelaClientes.md) |
+
+Todos os defeitos aguardam correção e reteste. As causas técnicas permanecem não confirmadas; o BUG-003 se apoia no relato e nas capturas fornecidos, com os limites registrados no caso.
+
+---
+
+## BUG-001 — Link "Esqueci minha senha" não executa nenhuma ação
 
 | Campo | Descrição |
 | --- | --- |
@@ -21,16 +35,16 @@
 
 **Pré-condições:** Acessar a tela de login sem estar autenticado, com a opção "Esqueci minha senha" visível. Não é necessário informar credenciais para iniciar esse fluxo.
 
-**Passos para reprodução:**
+| **Passo a passo para reprodução** |
+| --- |
+| 1. Acessar https://sifitalfa.centrion.com.br/login. |
+| 2. Abrir Network (Rede) e Console nas ferramentas de desenvolvedor, habilitar a captura de todas as requisições e limpar os registros. |
+| 3. Clicar no link "Esqueci minha senha". |
+| 4. Observar se o fluxo de recuperação abre e se há requisição ou erro correspondente ao clique. |
 
-1. Acessar https://sifitalfa.centrion.com.br/login.
-2. Abrir Network (Rede) e Console nas ferramentas de desenvolvedor, habilitar a captura de todas as requisições e limpar os registros.
-3. Clicar no link "Esqueci minha senha".
-4. Observar se o fluxo de recuperação abre e se há requisição ou erro correspondente ao clique.
-
-**Resultado esperado:** Exibição de formulário ou página para iniciar a solicitação de redefinição de senha, com os campos e as orientações necessários para prosseguir. Requisições ao servidor devem ocorrer nas etapas que dependam dele; uma abertura local de formulário pode ocorrer sem requisição.
-
-**Resultado obtido:** O clique não produz abertura de formulário nem navegação para o fluxo de recuperação. O Jam registra cliques repetidos entre aproximadamente 00:02 e 00:12 e a interface permanece na tela de login. A consulta aos registros de rede da gravação retorna **0 requisições**; a consulta aos erros de console retorna **0 mensagens**.
+| **Comportamento esperado** | **Comportamento obtido** |
+| --- | --- |
+| Exibição de formulário ou página para iniciar a solicitação de redefinição de senha, com os campos e as orientações necessários para prosseguir. Requisições ao servidor devem ocorrer nas etapas que dependam dele; uma abertura local de formulário pode ocorrer sem requisição. | O clique não produz abertura de formulário nem navegação para o fluxo de recuperação. O Jam registra cliques repetidos entre aproximadamente 00:02 e 00:12 e a interface permanece na tela de login. A consulta aos registros de rede da gravação retorna **0 requisições**; a consulta aos erros de console retorna **0 mensagens**. |
 
 **Impacto:** O usuário não consegue iniciar a recuperação de senha pela opção disponibilizada na tela de login.
 
@@ -43,7 +57,9 @@
 - [Vídeo no Google Drive — CT-RF01_Esqueci-senha](https://drive.google.com/file/d/1f6AqYunchDH4R9Yw1JpbyX9x28UQGcbo/view?usp=sharing) — evidência complementar fornecida; metadados consultados, conteúdo não inspecionado nesta revisão.
 - [Jam — Erro no esqueci a senhas](https://jam.dev/c/0273b203-b999-493d-9919-2d143bc13301) — eventos, quadros do vídeo, rede e erros de console consultados.
 
-### BUG-002 — Perfil com dados fictícios, campos ausentes e layout desconfigurado
+---
+
+## BUG-002 — Perfil com dados fictícios, campos ausentes e layout desconfigurado
 
 | Campo | Descrição |
 | --- | --- |
@@ -60,18 +76,18 @@
 
 **Pré-condições:** Estar autenticado no SIFIT com acesso à opção Perfil. Para o reteste, usar conta de teste com dados conhecidos e permissões de edição identificadas.
 
-**Passos para reprodução:**
+| **Passo a passo para reprodução** |
+| --- |
+| 1. Acessar o SIFIT e autenticar-se com uma conta de teste. |
+| 2. Abrir o menu do usuário e selecionar **Perfil**. |
+| 3. Conferir os dados e textos apresentados, incluindo o cabeçalho e o cartão de perfil. |
+| 4. Verificar se as seções **Usuário**, **Documentos** e **Endereço** exibem os campos e seus valores. |
+| 5. Observar o dimensionamento das imagens, o alinhamento e a presença de rolagem horizontal. |
+| 6. Inspecionar o DOM e registrar as condições de navegador, resolução e zoom para comparação após a correção. |
 
-1. Acessar o SIFIT e autenticar-se com uma conta de teste.
-2. Abrir o menu do usuário e selecionar **Perfil**.
-3. Conferir os dados e textos apresentados, incluindo o cabeçalho e o cartão de perfil.
-4. Verificar se as seções **Usuário**, **Documentos** e **Endereço** exibem os campos e seus valores.
-5. Observar o dimensionamento das imagens, o alinhamento e a presença de rolagem horizontal.
-6. Inspecionar o DOM e registrar as condições de navegador, resolução e zoom para comparação após a correção.
-
-**Resultado esperado:** Exibição dos dados da conta autenticada, com campos carregados corretamente, textos em português e layout organizado conforme o padrão do sistema, sem imagens desproporcionais ou rolagem horizontal indevida. Os campos editáveis devem permitir interação conforme as permissões da conta.
-
-**Resultado obtido:** A página apresenta conteúdo fictício e textos em inglês, como “Hello Jesse”, “Jessica Jones”, “Edit profile” e “About me”. A captura mostra as seções Usuário, Documentos e Endereço sem campos visíveis e uma imagem fora de proporção. O quadro do Jam consultado em 00:05 também mostra seções vazias e uma barra horizontal. Os eventos registram acessos a `/profile` em aproximadamente 00:02 e 00:12.
+| **Comportamento esperado** | **Comportamento obtido** |
+| --- | --- |
+| Exibição dos dados da conta autenticada, com campos carregados corretamente, textos em português e layout organizado conforme o padrão do sistema, sem imagens desproporcionais ou rolagem horizontal indevida. Os campos editáveis devem permitir interação conforme as permissões da conta. | A página apresenta conteúdo fictício e textos em inglês, como “Hello Jesse”, “Jessica Jones”, “Edit profile” e “About me”. A captura mostra as seções Usuário, Documentos e Endereço sem campos visíveis e uma imagem fora de proporção. O quadro do Jam consultado em 00:05 também mostra seções vazias e uma barra horizontal. Os eventos registram acessos a `/profile` em aproximadamente 00:02 e 00:12. |
 
 **Impacto:** O usuário não consegue visualizar adequadamente seus dados nem utilizar os campos de edição ausentes. A navegação fica prejudicada pelo layout desconfigurado. A persistência de alterações não foi testada.
 
@@ -85,7 +101,9 @@
 - [HTML — recorte do DOM fornecido](Evidencias/CT-RF02_ERRO/recorte-dom.html) — trechos selecionados, com omissões sinalizadas; não é o HTML integral.
 - [Jam — Tela de perfil do usuário com erro](https://jam.dev/c/c61241d5-bff5-4a0a-9684-991318f9b51c) — Info, Actions e quadro em 00:05 consultados. Não foi estabelecido diagnóstico de rede ou console nesta revisão.
 
-### BUG-003 — Filtros combinados da página Clientes não restringem a listagem
+---
+
+## BUG-003 — Filtros combinados da página Clientes não restringem a listagem
 
 | Campo | Descrição |
 | --- | --- |
@@ -94,6 +112,7 @@
 | **Severidade** | Alta, proposta pelo impacto na confiabilidade da consulta de clientes. |
 | **Prioridade** | Alta, proposta para triagem. |
 | **Caso de teste** | [CT-RF03 — Filtros da página Clientes](Cenario_Teste/CT-RF03_FILTRO_TelaClientes.md). |
+| **Requisito** | [RF03 — Pesquisar clientes com filtros combinados](Analise%20de%20requisitos.md#rf03--pesquisar-clientes-com-filtros-combinados). |
 | **Comportamento requerido** | Retornar exclusivamente clientes que atendam simultaneamente a todos os filtros selecionados, com lógica AND. |
 | **Endpoint informado** | `POST https://backendsifit.centrion.com.br/api/clientesPorNome/1`. |
 | **Ambiente** | Página Clientes; URL do frontend, versão, navegador, resolução e zoom não confirmados. Empresa informada no payload: `1`. |
@@ -102,17 +121,17 @@
 
 **Objetivo e pré-condições:** Verificar a interseção dos filtros de Clientes com sessão autenticada e acesso à empresa da pesquisa. No reteste, utilizar base conhecida com Status, Situação Financeira, Plano e Personal identificados por cliente, além de registros incompatíveis para conferir sua exclusão. Confirmar os IDs reais das opções e preparar Network e Console, sem registrar autenticação.
 
-**Passos para reprodução:**
+| **Passo a passo para reprodução** |
+| --- |
+| 1. Acessar a página **Clientes** e manter Código e Nome vazios. |
+| 2. Selecionar Status **Ativo**, Situação **Inadimplente**, Plano **Plano Hendreu** e Personal **Marcelo Longo Zandonadi**. |
+| 3. Clicar em **Buscar** e conferir todos os registros com os critérios selecionados e os cadastros de referência. |
+| 4. Inspecionar a requisição e a aplicação dos filtros na atualização da tabela. |
+| 5. Alterar somente a Situação para **Adimplente**, clicar em **Buscar** e conferir novamente os resultados. |
 
-1. Acessar a página **Clientes** e manter Código e Nome vazios.
-2. Selecionar Status **Ativo**, Situação **Inadimplente**, Plano **Plano Hendreu** e Personal **Marcelo Longo Zandonadi**.
-3. Clicar em **Buscar** e conferir todos os registros com os critérios selecionados e os cadastros de referência.
-4. Inspecionar a requisição e a aplicação dos filtros na atualização da tabela.
-5. Alterar somente a Situação para **Adimplente**, clicar em **Buscar** e conferir novamente os resultados.
-
-**Resultado esperado:** Apenas clientes que atendam a todos os critérios simultaneamente. Ao alterar a situação financeira, a nova busca deve refletir essa seleção e manter os demais filtros. Quando não houver correspondências, apresentar **"Nenhum cliente encontrado"**, sem linhas residuais.
-
-**Resultado obtido:** Segundo o relato, a listagem manteve clientes de outros planos e incompatíveis com os critérios selecionados. Ao alternar Inadimplente para Adimplente, os resultados permaneceram praticamente iguais, com os filtros ainda selecionados visualmente. As capturas mostram filtros e listagens semelhantes, mas não permitem confirmar os valores completos de todas as opções nem os vínculos individuais dos clientes.
+| **Comportamento esperado** | **Comportamento obtido** |
+| --- | --- |
+| Apenas clientes que atendam a todos os critérios simultaneamente. Ao alterar a situação financeira, a nova busca deve refletir essa seleção e manter os demais filtros. Quando não houver correspondências, apresentar **"Nenhum cliente encontrado"**, sem linhas residuais. | Segundo o relato, a listagem manteve clientes de outros planos e incompatíveis com os critérios selecionados. Ao alternar Inadimplente para Adimplente, os resultados permaneceram praticamente iguais, com os filtros ainda selecionados visualmente. As capturas mostram filtros e listagens semelhantes, mas não permitem confirmar os valores completos de todas as opções nem os vínculos individuais dos clientes. |
 
 **Impacto:** A consulta não oferece resultados confiáveis para identificar clientes por plano, personal, status e situação financeira. O usuário pode tomar decisões com base em registros incompatíveis com a pesquisa.
 
@@ -147,3 +166,7 @@ Status, Situação Financeira, Plano e Personal não aparecem nesse corpo. HTTP 
 - [Índice de evidências, origem e limites](Evidencias/CT-RF03_Filtros_Clientes/README.md).
 
 **Encaminhamento:** Investigar e corrigir no repositório da aplicação; executar o CT-RF03 após disponibilização da correção. Esta entrega altera somente a documentação de QA e organiza as capturas fornecidas. Não houve alteração de código-fonte, nova execução ou confirmação de correção.
+
+---
+
+[← Início](../README.md) · [Cenários de teste](Cenario_Teste/) · [Evidências de Clientes](Evidencias/CT-RF03_Filtros_Clientes/README.md)

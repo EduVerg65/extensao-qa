@@ -1,10 +1,22 @@
-# Análise de requisitos — SIFIT
+# 📦 Análise de Requisitos — SIFIT
 
 **Módulos:** Autenticação / Recuperação de senha, Perfil e Clientes / Filtros
 
 **Atualização:** 12/11/2026
 
+**Padronização documental:** 13/11/2026, sem alteração dos resultados registrados.
+
 Esta análise documenta o comportamento esperado para as opções "Esqueci minha senha", "Perfil" e a pesquisa com filtros da página Clientes, com base nos relatos e nas evidências fornecidas. Os critérios abaixo constituem a referência de QA para esses fluxos; não representam validação de uma especificação formal pelo responsável pelo produto.
+
+## 📋 Visão geral dos requisitos
+
+| Código | Funcionalidade | Prioridade | Caso relacionado |
+| --- | --- | --- | --- |
+| [RF01](#rf01--iniciar-recuperação-de-senha) | Recuperação de senha | Alta | [CT-RF01](Cenario_Teste/CT-RF01_Esqueci-senha.md) |
+| [RF02](#rf02--exibir-perfil-do-usuário-autenticado) | Perfil do usuário | Alta | [CT-RF02_ERRO](Cenario_Teste/CT-RF02_ERRO.md) |
+| [RF03](#rf03--pesquisar-clientes-com-filtros-combinados) | Filtros da página Clientes | Alta, proposta para triagem | [CT-RF03](Cenario_Teste/CT-RF03_FILTRO_TelaClientes.md) |
+
+---
 
 ## RF01 — Iniciar recuperação de senha
 
@@ -32,6 +44,8 @@ A abertura de um formulário local pode ocorrer sem requisição de rede. Neste 
 
 O identificador da conta, o canal de recuperação, o contrato da API, as mensagens de retorno, a validade de eventual token e as regras de redefinição precisam ser confirmados com o responsável pelo sistema antes de detalhar os testes das etapas seguintes. Não há comprovação de envio de e-mail, geração de token ou alteração de senha nas evidências analisadas.
 
+---
+
 ## RF02 — Exibir perfil do usuário autenticado
 
 | Campo | Descrição |
@@ -56,6 +70,8 @@ O identificador da conta, o canal de recuperação, o contrato da API, as mensag
 ### Pontos a definir para o perfil
 
 Confirmar campos obrigatórios e opcionais, permissões de edição, resoluções suportadas, comportamento para dados ausentes e regras de validação e salvamento. A evidência atual avalia o carregamento e a apresentação; não comprova persistência de alterações nem contém os dados reais da conta para comparação individual.
+
+---
 
 ## RF03 — Pesquisar clientes com filtros combinados
 
@@ -85,7 +101,9 @@ Confirmar as regras de correspondência de Código e Nome, os valores e padrões
 
 Os IDs exemplificativos `plano_id: 60` e `personal_id: 36` não têm correspondência validada com Plano Hendreu e Marcelo Longo Zandonadi. O relato informa `empresa_id: 1`; esse valor não deve ser presumido para outros ambientes ou contas.
 
-## Rastreabilidade
+---
+
+## 🔗 Rastreabilidade
 
 | Requisito | Cenário / caso | Defeito | Resultado | Evidências |
 | --- | --- | --- | --- | --- |
@@ -93,7 +111,9 @@ Os IDs exemplificativos `plano_id: 60` e `personal_id: 36` não têm correspond�
 | RF02 | [Cenário 2 / CT-RF02_ERRO](Cenario_Teste/CT-RF02_ERRO.md) | [BUG-002](Relatorio-de-Bugs.md#bug-002--perfil-com-dados-fictícios-campos-ausentes-e-layout-desconfigurado) | Reprovado nas evidências; reteste pendente | [Captura](Evidencias/CT-RF02_ERRO/erro-na-tela.png), [HTML](Evidencias/CT-RF02_ERRO/recorte-dom.html) e [Jam](https://jam.dev/c/c61241d5-bff5-4a0a-9684-991318f9b51c) |
 | RF03 | [Cenário 3 / CT-RF03](Cenario_Teste/CT-RF03_FILTRO_TelaClientes.md) | [BUG-003](Relatorio-de-Bugs.md#bug-003--filtros-combinados-da-página-clientes-não-restringem-a-listagem) | Reprovado conforme o relato; reteste pendente | [Índice e limites](Evidencias/CT-RF03_Filtros_Clientes/README.md), [captura 1](Evidencias/CT-RF03_Filtros_Clientes/filtros-clientes-01.png), [captura 2](Evidencias/CT-RF03_Filtros_Clientes/filtros-clientes-02.png) e [Jam](https://jam.dev/c/657627ec-e7e2-455d-a505-9b2a26f44bf1) |
 
-## Base da análise
+---
+
+## 🔎 Base da análise
 
 - **Relato:** a opção "Esqueci minha senha" não funciona e não dispara requisição ao ser acionada.
 - **Jam:** gravação criada em 23/10/2026, com 14 segundos, em https://sifitalfa.centrion.com.br/login; cliques repetidos, permanência na tela de login, 0 requisições registradas e 0 erros de console registrados.
@@ -115,3 +135,7 @@ Os IDs exemplificativos `plano_id: 60` e `personal_id: 36` não têm correspond�
 - **Capturas:** mostram filtros selecionados com textos truncados e listagens semelhantes. A primeira mostra uma entrada XHR HTTP 200; a segunda não lista requisições naquele instante. Não permitem confirmar isoladamente os vínculos de cada cliente nem o corpo das chamadas.
 - **Jam:** [link fornecido](https://jam.dev/c/657627ec-e7e2-455d-a505-9b2a26f44bf1), sem acesso direto pela ferramenta de consulta na revisão. Horários, endpoint, payload e volumes foram registrados conforme o relato. [Origem e limites das evidências](Evidencias/CT-RF03_Filtros_Clientes/README.md).
 - **Limite:** código e contrato da API não analisados; causa não confirmada. Não houve nova execução ou reteste. URL do frontend, data da gravação e versão não confirmadas. As variações de Código, Nome e demais combinações são propostas de validação, sem resultado de execução nesta revisão.
+
+---
+
+[← Início](../README.md) · [Cenários de teste](Cenario_Teste/) · [Evidências de Clientes](Evidencias/CT-RF03_Filtros_Clientes/README.md)

@@ -1,6 +1,14 @@
-## Cenário 1: Recuperação de senha na plataforma
+# 🧪 Cenário 01: Recuperação de senha na plataforma
 
-### Caso de Teste 01: Acionamento da opção "Esqueci minha senha".
+**Módulo:** Autenticação / Recuperação de senha
+
+**Status:** Reprovado conforme as evidências; reteste pendente.
+
+**Padronização documental:** 13/11/2026; análise original de 10/11/2026 preservada.
+
+---
+
+## Caso de Teste 01: Acionamento da opção "Esqueci minha senha".
 
 | ID | Descrição |
 | --- | --- |
@@ -51,3 +59,7 @@
 | [Jam — Erro no esqueci a senhas](https://jam.dev/c/0273b203-b999-493d-9919-2d143bc13301) |
 
 O comportamento visual e os registros de rede e console foram analisados no Jam. O vídeo do Drive foi identificado como evidência complementar; seu conteúdo não foi inspecionado nesta revisão.
+
+---
+
+[← Início](../../README.md) · [Requisitos](../Analise%20de%20requisitos.md) · [Plano de testes](../Plano%20de%20testes.md) · [Relatório de bugs](../Relatorio-de-Bugs.md)

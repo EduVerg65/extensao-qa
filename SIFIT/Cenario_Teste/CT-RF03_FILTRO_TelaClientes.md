@@ -1,6 +1,14 @@
-## Cenário 3: Pesquisa de clientes com filtros combinados
+# 🧪 Cenário 03: Pesquisa de clientes com filtros combinados
 
-### Caso de Teste 03: Aplicação simultânea dos filtros da página Clientes.
+**Módulo:** Clientes / Pesquisa com filtros
+
+**Status:** Reprovado conforme o relato; reteste pendente.
+
+**Padronização documental:** 13/11/2026; análise original de 12/11/2026 preservada.
+
+---
+
+## Caso de Teste 03: Aplicação simultânea dos filtros da página Clientes.
 
 | ID | Descrição |
 | --- | --- |
@@ -44,6 +52,7 @@ A listagem deve corresponder à interseção de todos os critérios selecionados
 | **Status e rastreabilidade** |
 | --- |
 | **Resultado:** Reprovado conforme o relato fornecido; sem nova execução no sistema nesta revisão. |
+| **Requisito:** [RF03 — Pesquisar clientes com filtros combinados](../Analise%20de%20requisitos.md#rf03--pesquisar-clientes-com-filtros-combinados). |
 | **Defeito associado:** [BUG-003](../Relatorio-de-Bugs.md#bug-003--filtros-combinados-da-página-clientes-não-restringem-a-listagem). |
 | **Severidade / prioridade:** Alta / Alta, propostas para triagem pelo impacto na confiabilidade da consulta. |
 | **Revisão documental:** 12/11/2026. Data da gravação, versão da aplicação e URL do frontend não confirmadas. |
@@ -122,3 +131,7 @@ As combinações abaixo estão **pendentes de execução**. Usar dados conhecido
 - [Índice das evidências e cronologia de rede informada](../Evidencias/CT-RF03_Filtros_Clientes/README.md).
 - [Captura 1 — filtros, listagem e uma requisição HTTP 200](../Evidencias/CT-RF03_Filtros_Clientes/filtros-clientes-01.png).
 - [Captura 2 — filtros, listagem e painel de rede sem requisições listadas](../Evidencias/CT-RF03_Filtros_Clientes/filtros-clientes-02.png).
+
+---
+
+[← Início](../../README.md) · [Requisitos](../Analise%20de%20requisitos.md) · [Plano de testes](../Plano%20de%20testes.md) · [Relatório de bugs](../Relatorio-de-Bugs.md)

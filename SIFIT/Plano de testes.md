@@ -1,14 +1,32 @@
-# Plano de testes — SIFIT
+# 🧪 Plano de Testes — SIFIT
 
 **Atualização:** 12/11/2026
 
+**Padronização documental:** 13/11/2026, com resultados e pendências preservados.
+
 **Escopo:** CT-RF01 — Recuperação de senha; CT-RF02_ERRO — Perfil; CT-RF03 — Filtros da página Clientes.
 
-## Objetivo
+## 📌 1. Identificação
+
+| Item | Definição |
+| --- | --- |
+| Projeto | SIFIT — Sistema de gestão de academias. |
+| Tipo de teste | Funcional manual, com análise exploratória e de evidências. |
+| Versão avaliada | Não confirmada; registrar por caso no reteste. |
+| Funcionalidades | Recuperação de senha, Perfil e filtros da página Clientes. |
+| Situação | Três casos documentados e três defeitos abertos, com retestes pendentes. |
+
+---
+
+## 🎯 2. Objetivo
 
 Verificar o início da recuperação de acesso, a apresentação do perfil do usuário autenticado e a aplicação simultânea dos filtros de Clientes, mantendo a rastreabilidade entre requisitos, casos de teste, evidências e defeitos.
 
-## Escopo
+---
+
+## 🧩 3. Escopo
+
+**Incluído:**
 
 - Disponibilidade da opção na tela de login, antes da autenticação.
 - Abertura do formulário ou da página de recuperação após o clique.
@@ -19,13 +37,39 @@ Verificar o início da recuperação de acesso, a apresentação do perfil do us
 - Pesquisa por Código, Nome, Status, Situação Financeira, Plano e Personal, com lógica AND, alteração e remoção de restrições e estado sem resultados.
 - Registro e reteste do BUG-003, com conferência da inclusão e exclusão de clientes em uma base conhecida e da integração conforme a arquitetura efetiva.
 
+**Limites da cobertura atual:**
+
 As etapas de envio da solicitação, entrega de mensagem, uso de token e definição de nova senha dependem da abertura do fluxo e da definição de suas regras. Não estão cobertas pela execução gravada.
 
 A gravação de Perfil não valida o salvamento de alterações, as regras de obrigatoriedade ou todas as permissões. Esses fluxos exigem casos específicos após a definição das regras e a correção da apresentação.
 
 O CT-RF03 foi documentado conforme o relato e as capturas fornecidos. Não houve acesso direto ao conteúdo do Jam, análise do código ou execução da matriz de reteste nesta revisão. A classificação atual não comprova falha específica no backend nem define onde a filtragem deve ocorrer.
 
-## Ambiente e preparação
+---
+
+## 🛠️ 4. Ferramentas utilizadas
+
+| Ferramenta | Finalidade |
+| --- | --- |
+| Navegador | Executar os fluxos e registrar as condições de ambiente. |
+| DevTools — Elements | Inspecionar a renderização dos campos e o DOM do perfil. |
+| DevTools — Network e Console | Correlacionar interface, requisições e erros durante execução e reteste. |
+| Jam e capturas | Preservar evidências e contexto dos comportamentos observados. |
+| Google Drive | Referenciar o vídeo complementar do CT-RF01. |
+| Markdown e GitHub | Documentar requisitos, cenários, resultados e defeitos. |
+
+## 🔬 5. Técnicas de teste
+
+- **Teste funcional:** comparar cada fluxo com os critérios de aceitação do requisito.
+- **Análise exploratória:** observar interface, DOM, rede e console conforme as evidências disponíveis.
+- **BDD:** descrever os cenários com Dado, Quando e Então.
+- **Combinação de condições:** planejar a validação da lógica AND nos filtros de Clientes, incluindo correspondências parciais e conjunto vazio.
+
+As técnicas previstas para o reteste não representam novas execuções realizadas nesta revisão.
+
+---
+
+## 🔐 6. Ambiente e preparação
 
 ### CT-RF01 — Recuperação de senha
 
@@ -67,7 +111,9 @@ O CT-RF03 foi documentado conforme o relato e as capturas fornecidos. Não houve
 | Ferramentas | Navegador, DevTools (Network e Console), capturas e Jam. Remover autenticação dos registros compartilhados. |
 | Preparação | Confirmar regras de Código/Nome, situação financeira e vínculos; listar previamente os clientes esperados para cada combinação. Habilitar a captura, remover filtros do painel de rede e limpar o histórico. |
 
-## Caso de teste e situação
+---
+
+## 📋 7. Casos de teste e situação
 
 | Requisito | Caso de teste | Tipo | Resultado nas evidências | Defeito | Próxima ação |
 | --- | --- | --- | --- | --- | --- |
@@ -75,7 +121,9 @@ O CT-RF03 foi documentado conforme o relato e as capturas fornecidos. Não houve
 | [RF02](Analise%20de%20requisitos.md#rf02--exibir-perfil-do-usuário-autenticado) | [CT-RF02_ERRO — Exibir Perfil](Cenario_Teste/CT-RF02_ERRO.md) | Funcional / interface, com análise do DOM e evidências | Reprovado | [BUG-002](Relatorio-de-Bugs.md#bug-002--perfil-com-dados-fictícios-campos-ausentes-e-layout-desconfigurado) | Corrigir e retestar. |
 | [RF03](Analise%20de%20requisitos.md#rf03--pesquisar-clientes-com-filtros-combinados) | [CT-RF03 — Filtrar Clientes](Cenario_Teste/CT-RF03_FILTRO_TelaClientes.md) | Funcional / filtros combinados, com análise de integração e evidências | Reprovado conforme o relato; sem nova execução | [BUG-003](Relatorio-de-Bugs.md#bug-003--filtros-combinados-da-página-clientes-não-restringem-a-listagem) | Investigar a causa, corrigir e executar a matriz de reteste. |
 
-## Procedimento de execução e reteste
+---
+
+## 🔄 8. Procedimento de execução e reteste
 
 ### CT-RF01
 
@@ -109,7 +157,9 @@ O CT-RF03 foi documentado conforme o relato e as capturas fornecidos. Não houve
 8. Na busca sem correspondências, conferir a mensagem **"Nenhum cliente encontrado"** e a ausência de linhas anteriores. Ao limpar filtros, conferir a remoção das restrições correspondentes.
 9. Registrar o resultado de cada variação e as evidências de interface e integração sem tokens. Atualizar o relatório dos testes e o BUG-003 somente com os resultados efetivamente obtidos.
 
-## Critérios de entrada e saída
+---
+
+## 🚦 9. Critérios de entrada, saída e aceitação
 
 **Entrada:** ambiente acessível, opção visível e ferramentas de captura disponíveis. Para Perfil, sessão válida e conta de teste com dados conhecidos. Para Clientes, sessão válida, empresa identificada, regras dos filtros confirmadas e base com resultados esperados por combinação. Para o reteste, correção disponibilizada em uma versão identificável.
 
@@ -117,7 +167,28 @@ O CT-RF03 foi documentado conforme o relato e as capturas fornecidos. Não houve
 
 **Aceitação da correção:** todos os critérios do respectivo caso atendidos e reteste documentado. BUG-001, BUG-002 e BUG-003 permanecem abertos até a confirmação de suas correções. A aprovação do CT-RF01 não comprova a recuperação completa da senha; a do CT-RF02_ERRO não comprova persistência de alterações no perfil. Para CT-RF03, cada combinação deve incluir todos os clientes esperados e excluir os incompatíveis, com a matriz executada e o estado vazio validado.
 
-## Riscos e Limitações do Ambiente
+---
+
+## ⏱️ 10. Cronograma e dependências
+
+| Atividade | Situação | Data ou condição |
+| --- | --- | --- |
+| Análise documental do CT-RF01 | Registrada | 10/11/2026. |
+| Análise documental de Perfil e Clientes | Registrada | 12/11/2026. |
+| Padronização dos documentos | Realizada | 13/11/2026. |
+| Investigação e correção dos defeitos | Pendente | Depende da equipe responsável pela aplicação; sem data definida. |
+| Execução dos retestes | Pendente | Após correção em versão identificável e preparação dos dados. |
+| Atualização dos resultados e encerramento | Pendente | Após reteste e atendimento aos critérios de aceitação. |
+
+## 🐞 11. Gestão de defeitos
+
+Os defeitos são registrados no [relatório de bugs](Relatorio-de-Bugs.md), com identificação, severidade, prioridade, pré-condições, reprodução, resultado esperado e obtido, impacto e evidências. Hipóteses técnicas permanecem identificadas até a confirmação no código.
+
+BUG-001, BUG-002 e BUG-003 permanecem abertos. Após a correção, atualizar o caso, o relatório dos testes e o defeito com as evidências da versão retestada.
+
+---
+
+## ⚠️ 12. Riscos e limitações do ambiente
 
 | ID | Risco | Impacto | Mitigação |
 |---|---|---|---|
@@ -132,7 +203,11 @@ O CT-RF03 foi documentado conforme o relato e as capturas fornecidos. Não houve
 | R09 | Filtragem local sobre dados parciais | Pode omitir clientes válidos de outras páginas | Confirmar a arquitetura e conferir completude considerando eventual paginação |
 | R10 | Jam indisponível e rede descrita apenas no relato | Limita a conferência independente do payload e da cronologia do CT-RF03 | Preservar a origem informada e coletar nova evidência de rede sem autenticação no reteste |
 
-## Documentos associados
+---
+
+## 📁 13. Entregáveis e documentos associados
+
+Os entregáveis são a análise de requisitos, este plano, os três cenários, as evidências disponíveis e os relatórios de bugs e resultados. As evidências de aprovação serão acrescentadas após os retestes.
 
 - [Análise de requisitos](Analise%20de%20requisitos.md)
 - [Caso CT-RF01](Cenario_Teste/CT-RF01_Esqueci-senha.md)
@@ -141,3 +216,7 @@ O CT-RF03 foi documentado conforme o relato e as capturas fornecidos. Não houve
 - [Evidências e limites do CT-RF03](Evidencias/CT-RF03_Filtros_Clientes/README.md)
 - [Relatório dos testes](Relatorio%20dos%20testes.md)
 - [Relatório de bugs](Relatorio-de-Bugs.md)
+
+---
+
+[← Início](../README.md) · [Cenários de teste](Cenario_Teste/) · [Evidências de Clientes](Evidencias/CT-RF03_Filtros_Clientes/README.md)

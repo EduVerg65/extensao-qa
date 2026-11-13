@@ -1,4 +1,4 @@
-# Relatório dos testes — SIFIT
+# 📊 Relatório de Testes — SIFIT
 
 **Escopo:** CT-RF01 — Recuperação de senha; CT-RF02_ERRO — Perfil; CT-RF03 — Filtros da página Clientes
 
@@ -8,7 +8,11 @@
 
 **Origem do resultado:** análise de evidências fornecidas; sem nova execução no sistema nesta revisão.
 
-## Resumo do resultado
+**Padronização documental:** 13/11/2026, preservando as datas e os resultados das análises anteriores.
+
+---
+
+## 📊 1. Resumo dos resultados
 
 O caso **CT-RF01** foi classificado como **reprovado**: a opção "Esqueci minha senha" não inicia o fluxo de recuperação. O Jam mostra cliques repetidos e permanência na tela de login; a consulta aos registros da captura retorna **0 requisições de rede** e **0 mensagens de erro no console**.
 
@@ -16,13 +20,15 @@ O **CT-RF02_ERRO** também foi classificado como **reprovado**: o perfil apresen
 
 O **CT-RF03** foi classificado como **reprovado conforme o relato**: a busca com filtros combinados mantém clientes incompatíveis e resultados praticamente iguais ao alternar a situação financeira. As capturas foram fornecidas como apoio; não mostram todos os valores completos nem os vínculos de cada cliente. O conteúdo do Jam não pôde ser consultado diretamente nesta revisão, e a causa não foi confirmada no código.
 
-| Casos avaliados | Aprovados | Reprovados | Retestes pendentes |
-| --- | --- | --- | --- |
-| 3 | 0 | 3 | 3 |
+| Casos documentados | Aprovados | Reprovados | Bugs abertos | Retestes pendentes |
+| :---: | :---: | :---: | :---: | :---: |
+| 3 | 0 | 3 | 3 | 3 |
 
 As contagens representam os casos documentados com base nas fontes indicadas, sem novas execuções nesta revisão. As nove variações planejadas para o reteste do CT-RF03 não foram executadas e não são contabilizadas como testes adicionais realizados.
 
-## Resultado por caso
+---
+
+## 🔍 2. Cobertura e resultado por caso
 
 | Caso | Requisito | Esperado | Obtido | Resultado | Defeito |
 | --- | --- | --- | --- | --- | --- |
@@ -30,7 +36,21 @@ As contagens representam os casos documentados com base nas fontes indicadas, se
 | [CT-RF02_ERRO](Cenario_Teste/CT-RF02_ERRO.md) | [RF02](Analise%20de%20requisitos.md#rf02--exibir-perfil-do-usuário-autenticado) | Exibir dados da conta, campos visíveis, textos em português e layout organizado. | Conteúdo fictício, campos não exibidos, imagem desproporcional e rolagem horizontal. | Reprovado | [BUG-002](Relatorio-de-Bugs.md#bug-002--perfil-com-dados-fictícios-campos-ausentes-e-layout-desconfigurado) |
 | [CT-RF03](Cenario_Teste/CT-RF03_FILTRO_TelaClientes.md) | [RF03](Analise%20de%20requisitos.md#rf03--pesquisar-clientes-com-filtros-combinados) | Retornar somente clientes que atendam a todos os filtros selecionados, com lógica AND, e apresentar mensagem para conjunto vazio. | Relato de clientes incompatíveis com a seleção e resultados praticamente iguais ao alternar Inadimplente/Adimplente. | Reprovado conforme o relato | [BUG-003](Relatorio-de-Bugs.md#bug-003--filtros-combinados-da-página-clientes-não-restringem-a-listagem) |
 
-## Ambiente identificado
+---
+
+## 🐞 3. Resumo dos bugs reportados
+
+| ID | Funcionalidade | Severidade | Prioridade | Status |
+| --- | --- | --- | --- | --- |
+| [BUG-001](Relatorio-de-Bugs.md#bug-001--link-esqueci-minha-senha-não-executa-nenhuma-ação) | Início da recuperação de senha | Alta | Alta | Aberto; reteste pendente. |
+| [BUG-002](Relatorio-de-Bugs.md#bug-002--perfil-com-dados-fictícios-campos-ausentes-e-layout-desconfigurado) | Dados e layout do perfil | Alta, proposta | Alta, proposta | Aberto; reteste pendente. |
+| [BUG-003](Relatorio-de-Bugs.md#bug-003--filtros-combinados-da-página-clientes-não-restringem-a-listagem) | Filtros combinados de Clientes | Alta, proposta | Alta, proposta | Aberto; reteste pendente. |
+
+As classificações propostas dependem de triagem. O BUG-003 mantém o resultado atribuído ao relato fornecido.
+
+---
+
+## 🔐 4. Ambientes identificados
 
 ### CT-RF01
 
@@ -69,7 +89,9 @@ O domínio do CT-RF02_ERRO é diferente do domínio `sifitalfa.centrion.com.br` 
 | Validação de IDs | Os exemplos `plano_id: 60` e `personal_id: 36` não têm correspondência confirmada. |
 | Fonte do resultado | Relato técnico e duas capturas fornecidos; Jam referenciado sem inspeção direta do conteúdo nesta revisão. |
 
-## Evidências e observações
+---
+
+## 📸 5. Evidências e observações
 
 | Evidência | Informação utilizada |
 | --- | --- |
@@ -95,7 +117,9 @@ A ausência desses critérios no corpo informado sustenta a hipótese de falha n
 
 Não foram fornecidos HAR, respostas integrais ou cadastros de referência para comprovar os vínculos de cada registro. Não houve diagnóstico de console, nova execução, análise do código ou confirmação da correção. Os testes com Código, Nome, conjunto vazio e as demais combinações da [matriz de reteste](Cenario_Teste/CT-RF03_FILTRO_TelaClientes.md#matriz-de-reteste-proposta) permanecem **pendentes de execução**, sem resultado atribuído.
 
-## Pendências e encaminhamento
+---
+
+## 📌 6. Pendências e encaminhamento
 
 - **BUG-001:** aberto, com severidade e prioridade altas; causa técnica ainda não confirmada no código.
 - **Reteste de CT-RF01:** pendente após a correção, conforme o [plano de testes](Plano%20de%20testes.md).
@@ -104,3 +128,7 @@ Não foram fornecidos HAR, respostas integrais ou cadastros de referência para 
 - **BUG-003:** aberto, com severidade e prioridade propostas como altas; investigar a captura dos critérios, o contrato da API e eventual filtragem local. Causa não confirmada.
 - **Reteste de CT-RF03:** pendente após a correção, com base conhecida, IDs validados e execução das nove variações previstas no [plano](Plano%20de%20testes.md#ct-rf03). Registrar inclusão, exclusão, completude e estado sem resultados antes de encerrar o defeito.
 - **Etapas seguintes:** não avaliadas nesta evidência, pois não foi possível iniciar a recuperação; detalhamento depende da definição das regras do fluxo.
+
+---
+
+[← Início](../README.md) · [Cenários de teste](Cenario_Teste/) · [Evidências de Clientes](Evidencias/CT-RF03_Filtros_Clientes/README.md)

@@ -1,60 +1,96 @@
-# 🧪 Documentação de QA — SIFIT
+# 🧪 Testes Manuais — SIFIT
 
-Documentação de testes manuais do sistema **SIFIT**, com os casos **CT-RF01 — Esqueci minha senha** e **CT-RF02_ERRO — Perfil**.
-
-## 📌 Sobre o sistema
-
-O SIFIT é um sistema de gestão de academias. Esta documentação reúne o planejamento, os casos de teste, os resultados e os defeitos identificados.
+Repositório de documentação de testes manuais do **SIFIT**, sistema de gestão de academias. Reúne requisitos, planejamento, cenários em BDD, relatórios de bugs e evidências dos fluxos avaliados.
 
 ## 🎯 Objetivo
 
-Documentar os requisitos, o planejamento, os resultados e as evidências da recuperação de senha e da apresentação do perfil do usuário autenticado.
+- Organizar a documentação de QA por requisito e funcionalidade.
+- Registrar o comportamento esperado e os resultados observados nas evidências.
+- Relacionar cada cenário ao defeito identificado e ao reteste necessário.
+
+---
 
 ## 🧱 Estrutura do repositório
 
-| Documento | Conteúdo |
-| --- | --- |
-| [Análise de requisitos](SIFIT/Analise%20de%20requisitos.md) | RF01 e RF02, critérios de aceitação e rastreabilidade. |
-| [Plano de testes](SIFIT/Plano%20de%20testes.md) | Escopo, ambiente, execução, reteste e riscos. |
-| [Cenário de recuperação de senha](SIFIT/Cenario_Teste/CT-RF01_Esqueci-senha.md) | Caso CT-RF01 em BDD, resultado obtido e evidências. |
-| [Cenário de Perfil](SIFIT/Cenario_Teste/CT-RF02_ERRO.md) | Caso CT-RF02_ERRO em BDD, resultado e análise do HTML. |
-| [Evidências de Perfil](SIFIT/Evidencias/CT-RF02_ERRO/) | Captura da tela e recorte do DOM fornecido. |
-| [Relatório dos testes](SIFIT/Relatorio%20dos%20testes.md) | Resultado da análise das evidências e pendências de reteste. |
-| [Relatório de bugs](SIFIT/Relatorio-de-Bugs.md) | BUG-001 — Recuperação de senha; BUG-002 — Perfil desconfigurado. |
+```text
+extensao-qa/
+├── README.md
+└── SIFIT/
+    ├── Analise de requisitos.md
+    ├── Plano de testes.md
+    ├── Relatorio-de-Bugs.md
+    ├── Relatorio dos testes.md
+    ├── Cenario_Teste/
+    │   ├── CT-RF01_Esqueci-senha.md
+    │   ├── CT-RF02_ERRO.md
+    │   └── CT-RF03_FILTRO_TelaClientes.md
+    └── Evidencias/
+        ├── CT-RF02_ERRO/
+        └── CT-RF03_Filtros_Clientes/
+```
+
+### 📚 Documentos
+
+| Etapa | Documento | Conteúdo |
+| --- | --- | --- |
+| 1 | [Análise de requisitos](SIFIT/Analise%20de%20requisitos.md) | RF01, RF02 e RF03, critérios de aceitação e rastreabilidade. |
+| 2 | [Plano de testes](SIFIT/Plano%20de%20testes.md) | Escopo, técnicas, ambientes, critérios e procedimentos de reteste. |
+| 3 | [Cenários de teste](SIFIT/Cenario_Teste/) | Pré-condições, passos em BDD e resultados por funcionalidade. |
+| 4 | [Relatório de bugs](SIFIT/Relatorio-de-Bugs.md) | Reprodução, impacto, comportamento esperado e obtido, evidências e encaminhamento. |
+| 5 | [Relatório dos testes](SIFIT/Relatorio%20dos%20testes.md) | Resumo dos resultados, cobertura e pendências. |
+
+---
+
+## 📋 Funcionalidades documentadas
+
+| Requisito | Caso de teste | Funcionalidade | Defeito |
+| --- | --- | --- | --- |
+| RF01 | [CT-RF01](SIFIT/Cenario_Teste/CT-RF01_Esqueci-senha.md) | Início da recuperação de senha. | [BUG-001](SIFIT/Relatorio-de-Bugs.md#bug-001--link-esqueci-minha-senha-não-executa-nenhuma-ação) |
+| RF02 | [CT-RF02_ERRO](SIFIT/Cenario_Teste/CT-RF02_ERRO.md) | Dados, campos e layout do perfil autenticado. | [BUG-002](SIFIT/Relatorio-de-Bugs.md#bug-002--perfil-com-dados-fictícios-campos-ausentes-e-layout-desconfigurado) |
+| RF03 | [CT-RF03](SIFIT/Cenario_Teste/CT-RF03_FILTRO_TelaClientes.md) | Pesquisa de clientes com filtros combinados. | [BUG-003](SIFIT/Relatorio-de-Bugs.md#bug-003--filtros-combinados-da-página-clientes-não-restringem-a-listagem) |
 
 ## 🔬 Metodologia
 
-**Técnicas aplicadas**
+- **Técnicas:** testes funcionais, análise exploratória e conferência de evidências de interface, DOM, rede e console, conforme a disponibilidade de cada caso.
+- **Formatos:** cenários em BDD (Dado / Quando / Então), tabelas, critérios de aceitação e matriz de reteste.
+- **Processo:** análise de requisitos → planejamento → execução registrada → documentação de defeitos → relatório → reteste após a correção.
 
-- Teste funcional — validação da abertura da recuperação de senha e da apresentação dos dados do perfil.
-- Análise exploratória — observação da interface, dos eventos, da rede e do console.
-- Análise de evidências — conferência das gravações e dos registros disponíveis no Jam, da captura e do HTML fornecidos.
-
-**Formatos**
-
-- BDD (Gherkin) para cenários
-- Tabelas e checklists para casos de teste
-
-**Processo**
-Análise de requisitos → Planejamento → Execução → Registro de defeitos → Relatório
+As variações da matriz de reteste são atividades planejadas e permanecem pendentes de execução.
 
 ## 🛠️ Ferramentas
 
-| Ferramenta | Uso |
-|---|---|
-| Jam | Gravação de evidências em vídeo |
-| DevTools (Network / Console) | Observação de requisições e erros no navegador |
-| Google Drive | Armazenamento das evidências fornecidas |
-| Markdown / GitHub | Documentação e versionamento |
+| Ferramenta | Uso na documentação |
+| --- | --- |
+| Jam | Referência de gravações, ações e registros disponíveis por caso. |
+| DevTools | Inspeção de interface, DOM, requisições e console. |
+| Capturas de tela | Registro visual dos problemas relatados. |
+| Google Drive | Referência do vídeo complementar de recuperação de senha. |
+| Markdown e GitHub | Organização e versionamento dos documentos. |
 
-## 🔐 Ambiente
+---
 
-O CT-RF01 registra https://sifitalfa.centrion.com.br/login e começa sem autenticação, sem exigir credenciais para acionar a opção. O CT-RF02_ERRO registra navegações para https://sifit.centrion.com.br/profile com usuário autenticado; a aba Info do Jam apresenta `/configuracoes`. Os ambientes não devem ser tratados como equivalentes sem confirmação.
+## 🔐 Ambientes e evidências
 
-## 📊 Status
+| Caso | Ambiente registrado | Evidências |
+| --- | --- | --- |
+| CT-RF01 | `https://sifitalfa.centrion.com.br/login`, sem autenticação. | Jam e vídeo complementar no Drive, vinculados no cenário. |
+| CT-RF02_ERRO | `https://sifit.centrion.com.br/profile`, com autenticação; Info do Jam apresenta `/configuracoes`. | [Captura e recorte do DOM](SIFIT/Evidencias/CT-RF02_ERRO/), além do Jam vinculado no cenário. |
+| CT-RF03 | Página Clientes; URL do frontend não confirmada. | [Capturas, origem e limites do relato](SIFIT/Evidencias/CT-RF03_Filtros_Clientes/README.md), com referência ao Jam. |
 
-🚧 Em andamento
+Os ambientes e as condições de execução devem ser conferidos por caso. As limitações de cada fonte estão registradas nos cenários e nos relatórios.
 
-O caso **CT-RF01**, associado ao **RF01**, está **reprovado conforme a gravação analisada**: "Esqueci minha senha" não abre o fluxo de recuperação e o Jam não registra requisições. O **BUG-001** permanece aberto, com reteste pendente após a correção. Esta atualização documental não inclui nova execução no sistema.
+## 📊 Status do projeto
 
-O **CT-RF02_ERRO**, associado ao **RF02**, está **reprovado conforme as evidências analisadas**: o perfil exibe conteúdo fictício, campos ausentes visualmente e layout desconfigurado. O **BUG-002** permanece aberto, com reteste pendente. A revisão de 12/11/2026 inclui a captura, o recorte do HTML e a consulta ao Jam; a causa técnica ainda precisa ser confirmada no código.
+🚧 **Documentação em andamento — correções e retestes pendentes.**
+
+| Casos documentados | Aprovados | Reprovados¹ | Bugs abertos | Retestes pendentes |
+| :---: | :---: | :---: | :---: | :---: |
+| 3 | 0 | 3 | 3 | 3 |
+
+¹ CT-RF01 e CT-RF02_ERRO estão reprovados conforme as evidências analisadas. CT-RF03 está reprovado conforme o relato fornecido, apoiado por capturas; o conteúdo do Jam desse caso não foi consultado diretamente na revisão registrada.
+
+**Padronização documental:** 13/11/2026. Resultados preservados das análises de 10/11 e 12/11/2026, sem nova execução da aplicação nesta atualização.
+
+## 📎 Referência de organização
+
+A apresentação foi adaptada do [repositório de referência de testes manuais](https://github.com/Adnyslougansilva/extensao-qa), com conteúdo e rastreabilidade próprios do SIFIT.
