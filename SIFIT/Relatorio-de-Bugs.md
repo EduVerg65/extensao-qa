@@ -24,6 +24,7 @@
 | [BUG-006](#bug-006) | Seletor de período permite intervalo com datas invertidas | Média / Média, propostas | Aberto | [CT-RF12](Cenario_Teste/CT-RF12_Periodo_Dashboard.md) |
 | [BUG-007](#bug-007) | Tema escuro reduz a legibilidade das tabelas de Box – Turmas | Média / Média, propostas | Aberto | [CT-RF14](Cenario_Teste/CT-RF14_Contraste_TemaEscuro.md) |
 | [BUG-008](#bug-008) | Edição de modalidade não apresenta ação clara para salvar | Média / Média, propostas | Aberto | [CT-RF15](Cenario_Teste/CT-RF15_Edicao_Modalidade.md) |
+| [BUG-009](#bug-009) | Exclusão de categoria retorna HTTP 500 e mensagem genérica | Média / Alta, propostas | Aberto | [CT-RF19](Cenario_Teste/CT-RF19_Exclusao_Categoria.md) |
 
 Todos os defeitos aguardam correção e reteste. As causas técnicas permanecem não confirmadas; o BUG-003 se apoia no relato e nas capturas fornecidos, com os limites registrados no caso.
 
@@ -394,6 +395,49 @@ Ajustar as cores e retestar ambos os temas; medir contraste se houver critério 
 Há ícone de lápis e carregamento dos campos. A evidência não demonstra a ausência de todo mecanismo de salvamento; a persistência precisa ser retestada. A causa técnica não foi confirmada no código da aplicação. O status permanece aberto até que uma nova execução comprove os critérios de aceitação dos casos associados.
 
 Verificar o fluxo de conclusão da edição e retestar persistência. A evidência reprova a clareza da ação de salvar; não afirma que o ícone de editar inexiste.
+
+---
+
+<a id="bug-009"></a>
+
+## BUG-009 — Exclusão de categoria retorna HTTP 500 e mensagem genérica
+
+| Campo | Descrição |
+| --- | --- |
+| Status | Aberto — reteste pendente após correção. |
+| Severidade / prioridade | Média / Alta, propostas para triagem. |
+| Módulo | Categorias Crossfit / Exclusão |
+| Requisitos | [RF19](Analise%20de%20requisitos.md#rf19) |
+| Casos | [CT-RF19](Cenario_Teste/CT-RF19_Exclusao_Categoria.md) |
+| Data da evidência / revisão | 14/11/2026; sem nova execução. |
+| Página | https://sifit.centrion.com.br/categorias-exercicios-crossfit |
+| Ambiente | Chrome 157.0.8103.51 / Windows 11 (x86); versão e zoom não confirmados. |
+
+### Pré-condições e reprodução
+
+**[CT-RF19](Cenario_Teste/CT-RF19_Exclusao_Categoria.md):** Sessão autenticada com permissão para excluir categorias. Categoria descartável e vínculos conhecidos; confirmar os impedimentos de exclusão previstos.
+
+1. Acionar a lixeira da categoria de teste.
+2. Confirmar a exclusão no diálogo.
+3. Conferir retorno visual, status da chamada e presença do registro após a operação.
+
+### Esperado e obtido
+
+| Caso | Esperado | Obtido |
+| --- | --- | --- |
+| CT-RF19 | Concluir a exclusão permitida ou explicar de forma tratável por que o registro não pode ser excluído. | Após a confirmação, aparece o diálogo “Erro” / “Erro ao deletar categoria”. A categoria permanece na lista. |
+
+**Impacto:** A exclusão não é concluída e o usuário recebe uma mensagem sem motivo tratável.
+
+### Evidências
+
+- [CT-RF19](Cenario_Teste/CT-RF19_Exclusao_Categoria.md): [Jam — Erro a o deletar categoria](https://jam.dev/c/c5c78b3b-2865-4226-836f-bcb0a8fc612f), [vídeo original](Evidencias/CT-RF19_Exclusao_Categoria/video.webm) e [Evidências](Evidencias/CT-RF19_Exclusao_Categoria/README.md). 0:02: POST /api/categoria-exercicio-cross/excluir retorna HTTP 500. 0:03–0:05: mensagem de erro.
+
+### Análise, limites e encaminhamento
+
+HTTP 500 está registrado no Jam. A causa, os vínculos e a regra para impedir a exclusão ainda precisam ser investigados. A causa técnica não foi confirmada no código da aplicação. O status permanece aberto até que uma nova execução comprove os critérios de aceitação dos casos associados.
+
+Investigar o HTTP 500 com logs do servidor e vínculos da categoria; corrigir e retestar cenários permitido e impedido.
 
 ---
 

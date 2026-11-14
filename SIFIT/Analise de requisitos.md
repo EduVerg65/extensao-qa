@@ -30,6 +30,7 @@ Esta análise documenta o comportamento esperado para login com credenciais vál
 | [RF16](#rf16) | Comunicar e aplicar a regra de remoção de modalidade | Média, proposta | [CT-RF16](Cenario_Teste/CT-RF16_Exclusao_Modalidade.md) |
 | [RF17](#rf17) | Filtrar categorias por código e nome | Média, proposta | [CT-RF17](Cenario_Teste/CT-RF17_Filtros_Categorias.md) |
 | [RF18](#rf18) | Salvar a atualização do nome de categoria | Média, proposta | [CT-RF18](Cenario_Teste/CT-RF18_Atualizacao_Categoria.md) |
+| [RF19](#rf19) | Excluir categoria permitida ou explicar o impedimento | Média, proposta | [CT-RF19](Cenario_Teste/CT-RF19_Exclusao_Categoria.md) |
 
 ---
 
@@ -522,6 +523,33 @@ A atualização está demonstrada na própria gravação. Não houve novo teste 
 
 ---
 
+<a id="rf19"></a>
+
+## RF19 — Excluir categoria permitida ou explicar o impedimento
+
+| Campo | Descrição |
+| --- | --- |
+| Requisito de QA | Concluir a exclusão permitida ou explicar de forma tratável por que o registro não pode ser excluído. |
+| Ator | Usuário autenticado com permissão no módulo. |
+| Pré-condições | Sessão autenticada com permissão para excluir categorias. Categoria descartável e vínculos conhecidos; confirmar os impedimentos de exclusão previstos. |
+| Gatilho | Acionar a lixeira da categoria de teste. Confirmar a exclusão no diálogo. Conferir retorno visual, status da chamada e presença do registro após a operação. |
+| Caso | [CT-RF19](Cenario_Teste/CT-RF19_Exclusao_Categoria.md) |
+| Situação observada | Reprovado nas evidências. Após a confirmação, aparece o diálogo “Erro” / “Erro ao deletar categoria”. A categoria permanece na lista. |
+| Defeito | [BUG-009](Relatorio-de-Bugs.md#bug-009) |
+| Evidências | [Evidências](Evidencias/CT-RF19_Exclusao_Categoria/README.md) e [Jam](https://jam.dev/c/c5c78b3b-2865-4226-836f-bcb0a8fc612f). |
+
+### Critérios de aceitação do RF19
+
+1. Exclusão permitida remove ou altera o registro conforme a regra definida.
+2. Impedimentos por vínculos são informados de forma compreensível e sem falha interna genérica.
+3. A listagem e o retorno da operação refletem o resultado efetivo.
+
+### Pontos a confirmar e limites do RF19
+
+O erro e o endpoint estão registrados. Sem o corpo completo da resposta, logs do servidor ou banco, a causa do HTTP 500 não foi determinada. Investigar o HTTP 500 com logs do servidor e vínculos da categoria; corrigir e retestar cenários permitido e impedido.
+
+---
+
 ## 🔗 Rastreabilidade
 
 | Requisito | Cenário / caso | Defeito | Resultado | Evidências |
@@ -544,6 +572,7 @@ A atualização está demonstrada na própria gravação. Não houve novo teste 
 | RF16 | [CT-RF16](Cenario_Teste/CT-RF16_Exclusao_Modalidade.md) | Sem defeito confirmado | A validar — regra ou contexto pendente | [Evidências](Evidencias/CT-RF16_Exclusao_Modalidade/README.md) e [Jam](https://jam.dev/c/0f55f76a-cd31-4cee-93da-23c13b1ba637) |
 | RF17 | [CT-RF17](Cenario_Teste/CT-RF17_Filtros_Categorias.md) | Nenhum no fluxo avaliado | Aprovado conforme a gravação | [Evidências](Evidencias/CT-RF17_Filtros_Categorias/README.md) e [Jam](https://jam.dev/c/5e75e423-9c7e-43d7-aade-9b1a32c5e559) |
 | RF18 | [CT-RF18](Cenario_Teste/CT-RF18_Atualizacao_Categoria.md) | Nenhum no fluxo avaliado | Aprovado conforme a gravação | [Evidências](Evidencias/CT-RF18_Atualizacao_Categoria/README.md) e [Jam](https://jam.dev/c/67664a98-2a4a-4134-91a9-7ca9b8aa9dbd) |
+| RF19 | [CT-RF19](Cenario_Teste/CT-RF19_Exclusao_Categoria.md) | [BUG-009](Relatorio-de-Bugs.md#bug-009) | Reprovado nas evidências | [Evidências](Evidencias/CT-RF19_Exclusao_Categoria/README.md) e [Jam](https://jam.dev/c/c5c78b3b-2865-4226-836f-bcb0a8fc612f) |
 
 ---
 

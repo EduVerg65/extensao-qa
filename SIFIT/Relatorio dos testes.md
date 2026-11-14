@@ -52,6 +52,7 @@ As contagens representam os casos documentados com base nas fontes indicadas, se
 | [CT-RF16](Cenario_Teste/CT-RF16_Exclusao_Modalidade.md) | [RF16](Analise%20de%20requisitos.md#rf16) | O nome, o ícone e a confirmação da ação devem informar se o efeito é desativar ou excluir definitivamente. | As modalidades passam a aparecer como inativas e continuam na listagem, mesmo após novos cliques. A linha do tempo registra chamadas a /api/sifitbox/modalidades/excluir/1 e recargas das listas com HTTP 200. | A validar — regra ou contexto pendente | Sem defeito confirmado |
 | [CT-RF17](Cenario_Teste/CT-RF17_Filtros_Categorias.md) | [RF17](Analise%20de%20requisitos.md#rf17) | Exibir apenas os registros correspondentes aos critérios e restaurar a lista ao limpar. | A quantidade de linhas exibidas muda conforme o código informado; a limpeza retorna a lista e a busca por barbell mostra a categoria correspondente. | Aprovado conforme a gravação | Nenhum no fluxo avaliado |
 | [CT-RF18](Cenario_Teste/CT-RF18_Atualizacao_Categoria.md) | [RF18](Analise%20de%20requisitos.md#rf18) | Persistir a alteração e atualizar a listagem. | O modal fecha e a lista exibe Barbell novo. | Aprovado conforme a gravação | Nenhum no fluxo avaliado |
+| [CT-RF19](Cenario_Teste/CT-RF19_Exclusao_Categoria.md) | [RF19](Analise%20de%20requisitos.md#rf19) | Concluir a exclusão permitida ou explicar de forma tratável por que o registro não pode ser excluído. | Após a confirmação, aparece o diálogo “Erro” / “Erro ao deletar categoria”. A categoria permanece na lista. | Reprovado nas evidências | [BUG-009](Relatorio-de-Bugs.md#bug-009) |
 
 ---
 
@@ -67,6 +68,7 @@ As contagens representam os casos documentados com base nas fontes indicadas, se
 | [BUG-006](Relatorio-de-Bugs.md#bug-006) | Seletor de período permite intervalo com datas invertidas | Média, proposta | Média, proposta | Aberto; reteste pendente. |
 | [BUG-007](Relatorio-de-Bugs.md#bug-007) | Tema escuro reduz a legibilidade das tabelas de Box – Turmas | Média, proposta | Média, proposta | Aberto; reteste pendente. |
 | [BUG-008](Relatorio-de-Bugs.md#bug-008) | Edição de modalidade não apresenta ação clara para salvar | Média, proposta | Média, proposta | Aberto; reteste pendente. |
+| [BUG-009](Relatorio-de-Bugs.md#bug-009) | Exclusão de categoria retorna HTTP 500 e mensagem genérica | Média, proposta | Alta, proposta | Aberto; reteste pendente. |
 
 As classificações propostas dependem de triagem. O BUG-003 mantém o resultado atribuído ao relato fornecido.
 
@@ -155,6 +157,7 @@ O domínio do CT-RF02_ERRO é diferente do domínio `sifitalfa.centrion.com.br` 
 | [Jam — CT-RF16: Botões apenas para desativar e não excluir! Apenas inativa e não exclui.](https://jam.dev/c/0f55f76a-cd31-4cee-93da-23c13b1ba637) e [Evidências](Evidencias/CT-RF16_Exclusao_Modalidade/README.md) | 0:02–0:15: ações de lixeira e novas consultas. 0:10–0:18: registros inativos ainda presentes. A inativação pode ser uma exclusão lógica prevista pelo sistema. É necessário confirmar a regra do produto antes de exigir exclusão definitiva. Nenhuma exclusão foi executada nesta revisão. |
 | [Jam — CT-RF17: filtros corretos e funcionando](https://jam.dev/c/5e75e423-9c7e-43d7-aade-9b1a32c5e559) e [Evidências](Evidencias/CT-RF17_Filtros_Categorias/README.md) | 0:00–0:09: buscas por código. 0:11: limpeza. 0:14–0:17: pesquisa por nome. Resultado válido para os exemplos gravados. Não cobre combinações de filtros, valores inválidos, caracteres especiais ou paginação. |
 | [Jam — CT-RF18: Teste de atualização funcionando](https://jam.dev/c/67664a98-2a4a-4134-91a9-7ca9b8aa9dbd) e [Evidências](Evidencias/CT-RF18_Atualizacao_Categoria/README.md) | 0:06: POST /api/categoria-exercicio-cross/atualizar com HTTP 200, seguido de GET /listar com HTTP 200. 0:08–0:11: nome atualizado na tabela. A atualização está demonstrada na própria gravação. Não houve novo teste de persistência após outra sessão ou novo login. |
+| [Jam — CT-RF19: Erro a o deletar categoria](https://jam.dev/c/c5c78b3b-2865-4226-836f-bcb0a8fc612f) e [Evidências](Evidencias/CT-RF19_Exclusao_Categoria/README.md) | 0:02: POST /api/categoria-exercicio-cross/excluir retorna HTTP 500. 0:03–0:05: mensagem de erro. O erro e o endpoint estão registrados. Sem o corpo completo da resposta, logs do servidor ou banco, a causa do HTTP 500 não foi determinada. |
 
 A mensagem de credenciais incorretas já aparece no início do vídeo do Jam; não foi considerada uma resposta ao clique em "Esqueci minha senha". A ausência de requisição, isoladamente, não caracteriza defeito se a interface abrir um formulário local. Aqui, o resultado reprovado decorre de o fluxo não abrir.
 

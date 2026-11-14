@@ -153,6 +153,7 @@ As técnicas previstas para o reteste não representam novas execuções realiza
 | [RF16](Analise%20de%20requisitos.md#rf16) | [CT-RF16](Cenario_Teste/CT-RF16_Exclusao_Modalidade.md) | Exploratório / regra a confirmar | A validar — regra ou contexto pendente | Sem defeito confirmado | Confirmar a exclusão lógica e a nomenclatura da ação; registrar defeito apenas se houver divergência com a regra definida. |
 | [RF17](Analise%20de%20requisitos.md#rf17) | [CT-RF17](Cenario_Teste/CT-RF17_Filtros_Categorias.md) | Funcional manual / regressão | Aprovado conforme a gravação | Nenhum no fluxo avaliado | Usar como regressão; combinações, conjunto vazio, caracteres especiais e paginação exigem execuções adicionais. |
 | [RF18](Analise%20de%20requisitos.md#rf18) | [CT-RF18](Cenario_Teste/CT-RF18_Atualizacao_Categoria.md) | Funcional manual / regressão | Aprovado conforme a gravação | Nenhum no fluxo avaliado | Usar como regressão; acrescentar recarga e nova consulta para ampliar a verificação de persistência. |
+| [RF19](Analise%20de%20requisitos.md#rf19) | [CT-RF19](Cenario_Teste/CT-RF19_Exclusao_Categoria.md) | Funcional / manifestação observada | Reprovado nas evidências | [BUG-009](Relatorio-de-Bugs.md#bug-009) | Investigar o HTTP 500 com logs do servidor e vínculos da categoria; corrigir e retestar cenários permitido e impedido. |
 
 ---
 
