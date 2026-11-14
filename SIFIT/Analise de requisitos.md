@@ -29,6 +29,7 @@ Esta análise documenta o comportamento esperado para login com credenciais vál
 | [RF15](#rf15) | Permitir concluir e cancelar a edição de modalidade | Média, proposta | [CT-RF15](Cenario_Teste/CT-RF15_Edicao_Modalidade.md) |
 | [RF16](#rf16) | Comunicar e aplicar a regra de remoção de modalidade | Média, proposta | [CT-RF16](Cenario_Teste/CT-RF16_Exclusao_Modalidade.md) |
 | [RF17](#rf17) | Filtrar categorias por código e nome | Média, proposta | [CT-RF17](Cenario_Teste/CT-RF17_Filtros_Categorias.md) |
+| [RF18](#rf18) | Salvar a atualização do nome de categoria | Média, proposta | [CT-RF18](Cenario_Teste/CT-RF18_Atualizacao_Categoria.md) |
 
 ---
 
@@ -494,6 +495,33 @@ Resultado válido para os exemplos gravados. Não cobre combinações de filtros
 
 ---
 
+<a id="rf18"></a>
+
+## RF18 — Salvar a atualização do nome de categoria
+
+| Campo | Descrição |
+| --- | --- |
+| Requisito de QA | Persistir a alteração e atualizar a listagem. |
+| Ator | Usuário autenticado com permissão no módulo. |
+| Pré-condições | Sessão autenticada com permissão de edição. Categoria de teste editável e nome inicial conhecido. |
+| Gatilho | Abrir a edição da categoria Barbell teste da base de referência. Alterar o nome para Barbell novo. Clicar em Salvar e conferir o valor atualizado na lista; em nova execução, recarregar para conferir persistência. |
+| Caso | [CT-RF18](Cenario_Teste/CT-RF18_Atualizacao_Categoria.md) |
+| Situação observada | Aprovado conforme a gravação. O modal fecha e a lista exibe Barbell novo. |
+| Defeito | Nenhum no fluxo avaliado |
+| Evidências | [Evidências](Evidencias/CT-RF18_Atualizacao_Categoria/README.md) e [Jam](https://jam.dev/c/67664a98-2a4a-4134-91a9-7ca9b8aa9dbd). |
+
+### Critérios de aceitação do RF18
+
+1. O editor carrega a categoria selecionada.
+2. Salvar conclui a atualização e retorna à lista com o novo nome.
+3. Persistência após recarga ou nova sessão é uma extensão de validação ainda não executada.
+
+### Pontos a confirmar e limites do RF18
+
+A atualização está demonstrada na própria gravação. Não houve novo teste de persistência após outra sessão ou novo login. Usar como regressão; acrescentar recarga e nova consulta para ampliar a verificação de persistência.
+
+---
+
 ## 🔗 Rastreabilidade
 
 | Requisito | Cenário / caso | Defeito | Resultado | Evidências |
@@ -515,6 +543,7 @@ Resultado válido para os exemplos gravados. Não cobre combinações de filtros
 | RF15 | [CT-RF15](Cenario_Teste/CT-RF15_Edicao_Modalidade.md) | [BUG-008](Relatorio-de-Bugs.md#bug-008) | Reprovado nas evidências | [Evidências](Evidencias/CT-RF15_Edicao_Modalidade/README.md) e [Jam](https://jam.dev/c/951efaf8-bf32-44b0-b640-a2935a6b554a) |
 | RF16 | [CT-RF16](Cenario_Teste/CT-RF16_Exclusao_Modalidade.md) | Sem defeito confirmado | A validar — regra ou contexto pendente | [Evidências](Evidencias/CT-RF16_Exclusao_Modalidade/README.md) e [Jam](https://jam.dev/c/0f55f76a-cd31-4cee-93da-23c13b1ba637) |
 | RF17 | [CT-RF17](Cenario_Teste/CT-RF17_Filtros_Categorias.md) | Nenhum no fluxo avaliado | Aprovado conforme a gravação | [Evidências](Evidencias/CT-RF17_Filtros_Categorias/README.md) e [Jam](https://jam.dev/c/5e75e423-9c7e-43d7-aade-9b1a32c5e559) |
+| RF18 | [CT-RF18](Cenario_Teste/CT-RF18_Atualizacao_Categoria.md) | Nenhum no fluxo avaliado | Aprovado conforme a gravação | [Evidências](Evidencias/CT-RF18_Atualizacao_Categoria/README.md) e [Jam](https://jam.dev/c/67664a98-2a4a-4134-91a9-7ca9b8aa9dbd) |
 
 ---
 
