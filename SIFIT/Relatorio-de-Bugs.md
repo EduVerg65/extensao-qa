@@ -21,6 +21,7 @@
 | [BUG-003](#bug-003--filtros-combinados-da-página-clientes-não-restringem-a-listagem) | Filtros de Clientes | Alta / Alta, propostas | Aberto | [CT-RF03](Cenario_Teste/CT-RF03_FILTRO_TelaClientes.md) |
 | [BUG-004](#bug-004) | Exportar não oferece retorno visível no financeiro | Média / Média, propostas | Aberto | [CT-RF07](Cenario_Teste/CT-RF07_Exportacao_Financeiro.md) |
 | [BUG-005](#bug-005) | Contadores financeiros divergem das mensalidades acessíveis | Alta / Alta, propostas | Aberto | [CT-RF09](Cenario_Teste/CT-RF09_Contagem_Mensalidades.md) e [CT-RF10](Cenario_Teste/CT-RF10_Filtro_Mensalidades.md) |
+| [BUG-006](#bug-006) | Seletor de período permite intervalo com datas invertidas | Média / Média, propostas | Aberto | [CT-RF12](Cenario_Teste/CT-RF12_Periodo_Dashboard.md) |
 
 Todos os defeitos aguardam correção e reteste. As causas técnicas permanecem não confirmadas; o BUG-003 se apoia no relato e nas capturas fornecidos, com os limites registrados no caso.
 
@@ -262,6 +263,49 @@ Investigar o retorno do botão; no reteste capturar o histórico de downloads e 
 As gravações de Todos/+30 dias e Até 7 dias foram agrupadas em um único defeito. Não há diagnóstico da causa no banco ou nos corpos das respostas. A causa técnica não foi confirmada no código da aplicação. O status permanece aberto até que uma nova execução comprove os critérios de aceitação dos casos associados.
 
 Retestar com o CT-RF10; os dois cenários documentam manifestações do BUG-005, sem criar um defeito duplicado. Retestar em conjunto com CT-RF09 e conferir o contrato da faixa Até 7 dias antes de preparar a base.
+
+---
+
+<a id="bug-006"></a>
+
+## BUG-006 — Seletor de período permite intervalo com datas invertidas
+
+| Campo | Descrição |
+| --- | --- |
+| Status | Aberto — reteste pendente após correção. |
+| Severidade / prioridade | Média / Média, propostas para triagem. |
+| Módulo | Página inicial / Período |
+| Requisitos | [RF12](Analise%20de%20requisitos.md#rf12) |
+| Casos | [CT-RF12](Cenario_Teste/CT-RF12_Periodo_Dashboard.md) |
+| Data da evidência / revisão | 14/11/2026; sem nova execução. |
+| Página | https://sifit.centrion.com.br/dashboard |
+| Ambiente | Chrome 157.0.8103.51 / Windows 11 (x86); versão e zoom não confirmados. |
+
+### Pré-condições e reprodução
+
+**[CT-RF12](Cenario_Teste/CT-RF12_Periodo_Dashboard.md):** Sessão autenticada com acesso ao seletor de período da página inicial. Registrar as regras de aplicação do filtro e preparar um intervalo válido de controle.
+
+1. Alterar a data final para 10/11/2026 na base de referência da gravação.
+2. Alterar a inicial para 19/11/2026, posterior à data final.
+3. Verificar a validação e tentar aplicar; depois selecionar um período válido e conferir os dados de referência.
+
+### Esperado e obtido
+
+| Caso | Esperado | Obtido |
+| --- | --- | --- |
+| CT-RF12 | Validar a ordem das datas, orientar o usuário e aplicar um período válido com retorno perceptível. | O seletor chega a exibir 19/11/2026–10/11/2026, com início posterior ao fim, sem uma validação visível. Os indicadores permanecem com os mesmos valores nos quadros conferidos. |
+
+**Impacto:** O usuário pode deixar o filtro com um período inválido, sem orientação visível.
+
+### Evidências
+
+- [CT-RF12](Cenario_Teste/CT-RF12_Periodo_Dashboard.md): [Jam — Botões de datas sem função e sem atualização](https://jam.dev/c/93165ba3-3bfe-4dd5-9379-ab8db2d686ba), [vídeo original](Evidencias/CT-RF12_Periodo_Dashboard/video.webm) e [Evidências](Evidencias/CT-RF12_Periodo_Dashboard/README.md). 0:04–0:08: seleção das datas. 0:10: intervalo invertido visível. No começo foram capturadas várias chamadas POST /api/dados-principais-home/1 com HTTP 200.
+
+### Análise, limites e encaminhamento
+
+A reprodução documentada é a falta de validação de início posterior ao fim; indicadores constantes não comprovam falha de cálculo nem ausência de requisições. A causa técnica não foi confirmada no código da aplicação. O status permanece aberto até que uma nova execução comprove os critérios de aceitação dos casos associados.
+
+Corrigir e retestar a validação do intervalo; avaliar a atualização dos indicadores em base controlada como verificação complementar.
 
 ---
 

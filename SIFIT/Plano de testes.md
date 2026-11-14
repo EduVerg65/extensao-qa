@@ -146,6 +146,7 @@ As técnicas previstas para o reteste não representam novas execuções realiza
 | [RF09](Analise%20de%20requisitos.md#rf09) | [CT-RF09](Cenario_Teste/CT-RF09_Contagem_Mensalidades.md) | Funcional / manifestação observada | Reprovado nas evidências | [BUG-005](Relatorio-de-Bugs.md#bug-005) | Retestar com o CT-RF10; os dois cenários documentam manifestações do BUG-005, sem criar um defeito duplicado. |
 | [RF10](Analise%20de%20requisitos.md#rf10) | [CT-RF10](Cenario_Teste/CT-RF10_Filtro_Mensalidades.md) | Funcional / manifestação observada | Reprovado nas evidências | [BUG-005](Relatorio-de-Bugs.md#bug-005) | Retestar em conjunto com CT-RF09 e conferir o contrato da faixa Até 7 dias antes de preparar a base. |
 | [RF11](Analise%20de%20requisitos.md#rf11) | [CT-RF11](Cenario_Teste/CT-RF11_Metricas_Financeiro.md) | Exploratório / regra a confirmar | A validar — regra ou contexto pendente | Sem defeito confirmado | Confirmar os contratos dos cartões; a constância de totais globais não é suficiente para abrir outro defeito financeiro. |
+| [RF12](Analise%20de%20requisitos.md#rf12) | [CT-RF12](Cenario_Teste/CT-RF12_Periodo_Dashboard.md) | Funcional / manifestação observada | Reprovado nas evidências | [BUG-006](Relatorio-de-Bugs.md#bug-006) | Corrigir e retestar a validação do intervalo; avaliar a atualização dos indicadores em base controlada como verificação complementar. |
 
 ---
 

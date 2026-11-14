@@ -23,6 +23,7 @@ Esta análise documenta o comportamento esperado para login com credenciais vál
 | [RF09](#rf09) | Manter contagem e paginação coerentes com as mensalidades | Alta, proposta | [CT-RF09](Cenario_Teste/CT-RF09_Contagem_Mensalidades.md) |
 | [RF10](#rf10) | Aplicar o filtro Até 7 dias com contagem consistente | Alta, proposta | [CT-RF10](Cenario_Teste/CT-RF10_Filtro_Mensalidades.md) |
 | [RF11](#rf11) | Explicitar o escopo dos indicadores financeiros | Média, proposta | [CT-RF11](Cenario_Teste/CT-RF11_Metricas_Financeiro.md) |
+| [RF12](#rf12) | Validar a ordem das datas do período | Média, proposta | [CT-RF12](Cenario_Teste/CT-RF12_Periodo_Dashboard.md) |
 
 ---
 
@@ -326,6 +327,33 @@ Totais globais podem permanecer constantes por definição. Sem a regra de cada 
 
 ---
 
+<a id="rf12"></a>
+
+## RF12 — Validar a ordem das datas do período
+
+| Campo | Descrição |
+| --- | --- |
+| Requisito de QA | Validar a ordem das datas, orientar o usuário e aplicar um período válido com retorno perceptível. |
+| Ator | Usuário autenticado com permissão no módulo. |
+| Pré-condições | Sessão autenticada com acesso ao seletor de período da página inicial. Registrar as regras de aplicação do filtro e preparar um intervalo válido de controle. |
+| Gatilho | Alterar a data final para 10/11/2026 na base de referência da gravação. Alterar a inicial para 19/11/2026, posterior à data final. Verificar a validação e tentar aplicar; depois selecionar um período válido e conferir os dados de referência. |
+| Caso | [CT-RF12](Cenario_Teste/CT-RF12_Periodo_Dashboard.md) |
+| Situação observada | Reprovado nas evidências. O seletor chega a exibir 19/11/2026–10/11/2026, com início posterior ao fim, sem uma validação visível. Os indicadores permanecem com os mesmos valores nos quadros conferidos. |
+| Defeito | [BUG-006](Relatorio-de-Bugs.md#bug-006) |
+| Evidências | [Evidências](Evidencias/CT-RF12_Periodo_Dashboard/README.md) e [Jam](https://jam.dev/c/93165ba3-3bfe-4dd5-9379-ab8db2d686ba). |
+
+### Critérios de aceitação do RF12
+
+1. Data inicial posterior à final recebe validação clara.
+2. Somente intervalos válidos são aplicados.
+3. O efeito de um período válido é conferido com dados conhecidos; valores constantes não provam erro de cálculo.
+
+### Pontos a confirmar e limites do RF12
+
+A captura comprova o intervalo invertido. Indicadores constantes, isoladamente, não demonstram falha no cálculo; os botões de seta geraram requisições, portanto não se pode dizer que todos estavam sem função. Corrigir e retestar a validação do intervalo; avaliar a atualização dos indicadores em base controlada como verificação complementar.
+
+---
+
 ## 🔗 Rastreabilidade
 
 | Requisito | Cenário / caso | Defeito | Resultado | Evidências |
@@ -341,6 +369,7 @@ Totais globais podem permanecer constantes por definição. Sem a regra de cada 
 | RF09 | [CT-RF09](Cenario_Teste/CT-RF09_Contagem_Mensalidades.md) | [BUG-005](Relatorio-de-Bugs.md#bug-005) | Reprovado nas evidências | [Evidências](Evidencias/CT-RF09_Contagem_Mensalidades/README.md) e [Jam](https://jam.dev/c/1874d0b3-5c7c-4f28-85be-91750e20cbe1) |
 | RF10 | [CT-RF10](Cenario_Teste/CT-RF10_Filtro_Mensalidades.md) | [BUG-005](Relatorio-de-Bugs.md#bug-005) | Reprovado nas evidências | [Evidências](Evidencias/CT-RF10_Filtro_Mensalidades/README.md) e [Jam](https://jam.dev/c/3f78cf16-2c3b-48bc-8622-23b829debbec) |
 | RF11 | [CT-RF11](Cenario_Teste/CT-RF11_Metricas_Financeiro.md) | Sem defeito confirmado | A validar — regra ou contexto pendente | [Evidências](Evidencias/CT-RF11_Metricas_Financeiro/README.md) e [Jam](https://jam.dev/c/4491c9e7-7e00-4063-91ce-8683e316df06) |
+| RF12 | [CT-RF12](Cenario_Teste/CT-RF12_Periodo_Dashboard.md) | [BUG-006](Relatorio-de-Bugs.md#bug-006) | Reprovado nas evidências | [Evidências](Evidencias/CT-RF12_Periodo_Dashboard/README.md) e [Jam](https://jam.dev/c/93165ba3-3bfe-4dd5-9379-ab8db2d686ba) |
 
 ---
 
