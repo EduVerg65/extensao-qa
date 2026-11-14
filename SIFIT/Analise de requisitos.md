@@ -19,6 +19,7 @@ Esta análise documenta o comportamento esperado para login com credenciais vál
 | [RF05](#rf05) | Recusar autenticação com senha incorreta | Alta, proposta | [CT-RF05](Cenario_Teste/CT-RF05_Login_SenhaIncorreta.md) |
 | [RF06](#rf06) | Recusar autenticação com usuário inexistente | Alta, proposta | [CT-RF06](Cenario_Teste/CT-RF06_Login_UsuarioInexistente.md) |
 | [RF07](#rf07) | Oferecer retorno ao solicitar exportação financeira | Média, proposta | [CT-RF07](Cenario_Teste/CT-RF07_Exportacao_Financeiro.md) |
+| [RF08](#rf08) | Apresentar a composição e o valor comunicado na cobrança | Alta, proposta | [CT-RF08](Cenario_Teste/CT-RF08_Calculo_Cobranca.md) |
 
 ---
 
@@ -214,6 +215,33 @@ O vídeo não mostra o diretório de downloads; portanto, não comprova sozinho 
 
 ---
 
+<a id="rf08"></a>
+
+## RF08 — Apresentar a composição e o valor comunicado na cobrança
+
+| Campo | Descrição |
+| --- | --- |
+| Requisito de QA | Exibir a composição do total, incluindo eventuais juros, e deixar claro qual valor será comunicado. |
+| Ator | Usuário autenticado com permissão no módulo. |
+| Pré-condições | Sessão autenticada e mensalidade de teste com valor, vencimento e encargos conhecidos. Confirmar com o produto multa, juros, arredondamento e valor que deve constar na mensagem. |
+| Gatilho | Abrir Cobrar via WhatsApp para uma mensalidade de referência. Comparar valor original, multa, total atualizado e texto inicial da mensagem. Calcular o total conforme a regra confirmada e registrar a composição, sem enviar mensagem. |
+| Caso | [CT-RF08](Cenario_Teste/CT-RF08_Calculo_Cobranca.md) |
+| Situação observada | A validar — regra ou contexto pendente. O modal mostra valor original de R$ 350,00, multa de R$ 7,00 e total atualizado de R$ 377,83. A mensagem inicial cita R$ 350,00; o autor escreve que o valor deveria ser R$ 357,00. |
+| Defeito | Sem defeito confirmado |
+| Evidências | [Evidências](Evidencias/CT-RF08_Calculo_Cobranca/README.md) e [Jam](https://jam.dev/c/79b712ae-d9e0-4600-862f-fd3a278285ff). |
+
+### Critérios de aceitação do RF08
+
+1. Valor original, multa e eventuais juros são identificáveis.
+2. Total confere com a fórmula e o arredondamento definidos.
+3. O valor na mensagem segue uma regra explícita.
+
+### Pontos a confirmar e limites do RF08
+
+R$ 350,00 + R$ 7,00 = R$ 357,00, mas os R$ 20,83 restantes podem corresponder a juros. A regra de cálculo e as configurações não foram fornecidas; não é possível afirmar que o total está incorreto. Confirmar a origem dos R$ 20,83 além de principal e multa e a regra da mensagem; não registrar cálculo incorreto antes dessa validação.
+
+---
+
 ## 🔗 Rastreabilidade
 
 | Requisito | Cenário / caso | Defeito | Resultado | Evidências |
@@ -225,6 +253,7 @@ O vídeo não mostra o diretório de downloads; portanto, não comprova sozinho 
 | RF05 | [CT-RF05](Cenario_Teste/CT-RF05_Login_SenhaIncorreta.md) | Nenhum no fluxo avaliado | Aprovado conforme a gravação | [Evidências](Evidencias/CT-RF05_Login_SenhaIncorreta/README.md) e [Jam](https://jam.dev/c/75f16436-7201-4de0-b191-1c4d0d63bfe8) |
 | RF06 | [CT-RF06](Cenario_Teste/CT-RF06_Login_UsuarioInexistente.md) | Nenhum no fluxo avaliado | Aprovado conforme a gravação | [Evidências](Evidencias/CT-RF06_Login_UsuarioInexistente/README.md) e [Jam](https://jam.dev/c/b184e875-2cb1-4a01-b4dd-bc85b3741ff6) |
 | RF07 | [CT-RF07](Cenario_Teste/CT-RF07_Exportacao_Financeiro.md) | [BUG-004](Relatorio-de-Bugs.md#bug-004) | Reprovado nas evidências | [Evidências](Evidencias/CT-RF07_Exportacao_Financeiro/README.md) e [Jam](https://jam.dev/c/1084cb18-cb3d-4b85-9c2f-ee431b59a06b) |
+| RF08 | [CT-RF08](Cenario_Teste/CT-RF08_Calculo_Cobranca.md) | Sem defeito confirmado | A validar — regra ou contexto pendente | [Evidências](Evidencias/CT-RF08_Calculo_Cobranca/README.md) e [Jam](https://jam.dev/c/79b712ae-d9e0-4600-862f-fd3a278285ff) |
 
 ---
 
