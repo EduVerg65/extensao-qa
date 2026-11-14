@@ -25,6 +25,7 @@ Esta análise documenta o comportamento esperado para login com credenciais vál
 | [RF11](#rf11) | Explicitar o escopo dos indicadores financeiros | Média, proposta | [CT-RF11](Cenario_Teste/CT-RF11_Metricas_Financeiro.md) |
 | [RF12](#rf12) | Validar a ordem das datas do período | Média, proposta | [CT-RF12](Cenario_Teste/CT-RF12_Periodo_Dashboard.md) |
 | [RF13](#rf13) | Identificar personais sem confundir códigos com contagem | Média, proposta | [CT-RF13](Cenario_Teste/CT-RF13_Codigos_Personais.md) |
+| [RF14](#rf14) | Preservar a legibilidade das tabelas no tema escuro | Média, proposta | [CT-RF14](Cenario_Teste/CT-RF14_Contraste_TemaEscuro.md) |
 
 ---
 
@@ -382,6 +383,33 @@ Não foi demonstrada uma divergência entre o total e a quantidade listada. A nu
 
 ---
 
+<a id="rf14"></a>
+
+## RF14 — Preservar a legibilidade das tabelas no tema escuro
+
+| Campo | Descrição |
+| --- | --- |
+| Requisito de QA | Aplicar cores de texto e de fundo que preservem a legibilidade em ambos os temas. |
+| Ator | Usuário autenticado com permissão no módulo. |
+| Pré-condições | Sessão autenticada com acesso a SifitBox – Turmas. Página com modalidades e turmas recorrentes cadastradas. |
+| Gatilho | Registrar a apresentação das tabelas no tema Claro. Selecionar Escuro. Conferir títulos, nomes, status e ações sobre os fundos das duas tabelas. |
+| Caso | [CT-RF14](Cenario_Teste/CT-RF14_Contraste_TemaEscuro.md) |
+| Situação observada | Reprovado nas evidências. As áreas de Modalidades e Turmas recorrentes permanecem brancas enquanto diversos textos ficam muito claros, dificultando sua leitura. |
+| Defeito | [BUG-007](Relatorio-de-Bugs.md#bug-007) |
+| Evidências | [Evidências](Evidencias/CT-RF14_Contraste_TemaEscuro/README.md) e [Jam](https://jam.dev/c/6889db07-bed1-472b-8ec2-00402919cd65). |
+
+### Critérios de aceitação do RF14
+
+1. Nomes e demais textos permanecem legíveis ao alternar o tema.
+2. Títulos, filtros, status e ações podem ser identificados nas duas tabelas.
+3. Uma conclusão formal de acessibilidade depende de medição de contraste e do padrão acordado.
+
+### Pontos a confirmar e limites do RF14
+
+A observação é visual. Não foi medida a razão de contraste nem realizada uma auditoria formal de acessibilidade. Ajustar as cores e retestar ambos os temas; medir contraste se houver critério formal de acessibilidade definido.
+
+---
+
 ## 🔗 Rastreabilidade
 
 | Requisito | Cenário / caso | Defeito | Resultado | Evidências |
@@ -399,6 +427,7 @@ Não foi demonstrada uma divergência entre o total e a quantidade listada. A nu
 | RF11 | [CT-RF11](Cenario_Teste/CT-RF11_Metricas_Financeiro.md) | Sem defeito confirmado | A validar — regra ou contexto pendente | [Evidências](Evidencias/CT-RF11_Metricas_Financeiro/README.md) e [Jam](https://jam.dev/c/4491c9e7-7e00-4063-91ce-8683e316df06) |
 | RF12 | [CT-RF12](Cenario_Teste/CT-RF12_Periodo_Dashboard.md) | [BUG-006](Relatorio-de-Bugs.md#bug-006) | Reprovado nas evidências | [Evidências](Evidencias/CT-RF12_Periodo_Dashboard/README.md) e [Jam](https://jam.dev/c/93165ba3-3bfe-4dd5-9379-ab8db2d686ba) |
 | RF13 | [CT-RF13](Cenario_Teste/CT-RF13_Codigos_Personais.md) | Sem defeito confirmado | A validar — regra ou contexto pendente | [Evidências](Evidencias/CT-RF13_Codigos_Personais/README.md) e [Jam](https://jam.dev/c/69330ca9-ef19-4ece-918f-31a460628016) |
+| RF14 | [CT-RF14](Cenario_Teste/CT-RF14_Contraste_TemaEscuro.md) | [BUG-007](Relatorio-de-Bugs.md#bug-007) | Reprovado nas evidências | [Evidências](Evidencias/CT-RF14_Contraste_TemaEscuro/README.md) e [Jam](https://jam.dev/c/6889db07-bed1-472b-8ec2-00402919cd65) |
 
 ---
 

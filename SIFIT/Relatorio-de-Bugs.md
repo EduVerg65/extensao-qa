@@ -22,6 +22,7 @@
 | [BUG-004](#bug-004) | Exportar não oferece retorno visível no financeiro | Média / Média, propostas | Aberto | [CT-RF07](Cenario_Teste/CT-RF07_Exportacao_Financeiro.md) |
 | [BUG-005](#bug-005) | Contadores financeiros divergem das mensalidades acessíveis | Alta / Alta, propostas | Aberto | [CT-RF09](Cenario_Teste/CT-RF09_Contagem_Mensalidades.md) e [CT-RF10](Cenario_Teste/CT-RF10_Filtro_Mensalidades.md) |
 | [BUG-006](#bug-006) | Seletor de período permite intervalo com datas invertidas | Média / Média, propostas | Aberto | [CT-RF12](Cenario_Teste/CT-RF12_Periodo_Dashboard.md) |
+| [BUG-007](#bug-007) | Tema escuro reduz a legibilidade das tabelas de Box – Turmas | Média / Média, propostas | Aberto | [CT-RF14](Cenario_Teste/CT-RF14_Contraste_TemaEscuro.md) |
 
 Todos os defeitos aguardam correção e reteste. As causas técnicas permanecem não confirmadas; o BUG-003 se apoia no relato e nas capturas fornecidos, com os limites registrados no caso.
 
@@ -306,6 +307,49 @@ Retestar com o CT-RF10; os dois cenários documentam manifestações do BUG-005,
 A reprodução documentada é a falta de validação de início posterior ao fim; indicadores constantes não comprovam falha de cálculo nem ausência de requisições. A causa técnica não foi confirmada no código da aplicação. O status permanece aberto até que uma nova execução comprove os critérios de aceitação dos casos associados.
 
 Corrigir e retestar a validação do intervalo; avaliar a atualização dos indicadores em base controlada como verificação complementar.
+
+---
+
+<a id="bug-007"></a>
+
+## BUG-007 — Tema escuro reduz a legibilidade das tabelas de Box – Turmas
+
+| Campo | Descrição |
+| --- | --- |
+| Status | Aberto — reteste pendente após correção. |
+| Severidade / prioridade | Média / Média, propostas para triagem. |
+| Módulo | SifitBox / Turmas / Tema |
+| Requisitos | [RF14](Analise%20de%20requisitos.md#rf14) |
+| Casos | [CT-RF14](Cenario_Teste/CT-RF14_Contraste_TemaEscuro.md) |
+| Data da evidência / revisão | 14/11/2026; sem nova execução. |
+| Página | https://sifit.centrion.com.br/sifitbox/turmas |
+| Ambiente | Chrome 157.0.8103.51 / Windows 11 (x86); versão e zoom não confirmados. |
+
+### Pré-condições e reprodução
+
+**[CT-RF14](Cenario_Teste/CT-RF14_Contraste_TemaEscuro.md):** Sessão autenticada com acesso a SifitBox – Turmas. Página com modalidades e turmas recorrentes cadastradas.
+
+1. Registrar a apresentação das tabelas no tema Claro.
+2. Selecionar Escuro.
+3. Conferir títulos, nomes, status e ações sobre os fundos das duas tabelas.
+
+### Esperado e obtido
+
+| Caso | Esperado | Obtido |
+| --- | --- | --- |
+| CT-RF14 | Aplicar cores de texto e de fundo que preservem a legibilidade em ambos os temas. | As áreas de Modalidades e Turmas recorrentes permanecem brancas enquanto diversos textos ficam muito claros, dificultando sua leitura. |
+
+**Impacto:** Dificulta ler modalidades, turmas e seus atributos no tema escuro.
+
+### Evidências
+
+- [CT-RF14](Cenario_Teste/CT-RF14_Contraste_TemaEscuro.md): [Jam — falta de acessibilidade nas cores](https://jam.dev/c/6889db07-bed1-472b-8ec2-00402919cd65), [vídeo original](Evidencias/CT-RF14_Contraste_TemaEscuro/video.webm) e [Evidências](Evidencias/CT-RF14_Contraste_TemaEscuro/README.md). 0:02: seleção de Escuro e POST /api/usuario/tema com HTTP 200. 0:02–0:09: perda de legibilidade nas tabelas.
+
+### Análise, limites e encaminhamento
+
+A evidência é visual; não houve medição de razão de contraste ou conclusão de conformidade com um padrão formal. A causa técnica não foi confirmada no código da aplicação. O status permanece aberto até que uma nova execução comprove os critérios de aceitação dos casos associados.
+
+Ajustar as cores e retestar ambos os temas; medir contraste se houver critério formal de acessibilidade definido.
 
 ---
 
