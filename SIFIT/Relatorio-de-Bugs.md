@@ -19,6 +19,7 @@
 | [BUG-001](#bug-001--link-esqueci-minha-senha-não-executa-nenhuma-ação) | Recuperação de senha | Alta / Alta | Aberto | [CT-RF01](Cenario_Teste/CT-RF01_Esqueci-senha.md) |
 | [BUG-002](#bug-002--perfil-com-dados-fictícios-campos-ausentes-e-layout-desconfigurado) | Perfil do usuário | Alta / Alta, propostas | Aberto | [CT-RF02_ERRO](Cenario_Teste/CT-RF02_ERRO.md) |
 | [BUG-003](#bug-003--filtros-combinados-da-página-clientes-não-restringem-a-listagem) | Filtros de Clientes | Alta / Alta, propostas | Aberto | [CT-RF03](Cenario_Teste/CT-RF03_FILTRO_TelaClientes.md) |
+| [BUG-004](#bug-004) | Exportar não oferece retorno visível no financeiro | Média / Média, propostas | Aberto | [CT-RF07](Cenario_Teste/CT-RF07_Exportacao_Financeiro.md) |
 
 Todos os defeitos aguardam correção e reteste. As causas técnicas permanecem não confirmadas; o BUG-003 se apoia no relato e nas capturas fornecidos, com os limites registrados no caso.
 
@@ -168,6 +169,49 @@ Status, Situação Financeira, Plano e Personal não aparecem nesse corpo. HTTP 
 - [Índice de evidências, origem e limites](Evidencias/CT-RF03_Filtros_Clientes/README.md).
 
 **Encaminhamento:** Investigar e corrigir no repositório da aplicação; executar o CT-RF03 após disponibilização da correção. Esta entrega altera somente a documentação de QA e organiza as capturas fornecidas. Não houve alteração de código-fonte, nova execução ou confirmação de correção.
+
+<a id="bug-004"></a>
+
+## BUG-004 — Exportar não oferece retorno visível no financeiro
+
+| Campo | Descrição |
+| --- | --- |
+| Status | Aberto — reteste pendente após correção. |
+| Severidade / prioridade | Média / Média, propostas para triagem. |
+| Módulo | Financeiro / Financeiro em Aberto |
+| Requisitos | [RF07](Analise%20de%20requisitos.md#rf07) |
+| Casos | [CT-RF07](Cenario_Teste/CT-RF07_Exportacao_Financeiro.md) |
+| Data da evidência / revisão | 14/11/2026; sem nova execução. |
+| Página | https://sifit.centrion.com.br/dashboard |
+| Ambiente | Chrome 157.0.8103.51 / Windows 11 (x86); versão e zoom não confirmados. |
+
+### Pré-condições e reprodução
+
+**[CT-RF07](Cenario_Teste/CT-RF07_Exportacao_Financeiro.md):** Sessão autenticada com permissão para consultar e exportar o financeiro. Modal Financeiro em Aberto aberto e registros disponíveis.
+
+1. Abrir Financeiro em Aberto a partir da página inicial.
+2. Clicar uma vez em Exportar e aguardar a conclusão.
+3. Verificar retorno visual e o arquivo no histórico de downloads; repetir somente para conferir comportamento.
+
+### Esperado e obtido
+
+| Caso | Esperado | Obtido |
+| --- | --- | --- |
+| CT-RF07 | Iniciar a exportação e apresentar um retorno claro ao usuário. | Vários cliques em Exportar não produzem mudança ou confirmação visível durante a gravação. |
+
+**Impacto:** A ausência de retorno impede distinguir conclusão, falha e ausência de processamento da exportação.
+
+### Evidências
+
+- [CT-RF07](Cenario_Teste/CT-RF07_Exportacao_Financeiro.md): [Jam — botão de exporta sem função](https://jam.dev/c/1084cb18-cb3d-4b85-9c2f-ee431b59a06b), [vídeo original](Evidencias/CT-RF07_Exportacao_Financeiro/video.webm) e [Evidências](Evidencias/CT-RF07_Exportacao_Financeiro/README.md). 0:02–0:03: cinco cliques em Exportar. Nenhuma requisição de rede ou mensagem de console foi capturada nesse Jam.
+
+### Análise, limites e encaminhamento
+
+O defeito registrado é a falta de retorno visível. A geração ou ausência do arquivo ainda precisa ser conferida no histórico de downloads. A causa técnica não foi confirmada no código da aplicação. O status permanece aberto até que uma nova execução comprove os critérios de aceitação dos casos associados.
+
+Investigar o retorno do botão; no reteste capturar o histórico de downloads e abrir o arquivo antes de concluir se a exportação foi gerada.
+
+---
 
 ---
 

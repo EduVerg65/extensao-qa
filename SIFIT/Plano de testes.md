@@ -141,6 +141,7 @@ As técnicas previstas para o reteste não representam novas execuções realiza
 | [RF04](Analise%20de%20requisitos.md#rf04--autenticar-usuário-com-credenciais-válidas) | [CT-RF04_loginComSucesso](Cenario_Teste/CT-RF04_loginComSucesso.md) | Funcional / fluxo positivo de autenticação | Aprovado conforme a gravação; sem nova execução | Nenhum identificado no fluxo avaliado | Utilizar como regressão em futuras versões. |
 | [RF05](Analise%20de%20requisitos.md#rf05) | [CT-RF05](Cenario_Teste/CT-RF05_Login_SenhaIncorreta.md) | Funcional manual / regressão | Aprovado conforme a gravação | Nenhum no fluxo avaliado | Usar como regressão de autenticação negativa; preparar conta conhecida e repetir após alterações no login. |
 | [RF06](Analise%20de%20requisitos.md#rf06) | [CT-RF06](Cenario_Teste/CT-RF06_Login_UsuarioInexistente.md) | Funcional manual / regressão | Aprovado conforme a gravação | Nenhum no fluxo avaliado | Repetir com identificador de inexistência comprovada; a classificação atual refere-se à recusa visível do cenário declarado pelo autor. |
+| [RF07](Analise%20de%20requisitos.md#rf07) | [CT-RF07](Cenario_Teste/CT-RF07_Exportacao_Financeiro.md) | Funcional / manifestação observada | Reprovado nas evidências | [BUG-004](Relatorio-de-Bugs.md#bug-004) | Investigar o retorno do botão; no reteste capturar o histórico de downloads e abrir o arquivo antes de concluir se a exportação foi gerada. |
 
 ---
 

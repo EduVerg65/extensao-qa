@@ -18,6 +18,7 @@ Esta análise documenta o comportamento esperado para login com credenciais vál
 | [RF04](#rf04--autenticar-usuário-com-credenciais-válidas) | Login com sucesso | Alta | [CT-RF04_loginComSucesso](Cenario_Teste/CT-RF04_loginComSucesso.md) |
 | [RF05](#rf05) | Recusar autenticação com senha incorreta | Alta, proposta | [CT-RF05](Cenario_Teste/CT-RF05_Login_SenhaIncorreta.md) |
 | [RF06](#rf06) | Recusar autenticação com usuário inexistente | Alta, proposta | [CT-RF06](Cenario_Teste/CT-RF06_Login_UsuarioInexistente.md) |
+| [RF07](#rf07) | Oferecer retorno ao solicitar exportação financeira | Média, proposta | [CT-RF07](Cenario_Teste/CT-RF07_Exportacao_Financeiro.md) |
 
 ---
 
@@ -186,6 +187,33 @@ A inexistência do usuário é o cenário declarado no título; não foi conferi
 
 ---
 
+<a id="rf07"></a>
+
+## RF07 — Oferecer retorno ao solicitar exportação financeira
+
+| Campo | Descrição |
+| --- | --- |
+| Requisito de QA | Iniciar a exportação e apresentar um retorno claro ao usuário. |
+| Ator | Usuário autenticado com permissão no módulo. |
+| Pré-condições | Sessão autenticada com permissão para consultar e exportar o financeiro. Modal Financeiro em Aberto aberto e registros disponíveis. |
+| Gatilho | Abrir Financeiro em Aberto a partir da página inicial. Clicar uma vez em Exportar e aguardar a conclusão. Verificar retorno visual e o arquivo no histórico de downloads; repetir somente para conferir comportamento. |
+| Caso | [CT-RF07](Cenario_Teste/CT-RF07_Exportacao_Financeiro.md) |
+| Situação observada | Reprovado nas evidências. Vários cliques em Exportar não produzem mudança ou confirmação visível durante a gravação. |
+| Defeito | [BUG-004](Relatorio-de-Bugs.md#bug-004) |
+| Evidências | [Evidências](Evidencias/CT-RF07_Exportacao_Financeiro/README.md) e [Jam](https://jam.dev/c/1084cb18-cb3d-4b85-9c2f-ee431b59a06b). |
+
+### Critérios de aceitação do RF07
+
+1. O clique oferece retorno perceptível de processamento, conclusão ou falha.
+2. O arquivo disponibilizado corresponde ao escopo de exportação definido pelo produto.
+3. A validação do download inclui o histórico e a abertura do arquivo, ainda pendentes na evidência atual.
+
+### Pontos a confirmar e limites do RF07
+
+O vídeo não mostra o diretório de downloads; portanto, não comprova sozinho que nenhum arquivo foi gerado. A ausência de requisição também não exclui uma exportação feita no próprio navegador. Investigar o retorno do botão; no reteste capturar o histórico de downloads e abrir o arquivo antes de concluir se a exportação foi gerada.
+
+---
+
 ## 🔗 Rastreabilidade
 
 | Requisito | Cenário / caso | Defeito | Resultado | Evidências |
@@ -196,6 +224,7 @@ A inexistência do usuário é o cenário declarado no título; não foi conferi
 | RF04 | [Cenário 4 / CT-RF04_loginComSucesso](Cenario_Teste/CT-RF04_loginComSucesso.md) | Nenhum identificado no fluxo avaliado | Aprovado conforme a gravação | [Resumo das evidências](Evidencias/CT-RF04_loginComSucesso/README.md) e [Jam](https://jam.dev/c/5e4a28be-4e80-43d3-9587-1b113723cc38) |
 | RF05 | [CT-RF05](Cenario_Teste/CT-RF05_Login_SenhaIncorreta.md) | Nenhum no fluxo avaliado | Aprovado conforme a gravação | [Evidências](Evidencias/CT-RF05_Login_SenhaIncorreta/README.md) e [Jam](https://jam.dev/c/75f16436-7201-4de0-b191-1c4d0d63bfe8) |
 | RF06 | [CT-RF06](Cenario_Teste/CT-RF06_Login_UsuarioInexistente.md) | Nenhum no fluxo avaliado | Aprovado conforme a gravação | [Evidências](Evidencias/CT-RF06_Login_UsuarioInexistente/README.md) e [Jam](https://jam.dev/c/b184e875-2cb1-4a01-b4dd-bc85b3741ff6) |
+| RF07 | [CT-RF07](Cenario_Teste/CT-RF07_Exportacao_Financeiro.md) | [BUG-004](Relatorio-de-Bugs.md#bug-004) | Reprovado nas evidências | [Evidências](Evidencias/CT-RF07_Exportacao_Financeiro/README.md) e [Jam](https://jam.dev/c/1084cb18-cb3d-4b85-9c2f-ee431b59a06b) |
 
 ---
 
