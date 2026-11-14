@@ -21,6 +21,7 @@ Esta análise documenta o comportamento esperado para login com credenciais vál
 | [RF07](#rf07) | Oferecer retorno ao solicitar exportação financeira | Média, proposta | [CT-RF07](Cenario_Teste/CT-RF07_Exportacao_Financeiro.md) |
 | [RF08](#rf08) | Apresentar a composição e o valor comunicado na cobrança | Alta, proposta | [CT-RF08](Cenario_Teste/CT-RF08_Calculo_Cobranca.md) |
 | [RF09](#rf09) | Manter contagem e paginação coerentes com as mensalidades | Alta, proposta | [CT-RF09](Cenario_Teste/CT-RF09_Contagem_Mensalidades.md) |
+| [RF10](#rf10) | Aplicar o filtro Até 7 dias com contagem consistente | Alta, proposta | [CT-RF10](Cenario_Teste/CT-RF10_Filtro_Mensalidades.md) |
 
 ---
 
@@ -270,6 +271,33 @@ Não foram inspecionados os corpos das respostas ou o banco. Os casos CT-RF09, C
 
 ---
 
+<a id="rf10"></a>
+
+## RF10 — Aplicar o filtro Até 7 dias com contagem consistente
+
+| Campo | Descrição |
+| --- | --- |
+| Requisito de QA | O contador do filtro e os registros exibidos devem representar o mesmo conjunto. |
+| Ator | Usuário autenticado com permissão no módulo. |
+| Pré-condições | Sessão autenticada e modal Financeiro em Aberto disponível. Mensalidade conhecida que pertença à faixa Até 7 dias conforme a regra do produto. |
+| Gatilho | Selecionar Até 7 dias no modal financeiro. Aguardar o carregamento e comparar contador, linhas e estado vazio. Conferir que os registros esperados estão acessíveis e que a mensagem vazia só aparece para conjunto vazio. |
+| Caso | [CT-RF10](Cenario_Teste/CT-RF10_Filtro_Mensalidades.md) |
+| Situação observada | Reprovado nas evidências. O filtro mantém o contador 1, enquanto a lista informa “Nenhuma mensalidade encontrada para o filtro atual”. |
+| Defeito | [BUG-005](Relatorio-de-Bugs.md#bug-005) |
+| Evidências | [Evidências](Evidencias/CT-RF10_Filtro_Mensalidades/README.md) e [Jam](https://jam.dev/c/3f78cf16-2c3b-48bc-8622-23b829debbec). |
+
+### Critérios de aceitação do RF10
+
+1. Contador e lista usam o mesmo critério de período.
+2. Uma mensalidade contabilizada no filtro pode ser consultada.
+3. Conjunto vazio apresenta mensagem e contagem coerentes.
+
+### Pontos a confirmar e limites do RF10
+
+A evidência confirma a divergência visual. A causa técnica não foi investigada. Relacionado ao CT-RF09. Retestar em conjunto com CT-RF09 e conferir o contrato da faixa Até 7 dias antes de preparar a base.
+
+---
+
 ## 🔗 Rastreabilidade
 
 | Requisito | Cenário / caso | Defeito | Resultado | Evidências |
@@ -283,6 +311,7 @@ Não foram inspecionados os corpos das respostas ou o banco. Os casos CT-RF09, C
 | RF07 | [CT-RF07](Cenario_Teste/CT-RF07_Exportacao_Financeiro.md) | [BUG-004](Relatorio-de-Bugs.md#bug-004) | Reprovado nas evidências | [Evidências](Evidencias/CT-RF07_Exportacao_Financeiro/README.md) e [Jam](https://jam.dev/c/1084cb18-cb3d-4b85-9c2f-ee431b59a06b) |
 | RF08 | [CT-RF08](Cenario_Teste/CT-RF08_Calculo_Cobranca.md) | Sem defeito confirmado | A validar — regra ou contexto pendente | [Evidências](Evidencias/CT-RF08_Calculo_Cobranca/README.md) e [Jam](https://jam.dev/c/79b712ae-d9e0-4600-862f-fd3a278285ff) |
 | RF09 | [CT-RF09](Cenario_Teste/CT-RF09_Contagem_Mensalidades.md) | [BUG-005](Relatorio-de-Bugs.md#bug-005) | Reprovado nas evidências | [Evidências](Evidencias/CT-RF09_Contagem_Mensalidades/README.md) e [Jam](https://jam.dev/c/1874d0b3-5c7c-4f28-85be-91750e20cbe1) |
+| RF10 | [CT-RF10](Cenario_Teste/CT-RF10_Filtro_Mensalidades.md) | [BUG-005](Relatorio-de-Bugs.md#bug-005) | Reprovado nas evidências | [Evidências](Evidencias/CT-RF10_Filtro_Mensalidades/README.md) e [Jam](https://jam.dev/c/3f78cf16-2c3b-48bc-8622-23b829debbec) |
 
 ---
 
