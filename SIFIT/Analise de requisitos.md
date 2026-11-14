@@ -17,6 +17,7 @@ Esta análise documenta o comportamento esperado para login com credenciais vál
 | [RF03](#rf03--pesquisar-clientes-com-filtros-combinados) | Filtros da página Clientes | Alta, proposta para triagem | [CT-RF03](Cenario_Teste/CT-RF03_FILTRO_TelaClientes.md) |
 | [RF04](#rf04--autenticar-usuário-com-credenciais-válidas) | Login com sucesso | Alta | [CT-RF04_loginComSucesso](Cenario_Teste/CT-RF04_loginComSucesso.md) |
 | [RF05](#rf05) | Recusar autenticação com senha incorreta | Alta, proposta | [CT-RF05](Cenario_Teste/CT-RF05_Login_SenhaIncorreta.md) |
+| [RF06](#rf06) | Recusar autenticação com usuário inexistente | Alta, proposta | [CT-RF06](Cenario_Teste/CT-RF06_Login_UsuarioInexistente.md) |
 
 ---
 
@@ -158,6 +159,33 @@ HTTP 200 é o status da resposta da API; a recusa é demonstrada pela interface.
 
 ---
 
+<a id="rf06"></a>
+
+## RF06 — Recusar autenticação com usuário inexistente
+
+| Campo | Descrição |
+| --- | --- |
+| Requisito de QA | Recusar o acesso para credenciais inválidas. |
+| Ator | Usuário sem sessão autenticada. |
+| Pré-condições | Iniciar sem sessão autenticada. Preparar um identificador cuja inexistência seja conhecida na base de teste. |
+| Gatilho | Preencher Login com identificador inexistente na base de referência. Informar uma senha de teste, sem expor seu valor. Clicar em Entrar e verificar que não há acesso à área autenticada. |
+| Caso | [CT-RF06](Cenario_Teste/CT-RF06_Login_UsuarioInexistente.md) |
+| Situação observada | Aprovado conforme a gravação. A gravação termina na página de login com a mensagem genérica de credenciais inválidas, sem acesso ao painel. |
+| Defeito | Nenhum no fluxo avaliado |
+| Evidências | [Evidências](Evidencias/CT-RF06_Login_UsuarioInexistente/README.md) e [Jam](https://jam.dev/c/b184e875-2cb1-4a01-b4dd-bc85b3741ff6). |
+
+### Critérios de aceitação do RF06
+
+1. Identificador inexistente não permite abrir a área autenticada.
+2. A tentativa recebe retorno compreensível sem revelar se a conta existe.
+3. Em nova execução, a inexistência do identificador é conferida na base de referência.
+
+### Pontos a confirmar e limites do RF06
+
+A inexistência do usuário é o cenário declarado no título; não foi conferida no banco. A mensagem já está visível no início do vídeo e permanece após a nova tentativa. Repetir com identificador de inexistência comprovada; a classificação atual refere-se à recusa visível do cenário declarado pelo autor.
+
+---
+
 ## 🔗 Rastreabilidade
 
 | Requisito | Cenário / caso | Defeito | Resultado | Evidências |
@@ -167,6 +195,7 @@ HTTP 200 é o status da resposta da API; a recusa é demonstrada pela interface.
 | RF03 | [Cenário 3 / CT-RF03](Cenario_Teste/CT-RF03_FILTRO_TelaClientes.md) | [BUG-003](Relatorio-de-Bugs.md#bug-003--filtros-combinados-da-página-clientes-não-restringem-a-listagem) | Reprovado conforme o relato; reteste pendente | [Índice e limites](Evidencias/CT-RF03_Filtros_Clientes/README.md), [captura 1](Evidencias/CT-RF03_Filtros_Clientes/filtros-clientes-01.png), [captura 2](Evidencias/CT-RF03_Filtros_Clientes/filtros-clientes-02.png) e [Jam](https://jam.dev/c/657627ec-e7e2-455d-a505-9b2a26f44bf1) |
 | RF04 | [Cenário 4 / CT-RF04_loginComSucesso](Cenario_Teste/CT-RF04_loginComSucesso.md) | Nenhum identificado no fluxo avaliado | Aprovado conforme a gravação | [Resumo das evidências](Evidencias/CT-RF04_loginComSucesso/README.md) e [Jam](https://jam.dev/c/5e4a28be-4e80-43d3-9587-1b113723cc38) |
 | RF05 | [CT-RF05](Cenario_Teste/CT-RF05_Login_SenhaIncorreta.md) | Nenhum no fluxo avaliado | Aprovado conforme a gravação | [Evidências](Evidencias/CT-RF05_Login_SenhaIncorreta/README.md) e [Jam](https://jam.dev/c/75f16436-7201-4de0-b191-1c4d0d63bfe8) |
+| RF06 | [CT-RF06](Cenario_Teste/CT-RF06_Login_UsuarioInexistente.md) | Nenhum no fluxo avaliado | Aprovado conforme a gravação | [Evidências](Evidencias/CT-RF06_Login_UsuarioInexistente/README.md) e [Jam](https://jam.dev/c/b184e875-2cb1-4a01-b4dd-bc85b3741ff6) |
 
 ---
 
