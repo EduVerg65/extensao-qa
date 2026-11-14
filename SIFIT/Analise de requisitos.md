@@ -27,6 +27,7 @@ Esta análise documenta o comportamento esperado para login com credenciais vál
 | [RF13](#rf13) | Identificar personais sem confundir códigos com contagem | Média, proposta | [CT-RF13](Cenario_Teste/CT-RF13_Codigos_Personais.md) |
 | [RF14](#rf14) | Preservar a legibilidade das tabelas no tema escuro | Média, proposta | [CT-RF14](Cenario_Teste/CT-RF14_Contraste_TemaEscuro.md) |
 | [RF15](#rf15) | Permitir concluir e cancelar a edição de modalidade | Média, proposta | [CT-RF15](Cenario_Teste/CT-RF15_Edicao_Modalidade.md) |
+| [RF16](#rf16) | Comunicar e aplicar a regra de remoção de modalidade | Média, proposta | [CT-RF16](Cenario_Teste/CT-RF16_Exclusao_Modalidade.md) |
 
 ---
 
@@ -438,6 +439,33 @@ O título original diz “Sem botão para editar modalidades”, mas o lápis ex
 
 ---
 
+<a id="rf16"></a>
+
+## RF16 — Comunicar e aplicar a regra de remoção de modalidade
+
+| Campo | Descrição |
+| --- | --- |
+| Requisito de QA | O nome, o ícone e a confirmação da ação devem informar se o efeito é desativar ou excluir definitivamente. |
+| Ator | Usuário autenticado com permissão no módulo. |
+| Pré-condições | Sessão autenticada e modalidade descartável na base de teste. Confirmar se a ação realiza exclusão lógica, inativação ou exclusão definitiva e como trata vínculos. |
+| Gatilho | Registrar o status e os vínculos da modalidade de teste. Acionar a lixeira conforme a regra e eventual confirmação definida pelo produto. Verificar o estado final e os filtros da lista; não repetir a ação para exigir exclusão física sem regra confirmada. |
+| Caso | [CT-RF16](Cenario_Teste/CT-RF16_Exclusao_Modalidade.md) |
+| Situação observada | A validar — regra ou contexto pendente. As modalidades passam a aparecer como inativas e continuam na listagem, mesmo após novos cliques. A linha do tempo registra chamadas a /api/sifitbox/modalidades/excluir/1 e recargas das listas com HTTP 200. |
+| Defeito | Sem defeito confirmado |
+| Evidências | [Evidências](Evidencias/CT-RF16_Exclusao_Modalidade/README.md) e [Jam](https://jam.dev/c/0f55f76a-cd31-4cee-93da-23c13b1ba637). |
+
+### Critérios de aceitação do RF16
+
+1. Nome, ícone e confirmação da ação comunicam seu efeito.
+2. O estado final corresponde à regra de inativação ou exclusão acordada.
+3. Vínculos e filtros têm tratamento definido; manter registros inativos pode ser comportamento válido.
+
+### Pontos a confirmar e limites do RF16
+
+A inativação pode ser uma exclusão lógica prevista pelo sistema. É necessário confirmar a regra do produto antes de exigir exclusão definitiva. Nenhuma exclusão foi executada nesta revisão. Confirmar a exclusão lógica e a nomenclatura da ação; registrar defeito apenas se houver divergência com a regra definida.
+
+---
+
 ## 🔗 Rastreabilidade
 
 | Requisito | Cenário / caso | Defeito | Resultado | Evidências |
@@ -457,6 +485,7 @@ O título original diz “Sem botão para editar modalidades”, mas o lápis ex
 | RF13 | [CT-RF13](Cenario_Teste/CT-RF13_Codigos_Personais.md) | Sem defeito confirmado | A validar — regra ou contexto pendente | [Evidências](Evidencias/CT-RF13_Codigos_Personais/README.md) e [Jam](https://jam.dev/c/69330ca9-ef19-4ece-918f-31a460628016) |
 | RF14 | [CT-RF14](Cenario_Teste/CT-RF14_Contraste_TemaEscuro.md) | [BUG-007](Relatorio-de-Bugs.md#bug-007) | Reprovado nas evidências | [Evidências](Evidencias/CT-RF14_Contraste_TemaEscuro/README.md) e [Jam](https://jam.dev/c/6889db07-bed1-472b-8ec2-00402919cd65) |
 | RF15 | [CT-RF15](Cenario_Teste/CT-RF15_Edicao_Modalidade.md) | [BUG-008](Relatorio-de-Bugs.md#bug-008) | Reprovado nas evidências | [Evidências](Evidencias/CT-RF15_Edicao_Modalidade/README.md) e [Jam](https://jam.dev/c/951efaf8-bf32-44b0-b640-a2935a6b554a) |
+| RF16 | [CT-RF16](Cenario_Teste/CT-RF16_Exclusao_Modalidade.md) | Sem defeito confirmado | A validar — regra ou contexto pendente | [Evidências](Evidencias/CT-RF16_Exclusao_Modalidade/README.md) e [Jam](https://jam.dev/c/0f55f76a-cd31-4cee-93da-23c13b1ba637) |
 
 ---
 
