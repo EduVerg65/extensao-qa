@@ -1,10 +1,10 @@
 # 📊 Relatório de Testes — SIFIT
 
-**Escopo:** CT-RF01 — Recuperação de senha; CT-RF02_ERRO — Perfil; CT-RF03 — Filtros da página Clientes; CT-RF04_loginComSucesso — Login.
+**Escopo:** CT-RF01–CT-RF20 — autenticação, recuperação, perfil, Clientes, financeiro, página inicial, modalidades / tema de SifitBox e Categorias Crossfit.
 
-**Datas das gravações do Jam:** CT-RF01 em 23/10/2026; CT-RF02_ERRO em 22/10/2026 às 21:45 BRT; CT-RF03 não confirmada; CT-RF04_loginComSucesso em 13/11/2026.
+**Datas das gravações do Jam:** CT-RF01 em 23/10/2026; CT-RF02_ERRO em 22/10/2026 às 21:45 BRT; CT-RF03 não confirmada; CT-RF04_loginComSucesso em 13/11/2026; CT-RF05–CT-RF20 em 14/11/2026.
 
-**Data da revisão documental:** 13/11/2026, com inclusão do login. Resultados anteriores preservados das revisões de 10/11 e 12/11/2026.
+**Data da revisão documental:** 14/11/2026, com inclusão de 16 cenários e evidências do Jam. Resultados anteriores de 10/11, 12/11 e 13/11/2026 preservados.
 
 **Origem do resultado:** análise de evidências fornecidas; sem nova execução no sistema nesta revisão.
 
@@ -22,9 +22,11 @@ O **CT-RF03** foi classificado como **reprovado conforme o relato**: a busca com
 
 O **CT-RF04_loginComSucesso** foi classificado como **aprovado conforme a gravação**: o usuário preenche credenciais válidas, clica em Entrar e acessa `/dashboard`. As chamadas de login e verificação da sessão retornam HTTP 200; os quadros mostram o menu e o resumo da academia após a autenticação. Não houve nova execução no sistema.
 
-| Casos documentados | Aprovados | Reprovados | Bugs abertos | Retestes pendentes |
-| :---: | :---: | :---: | :---: | :---: |
-| 4 | 1 | 3 | 3 | 3 |
+Os 16 novos cenários acrescentam **5 aprovações**, **7 reprovações nas evidências** e **4 pontos a validar**. Há **6 novos defeitos**, pois CT-RF09 e CT-RF10 compartilham BUG-005. As contagens consolidadas são:
+
+| Casos documentados | Aprovados | Reprovados | A validar | Bugs abertos | Casos com reteste corretivo pendente |
+| :---: | :---: | :---: | :---: | :---: | :---: |
+| 20 | 6 | 10 | 4 | 9 | 10 |
 
 As contagens representam os casos documentados com base nas fontes indicadas, sem novas execuções nesta revisão. As nove variações planejadas para o reteste do CT-RF03 não foram executadas e não são contabilizadas como testes adicionais realizados.
 
@@ -129,6 +131,21 @@ O domínio do CT-RF02_ERRO é diferente do domínio `sifitalfa.centrion.com.br` 
 
 ---
 
+### CT-RF05 a CT-RF20
+
+| Item | Valor |
+| --- | --- |
+| Data / horário das gravações | 14/11/2026, aproximadamente 00:23–00:45 BRT. Horários por caso nos metadados. |
+| Frontend / backend | https://sifit.centrion.com.br / https://backendsifit.centrion.com.br |
+| Navegador / sistema | Chrome 157.0.8103.51 / Windows 11 (x86). |
+| Tela informada / vídeo original | 1920 × 957 / 1918 × 956 pixels. |
+| Mídias | 16 vídeos WebM originais, 39.490.598 bytes; duração total informada 234,499 segundos. Sem narração. |
+| Versão / zoom / ambiente | Não confirmados. |
+| Material da análise | Metadados, cronologia e quadros dos vídeos consultados na revisão anterior desta sessão; cópia local conferida por tamanho e hash. |
+| Execução desta atualização | Documental: sem nova execução no Sifit, correção de código ou reteste. |
+
+---
+
 ## 📸 5. Evidências e observações
 
 | Evidência | Informação utilizada |
@@ -191,6 +208,31 @@ A aprovação considera o resultado visível após a autenticação, além da UR
 - **Reteste de CT-RF03:** pendente após a correção, com base conhecida, IDs validados e execução das nove variações previstas no [plano](Plano%20de%20testes.md#ct-rf03). Registrar inclusão, exclusão, completude e estado sem resultados antes de encerrar o defeito.
 - **Etapas seguintes:** não avaliadas nesta evidência, pois não foi possível iniciar a recuperação; detalhamento depende da definição das regras do fluxo.
 - **CT-RF04_loginComSucesso:** aprovado conforme a gravação; sem defeito associado e sem reteste corretivo pendente. Utilizar o caso como regressão em novas versões. Variações de autenticação exigem casos próprios e permanecem fora da cobertura atual.
+
+## Ampliação de 14/11/2026 — pendências e próximos passos
+
+| Caso | Situação | Encaminhamento |
+| --- | --- | --- |
+| [CT-RF05](Cenario_Teste/CT-RF05_Login_SenhaIncorreta.md) | Aprovado conforme a gravação | Usar como regressão de autenticação negativa; preparar conta conhecida e repetir após alterações no login. |
+| [CT-RF06](Cenario_Teste/CT-RF06_Login_UsuarioInexistente.md) | Aprovado conforme a gravação | Repetir com identificador de inexistência comprovada; a classificação atual refere-se à recusa visível do cenário declarado pelo autor. |
+| [CT-RF07](Cenario_Teste/CT-RF07_Exportacao_Financeiro.md) | Reprovado nas evidências | Investigar o retorno do botão; no reteste capturar o histórico de downloads e abrir o arquivo antes de concluir se a exportação foi gerada. |
+| [CT-RF08](Cenario_Teste/CT-RF08_Calculo_Cobranca.md) | A validar — regra ou contexto pendente | Confirmar a origem dos R$ 20,83 além de principal e multa e a regra da mensagem; não registrar cálculo incorreto antes dessa validação. |
+| [CT-RF09](Cenario_Teste/CT-RF09_Contagem_Mensalidades.md) | Reprovado nas evidências | Retestar com o CT-RF10; os dois cenários documentam manifestações do BUG-005, sem criar um defeito duplicado. |
+| [CT-RF10](Cenario_Teste/CT-RF10_Filtro_Mensalidades.md) | Reprovado nas evidências | Retestar em conjunto com CT-RF09 e conferir o contrato da faixa Até 7 dias antes de preparar a base. |
+| [CT-RF11](Cenario_Teste/CT-RF11_Metricas_Financeiro.md) | A validar — regra ou contexto pendente | Confirmar os contratos dos cartões; a constância de totais globais não é suficiente para abrir outro defeito financeiro. |
+| [CT-RF12](Cenario_Teste/CT-RF12_Periodo_Dashboard.md) | Reprovado nas evidências | Corrigir e retestar a validação do intervalo; avaliar a atualização dos indicadores em base controlada como verificação complementar. |
+| [CT-RF13](Cenario_Teste/CT-RF13_Codigos_Personais.md) | A validar — regra ou contexto pendente | Confirmar a semântica da coluna Código; quatro linhas e total quatro não sustentam um defeito de quantidade. |
+| [CT-RF14](Cenario_Teste/CT-RF14_Contraste_TemaEscuro.md) | Reprovado nas evidências | Ajustar as cores e retestar ambos os temas; medir contraste se houver critério formal de acessibilidade definido. |
+| [CT-RF15](Cenario_Teste/CT-RF15_Edicao_Modalidade.md) | Reprovado nas evidências | Verificar o fluxo de conclusão da edição e retestar persistência. A evidência reprova a clareza da ação de salvar; não afirma que o ícone de editar inexiste. |
+| [CT-RF16](Cenario_Teste/CT-RF16_Exclusao_Modalidade.md) | A validar — regra ou contexto pendente | Confirmar a exclusão lógica e a nomenclatura da ação; registrar defeito apenas se houver divergência com a regra definida. |
+| [CT-RF17](Cenario_Teste/CT-RF17_Filtros_Categorias.md) | Aprovado conforme a gravação | Usar como regressão; combinações, conjunto vazio, caracteres especiais e paginação exigem execuções adicionais. |
+| [CT-RF18](Cenario_Teste/CT-RF18_Atualizacao_Categoria.md) | Aprovado conforme a gravação | Usar como regressão; acrescentar recarga e nova consulta para ampliar a verificação de persistência. |
+| [CT-RF19](Cenario_Teste/CT-RF19_Exclusao_Categoria.md) | Reprovado nas evidências | Investigar o HTTP 500 com logs do servidor e vínculos da categoria; corrigir e retestar cenários permitido e impedido. |
+| [CT-RF20](Cenario_Teste/CT-RF20_Criacao_Categoria.md) | Aprovado conforme a gravação | Usar como regressão; campos vazios, nomes duplicados e limites de tamanho permanecem fora do cenário gravado. |
+
+Os sete novos casos reprovados aguardam reteste corretivo e correspondem a seis defeitos. As quatro pendências de regra/contexto não foram reprovadas por suposição. CT-RF05/06/17/18/20 são referências de regressão; sua aprovação se limita aos exemplos gravados. Nenhuma variação planejada recebe contagem de execução sem evidência própria.
+
+As análises históricas de CT-RF01–CT-RF04 acima continuam com seus limites originais. A nova cobertura de login negativo está em CT-RF05 e CT-RF06; ela não amplia retroativamente a aprovação do CT-RF04.
 
 ---
 

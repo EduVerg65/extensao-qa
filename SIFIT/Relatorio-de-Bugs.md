@@ -1,16 +1,18 @@
 # 🐞 Relatório de Bugs — SIFIT
 
-**Escopo:** CT-RF01 — Recuperação de senha; CT-RF02_ERRO — Perfil; CT-RF03 — Filtros da página Clientes
+**Escopo:** defeitos dos cenários CT-RF01–CT-RF20: recuperação, Perfil, Clientes, financeiro, período, tema, modalidades e categorias. Casos aprovados e pontos a validar permanecem no relatório dos testes.
 
 **Ambientes:** CT-RF01 em https://sifitalfa.centrion.com.br/login; CT-RF02_ERRO em https://sifit.centrion.com.br/profile. CT-RF03: URL do frontend não confirmada; backend informado em `https://backendsifit.centrion.com.br/api/clientesPorNome/1`.
 
 **Datas das gravações do Jam:** CT-RF01 em 23/10/2026; CT-RF02_ERRO em 22/10/2026 às 21:45 BRT; CT-RF03 não confirmada.
 
-**Atualização documental:** 12/11/2026
+**Atualização documental:** 14/11/2026 — nove defeitos abertos (BUG-001 a BUG-009); seis registros novos. As análises anteriores de BUG-001 a BUG-003 foram preservadas.
 
 **Padronização documental:** 13/11/2026, sem alteração do status dos defeitos.
 
 **Caso aprovado incluído em 13/11/2026:** [CT-RF04_loginComSucesso](Cenario_Teste/CT-RF04_loginComSucesso.md), vinculado ao RF04, não gerou defeito para o fluxo avaliado. O [Jam de login](https://jam.dev/c/5e4a28be-4e80-43d3-9587-1b113723cc38) mostra acesso ao dashboard após autenticação. Essa aprovação não altera os três bugs existentes; resultados e limites constam no [relatório dos testes](Relatorio%20dos%20testes.md).
+
+**Novas gravações:** 14/11/2026, Chrome 157.0.8103.51 / Windows 11, no domínio `sifit.centrion.com.br`. Cada cenário registra página, horário e limites. A inclusão é documental, sem nova execução ou reteste.
 
 ## 📋 Resumo dos defeitos
 
@@ -174,6 +176,9 @@ Status, Situação Financeira, Plano e Personal não aparecem nesse corpo. HTTP 
 - [Índice de evidências, origem e limites](Evidencias/CT-RF03_Filtros_Clientes/README.md).
 
 **Encaminhamento:** Investigar e corrigir no repositório da aplicação; executar o CT-RF03 após disponibilização da correção. Esta entrega altera somente a documentação de QA e organiza as capturas fornecidas. Não houve alteração de código-fonte, nova execução ou confirmação de correção.
+
+
+---
 
 <a id="bug-004"></a>
 
@@ -440,6 +445,17 @@ HTTP 500 está registrado no Jam. A causa, os vínculos e a regra para impedir a
 Investigar o HTTP 500 com logs do servidor e vínculos da categoria; corrigir e retestar cenários permitido e impedido.
 
 ---
+
+## Pontos a validar — sem defeito confirmado
+
+| Caso | Questão pendente | Evidência |
+| --- | --- | --- |
+| [CT-RF08](Cenario_Teste/CT-RF08_Calculo_Cobranca.md) | Confirmar a origem dos R$ 20,83 além de principal e multa e a regra da mensagem; não registrar cálculo incorreto antes dessa validação. | [Jam](https://jam.dev/c/79b712ae-d9e0-4600-862f-fd3a278285ff) e [Evidências](Evidencias/CT-RF08_Calculo_Cobranca/README.md) |
+| [CT-RF11](Cenario_Teste/CT-RF11_Metricas_Financeiro.md) | Confirmar os contratos dos cartões; a constância de totais globais não é suficiente para abrir outro defeito financeiro. | [Jam](https://jam.dev/c/4491c9e7-7e00-4063-91ce-8683e316df06) e [Evidências](Evidencias/CT-RF11_Metricas_Financeiro/README.md) |
+| [CT-RF13](Cenario_Teste/CT-RF13_Codigos_Personais.md) | Confirmar a semântica da coluna Código; quatro linhas e total quatro não sustentam um defeito de quantidade. | [Jam](https://jam.dev/c/69330ca9-ef19-4ece-918f-31a460628016) e [Evidências](Evidencias/CT-RF13_Codigos_Personais/README.md) |
+| [CT-RF16](Cenario_Teste/CT-RF16_Exclusao_Modalidade.md) | Confirmar a exclusão lógica e a nomenclatura da ação; registrar defeito apenas se houver divergência com a regra definida. | [Jam](https://jam.dev/c/0f55f76a-cd31-4cee-93da-23c13b1ba637) e [Evidências](Evidencias/CT-RF16_Exclusao_Modalidade/README.md) |
+
+Esses quatro pontos não entram na contagem de nove bugs. O relato de numeração de personais não demonstrou diferença entre total e linhas; a inativação de modalidades pode ser exclusão lógica; encargos e métricas exigem regras explícitas.
 
 ---
 

@@ -1,12 +1,12 @@
 # 📦 Análise de Requisitos — SIFIT
 
-**Módulos:** Autenticação / Login e Recuperação de senha, Perfil e Clientes / Filtros
+**Módulos:** Autenticação, Perfil, Clientes / Filtros, Financeiro, Página inicial / Personais, SifitBox / Modalidades e Turmas, Categorias Crossfit.
 
-**Atualização:** 13/11/2026 — inclusão do RF04 e do caso de login com sucesso.
+**Atualização:** 14/11/2026 — RF01 a RF20, com inclusão dos 16 cenários CT-RF05 a CT-RF20 e suas evidências do Jam.
 
 **Padronização documental:** 13/11/2026, sem alteração dos resultados registrados.
 
-Esta análise documenta o comportamento esperado para login com credenciais válidas, "Esqueci minha senha", "Perfil" e pesquisa com filtros da página Clientes, com base nos relatos e nas evidências fornecidas. Os critérios abaixo constituem a referência de QA para esses fluxos; não representam validação de uma especificação formal pelo responsável pelo produto.
+Esta análise documenta os 20 requisitos de QA para os cenários relacionados abaixo, com base nos relatos e nas evidências fornecidas. RF01–RF04 e suas análises históricas foram preservados; RF05–RF20 ampliam a cobertura em 14/11/2026. Os critérios abaixo constituem a referência de QA para esses fluxos; não representam validação de uma especificação formal pelo responsável pelo produto.
 
 ## 📋 Visão geral dos requisitos
 
@@ -145,6 +145,10 @@ Os IDs exemplificativos `plano_id: 60` e `personal_id: 36` não têm correspond�
 O caso cobre o fluxo positivo gravado. Credenciais inválidas, campos vazios, logout, expiração, persistência de **Manter conectado**, outras permissões e correspondência dos dados exibidos com o cadastro exigem validações próprias. A versão da aplicação não foi informada.
 
 ---
+
+## Ampliação de cobertura — 14/11/2026
+
+Os requisitos abaixo são referências de QA propostas a partir das evidências. Cálculo de encargos (RF08), escopo dos cartões (RF11), significado dos códigos de personais (RF13) e remoção lógica de modalidades (RF16) dependem da confirmação do produto; seus cenários estão a validar e não geraram defeitos confirmados. Os casos RF09 e RF10 compartilham o BUG-005.
 
 <a id="rf05"></a>
 
@@ -636,6 +640,12 @@ O teste demonstra criação no cenário gravado. Não cobre campos vazios, dupli
 - **Ações e rede:** preenchimento de credenciais e clique em Entrar em aproximadamente 00:06; `POST /api/login` e `POST /api/verifica-token-logado` retornam HTTP 200, seguidos de navegação para `/dashboard`.
 - **Visual:** menu e resumo da academia visíveis após o envio; cartões preenchidos nos quadros de aproximadamente 00:09 e 00:11.
 - **Limite:** sem nova execução, inspeção do código ou validação de persistência da sessão e dos dados do painel. [Origem e cronologia](Evidencias/CT-RF04_loginComSucesso/README.md).
+
+### Base da análise do RF05 ao RF20 — revisão de 14/11/2026
+
+Foram incorporadas as 16 gravações do JAM.txt, na ordem definida pelo solicitante a partir de CT-RF05. A revisão anterior desta sessão consultou detalhes, cronologia e quadros de todas elas; os vídeos originais e seus resumos foram copiados com hash conferido para o repositório. O [índice de evidências](Evidencias/README.md) associa cada caso ao Jam, ao vídeo e aos metadados.
+
+Os novos resultados são cinco aprovações, sete reprovações de manifestações observadas e quatro pontos a validar. As duas reprovações de contagem/filtro financeiro compartilham um defeito. Não houve nova execução, reteste ou análise do código da aplicação.
 
 ---
 

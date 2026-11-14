@@ -1,10 +1,10 @@
 # 🧪 Plano de Testes — SIFIT
 
-**Atualização:** 13/11/2026 — inclusão do login com sucesso.
+**Atualização:** 14/11/2026 — 20 cenários documentados, com inclusão de CT-RF05 a CT-RF20.
 
 **Padronização documental:** 13/11/2026, com resultados e pendências preservados.
 
-**Escopo:** CT-RF01 — Recuperação de senha; CT-RF02_ERRO — Perfil; CT-RF03 — Filtros da página Clientes; CT-RF04_loginComSucesso — Login.
+**Escopo:** CT-RF01 a CT-RF20 — autenticação, recuperação de senha, perfil, Clientes, financeiro, período e personais da página inicial, modalidades / tema de SifitBox e Categorias Crossfit.
 
 ## 📌 1. Identificação
 
@@ -13,14 +13,14 @@
 | Projeto | SIFIT — Sistema de gestão de academias. |
 | Tipo de teste | Funcional manual, com análise exploratória e de evidências. |
 | Versão avaliada | Não confirmada; registrar por caso no reteste. |
-| Funcionalidades | Recuperação de senha, Perfil, filtros da página Clientes e login com credenciais válidas. |
-| Situação | Quatro casos documentados: um aprovado conforme o Jam e três reprovados; três defeitos abertos com retestes pendentes. |
+| Funcionalidades | Autenticação positiva e negativa, recuperação, Perfil, filtros de Clientes, financeiro, período, personais, modalidades / tema e Categorias Crossfit. |
+| Situação | 20 casos: 6 aprovados, 10 reprovados e 4 a validar; 9 defeitos abertos e 10 casos com reteste corretivo pendente. |
 
 ---
 
 ## 🎯 2. Objetivo
 
-Verificar o login com credenciais válidas e acesso ao dashboard, o início da recuperação de acesso, a apresentação do perfil do usuário autenticado e a aplicação simultânea dos filtros de Clientes, mantendo a rastreabilidade entre requisitos, casos de teste, evidências e defeitos.
+Verificar os fluxos dos 20 cenários, comparando os critérios de aceitação com as evidências de autenticação, recuperação, perfil, Clientes, financeiro, página inicial, SifitBox e Categorias Crossfit. Manter rastreabilidade entre requisitos, casos, Jam, vídeos, resultados e defeitos, distinguindo revisões documentais de novas execuções.
 
 ---
 
@@ -37,6 +37,15 @@ Verificar o login com credenciais válidas e acesso ao dashboard, o início da r
 - Registro e reteste do BUG-002 após disponibilização da correção, incluindo análise do DOM e comparação com os dados da conta de teste.
 - Pesquisa por Código, Nome, Status, Situação Financeira, Plano e Personal, com lógica AND, alteração e remoção de restrições e estado sem resultados.
 - Registro e reteste do BUG-003, com conferência da inclusão e exclusão de clientes em uma base conhecida e da integração conforme a arquitetura efetiva.
+
+**Ampliação de escopo em 14/11/2026:**
+
+- CT-RF05–06: recusa de senha incorreta e de usuário declarado inexistente.
+- CT-RF07–11: retorno de exportação, composição da cobrança, contagens, filtro de mensalidades e escopo dos indicadores.
+- CT-RF12–13: validade do período e significado dos códigos de personais.
+- CT-RF14–16: legibilidade no tema escuro, conclusão da edição e regra de remoção de modalidades.
+- CT-RF17–20: pesquisa, atualização, exclusão e criação de Categorias Crossfit.
+- As quatro regras a validar (CT-RF08, CT-RF11, CT-RF13 e CT-RF16) exigem confirmação de produto antes de conclusão definitiva.
 
 **Limites da cobertura atual:**
 
@@ -131,6 +140,22 @@ As técnicas previstas para o reteste não representam novas execuções realiza
 
 ---
 
+### CT-RF05 a CT-RF20 — ambiente das novas evidências
+
+Gravações de 14/11/2026, entre aproximadamente 00:23 e 00:45 BRT, no frontend `https://sifit.centrion.com.br`. Chrome 157.0.8103.51 / Windows 11 (x86); tela informada 1920 × 957 e vídeos originais 1918 × 956 pixels. Versão, zoom e classificação do ambiente não confirmados. As páginas e os horários individuais estão em cada cenário e nos metadados da evidência.
+
+| Grupo | Preparação para nova execução |
+| --- | --- |
+| CT-RF05–06 | Iniciar sem sessão; usar conta existente/senha incorreta ou identificador comprovadamente inexistente. |
+| CT-RF07–12 | Base financeira conhecida; confirmar encargos, faixas de vencimento, referência dos cartões e aplicação do período. |
+| CT-RF13 | Cadastro de personais conhecido; confirmar se Código é ID ou posição da lista. |
+| CT-RF14–16 | Modalidades e turmas de teste; permissões de edição e regra de remoção confirmadas; conferir ambos os temas. |
+| CT-RF17–20 | Categorias descartáveis, permissões e vínculos conhecidos para testar pesquisa e operações de cadastro. |
+
+As ações de edição, criação e exclusão descritas ocorreram nas gravações fornecidas. Nenhuma dessas operações foi reexecutada durante esta atualização documental.
+
+---
+
 ## 📋 7. Casos de teste e situação
 
 | Requisito | Caso de teste | Tipo | Resultado nas evidências | Defeito | Próxima ação |
@@ -205,6 +230,18 @@ As técnicas previstas para o reteste não representam novas execuções realiza
 
 ---
 
+### CT-RF05 a CT-RF20 — próximos testes
+
+1. Confirmar versão e ambiente; preparar dados conhecidos conforme as pré-condições do cenário.
+2. Executar os passos e o BDD do caso; registrar o resultado efetivo e o Jam da nova execução.
+3. Comparar os critérios com interface, arquivo gerado ou cadastro de referência, conforme o fluxo. HTTP 200 isoladamente não aprova um caso.
+4. Para CT-RF08/11/13/16, registrar primeiro a decisão de produto sobre a regra pendente. Não converter uma dúvida em defeito sem demonstrar a divergência.
+5. Retestar os casos reprovados após correção. CT-RF09 e CT-RF10 compartilham BUG-005 e precisam de conferências próprias para encerrar o mesmo defeito.
+6. Executar CT-RF05/06/17/18/20 como regressão nas próximas versões; ampliações de cobertura permanecem planejadas até terem evidência própria.
+7. Atualizar cenário, requisito, relatório e defeito com a data e evidência da versão testada, preservando os registros históricos.
+
+---
+
 ## 🚦 9. Critérios de entrada, saída e aceitação
 
 **Entrada:** ambiente acessível, opção visível e ferramentas de captura disponíveis. Para Perfil, sessão válida e conta de teste com dados conhecidos. Para Clientes, sessão válida, empresa identificada, regras dos filtros confirmadas e base com resultados esperados por combinação. Para o reteste, correção disponibilizada em uma versão identificável.
@@ -213,7 +250,7 @@ As técnicas previstas para o reteste não representam novas execuções realiza
 
 **Entrada e aprovação do login:** página acessível, conta de teste com credenciais válidas e acesso ao painel, sem sessão autenticada no início. Aprovar o CT-RF04_loginComSucesso quando o envio autenticar o usuário, navegar para `/dashboard` e exibir o menu e resumo da academia, com senha mascarada no formulário. A aprovação se limita a esse fluxo positivo.
 
-**Aceitação da correção:** todos os critérios do respectivo caso atendidos e reteste documentado. BUG-001, BUG-002 e BUG-003 permanecem abertos até a confirmação de suas correções. A aprovação do CT-RF01 não comprova a recuperação completa da senha; a do CT-RF02_ERRO não comprova persistência de alterações no perfil. Para CT-RF03, cada combinação deve incluir todos os clientes esperados e excluir os incompatíveis, com a matriz executada e o estado vazio validado.
+**Aceitação da correção:** todos os critérios do respectivo caso atendidos e reteste documentado. BUG-001 a BUG-009 permanecem abertos até a confirmação de suas correções. A aprovação do CT-RF01 não comprova a recuperação completa da senha; a do CT-RF02_ERRO não comprova persistência de alterações no perfil. Para CT-RF03, cada combinação deve incluir todos os clientes esperados e excluir os incompatíveis, com a matriz executada e o estado vazio validado.
 
 ---
 
@@ -225,6 +262,8 @@ As técnicas previstas para o reteste não representam novas execuções realiza
 | Análise documental de Perfil e Clientes | Registrada | 12/11/2026. |
 | Padronização dos documentos | Realizada | 13/11/2026. |
 | Análise do Jam e inclusão do CT-RF04_loginComSucesso | Realizada; aprovado conforme a gravação | 13/11/2026, sem nova execução no sistema. |
+| Inclusão documental de CT-RF05–CT-RF20 e cópia dos 16 vídeos | Realizada | 14/11/2026; revisão das evidências já consultadas, sem nova execução. |
+| Confirmação das regras de CT-RF08/11/13/16 | Pendente | Responsável pelo produto; sem data definida. |
 | Investigação e correção dos defeitos | Pendente | Depende da equipe responsável pela aplicação; sem data definida. |
 | Execução dos retestes | Pendente | Após correção em versão identificável e preparação dos dados. |
 | Atualização dos resultados e encerramento | Pendente | Após reteste e atendimento aos critérios de aceitação. |
@@ -233,7 +272,7 @@ As técnicas previstas para o reteste não representam novas execuções realiza
 
 Os defeitos são registrados no [relatório de bugs](Relatorio-de-Bugs.md), com identificação, severidade, prioridade, pré-condições, reprodução, resultado esperado e obtido, impacto e evidências. Hipóteses técnicas permanecem identificadas até a confirmação no código.
 
-BUG-001, BUG-002 e BUG-003 permanecem abertos. Após a correção, atualizar o caso, o relatório dos testes e o defeito com as evidências da versão retestada.
+Há nove defeitos abertos: BUG-001 a BUG-009. Os dois casos de contagem e filtro financeiro (CT-RF09 e CT-RF10) compartilham BUG-005; por isso dez casos reprovados correspondem a nove defeitos, não dez. CT-RF08, CT-RF11, CT-RF13 e CT-RF16 permanecem a validar, sem defeito confirmado. Após a correção, atualizar o caso, o relatório dos testes e o defeito com as evidências da versão retestada. As severidades e prioridades dos novos defeitos são propostas para triagem.
 
 ---
 
@@ -251,12 +290,14 @@ BUG-001, BUG-002 e BUG-003 permanecem abertos. Após a correção, atualizar o c
 | R08 | Contrato, valores ou IDs dos filtros não confirmados | Pode gerar teste com parâmetros inválidos e diagnóstico incorreto | Validar contrato, regras e correspondência entre rótulos e IDs antes do reteste |
 | R09 | Filtragem local sobre dados parciais | Pode omitir clientes válidos de outras páginas | Confirmar a arquitetura e conferir completude considerando eventual paginação |
 | R10 | Jam indisponível e rede descrita apenas no relato | Limita a conferência independente do payload e da cronologia do CT-RF03 | Preservar a origem informada e coletar nova evidência de rede sem autenticação no reteste |
+| R11 | Regras de encargos, indicadores ou remoção não definidas | Pode gerar falso defeito ou falsa aprovação | Confirmar decisões de produto para CT-RF08/11/13/16 antes de conclusão definitiva |
+| R12 | Tratar revisão de vídeo como nova execução | Superestima a cobertura e pode fechar defeitos sem reteste | Manter a origem e os limites por cenário; exigir nova evidência para reteste |
 
 ---
 
 ## 📁 13. Entregáveis e documentos associados
 
-Os entregáveis são a análise de requisitos, este plano, os quatro cenários, as evidências disponíveis e os relatórios de bugs e resultados. O login possui evidência de aprovação no Jam; as evidências de aprovação dos demais casos serão acrescentadas após os retestes.
+Os entregáveis são a análise RF01–RF20, este plano, os 20 cenários BDD, as evidências disponíveis e os relatórios atualizados. CT-RF05–CT-RF20 possuem vídeo original, resumo, cronologia, capa, Jam e metadados locais. Seis casos estão aprovados conforme as evidências; os dez reprovados aguardam reteste e os quatro a validar dependem de confirmação de regra/contexto.
 
 - [Análise de requisitos](Analise%20de%20requisitos.md)
 - [Caso CT-RF01](Cenario_Teste/CT-RF01_Esqueci-senha.md)
@@ -267,6 +308,10 @@ Os entregáveis são a análise de requisitos, este plano, os quatro cenários, 
 - [Evidências e limites do CT-RF03](Evidencias/CT-RF03_Filtros_Clientes/README.md)
 - [Relatório dos testes](Relatorio%20dos%20testes.md)
 - [Relatório de bugs](Relatorio-de-Bugs.md)
+
+- [Índice dos 20 cenários](Cenario_Teste/README.md)
+- [Índice das evidências e dos Jams](Evidencias/README.md)
+- [Manifesto de integridade dos novos arquivos](Evidencias/manifesto_sha256.json)
 
 ---
 
