@@ -139,6 +139,7 @@ As técnicas previstas para o reteste não representam novas execuções realiza
 | [RF02](Analise%20de%20requisitos.md#rf02--exibir-perfil-do-usuário-autenticado) | [CT-RF02_ERRO — Exibir Perfil](Cenario_Teste/CT-RF02_ERRO.md) | Funcional / interface, com análise do DOM e evidências | Reprovado | [BUG-002](Relatorio-de-Bugs.md#bug-002--perfil-com-dados-fictícios-campos-ausentes-e-layout-desconfigurado) | Corrigir e retestar. |
 | [RF03](Analise%20de%20requisitos.md#rf03--pesquisar-clientes-com-filtros-combinados) | [CT-RF03 — Filtrar Clientes](Cenario_Teste/CT-RF03_FILTRO_TelaClientes.md) | Funcional / filtros combinados, com análise de integração e evidências | Reprovado conforme o relato; sem nova execução | [BUG-003](Relatorio-de-Bugs.md#bug-003--filtros-combinados-da-página-clientes-não-restringem-a-listagem) | Investigar a causa, corrigir e executar a matriz de reteste. |
 | [RF04](Analise%20de%20requisitos.md#rf04--autenticar-usuário-com-credenciais-válidas) | [CT-RF04_loginComSucesso](Cenario_Teste/CT-RF04_loginComSucesso.md) | Funcional / fluxo positivo de autenticação | Aprovado conforme a gravação; sem nova execução | Nenhum identificado no fluxo avaliado | Utilizar como regressão em futuras versões. |
+| [RF05](Analise%20de%20requisitos.md#rf05) | [CT-RF05](Cenario_Teste/CT-RF05_Login_SenhaIncorreta.md) | Funcional manual / regressão | Aprovado conforme a gravação | Nenhum no fluxo avaliado | Usar como regressão de autenticação negativa; preparar conta conhecida e repetir após alterações no login. |
 
 ---
 

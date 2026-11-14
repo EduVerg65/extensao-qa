@@ -16,6 +16,7 @@ Esta análise documenta o comportamento esperado para login com credenciais vál
 | [RF02](#rf02--exibir-perfil-do-usuário-autenticado) | Perfil do usuário | Alta | [CT-RF02_ERRO](Cenario_Teste/CT-RF02_ERRO.md) |
 | [RF03](#rf03--pesquisar-clientes-com-filtros-combinados) | Filtros da página Clientes | Alta, proposta para triagem | [CT-RF03](Cenario_Teste/CT-RF03_FILTRO_TelaClientes.md) |
 | [RF04](#rf04--autenticar-usuário-com-credenciais-válidas) | Login com sucesso | Alta | [CT-RF04_loginComSucesso](Cenario_Teste/CT-RF04_loginComSucesso.md) |
+| [RF05](#rf05) | Recusar autenticação com senha incorreta | Alta, proposta | [CT-RF05](Cenario_Teste/CT-RF05_Login_SenhaIncorreta.md) |
 
 ---
 
@@ -130,6 +131,33 @@ O caso cobre o fluxo positivo gravado. Credenciais inválidas, campos vazios, lo
 
 ---
 
+<a id="rf05"></a>
+
+## RF05 — Recusar autenticação com senha incorreta
+
+| Campo | Descrição |
+| --- | --- |
+| Requisito de QA | Recusar a autenticação e informar a falha sem abrir a área autenticada. |
+| Ator | Usuário sem sessão autenticada. |
+| Pré-condições | Iniciar sem sessão autenticada na página de login. Dispor de conta de teste existente e senha propositalmente incorreta. |
+| Gatilho | Preencher Login com a conta de teste existente. Informar uma senha incorreta, mantendo o valor mascarado. Clicar em Entrar e observar a mensagem, a URL e a ausência de acesso ao painel. |
+| Caso | [CT-RF05](Cenario_Teste/CT-RF05_Login_SenhaIncorreta.md) |
+| Situação observada | Aprovado conforme a gravação. Após o envio, a tela permanece no login e apresenta “O nome de usuário e senha não correspondem.” |
+| Defeito | Nenhum no fluxo avaliado |
+| Evidências | [Evidências](Evidencias/CT-RF05_Login_SenhaIncorreta/README.md) e [Jam](https://jam.dev/c/75f16436-7201-4de0-b191-1c4d0d63bfe8). |
+
+### Critérios de aceitação do RF05
+
+1. Senha incorreta não permite acesso ao dashboard.
+2. A interface apresenta mensagem compreensível de credenciais inválidas.
+3. A conclusão considera mensagem e permanência no login, além do status HTTP.
+
+### Pontos a confirmar e limites do RF05
+
+HTTP 200 é o status da resposta da API; a recusa é demonstrada pela interface. O vídeo não valida bloqueio por tentativas ou outras regras de segurança. Usar como regressão de autenticação negativa; preparar conta conhecida e repetir após alterações no login.
+
+---
+
 ## 🔗 Rastreabilidade
 
 | Requisito | Cenário / caso | Defeito | Resultado | Evidências |
@@ -138,6 +166,7 @@ O caso cobre o fluxo positivo gravado. Credenciais inválidas, campos vazios, lo
 | RF02 | [Cenário 2 / CT-RF02_ERRO](Cenario_Teste/CT-RF02_ERRO.md) | [BUG-002](Relatorio-de-Bugs.md#bug-002--perfil-com-dados-fictícios-campos-ausentes-e-layout-desconfigurado) | Reprovado nas evidências; reteste pendente | [Captura](Evidencias/CT-RF02_ERRO/erro-na-tela.png), [HTML](Evidencias/CT-RF02_ERRO/recorte-dom.html) e [Jam](https://jam.dev/c/c61241d5-bff5-4a0a-9684-991318f9b51c) |
 | RF03 | [Cenário 3 / CT-RF03](Cenario_Teste/CT-RF03_FILTRO_TelaClientes.md) | [BUG-003](Relatorio-de-Bugs.md#bug-003--filtros-combinados-da-página-clientes-não-restringem-a-listagem) | Reprovado conforme o relato; reteste pendente | [Índice e limites](Evidencias/CT-RF03_Filtros_Clientes/README.md), [captura 1](Evidencias/CT-RF03_Filtros_Clientes/filtros-clientes-01.png), [captura 2](Evidencias/CT-RF03_Filtros_Clientes/filtros-clientes-02.png) e [Jam](https://jam.dev/c/657627ec-e7e2-455d-a505-9b2a26f44bf1) |
 | RF04 | [Cenário 4 / CT-RF04_loginComSucesso](Cenario_Teste/CT-RF04_loginComSucesso.md) | Nenhum identificado no fluxo avaliado | Aprovado conforme a gravação | [Resumo das evidências](Evidencias/CT-RF04_loginComSucesso/README.md) e [Jam](https://jam.dev/c/5e4a28be-4e80-43d3-9587-1b113723cc38) |
+| RF05 | [CT-RF05](Cenario_Teste/CT-RF05_Login_SenhaIncorreta.md) | Nenhum no fluxo avaliado | Aprovado conforme a gravação | [Evidências](Evidencias/CT-RF05_Login_SenhaIncorreta/README.md) e [Jam](https://jam.dev/c/75f16436-7201-4de0-b191-1c4d0d63bfe8) |
 
 ---
 
