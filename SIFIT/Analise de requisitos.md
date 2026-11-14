@@ -31,6 +31,7 @@ Esta análise documenta o comportamento esperado para login com credenciais vál
 | [RF17](#rf17) | Filtrar categorias por código e nome | Média, proposta | [CT-RF17](Cenario_Teste/CT-RF17_Filtros_Categorias.md) |
 | [RF18](#rf18) | Salvar a atualização do nome de categoria | Média, proposta | [CT-RF18](Cenario_Teste/CT-RF18_Atualizacao_Categoria.md) |
 | [RF19](#rf19) | Excluir categoria permitida ou explicar o impedimento | Média, proposta | [CT-RF19](Cenario_Teste/CT-RF19_Exclusao_Categoria.md) |
+| [RF20](#rf20) | Cadastrar e listar uma nova categoria | Média, proposta | [CT-RF20](Cenario_Teste/CT-RF20_Criacao_Categoria.md) |
 
 ---
 
@@ -550,6 +551,33 @@ O erro e o endpoint estão registrados. Sem o corpo completo da resposta, logs d
 
 ---
 
+<a id="rf20"></a>
+
+## RF20 — Cadastrar e listar uma nova categoria
+
+| Campo | Descrição |
+| --- | --- |
+| Requisito de QA | Criar a categoria e apresentar o novo registro na listagem. |
+| Ator | Usuário autenticado com permissão no módulo. |
+| Pré-condições | Sessão autenticada com permissão para cadastrar categorias. Nome de categoria de teste disponível segundo as regras do produto. |
+| Gatilho | Clicar em Nova Categoria. Preencher o nome cardio leve na base de referência. Clicar em Salvar e conferir o novo registro e o contador da lista. |
+| Caso | [CT-RF20](Cenario_Teste/CT-RF20_Criacao_Categoria.md) |
+| Situação observada | Aprovado conforme a gravação. O modal fecha, o contador passa de sete para oito e a lista passa a incluir cardio leve. |
+| Defeito | Nenhum no fluxo avaliado |
+| Evidências | [Evidências](Evidencias/CT-RF20_Criacao_Categoria/README.md) e [Jam](https://jam.dev/c/b48ab94e-517d-48d6-8e46-70b18c033b8b). |
+
+### Critérios de aceitação do RF20
+
+1. O formulário permite informar um nome válido.
+2. Salvar cria o registro e fecha o formulário com retorno de sucesso.
+3. A lista exibe a nova categoria e o total atualizado.
+
+### Pontos a confirmar e limites do RF20
+
+O teste demonstra criação no cenário gravado. Não cobre campos vazios, duplicidade ou validações de tamanho. Usar como regressão; campos vazios, nomes duplicados e limites de tamanho permanecem fora do cenário gravado.
+
+---
+
 ## 🔗 Rastreabilidade
 
 | Requisito | Cenário / caso | Defeito | Resultado | Evidências |
@@ -573,6 +601,7 @@ O erro e o endpoint estão registrados. Sem o corpo completo da resposta, logs d
 | RF17 | [CT-RF17](Cenario_Teste/CT-RF17_Filtros_Categorias.md) | Nenhum no fluxo avaliado | Aprovado conforme a gravação | [Evidências](Evidencias/CT-RF17_Filtros_Categorias/README.md) e [Jam](https://jam.dev/c/5e75e423-9c7e-43d7-aade-9b1a32c5e559) |
 | RF18 | [CT-RF18](Cenario_Teste/CT-RF18_Atualizacao_Categoria.md) | Nenhum no fluxo avaliado | Aprovado conforme a gravação | [Evidências](Evidencias/CT-RF18_Atualizacao_Categoria/README.md) e [Jam](https://jam.dev/c/67664a98-2a4a-4134-91a9-7ca9b8aa9dbd) |
 | RF19 | [CT-RF19](Cenario_Teste/CT-RF19_Exclusao_Categoria.md) | [BUG-009](Relatorio-de-Bugs.md#bug-009) | Reprovado nas evidências | [Evidências](Evidencias/CT-RF19_Exclusao_Categoria/README.md) e [Jam](https://jam.dev/c/c5c78b3b-2865-4226-836f-bcb0a8fc612f) |
+| RF20 | [CT-RF20](Cenario_Teste/CT-RF20_Criacao_Categoria.md) | Nenhum no fluxo avaliado | Aprovado conforme a gravação | [Evidências](Evidencias/CT-RF20_Criacao_Categoria/README.md) e [Jam](https://jam.dev/c/b48ab94e-517d-48d6-8e46-70b18c033b8b) |
 
 ---
 
