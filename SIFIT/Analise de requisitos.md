@@ -20,6 +20,7 @@ Esta análise documenta o comportamento esperado para login com credenciais vál
 | [RF06](#rf06) | Recusar autenticação com usuário inexistente | Alta, proposta | [CT-RF06](Cenario_Teste/CT-RF06_Login_UsuarioInexistente.md) |
 | [RF07](#rf07) | Oferecer retorno ao solicitar exportação financeira | Média, proposta | [CT-RF07](Cenario_Teste/CT-RF07_Exportacao_Financeiro.md) |
 | [RF08](#rf08) | Apresentar a composição e o valor comunicado na cobrança | Alta, proposta | [CT-RF08](Cenario_Teste/CT-RF08_Calculo_Cobranca.md) |
+| [RF09](#rf09) | Manter contagem e paginação coerentes com as mensalidades | Alta, proposta | [CT-RF09](Cenario_Teste/CT-RF09_Contagem_Mensalidades.md) |
 
 ---
 
@@ -242,6 +243,33 @@ R$ 350,00 + R$ 7,00 = R$ 357,00, mas os R$ 20,83 restantes podem corresponder a 
 
 ---
 
+<a id="rf09"></a>
+
+## RF09 — Manter contagem e paginação coerentes com as mensalidades
+
+| Campo | Descrição |
+| --- | --- |
+| Requisito de QA | Manter a contagem, a listagem e a paginação coerentes e permitir consultar todos os registros contabilizados. |
+| Ator | Usuário autenticado com permissão no módulo. |
+| Pré-condições | Sessão autenticada com acesso ao financeiro. Base de referência com mensalidades conhecidas e distribuídas entre as faixas de vencimento. |
+| Gatilho | Abrir Financeiro em Aberto e selecionar Todos. Comparar o contador com as linhas e o total do rodapé; percorrer páginas quando disponíveis. Selecionar +30 dias e repetir a conferência da quantidade e dos registros acessíveis. |
+| Caso | [CT-RF09](Cenario_Teste/CT-RF09_Contagem_Mensalidades.md) |
+| Situação observada | Reprovado nas evidências. Todos informa três mensalidades, mas aparece uma linha. No filtro +30 dias, o contador indica dois registros e apenas uma linha permanece disponível. |
+| Defeito | [BUG-005](Relatorio-de-Bugs.md#bug-005) |
+| Evidências | [Evidências](Evidencias/CT-RF09_Contagem_Mensalidades/README.md) e [Jam](https://jam.dev/c/1874d0b3-5c7c-4f28-85be-91750e20cbe1). |
+
+### Critérios de aceitação do RF09
+
+1. Contador, total do rodapé e conjunto listado são consistentes.
+2. Todos os registros contados podem ser consultados, considerando a paginação.
+3. A troca de filtro recalcula a contagem e os registros com os mesmos critérios.
+
+### Pontos a confirmar e limites do RF09
+
+Não foram inspecionados os corpos das respostas ou o banco. Os casos CT-RF09, CT-RF10 e CT-RF11 tratam de aspectos relacionados do mesmo modal. Retestar com o CT-RF10; os dois cenários documentam manifestações do BUG-005, sem criar um defeito duplicado.
+
+---
+
 ## 🔗 Rastreabilidade
 
 | Requisito | Cenário / caso | Defeito | Resultado | Evidências |
@@ -254,6 +282,7 @@ R$ 350,00 + R$ 7,00 = R$ 357,00, mas os R$ 20,83 restantes podem corresponder a 
 | RF06 | [CT-RF06](Cenario_Teste/CT-RF06_Login_UsuarioInexistente.md) | Nenhum no fluxo avaliado | Aprovado conforme a gravação | [Evidências](Evidencias/CT-RF06_Login_UsuarioInexistente/README.md) e [Jam](https://jam.dev/c/b184e875-2cb1-4a01-b4dd-bc85b3741ff6) |
 | RF07 | [CT-RF07](Cenario_Teste/CT-RF07_Exportacao_Financeiro.md) | [BUG-004](Relatorio-de-Bugs.md#bug-004) | Reprovado nas evidências | [Evidências](Evidencias/CT-RF07_Exportacao_Financeiro/README.md) e [Jam](https://jam.dev/c/1084cb18-cb3d-4b85-9c2f-ee431b59a06b) |
 | RF08 | [CT-RF08](Cenario_Teste/CT-RF08_Calculo_Cobranca.md) | Sem defeito confirmado | A validar — regra ou contexto pendente | [Evidências](Evidencias/CT-RF08_Calculo_Cobranca/README.md) e [Jam](https://jam.dev/c/79b712ae-d9e0-4600-862f-fd3a278285ff) |
+| RF09 | [CT-RF09](Cenario_Teste/CT-RF09_Contagem_Mensalidades.md) | [BUG-005](Relatorio-de-Bugs.md#bug-005) | Reprovado nas evidências | [Evidências](Evidencias/CT-RF09_Contagem_Mensalidades/README.md) e [Jam](https://jam.dev/c/1874d0b3-5c7c-4f28-85be-91750e20cbe1) |
 
 ---
 

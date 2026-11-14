@@ -20,6 +20,7 @@
 | [BUG-002](#bug-002--perfil-com-dados-fictícios-campos-ausentes-e-layout-desconfigurado) | Perfil do usuário | Alta / Alta, propostas | Aberto | [CT-RF02_ERRO](Cenario_Teste/CT-RF02_ERRO.md) |
 | [BUG-003](#bug-003--filtros-combinados-da-página-clientes-não-restringem-a-listagem) | Filtros de Clientes | Alta / Alta, propostas | Aberto | [CT-RF03](Cenario_Teste/CT-RF03_FILTRO_TelaClientes.md) |
 | [BUG-004](#bug-004) | Exportar não oferece retorno visível no financeiro | Média / Média, propostas | Aberto | [CT-RF07](Cenario_Teste/CT-RF07_Exportacao_Financeiro.md) |
+| [BUG-005](#bug-005) | Contadores financeiros divergem das mensalidades acessíveis | Alta / Alta, propostas | Aberto | [CT-RF09](Cenario_Teste/CT-RF09_Contagem_Mensalidades.md) e [CT-RF10](Cenario_Teste/CT-RF10_Filtro_Mensalidades.md) |
 
 Todos os defeitos aguardam correção e reteste. As causas técnicas permanecem não confirmadas; o BUG-003 se apoia no relato e nas capturas fornecidos, com os limites registrados no caso.
 
@@ -210,6 +211,57 @@ Status, Situação Financeira, Plano e Personal não aparecem nesse corpo. HTTP 
 O defeito registrado é a falta de retorno visível. A geração ou ausência do arquivo ainda precisa ser conferida no histórico de downloads. A causa técnica não foi confirmada no código da aplicação. O status permanece aberto até que uma nova execução comprove os critérios de aceitação dos casos associados.
 
 Investigar o retorno do botão; no reteste capturar o histórico de downloads e abrir o arquivo antes de concluir se a exportação foi gerada.
+
+---
+
+<a id="bug-005"></a>
+
+## BUG-005 — Contadores financeiros divergem das mensalidades acessíveis
+
+| Campo | Descrição |
+| --- | --- |
+| Status | Aberto — reteste pendente após correção. |
+| Severidade / prioridade | Alta / Alta, propostas para triagem. |
+| Módulo | Financeiro / Financeiro em Aberto |
+| Requisitos | [RF09](Analise%20de%20requisitos.md#rf09) e [RF10](Analise%20de%20requisitos.md#rf10) |
+| Casos | [CT-RF09](Cenario_Teste/CT-RF09_Contagem_Mensalidades.md) e [CT-RF10](Cenario_Teste/CT-RF10_Filtro_Mensalidades.md) |
+| Data da evidência / revisão | 14/11/2026; sem nova execução. |
+| Página | https://sifit.centrion.com.br/dashboard |
+| Ambiente | Chrome 157.0.8103.51 / Windows 11 (x86); versão e zoom não confirmados. |
+
+### Pré-condições e reprodução
+
+**[CT-RF09](Cenario_Teste/CT-RF09_Contagem_Mensalidades.md):** Sessão autenticada com acesso ao financeiro. Base de referência com mensalidades conhecidas e distribuídas entre as faixas de vencimento.
+
+1. Abrir Financeiro em Aberto e selecionar Todos.
+2. Comparar o contador com as linhas e o total do rodapé; percorrer páginas quando disponíveis.
+3. Selecionar +30 dias e repetir a conferência da quantidade e dos registros acessíveis.
+
+**[CT-RF10](Cenario_Teste/CT-RF10_Filtro_Mensalidades.md):** Sessão autenticada e modal Financeiro em Aberto disponível. Mensalidade conhecida que pertença à faixa Até 7 dias conforme a regra do produto.
+
+1. Selecionar Até 7 dias no modal financeiro.
+2. Aguardar o carregamento e comparar contador, linhas e estado vazio.
+3. Conferir que os registros esperados estão acessíveis e que a mensagem vazia só aparece para conjunto vazio.
+
+### Esperado e obtido
+
+| Caso | Esperado | Obtido |
+| --- | --- | --- |
+| CT-RF09 | Manter a contagem, a listagem e a paginação coerentes e permitir consultar todos os registros contabilizados. | Todos informa três mensalidades, mas aparece uma linha. No filtro +30 dias, o contador indica dois registros e apenas uma linha permanece disponível. |
+| CT-RF10 | O contador do filtro e os registros exibidos devem representar o mesmo conjunto. | O filtro mantém o contador 1, enquanto a lista informa “Nenhuma mensalidade encontrada para o filtro atual”. |
+
+**Impacto:** Mensalidades contabilizadas não podem ser conferidas pela lista correspondente, prejudicando a consulta financeira.
+
+### Evidências
+
+- [CT-RF09](Cenario_Teste/CT-RF09_Contagem_Mensalidades.md): [Jam — Informa que tem 3 mensalidades e tem apenas 1.](https://jam.dev/c/1874d0b3-5c7c-4f28-85be-91750e20cbe1), [vídeo original](Evidencias/CT-RF09_Contagem_Mensalidades/video.webm) e [Evidências](Evidencias/CT-RF09_Contagem_Mensalidades/README.md). 0:01–0:05: Todos 3 com uma linha e rodapé 1–1 de 3. 0:10–0:19: +30 dias 2 com uma linha.
+- [CT-RF10](Cenario_Teste/CT-RF10_Filtro_Mensalidades.md): [Jam — Erro no filtro de mensalidade](https://jam.dev/c/3f78cf16-2c3b-48bc-8622-23b829debbec), [vídeo original](Evidencias/CT-RF10_Filtro_Mensalidades/video.webm) e [Evidências](Evidencias/CT-RF10_Filtro_Mensalidades/README.md). 0:00: clique em Até 7 dias 1 e POST /api/contas-receber/vencidas/1 com HTTP 200. 0:02–0:09: estado vazio.
+
+### Análise, limites e encaminhamento
+
+As gravações de Todos/+30 dias e Até 7 dias foram agrupadas em um único defeito. Não há diagnóstico da causa no banco ou nos corpos das respostas. A causa técnica não foi confirmada no código da aplicação. O status permanece aberto até que uma nova execução comprove os critérios de aceitação dos casos associados.
+
+Retestar com o CT-RF10; os dois cenários documentam manifestações do BUG-005, sem criar um defeito duplicado. Retestar em conjunto com CT-RF09 e conferir o contrato da faixa Até 7 dias antes de preparar a base.
 
 ---
 
