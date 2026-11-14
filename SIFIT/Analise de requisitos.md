@@ -22,6 +22,7 @@ Esta análise documenta o comportamento esperado para login com credenciais vál
 | [RF08](#rf08) | Apresentar a composição e o valor comunicado na cobrança | Alta, proposta | [CT-RF08](Cenario_Teste/CT-RF08_Calculo_Cobranca.md) |
 | [RF09](#rf09) | Manter contagem e paginação coerentes com as mensalidades | Alta, proposta | [CT-RF09](Cenario_Teste/CT-RF09_Contagem_Mensalidades.md) |
 | [RF10](#rf10) | Aplicar o filtro Até 7 dias com contagem consistente | Alta, proposta | [CT-RF10](Cenario_Teste/CT-RF10_Filtro_Mensalidades.md) |
+| [RF11](#rf11) | Explicitar o escopo dos indicadores financeiros | Média, proposta | [CT-RF11](Cenario_Teste/CT-RF11_Metricas_Financeiro.md) |
 
 ---
 
@@ -298,6 +299,33 @@ A evidência confirma a divergência visual. A causa técnica não foi investiga
 
 ---
 
+<a id="rf11"></a>
+
+## RF11 — Explicitar o escopo dos indicadores financeiros
+
+| Campo | Descrição |
+| --- | --- |
+| Requisito de QA | Indicar claramente quais métricas seguem o filtro e quais representam o total geral ou o mês. |
+| Ator | Usuário autenticado com permissão no módulo. |
+| Pré-condições | Sessão autenticada e base com valores conhecidos por faixa e mês. Definir quais cartões são globais, mensais ou dependentes do filtro selecionado. |
+| Gatilho | Abrir Financeiro em Aberto e registrar os cartões e a lista em Todos. Alternar Até 7 dias e +30 dias. Comparar cada cartão com seu escopo definido e verificar se a interface identifica esse escopo. |
+| Caso | [CT-RF11](Cenario_Teste/CT-RF11_Metricas_Financeiro.md) |
+| Situação observada | A validar — regra ou contexto pendente. A lista alterna entre uma linha e estado vazio. O cartão de atraso muda de dois para zero alunos; outros totais, como Total em aberto de R$ 470,00 e Recuperado no mês de R$ 45,00, permanecem. |
+| Defeito | Sem defeito confirmado |
+| Evidências | [Evidências](Evidencias/CT-RF11_Metricas_Financeiro/README.md) e [Jam](https://jam.dev/c/4491c9e7-7e00-4063-91ce-8683e316df06). |
+
+### Critérios de aceitação do RF11
+
+1. Cada indicador possui escopo e período identificados.
+2. Indicadores filtrados acompanham a seleção.
+3. Indicadores globais ou mensais podem permanecer constantes quando isso corresponde à regra definida.
+
+### Pontos a confirmar e limites do RF11
+
+Totais globais podem permanecer constantes por definição. Sem a regra de cada indicador, não é possível classificar toda permanência de valor como erro. A divergência de contagens está documentada nos itens 05 e 06. Confirmar os contratos dos cartões; a constância de totais globais não é suficiente para abrir outro defeito financeiro.
+
+---
+
 ## 🔗 Rastreabilidade
 
 | Requisito | Cenário / caso | Defeito | Resultado | Evidências |
@@ -312,6 +340,7 @@ A evidência confirma a divergência visual. A causa técnica não foi investiga
 | RF08 | [CT-RF08](Cenario_Teste/CT-RF08_Calculo_Cobranca.md) | Sem defeito confirmado | A validar — regra ou contexto pendente | [Evidências](Evidencias/CT-RF08_Calculo_Cobranca/README.md) e [Jam](https://jam.dev/c/79b712ae-d9e0-4600-862f-fd3a278285ff) |
 | RF09 | [CT-RF09](Cenario_Teste/CT-RF09_Contagem_Mensalidades.md) | [BUG-005](Relatorio-de-Bugs.md#bug-005) | Reprovado nas evidências | [Evidências](Evidencias/CT-RF09_Contagem_Mensalidades/README.md) e [Jam](https://jam.dev/c/1874d0b3-5c7c-4f28-85be-91750e20cbe1) |
 | RF10 | [CT-RF10](Cenario_Teste/CT-RF10_Filtro_Mensalidades.md) | [BUG-005](Relatorio-de-Bugs.md#bug-005) | Reprovado nas evidências | [Evidências](Evidencias/CT-RF10_Filtro_Mensalidades/README.md) e [Jam](https://jam.dev/c/3f78cf16-2c3b-48bc-8622-23b829debbec) |
+| RF11 | [CT-RF11](Cenario_Teste/CT-RF11_Metricas_Financeiro.md) | Sem defeito confirmado | A validar — regra ou contexto pendente | [Evidências](Evidencias/CT-RF11_Metricas_Financeiro/README.md) e [Jam](https://jam.dev/c/4491c9e7-7e00-4063-91ce-8683e316df06) |
 
 ---
 
