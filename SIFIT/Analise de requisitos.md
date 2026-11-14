@@ -24,6 +24,7 @@ Esta análise documenta o comportamento esperado para login com credenciais vál
 | [RF10](#rf10) | Aplicar o filtro Até 7 dias com contagem consistente | Alta, proposta | [CT-RF10](Cenario_Teste/CT-RF10_Filtro_Mensalidades.md) |
 | [RF11](#rf11) | Explicitar o escopo dos indicadores financeiros | Média, proposta | [CT-RF11](Cenario_Teste/CT-RF11_Metricas_Financeiro.md) |
 | [RF12](#rf12) | Validar a ordem das datas do período | Média, proposta | [CT-RF12](Cenario_Teste/CT-RF12_Periodo_Dashboard.md) |
+| [RF13](#rf13) | Identificar personais sem confundir códigos com contagem | Média, proposta | [CT-RF13](Cenario_Teste/CT-RF13_Codigos_Personais.md) |
 
 ---
 
@@ -354,6 +355,33 @@ A captura comprova o intervalo invertido. Indicadores constantes, isoladamente, 
 
 ---
 
+<a id="rf13"></a>
+
+## RF13 — Identificar personais sem confundir códigos com contagem
+
+| Campo | Descrição |
+| --- | --- |
+| Requisito de QA | Se a coluna for um identificador de cadastro, lacunas são aceitáveis. Se deveria numerar linhas, a regra precisa ser esclarecida. |
+| Ator | Usuário autenticado com permissão no módulo. |
+| Pré-condições | Sessão autenticada e acesso à listagem Personais. Confirmar se Código representa ID de cadastro ou posição na listagem. |
+| Gatilho | Abrir Personais pelo indicador da página inicial. Contar as linhas e comparar com o total informado. Conferir o significado e a unicidade dos códigos com o cadastro de referência. |
+| Caso | [CT-RF13](Cenario_Teste/CT-RF13_Codigos_Personais.md) |
+| Situação observada | A validar — regra ou contexto pendente. A lista contém quatro personais e o total informado é quatro. A coluna Código apresenta identificadores não sequenciais, como #1, #2, #4 e #11. |
+| Defeito | Sem defeito confirmado |
+| Evidências | [Evidências](Evidencias/CT-RF13_Codigos_Personais/README.md) e [Jam](https://jam.dev/c/69330ca9-ef19-4ece-918f-31a460628016). |
+
+### Critérios de aceitação do RF13
+
+1. Total confere com o número de registros considerando a paginação.
+2. Identificadores são interpretados conforme sua regra, sem exigir sequência de IDs por suposição.
+3. Se a intenção for numerar posições, o rótulo e a numeração deixam isso claro.
+
+### Pontos a confirmar e limites do RF13
+
+Não foi demonstrada uma divergência entre o total e a quantidade listada. A numeração não sequencial por si só não confirma defeito. Confirmar a semântica da coluna Código; quatro linhas e total quatro não sustentam um defeito de quantidade.
+
+---
+
 ## 🔗 Rastreabilidade
 
 | Requisito | Cenário / caso | Defeito | Resultado | Evidências |
@@ -370,6 +398,7 @@ A captura comprova o intervalo invertido. Indicadores constantes, isoladamente, 
 | RF10 | [CT-RF10](Cenario_Teste/CT-RF10_Filtro_Mensalidades.md) | [BUG-005](Relatorio-de-Bugs.md#bug-005) | Reprovado nas evidências | [Evidências](Evidencias/CT-RF10_Filtro_Mensalidades/README.md) e [Jam](https://jam.dev/c/3f78cf16-2c3b-48bc-8622-23b829debbec) |
 | RF11 | [CT-RF11](Cenario_Teste/CT-RF11_Metricas_Financeiro.md) | Sem defeito confirmado | A validar — regra ou contexto pendente | [Evidências](Evidencias/CT-RF11_Metricas_Financeiro/README.md) e [Jam](https://jam.dev/c/4491c9e7-7e00-4063-91ce-8683e316df06) |
 | RF12 | [CT-RF12](Cenario_Teste/CT-RF12_Periodo_Dashboard.md) | [BUG-006](Relatorio-de-Bugs.md#bug-006) | Reprovado nas evidências | [Evidências](Evidencias/CT-RF12_Periodo_Dashboard/README.md) e [Jam](https://jam.dev/c/93165ba3-3bfe-4dd5-9379-ab8db2d686ba) |
+| RF13 | [CT-RF13](Cenario_Teste/CT-RF13_Codigos_Personais.md) | Sem defeito confirmado | A validar — regra ou contexto pendente | [Evidências](Evidencias/CT-RF13_Codigos_Personais/README.md) e [Jam](https://jam.dev/c/69330ca9-ef19-4ece-918f-31a460628016) |
 
 ---
 
