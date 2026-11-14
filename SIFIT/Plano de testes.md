@@ -151,6 +151,7 @@ As técnicas previstas para o reteste não representam novas execuções realiza
 | [RF14](Analise%20de%20requisitos.md#rf14) | [CT-RF14](Cenario_Teste/CT-RF14_Contraste_TemaEscuro.md) | Funcional / manifestação observada | Reprovado nas evidências | [BUG-007](Relatorio-de-Bugs.md#bug-007) | Ajustar as cores e retestar ambos os temas; medir contraste se houver critério formal de acessibilidade definido. |
 | [RF15](Analise%20de%20requisitos.md#rf15) | [CT-RF15](Cenario_Teste/CT-RF15_Edicao_Modalidade.md) | Funcional / manifestação observada | Reprovado nas evidências | [BUG-008](Relatorio-de-Bugs.md#bug-008) | Verificar o fluxo de conclusão da edição e retestar persistência. A evidência reprova a clareza da ação de salvar; não afirma que o ícone de editar inexiste. |
 | [RF16](Analise%20de%20requisitos.md#rf16) | [CT-RF16](Cenario_Teste/CT-RF16_Exclusao_Modalidade.md) | Exploratório / regra a confirmar | A validar — regra ou contexto pendente | Sem defeito confirmado | Confirmar a exclusão lógica e a nomenclatura da ação; registrar defeito apenas se houver divergência com a regra definida. |
+| [RF17](Analise%20de%20requisitos.md#rf17) | [CT-RF17](Cenario_Teste/CT-RF17_Filtros_Categorias.md) | Funcional manual / regressão | Aprovado conforme a gravação | Nenhum no fluxo avaliado | Usar como regressão; combinações, conjunto vazio, caracteres especiais e paginação exigem execuções adicionais. |
 
 ---
 

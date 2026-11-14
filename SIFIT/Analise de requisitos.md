@@ -28,6 +28,7 @@ Esta análise documenta o comportamento esperado para login com credenciais vál
 | [RF14](#rf14) | Preservar a legibilidade das tabelas no tema escuro | Média, proposta | [CT-RF14](Cenario_Teste/CT-RF14_Contraste_TemaEscuro.md) |
 | [RF15](#rf15) | Permitir concluir e cancelar a edição de modalidade | Média, proposta | [CT-RF15](Cenario_Teste/CT-RF15_Edicao_Modalidade.md) |
 | [RF16](#rf16) | Comunicar e aplicar a regra de remoção de modalidade | Média, proposta | [CT-RF16](Cenario_Teste/CT-RF16_Exclusao_Modalidade.md) |
+| [RF17](#rf17) | Filtrar categorias por código e nome | Média, proposta | [CT-RF17](Cenario_Teste/CT-RF17_Filtros_Categorias.md) |
 
 ---
 
@@ -466,6 +467,33 @@ A inativação pode ser uma exclusão lógica prevista pelo sistema. É necessá
 
 ---
 
+<a id="rf17"></a>
+
+## RF17 — Filtrar categorias por código e nome
+
+| Campo | Descrição |
+| --- | --- |
+| Requisito de QA | Exibir apenas os registros correspondentes aos critérios e restaurar a lista ao limpar. |
+| Ator | Usuário autenticado com permissão no módulo. |
+| Pré-condições | Sessão autenticada e acesso a Categorias Crossfit. Categorias conhecidas por código e nome para comparação. |
+| Gatilho | Pesquisar por códigos conhecidos e conferir o resultado exibido. Limpar a busca com a ação de recarregar/limpar e conferir a lista geral. Pesquisar barbell no campo Nome e comparar as linhas com a base. |
+| Caso | [CT-RF17](Cenario_Teste/CT-RF17_Filtros_Categorias.md) |
+| Situação observada | Aprovado conforme a gravação. A quantidade de linhas exibidas muda conforme o código informado; a limpeza retorna a lista e a busca por barbell mostra a categoria correspondente. |
+| Defeito | Nenhum no fluxo avaliado |
+| Evidências | [Evidências](Evidencias/CT-RF17_Filtros_Categorias/README.md) e [Jam](https://jam.dev/c/5e75e423-9c7e-43d7-aade-9b1a32c5e559). |
+
+### Critérios de aceitação do RF17
+
+1. Código restringe ao registro correspondente.
+2. Nome restringe conforme a regra de correspondência definida.
+3. Limpar a pesquisa restaura a listagem e a contagem.
+
+### Pontos a confirmar e limites do RF17
+
+Resultado válido para os exemplos gravados. Não cobre combinações de filtros, valores inválidos, caracteres especiais ou paginação. Usar como regressão; combinações, conjunto vazio, caracteres especiais e paginação exigem execuções adicionais.
+
+---
+
 ## 🔗 Rastreabilidade
 
 | Requisito | Cenário / caso | Defeito | Resultado | Evidências |
@@ -486,6 +514,7 @@ A inativação pode ser uma exclusão lógica prevista pelo sistema. É necessá
 | RF14 | [CT-RF14](Cenario_Teste/CT-RF14_Contraste_TemaEscuro.md) | [BUG-007](Relatorio-de-Bugs.md#bug-007) | Reprovado nas evidências | [Evidências](Evidencias/CT-RF14_Contraste_TemaEscuro/README.md) e [Jam](https://jam.dev/c/6889db07-bed1-472b-8ec2-00402919cd65) |
 | RF15 | [CT-RF15](Cenario_Teste/CT-RF15_Edicao_Modalidade.md) | [BUG-008](Relatorio-de-Bugs.md#bug-008) | Reprovado nas evidências | [Evidências](Evidencias/CT-RF15_Edicao_Modalidade/README.md) e [Jam](https://jam.dev/c/951efaf8-bf32-44b0-b640-a2935a6b554a) |
 | RF16 | [CT-RF16](Cenario_Teste/CT-RF16_Exclusao_Modalidade.md) | Sem defeito confirmado | A validar — regra ou contexto pendente | [Evidências](Evidencias/CT-RF16_Exclusao_Modalidade/README.md) e [Jam](https://jam.dev/c/0f55f76a-cd31-4cee-93da-23c13b1ba637) |
+| RF17 | [CT-RF17](Cenario_Teste/CT-RF17_Filtros_Categorias.md) | Nenhum no fluxo avaliado | Aprovado conforme a gravação | [Evidências](Evidencias/CT-RF17_Filtros_Categorias/README.md) e [Jam](https://jam.dev/c/5e75e423-9c7e-43d7-aade-9b1a32c5e559) |
 
 ---
 
