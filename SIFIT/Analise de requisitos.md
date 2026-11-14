@@ -26,6 +26,7 @@ Esta análise documenta o comportamento esperado para login com credenciais vál
 | [RF12](#rf12) | Validar a ordem das datas do período | Média, proposta | [CT-RF12](Cenario_Teste/CT-RF12_Periodo_Dashboard.md) |
 | [RF13](#rf13) | Identificar personais sem confundir códigos com contagem | Média, proposta | [CT-RF13](Cenario_Teste/CT-RF13_Codigos_Personais.md) |
 | [RF14](#rf14) | Preservar a legibilidade das tabelas no tema escuro | Média, proposta | [CT-RF14](Cenario_Teste/CT-RF14_Contraste_TemaEscuro.md) |
+| [RF15](#rf15) | Permitir concluir e cancelar a edição de modalidade | Média, proposta | [CT-RF15](Cenario_Teste/CT-RF15_Edicao_Modalidade.md) |
 
 ---
 
@@ -410,6 +411,33 @@ A observação é visual. Não foi medida a razão de contraste nem realizada um
 
 ---
 
+<a id="rf15"></a>
+
+## RF15 — Permitir concluir e cancelar a edição de modalidade
+
+| Campo | Descrição |
+| --- | --- |
+| Requisito de QA | Oferecer ações visíveis de salvar e cancelar e confirmar a atualização. |
+| Ator | Usuário autenticado com permissão no módulo. |
+| Pré-condições | Sessão autenticada com permissão para editar modalidades. Modalidade de teste com nome, descrição e status conhecidos. |
+| Gatilho | Clicar no lápis de uma modalidade. Verificar o preenchimento dos campos e alterar um valor de teste. Localizar e usar a ação de salvar; conferir confirmação e recarregar a lista para validar persistência. |
+| Caso | [CT-RF15](Cenario_Teste/CT-RF15_Edicao_Modalidade.md) |
+| Situação observada | Reprovado nas evidências. Há ícones de lápis na lista. Ao clicar, os campos superiores são preenchidos para edição, mas não aparece uma ação clara para salvar ou concluir a alteração nos quadros analisados. |
+| Defeito | [BUG-008](Relatorio-de-Bugs.md#bug-008) |
+| Evidências | [Evidências](Evidencias/CT-RF15_Edicao_Modalidade/README.md) e [Jam](https://jam.dev/c/951efaf8-bf32-44b0-b640-a2935a6b554a). |
+
+### Critérios de aceitação do RF15
+
+1. O lápis carrega os dados do registro selecionado.
+2. Salvar e cancelar são ações visíveis e compreensíveis.
+3. Salvar persiste os dados; cancelar preserva os valores anteriores.
+
+### Pontos a confirmar e limites do RF15
+
+O título original diz “Sem botão para editar modalidades”, mas o lápis existe. A dificuldade demonstrada é concluir a edição; a gravação não prova ausência de toda alternativa de salvamento. Verificar o fluxo de conclusão da edição e retestar persistência. A evidência reprova a clareza da ação de salvar; não afirma que o ícone de editar inexiste.
+
+---
+
 ## 🔗 Rastreabilidade
 
 | Requisito | Cenário / caso | Defeito | Resultado | Evidências |
@@ -428,6 +456,7 @@ A observação é visual. Não foi medida a razão de contraste nem realizada um
 | RF12 | [CT-RF12](Cenario_Teste/CT-RF12_Periodo_Dashboard.md) | [BUG-006](Relatorio-de-Bugs.md#bug-006) | Reprovado nas evidências | [Evidências](Evidencias/CT-RF12_Periodo_Dashboard/README.md) e [Jam](https://jam.dev/c/93165ba3-3bfe-4dd5-9379-ab8db2d686ba) |
 | RF13 | [CT-RF13](Cenario_Teste/CT-RF13_Codigos_Personais.md) | Sem defeito confirmado | A validar — regra ou contexto pendente | [Evidências](Evidencias/CT-RF13_Codigos_Personais/README.md) e [Jam](https://jam.dev/c/69330ca9-ef19-4ece-918f-31a460628016) |
 | RF14 | [CT-RF14](Cenario_Teste/CT-RF14_Contraste_TemaEscuro.md) | [BUG-007](Relatorio-de-Bugs.md#bug-007) | Reprovado nas evidências | [Evidências](Evidencias/CT-RF14_Contraste_TemaEscuro/README.md) e [Jam](https://jam.dev/c/6889db07-bed1-472b-8ec2-00402919cd65) |
+| RF15 | [CT-RF15](Cenario_Teste/CT-RF15_Edicao_Modalidade.md) | [BUG-008](Relatorio-de-Bugs.md#bug-008) | Reprovado nas evidências | [Evidências](Evidencias/CT-RF15_Edicao_Modalidade/README.md) e [Jam](https://jam.dev/c/951efaf8-bf32-44b0-b640-a2935a6b554a) |
 
 ---
 

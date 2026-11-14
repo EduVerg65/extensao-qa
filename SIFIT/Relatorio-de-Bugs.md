@@ -23,6 +23,7 @@
 | [BUG-005](#bug-005) | Contadores financeiros divergem das mensalidades acessíveis | Alta / Alta, propostas | Aberto | [CT-RF09](Cenario_Teste/CT-RF09_Contagem_Mensalidades.md) e [CT-RF10](Cenario_Teste/CT-RF10_Filtro_Mensalidades.md) |
 | [BUG-006](#bug-006) | Seletor de período permite intervalo com datas invertidas | Média / Média, propostas | Aberto | [CT-RF12](Cenario_Teste/CT-RF12_Periodo_Dashboard.md) |
 | [BUG-007](#bug-007) | Tema escuro reduz a legibilidade das tabelas de Box – Turmas | Média / Média, propostas | Aberto | [CT-RF14](Cenario_Teste/CT-RF14_Contraste_TemaEscuro.md) |
+| [BUG-008](#bug-008) | Edição de modalidade não apresenta ação clara para salvar | Média / Média, propostas | Aberto | [CT-RF15](Cenario_Teste/CT-RF15_Edicao_Modalidade.md) |
 
 Todos os defeitos aguardam correção e reteste. As causas técnicas permanecem não confirmadas; o BUG-003 se apoia no relato e nas capturas fornecidos, com os limites registrados no caso.
 
@@ -350,6 +351,49 @@ Corrigir e retestar a validação do intervalo; avaliar a atualização dos indi
 A evidência é visual; não houve medição de razão de contraste ou conclusão de conformidade com um padrão formal. A causa técnica não foi confirmada no código da aplicação. O status permanece aberto até que uma nova execução comprove os critérios de aceitação dos casos associados.
 
 Ajustar as cores e retestar ambos os temas; medir contraste se houver critério formal de acessibilidade definido.
+
+---
+
+<a id="bug-008"></a>
+
+## BUG-008 — Edição de modalidade não apresenta ação clara para salvar
+
+| Campo | Descrição |
+| --- | --- |
+| Status | Aberto — reteste pendente após correção. |
+| Severidade / prioridade | Média / Média, propostas para triagem. |
+| Módulo | SifitBox / Modalidades |
+| Requisitos | [RF15](Analise%20de%20requisitos.md#rf15) |
+| Casos | [CT-RF15](Cenario_Teste/CT-RF15_Edicao_Modalidade.md) |
+| Data da evidência / revisão | 14/11/2026; sem nova execução. |
+| Página | https://sifit.centrion.com.br/sifitbox/turmas |
+| Ambiente | Chrome 157.0.8103.51 / Windows 11 (x86); versão e zoom não confirmados. |
+
+### Pré-condições e reprodução
+
+**[CT-RF15](Cenario_Teste/CT-RF15_Edicao_Modalidade.md):** Sessão autenticada com permissão para editar modalidades. Modalidade de teste com nome, descrição e status conhecidos.
+
+1. Clicar no lápis de uma modalidade.
+2. Verificar o preenchimento dos campos e alterar um valor de teste.
+3. Localizar e usar a ação de salvar; conferir confirmação e recarregar a lista para validar persistência.
+
+### Esperado e obtido
+
+| Caso | Esperado | Obtido |
+| --- | --- | --- |
+| CT-RF15 | Oferecer ações visíveis de salvar e cancelar e confirmar a atualização. | Há ícones de lápis na lista. Ao clicar, os campos superiores são preenchidos para edição, mas não aparece uma ação clara para salvar ou concluir a alteração nos quadros analisados. |
+
+**Impacto:** O usuário altera os campos sem encontrar uma ação clara para concluir ou cancelar a edição.
+
+### Evidências
+
+- [CT-RF15](Cenario_Teste/CT-RF15_Edicao_Modalidade.md): [Jam — Sem botão para editar modalidades](https://jam.dev/c/951efaf8-bf32-44b0-b640-a2935a6b554a), [vídeo original](Evidencias/CT-RF15_Edicao_Modalidade/video.webm) e [Evidências](Evidencias/CT-RF15_Edicao_Modalidade/README.md). 0:03–0:13: cliques no lápis, campos preenchidos e alternância entre Ativo e Inativo. Nenhuma chamada de atualização foi capturada.
+
+### Análise, limites e encaminhamento
+
+Há ícone de lápis e carregamento dos campos. A evidência não demonstra a ausência de todo mecanismo de salvamento; a persistência precisa ser retestada. A causa técnica não foi confirmada no código da aplicação. O status permanece aberto até que uma nova execução comprove os critérios de aceitação dos casos associados.
+
+Verificar o fluxo de conclusão da edição e retestar persistência. A evidência reprova a clareza da ação de salvar; não afirma que o ícone de editar inexiste.
 
 ---
 

@@ -149,6 +149,7 @@ As técnicas previstas para o reteste não representam novas execuções realiza
 | [RF12](Analise%20de%20requisitos.md#rf12) | [CT-RF12](Cenario_Teste/CT-RF12_Periodo_Dashboard.md) | Funcional / manifestação observada | Reprovado nas evidências | [BUG-006](Relatorio-de-Bugs.md#bug-006) | Corrigir e retestar a validação do intervalo; avaliar a atualização dos indicadores em base controlada como verificação complementar. |
 | [RF13](Analise%20de%20requisitos.md#rf13) | [CT-RF13](Cenario_Teste/CT-RF13_Codigos_Personais.md) | Exploratório / regra a confirmar | A validar — regra ou contexto pendente | Sem defeito confirmado | Confirmar a semântica da coluna Código; quatro linhas e total quatro não sustentam um defeito de quantidade. |
 | [RF14](Analise%20de%20requisitos.md#rf14) | [CT-RF14](Cenario_Teste/CT-RF14_Contraste_TemaEscuro.md) | Funcional / manifestação observada | Reprovado nas evidências | [BUG-007](Relatorio-de-Bugs.md#bug-007) | Ajustar as cores e retestar ambos os temas; medir contraste se houver critério formal de acessibilidade definido. |
+| [RF15](Analise%20de%20requisitos.md#rf15) | [CT-RF15](Cenario_Teste/CT-RF15_Edicao_Modalidade.md) | Funcional / manifestação observada | Reprovado nas evidências | [BUG-008](Relatorio-de-Bugs.md#bug-008) | Verificar o fluxo de conclusão da edição e retestar persistência. A evidência reprova a clareza da ação de salvar; não afirma que o ícone de editar inexiste. |
 
 ---
 
