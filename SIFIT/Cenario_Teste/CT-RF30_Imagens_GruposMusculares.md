@@ -93,7 +93,7 @@ A coluna IMAGEM exibe o ícone de imagem quebrada em todas as linhas, do início
 
 Verificar se os arquivos existem no caminho `/img/grupos_musculares/imagens/`, se o nome gravado em cada registro corresponde a um arquivo presente e qual regra do servidor responde HTTP 422 a uma requisição de imagem. O código 422 não é o retorno usual para um arquivo ausente ou sem permissão, o que sugere tratamento por aplicação e não entrega direta de arquivo estático; isso é uma hipótese a confirmar, não um diagnóstico.
 
-Verificar também se o problema atinge imagens recém-enviadas: o arquivo `6afa0017749b3.jpg` passa a ser requisitado a partir de 0:53, logo após a inclusão de um novo registro em [CT-RF31](CT-RF31_Cadastro_GrupoMuscular.md), e apresenta o mesmo 422. A associação entre esse arquivo e o registro recém-criado é uma leitura da cronologia e não foi confirmada.
+Verificar também o comportamento para registros criados sem imagem informada. O quadro de 0:48 mostra o formulário de inclusão com o campo Imagem em "Nenhum arquivo escolhido"; ainda assim, a partir de 0:53 passa a ser requisitado um quarto arquivo, `6afa0017749b3.jpg`, com o mesmo 422. Nos trechos em que a listagem é filtrada e exibe apenas o registro incluído, esse é o único arquivo requisitado (1:33, 1:35 e 1:39), o que o associa a esse registro. A associação decorre da correlação entre os filtros e as requisições, sem confirmação no banco de dados. Se confirmada, indica que o sistema passa a referenciar um arquivo de imagem para registros criados sem imagem, e que esse arquivo não é entregue.
 
 ## Evidências e limites
 
