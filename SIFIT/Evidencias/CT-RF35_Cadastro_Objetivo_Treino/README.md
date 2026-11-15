@@ -5,7 +5,7 @@
 - **Gravação:** 15/11/2026, 18:13 BRT; duração de 1 min 12 s.
 - **Revisão:** 15/11/2026.
 - **Caso:** [CT-RF35](../../Cenario_Teste/CT-RF35_Cadastro_Objetivo_Treino.md).
-- **Defeito:** [BUG-018](../../Relatorio-de-Bugs.md#bug-018), em triagem.
+- **Defeito:** [BUG-019](../../Relatorio-de-Bugs.md#bug-019), em triagem.
 - **Ambiente:** https://sifit.centrion.com.br/objetivos-treino; Chrome 157.0.8103.78, Windows 11 (x86), janela 1920 × 911.
 
 ## Resultado e origem

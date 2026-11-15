@@ -15,7 +15,7 @@
 | Objetivo | Cadastrar um objetivo de treino pela tela Objetivos Treino e apresentá-lo na listagem, ou informar a validação específica para dados recusados, sem erro interno genérico. |
 | Requisito | [RF35](../Analise%20de%20requisitos.md#rf35), proposto a partir da evidência. |
 | Tipo / prioridade | Funcional manual, análise de evidências / Alta, proposta para triagem. |
-| Defeito | [BUG-018](../Relatorio-de-Bugs.md#bug-018), em triagem. |
+| Defeito | [BUG-019](../Relatorio-de-Bugs.md#bug-019), em triagem. |
 | Encaminhamento | Investigar o HTTP 500 com logs do servidor; confirmar se o campo Código é automático; retestar com dados válidos e recusados e conferir a persistência. |
 | Fonte | [Jam — Objetivos Treino](https://jam.dev/c/1d474477-2411-4a81-b85c-74207402b783) e [evidências locais](../Evidencias/CT-RF35_Cadastro_Objetivo_Treino/README.md). |
 
@@ -119,7 +119,7 @@ Ao clicar em Salvar, o sistema apresenta o diálogo "Erro" com o texto "Erro ao 
 | Nome duplicado e limites de tamanho | Aplicar a regra confirmada e informar o impedimento. | Pendente |
 | Um clique em Salvar | Uma única requisição de gravação e ausência de duplicidade no envio válido. | Pendente |
 
-Identificar a versão corrigida, conferir a persistência antes de reenviar e anexar nova evidência antes de encerrar o BUG-018. As variações acima não entram na contagem de casos executados.
+Identificar a versão corrigida, conferir a persistência antes de reenviar e anexar nova evidência antes de encerrar o BUG-019. As variações acima não entram na contagem de casos executados.
 
 ## Próxima ação e verificações complementares
 
