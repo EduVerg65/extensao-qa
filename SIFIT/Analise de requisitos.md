@@ -2,11 +2,11 @@
 
 **Módulos:** Autenticação, Perfil, Clientes / Filtros, Financeiro, Página inicial / Personais, SifitBox / Modalidades e Turmas, Categorias Crossfit, Avaliações e Exercícios.
 
-**Atualização:** 15/11/2026 — 29 requisitos documentados entre RF01–RF28 e RF34; BUG-011–BUG-016 em triagem. RF29–RF33 ainda não estão consolidados neste documento.
+**Atualização:** 15/11/2026 — RF01 a RF34 consolidados; BUG-011–BUG-018 em triagem.
 
 **Padronização documental:** 13/11/2026, sem alteração dos resultados registrados.
 
-Esta análise documenta 29 requisitos de QA para os cenários relacionados abaixo, com base nos relatos e nas evidências fornecidas. RF01–RF04 e suas análises históricas foram preservados; RF05–RF20 ampliam a cobertura em 14/11/2026; RF21 acrescenta Avaliações; RF22–RF28 acrescentam Exercícios; e RF34 acrescenta o carregamento do dashboard em 15/11/2026. A numeração não é contínua porque RF29–RF33 ainda não estão consolidados. Os critérios abaixo constituem a referência de QA para esses fluxos; não representam validação de uma especificação formal pelo responsável pelo produto.
+Esta análise documenta 34 requisitos de QA para os cenários relacionados abaixo, com base nos relatos e nas evidências fornecidas. RF01–RF04 e suas análises históricas foram preservados; RF05–RF20 ampliam a cobertura em 14/11/2026; RF21 acrescenta Avaliações; RF22–RF28 acrescentam Exercícios; RF29–RF33 acrescentam Grupos Musculares; e RF34 acrescenta o carregamento do dashboard em 15/11/2026. Os critérios abaixo constituem a referência de QA para esses fluxos; não representam validação de uma especificação formal pelo responsável pelo produto.
 
 ## 📋 Visão geral dos requisitos
 
@@ -40,6 +40,11 @@ Esta análise documenta 29 requisitos de QA para os cenários relacionados abaix
 | [RF26](#rf26) | Validar campos obrigatórios do exercício | Alta, proposta | [CT-RF26](Cenario_Teste/CT-RF26_Exercicio_Campos_Vazios.md) |
 | [RF27](#rf27) | Rejeitar vídeo no campo de imagem com feedback | Média, proposta | [CT-RF27](Cenario_Teste/CT-RF27_Video_Campo_Imagem.md) |
 | [RF28](#rf28) | Rejeitar imagem no campo de vídeo com feedback | Média, proposta | [CT-RF28](Cenario_Teste/CT-RF28_Imagem_Campo_Video.md) |
+| [RF29](#rf29) | Excluir grupo muscular ou explicar o impedimento | Alta, proposta | [CT-RF29](Cenario_Teste/CT-RF29_Exclusao_GrupoMuscular.md) |
+| [RF30](#rf30) | Exibir as imagens cadastradas dos grupos musculares | Média, proposta | [CT-RF30](Cenario_Teste/CT-RF30_Imagens_GruposMusculares.md) |
+| [RF31](#rf31) | Cadastrar e listar um grupo muscular | Média, proposta | [CT-RF31](Cenario_Teste/CT-RF31_Cadastro_GrupoMuscular.md) |
+| [RF32](#rf32) | Alterar o tipo de membro de um grupo muscular | Média, proposta | [CT-RF32](Cenario_Teste/CT-RF32_Edicao_TipoMembro.md) |
+| [RF33](#rf33) | Filtrar a listagem de grupos musculares por código e tipo | Média, proposta | [CT-RF33](Cenario_Teste/CT-RF33_Filtros_GruposMusculares.md) |
 | [RF34](#rf34) | Carregar o dashboard sem falhas de servidor ou requisições redundantes | Alta, proposta | [CT-RF34](Cenario_Teste/CT-RF34_Erro_Servidor_Excesso_Requisicoes.md) |
 
 ---
@@ -824,7 +829,7 @@ Nome, extensão, MIME, tamanho do arquivo e resposta da API não ficaram confirm
 | Gatilho | Acessar ou recarregar controladamente o dashboard. |
 | Caso | [CT-RF34](Cenario_Teste/CT-RF34_Erro_Servidor_Excesso_Requisicoes.md) |
 | Situação observada | Reprovado nas evidências. O dashboard apresenta um diálogo de erro; a listagem visível contém 23 eventos, com verificação de token HTTP 200, diversas chamadas GET/POST HTTP 500 e OPTIONS HTTP 204. |
-| Defeito | [BUG-016](Relatorio-de-Bugs.md#bug-016), em triagem |
+| Defeito | [BUG-018](Relatorio-de-Bugs.md#bug-018), em triagem |
 | Evidências | [Jam](https://jam.dev/c/eea58e17-b62f-432b-97b2-b14c14bed555) e [Evidências](Evidencias/CT-RF34_Erro_Servidor_Excesso_Requisicoes/README.md). |
 
 ### Critérios de aceitação do RF34
@@ -838,6 +843,140 @@ Nome, extensão, MIME, tamanho do arquivo e resposta da API não ficaram confirm
 ### Pontos a confirmar e limites do RF34
 
 Os caminhos completos, parâmetros, corpos, logs e componentes de origem não foram confirmados. O título do Jam atribui o problema ao excesso de requisições, mas a relação causal não foi demonstrada. Correlacionar cada HTTP 500 ao endpoint e ao componente antes de concluir se há repetição indevida, retentativa descontrolada ou indisponibilidade simultânea do backend.
+## RF29 — Excluir grupo muscular ou explicar o impedimento
+
+| Campo | Descrição |
+| --- | --- |
+| Requisito de QA | A exclusão de um grupo muscular deve ser concluída quando permitida, removendo o registro da listagem e atualizando os contadores; quando houver impedimento de regra, o sistema deve informá-lo de forma específica e tratável, sem erro interno do servidor. |
+| Ator | Usuário autenticado com permissão em Grupos Musculares. |
+| Pré-condições | Listagem carregada, registro de teste conhecido e vínculos desse registro identificados antes da execução. |
+| Gatilho | Acionar a ação de exclusão na linha do registro e confirmar no diálogo "Deseja deletar o Grupo?". |
+| Caso | [CT-RF29](Cenario_Teste/CT-RF29_Exclusao_GrupoMuscular.md) |
+| Situação observada | Reprovado nas evidências. Duas tentativas de exclusão retornam HTTP 500 com o corpo "Erro interno inesperado."; a interface apresenta o diálogo "Erro ao deletar Grupo" e o registro permanece na listagem. |
+| Defeito | [BUG-016](Relatorio-de-Bugs.md#bug-016), em triagem |
+| Evidências | [Jam](https://jam.dev/c/98008390-0040-475e-ba7b-7f1e72cc0b2e). |
+
+### Critérios de aceitação do RF29
+
+1. A ação de exclusão apresenta confirmação explícita antes de efetivar a operação.
+2. A exclusão permitida remove o registro da listagem e atualiza os contadores do resumo.
+3. O impedimento de regra é comunicado com mensagem específica, sem erro interno do servidor.
+4. Nenhum cenário de exclusão retorna HTTP 500.
+5. O resultado se mantém após recarga da página.
+
+### Pontos a confirmar e limites do RF29
+
+Não foram consultados logs do servidor, corpo completo da resposta além dos 64 bytes retornados nem o banco de dados; a causa do HTTP 500 permanece indeterminada. Não foi confirmado se o registro permanece íntegro após as duas tentativas enviadas para o mesmo recurso. O cenário de exclusão com impedimento de regra não foi exercitado, de modo que não se sabe se o sistema distingue impedimento de falha. A mensagem "Erro ao deletar Grupo" é genérica e não informa a causa ao usuário.
+
+---
+
+## RF30 — Exibir as imagens cadastradas dos grupos musculares
+
+| Campo | Descrição |
+| --- | --- |
+| Requisito de QA | A listagem deve apresentar a imagem de cada grupo muscular que a possua, com as requisições dos arquivos concluídas com sucesso, e adotar um estado neutro definido para registros sem imagem. |
+| Ator | Usuário autenticado com acesso a Grupos Musculares. |
+| Pré-condições | Listagem carregada e caminho esperado dos arquivos de imagem conhecido. |
+| Gatilho | Carregar a tela Grupos Musculares, aplicar filtros ou alternar o tema, situações em que a listagem é recarregada. |
+| Caso | [CT-RF30](Cenario_Teste/CT-RF30_Imagens_GruposMusculares.md) |
+| Situação observada | Reprovado nas evidências. As requisições dos quatro arquivos de imagem retornam HTTP 422 durante toda a gravação, com ocorrências de `net::ERR_ABORTED`, e a coluna IMAGEM apresenta o ícone de imagem quebrada em todas as linhas, nos dois temas e com ou sem filtro. |
+| Defeito | [BUG-017](Relatorio-de-Bugs.md#bug-017), em triagem |
+| Evidências | [Jam](https://jam.dev/c/98008390-0040-475e-ba7b-7f1e72cc0b2e). |
+
+### Critérios de aceitação do RF30
+
+1. Cada grupo muscular com imagem cadastrada apresenta a imagem na coluna IMAGEM.
+2. As requisições dos arquivos de imagem são concluídas com sucesso.
+3. Registros sem imagem apresentam um estado neutro definido pelo produto, e não um ícone de arquivo quebrado.
+4. O comportamento se mantém após busca, troca de página e troca de tema.
+
+### Pontos a confirmar e limites do RF30
+
+Não foi verificada a existência dos arquivos em `/img/grupos_musculares/imagens/`, nem o conteúdo do campo de imagem de cada registro no banco, nem o resultado do acesso direto às URLs fora da página. O código 422 não é o retorno usual para arquivo ausente ou sem permissão, o que sugere tratamento por aplicação em vez de entrega direta de arquivo estático; essa é uma hipótese a confirmar. Os status foram lidos na coluna Status da lista de rede, porque o painel de detalhe da ferramenta repetiu cabeçalhos e identificadores entre linhas distintas. Resta confirmar também o comportamento para registros criados sem imagem informada, que passam a ter um arquivo requisitado.
+
+---
+
+## RF31 — Cadastrar e listar um grupo muscular
+
+| Campo | Descrição |
+| --- | --- |
+| Requisito de QA | O sistema deve permitir cadastrar um grupo muscular, apresentá-lo na listagem e atualizar os contadores do resumo, mantendo a contagem do rodapé coerente com os registros exibidos. |
+| Ator | Usuário autenticado com permissão em Grupos Musculares. |
+| Pré-condições | Nome de grupo muscular de teste disponível e estado inicial da listagem e dos contadores registrado. |
+| Gatilho | Abrir o formulário de inclusão, informar nome e tipo de membro e confirmar em "Salvar". |
+| Caso | [CT-RF31](Cenario_Teste/CT-RF31_Cadastro_GrupoMuscular.md) |
+| Situação observada | Aprovado conforme a gravação. O registro "Tríceps" foi criado com o código 6 e tipo "Superiores"; a listagem passou de três para quatro registros e os cartões de Grupos cadastrados e Superiores acompanharam a inclusão. |
+| Defeito | Nenhum no fluxo avaliado |
+| Evidências | [Jam](https://jam.dev/c/98008390-0040-475e-ba7b-7f1e72cc0b2e). |
+
+### Critérios de aceitação do RF31
+
+1. O formulário permite informar nome e tipo de membro.
+2. O envio cria o registro e encerra o formulário.
+3. A listagem passa a exibir o novo grupo muscular, com o rodapé de contagem coerente.
+4. Os cartões de resumo refletem a inclusão, inclusive o cartão do tipo de membro escolhido.
+5. O registro permanece após recarga da página.
+
+### Pontos a confirmar e limites do RF31
+
+A cronologia não registra uma requisição de criação com o respectivo código de status; a conclusão apoia-se na comparação entre os quadros de 0:48 e 0:55. A persistência após recarga não foi verificada, nem houve consulta ao banco. Permanecem fora do cenário gravado campos obrigatórios em branco, nomes duplicados, limites de tamanho, caracteres especiais e cancelamento do formulário. O campo Código estava em branco no envio e o sistema atribuiu o código 6; a atribuição automática é compatível com os códigos não sequenciais da listagem, mas a regra não foi confirmada, nem foi testado o envio com código informado manualmente. O formulário foi enviado sem imagem e, ainda assim, passou a existir um arquivo requisitado para o novo registro, situação tratada no [RF30](#rf30).
+
+---
+
+## RF32 — Alterar o tipo de membro de um grupo muscular
+
+| Campo | Descrição |
+| --- | --- |
+| Requisito de QA | O sistema deve permitir alterar o tipo de membro de um grupo muscular existente, refletir a mudança na listagem e recalcular os cartões de resumo, mantendo a soma dos tipos igual ao total de registros. |
+| Ator | Usuário autenticado com permissão em Grupos Musculares. |
+| Pré-condições | Registro de teste com tipo de membro conhecido e estado inicial dos cartões de resumo registrado. |
+| Gatilho | Abrir a edição do registro, selecionar outro tipo de membro e confirmar em "Salvar". |
+| Caso | [CT-RF32](Cenario_Teste/CT-RF32_Edicao_TipoMembro.md) |
+| Situação observada | Aprovado conforme a gravação. O registro de código 1 passou de "Superiores" para "Inferiores" e os cartões acompanharam, de Superiores 3 / Inferiores 1 para Superiores 2 / Inferiores 2, com o total constante em quatro. |
+| Defeito | Nenhum no fluxo avaliado |
+| Evidências | [Jam](https://jam.dev/c/98008390-0040-475e-ba7b-7f1e72cc0b2e). |
+
+### Critérios de aceitação do RF32
+
+1. O formulário de edição abre preenchido com os dados atuais do registro.
+2. A alteração do tipo de membro é persistida e exibida na listagem.
+3. Os cartões de resumo são recalculados e a soma dos tipos corresponde ao total de registros.
+4. O resultado se mantém após recarga da página.
+
+### Pontos a confirmar e limites do RF32
+
+A cronologia não registra uma requisição de atualização com o respectivo código de status; a conclusão apoia-se na comparação entre os quadros de 1:02 e 1:08 e nos cartões de resumo. O controle que abre o formulário de edição não foi identificado com certeza na cronologia. A persistência após recarga não foi verificada, nem houve consulta ao banco. Permanecem fora do cenário gravado o cancelamento da edição, a alteração de nome, a alteração simultânea de vários campos e a validação de campos obrigatórios.
+
+A edição recebeu um arquivo de imagem, com miniatura exibida corretamente na pré-visualização, mas após o envio o registro continua sem imagem na listagem e o arquivo requisitado mantém o mesmo nome anterior. Isso é compatível tanto com sobrescrita sob o mesmo nome quanto com não persistência do envio, e não distingue as duas hipóteses, já que todas as requisições de imagem retornam HTTP 422 conforme o [RF30](#rf30).
+
+---
+
+## RF33 — Filtrar a listagem de grupos musculares por código e tipo
+
+| Campo | Descrição |
+| --- | --- |
+| Requisito de QA | A busca deve apresentar apenas os registros que atendam aos critérios informados, com a contagem do rodapé correspondente ao conjunto exibido, e informar explicitamente quando não houver correspondência. |
+| Ator | Usuário autenticado com acesso a Grupos Musculares. |
+| Pré-condições | Base conhecida, com a quantidade de registros por tipo de membro registrada e ao menos um tipo sem registros associados. |
+| Gatilho | Informar código, selecionar tipo de membro e acionar a busca. |
+| Caso | [CT-RF33](Cenario_Teste/CT-RF33_Filtros_GruposMusculares.md) |
+| Situação observada | Aprovado conforme a gravação. O filtro por tipo sem registros apresenta "Nenhum grupo muscular encontrado" e rodapé "Mostrando 0 a 0 de 0 grupos"; os filtros por tipo e por código retornam o registro correspondente, com rodapé coerente. |
+| Defeito | Nenhum no fluxo avaliado |
+| Evidências | [Jam](https://jam.dev/c/98008390-0040-475e-ba7b-7f1e72cc0b2e). |
+
+### Critérios de aceitação do RF33
+
+1. A busca por tipo de membro retorna apenas registros daquele tipo.
+2. A busca por código retorna o registro correspondente.
+3. A contagem do rodapé corresponde aos registros apresentados.
+4. A ausência de correspondência apresenta mensagem explícita, e não uma listagem vazia sem aviso.
+5. A limpeza dos critérios restaura a listagem completa.
+
+### Pontos a confirmar e limites do RF33
+
+A lógica de combinação dos critérios não ficou demonstrada. No quadro de 2:00 o código e o tipo de membro estão preenchidos ao mesmo tempo e o resultado atende aos dois, porém o único registro daquele código também é daquele tipo, de modo que o mesmo resultado seria obtido com apenas um dos critérios. A verificação exige um caso em que os critérios se contradigam, cujo retorno esperado é o conjunto vazio; esse caso não foi exercitado. Esse ponto é relevante porque filtros combinados são o aspecto reprovado no [RF03](#rf03--pesquisar-clientes-com-filtros-combinados).
+
+Permanecem fora do cenário gravado a busca por nome, código inexistente ou inválido, caracteres especiais, resultados com mais de uma linha, paginação do resultado filtrado e limpeza dos critérios. Os cartões de resumo não acompanham o filtro e mantêm o total da base, enquanto o rodapé acompanha o conjunto filtrado; o comportamento é coerente entre os quadros conferidos, mas o contrato de cada indicador não foi fornecido, do mesmo modo que no [RF11](#rf11).
 
 ---
 
@@ -873,7 +1012,12 @@ Os caminhos completos, parâmetros, corpos, logs e componentes de origem não fo
 | RF26 | [CT-RF26](Cenario_Teste/CT-RF26_Exercicio_Campos_Vazios.md) | [BUG-013](Relatorio-de-Bugs.md#bug-013), em triagem | Reprovado — sem feedback de validação visível. | [Jam](https://jam.dev/c/bc07ca5f-d3a9-45f6-84cb-12c0b562a211) |
 | RF27 | [CT-RF27](Cenario_Teste/CT-RF27_Video_Campo_Imagem.md) | [BUG-014](Relatorio-de-Bugs.md#bug-014), em triagem | Reprovado — arquivo rejeitado sem feedback visível. | [Jam](https://jam.dev/c/00740108-9a7d-4151-8723-171c89635567) |
 | RF28 | [CT-RF28](Cenario_Teste/CT-RF28_Imagem_Campo_Video.md) | [BUG-015](Relatorio-de-Bugs.md#bug-015), em triagem | Reprovado — arquivo rejeitado sem feedback visível. | [Jam](https://jam.dev/c/be9437a4-4fe9-4756-a2af-6777d3f43e25) |
-| RF34 | [CT-RF34](Cenario_Teste/CT-RF34_Erro_Servidor_Excesso_Requisicoes.md) | [BUG-016](Relatorio-de-Bugs.md#bug-016), em triagem | Reprovado — múltiplas requisições retornam HTTP 500. | [Jam](https://jam.dev/c/eea58e17-b62f-432b-97b2-b14c14bed555) e [Evidências](Evidencias/CT-RF34_Erro_Servidor_Excesso_Requisicoes/README.md) |
+| RF29 | [CT-RF29](Cenario_Teste/CT-RF29_Exclusao_GrupoMuscular.md) | [BUG-016](Relatorio-de-Bugs.md#bug-016), em triagem | Reprovado nas evidências; reteste pendente. | [Jam](https://jam.dev/c/98008390-0040-475e-ba7b-7f1e72cc0b2e) |
+| RF30 | [CT-RF30](Cenario_Teste/CT-RF30_Imagens_GruposMusculares.md) | [BUG-017](Relatorio-de-Bugs.md#bug-017), em triagem | Reprovado nas evidências; reteste pendente. | [Jam](https://jam.dev/c/98008390-0040-475e-ba7b-7f1e72cc0b2e) |
+| RF31 | [CT-RF31](Cenario_Teste/CT-RF31_Cadastro_GrupoMuscular.md) | Nenhum no fluxo avaliado | Aprovado conforme a gravação | [Jam](https://jam.dev/c/98008390-0040-475e-ba7b-7f1e72cc0b2e) |
+| RF32 | [CT-RF32](Cenario_Teste/CT-RF32_Edicao_TipoMembro.md) | Nenhum no fluxo avaliado | Aprovado conforme a gravação | [Jam](https://jam.dev/c/98008390-0040-475e-ba7b-7f1e72cc0b2e) |
+| RF33 | [CT-RF33](Cenario_Teste/CT-RF33_Filtros_GruposMusculares.md) | Nenhum no fluxo avaliado | Aprovado conforme a gravação | [Jam](https://jam.dev/c/98008390-0040-475e-ba7b-7f1e72cc0b2e) |
+| RF34 | [CT-RF34](Cenario_Teste/CT-RF34_Erro_Servidor_Excesso_Requisicoes.md) | [BUG-018](Relatorio-de-Bugs.md#bug-018), em triagem | Reprovado — múltiplas requisições retornam HTTP 500. | [Jam](https://jam.dev/c/eea58e17-b62f-432b-97b2-b14c14bed555) e [Evidências](Evidencias/CT-RF34_Erro_Servidor_Excesso_Requisicoes/README.md) |
 
 ---
 
@@ -926,7 +1070,29 @@ RF22 utiliza relato, imagem inicial e Info do Jam. RF23–RF25 utilizam quadros,
 
 ### Base da análise do RF34 — revisão de 15/11/2026
 
-RF34 utiliza quadros, Info e a listagem Network do Jam. A evidência mostra 23 eventos visíveis, múltiplos HTTP 500 e um diálogo de erro, mas os endpoints aparecem truncados e não foram inspecionados corpos ou logs. BUG-016 permanece em triagem. Não houve nova execução, reteste ou diagnóstico de causa raiz.
+RF34 utiliza quadros, Info e a listagem Network do Jam. A evidência mostra 23 eventos visíveis, múltiplos HTTP 500 e um diálogo de erro, mas os endpoints aparecem truncados e não foram inspecionados corpos ou logs. BUG-018 permanece em triagem. Não houve nova execução, reteste ou diagnóstico de causa raiz.
+
+### Base da análise do RF29 — revisão de 15/11/2026
+
+RF29 utiliza os painéis Informações, Rede e Console do Jam "Tela de Grupos Musculares", lidos diretamente, e os quadros de 1:18 e 1:21. As duas requisições de exclusão, seus horários, tempos de resposta, cabeçalhos e corpo de resposta foram registrados a partir do painel de rede. Não houve nova execução, acesso ao código ou ao banco, nem reteste. BUG-016 está em triagem.
+
+### Base da análise do RF30 — revisão de 15/11/2026
+
+RF30 utiliza a lista de rede do Jam filtrada por erros, a cronologia do painel Console e os quadros de 0:20, 0:55, 1:18, 1:21, 1:45 e 2:00. Foram registrados os quatro arquivos requisitados, doze ocorrências de HTTP 422 entre 0:06 e 1:59 e três ocorrências de `net::ERR_ABORTED`. Os cabeçalhos de resposta das imagens não foram utilizados por inconsistência do painel de detalhe. Não houve verificação no servidor de arquivos, acesso ao banco, nova execução ou reteste. BUG-017 está em triagem.
+
+### Base da análise do RF31 — revisão de 15/11/2026
+
+RF31 utiliza a cronologia do painel Console entre 0:17 e 0:53 e os quadros de 0:20, 0:48 e 0:55. O quadro de 0:48 mostra o formulário no momento do envio, com o campo Código em branco e o campo Imagem em "Nenhum arquivo escolhido". A comparação com o quadro de 0:55 sustenta a criação do registro e a atualização dos cartões. Não houve nova execução, acesso ao código ou ao banco, nem reteste.
+
+### Base da análise do RF32 — revisão de 15/11/2026
+
+RF32 utiliza a cronologia do painel Console entre 0:57 e 1:38 e os quadros de 0:55, 1:02, 1:08, 1:45 e 2:00. O quadro de 1:02 mostra o formulário aberto em edição com os dados do registro de código 1; o de 1:08 mostra a listagem já com o novo tipo de membro e os cartões recalculados. As alterações posteriores a 1:08 não têm quadro de antes e depois individual e sustentam-se no quadro de 1:45 e nos cartões de 2:00. Não houve nova execução, acesso ao código ou ao banco, nem reteste.
+
+### Base da análise do RF33 — revisão de 15/11/2026
+
+RF33 utiliza a cronologia do painel Console e os quadros de 0:15, 1:45 e 2:00. O quadro de 0:15 registra o estado sem resultados; os de 1:45 e 2:00 registram buscas por tipo de membro e por código, com o rodapé correspondente. O resultado da busca pelo código "1", acionada entre 1:53 e 1:55, não teve quadro consultado e está registrado apenas como ação. Não houve nova execução, acesso ao código ou ao banco, nem reteste.
+
+Com RF29 a RF34, a análise passa a cobrir 34 requisitos. A tela Grupos Musculares acrescenta duas reprovações, com BUG-016 e BUG-017 em triagem, e três aprovações limitadas aos exemplos gravados. O dashboard acrescenta uma reprovação vinculada ao BUG-018, também em triagem.
 
 ---
 

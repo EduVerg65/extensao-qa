@@ -1,10 +1,10 @@
 # 📊 Relatório de Testes — SIFIT
 
-**Escopo:** 29 casos documentados entre CT-RF01–CT-RF28 e CT-RF34 — autenticação, recuperação, perfil, Clientes, financeiro, página inicial e dashboard, modalidades / tema de SifitBox, Categorias Crossfit, Avaliações e Exercícios. CT-RF29–CT-RF33 ainda não estão consolidados.
+**Escopo:** 34 casos documentados entre CT-RF01 e CT-RF34 — autenticação, recuperação, perfil, Clientes, financeiro, página inicial e dashboard, modalidades / tema de SifitBox, Categorias Crossfit, Avaliações, Exercícios e Grupos Musculares.
 
 **Datas das gravações do Jam:** CT-RF01 em 23/10/2026; CT-RF02_ERRO em 22/10/2026 às 21:45 BRT; CT-RF03 não confirmada; CT-RF04_loginComSucesso em 13/11/2026; CT-RF05–CT-RF20 em 14/11/2026; CT-RF21 em 15/11/2026 às 15:07:51,265 BRT; CT-RF22–28 em 15/11/2026 às 15:25, 15:40, 15:38, 15:35, 16:11, 16:08 e 16:07 BRT; CT-RF34 em 15/11/2026 às 17:23 BRT.
 
-**Data da revisão documental:** 15/11/2026, com integração de CT-RF22–CT-RF28 e CT-RF34; BUG-011–BUG-016 em triagem. Resultados anteriores preservados.
+**Data da revisão documental:** 15/11/2026, com integração de CT-RF22–CT-RF34; BUG-011–BUG-018 em triagem. Resultados anteriores preservados.
 
 **Origem do resultado:** análise de evidências fornecidas; sem nova execução no sistema nesta revisão.
 
@@ -64,7 +64,7 @@ Os 17 retestes incluem CT-RF22/24/26/27/28/34, sujeitos à confirmação funcion
 | [CT-RF26](Cenario_Teste/CT-RF26_Exercicio_Campos_Vazios.md) | [RF26](Analise%20de%20requisitos.md#rf26) | Bloquear o envio, indicar os campos obrigatórios e não criar registro vazio. | O formulário permanece aberto após a tentativa de salvar, sem mensagem, destaque ou orientação de validação visível. A persistência não foi demonstrada. | Reprovado — sem feedback de validação visível. | [BUG-013](Relatorio-de-Bugs.md#bug-013), em triagem |
 | [CT-RF27](Cenario_Teste/CT-RF27_Video_Campo_Imagem.md) | [RF27](Analise%20de%20requisitos.md#rf27) | Rejeitar vídeo no campo Imagem e informar formatos e limites aceitos. | O vídeo não aparece anexado e não há mensagem visível explicando a rejeição ou os formatos permitidos. | Reprovado — arquivo rejeitado sem feedback visível. | [BUG-014](Relatorio-de-Bugs.md#bug-014), em triagem |
 | [CT-RF28](Cenario_Teste/CT-RF28_Imagem_Campo_Video.md) | [RF28](Analise%20de%20requisitos.md#rf28) | Rejeitar imagem no campo Vídeo e informar formatos e limites aceitos. | A imagem não aparece anexada e não há mensagem visível explicando a rejeição ou os formatos permitidos. | Reprovado — arquivo rejeitado sem feedback visível. | [BUG-015](Relatorio-de-Bugs.md#bug-015), em triagem |
-| [CT-RF34](Cenario_Teste/CT-RF34_Erro_Servidor_Excesso_Requisicoes.md) | [RF34](Analise%20de%20requisitos.md#rf34) | Carregar os componentes do dashboard sem HTTP 500 e tratar falhas parciais de forma específica. | O dashboard apresenta diálogo de erro; entre 23 eventos visíveis, diversas chamadas GET/POST retornam HTTP 500. Endpoints e causa não foram confirmados. | Reprovado nas evidências. | [BUG-016](Relatorio-de-Bugs.md#bug-016), em triagem |
+| [CT-RF34](Cenario_Teste/CT-RF34_Erro_Servidor_Excesso_Requisicoes.md) | [RF34](Analise%20de%20requisitos.md#rf34) | Carregar os componentes do dashboard sem HTTP 500 e tratar falhas parciais de forma específica. | O dashboard apresenta diálogo de erro; entre 23 eventos visíveis, diversas chamadas GET/POST retornam HTTP 500. Endpoints e causa não foram confirmados. | Reprovado nas evidências. | [BUG-018](Relatorio-de-Bugs.md#bug-018), em triagem |
 
 ---
 
@@ -87,7 +87,9 @@ Os 17 retestes incluem CT-RF22/24/26/27/28/34, sujeitos à confirmação funcion
 | [BUG-013](Relatorio-de-Bugs.md#bug-013) | Campos obrigatórios vazios sem feedback de validação | Média, proposta | Alta, proposta | Em triagem; confirmação de persistência e reteste pendentes. |
 | [BUG-014](Relatorio-de-Bugs.md#bug-014) | Vídeo rejeitado no campo Imagem sem feedback | Baixa, proposta | Média, proposta | Em triagem; MIME e reteste pendentes. |
 | [BUG-015](Relatorio-de-Bugs.md#bug-015) | Imagem rejeitada no campo Vídeo sem feedback | Baixa, proposta | Média, proposta | Em triagem; MIME e reteste pendentes. |
-| [BUG-016](Relatorio-de-Bugs.md#bug-016) | Dashboard apresenta múltiplos HTTP 500 durante o carregamento | Alta, proposta | Alta, proposta | Em triagem; endpoints, repetição e causa pendentes. |
+| [BUG-016](Relatorio-de-Bugs.md#bug-016) | Exclusão de grupo muscular retorna HTTP 500 | Média, proposta | Alta, proposta | Em triagem; causa pendente. |
+| [BUG-017](Relatorio-de-Bugs.md#bug-017) | Imagens dos grupos musculares retornam HTTP 422 | Média, proposta | Média, proposta | Em triagem; causa pendente. |
+| [BUG-018](Relatorio-de-Bugs.md#bug-018) | Dashboard apresenta múltiplos HTTP 500 durante o carregamento | Alta, proposta | Alta, proposta | Em triagem; endpoints, repetição e causa pendentes. |
 
 As classificações propostas dependem de triagem. O BUG-003 mantém o resultado atribuído ao relato fornecido.
 
@@ -310,7 +312,7 @@ Na inclusão de CT-RF21, o consolidado histórico passou a 21 casos: 6 aprovados
 | [CT-RF28](Cenario_Teste/CT-RF28_Imagem_Campo_Video.md) | Reprovado — arquivo rejeitado sem feedback visível. | Informar formatos aceitos e retestar extensão, MIME, tamanho, rede e persistência. |
 | [CT-RF34](Cenario_Teste/CT-RF34_Erro_Servidor_Excesso_Requisicoes.md) | Reprovado — múltiplas chamadas retornam HTTP 500. | Correlacionar endpoints e componentes, inspecionar logs, verificar repetição e retestar o carregamento completo. |
 
-O consolidado atual é de 29 casos documentados: 7 aprovados, 17 reprovados e 5 a validar; 16 defeitos registrados (10 abertos e 6 em triagem) e 17 casos com reteste corretivo pendente. A numeração não é contínua porque CT-RF29–CT-RF33 ainda não estão consolidados. CT-RF09/10 compartilham BUG-005. BUG-016 registra os HTTP 500 do dashboard sem confirmar que excesso de requisições seja a causa. Sem nova execução.
+O consolidado atual é de 34 casos documentados: 10 aprovados, 19 reprovados e 5 a validar; 18 defeitos registrados (10 abertos e 8 em triagem) e 19 casos com reteste corretivo pendente. CT-RF09/10 compartilham BUG-005. BUG-018 registra os HTTP 500 do dashboard sem confirmar que excesso de requisições seja a causa. Sem nova execução.
 
 ---
 

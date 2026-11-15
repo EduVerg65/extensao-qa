@@ -15,7 +15,7 @@
 | Objetivo | Verificar se o dashboard carrega seus dados sem falhas de servidor, sem disparar requisições redundantes e com tratamento adequado de erros parciais. |
 | Requisito | [RF34](../Analise%20de%20requisitos.md#rf34) — referência de QA; confirmação de produto pendente. |
 | Tipo / prioridade | Funcional manual, integração e análise de rede / Alta, proposta para triagem. |
-| Defeito | [BUG-016](../Relatorio-de-Bugs.md#bug-016), em triagem. |
+| Defeito | [BUG-018](../Relatorio-de-Bugs.md#bug-018), em triagem. |
 | Encaminhamento | Correlacionar cada HTTP 500 ao endpoint e componente, verificar repetição indevida, inspecionar logs do backend e retestar o carregamento completo. |
 | Fonte | [Jam — Erro no servidor por excesso de requisições](https://jam.dev/c/eea58e17-b62f-432b-97b2-b14c14bed555) |
 
