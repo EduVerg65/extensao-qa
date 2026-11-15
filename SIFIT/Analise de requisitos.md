@@ -2,11 +2,11 @@
 
 **Módulos:** Autenticação, Perfil, Clientes / Filtros, Financeiro, Página inicial / Personais, SifitBox / Modalidades e Turmas, Categorias Crossfit, Avaliações, Exercícios, Grupos Musculares, Dashboard e Objetivos de Treino.
 
-**Atualização:** 15/11/2026 — RF01 a RF35 e RF38 a RF42 consolidados, com inclusão de Categorias Crossfit (CT-RF38), SifitBox – Turmas (CT-RF39 a CT-RF41) e, a partir de CT-RF42, Pagar.me, Configurações, Despesas Fixas e Relatórios; BUG-011–BUG-020 em triagem.
+**Atualização:** 15/11/2026 — RF01 a RF35 e RF38 a RF43 consolidados, com inclusão de Categorias Crossfit (CT-RF38), SifitBox – Turmas (CT-RF39 a CT-RF41) e, a partir de CT-RF42, Pagar.me, Configurações, Despesas Fixas e Relatórios; BUG-011–BUG-020 em triagem.
 
 **Padronização documental:** 13/11/2026, sem alteração dos resultados registrados.
 
-Esta análise documenta 40 requisitos de QA para os cenários relacionados abaixo, com base nos relatos e nas evidências fornecidas. RF01–RF04 e suas análises históricas foram preservados; RF05–RF20 ampliam a cobertura em 14/11/2026; RF21 acrescenta Avaliações; RF22–RF28 acrescentam Exercícios; RF29–RF33 acrescentam Grupos Musculares; RF34 acrescenta o carregamento do dashboard RF35 acrescenta o cadastro de objetivos de treino e RF38 acrescenta o cadastro de categorias com código automático em 15/11/2026. RF39 acrescenta o cadastro de modalidade em SifitBox – Turmas. RF40 acrescenta a exclusão de turmas e modalidades. RF41 acrescenta o cadastro de turma. RF42 a RF56 acrescentam Pagar.me, Configurações, Despesas Fixas e Relatórios em 15/11/2026. Os critérios abaixo constituem a referência de QA para esses fluxos; não representam validação de uma especificação formal pelo responsável pelo produto.
+Esta análise documenta 41 requisitos de QA para os cenários relacionados abaixo, com base nos relatos e nas evidências fornecidas. RF01–RF04 e suas análises históricas foram preservados; RF05–RF20 ampliam a cobertura em 14/11/2026; RF21 acrescenta Avaliações; RF22–RF28 acrescentam Exercícios; RF29–RF33 acrescentam Grupos Musculares; RF34 acrescenta o carregamento do dashboard RF35 acrescenta o cadastro de objetivos de treino e RF38 acrescenta o cadastro de categorias com código automático em 15/11/2026. RF39 acrescenta o cadastro de modalidade em SifitBox – Turmas. RF40 acrescenta a exclusão de turmas e modalidades. RF41 acrescenta o cadastro de turma. RF42 a RF56 acrescentam Pagar.me, Configurações, Despesas Fixas e Relatórios em 15/11/2026. Os critérios abaixo constituem a referência de QA para esses fluxos; não representam validação de uma especificação formal pelo responsável pelo produto.
 
 ## 📋 Visão geral dos requisitos
 
@@ -52,6 +52,7 @@ Esta análise documenta 40 requisitos de QA para os cenários relacionados abaix
 | [RF40](#rf40) | Aplicar e comunicar a regra de exclusão de turmas e modalidades | Média, proposta | [CT-RF40](Cenario_Teste/CT-RF40_Exclusao_Turmas_Modalidades.md) |
 | [RF41](#rf41) | Cadastrar turma ou informar visivelmente o dado que impede o envio | Média, proposta | [CT-RF41](Cenario_Teste/CT-RF41_Cadastro_Turma_Sem_Modalidade.md) |
 | [RF42](#rf42) | Solicitar saque e informar o resultado | Alta, proposta | [CT-RF42](Cenario_Teste/CT-RF42_Solicitacao_Saque_PagarMe.md) |
+| [RF43](#rf43) | Criar cobrança pelo painel Pagar.me | Média, proposta | [CT-RF43](Cenario_Teste/CT-RF43_Criacao_Cobranca_PagarMe.md) |
 
 ---
 
@@ -1167,6 +1168,35 @@ O corpo e a resposta da solicitação não foram capturados; não foram confirma
 
 ---
 
+<a id="rf43"></a>
+
+## RF43 — Criar cobrança pelo painel Pagar.me
+
+| Campo | Descrição |
+| --- | --- |
+| Requisito de QA | A criação de cobrança pelo painel Pagar.me deve aceitar descrição, valor e método de pagamento, criar a cobrança e informar o sucesso ao usuário. |
+| Ator | Usuário autenticado com acesso ao módulo Pagar.me. |
+| Pré-condições | Conta de pagamento configurada; descrição e valor de teste autorizados. |
+| Gatilho | Acionar Nova cobrança, informar descrição, valor e método e acionar Criar Cobrança. |
+| Caso | [CT-RF43](Cenario_Teste/CT-RF43_Criacao_Cobranca_PagarMe.md) |
+| Situação observada | Aprovado conforme a gravação. `POST criar-cobranca` retorna HTTP 200 e o sistema apresenta "Cobrança criada com sucesso!". |
+| Defeito | Nenhum no fluxo avaliado |
+| Evidências | [Jam](https://jam.dev/c/e6e551ef-9196-4c79-b6a2-89747b1e8b33) e [Evidências](Evidencias/CT-RF43_Criacao_Cobranca_PagarMe/README.md). |
+
+### Critérios de aceitação do RF43
+
+1. O formulário permite informar descrição, valor e método de pagamento.
+2. A criação retorna sucesso e a interface apresenta mensagem compreensível.
+3. A cobrança passa a constar nos registros do módulo (por exemplo, Transações recentes) conforme a regra do produto.
+4. Dados inválidos ou ausentes recebem validação específica.
+5. A cobrança não é duplicada por cliques repetidos.
+
+### Pontos a confirmar e limites do RF43
+
+Não foram verificados a presença da cobrança nos registros, o link gerado, outros métodos, valores inválidos e duplicidade; corpo e resposta da requisição não foram capturados.
+
+---
+
 ## 🔗 Rastreabilidade
 
 | Requisito | Cenário / caso | Defeito | Resultado | Evidências |
@@ -1211,6 +1241,7 @@ O corpo e a resposta da solicitação não foram capturados; não foram confirma
 | RF40 | [CT-RF40](Cenario_Teste/CT-RF40_Exclusao_Turmas_Modalidades.md) | Sem defeito confirmado | A validar — regra ou contexto pendente | [Evidências](Evidencias/CT-RF40_Exclusao_Turmas_Modalidades/README.md) e [Jam](https://jam.dev/c/ee9a133b-d6b1-442d-b4b0-dd87595b7e70) |
 | RF41 | [CT-RF41](Cenario_Teste/CT-RF41_Cadastro_Turma_Sem_Modalidade.md) | [BUG-020](Relatorio-de-Bugs.md#bug-020), em triagem | Reprovado nas evidências; reteste pendente. | [Evidências](Evidencias/CT-RF41_Cadastro_Turma_Sem_Modalidade/README.md) e [Jam](https://jam.dev/c/ee9a133b-d6b1-442d-b4b0-dd87595b7e70) |
 | RF42 | [CT-RF42](Cenario_Teste/CT-RF42_Solicitacao_Saque_PagarMe.md) | Sem defeito confirmado | A validar — regra ou contexto pendente | [Evidências](Evidencias/CT-RF42_Solicitacao_Saque_PagarMe/README.md) e [Jam](https://jam.dev/c/e6e551ef-9196-4c79-b6a2-89747b1e8b33) |
+| RF43 | [CT-RF43](Cenario_Teste/CT-RF43_Criacao_Cobranca_PagarMe.md) | Nenhum no fluxo avaliado | Aprovado conforme a gravação | [Evidências](Evidencias/CT-RF43_Criacao_Cobranca_PagarMe/README.md) e [Jam](https://jam.dev/c/e6e551ef-9196-4c79-b6a2-89747b1e8b33) |
 
 ---
 
@@ -1322,6 +1353,12 @@ Com RF41, a análise passa a cobrir 39 requisitos documentados. SifitBox – Tur
 RF42 utiliza os painéis Info, Console, Network e Actions do Jam "Pagar.me" e os quadros de 0:00, 0:04 e 0:05. Foram registrados a requisição de saque com HTTP 200 e a ausência de mensagem de resultado. Corpos de requisição e de resposta indisponíveis. Não houve nova execução, acesso ao código ou ao banco, nem reteste.
 
 Com RF42, a análise passa a cobrir 40 requisitos documentados. O CT-RF42 acrescenta um ponto a validar, sem defeito confirmado.
+
+### Base da análise do RF43 — revisão de 15/11/2026
+
+RF43 utiliza os painéis Info, Console, Network e Actions do Jam "Pagar.me" e os quadros de 0:29 e 0:31. Foram registrados o formulário preenchido, a requisição de criação com HTTP 200 e a mensagem de sucesso. Corpos de requisição e de resposta indisponíveis. Não houve nova execução, acesso ao código ou ao banco, nem reteste.
+
+Com RF43, a análise passa a cobrir 41 requisitos documentados. O CT-RF43 acrescenta uma aprovação limitada ao exemplo gravado.
 
 ---
 
