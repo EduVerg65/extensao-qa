@@ -1,0 +1,65 @@
+CT-RF39 — Cadastro de modalidade em SifitBox – Turmas
+Fonte: https://jam.dev/c/ee9a133b-d6b1-442d-b4b0-dd87595b7e70
+Gravação: 15/11/2026, 18:51 BRT; duração: 1 min 39 s.
+Revisão documental: 15/11/2026.
+Página: https://sifit.centrion.com.br/sifitbox/turmas
+Foco deste caso: cadastro da modalidade "teste" (1:15 a 1:35).
+
+Cronologia (painel Console do Jam, atividade do usuário; seletores abreviados pelo Jam):
+0:00  Video started; clique no campo Nome da modalidade
+0:02  Digitado: Leo
+0:04  Enter
+0:05-0:09  Cliques na barra de ferramentas e no campo; quatro apagamentos
+0:10-0:12  Cliques (tema Claro/Escuro) -> dois POST "tema" (HTTP 200)
+0:14-0:16  Cliques no sino (notificações) e no ícone de usuário
+0:17-0:20  Cinco cliques em botão de envio (button.sb-btn, type=submit) com os formulários vazios; sem requisição
+0:20  Clique no ícone de adicionar (bi-plus-circle)
+0:21-0:23  Cliques em seletores (status, modalidade)
+0:23-0:28  Cliques em campos do formulário de Turma
+0:30  Digitado: t
+0:33  Apagar; digitado: le
+0:35  Três apagamentos
+0:36-0:44  Cliques nas caixas dos dias da semana (valores 0 a 6)
+0:44-0:48  Cliques em seletores
+0:49-0:53  Cliques nos campos de horário
+0:54  Clique no título "Turmas recorrentes"
+0:57  Clique no lápis (editar turma); formulário de Turma carregado em 0:58
+0:59  Clique em botão de ação (lápis); 1:00 clique em botão de ação (lixeira, sb-danger)
+1:00-1:05  Cliques em lixeiras (bi-trash / sb-danger) em turmas e modalidades -> POST excluir (HTTP 200)
+1:05-1:06  Cliques em botões de envio (sb-btn)
+1:09  Clique em campo
+1:12  Clique em botão de envio (sb-btn)
+1:13  Clique em campo
+1:15  Digitado: teste (Nome da modalidade)
+1:16  Digitado: teste (Descrição da modalidade)
+1:17  Clique em botão de envio (sb-btn)
+1:20  Clique em campo (Nome da turma)
+1:21  Digitado: teste
+1:23-1:26  Cliques nos campos de horário
+1:27  Clique no título
+1:28  Clique em botão de envio (sb-btn)
+1:31  Cliques nas caixas Dom, Seg e Ter
+1:33  Clique em botão de envio (sb-btn); cursor sobre o botão Turma
+1:34  Clique em botão de envio (sb-btn) -> POST modalidades/salvar (HTTP 201)
+1:39  Video stopped
+
+Rede do conjunto gravado (35 entradas, domínio backendsifit.centrion.com.br; todas HTTP 200, 201 ou 204; nenhuma falha):
+- 2 POST "tema" (HTTP 200, 23 B).
+- 4 POST /api/sifitbox/turmas/excluir/1 (HTTP 200): entradas 3, 5, 8 e 11; resposta {"erro": false}.
+- 5 POST /api/sifitbox/modalidades/excluir/1 (HTTP 200): entradas 15, 18, 21, 24 e 25.
+- 1 POST /api/sifitbox/turmas/atualizar/1 (HTTP 200, 278 B): entrada 29; turma id 4, status "inativo", updated_at 2026-11-15 21:51:03.
+- 1 POST /api/sifitbox/modalidades/salvar/1 (HTTP 201, 145 B): entrada 33; corpo {"id": {}, "nome": "teste", "descricao": "teste", "status": "ativo"}; resposta com id 4, created_at 2026-11-15 21:51:31.
+- 4 OPTIONS (HTTP 204): entradas 4, 14, 28 e 32.
+- GET de listas (HTTP 200): 535 B (modalidades) e 1341 B (turmas) após as operações, e a lista de modalidades com o registro novo ao final.
+- Não há requisição de criação de turma (turmas/salvar ou equivalente) em toda a gravação.
+Listas retornadas (corpo da resposta): as quatro turmas (ids 1 a 4) com "status": "inativo", a de id 4 com updated_at 2026-11-15 21:50:58 e as demais de 2026-10-15; as modalidades ids 1 a 3 com "status": "inativo" (updated_at 2026-11-15 21:51:00 e 21:51:01) e, ao final, a de id 4 "teste" com "status": "ativo".
+Autenticação omitida.
+
+Quadros consultados (reprodução do Jam):
+1:17  Formulário de Modalidade com Nome "teste" e Descrição "teste"; listagem com três modalidades.
+1:35  Listagem com quatro modalidades; "teste" com status "ativo"; formulário de Modalidade vazio.
+
+Observações e verificações futuras:
+- A modalidade é criada com HTTP 201 e id 4; persistência após recarga não verificada.
+- O corpo enviado traz "id": {} (objeto vazio); contrato da API não fornecido.
+- As modalidades anteriores aparecem como "inativo" na lista com o filtro de status em "Ativo"; ver CT-RF40.
