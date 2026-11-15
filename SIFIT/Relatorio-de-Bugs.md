@@ -1,16 +1,18 @@
 # 🐞 Relatório de Bugs — SIFIT
 
-**Escopo:** defeitos de 35 casos documentados entre CT-RF01 e CT-RF35: recuperação, Perfil, Clientes, financeiro, página inicial e dashboard, tema, modalidades, categorias, avaliações, exercícios, grupos musculares e objetivos de treino.
+**Escopo:** defeitos de 39 casos documentados (CT-RF01–CT-RF35 e CT-RF38–CT-RF41): recuperação, Perfil, Clientes, financeiro, página inicial e dashboard, tema, modalidades, categorias, avaliações, exercícios, grupos musculares objetivos de treino e SifitBox – Turmas.
 
 **Ambientes:** CT-RF01 em https://sifitalfa.centrion.com.br/login; CT-RF02_ERRO em https://sifit.centrion.com.br/profile. CT-RF03: URL do frontend não confirmada; backend informado em `https://backendsifit.centrion.com.br/api/clientesPorNome/1`.
 
 **Datas das gravações do Jam:** CT-RF01 em 23/10/2026; CT-RF02_ERRO em 22/10/2026 às 21:45 BRT; CT-RF03 não confirmada.
 
-**Atualização documental:** 15/11/2026 — 19 defeitos registrados: 10 abertos (BUG-001 a BUG-010) e 9 em triagem (BUG-011 a BUG-019). BUG-019 registra o HTTP 500 no cadastro de objetivo de treino, sem causa técnica confirmada. As análises anteriores foram preservadas.
+**Atualização documental:** 15/11/2026 — 20 defeitos registrados: 10 abertos (BUG-001 a BUG-010) e 10 em triagem (BUG-011 a BUG-020). BUG-019 registra o HTTP 500 no cadastro de objetivo de treino e BUG-020 a ausência de retorno visível no cadastro de turma sem modalidade, ambos sem causa técnica confirmada. As análises anteriores foram preservadas.
 
 **Padronização documental:** 13/11/2026, sem alteração do status dos defeitos.
 
 **Caso aprovado incluído em 13/11/2026:** [CT-RF04_loginComSucesso](Cenario_Teste/CT-RF04_loginComSucesso.md), vinculado ao RF04, não gerou defeito para o fluxo avaliado. O [Jam de login](https://jam.dev/c/5e4a28be-4e80-43d3-9587-1b113723cc38) mostra acesso ao dashboard após autenticação. Essa aprovação não altera os três bugs existentes; resultados e limites constam no [relatório dos testes](Relatorio%20dos%20testes.md).
+
+**Gravação de CT-RF39–CT-RF41:** 15/11/2026, SifitBox – Turmas, 18:51 BRT, Chrome 157.0.8103.78 / Windows 11; uma única gravação; evidência e limites no BUG-020.
 
 **Gravação de CT-RF35:** 15/11/2026, Objetivos Treino, 18:13 BRT, Chrome 157.0.8103.78 / Windows 11; evidência e limites no BUG-019.
 
@@ -41,8 +43,9 @@
 | [BUG-017](#bug-017) | Imagens dos grupos musculares não são exibidas e retornam HTTP 422 | Média / Média, propostas | Em triagem — causa não determinada | [CT-RF30](Cenario_Teste/CT-RF30_Imagens_GruposMusculares.md) |
 | [BUG-018](#bug-018) | Dashboard apresenta múltiplos HTTP 500 durante o carregamento | Alta / Alta, propostas | Em triagem — causa não determinada | [CT-RF34](Cenario_Teste/CT-RF34_Erro_Servidor_Excesso_Requisicoes.md) |
 | [BUG-019](#bug-019) | Cadastro de objetivo de treino retorna HTTP 500 | Alta / Alta, propostas | Em triagem — causa não determinada | [CT-RF35](Cenario_Teste/CT-RF35_Cadastro_Objetivo_Treino.md) |
+| [BUG-020](#bug-020) | Cadastro de turma sem modalidade não apresenta retorno visível | Média / Alta, propostas | Em triagem — validação nativa não confirmada | [CT-RF41](Cenario_Teste/CT-RF41_Cadastro_Turma_Sem_Modalidade.md) |
 
-BUG-001–BUG-010 aguardam correção e reteste. BUG-011–BUG-019 aguardam confirmação das premissas e triagem antes do encaminhamento de correção. As causas técnicas permanecem não confirmadas; o BUG-003 se apoia no relato e nas capturas fornecidos, com os limites registrados no caso.
+BUG-001–BUG-010 aguardam correção e reteste. BUG-011–BUG-020 aguardam confirmação das premissas e triagem antes do encaminhamento de correção. As causas técnicas permanecem não confirmadas; o BUG-003 se apoia no relato e nas capturas fornecidos, com os limites registrados no caso.
 
 ---
 
@@ -902,6 +905,53 @@ O comportamento repete a assinatura de [BUG-009](#bug-009), [BUG-010](#bug-010),
 
 ---
 
+<a id="bug-020"></a>
+
+## BUG-020 — Cadastro de turma sem modalidade não apresenta retorno visível
+
+| Campo | Descrição |
+| --- | --- |
+| Status | Em triagem — validação nativa do navegador e obrigatoriedade da modalidade não confirmadas; reteste pendente. |
+| Severidade / prioridade | Média / Alta, propostas para triagem. |
+| Módulo | SifitBox / Turmas recorrentes / Cadastro |
+| Requisitos | [RF41](Analise%20de%20requisitos.md#rf41) |
+| Casos | [CT-RF41](Cenario_Teste/CT-RF41_Cadastro_Turma_Sem_Modalidade.md) |
+| Data da evidência / revisão | 15/11/2026, 18:51 BRT; sem nova execução. |
+| Página | https://sifit.centrion.com.br/sifitbox/turmas |
+| Ambiente | Chrome 157.0.8103.78 / Windows (x86) 11, janela 1920 × 911; versão e zoom não confirmados. |
+| Frequência conhecida | Um registro do Jam, com tentativas de envio em 0:17–0:20, 1:28 e 1:33; recorrência não determinada. |
+
+### Pré-condições e reprodução
+
+**[CT-RF41](Cenario_Teste/CT-RF41_Cadastro_Turma_Sem_Modalidade.md):** Sessão autenticada com acesso a SifitBox – Turmas, ao menos uma modalidade ativa e turmas existentes registradas.
+
+1. Acessar SifitBox – Turmas com o painel de rede aberto e registrar a listagem de turmas.
+2. No formulário de Turma, informar o nome "teste", os horários, os dias da semana e as vagas, mantendo o seletor Modalidade em branco.
+3. Acionar o botão de envio de Turma.
+4. Observar mensagens, foco, listagem e a rede.
+
+### Esperado e obtido
+
+| Caso | Esperado | Obtido |
+| --- | --- | --- |
+| CT-RF41 | Bloquear o envio, indicar de forma visível o campo pendente e não criar a turma. | Nenhuma mensagem de validação visível e nenhuma requisição de criação de turma; o formulário permanece preenchido e a listagem mantém as quatro turmas. |
+
+**Impacto:** o usuário não sabe se o envio foi aceito, por que a turma não foi criada nem qual dado corrigir, e pode repetir a tentativa sem compreender o impedimento.
+
+### Evidências técnicas
+
+- [Jam](https://jam.dev/c/ee9a133b-d6b1-442d-b4b0-dd87595b7e70): cinco cliques de envio com os formulários vazios em 0:17–0:20 (cursor sobre o botão Turma em 0:19) e cliques de envio com o formulário de Turma preenchido e a modalidade em branco em 1:28 e 1:33, sem mensagem visível.
+- Rede: 35 entradas, sem requisição de criação de turma; o único POST de criação é `modalidades/salvar` (HTTP 201), de outro fluxo.
+- [Formulário em 1:29](Evidencias/CT-RF41_Cadastro_Turma_Sem_Modalidade/formulario_turma_01-29.png), [formulário em 1:33](Evidencias/CT-RF41_Cadastro_Turma_Sem_Modalidade/formulario_turma_01-33.png), [listagens em 1:35](Evidencias/CT-RF41_Cadastro_Turma_Sem_Modalidade/lista_apos_tentativa_01-35.png) e [Evidências](Evidencias/CT-RF41_Cadastro_Turma_Sem_Modalidade/README.md).
+
+### Análise, limites e encaminhamento
+
+A ausência de requisição é compatível com validação no cliente (por exemplo, campo obrigatório com validação nativa do navegador), cujo balão normalmente não aparece em gravações de tela; nesse caso o defeito se reduz à falta de indicação própria do sistema, ou deixa de existir. Também é compatível com um envio que não dispara a ação. Não foi confirmado se a modalidade é obrigatória, qual botão foi acionado em 1:17 e em 1:28, nem a causa. O padrão repete o de [BUG-013](#bug-013) (campos obrigatórios vazios sem feedback), em outro módulo. O horário de início igual ao de término em 1:28 não foi tratado como causa.
+
+**Reteste:** reproduzir com a captura de rede preparada e a gravação da tela, confirmar a regra de obrigatoriedade, o foco e as mensagens, enviar a turma válida e conferir a criação e a persistência após recarga. Manter em triagem até nova evidência em versão identificada.
+
+---
+
 ## Pontos a validar — sem defeito confirmado
 
 | Caso | Questão pendente | Evidência |
@@ -911,8 +961,9 @@ O comportamento repete a assinatura de [BUG-009](#bug-009), [BUG-010](#bug-010),
 | [CT-RF13](Cenario_Teste/CT-RF13_Codigos_Personais.md) | Confirmar a semântica da coluna Código; quatro linhas e total quatro não sustentam um defeito de quantidade. | [Jam](https://jam.dev/c/69330ca9-ef19-4ece-918f-31a460628016) e [Evidências](Evidencias/CT-RF13_Codigos_Personais/README.md) |
 | [CT-RF16](Cenario_Teste/CT-RF16_Exclusao_Modalidade.md) | Confirmar a exclusão lógica e a nomenclatura da ação; registrar defeito apenas se houver divergência com a regra definida. | [Jam](https://jam.dev/c/0f55f76a-cd31-4cee-93da-23c13b1ba637) e [Evidências](Evidencias/CT-RF16_Exclusao_Modalidade/README.md) |
 | [CT-RF25](Cenario_Teste/CT-RF25_Envio_Exercicio_Imagem.md) | Conferir a imagem após reabrir e recarregar o exercício; criação visível não comprova associação persistida. | [Jam](https://jam.dev/c/25c37a9b-e9bd-4e0c-adf1-4da528ae1d58) e [Evidências](Evidencias/CT-RF25_Envio_Exercicio_Imagem/README.md) |
+| [CT-RF40](Cenario_Teste/CT-RF40_Exclusao_Turmas_Modalidades.md) | Confirmar a exclusão lógica de turmas e modalidades, a ausência de confirmação prévia e a exibição de registros inativos sob o filtro "Ativo"; registrar defeito apenas se houver divergência com a regra definida. | [Jam](https://jam.dev/c/ee9a133b-d6b1-442d-b4b0-dd87595b7e70) e [Evidências](Evidencias/CT-RF40_Exclusao_Turmas_Modalidades/README.md) |
 
-Esses cinco pontos não entram na contagem de 19 defeitos registrados. BUG-011–BUG-019 são contabilizados separadamente como registros em triagem, com premissas, persistência ou validações técnicas ainda pendentes. O relato de numeração de personais não demonstrou diferença entre total e linhas; a inativação de modalidades pode ser exclusão lógica; encargos e métricas exigem regras explícitas.
+Esses seis pontos não entram na contagem de 20 defeitos registrados. BUG-011–BUG-020 são contabilizados separadamente como registros em triagem, com premissas, persistência ou validações técnicas ainda pendentes. O relato de numeração de personais não demonstrou diferença entre total e linhas; a inativação de modalidades pode ser exclusão lógica; encargos e métricas exigem regras explícitas.
 
 
 **Exclusão de exercício:** CT-RF23 está aprovado no trecho consultado, com remoção e total 11 para 10; não gerou defeito adicional. Persistência e efeitos sobre vínculos permanecem como verificações complementares.
