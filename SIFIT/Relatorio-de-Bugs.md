@@ -1,18 +1,20 @@
 # 🐞 Relatório de Bugs — SIFIT
 
-**Escopo:** defeitos de 43 casos documentados (CT-RF01–CT-RF35 e CT-RF38–CT-RF45): recuperação, Perfil, Clientes, financeiro, página inicial e dashboard, tema, modalidades, categorias, avaliações, exercícios, grupos musculares, objetivos de treino, SifitBox – Turmas, Pagar.me, configurações, despesas fixas e relatórios.
+**Escopo:** defeitos de 49 casos documentados (CT-RF01–CT-RF35 e CT-RF38–CT-RF51): recuperação, Perfil, Clientes, financeiro, página inicial e dashboard, tema, modalidades, categorias, avaliações, exercícios, grupos musculares, objetivos de treino, SifitBox – Turmas, Pagar.me, configurações, despesas fixas e relatórios.
 
 **Ambientes:** CT-RF01 em https://sifitalfa.centrion.com.br/login; CT-RF02_ERRO em https://sifit.centrion.com.br/profile. CT-RF03: URL do frontend não confirmada; backend informado em `https://backendsifit.centrion.com.br/api/clientesPorNome/1`.
 
 **Datas das gravações do Jam:** CT-RF01 em 23/10/2026; CT-RF02_ERRO em 22/10/2026 às 21:45 BRT; CT-RF03 não confirmada.
 
-**Atualização documental:** 15/11/2026 — 21 defeitos registrados: 10 abertos (BUG-001 a BUG-010) e 11 em triagem (BUG-011 a BUG-021). BUG-019 registra o HTTP 500 no cadastro de objetivo de treino e BUG-020 a ausência de retorno visível no cadastro de turma sem modalidade, ambos sem causa técnica confirmada. As análises anteriores foram preservadas.
+**Atualização documental:** 15/11/2026 — 22 defeitos registrados: 10 abertos (BUG-001 a BUG-010) e 12 em triagem (BUG-011 a BUG-022). BUG-019 registra o HTTP 500 no cadastro de objetivo de treino e BUG-020 a ausência de retorno visível no cadastro de turma sem modalidade, ambos sem causa técnica confirmada. As análises anteriores foram preservadas.
 
 **Padronização documental:** 13/11/2026, sem alteração do status dos defeitos.
 
 **Caso aprovado incluído em 13/11/2026:** [CT-RF04_loginComSucesso](Cenario_Teste/CT-RF04_loginComSucesso.md), vinculado ao RF04, não gerou defeito para o fluxo avaliado. O [Jam de login](https://jam.dev/c/5e4a28be-4e80-43d3-9587-1b113723cc38) mostra acesso ao dashboard após autenticação. Essa aprovação não altera os três bugs existentes; resultados e limites constam no [relatório dos testes](Relatorio%20dos%20testes.md).
 
 **Gravação de CT-RF42–CT-RF45:** 15/11/2026, Pagar.me e Configurações, 19:06 BRT, Chrome 157.0.8103.78 / Windows 11; uma única gravação; evidência e limites no BUG-021.
+
+**Gravação de CT-RF50–CT-RF56:** 15/11/2026, Relatórios, 19:09 BRT, Chrome 157.0.8103.78 / Windows 11; uma única gravação e oito arquivos PDF baixados; evidência e limites no BUG-022 e no BUG-023.
 
 **Gravação de CT-RF39–CT-RF41:** 15/11/2026, SifitBox – Turmas, 18:51 BRT, Chrome 157.0.8103.78 / Windows 11; uma única gravação; evidência e limites no BUG-020.
 
@@ -47,8 +49,9 @@
 | [BUG-019](#bug-019) | Cadastro de objetivo de treino retorna HTTP 500 | Alta / Alta, propostas | Em triagem — causa não determinada | [CT-RF35](Cenario_Teste/CT-RF35_Cadastro_Objetivo_Treino.md) |
 | [BUG-020](#bug-020) | Cadastro de turma sem modalidade não apresenta retorno visível | Média / Alta, propostas | Em triagem — validação nativa não confirmada | [CT-RF41](Cenario_Teste/CT-RF41_Cadastro_Turma_Sem_Modalidade.md) |
 | [BUG-021](#bug-021) | Painel Pagar.me mantém Recebimentos e gráfico ao trocar o período | Média / Média, propostas | Em triagem — dados reais ou de demonstração não confirmados | [CT-RF45](Cenario_Teste/CT-RF45_Painel_PagarMe_Periodo.md) |
+| [BUG-022](#bug-022) | Relatório de Contas a Receber exibe "----" em Valor a Receber | Alta / Alta, propostas | Em triagem — origem do valor e comparação com o módulo não confirmadas | [CT-RF51](Cenario_Teste/CT-RF51_Relatorio_Contas_Receber.md) |
 
-BUG-001–BUG-010 aguardam correção e reteste. BUG-011–BUG-021 aguardam confirmação das premissas e triagem antes do encaminhamento de correção. As causas técnicas permanecem não confirmadas; o BUG-003 se apoia no relato e nas capturas fornecidos, com os limites registrados no caso.
+BUG-001–BUG-010 aguardam correção e reteste. BUG-011–BUG-022 aguardam confirmação das premissas e triagem antes do encaminhamento de correção. As causas técnicas permanecem não confirmadas; o BUG-003 se apoia no relato e nas capturas fornecidos, com os limites registrados no caso.
 
 ---
 
@@ -1001,6 +1004,52 @@ O valor e o gráfico idênticos em períodos diferentes são compatíveis com da
 
 ---
 
+<a id="bug-022"></a>
+
+## BUG-022 — Relatório de Contas a Receber exibe "----" em Valor a Receber
+
+| Campo | Descrição |
+| --- | --- |
+| Status | Em triagem — causa não determinada; reteste pendente após correção. |
+| Severidade / prioridade | Alta / Alta, propostas para triagem. |
+| Módulo | Relatórios / Contas a Receber |
+| Requisitos | [RF51](Analise%20de%20requisitos.md#rf51) |
+| Casos | [CT-RF51](Cenario_Teste/CT-RF51_Relatorio_Contas_Receber.md) |
+| Data da evidência / revisão | 15/11/2026, 19:09 BRT; sem nova execução. |
+| Página | https://sifit.centrion.com.br/relatorios |
+| Ambiente | Chrome 157.0.8103.78 / Windows (x86) 11, janela 1920 × 911; versão e zoom não confirmados. |
+| Frequência conhecida | Um relatório gerado; recorrência não determinada. |
+
+### Pré-condições e reprodução
+
+**[CT-RF51](Cenario_Teste/CT-RF51_Relatorio_Contas_Receber.md):** Sessão autenticada com permissão para gerar relatórios e contas a receber pendentes do período com valores conhecidos.
+
+1. Acessar Relatórios e selecionar "Contas a Receber", Tipo de Pagamento "Todos", Status "Pendente" e o período 01/11/2026 a 15/11/2026.
+2. Acionar Gerar Relatório.
+3. Abrir o PDF e conferir a coluna Valor a Receber e os totais.
+4. Comparar com as contas pendentes do módulo Contas a Receber.
+
+### Esperado e obtido
+
+| Esperado | Obtido |
+| --- | --- |
+| Cada conta pendente apresenta o valor a receber e os totais correspondem às linhas apresentadas. | O PDF lista três contas pendentes, mas a coluna Valor a Receber apresenta "----" em todas as linhas; o rodapé informa "Quantidade de registros: 3" e "Valor Recebido: R$ 0,00". |
+
+**Impacto:** O relatório não permite saber quanto há a receber, o que o torna inadequado para conferência financeira e cobrança.
+
+### Evidências técnicas
+
+- [Jam — Relatórios](https://jam.dev/c/3b4777a4-e1b0-4038-9b06-26c73669d7d1): `POST /api/relatorio/1` com HTTP 200 e quadro de 0:43 com o tipo Contas a Receber e o status Pendente; arquivo `relatorio (6).pdf` (7.882 bytes) gravado às 19:09:39.
+- [PDF gerado](Evidencias/CT-RF51_Relatorio_Contas_Receber/relatorio_6_contas_receber.pdf), [formulário em 0:43](Evidencias/CT-RF51_Relatorio_Contas_Receber/formulario_contas_receber_00-43.png) e [Evidências](Evidencias/CT-RF51_Relatorio_Contas_Receber/README.md).
+
+### Análise, limites e encaminhamento
+
+Os valores ausentes são compatíveis com contas sem valor preenchido, com falha na leitura do campo de valor pelo relatório ou com formatação que converte o valor em marcador. A matrícula do aluno de demonstração aparece com R$ 20,00 no relatório de Matrículas (CT-RF50) e com "----" neste relatório, o que sugere que o valor existe em outra origem. A causa técnica não foi confirmada no código; o conteúdo das contas no módulo não foi comparado.
+
+**Reteste:** Comparar as contas pendentes com o módulo Contas a Receber, reexecutar com valores conhecidos e com a opção Detalhado e confirmar valores e totais. Manter em triagem até nova evidência em versão identificada.
+
+---
+
 ## Pontos a validar — sem defeito confirmado
 
 | Caso | Questão pendente | Evidência |
@@ -1012,7 +1061,7 @@ O valor e o gráfico idênticos em períodos diferentes são compatíveis com da
 | [CT-RF25](Cenario_Teste/CT-RF25_Envio_Exercicio_Imagem.md) | Conferir a imagem após reabrir e recarregar o exercício; criação visível não comprova associação persistida. | [Jam](https://jam.dev/c/25c37a9b-e9bd-4e0c-adf1-4da528ae1d58) e [Evidências](Evidencias/CT-RF25_Envio_Exercicio_Imagem/README.md) |
 | [CT-RF40](Cenario_Teste/CT-RF40_Exclusao_Turmas_Modalidades.md) | Confirmar a exclusão lógica de turmas e modalidades, a ausência de confirmação prévia e a exibição de registros inativos sob o filtro "Ativo"; registrar defeito apenas se houver divergência com a regra definida. | [Jam](https://jam.dev/c/ee9a133b-d6b1-442d-b4b0-dd87595b7e70) e [Evidências](Evidencias/CT-RF40_Exclusao_Turmas_Modalidades/README.md) |
 
-Esses seis pontos não entram na contagem de 21 defeitos registrados. BUG-011–BUG-021 são contabilizados separadamente como registros em triagem, com premissas, persistência ou validações técnicas ainda pendentes. O relato de numeração de personais não demonstrou diferença entre total e linhas; a inativação de modalidades pode ser exclusão lógica; encargos e métricas exigem regras explícitas.
+Esses seis pontos não entram na contagem de 22 defeitos registrados. BUG-011–BUG-022 são contabilizados separadamente como registros em triagem, com premissas, persistência ou validações técnicas ainda pendentes. O relato de numeração de personais não demonstrou diferença entre total e linhas; a inativação de modalidades pode ser exclusão lógica; encargos e métricas exigem regras explícitas.
 
 
 **Exclusão de exercício:** CT-RF23 está aprovado no trecho consultado, com remoção e total 11 para 10; não gerou defeito adicional. Persistência e efeitos sobre vínculos permanecem como verificações complementares.
