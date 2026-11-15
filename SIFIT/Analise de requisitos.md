@@ -2,11 +2,11 @@
 
 **Módulos:** Autenticação, Perfil, Clientes / Filtros, Financeiro, Página inicial / Personais, SifitBox / Modalidades e Turmas, Categorias Crossfit, Avaliações, Exercícios, Grupos Musculares, Dashboard e Objetivos de Treino.
 
-**Atualização:** 15/11/2026 — RF01 a RF35 e RF38 a RF40 consolidados, com inclusão de Categorias Crossfit (CT-RF38) e de SifitBox – Turmas (CT-RF39 e CT-RF40); BUG-011–BUG-019 em triagem.
+**Atualização:** 15/11/2026 — RF01 a RF35 e RF38 a RF41 consolidados, com inclusão de Categorias Crossfit (CT-RF38) e de SifitBox – Turmas (CT-RF39 a CT-RF41); BUG-011–BUG-020 em triagem.
 
 **Padronização documental:** 13/11/2026, sem alteração dos resultados registrados.
 
-Esta análise documenta 38 requisitos de QA para os cenários relacionados abaixo, com base nos relatos e nas evidências fornecidas. RF01–RF04 e suas análises históricas foram preservados; RF05–RF20 ampliam a cobertura em 14/11/2026; RF21 acrescenta Avaliações; RF22–RF28 acrescentam Exercícios; RF29–RF33 acrescentam Grupos Musculares; RF34 acrescenta o carregamento do dashboard RF35 acrescenta o cadastro de objetivos de treino e RF38 acrescenta o cadastro de categorias com código automático em 15/11/2026. RF39 acrescenta o cadastro de modalidade em SifitBox – Turmas. RF40 acrescenta a exclusão de turmas e modalidades. Os critérios abaixo constituem a referência de QA para esses fluxos; não representam validação de uma especificação formal pelo responsável pelo produto.
+Esta análise documenta 39 requisitos de QA para os cenários relacionados abaixo, com base nos relatos e nas evidências fornecidas. RF01–RF04 e suas análises históricas foram preservados; RF05–RF20 ampliam a cobertura em 14/11/2026; RF21 acrescenta Avaliações; RF22–RF28 acrescentam Exercícios; RF29–RF33 acrescentam Grupos Musculares; RF34 acrescenta o carregamento do dashboard RF35 acrescenta o cadastro de objetivos de treino e RF38 acrescenta o cadastro de categorias com código automático em 15/11/2026. RF39 acrescenta o cadastro de modalidade em SifitBox – Turmas. RF40 acrescenta a exclusão de turmas e modalidades. RF41 acrescenta o cadastro de turma. Os critérios abaixo constituem a referência de QA para esses fluxos; não representam validação de uma especificação formal pelo responsável pelo produto.
 
 ## 📋 Visão geral dos requisitos
 
@@ -50,6 +50,7 @@ Esta análise documenta 38 requisitos de QA para os cenários relacionados abaix
 | [RF38](#rf38) | Cadastrar categoria com código automático e localizá-la pelos filtros | Média, proposta | [CT-RF38](Cenario_Teste/CT-RF38_Cadastro_Categoria_Codigo_Automatico.md) |
 | [RF39](#rf39) | Cadastrar modalidade e apresentá-la na listagem | Média, proposta | [CT-RF39](Cenario_Teste/CT-RF39_Cadastro_Modalidade.md) |
 | [RF40](#rf40) | Aplicar e comunicar a regra de exclusão de turmas e modalidades | Média, proposta | [CT-RF40](Cenario_Teste/CT-RF40_Exclusao_Turmas_Modalidades.md) |
+| [RF41](#rf41) | Cadastrar turma ou informar visivelmente o dado que impede o envio | Média, proposta | [CT-RF41](Cenario_Teste/CT-RF41_Cadastro_Turma_Sem_Modalidade.md) |
 
 ---
 
@@ -1107,6 +1108,35 @@ Não foram confirmados a regra de exclusão lógica, a necessidade de confirmaç
 
 ---
 
+<a id="rf41"></a>
+
+## RF41 — Cadastrar turma ou informar o dado que impede o envio
+
+| Campo | Descrição |
+| --- | --- |
+| Requisito de QA | O cadastro de turma deve criar a turma quando todos os dados obrigatórios forem informados; com dado obrigatório ausente (como a modalidade), deve bloquear o envio, indicar de forma visível o campo pendente e não criar registro. |
+| Ator | Usuário autenticado com permissão em SifitBox – Turmas. |
+| Pré-condições | Ao menos uma modalidade ativa; turmas existentes registradas; regra de obrigatoriedade dos campos definida com o produto. |
+| Gatilho | Preencher o formulário de Turma, sem selecionar a modalidade, e acionar o botão de envio de Turma. |
+| Caso | [CT-RF41](Cenario_Teste/CT-RF41_Cadastro_Turma_Sem_Modalidade.md) |
+| Situação observada | Reprovado nas evidências — sem feedback de validação visível. Nas tentativas com formulário vazio e com a modalidade em branco, o envio não gera requisição de criação de turma nem apresenta mensagem; o formulário permanece preenchido e a listagem não muda. |
+| Defeito | [BUG-020](Relatorio-de-Bugs.md#bug-020), em triagem |
+| Evidências | [Jam](https://jam.dev/c/ee9a133b-d6b1-442d-b4b0-dd87595b7e70) e [Evidências](Evidencias/CT-RF41_Cadastro_Turma_Sem_Modalidade/README.md). |
+
+### Critérios de aceitação do RF41
+
+1. O envio de Turma com campo obrigatório vazio é bloqueado e cada campo pendente recebe indicação compreensível.
+2. Nenhum registro vazio ou incompleto é criado.
+3. Com todos os dados válidos, a turma é criada, apresentada na listagem e mantida após recarga.
+4. A ação de envio informa o resultado (sucesso ou impedimento) ao usuário.
+5. O horário de término anterior ou igual ao de início recebe validação específica, conforme a regra do produto.
+
+### Pontos a confirmar e limites do RF41
+
+Não foi confirmado se a modalidade é obrigatória nem se existe validação nativa do navegador, cujo balão normalmente não aparece em gravações de tela. O envio válido, o horário de término igual ou anterior ao de início, o nome vazio e a persistência não foram exercitados. A edição da turma de id 4 gerou `POST turmas/atualizar` com HTTP 200, sem mensagem de confirmação observada. O padrão de ausência de feedback repete o do [RF26](#rf26).
+
+---
+
 ## 🔗 Rastreabilidade
 
 | Requisito | Cenário / caso | Defeito | Resultado | Evidências |
@@ -1149,6 +1179,7 @@ Não foram confirmados a regra de exclusão lógica, a necessidade de confirmaç
 | RF38 | [CT-RF38](Cenario_Teste/CT-RF38_Cadastro_Categoria_Codigo_Automatico.md) | Nenhum no fluxo avaliado | Aprovado conforme a gravação | [Evidências](Evidencias/CT-RF38_Cadastro_Categoria_Codigo_Automatico/README.md) e [Jam](https://jam.dev/c/be1dbd05-217d-44c3-8a3d-240b7f6344e1) |
 | RF39 | [CT-RF39](Cenario_Teste/CT-RF39_Cadastro_Modalidade.md) | Nenhum no fluxo avaliado | Aprovado conforme a gravação | [Evidências](Evidencias/CT-RF39_Cadastro_Modalidade/README.md) e [Jam](https://jam.dev/c/ee9a133b-d6b1-442d-b4b0-dd87595b7e70) |
 | RF40 | [CT-RF40](Cenario_Teste/CT-RF40_Exclusao_Turmas_Modalidades.md) | Sem defeito confirmado | A validar — regra ou contexto pendente | [Evidências](Evidencias/CT-RF40_Exclusao_Turmas_Modalidades/README.md) e [Jam](https://jam.dev/c/ee9a133b-d6b1-442d-b4b0-dd87595b7e70) |
+| RF41 | [CT-RF41](Cenario_Teste/CT-RF41_Cadastro_Turma_Sem_Modalidade.md) | [BUG-020](Relatorio-de-Bugs.md#bug-020), em triagem | Reprovado nas evidências; reteste pendente. | [Evidências](Evidencias/CT-RF41_Cadastro_Turma_Sem_Modalidade/README.md) e [Jam](https://jam.dev/c/ee9a133b-d6b1-442d-b4b0-dd87595b7e70) |
 
 ---
 
@@ -1248,6 +1279,12 @@ Com RF39, a análise passa a cobrir 37 requisitos documentados. A tela SifitBox 
 RF40 utiliza os painéis Info, Console, Network e Actions do Jam "SifitBox – Turmas", os cabeçalhos e a resposta das exclusões, as listas retornadas (todas as turmas e modalidades com status "inativo") e os quadros de 1:00 e 1:05. Foram registrados quatro `POST turmas/excluir` e cinco `POST modalidades/excluir`, todos com HTTP 200. Não houve nova execução, acesso ao código ou ao banco, nem reteste. A regra permanece a confirmar.
 
 Com RF40, a análise passa a cobrir 38 requisitos documentados. SifitBox – Turmas acrescenta um ponto a validar, sem defeito confirmado.
+
+### Base da análise do RF41 — revisão de 15/11/2026
+
+RF41 utiliza os painéis Info, Console (atividade do usuário), Network e Actions do Jam "SifitBox – Turmas", o corpo da requisição e da resposta de atualização e os quadros de 0:19, 0:58, 1:29, 1:33 e 1:35. Nas 35 entradas de rede não há requisição de criação de turma. A classificação não confirma que a modalidade seja obrigatória nem que a validação esteja ausente. Não houve nova execução, acesso ao código ou ao banco, nem reteste. BUG-020 está em triagem.
+
+Com RF41, a análise passa a cobrir 39 requisitos documentados. SifitBox – Turmas acrescenta uma reprovação, vinculada ao BUG-020, em triagem.
 
 ---
 
