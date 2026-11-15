@@ -1,12 +1,12 @@
 # 🐞 Relatório de Bugs — SIFIT
 
-**Escopo:** defeitos dos cenários CT-RF01–CT-RF28: recuperação, Perfil, Clientes, financeiro, período, tema, modalidades, categorias, avaliações e exercícios. Casos aprovados e pontos a validar permanecem no relatório dos testes.
+**Escopo:** defeitos de 34 casos documentados entre CT-RF01 e CT-RF34: recuperação, Perfil, Clientes, financeiro, página inicial e dashboard, tema, modalidades, categorias, avaliações, exercícios e grupos musculares.
 
 **Ambientes:** CT-RF01 em https://sifitalfa.centrion.com.br/login; CT-RF02_ERRO em https://sifit.centrion.com.br/profile. CT-RF03: URL do frontend não confirmada; backend informado em `https://backendsifit.centrion.com.br/api/clientesPorNome/1`.
 
 **Datas das gravações do Jam:** CT-RF01 em 23/10/2026; CT-RF02_ERRO em 22/10/2026 às 21:45 BRT; CT-RF03 não confirmada.
 
-**Atualização documental:** 15/11/2026 — 15 defeitos registrados: 10 abertos (BUG-001 a BUG-010) e 5 em triagem (BUG-011 a BUG-015), incluindo código, edição, campos obrigatórios e validação de mídia em Exercícios. As análises anteriores foram preservadas.
+**Atualização documental:** 15/11/2026 — 18 defeitos registrados: 10 abertos (BUG-001 a BUG-010) e 8 em triagem (BUG-011 a BUG-018). BUG-018 registra múltiplos HTTP 500 no dashboard, sem causa técnica confirmada. As análises anteriores foram preservadas.
 
 **Padronização documental:** 13/11/2026, sem alteração do status dos defeitos.
 
@@ -37,8 +37,9 @@
 | [BUG-015](#bug-015) | Imagem rejeitada no campo Vídeo sem feedback | Baixa / Média, propostas | Em triagem — MIME não confirmado | [CT-RF28](Cenario_Teste/CT-RF28_Imagem_Campo_Video.md) |
 | [BUG-016](#bug-016) | Exclusão de grupo muscular retorna HTTP 500 e mensagem genérica | Média / Alta, propostas | Em triagem — causa não determinada | [CT-RF29](Cenario_Teste/CT-RF29_Exclusao_GrupoMuscular.md) |
 | [BUG-017](#bug-017) | Imagens dos grupos musculares não são exibidas e retornam HTTP 422 | Média / Média, propostas | Em triagem — causa não determinada | [CT-RF30](Cenario_Teste/CT-RF30_Imagens_GruposMusculares.md) |
+| [BUG-018](#bug-018) | Dashboard apresenta múltiplos HTTP 500 durante o carregamento | Alta / Alta, propostas | Em triagem — causa não determinada | [CT-RF34](Cenario_Teste/CT-RF34_Erro_Servidor_Excesso_Requisicoes.md) |
 
-BUG-001–BUG-010 aguardam correção e reteste. BUG-011–BUG-017 aguardam confirmação das premissas e triagem antes do encaminhamento de correção. As causas técnicas permanecem não confirmadas; o BUG-003 se apoia no relato e nas capturas fornecidos, com os limites registrados no caso.
+BUG-001–BUG-010 aguardam correção e reteste. BUG-011–BUG-018 aguardam confirmação das premissas e triagem antes do encaminhamento de correção. As causas técnicas permanecem não confirmadas; o BUG-003 se apoia no relato e nas capturas fornecidos, com os limites registrados no caso.
 
 ---
 
@@ -826,6 +827,27 @@ Investigar a existência dos arquivos no caminho indicado, o nome gravado em cad
 
 ---
 
+<a id="bug-018"></a>
+
+## BUG-018 — Dashboard apresenta múltiplos HTTP 500 durante o carregamento
+
+| Campo | Descrição |
+| --- | --- |
+| Status | Em triagem — causa não determinada; reteste pendente. |
+| Severidade / prioridade | Alta / Alta, propostas para triagem. |
+| Módulo | Dashboard / carregamento de dados |
+| Requisito | [RF34](Analise%20de%20requisitos.md#rf34) |
+| Caso | [CT-RF34](Cenario_Teste/CT-RF34_Erro_Servidor_Excesso_Requisicoes.md) |
+| Evidência | [Jam](https://jam.dev/c/eea58e17-b62f-432b-97b2-b14c14bed555) |
+
+Ao carregar o dashboard, a interface apresenta um diálogo de erro e diversas chamadas GET/POST retornam HTTP 500 entre 23 eventos visíveis. Os endpoints aparecem truncados na evidência, portanto a quantidade de requisições não foi confirmada como causa da falha.
+
+**Esperado:** carregar os componentes disponíveis e tratar falhas parciais com mensagens específicas, sem erro interno não tratado.
+
+**Reteste:** identificar os endpoints completos, correlacionar cada chamada ao componente de origem, inspecionar os logs do servidor, confirmar se existem requisições redundantes e repetir o carregamento após a correção.
+
+---
+
 ## Pontos a validar — sem defeito confirmado
 
 | Caso | Questão pendente | Evidência |
@@ -836,7 +858,7 @@ Investigar a existência dos arquivos no caminho indicado, o nome gravado em cad
 | [CT-RF16](Cenario_Teste/CT-RF16_Exclusao_Modalidade.md) | Confirmar a exclusão lógica e a nomenclatura da ação; registrar defeito apenas se houver divergência com a regra definida. | [Jam](https://jam.dev/c/0f55f76a-cd31-4cee-93da-23c13b1ba637) e [Evidências](Evidencias/CT-RF16_Exclusao_Modalidade/README.md) |
 | [CT-RF25](Cenario_Teste/CT-RF25_Envio_Exercicio_Imagem.md) | Conferir a imagem após reabrir e recarregar o exercício; criação visível não comprova associação persistida. | [Jam](https://jam.dev/c/25c37a9b-e9bd-4e0c-adf1-4da528ae1d58) e [Evidências](Evidencias/CT-RF25_Envio_Exercicio_Imagem/README.md) |
 
-Esses cinco pontos não entram na contagem de 15 defeitos registrados. BUG-011–BUG-015 são contabilizados separadamente como registros em triagem, com premissas, persistência ou validações técnicas ainda pendentes. O relato de numeração de personais não demonstrou diferença entre total e linhas; a inativação de modalidades pode ser exclusão lógica; encargos e métricas exigem regras explícitas.
+Esses cinco pontos não entram na contagem de 18 defeitos registrados. BUG-011–BUG-018 são contabilizados separadamente como registros em triagem, com premissas, persistência ou validações técnicas ainda pendentes. O relato de numeração de personais não demonstrou diferença entre total e linhas; a inativação de modalidades pode ser exclusão lógica; encargos e métricas exigem regras explícitas.
 
 
 **Exclusão de exercício:** CT-RF23 está aprovado no trecho consultado, com remoção e total 11 para 10; não gerou defeito adicional. Persistência e efeitos sobre vínculos permanecem como verificações complementares.

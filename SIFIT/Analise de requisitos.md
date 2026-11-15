@@ -2,11 +2,11 @@
 
 **Módulos:** Autenticação, Perfil, Clientes / Filtros, Financeiro, Página inicial / Personais, SifitBox / Modalidades e Turmas, Categorias Crossfit, Avaliações e Exercícios.
 
-**Atualização:** 15/11/2026 — RF01 a RF28, com inclusão de Exercícios (CT-RF22–CT-RF28 / BUG-011–BUG-015 em triagem).
+**Atualização:** 15/11/2026 — RF01 a RF34 consolidados; BUG-011–BUG-018 em triagem.
 
 **Padronização documental:** 13/11/2026, sem alteração dos resultados registrados.
 
-Esta análise documenta os 28 requisitos de QA para os cenários relacionados abaixo, com base nos relatos e nas evidências fornecidas. RF01–RF04 e suas análises históricas foram preservados; RF05–RF20 ampliam a cobertura em 14/11/2026; RF21 acrescenta Avaliações e RF22–RF28 acrescentam Exercícios em 15/11/2026. Os critérios abaixo constituem a referência de QA para esses fluxos; não representam validação de uma especificação formal pelo responsável pelo produto.
+Esta análise documenta 34 requisitos de QA para os cenários relacionados abaixo, com base nos relatos e nas evidências fornecidas. RF01–RF04 e suas análises históricas foram preservados; RF05–RF20 ampliam a cobertura em 14/11/2026; RF21 acrescenta Avaliações; RF22–RF28 acrescentam Exercícios; RF29–RF33 acrescentam Grupos Musculares; e RF34 acrescenta o carregamento do dashboard em 15/11/2026. Os critérios abaixo constituem a referência de QA para esses fluxos; não representam validação de uma especificação formal pelo responsável pelo produto.
 
 ## 📋 Visão geral dos requisitos
 
@@ -45,6 +45,7 @@ Esta análise documenta os 28 requisitos de QA para os cenários relacionados ab
 | [RF31](#rf31) | Cadastrar e listar um grupo muscular | Média, proposta | [CT-RF31](Cenario_Teste/CT-RF31_Cadastro_GrupoMuscular.md) |
 | [RF32](#rf32) | Alterar o tipo de membro de um grupo muscular | Média, proposta | [CT-RF32](Cenario_Teste/CT-RF32_Edicao_TipoMembro.md) |
 | [RF33](#rf33) | Filtrar a listagem de grupos musculares por código e tipo | Média, proposta | [CT-RF33](Cenario_Teste/CT-RF33_Filtros_GruposMusculares.md) |
+| [RF34](#rf34) | Carregar o dashboard sem falhas de servidor ou requisições redundantes | Alta, proposta | [CT-RF34](Cenario_Teste/CT-RF34_Erro_Servidor_Excesso_Requisicoes.md) |
 
 ---
 
@@ -816,6 +817,32 @@ Nome, extensão, MIME, tamanho do arquivo e resposta da API não ficaram confirm
 
 ---
 
+<a id="rf34"></a>
+
+## RF34 — Carregar o dashboard sem falhas de servidor ou requisições redundantes
+
+| Campo | Descrição |
+| --- | --- |
+| Requisito de QA | O dashboard deve solicitar somente os dados necessários, receber respostas tratáveis e carregar seus componentes sem erro HTTP 500. Uma falha parcial deve identificar o componente afetado sem inutilizar todo o painel. |
+| Ator | Usuário autenticado com acesso ao dashboard. |
+| Pré-condições | Sessão válida, conta de teste com dados conhecidos e captura de rede ativa. |
+| Gatilho | Acessar ou recarregar controladamente o dashboard. |
+| Caso | [CT-RF34](Cenario_Teste/CT-RF34_Erro_Servidor_Excesso_Requisicoes.md) |
+| Situação observada | Reprovado nas evidências. O dashboard apresenta um diálogo de erro; a listagem visível contém 23 eventos, com verificação de token HTTP 200, diversas chamadas GET/POST HTTP 500 e OPTIONS HTTP 204. |
+| Defeito | [BUG-018](Relatorio-de-Bugs.md#bug-018), em triagem |
+| Evidências | [Jam](https://jam.dev/c/eea58e17-b62f-432b-97b2-b14c14bed555) e [Evidências](Evidencias/CT-RF34_Erro_Servidor_Excesso_Requisicoes/README.md). |
+
+### Critérios de aceitação do RF34
+
+1. Cada componente executa apenas as chamadas previstas pelo contrato.
+2. Nenhuma requisição necessária ao dashboard retorna HTTP 500.
+3. Falhas parciais são identificadas e não inutilizam componentes independentes.
+4. A quantidade e a sequência das chamadas permanecem estáveis após recarga controlada.
+5. Logs e identificadores permitem correlacionar qualquer resposta não bem-sucedida.
+
+### Pontos a confirmar e limites do RF34
+
+Os caminhos completos, parâmetros, corpos, logs e componentes de origem não foram confirmados. O título do Jam atribui o problema ao excesso de requisições, mas a relação causal não foi demonstrada. Correlacionar cada HTTP 500 ao endpoint e ao componente antes de concluir se há repetição indevida, retentativa descontrolada ou indisponibilidade simultânea do backend.
 ## RF29 — Excluir grupo muscular ou explicar o impedimento
 
 | Campo | Descrição |
@@ -990,6 +1017,7 @@ Permanecem fora do cenário gravado a busca por nome, código inexistente ou inv
 | RF31 | [CT-RF31](Cenario_Teste/CT-RF31_Cadastro_GrupoMuscular.md) | Nenhum no fluxo avaliado | Aprovado conforme a gravação | [Jam](https://jam.dev/c/98008390-0040-475e-ba7b-7f1e72cc0b2e) |
 | RF32 | [CT-RF32](Cenario_Teste/CT-RF32_Edicao_TipoMembro.md) | Nenhum no fluxo avaliado | Aprovado conforme a gravação | [Jam](https://jam.dev/c/98008390-0040-475e-ba7b-7f1e72cc0b2e) |
 | RF33 | [CT-RF33](Cenario_Teste/CT-RF33_Filtros_GruposMusculares.md) | Nenhum no fluxo avaliado | Aprovado conforme a gravação | [Jam](https://jam.dev/c/98008390-0040-475e-ba7b-7f1e72cc0b2e) |
+| RF34 | [CT-RF34](Cenario_Teste/CT-RF34_Erro_Servidor_Excesso_Requisicoes.md) | [BUG-018](Relatorio-de-Bugs.md#bug-018), em triagem | Reprovado — múltiplas requisições retornam HTTP 500. | [Jam](https://jam.dev/c/eea58e17-b62f-432b-97b2-b14c14bed555) e [Evidências](Evidencias/CT-RF34_Erro_Servidor_Excesso_Requisicoes/README.md) |
 
 ---
 
@@ -1040,6 +1068,10 @@ O relato original foi copiado integralmente. A consulta ao Jam confirmou os deta
 
 RF22 utiliza relato, imagem inicial e Info do Jam. RF23–RF25 utilizam quadros, Info e listagem Network. RF26–RF28 utilizam quadros e Info dos Jams, sem confirmação de arquivo, MIME, persistência ou resposta detalhada da API. RF23 demonstra remoção e redução de 11 para 10; RF24 apresenta total de 10 para 11 no teste declarado como edição, exigindo confirmar operação e IDs; RF25 demonstra criação com imagem selecionada, sem conferir a imagem salva; RF26–RF28 demonstram ausência de feedback visual nos testes negativos. BUG-011–BUG-015 estão em triagem. Não houve revisão integral quadro a quadro, nova execução, reteste ou diagnóstico de causa raiz.
 
+### Base da análise do RF34 — revisão de 15/11/2026
+
+RF34 utiliza quadros, Info e a listagem Network do Jam. A evidência mostra 23 eventos visíveis, múltiplos HTTP 500 e um diálogo de erro, mas os endpoints aparecem truncados e não foram inspecionados corpos ou logs. BUG-018 permanece em triagem. Não houve nova execução, reteste ou diagnóstico de causa raiz.
+
 ### Base da análise do RF29 — revisão de 15/11/2026
 
 RF29 utiliza os painéis Informações, Rede e Console do Jam "Tela de Grupos Musculares", lidos diretamente, e os quadros de 1:18 e 1:21. As duas requisições de exclusão, seus horários, tempos de resposta, cabeçalhos e corpo de resposta foram registrados a partir do painel de rede. Não houve nova execução, acesso ao código ou ao banco, nem reteste. BUG-016 está em triagem.
@@ -1060,7 +1092,7 @@ RF32 utiliza a cronologia do painel Console entre 0:57 e 1:38 e os quadros de 0:
 
 RF33 utiliza a cronologia do painel Console e os quadros de 0:15, 1:45 e 2:00. O quadro de 0:15 registra o estado sem resultados; os de 1:45 e 2:00 registram buscas por tipo de membro e por código, com o rodapé correspondente. O resultado da busca pelo código "1", acionada entre 1:53 e 1:55, não teve quadro consultado e está registrado apenas como ação. Não houve nova execução, acesso ao código ou ao banco, nem reteste.
 
-Com RF29 a RF33 a análise passa a cobrir 33 requisitos. A tela Grupos Musculares acrescenta duas reprovações, com BUG-016 e BUG-017 em triagem, e três aprovações limitadas aos exemplos gravados.
+Com RF29 a RF34, a análise passa a cobrir 34 requisitos. A tela Grupos Musculares acrescenta duas reprovações, com BUG-016 e BUG-017 em triagem, e três aprovações limitadas aos exemplos gravados. O dashboard acrescenta uma reprovação vinculada ao BUG-018, também em triagem.
 
 ---
 

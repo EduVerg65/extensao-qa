@@ -1,6 +1,10 @@
 # 🧪 Índice dos cenários de teste — SIFIT
 
+<<<<<<< HEAD
+**Atualização:** 15/11/2026. 34 casos consolidados: 10 aprovados, 19 reprovados e 5 a validar; 18 defeitos registrados (10 abertos e 8 em triagem).
+=======
 **Atualização:** 15/11/2026. 33 casos: 10 aprovados, 18 reprovados e 5 a validar; 17 defeitos registrados (10 abertos e 7 em triagem).
+>>>>>>> bea1da1f41faf0c807abdc025ade76b1a17433d8
 
 | Caso | Funcionalidade | Resultado | Defeito | Jam |
 | --- | --- | --- | --- | --- |
@@ -47,6 +51,23 @@ A tabela anterior reúne CT-RF01–CT-RF21. Os quatro casos abaixo completam CT-
 | [CT-RF27](CT-RF27_Video_Campo_Imagem.md) | Vídeo selecionado no campo de imagem | Reprovado — arquivo não anexado e sem feedback visível | [BUG-014](../Relatorio-de-Bugs.md#bug-014), em triagem | [Jam](https://jam.dev/c/00740108-9a7d-4151-8723-171c89635567) |
 | [CT-RF28](CT-RF28_Imagem_Campo_Video.md) | Imagem selecionada no campo de vídeo | Reprovado — arquivo não anexado e sem feedback visível | [BUG-015](../Relatorio-de-Bugs.md#bug-015), em triagem | [Jam](https://jam.dev/c/be9437a4-4fe9-4756-a2af-6777d3f43e25) |
 
+<<<<<<< HEAD
+## Inclusão RF34 — 15/11/2026
+
+| Caso | Funcionalidade | Resultado | Defeito | Jam |
+| --- | --- | --- | --- | --- |
+| [CT-RF34](CT-RF34_Erro_Servidor_Excesso_Requisicoes.md) | Carregamento do dashboard e tratamento de falhas do servidor | Reprovado — múltiplas requisições retornam HTTP 500 | [BUG-018](../Relatorio-de-Bugs.md#bug-018), em triagem | [Jam](https://jam.dev/c/eea58e17-b62f-432b-97b2-b14c14bed555) |
+
+## Inclusão RF29–RF33 — 15/11/2026
+
+| Caso | Funcionalidade | Resultado | Defeito | Jam |
+| --- | --- | --- | --- | --- |
+| [CT-RF29](CT-RF29_Exclusao_GrupoMuscular.md) | Exclusão de grupo muscular | Reprovado — HTTP 500 e mensagem genérica | [BUG-016](../Relatorio-de-Bugs.md#bug-016), em triagem | [Jam](https://jam.dev/c/98008390-0040-475e-ba7b-7f1e72cc0b2e) |
+| [CT-RF30](CT-RF30_Imagens_GruposMusculares.md) | Exibição das imagens dos grupos musculares | Reprovado — imagens quebradas e HTTP 422 | [BUG-017](../Relatorio-de-Bugs.md#bug-017), em triagem | [Jam](https://jam.dev/c/98008390-0040-475e-ba7b-7f1e72cc0b2e) |
+| [CT-RF31](CT-RF31_Cadastro_GrupoMuscular.md) | Cadastro de grupo muscular | Aprovado conforme a gravação | — | [Jam](https://jam.dev/c/98008390-0040-475e-ba7b-7f1e72cc0b2e) |
+| [CT-RF32](CT-RF32_Edicao_TipoMembro.md) | Edição do tipo de membro | Aprovado conforme a gravação | — | [Jam](https://jam.dev/c/98008390-0040-475e-ba7b-7f1e72cc0b2e) |
+| [CT-RF33](CT-RF33_Filtros_GruposMusculares.md) | Filtros de grupos musculares | Aprovado conforme a gravação | — | [Jam](https://jam.dev/c/98008390-0040-475e-ba7b-7f1e72cc0b2e) |
+=======
 ## Grupos Musculares — inclusão de 15/11/2026
 
 Os casos abaixo têm como fonte uma única gravação da tela Grupos Musculares, de 15/11/2026 às 15h56 BRT, com 2 min 3 s. Os painéis de informações, rede e console do Jam foram lidos diretamente; não houve nova execução. As pastas locais de evidências desses casos ainda não foram criadas.
@@ -60,5 +81,6 @@ As três aprovações se limitam aos exemplos gravados. A cronologia não regist
 | [CT-RF31](CT-RF31_Cadastro_GrupoMuscular.md) | Cadastro de grupo muscular | Aprovado conforme a gravação | — | [Jam](https://jam.dev/c/98008390-0040-475e-ba7b-7f1e72cc0b2e) |
 | [CT-RF32](CT-RF32_Edicao_TipoMembro.md) | Alteração do tipo de membro | Aprovado conforme a gravação | — | [Jam](https://jam.dev/c/98008390-0040-475e-ba7b-7f1e72cc0b2e) |
 | [CT-RF33](CT-RF33_Filtros_GruposMusculares.md) | Filtros por código e por tipo de membro | Aprovado conforme a gravação | — | [Jam](https://jam.dev/c/98008390-0040-475e-ba7b-7f1e72cc0b2e) |
+>>>>>>> bea1da1f41faf0c807abdc025ade76b1a17433d8
 
 [← Início](../../README.md) · [Requisitos](../Analise%20de%20requisitos.md) · [Plano](../Plano%20de%20testes.md) · [Evidências](../Evidencias/README.md)
