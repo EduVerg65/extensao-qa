@@ -2,11 +2,11 @@
 
 **Módulos:** Autenticação, Perfil, Clientes / Filtros, Financeiro, Página inicial / Personais, SifitBox / Modalidades e Turmas, Categorias Crossfit, Avaliações, Exercícios, Grupos Musculares, Dashboard e Objetivos de Treino.
 
-**Atualização:** 15/11/2026 — RF01 a RF35 e RF38 a RF44 consolidados, com inclusão de Categorias Crossfit (CT-RF38), SifitBox – Turmas (CT-RF39 a CT-RF41) e, a partir de CT-RF42, Pagar.me, Configurações, Despesas Fixas e Relatórios; BUG-011–BUG-020 em triagem.
+**Atualização:** 15/11/2026 — RF01 a RF35 e RF38 a RF45 consolidados, com inclusão de Categorias Crossfit (CT-RF38), SifitBox – Turmas (CT-RF39 a CT-RF41) e, a partir de CT-RF42, Pagar.me, Configurações, Despesas Fixas e Relatórios; BUG-011–BUG-021 em triagem.
 
 **Padronização documental:** 13/11/2026, sem alteração dos resultados registrados.
 
-Esta análise documenta 42 requisitos de QA para os cenários relacionados abaixo, com base nos relatos e nas evidências fornecidas. RF01–RF04 e suas análises históricas foram preservados; RF05–RF20 ampliam a cobertura em 14/11/2026; RF21 acrescenta Avaliações; RF22–RF28 acrescentam Exercícios; RF29–RF33 acrescentam Grupos Musculares; RF34 acrescenta o carregamento do dashboard RF35 acrescenta o cadastro de objetivos de treino e RF38 acrescenta o cadastro de categorias com código automático em 15/11/2026. RF39 acrescenta o cadastro de modalidade em SifitBox – Turmas. RF40 acrescenta a exclusão de turmas e modalidades. RF41 acrescenta o cadastro de turma. RF42 a RF56 acrescentam Pagar.me, Configurações, Despesas Fixas e Relatórios em 15/11/2026. Os critérios abaixo constituem a referência de QA para esses fluxos; não representam validação de uma especificação formal pelo responsável pelo produto.
+Esta análise documenta 43 requisitos de QA para os cenários relacionados abaixo, com base nos relatos e nas evidências fornecidas. RF01–RF04 e suas análises históricas foram preservados; RF05–RF20 ampliam a cobertura em 14/11/2026; RF21 acrescenta Avaliações; RF22–RF28 acrescentam Exercícios; RF29–RF33 acrescentam Grupos Musculares; RF34 acrescenta o carregamento do dashboard RF35 acrescenta o cadastro de objetivos de treino e RF38 acrescenta o cadastro de categorias com código automático em 15/11/2026. RF39 acrescenta o cadastro de modalidade em SifitBox – Turmas. RF40 acrescenta a exclusão de turmas e modalidades. RF41 acrescenta o cadastro de turma. RF42 a RF56 acrescentam Pagar.me, Configurações, Despesas Fixas e Relatórios em 15/11/2026. Os critérios abaixo constituem a referência de QA para esses fluxos; não representam validação de uma especificação formal pelo responsável pelo produto.
 
 ## 📋 Visão geral dos requisitos
 
@@ -54,6 +54,7 @@ Esta análise documenta 42 requisitos de QA para os cenários relacionados abaix
 | [RF42](#rf42) | Solicitar saque e informar o resultado | Alta, proposta | [CT-RF42](Cenario_Teste/CT-RF42_Solicitacao_Saque_PagarMe.md) |
 | [RF43](#rf43) | Criar cobrança pelo painel Pagar.me | Média, proposta | [CT-RF43](Cenario_Teste/CT-RF43_Criacao_Cobranca_PagarMe.md) |
 | [RF44](#rf44) | Salvar as configurações gerais de acesso e presença | Média, proposta | [CT-RF44](Cenario_Teste/CT-RF44_Configuracoes_Home_Salvamento.md) |
+| [RF45](#rf45) | Atualizar Recebimentos e gráfico conforme o período | Média, proposta | [CT-RF45](Cenario_Teste/CT-RF45_Painel_PagarMe_Periodo.md) |
 
 ---
 
@@ -1227,6 +1228,35 @@ A mensagem de salvamento, a persistência após recarga, a faixa válida do camp
 
 ---
 
+<a id="rf45"></a>
+
+## RF45 — Atualizar Recebimentos e gráfico conforme o período
+
+| Campo | Descrição |
+| --- | --- |
+| Requisito de QA | O painel Pagar.me deve apresentar Recebimentos, variação, gráfico e meios de pagamento correspondentes ao período selecionado, com indicadores de saldo coerentes ou com indicação explícita de indisponibilidade. |
+| Ator | Usuário autenticado com acesso ao módulo Pagar.me. |
+| Pré-condições | Conta de pagamento com movimentação conhecida; regra de apuração dos indicadores definida com o produto. |
+| Gatilho | Selecionar outro período no cartão Recebimentos. |
+| Caso | [CT-RF45](Cenario_Teste/CT-RF45_Painel_PagarMe_Periodo.md) |
+| Situação observada | Reprovado nas evidências. Com "Últimos 7 dias", Recebimentos permanece R$ 38.420,00 e o gráfico é idêntico ao de "Últimos 30 dias"; os indicadores de saldo permanecem "R$ --". |
+| Defeito | [BUG-021](Relatorio-de-Bugs.md#bug-021), em triagem |
+| Evidências | [Jam](https://jam.dev/c/e6e551ef-9196-4c79-b6a2-89747b1e8b33) e [Evidências](Evidencias/CT-RF45_Painel_PagarMe_Periodo/README.md). |
+
+### Critérios de aceitação do RF45
+
+1. O seletor de período atualiza o valor de Recebimentos, a variação, o gráfico e o eixo de datas.
+2. O eixo do gráfico apresenta datas compatíveis com o período selecionado e com a data atual.
+3. Os meios de pagamento correspondem ao período e ao total apresentado.
+4. Os indicadores de saldo apresentam valores quando a conta tem saldo, ou mensagem explícita de indisponibilidade.
+5. Valores de demonstração, se existirem, são identificados como tal.
+
+### Pontos a confirmar e limites do RF45
+
+Não foi confirmado se o painel usa dados reais ou de demonstração; o clique no seletor não consta na cronologia e a leitura do eixo de datas é aproximada. Os corpos das requisições não foram capturados.
+
+---
+
 ## 🔗 Rastreabilidade
 
 | Requisito | Cenário / caso | Defeito | Resultado | Evidências |
@@ -1273,6 +1303,7 @@ A mensagem de salvamento, a persistência após recarga, a faixa válida do camp
 | RF42 | [CT-RF42](Cenario_Teste/CT-RF42_Solicitacao_Saque_PagarMe.md) | Sem defeito confirmado | A validar — regra ou contexto pendente | [Evidências](Evidencias/CT-RF42_Solicitacao_Saque_PagarMe/README.md) e [Jam](https://jam.dev/c/e6e551ef-9196-4c79-b6a2-89747b1e8b33) |
 | RF43 | [CT-RF43](Cenario_Teste/CT-RF43_Criacao_Cobranca_PagarMe.md) | Nenhum no fluxo avaliado | Aprovado conforme a gravação | [Evidências](Evidencias/CT-RF43_Criacao_Cobranca_PagarMe/README.md) e [Jam](https://jam.dev/c/e6e551ef-9196-4c79-b6a2-89747b1e8b33) |
 | RF44 | [CT-RF44](Cenario_Teste/CT-RF44_Configuracoes_Home_Salvamento.md) | Sem defeito confirmado | A validar — regra ou contexto pendente | [Evidências](Evidencias/CT-RF44_Configuracoes_Home_Salvamento/README.md) e [Jam](https://jam.dev/c/e6e551ef-9196-4c79-b6a2-89747b1e8b33) |
+| RF45 | [CT-RF45](Cenario_Teste/CT-RF45_Painel_PagarMe_Periodo.md) | [BUG-021](Relatorio-de-Bugs.md#bug-021), em triagem | Reprovado nas evidências; reteste pendente. | [Evidências](Evidencias/CT-RF45_Painel_PagarMe_Periodo/README.md) e [Jam](https://jam.dev/c/e6e551ef-9196-4c79-b6a2-89747b1e8b33) |
 
 ---
 
@@ -1396,6 +1427,12 @@ Com RF43, a análise passa a cobrir 41 requisitos documentados. O CT-RF43 acresc
 RF44 utiliza os painéis Info, Console, Network e Actions do Jam "Pagar.me" (trecho de Configurações) e os quadros de 0:33, 0:41, 0:46 e 0:56. Foram registrados as alterações, o valor 1100 no campo de dias, a mudança do menu lateral e a ausência de mensagem de confirmação. Não houve nova execução, acesso ao código ou ao banco, nem reteste.
 
 Com RF44, a análise passa a cobrir 42 requisitos documentados. O CT-RF44 acrescenta um ponto a validar, sem defeito confirmado.
+
+### Base da análise do RF45 — revisão de 15/11/2026
+
+RF45 utiliza os painéis Info, Console, Network e Actions do Jam "Pagar.me" e os quadros de 0:00 e 0:25. A comparação entre os dois quadros mostra o mesmo valor e o mesmo gráfico com períodos diferentes. A leitura do eixo de datas é aproximada. Não houve nova execução, acesso ao código ou ao banco, nem reteste. BUG-021 está em triagem.
+
+Com RF45, a análise passa a cobrir 43 requisitos documentados. O CT-RF45 acrescenta uma reprovação, vinculada ao BUG-021, em triagem.
 
 ---
 
