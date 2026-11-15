@@ -13,9 +13,9 @@
 | Campo | Descrição |
 | --- | --- |
 | Objetivo | Editar o nome de um exercício existente preservando sua identidade e a quantidade de registros. |
-| Requisito | Comportamento esperado proposto para RF24, ainda não formalizado na análise de requisitos. |
+| Requisito | [RF24](../Analise%20de%20requisitos.md#rf24) — referência de QA; confirmação de produto pendente. |
 | Tipo / prioridade | Funcional manual, análise de evidências / Média, proposta para triagem. |
-| Defeito | Possível criação de registro ao salvar edição; sem identificador de bug atribuído. |
+| Defeito | [BUG-012](../Relatorio-de-Bugs.md#bug-012) — em triagem; confirmação pendente. |
 | Encaminhamento | Reproduzir a partir da ação explícita de edição e comparar os identificadores antes e depois. Investigar eventual envio para criação como hipótese, sem atribuir causa técnica antes de verificar código e contrato da API. |
 | Fonte | [Jam — Edição de exercício aumenta o total e mantém duas entradas](https://jam.dev/c/073f70d6-4052-4e0f-a4bb-e9f37305d618) |
 

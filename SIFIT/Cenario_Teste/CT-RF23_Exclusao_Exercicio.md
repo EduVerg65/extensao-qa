@@ -13,7 +13,7 @@
 | Campo | Descrição |
 | --- | --- |
 | Objetivo | Excluir um exercício permitido e atualizar a biblioteca e seus totais. |
-| Requisito | Comportamento esperado proposto para RF23, ainda não formalizado na análise de requisitos. |
+| Requisito | [RF23](../Analise%20de%20requisitos.md#rf23) — referência de QA; confirmação de produto pendente. |
 | Tipo / prioridade | Funcional manual, análise de evidências / Média, proposta para triagem. |
 | Defeito | Nenhum confirmado no trecho consultado. |
 | Encaminhamento | Manter como regressão. Em nova execução, recarregar a página para conferir persistência e testar separadamente as regras para exercícios vinculados. |

@@ -13,7 +13,7 @@
 | Campo | Descrição |
 | --- | --- |
 | Objetivo | Cadastrar um exercício com imagem válida e verificar a associação do arquivo ao registro. |
-| Requisito | Comportamento esperado proposto para RF25, ainda não formalizado na análise de requisitos. |
+| Requisito | [RF25](../Analise%20de%20requisitos.md#rf25) — referência de QA; confirmação de produto pendente. |
 | Tipo / prioridade | Funcional manual, análise de evidências / Média, proposta para triagem. |
 | Defeito | Sem defeito confirmado; validação da imagem salva pendente. |
 | Encaminhamento | Reabrir o exercício criado e conferir a imagem salva. Testar formatos e tamanhos inválidos em casos separados; essas variações não recebem resultado nesta análise. |

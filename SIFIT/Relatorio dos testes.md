@@ -1,10 +1,10 @@
 # 📊 Relatório de Testes — SIFIT
 
-**Escopo:** CT-RF01–CT-RF21 — autenticação, recuperação, perfil, Clientes, financeiro, página inicial, modalidades / tema de SifitBox, Categorias Crossfit e Avaliações.
+**Escopo:** CT-RF01–CT-RF25 — autenticação, recuperação, perfil, Clientes, financeiro, página inicial, modalidades / tema de SifitBox, Categorias Crossfit, Avaliações e Exercícios.
 
-**Datas das gravações do Jam:** CT-RF01 em 23/10/2026; CT-RF02_ERRO em 22/10/2026 às 21:45 BRT; CT-RF03 não confirmada; CT-RF04_loginComSucesso em 13/11/2026; CT-RF05–CT-RF20 em 14/11/2026; CT-RF21 em 15/11/2026 às 15:07:51,265 BRT.
+**Datas das gravações do Jam:** CT-RF01 em 23/10/2026; CT-RF02_ERRO em 22/10/2026 às 21:45 BRT; CT-RF03 não confirmada; CT-RF04_loginComSucesso em 13/11/2026; CT-RF05–CT-RF20 em 14/11/2026; CT-RF21 em 15/11/2026 às 15:07:51,265 BRT; CT-RF22–25 em 15/11/2026 às 15:25, 15:40, 15:38 e 15:35 BRT, respectivamente.
 
-**Data da revisão documental:** 15/11/2026, com inclusão de CT-RF21 / BUG-010 e evidências do Jam. Resultados anteriores preservados.
+**Data da revisão documental:** 15/11/2026, com integração de CT-RF22–CT-RF25, RF22–RF25 e BUG-011–BUG-012 em triagem. Resultados anteriores preservados.
 
 **Origem do resultado:** análise de evidências fornecidas; sem nova execução no sistema nesta revisão.
 
@@ -22,13 +22,13 @@ O **CT-RF03** foi classificado como **reprovado conforme o relato**: a busca com
 
 O **CT-RF04_loginComSucesso** foi classificado como **aprovado conforme a gravação**: o usuário preenche credenciais válidas, clica em Entrar e acessa `/dashboard`. As chamadas de login e verificação da sessão retornam HTTP 200; os quadros mostram o menu e o resumo da academia após a autenticação. Não houve nova execução no sistema.
 
-Os 16 novos cenários acrescentam **5 aprovações**, **7 reprovações nas evidências** e **4 pontos a validar**. Há **6 novos defeitos**, pois CT-RF09 e CT-RF10 compartilham BUG-005. CT-RF21 acrescenta uma reprovação e o BUG-010 em 15/11/2026: erro HTTP 500 ao salvar avaliação, confirmado no evento de rede e no alerta da interface. As contagens consolidadas são:
+Os 16 novos cenários acrescentam **5 aprovações**, **7 reprovações nas evidências** e **4 pontos a validar**. Há **6 novos defeitos**, pois CT-RF09 e CT-RF10 compartilham BUG-005. CT-RF21 acrescenta uma reprovação e o BUG-010 em 15/11/2026: erro HTTP 500 ao salvar avaliação, confirmado no evento de rede e no alerta da interface. CT-RF22–25 acrescentam uma aprovação, duas reprovações com confirmação pendente e um ponto a validar. BUG-011/012 estão em triagem. As contagens consolidadas são:
 
-| Casos documentados | Aprovados | Reprovados | A validar | Bugs abertos | Casos com reteste corretivo pendente |
+| Casos documentados | Aprovados | Reprovados | A validar | Defeitos registrados | Casos com reteste corretivo pendente |
 | :---: | :---: | :---: | :---: | :---: | :---: |
-| 21 | 6 | 11 | 4 | 10 | 11 |
+| 25 | 7 | 13 | 5 | 12 (10 abertos + 2 em triagem) | 13 |
 
-As contagens representam os casos documentados com base nas fontes indicadas, sem novas execuções nesta revisão. As nove variações planejadas para o reteste do CT-RF03 não foram executadas e não são contabilizadas como testes adicionais realizados.
+Os 13 retestes incluem CT-RF22/24, sujeitos à confirmação funcional. As contagens representam os casos documentados com base nas fontes indicadas, sem novas execuções nesta revisão. As nove variações planejadas para o reteste do CT-RF03 não foram executadas e não são contabilizadas como testes adicionais realizados.
 
 ---
 
@@ -57,6 +57,10 @@ As contagens representam os casos documentados com base nas fontes indicadas, se
 | [CT-RF19](Cenario_Teste/CT-RF19_Exclusao_Categoria.md) | [RF19](Analise%20de%20requisitos.md#rf19) | Concluir a exclusão permitida ou explicar de forma tratável por que o registro não pode ser excluído. | Após a confirmação, aparece o diálogo “Erro” / “Erro ao deletar categoria”. A categoria permanece na lista. | Reprovado nas evidências | [BUG-009](Relatorio-de-Bugs.md#bug-009) |
 | [CT-RF20](Cenario_Teste/CT-RF20_Criacao_Categoria.md) | [RF20](Analise%20de%20requisitos.md#rf20) | Criar a categoria e apresentar o novo registro na listagem. | O modal fecha, o contador passa de sete para oito e a lista passa a incluir cardio leve. | Aprovado conforme a gravação | Nenhum no fluxo avaliado |
 | [CT-RF21](Cenario_Teste/CT-RF21_Cadastro_Avaliacao.md) | [RF21](Analise%20de%20requisitos.md#rf21) | Cadastrar dados válidos ou informar validação específica, sem HTTP 500. | POST de agendamento retorna HTTP 500; alerta “Erro ao cadastrar Avaliação.”; formulário aberto. | Reprovado nas evidências | [BUG-010](Relatorio-de-Bugs.md#bug-010) |
+| [CT-RF22](Cenario_Teste/CT-RF22_Digitacao_Codigo_Exercicio.md) | [RF22](Analise%20de%20requisitos.md#rf22) | Quando editável, o campo Código deve aceitar e manter um código válido e permitir sua correção. | O testador relata não conseguir digitar o código. A imagem inicial confirma o campo Código no formulário Exercício; a reprodução integral, as teclas e o foco não foram confirmados. | Reprovado conforme o relato; reprodução independente pendente. | [BUG-011](Relatorio-de-Bugs.md#bug-011), em triagem |
+| [CT-RF23](Cenario_Teste/CT-RF23_Exclusao_Exercicio.md) | [RF23](Analise%20de%20requisitos.md#rf23) | O sistema deve remover o exercício permitido da biblioteca e atualizar os totais. Se houver impedimento, deve explicá-lo sem indicar sucesso indevido. | No quadro de aproximadamente 0:02, a biblioteca apresenta total 11 e o exercício Levantamento de Peso. No quadro final, em aproximadamente 0:06, esse registro não aparece e o total é 10. A lista continua contendo Levantamento de Peso 02, registro distinto. | Aprovado no trecho consultado. | Sem defeito confirmado |
+| [CT-RF24](Cenario_Teste/CT-RF24_Edicao_Exercicio.md) | [RF24](Analise%20de%20requisitos.md#rf24) | Salvar a edição deve atualizar o mesmo exercício, sem criar um registro adicional e sem aumentar o total da biblioteca. | O Jam está identificado como teste de edição. Nos quadros intermediários, o formulário Exercício está aberto com código 16, o nome é preenchido e a biblioteca ao fundo indica total 10. No quadro final, o formulário fecha, o total é 11 e a lista contém Levantamento de Peso e Levantamento de Peso 02. O aumento e a coexistência dos nomes divergem do resultado esperado para uma edição. | Reprovado no trecho consultado; confirmar operação e identidade dos registros na reprodução. | [BUG-012](Relatorio-de-Bugs.md#bug-012), em triagem |
+| [CT-RF25](Cenario_Teste/CT-RF25_Envio_Exercicio_Imagem.md) | [RF25](Analise%20de%20requisitos.md#rf25) | O sistema deve cadastrar o exercício, atualizar a biblioteca e manter a imagem vinculada ao registro, disponível após reabrir o cadastro. | O quadro inicial consultado mostra o formulário Exercício preenchido com nome braço forte e uma miniatura na seção Imagem; a biblioteca ao fundo indica total 9. O quadro final mostra o formulário fechado, braço forte na lista e total 10. Esses quadros sustentam a criação com imagem selecionada, mas não demonstram a reabertura ou a visualização da imagem salva. | A validar — criação visível; persistência e associação da imagem não confirmadas. | Sem defeito confirmado |
 
 ---
 
@@ -74,6 +78,8 @@ As contagens representam os casos documentados com base nas fontes indicadas, se
 | [BUG-008](Relatorio-de-Bugs.md#bug-008) | Edição de modalidade não apresenta ação clara para salvar | Média, proposta | Média, proposta | Aberto; reteste pendente. |
 | [BUG-009](Relatorio-de-Bugs.md#bug-009) | Exclusão de categoria retorna HTTP 500 e mensagem genérica | Média, proposta | Alta, proposta | Aberto; reteste pendente. |
 | [BUG-010](Relatorio-de-Bugs.md#bug-010) | Cadastro de avaliação retorna HTTP 500 | Alta, proposta | Alta, proposta | Aberto; reteste pendente. |
+| [BUG-011](Relatorio-de-Bugs.md#bug-011) | Campo Código do exercício não aceita digitação conforme o relato | Média, proposta | Média, proposta | Em triagem; confirmação e reteste pendentes. |
+| [BUG-012](Relatorio-de-Bugs.md#bug-012) | Edição de exercício aumenta o total e mantém duas entradas | Média, proposta | Média, proposta | Em triagem; confirmação e reteste pendentes. |
 
 As classificações propostas dependem de triagem. O BUG-003 mantém o resultado atribuído ao relato fornecido.
 
@@ -158,6 +164,16 @@ O domínio do CT-RF02_ERRO é diferente do domínio `sifitalfa.centrion.com.br` 
 | Dados | Aluno 3423 digitado sem confirmação pela busca; personal 7; funcionário 11; 15/11/2026 às 06:00. |
 | Limites | Versão, zoom, classificação do ambiente, causa raiz e persistência não confirmados. |
 
+### CT-RF22 a CT-RF25
+
+| Item | Registro |
+| --- | --- |
+| Página / autor | https://sifit.centrion.com.br/exercicios / Bruno Madeira. |
+| Navegador / sistema / janela | Edge 157.0.8103.80 / Windows 11 (x86) / 1912 × 960, conforme Info. |
+| Data / duração | 15/11/2026; RF22: 15:25 / 5 s; RF23: 15:40 / 6 s; RF24: 15:38 / 9 s; RF25: 15:35 / 5 s; durações aproximadas. |
+| Material e limites | RF22: relato, imagem inicial e Info. RF23–25: quadros, Info e Network, com resumo e cronologia locais. Sem cópia dos vídeos, inspeção de código ou nova execução. RF24 exige confirmar operação/IDs; RF25 exige conferir imagem salva. |
+
+
 ## 📸 5. Evidências e observações
 
 | Evidência | Informação utilizada |
@@ -190,6 +206,10 @@ O domínio do CT-RF02_ERRO é diferente do domínio `sifitalfa.centrion.com.br` 
 | [Jam — CT-RF19: Erro a o deletar categoria](https://jam.dev/c/c5c78b3b-2865-4226-836f-bcb0a8fc612f) e [Evidências](Evidencias/CT-RF19_Exclusao_Categoria/README.md) | 0:02: POST /api/categoria-exercicio-cross/excluir retorna HTTP 500. 0:03–0:05: mensagem de erro. O erro e o endpoint estão registrados. Sem o corpo completo da resposta, logs do servidor ou banco, a causa do HTTP 500 não foi determinada. |
 | [Jam — CT-RF20: Teste criação de nova categorias](https://jam.dev/c/b48ab94e-517d-48d6-8e46-70b18c033b8b) e [Evidências](Evidencias/CT-RF20_Criacao_Categoria/README.md) | 0:10: POST /api/categoria-exercicio-cross/criar retorna HTTP 201, seguido de GET /listar com HTTP 200. 0:11–0:15: novo registro visível. O teste demonstra criação no cenário gravado. Não cobre campos vazios, duplicidade ou validações de tamanho. |
 | [Jam — CT-RF21: erro no cadastro da avaliação](https://jam.dev/c/2e5eca1f-7cd2-4ee3-854b-02ef4635955a) e [Evidências](Evidencias/CT-RF21_Cadastro_Avaliacao/README.md) | Em 00:12, evento 16: POST /api/avaliacao/adicionar-agendamento/1 HTTP 500 em 1363 ms, resposta “Erro interno inesperado.”. Em 00:14,748: alerta “Erro ao cadastrar Avaliação.”. Sem confirmação de persistência ou causa raiz. |
+| [Jam — CT-RF22](https://jam.dev/c/2696db03-0a18-4c39-a75d-4987a43c04f0) e relato do testador | O testador relata não conseguir digitar o código. A imagem inicial confirma o campo Código no formulário Exercício; a reprodução integral, as teclas e o foco não foram confirmados. Não foram confirmadas a operação de criação/edição, a sequência de teclas ou a causa. A classificação se apoia no relato e na imagem inicial, sem análise de rede ou console. |
+| [Jam — CT-RF23](https://jam.dev/c/32adfca3-489f-4a4b-a08d-933c1d1a3c32) e [Evidências](Evidencias/CT-RF23_Exclusao_Exercicio/README.md) | No quadro de aproximadamente 0:02, a biblioteca apresenta total 11 e o exercício Levantamento de Peso. No quadro final, em aproximadamente 0:06, esse registro não aparece e o total é 10. A lista continua contendo Levantamento de Peso 02, registro distinto. Não foram confirmados o diálogo de confirmação, a persistência após recarregar ou os efeitos sobre fichas de treino vinculadas. |
+| [Jam — CT-RF24](https://jam.dev/c/073f70d6-4052-4e0f-a4bb-e9f37305d618) e [Evidências](Evidencias/CT-RF24_Edicao_Exercicio/README.md) | O Jam está identificado como teste de edição. Nos quadros intermediários, o formulário Exercício está aberto com código 16, o nome é preenchido e a biblioteca ao fundo indica total 10. No quadro final, o formulário fecha, o total é 11 e a lista contém Levantamento de Peso e Levantamento de Peso 02. O aumento e a coexistência dos nomes divergem do resultado esperado para uma edição. O acionamento inicial da edição e os identificadores das duas entradas não foram confirmados. A classificação considera o propósito declarado do Jam e a divergência visual; se a operação tiver sido criação, reavaliar a conclusão. |
+| [Jam — CT-RF25](https://jam.dev/c/25c37a9b-e9bd-4e0c-adf1-4da528ae1d58) e [Evidências](Evidencias/CT-RF25_Envio_Exercicio_Imagem/README.md) | O quadro inicial consultado mostra o formulário Exercício preenchido com nome braço forte e uma miniatura na seção Imagem; a biblioteca ao fundo indica total 9. O quadro final mostra o formulário fechado, braço forte na lista e total 10. Esses quadros sustentam a criação com imagem selecionada, mas não demonstram a reabertura ou a visualização da imagem salva. Não foram confirmados nome, formato, tamanho ou conteúdo integral do arquivo, nem a persistência da imagem, sua recuperação ou a ausência de duplicação após nova submissão. |
 
 A mensagem de credenciais incorretas já aparece no início do vídeo do Jam; não foi considerada uma resposta ao clique em "Esqueci minha senha". A ausência de requisição, isoladamente, não caracteriza defeito se a interface abrir um formulário local. Aqui, o resultado reprovado decorre de o fluxo não abrir.
 
@@ -253,7 +273,19 @@ O caso [CT-RF21](Cenario_Teste/CT-RF21_Cadastro_Avaliacao.md) está reprovado na
 
 Confirmar existência/vínculo do aluno e regra de retroatividade, investigar os logs da API e executar a matriz de reteste com dados válidos e recusados. Essas verificações são propostas, sem resultado de execução. A persistência da tentativa original não foi consultada. Não houve nova execução nem correção da aplicação.
 
-O consolidado passa a 21 casos: 6 aprovados, 11 reprovados e 4 a validar; 10 bugs abertos e 11 retestes corretivos pendentes. As conclusões históricas de CT-RF01–CT-RF20 foram preservadas. Os arquivos locais de evidências anteriores citados nesses documentos não estavam nesta cópia; o [índice de evidências](Evidencias/README.md) registra essa disponibilidade.
+Na inclusão de CT-RF21, o consolidado histórico passou a 21 casos: 6 aprovados, 11 reprovados e 4 a validar; 10 bugs abertos e 11 retestes corretivos pendentes. As conclusões históricas de CT-RF01–CT-RF20 foram preservadas. Os arquivos locais de evidências anteriores citados nesses documentos não estavam nesta cópia; o [índice de evidências](Evidencias/README.md) registra essa disponibilidade.
+
+
+## Inclusão de 15/11/2026 — CT-RF22 a CT-RF25
+
+| Caso | Situação | Encaminhamento |
+| --- | --- | --- |
+| [CT-RF22](Cenario_Teste/CT-RF22_Digitacao_Codigo_Exercicio.md) | Reprovado conforme o relato; reprodução independente pendente. | Confirmar a regra, reproduzir o impedimento e retestar o campo após correção. |
+| [CT-RF23](Cenario_Teste/CT-RF23_Exclusao_Exercicio.md) | Aprovado no trecho consultado. | Manter como regressão. Em nova execução, recarregar a página para conferir persistência e testar separadamente as regras para exercícios vinculados. |
+| [CT-RF24](Cenario_Teste/CT-RF24_Edicao_Exercicio.md) | Reprovado no trecho consultado; confirmar operação e identidade dos registros na reprodução. | Reproduzir a partir da ação explícita de edição e comparar os identificadores antes e depois. Investigar eventual envio para criação como hipótese, sem atribuir causa técnica antes de verificar código e contrato da API. |
+| [CT-RF25](Cenario_Teste/CT-RF25_Envio_Exercicio_Imagem.md) | A validar — criação visível; persistência e associação da imagem não confirmadas. | Reabrir o exercício criado e conferir a imagem salva. Testar formatos e tamanhos inválidos em casos separados; essas variações não recebem resultado nesta análise. |
+
+O consolidado atual é de 25 casos: 7 aprovados, 13 reprovados e 5 a validar; 12 defeitos registrados (10 abertos e 2 em triagem) e 13 casos com reteste corretivo pendente, incluindo CT-RF22/24, sujeitos à confirmação das premissas. CT-RF09/10 compartilham BUG-005. CT-RF23 não gera defeito no trecho consultado; CT-RF25 não gera defeito apenas pela ausência de prova de persistência. Sem nova execução ou confirmação de causa técnica.
 
 ---
 

@@ -1,12 +1,12 @@
 # 🐞 Relatório de Bugs — SIFIT
 
-**Escopo:** defeitos dos cenários CT-RF01–CT-RF21: recuperação, Perfil, Clientes, financeiro, período, tema, modalidades, categorias e avaliações. Casos aprovados e pontos a validar permanecem no relatório dos testes.
+**Escopo:** defeitos dos cenários CT-RF01–CT-RF25: recuperação, Perfil, Clientes, financeiro, período, tema, modalidades, categorias, avaliações e exercícios. Casos aprovados e pontos a validar permanecem no relatório dos testes.
 
 **Ambientes:** CT-RF01 em https://sifitalfa.centrion.com.br/login; CT-RF02_ERRO em https://sifit.centrion.com.br/profile. CT-RF03: URL do frontend não confirmada; backend informado em `https://backendsifit.centrion.com.br/api/clientesPorNome/1`.
 
 **Datas das gravações do Jam:** CT-RF01 em 23/10/2026; CT-RF02_ERRO em 22/10/2026 às 21:45 BRT; CT-RF03 não confirmada.
 
-**Atualização documental:** 15/11/2026 — dez defeitos abertos (BUG-001 a BUG-010), com inclusão de falha no cadastro de avaliação. As análises anteriores foram preservadas.
+**Atualização documental:** 15/11/2026 — 12 defeitos registrados: 10 abertos (BUG-001 a BUG-010) e 2 em triagem (BUG-011 e BUG-012), relativos a código e edição de exercício. As análises anteriores foram preservadas.
 
 **Padronização documental:** 13/11/2026, sem alteração do status dos defeitos.
 
@@ -30,8 +30,10 @@
 | [BUG-008](#bug-008) | Edição de modalidade não apresenta ação clara para salvar | Média / Média, propostas | Aberto | [CT-RF15](Cenario_Teste/CT-RF15_Edicao_Modalidade.md) |
 | [BUG-009](#bug-009) | Exclusão de categoria retorna HTTP 500 e mensagem genérica | Média / Alta, propostas | Aberto | [CT-RF19](Cenario_Teste/CT-RF19_Exclusao_Categoria.md) |
 | [BUG-010](#bug-010) | Cadastro de avaliação retorna HTTP 500 | Alta / Alta, propostas | Aberto | [CT-RF21](Cenario_Teste/CT-RF21_Cadastro_Avaliacao.md) |
+| [BUG-011](#bug-011) | Campo Código do exercício não aceita digitação conforme o relato | Média / Média, propostas | Em triagem — confirmação pendente | [CT-RF22](Cenario_Teste/CT-RF22_Digitacao_Codigo_Exercicio.md) |
+| [BUG-012](#bug-012) | Edição de exercício aumenta o total e mantém duas entradas | Média / Média, propostas | Em triagem — confirmação pendente | [CT-RF24](Cenario_Teste/CT-RF24_Edicao_Exercicio.md) |
 
-Todos os defeitos aguardam correção e reteste. As causas técnicas permanecem não confirmadas; o BUG-003 se apoia no relato e nas capturas fornecidos, com os limites registrados no caso.
+BUG-001–BUG-010 aguardam correção e reteste. BUG-011/012 aguardam confirmação das premissas e triagem antes do encaminhamento de correção. As causas técnicas permanecem não confirmadas; o BUG-003 se apoia no relato e nas capturas fornecidos, com os limites registrados no caso.
 
 ---
 
@@ -501,6 +503,95 @@ O horário 06:00 precede a tentativa de aproximadamente 15:08; o aluno foi digit
 
 ---
 
+<a id="bug-011"></a>
+
+## BUG-011 — Campo Código do exercício não aceita digitação conforme o relato
+
+| Campo | Descrição |
+| --- | --- |
+| Status | Em triagem — confirmação funcional e reprodução pendentes; causa técnica não confirmada. |
+| Severidade / prioridade | Média / Média, propostas para triagem. |
+| Módulo | Exercícios / Formulário Exercício |
+| Requisito / caso | [RF22](Analise%20de%20requisitos.md#rf22) / [CT-RF22](Cenario_Teste/CT-RF22_Digitacao_Codigo_Exercicio.md) |
+| Data da evidência / revisão | 15/11/2026, 15:25 BRT / 15/11/2026; sem nova execução. |
+| Página / ambiente | https://sifit.centrion.com.br/exercicios; Edge 157.0.8103.80 / Windows 11 (x86), janela 1912 × 960. Versão, zoom e classificação do ambiente não confirmados. |
+| Frequência conhecida | Um registro do Jam; recorrência não determinada. |
+
+### Pré-condições e reprodução
+
+Confirmar se o código é manual ou automático e quais operações permitem edição. Sessão autenticada com permissão e dados de teste autorizados.
+
+1. Abrir o formulário Exercício com permissão adequada.
+2. Selecionar Código e digitar um valor válido.
+3. Apagar e corrigir o valor, sair com Tab e verificar sua manutenção.
+
+### Esperado e obtido
+
+| Esperado | Obtido |
+| --- | --- |
+| Quando editável, o campo Código deve aceitar e manter um código válido e permitir sua correção. | O testador relata não conseguir digitar o código. A imagem inicial confirma o campo Código no formulário Exercício; a reprodução integral, as teclas e o foco não foram confirmados. |
+
+**Impacto:** impede informar manualmente o código quando a regra permitir essa operação.
+
+### Evidências técnicas
+
+- [Jam](https://jam.dev/c/2696db03-0a18-4c39-a75d-4987a43c04f0) e relato do testador.
+- O impedimento é relatado pelo testador. Não foram confirmados foco, teclas ou valor tentado; rede e console não analisados.
+
+### Análise, limites e encaminhamento
+
+Não foram confirmadas a operação de criação/edição, a sequência de teclas ou a causa. A classificação se apoia no relato e na imagem inicial, sem análise de rede ou console. Confirmar a regra, reproduzir o impedimento e retestar o campo após correção.
+
+**Reteste:** executar os critérios do [CT-RF22](Cenario_Teste/CT-RF22_Digitacao_Codigo_Exercicio.md) em versão identificada, confirmar a premissa funcional e registrar nova evidência. Se o código for automático ou a operação original tiver sido criação, reavaliar o registro correspondente. Não encerrar por revisão documental.
+
+---
+
+<a id="bug-012"></a>
+
+## BUG-012 — Edição de exercício aumenta o total e mantém duas entradas
+
+| Campo | Descrição |
+| --- | --- |
+| Status | Em triagem — confirmação funcional e reprodução pendentes; causa técnica não confirmada. |
+| Severidade / prioridade | Média / Média, propostas para triagem. |
+| Módulo | Exercícios / Formulário Exercício |
+| Requisito / caso | [RF24](Analise%20de%20requisitos.md#rf24) / [CT-RF24](Cenario_Teste/CT-RF24_Edicao_Exercicio.md) |
+| Data da evidência / revisão | 15/11/2026, 15:38 BRT / 15/11/2026; sem nova execução. |
+| Página / ambiente | https://sifit.centrion.com.br/exercicios; Edge 157.0.8103.80 / Windows 11 (x86), janela 1912 × 960. Versão, zoom e classificação do ambiente não confirmados. |
+| Frequência conhecida | Um registro do Jam; recorrência não determinada. |
+
+### Pré-condições e reprodução
+
+Exercício de teste existente, com identificador e nome original registrados antes da edição. Sessão autenticada com permissão e dados de teste autorizados.
+
+1. Registrar identificador, nome e total do exercício de teste.
+2. Abrir explicitamente a ação de edição desse registro.
+3. Alterar o nome para um nome de teste distinguível, como Levantamento de Peso 02.
+4. Clicar em Salvar.
+5. Conferir o nome atualizado, a identidade do registro e a manutenção do total.
+6. Verificar se a lista criou uma segunda entrada em vez de atualizar a original.
+
+### Esperado e obtido
+
+| Esperado | Obtido |
+| --- | --- |
+| Salvar a edição deve atualizar o mesmo exercício, sem criar um registro adicional e sem aumentar o total da biblioteca. | O Jam está identificado como teste de edição. Nos quadros intermediários, o formulário Exercício está aberto com código 16, o nome é preenchido e a biblioteca ao fundo indica total 10. No quadro final, o formulário fecha, o total é 11 e a lista contém Levantamento de Peso e Levantamento de Peso 02. O aumento e a coexistência dos nomes divergem do resultado esperado para uma edição. |
+
+**Impacto:** pode criar um exercício adicional em vez de atualizar o existente, alterando a identidade e os totais.
+
+### Evidências técnicas
+
+- [Jam](https://jam.dev/c/073f70d6-4052-4e0f-a4bb-e9f37305d618) e [Evidências](Evidencias/CT-RF24_Edicao_Exercicio/README.md).
+- A aba Network apresenta POST com HTTP 200, GET de arquivo MP4 com HTTP 200, POST com HTTP 201 e outro POST com HTTP 200. O HTTP 201 é compatível com criação, mas isoladamente não confirma a causa: caminhos, corpos e contrato da API não foram inspecionados.
+
+### Análise, limites e encaminhamento
+
+O acionamento inicial da edição e os identificadores das duas entradas não foram confirmados. A classificação considera o propósito declarado do Jam e a divergência visual; se a operação tiver sido criação, reavaliar a conclusão. Reproduzir a partir da ação explícita de edição e comparar os identificadores antes e depois. Investigar eventual envio para criação como hipótese, sem atribuir causa técnica antes de verificar código e contrato da API.
+
+**Reteste:** executar os critérios do [CT-RF24](Cenario_Teste/CT-RF24_Edicao_Exercicio.md) em versão identificada, confirmar a premissa funcional e registrar nova evidência. Se o código for automático ou a operação original tiver sido criação, reavaliar o registro correspondente. Não encerrar por revisão documental.
+
+---
+
 ## Pontos a validar — sem defeito confirmado
 
 | Caso | Questão pendente | Evidência |
@@ -509,8 +600,12 @@ O horário 06:00 precede a tentativa de aproximadamente 15:08; o aluno foi digit
 | [CT-RF11](Cenario_Teste/CT-RF11_Metricas_Financeiro.md) | Confirmar os contratos dos cartões; a constância de totais globais não é suficiente para abrir outro defeito financeiro. | [Jam](https://jam.dev/c/4491c9e7-7e00-4063-91ce-8683e316df06) e [Evidências](Evidencias/CT-RF11_Metricas_Financeiro/README.md) |
 | [CT-RF13](Cenario_Teste/CT-RF13_Codigos_Personais.md) | Confirmar a semântica da coluna Código; quatro linhas e total quatro não sustentam um defeito de quantidade. | [Jam](https://jam.dev/c/69330ca9-ef19-4ece-918f-31a460628016) e [Evidências](Evidencias/CT-RF13_Codigos_Personais/README.md) |
 | [CT-RF16](Cenario_Teste/CT-RF16_Exclusao_Modalidade.md) | Confirmar a exclusão lógica e a nomenclatura da ação; registrar defeito apenas se houver divergência com a regra definida. | [Jam](https://jam.dev/c/0f55f76a-cd31-4cee-93da-23c13b1ba637) e [Evidências](Evidencias/CT-RF16_Exclusao_Modalidade/README.md) |
+| [CT-RF25](Cenario_Teste/CT-RF25_Envio_Exercicio_Imagem.md) | Conferir a imagem após reabrir e recarregar o exercício; criação visível não comprova associação persistida. | [Jam](https://jam.dev/c/25c37a9b-e9bd-4e0c-adf1-4da528ae1d58) e [Evidências](Evidencias/CT-RF25_Envio_Exercicio_Imagem/README.md) |
 
-Esses quatro pontos não entram na contagem de dez bugs. O relato de numeração de personais não demonstrou diferença entre total e linhas; a inativação de modalidades pode ser exclusão lógica; encargos e métricas exigem regras explícitas.
+Esses cinco pontos não entram na contagem de 12 defeitos registrados. BUG-011/012 são contabilizados separadamente como registros em triagem, sem premissas confirmadas. O relato de numeração de personais não demonstrou diferença entre total e linhas; a inativação de modalidades pode ser exclusão lógica; encargos e métricas exigem regras explícitas.
+
+
+**Exclusão de exercício:** CT-RF23 está aprovado no trecho consultado, com remoção e total 11 para 10; não gerou defeito adicional. Persistência e efeitos sobre vínculos permanecem como verificações complementares.
 
 ---
 

@@ -1,12 +1,12 @@
 # 📦 Análise de Requisitos — SIFIT
 
-**Módulos:** Autenticação, Perfil, Clientes / Filtros, Financeiro, Página inicial / Personais, SifitBox / Modalidades e Turmas, Categorias Crossfit e Avaliações.
+**Módulos:** Autenticação, Perfil, Clientes / Filtros, Financeiro, Página inicial / Personais, SifitBox / Modalidades e Turmas, Categorias Crossfit, Avaliações e Exercícios.
 
-**Atualização:** 15/11/2026 — RF01 a RF21, com inclusão do cadastro de avaliação (CT-RF21 / BUG-010) e suas evidências.
+**Atualização:** 15/11/2026 — RF01 a RF25, com inclusão de Exercícios (CT-RF22–CT-RF25 / BUG-011–BUG-012 em triagem).
 
 **Padronização documental:** 13/11/2026, sem alteração dos resultados registrados.
 
-Esta análise documenta os 21 requisitos de QA para os cenários relacionados abaixo, com base nos relatos e nas evidências fornecidas. RF01–RF04 e suas análises históricas foram preservados; RF05–RF20 ampliam a cobertura em 14/11/2026; RF21 acrescenta Avaliações em 15/11/2026. Os critérios abaixo constituem a referência de QA para esses fluxos; não representam validação de uma especificação formal pelo responsável pelo produto.
+Esta análise documenta os 25 requisitos de QA para os cenários relacionados abaixo, com base nos relatos e nas evidências fornecidas. RF01–RF04 e suas análises históricas foram preservados; RF05–RF20 ampliam a cobertura em 14/11/2026; RF21 acrescenta Avaliações e RF22–RF25 acrescentam Exercícios em 15/11/2026. Os critérios abaixo constituem a referência de QA para esses fluxos; não representam validação de uma especificação formal pelo responsável pelo produto.
 
 ## 📋 Visão geral dos requisitos
 
@@ -33,6 +33,10 @@ Esta análise documenta os 21 requisitos de QA para os cenários relacionados ab
 | [RF19](#rf19) | Excluir categoria permitida ou explicar o impedimento | Média, proposta | [CT-RF19](Cenario_Teste/CT-RF19_Exclusao_Categoria.md) |
 | [RF20](#rf20) | Cadastrar e listar uma nova categoria | Média, proposta | [CT-RF20](Cenario_Teste/CT-RF20_Criacao_Categoria.md) |
 | [RF21](#rf21) | Cadastrar avaliação ou informar validação específica | Alta, proposta | [CT-RF21](Cenario_Teste/CT-RF21_Cadastro_Avaliacao.md) |
+| [RF22](#rf22) | Permitir informar o código do exercício conforme a regra | Média, proposta | [CT-RF22](Cenario_Teste/CT-RF22_Digitacao_Codigo_Exercicio.md) |
+| [RF23](#rf23) | Exclusão de exercício | Média, proposta | [CT-RF23](Cenario_Teste/CT-RF23_Exclusao_Exercicio.md) |
+| [RF24](#rf24) | Edição de exercício aumenta o total e mantém duas entradas | Média, proposta | [CT-RF24](Cenario_Teste/CT-RF24_Edicao_Exercicio.md) |
+| [RF25](#rf25) | Envio de exercício com imagem | Média, proposta | [CT-RF25](Cenario_Teste/CT-RF25_Envio_Exercicio_Imagem.md) |
 
 ---
 
@@ -610,6 +614,116 @@ O aluno 3423 foi digitado manualmente sem confirmação pela busca. A avaliaçã
 
 ---
 
+<a id="rf22"></a>
+
+## RF22 — Permitir informar o código do exercício conforme a regra
+
+| Campo | Descrição |
+| --- | --- |
+| Requisito de QA | Quando editável, o campo Código deve aceitar e manter um código válido e permitir sua correção. |
+| Ator | Usuário autenticado com permissão em Exercícios. |
+| Pré-condições | Confirmar se o código é manual ou automático e quais operações permitem edição. Preparar dados de teste autorizados. |
+| Gatilho | Abrir o formulário Exercício com permissão adequada. |
+| Caso | [CT-RF22](Cenario_Teste/CT-RF22_Digitacao_Codigo_Exercicio.md) |
+| Situação observada | Reprovado conforme o relato; reprodução independente pendente. O testador relata não conseguir digitar o código. A imagem inicial confirma o campo Código no formulário Exercício; a reprodução integral, as teclas e o foco não foram confirmados. |
+| Defeito | [BUG-011](Relatorio-de-Bugs.md#bug-011), em triagem |
+| Evidências | [Jam](https://jam.dev/c/2696db03-0a18-4c39-a75d-4987a43c04f0) e relato do testador. |
+
+### Critérios de aceitação do RF22
+
+1. A regra de preenchimento manual ou geração automática está confirmada.
+2. Quando editável, o campo recebe foco, aceita e mantém um código válido.
+3. O usuário pode apagar e corrigir o valor; restrições são explicadas.
+
+### Pontos a confirmar e limites do RF22
+
+Não foram confirmadas a operação de criação/edição, a sequência de teclas ou a causa. A classificação se apoia no relato e na imagem inicial, sem análise de rede ou console. Confirmar a regra, reproduzir o impedimento e retestar o campo após correção. Os critérios são referências de QA, sem aprovação formal de produto ou nova execução.
+
+---
+
+<a id="rf23"></a>
+
+## RF23 — Exclusão de exercício
+
+| Campo | Descrição |
+| --- | --- |
+| Requisito de QA | O sistema deve remover o exercício permitido da biblioteca e atualizar os totais. Se houver impedimento, deve explicá-lo sem indicar sucesso indevido. |
+| Ator | Usuário autenticado com permissão em Exercícios. |
+| Pré-condições | Exercício de teste existente, sem impedimento conhecido para exclusão. Preparar dados de teste autorizados. |
+| Gatilho | Identificar o exercício de teste e registrar o total da biblioteca e do grupo. |
+| Caso | [CT-RF23](Cenario_Teste/CT-RF23_Exclusao_Exercicio.md) |
+| Situação observada | Aprovado no trecho consultado. No quadro de aproximadamente 0:02, a biblioteca apresenta total 11 e o exercício Levantamento de Peso. No quadro final, em aproximadamente 0:06, esse registro não aparece e o total é 10. A lista continua contendo Levantamento de Peso 02, registro distinto. |
+| Defeito | Sem defeito confirmado |
+| Evidências | [Jam](https://jam.dev/c/32adfca3-489f-4a4b-a08d-933c1d1a3c32) e [Evidências](Evidencias/CT-RF23_Exclusao_Exercicio/README.md). |
+
+### Critérios de aceitação do RF23
+
+1. O registro selecionado deixa de aparecer na biblioteca.
+2. O total diminui em uma unidade e os demais exercícios são preservados.
+3. Uma restrição de exclusão, quando aplicável, é apresentada claramente.
+
+### Pontos a confirmar e limites do RF23
+
+Não foram confirmados o diálogo de confirmação, a persistência após recarregar ou os efeitos sobre fichas de treino vinculadas. Manter como regressão. Em nova execução, recarregar a página para conferir persistência e testar separadamente as regras para exercícios vinculados. Os critérios são referências de QA, sem aprovação formal de produto ou nova execução.
+
+---
+
+<a id="rf24"></a>
+
+## RF24 — Edição de exercício aumenta o total e mantém duas entradas
+
+| Campo | Descrição |
+| --- | --- |
+| Requisito de QA | Salvar a edição deve atualizar o mesmo exercício, sem criar um registro adicional e sem aumentar o total da biblioteca. |
+| Ator | Usuário autenticado com permissão em Exercícios. |
+| Pré-condições | Exercício de teste existente, com identificador e nome original registrados antes da edição. Preparar dados de teste autorizados. |
+| Gatilho | Registrar identificador, nome e total do exercício de teste. |
+| Caso | [CT-RF24](Cenario_Teste/CT-RF24_Edicao_Exercicio.md) |
+| Situação observada | Reprovado no trecho consultado; confirmar operação e identidade dos registros na reprodução. O Jam está identificado como teste de edição. Nos quadros intermediários, o formulário Exercício está aberto com código 16, o nome é preenchido e a biblioteca ao fundo indica total 10. No quadro final, o formulário fecha, o total é 11 e a lista contém Levantamento de Peso e Levantamento de Peso 02. O aumento e a coexistência dos nomes divergem do resultado esperado para uma edição. |
+| Defeito | [BUG-012](Relatorio-de-Bugs.md#bug-012), em triagem |
+| Evidências | [Jam](https://jam.dev/c/073f70d6-4052-4e0f-a4bb-e9f37305d618) e [Evidências](Evidencias/CT-RF24_Edicao_Exercicio/README.md). |
+
+### Critérios de aceitação do RF24
+
+1. A ação de edição abre o exercício correto com seus dados atuais.
+2. Salvar altera o nome do mesmo identificador.
+3. O total permanece igual e não surge um registro adicional.
+4. Os dados não alterados permanecem associados ao exercício.
+
+### Pontos a confirmar e limites do RF24
+
+O acionamento inicial da edição e os identificadores das duas entradas não foram confirmados. A classificação considera o propósito declarado do Jam e a divergência visual; se a operação tiver sido criação, reavaliar a conclusão. Reproduzir a partir da ação explícita de edição e comparar os identificadores antes e depois. Investigar eventual envio para criação como hipótese, sem atribuir causa técnica antes de verificar código e contrato da API. Os critérios são referências de QA, sem aprovação formal de produto ou nova execução.
+
+---
+
+<a id="rf25"></a>
+
+## RF25 — Envio de exercício com imagem
+
+| Campo | Descrição |
+| --- | --- |
+| Requisito de QA | O sistema deve cadastrar o exercício, atualizar a biblioteca e manter a imagem vinculada ao registro, disponível após reabrir o cadastro. |
+| Ator | Usuário autenticado com permissão em Exercícios. |
+| Pré-condições | Imagem de teste disponível, em formato e tamanho aceitos pela interface, sem dados pessoais. Preparar dados de teste autorizados. |
+| Gatilho | Registrar o total inicial da biblioteca e abrir o formulário de novo exercício. |
+| Caso | [CT-RF25](Cenario_Teste/CT-RF25_Envio_Exercicio_Imagem.md) |
+| Situação observada | A validar — criação visível; persistência e associação da imagem não confirmadas. O quadro inicial consultado mostra o formulário Exercício preenchido com nome braço forte e uma miniatura na seção Imagem; a biblioteca ao fundo indica total 9. O quadro final mostra o formulário fechado, braço forte na lista e total 10. Esses quadros sustentam a criação com imagem selecionada, mas não demonstram a reabertura ou a visualização da imagem salva. |
+| Defeito | Sem defeito confirmado |
+| Evidências | [Jam](https://jam.dev/c/25c37a9b-e9bd-4e0c-adf1-4da528ae1d58) e [Evidências](Evidencias/CT-RF25_Envio_Exercicio_Imagem/README.md). |
+
+### Critérios de aceitação do RF25
+
+1. Uma imagem válida pode ser selecionada e sua prévia aparece.
+2. Salvar cria um único exercício e atualiza o total.
+3. Reabrir o cadastro exibe a imagem correspondente ao arquivo enviado.
+4. A associação permanece após recarregar a página.
+
+### Pontos a confirmar e limites do RF25
+
+Não foram confirmados nome, formato, tamanho ou conteúdo integral do arquivo, nem a persistência da imagem, sua recuperação ou a ausência de duplicação após nova submissão. Reabrir o exercício criado e conferir a imagem salva. Testar formatos e tamanhos inválidos em casos separados; essas variações não recebem resultado nesta análise. Os critérios são referências de QA, sem aprovação formal de produto ou nova execução.
+
+---
+
 ## 🔗 Rastreabilidade
 
 | Requisito | Cenário / caso | Defeito | Resultado | Evidências |
@@ -635,6 +749,10 @@ O aluno 3423 foi digitado manualmente sem confirmação pela busca. A avaliaçã
 | RF19 | [CT-RF19](Cenario_Teste/CT-RF19_Exclusao_Categoria.md) | [BUG-009](Relatorio-de-Bugs.md#bug-009) | Reprovado nas evidências | [Evidências](Evidencias/CT-RF19_Exclusao_Categoria/README.md) e [Jam](https://jam.dev/c/c5c78b3b-2865-4226-836f-bcb0a8fc612f) |
 | RF20 | [CT-RF20](Cenario_Teste/CT-RF20_Criacao_Categoria.md) | Nenhum no fluxo avaliado | Aprovado conforme a gravação | [Evidências](Evidencias/CT-RF20_Criacao_Categoria/README.md) e [Jam](https://jam.dev/c/b48ab94e-517d-48d6-8e46-70b18c033b8b) |
 | RF21 | [CT-RF21](Cenario_Teste/CT-RF21_Cadastro_Avaliacao.md) | [BUG-010](Relatorio-de-Bugs.md#bug-010) | Reprovado nas evidências | [Evidências](Evidencias/CT-RF21_Cadastro_Avaliacao/README.md) e [Jam](https://jam.dev/c/2e5eca1f-7cd2-4ee3-854b-02ef4635955a) |
+| RF22 | [CT-RF22](Cenario_Teste/CT-RF22_Digitacao_Codigo_Exercicio.md) | [BUG-011](Relatorio-de-Bugs.md#bug-011), em triagem | Reprovado conforme o relato; reprodução independente pendente. | [Jam](https://jam.dev/c/2696db03-0a18-4c39-a75d-4987a43c04f0) e relato do testador |
+| RF23 | [CT-RF23](Cenario_Teste/CT-RF23_Exclusao_Exercicio.md) | Sem defeito confirmado | Aprovado no trecho consultado. | [Jam](https://jam.dev/c/32adfca3-489f-4a4b-a08d-933c1d1a3c32) e [Evidências](Evidencias/CT-RF23_Exclusao_Exercicio/README.md) |
+| RF24 | [CT-RF24](Cenario_Teste/CT-RF24_Edicao_Exercicio.md) | [BUG-012](Relatorio-de-Bugs.md#bug-012), em triagem | Reprovado no trecho consultado; confirmar operação e identidade dos registros na reprodução. | [Jam](https://jam.dev/c/073f70d6-4052-4e0f-a4bb-e9f37305d618) e [Evidências](Evidencias/CT-RF24_Edicao_Exercicio/README.md) |
+| RF25 | [CT-RF25](Cenario_Teste/CT-RF25_Envio_Exercicio_Imagem.md) | Sem defeito confirmado | A validar — criação visível; persistência e associação da imagem não confirmadas. | [Jam](https://jam.dev/c/25c37a9b-e9bd-4e0c-adf1-4da528ae1d58) e [Evidências](Evidencias/CT-RF25_Envio_Exercicio_Imagem/README.md) |
 
 ---
 
@@ -679,6 +797,11 @@ Os novos resultados são cinco aprovações, sete reprovações de manifestaçõ
 ### Base da análise do RF21 — revisão de 15/11/2026
 
 O relato original foi copiado integralmente. A consulta ao Jam confirmou os detalhes, a cronologia, o evento 16 (HTTP 500, 1363 ms, corpo “Erro interno inesperado.”) e os quadros do formulário em 00:12,479 e do alerta em 00:14,748. Foram preservados os dados de negócio sem autenticação. Não houve nova execução, acesso ao código/banco ou reteste. As referências históricas a evidências ausentes nesta cópia estão identificadas no índice de evidências.
+
+
+### Base da análise do RF22 ao RF25 — revisão de 15/11/2026
+
+RF22 utiliza relato, imagem inicial e Info do Jam. RF23–RF25 utilizam quadros, Info e listagem Network. RF23 demonstra remoção e redução de 11 para 10; RF24 apresenta total de 10 para 11 no teste declarado como edição, exigindo confirmar operação e IDs; RF25 demonstra criação com imagem selecionada, sem conferir a imagem salva. BUG-011/012 estão em triagem. Não houve revisão integral quadro a quadro, nova execução, reteste ou diagnóstico de causa raiz.
 
 ---
 

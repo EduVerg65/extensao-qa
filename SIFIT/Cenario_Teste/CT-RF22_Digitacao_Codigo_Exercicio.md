@@ -13,9 +13,9 @@
 | Campo | Descrição |
 | --- | --- |
 | Objetivo | Verificar se o campo Código do formulário Exercício permite informar e editar um código válido. |
-| Requisito | Comportamento esperado proposto para RF22: permitir preencher o código do exercício conforme as regras do produto; confirmar a regra de edição com o responsável funcional. RF22 ainda não está formalizado na análise de requisitos. |
+| Requisito | [RF22](../Analise%20de%20requisitos.md#rf22) — referência de QA; confirmação de produto pendente. |
 | Tipo / prioridade | Funcional manual, análise documental / Média, proposta para triagem. |
-| Defeito | Impedimento de digitação no campo Código, relatado pelo testador; sem identificador de bug atribuído nesta inclusão. |
+| Defeito | [BUG-011](../Relatorio-de-Bugs.md#bug-011) — em triagem; confirmação pendente. |
 | Encaminhamento | Confirmar a regra do campo, reproduzir o impedimento e retestar após correção. |
 | Fonte | [Jam — Teste - Erro ao tentar colocar o código](https://jam.dev/c/2696db03-0a18-4c39-a75d-4987a43c04f0) e relato do testador. |
 
@@ -98,7 +98,7 @@ Após a correção, executar os passos acima e, em ambiente autorizado para dado
 
 Não foram criadas cópias locais do vídeo ou arquivos de integridade. Esta análise não constitui nova execução ou reteste da aplicação. Não confirma causa técnica, erro de API, falha de salvamento ou impossibilidade de cadastrar o exercício por outros meios.
 
-A numeração CT-RF22 segue a solicitação; CT-RF21 não foi criado ou renumerado nesta inclusão.
+A numeração CT-RF22 segue a solicitação; o CT-RF21 existente foi preservado.
 
 ---
 

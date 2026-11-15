@@ -2,24 +2,24 @@
 
 Repositório de documentação de QA manual do **SIFIT**, sistema de gestão de academias. Reúne requisitos, plano, cenários BDD, resultados, defeitos e evidências com links do Jam.
 
-**Atualização documental:** 15/11/2026. Incluídos CT-RF21, RF21 e BUG-010, com evidência do erro ao cadastrar avaliação. Os cenários e resultados anteriores foram preservados.
+**Atualização documental:** 15/11/2026. Integrados CT-RF22–CT-RF25, RF22–RF25 e BUG-011/012 em triagem. CT-RF21 e os resultados anteriores foram preservados.
 
 ## 📊 Situação consolidada
 
-| Cenários documentados | Aprovados | Reprovados | A validar | Bugs abertos | Casos com reteste corretivo pendente |
+| Cenários documentados | Aprovados | Reprovados | A validar | Defeitos registrados | Casos com reteste corretivo pendente |
 | :---: | :---: | :---: | :---: | :---: | :---: |
-| 21 | 6 | 11 | 4 | 10 | 11 |
+| 25 | 7 | 13 | 5 | 12 (10 abertos + 2 em triagem) | 13 |
 
-As classificações se baseiam nas fontes indicadas em cada cenário. CT-RF03 mantém a reprovação conforme o relato, com os limites da revisão original. CT-RF09 e CT-RF10 compartilham BUG-005; por isso onze casos reprovados correspondem a dez defeitos. Os quatro pontos a validar não entram na contagem de bugs.
+As classificações se baseiam nas fontes indicadas em cada cenário. CT-RF03 mantém a reprovação conforme o relato, com os limites da revisão original. CT-RF09 e CT-RF10 compartilham BUG-005; por isso 13 casos reprovados correspondem a 12 defeitos registrados. BUG-011/012 aguardam confirmação funcional e triagem; os cinco pontos a validar não entram nessa contagem.
 
 ## 📚 Documentos do projeto
 
 | Documento | Conteúdo |
 | --- | --- |
-| [Análise de requisitos](SIFIT/Analise%20de%20requisitos.md) | RF01–RF21, critérios de aceitação, dúvidas de regra e rastreabilidade. |
+| [Análise de requisitos](SIFIT/Analise%20de%20requisitos.md) | RF01–RF25, critérios de aceitação, dúvidas de regra e rastreabilidade. |
 | [Plano de testes](SIFIT/Plano%20de%20testes.md) | Escopo, ambientes, preparação, critérios, regressão e retestes. |
-| [Índice dos cenários](SIFIT/Cenario_Teste/README.md) | 21 cenários com pré-condições, BDD, passos, esperado, obtido e encaminhamento. |
-| [Relatório de bugs](SIFIT/Relatorio-de-Bugs.md) | BUG-001–BUG-010: reprodução, impacto, evidências, severidade/prioridade propostas e reteste. |
+| [Índice dos cenários](SIFIT/Cenario_Teste/README.md) | 25 cenários com pré-condições, BDD, passos, esperado, obtido e encaminhamento. |
+| [Relatório de bugs](SIFIT/Relatorio-de-Bugs.md) | BUG-001–BUG-012: reprodução, impacto, evidências, severidade/prioridade propostas e reteste. |
 | [Relatório dos testes](SIFIT/Relatorio%20dos%20testes.md) | Resultados consolidados, cobertura, limites e pendências. |
 | [Índice das evidências](SIFIT/Evidencias/README.md) | Jam por cenário e arquivos locais dos novos casos. |
 
@@ -70,6 +70,10 @@ extensao-qa/
 | [CT-RF19](SIFIT/Cenario_Teste/CT-RF19_Exclusao_Categoria.md) | Exclusão de categoria retorna erro HTTP 500 | Reprovado nas evidências | [BUG-009](SIFIT/Relatorio-de-Bugs.md#bug-009) | [Jam](https://jam.dev/c/c5c78b3b-2865-4226-836f-bcb0a8fc612f) |
 | [CT-RF20](SIFIT/Cenario_Teste/CT-RF20_Criacao_Categoria.md) | Criação de categoria | Aprovado conforme a gravação | — | [Jam](https://jam.dev/c/b48ab94e-517d-48d6-8e46-70b18c033b8b) |
 | [CT-RF21](SIFIT/Cenario_Teste/CT-RF21_Cadastro_Avaliacao.md) | Cadastro de avaliação retorna HTTP 500 | Reprovado nas evidências | [BUG-010](SIFIT/Relatorio-de-Bugs.md#bug-010) | [Jam](https://jam.dev/c/2e5eca1f-7cd2-4ee3-854b-02ef4635955a) |
+| [CT-RF22](SIFIT/Cenario_Teste/CT-RF22_Digitacao_Codigo_Exercicio.md) | Permitir informar o código do exercício conforme a regra | Reprovado conforme o relato; reprodução independente pendente. | [BUG-011](SIFIT/Relatorio-de-Bugs.md#bug-011), em triagem | [Jam](https://jam.dev/c/2696db03-0a18-4c39-a75d-4987a43c04f0) |
+| [CT-RF23](SIFIT/Cenario_Teste/CT-RF23_Exclusao_Exercicio.md) | Exclusão de exercício | Aprovado no trecho consultado. | Sem defeito confirmado | [Jam](https://jam.dev/c/32adfca3-489f-4a4b-a08d-933c1d1a3c32) |
+| [CT-RF24](SIFIT/Cenario_Teste/CT-RF24_Edicao_Exercicio.md) | Edição de exercício aumenta o total e mantém duas entradas | Reprovado no trecho consultado; confirmar operação e identidade dos registros na reprodução. | [BUG-012](SIFIT/Relatorio-de-Bugs.md#bug-012), em triagem | [Jam](https://jam.dev/c/073f70d6-4052-4e0f-a4bb-e9f37305d618) |
+| [CT-RF25](SIFIT/Cenario_Teste/CT-RF25_Envio_Exercicio_Imagem.md) | Envio de exercício com imagem | A validar — criação visível; persistência e associação da imagem não confirmadas. | Sem defeito confirmado | [Jam](https://jam.dev/c/25c37a9b-e9bd-4e0c-adf1-4da528ae1d58) |
 
 ## 🔬 Como este projeto funciona
 
@@ -98,3 +102,5 @@ As quatro decisões pendentes são: composição da cobrança (CT-RF08), escopo 
 ## 📎 Referência de organização
 
 A apresentação foi adaptada do [repositório de referência de testes manuais](https://github.com/Adnyslougansilva/extensao-qa), com conteúdo e rastreabilidade próprios do SIFIT.
+
+CT-RF22–CT-RF25 estão integrados aos requisitos, plano e relatórios. A imagem persistida em CT-RF25 permanece a validar. As evidências locais de CT-RF23–25 contêm resumos e cronologias; os vídeos permanecem no Jam. Não houve nova execução ou reteste.
