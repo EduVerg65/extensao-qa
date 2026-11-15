@@ -1,18 +1,20 @@
 # 🐞 Relatório de Bugs — SIFIT
 
-**Escopo:** defeitos dos cenários CT-RF01–CT-RF20: recuperação, Perfil, Clientes, financeiro, período, tema, modalidades e categorias. Casos aprovados e pontos a validar permanecem no relatório dos testes.
+**Escopo:** defeitos dos cenários CT-RF01–CT-RF21: recuperação, Perfil, Clientes, financeiro, período, tema, modalidades, categorias e avaliações. Casos aprovados e pontos a validar permanecem no relatório dos testes.
 
 **Ambientes:** CT-RF01 em https://sifitalfa.centrion.com.br/login; CT-RF02_ERRO em https://sifit.centrion.com.br/profile. CT-RF03: URL do frontend não confirmada; backend informado em `https://backendsifit.centrion.com.br/api/clientesPorNome/1`.
 
 **Datas das gravações do Jam:** CT-RF01 em 23/10/2026; CT-RF02_ERRO em 22/10/2026 às 21:45 BRT; CT-RF03 não confirmada.
 
-**Atualização documental:** 14/11/2026 — nove defeitos abertos (BUG-001 a BUG-009); seis registros novos. As análises anteriores de BUG-001 a BUG-003 foram preservadas.
+**Atualização documental:** 15/11/2026 — dez defeitos abertos (BUG-001 a BUG-010), com inclusão de falha no cadastro de avaliação. As análises anteriores foram preservadas.
 
 **Padronização documental:** 13/11/2026, sem alteração do status dos defeitos.
 
 **Caso aprovado incluído em 13/11/2026:** [CT-RF04_loginComSucesso](Cenario_Teste/CT-RF04_loginComSucesso.md), vinculado ao RF04, não gerou defeito para o fluxo avaliado. O [Jam de login](https://jam.dev/c/5e4a28be-4e80-43d3-9587-1b113723cc38) mostra acesso ao dashboard após autenticação. Essa aprovação não altera os três bugs existentes; resultados e limites constam no [relatório dos testes](Relatorio%20dos%20testes.md).
 
-**Novas gravações:** 14/11/2026, Chrome 157.0.8103.51 / Windows 11, no domínio `sifit.centrion.com.br`. Cada cenário registra página, horário e limites. A inclusão é documental, sem nova execução ou reteste.
+**Gravação de CT-RF21:** 15/11/2026, Avaliações, início às 15:07:51,265 BRT; evidência e limites no BUG-010.
+
+**Novas gravações de CT-RF05–CT-RF20:** 14/11/2026, Chrome 157.0.8103.51 / Windows 11, no domínio `sifit.centrion.com.br`. Cada cenário registra página, horário e limites. A inclusão é documental, sem nova execução ou reteste.
 
 ## 📋 Resumo dos defeitos
 
@@ -27,6 +29,7 @@
 | [BUG-007](#bug-007) | Tema escuro reduz a legibilidade das tabelas de Box – Turmas | Média / Média, propostas | Aberto | [CT-RF14](Cenario_Teste/CT-RF14_Contraste_TemaEscuro.md) |
 | [BUG-008](#bug-008) | Edição de modalidade não apresenta ação clara para salvar | Média / Média, propostas | Aberto | [CT-RF15](Cenario_Teste/CT-RF15_Edicao_Modalidade.md) |
 | [BUG-009](#bug-009) | Exclusão de categoria retorna HTTP 500 e mensagem genérica | Média / Alta, propostas | Aberto | [CT-RF19](Cenario_Teste/CT-RF19_Exclusao_Categoria.md) |
+| [BUG-010](#bug-010) | Cadastro de avaliação retorna HTTP 500 | Alta / Alta, propostas | Aberto | [CT-RF21](Cenario_Teste/CT-RF21_Cadastro_Avaliacao.md) |
 
 Todos os defeitos aguardam correção e reteste. As causas técnicas permanecem não confirmadas; o BUG-003 se apoia no relato e nas capturas fornecidos, com os limites registrados no caso.
 
@@ -446,6 +449,58 @@ Investigar o HTTP 500 com logs do servidor e vínculos da categoria; corrigir e 
 
 ---
 
+<a id="bug-010"></a>
+
+## BUG-010 — Cadastro de avaliação retorna HTTP 500
+
+| Campo | Descrição |
+| --- | --- |
+| Status | Aberto — reteste pendente após correção pela equipe da aplicação. |
+| Severidade / prioridade | Alta / Alta, propostas para triagem; bloqueia a confirmação do cadastro no cenário registrado. |
+| Módulo | Avaliações / Cadastrar Avaliação |
+| Requisito / caso | [RF21](Analise%20de%20requisitos.md#rf21) / [CT-RF21](Cenario_Teste/CT-RF21_Cadastro_Avaliacao.md) |
+| Data da evidência / revisão | 15/11/2026; sem nova execução. |
+| Página | https://sifit.centrion.com.br/avaliacoes |
+| Ambiente | Chrome 157.0.8103.51 / Windows 11 (x86), captura 1536 × 742. Versão, zoom e classificação do ambiente não identificados. |
+| Frequência conhecida | Uma tentativa de salvamento no Jam; recorrência não determinada. |
+
+### Pré-condições e reprodução
+
+Sessão autenticada com acesso ao cadastro e personal Gabriella disponível. A existência e a elegibilidade do aluno 3423 não foram confirmadas.
+
+1. Abrir Avaliações e clicar em Cadastrar Avaliação.
+2. Digitar Nome leonardp e Código 3423, sem acionar a busca.
+3. Selecionar Gabriella (personal 7); o funcionário cadastrante exibido é Jair (11).
+4. Manter a data 15/11/2026 e informar 06:00.
+5. Clicar em Salvar e observar o alerta e a requisição de rede.
+
+### Esperado e obtido
+
+| Esperado | Obtido |
+| --- | --- |
+| Cadastrar e confirmar dados válidos; informar validação específica para dados recusados, sem erro interno genérico. | POST /api/avaliacao/adicionar-agendamento/1 retorna HTTP 500 e “Erro interno inesperado.”. A interface exibe “Erro ao cadastrar Avaliação.” e mantém o formulário aberto. |
+
+**Impacto:** o cadastro fica sem confirmação e a mensagem não orienta a correção dos dados. A persistência não foi conferida; verificar antes de reenviar.
+
+### Evidências técnicas
+
+- [Jam](https://jam.dev/c/2e5eca1f-7cd2-4ee3-854b-02ef4635955a), evento 16 em aproximadamente 00:12: POST HTTP 500 em 1363 ms; OPTIONS anterior HTTP 204.
+- Payload de negócio: cliente_id "3423", func_cadastrante_id 11, data_avaliacao "15/11/2026", hora_avaliacao "06:00", personal_id 7. Autenticação omitida.
+- Resposta: verifica_erro true, mensagem “Erro interno inesperado.”; cabeçalho de data 15/11/2026 18:08:04 UTC.
+- Request ID: 04ce089a65dc48f03fd72b4a6d64961d-asc-edge11.
+- [Formulário em 00:12,479](Evidencias/CT-RF21_Cadastro_Avaliacao/formulario_00-12-479.jpg), [alerta em 00:14,748](Evidencias/CT-RF21_Cadastro_Avaliacao/erro_00-14-748.jpg), [requisição/resposta](Evidencias/CT-RF21_Cadastro_Avaliacao/requisicao_resposta.json) e [Evidências](Evidencias/CT-RF21_Cadastro_Avaliacao/README.md).
+- Zero mensagens de console capturadas segundo o resumo de eventos do Jam.
+
+### Análise, limites e encaminhamento
+
+A falha HTTP 500 está confirmada; a causa raiz depende do código e dos logs do servidor. Correlacionar o endpoint com 18:08:03–18:08:04 UTC de 15/11/2026 e o request ID. Verificar o aluno 3423 no contexto da rota /1, os vínculos do personal 7 e do funcionário 11, a interpretação de DD/MM/AAAA e o tratamento de horário retroativo. O nome digitado não integra o payload. O sufixo /1 tem significado não confirmado.
+
+O horário 06:00 precede a tentativa de aproximadamente 15:08; o aluno foi digitado sem confirmação pela busca. Esses fatos orientam verificações e não comprovam a causa. Não houve inspeção do código, consulta ao banco, nova execução ou correção da aplicação.
+
+**Reteste:** executar a [matriz do CT-RF21](Cenario_Teste/CT-RF21_Cadastro_Avaliacao.md#critérios-de-aceitação-e-matriz-de-reteste-proposta), confirmar sucesso com dados válidos, validação para dados recusados, persistência e ausência de registros parciais/duplicados. Manter aberto até nova evidência em versão identificada.
+
+---
+
 ## Pontos a validar — sem defeito confirmado
 
 | Caso | Questão pendente | Evidência |
@@ -455,7 +510,7 @@ Investigar o HTTP 500 com logs do servidor e vínculos da categoria; corrigir e 
 | [CT-RF13](Cenario_Teste/CT-RF13_Codigos_Personais.md) | Confirmar a semântica da coluna Código; quatro linhas e total quatro não sustentam um defeito de quantidade. | [Jam](https://jam.dev/c/69330ca9-ef19-4ece-918f-31a460628016) e [Evidências](Evidencias/CT-RF13_Codigos_Personais/README.md) |
 | [CT-RF16](Cenario_Teste/CT-RF16_Exclusao_Modalidade.md) | Confirmar a exclusão lógica e a nomenclatura da ação; registrar defeito apenas se houver divergência com a regra definida. | [Jam](https://jam.dev/c/0f55f76a-cd31-4cee-93da-23c13b1ba637) e [Evidências](Evidencias/CT-RF16_Exclusao_Modalidade/README.md) |
 
-Esses quatro pontos não entram na contagem de nove bugs. O relato de numeração de personais não demonstrou diferença entre total e linhas; a inativação de modalidades pode ser exclusão lógica; encargos e métricas exigem regras explícitas.
+Esses quatro pontos não entram na contagem de dez bugs. O relato de numeração de personais não demonstrou diferença entre total e linhas; a inativação de modalidades pode ser exclusão lógica; encargos e métricas exigem regras explícitas.
 
 ---
 

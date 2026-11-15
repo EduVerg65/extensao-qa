@@ -1,12 +1,12 @@
 # 📦 Análise de Requisitos — SIFIT
 
-**Módulos:** Autenticação, Perfil, Clientes / Filtros, Financeiro, Página inicial / Personais, SifitBox / Modalidades e Turmas, Categorias Crossfit.
+**Módulos:** Autenticação, Perfil, Clientes / Filtros, Financeiro, Página inicial / Personais, SifitBox / Modalidades e Turmas, Categorias Crossfit e Avaliações.
 
-**Atualização:** 14/11/2026 — RF01 a RF20, com inclusão dos 16 cenários CT-RF05 a CT-RF20 e suas evidências do Jam.
+**Atualização:** 15/11/2026 — RF01 a RF21, com inclusão do cadastro de avaliação (CT-RF21 / BUG-010) e suas evidências.
 
 **Padronização documental:** 13/11/2026, sem alteração dos resultados registrados.
 
-Esta análise documenta os 20 requisitos de QA para os cenários relacionados abaixo, com base nos relatos e nas evidências fornecidas. RF01–RF04 e suas análises históricas foram preservados; RF05–RF20 ampliam a cobertura em 14/11/2026. Os critérios abaixo constituem a referência de QA para esses fluxos; não representam validação de uma especificação formal pelo responsável pelo produto.
+Esta análise documenta os 21 requisitos de QA para os cenários relacionados abaixo, com base nos relatos e nas evidências fornecidas. RF01–RF04 e suas análises históricas foram preservados; RF05–RF20 ampliam a cobertura em 14/11/2026; RF21 acrescenta Avaliações em 15/11/2026. Os critérios abaixo constituem a referência de QA para esses fluxos; não representam validação de uma especificação formal pelo responsável pelo produto.
 
 ## 📋 Visão geral dos requisitos
 
@@ -32,6 +32,7 @@ Esta análise documenta os 20 requisitos de QA para os cenários relacionados ab
 | [RF18](#rf18) | Salvar a atualização do nome de categoria | Média, proposta | [CT-RF18](Cenario_Teste/CT-RF18_Atualizacao_Categoria.md) |
 | [RF19](#rf19) | Excluir categoria permitida ou explicar o impedimento | Média, proposta | [CT-RF19](Cenario_Teste/CT-RF19_Exclusao_Categoria.md) |
 | [RF20](#rf20) | Cadastrar e listar uma nova categoria | Média, proposta | [CT-RF20](Cenario_Teste/CT-RF20_Criacao_Categoria.md) |
+| [RF21](#rf21) | Cadastrar avaliação ou informar validação específica | Alta, proposta | [CT-RF21](Cenario_Teste/CT-RF21_Cadastro_Avaliacao.md) |
 
 ---
 
@@ -582,6 +583,33 @@ O teste demonstra criação no cenário gravado. Não cobre campos vazios, dupli
 
 ---
 
+<a id="rf21"></a>
+
+## RF21 — Cadastrar avaliação ou informar validação específica
+
+| Campo | Descrição |
+| --- | --- |
+| Requisito de QA | Cadastrar uma avaliação com dados válidos e apresentar confirmação; tratar dados recusados sem erro interno genérico. |
+| Ator / pré-condições | Usuário autenticado com permissão; aluno existente, personal habilitado e data/hora permitidas no fluxo válido. |
+| Gatilho | Clicar em Salvar no formulário Cadastrar Avaliação. |
+| Caso | [CT-RF21](Cenario_Teste/CT-RF21_Cadastro_Avaliacao.md) |
+| Situação observada | Reprovado: POST /api/avaliacao/adicionar-agendamento/1 retorna HTTP 500 e a interface mostra “Erro ao cadastrar Avaliação.”. |
+| Defeito | [BUG-010](Relatorio-de-Bugs.md#bug-010), aberto; reteste pendente. |
+| Evidências | [Evidências](Evidencias/CT-RF21_Cadastro_Avaliacao/README.md) e [Jam](https://jam.dev/c/2e5eca1f-7cd2-4ee3-854b-02ef4635955a). |
+
+### Critérios de aceitação do RF21
+
+1. Dados válidos geram cadastro confirmado e avaliação consultável na listagem.
+2. Aluno inválido, vínculo incompleto ou data/hora proibida recebem validação específica, sem HTTP 500.
+3. Tentativas rejeitadas não deixam registros parciais; uma tentativa válida cria um agendamento.
+4. A interface permite corrigir os dados após uma rejeição.
+
+### Pontos a confirmar e limites do RF21
+
+O aluno 3423 foi digitado manualmente sem confirmação pela busca. A avaliação foi solicitada para 15/11/2026 às 06:00, antes da tentativa de aproximadamente 15:08. Confirmar existência/elegibilidade do aluno, vínculos, contrato da data e regra de agendamento retroativo. Esses pontos não comprovam a causa do HTTP 500. A referência de QA foi elaborada a partir da evidência e depende de confirmação de produto; não foi fornecida especificação formal. Causa raiz e persistência não confirmadas; sem nova execução.
+
+---
+
 ## 🔗 Rastreabilidade
 
 | Requisito | Cenário / caso | Defeito | Resultado | Evidências |
@@ -606,6 +634,7 @@ O teste demonstra criação no cenário gravado. Não cobre campos vazios, dupli
 | RF18 | [CT-RF18](Cenario_Teste/CT-RF18_Atualizacao_Categoria.md) | Nenhum no fluxo avaliado | Aprovado conforme a gravação | [Evidências](Evidencias/CT-RF18_Atualizacao_Categoria/README.md) e [Jam](https://jam.dev/c/67664a98-2a4a-4134-91a9-7ca9b8aa9dbd) |
 | RF19 | [CT-RF19](Cenario_Teste/CT-RF19_Exclusao_Categoria.md) | [BUG-009](Relatorio-de-Bugs.md#bug-009) | Reprovado nas evidências | [Evidências](Evidencias/CT-RF19_Exclusao_Categoria/README.md) e [Jam](https://jam.dev/c/c5c78b3b-2865-4226-836f-bcb0a8fc612f) |
 | RF20 | [CT-RF20](Cenario_Teste/CT-RF20_Criacao_Categoria.md) | Nenhum no fluxo avaliado | Aprovado conforme a gravação | [Evidências](Evidencias/CT-RF20_Criacao_Categoria/README.md) e [Jam](https://jam.dev/c/b48ab94e-517d-48d6-8e46-70b18c033b8b) |
+| RF21 | [CT-RF21](Cenario_Teste/CT-RF21_Cadastro_Avaliacao.md) | [BUG-010](Relatorio-de-Bugs.md#bug-010) | Reprovado nas evidências | [Evidências](Evidencias/CT-RF21_Cadastro_Avaliacao/README.md) e [Jam](https://jam.dev/c/2e5eca1f-7cd2-4ee3-854b-02ef4635955a) |
 
 ---
 
@@ -646,6 +675,10 @@ O teste demonstra criação no cenário gravado. Não cobre campos vazios, dupli
 Foram incorporadas as 16 gravações do JAM.txt, na ordem definida pelo solicitante a partir de CT-RF05. A revisão anterior desta sessão consultou detalhes, cronologia e quadros de todas elas; os vídeos originais e seus resumos foram copiados com hash conferido para o repositório. O [índice de evidências](Evidencias/README.md) associa cada caso ao Jam, ao vídeo e aos metadados.
 
 Os novos resultados são cinco aprovações, sete reprovações de manifestações observadas e quatro pontos a validar. As duas reprovações de contagem/filtro financeiro compartilham um defeito. Não houve nova execução, reteste ou análise do código da aplicação.
+
+### Base da análise do RF21 — revisão de 15/11/2026
+
+O relato original foi copiado integralmente. A consulta ao Jam confirmou os detalhes, a cronologia, o evento 16 (HTTP 500, 1363 ms, corpo “Erro interno inesperado.”) e os quadros do formulário em 00:12,479 e do alerta em 00:14,748. Foram preservados os dados de negócio sem autenticação. Não houve nova execução, acesso ao código/banco ou reteste. As referências históricas a evidências ausentes nesta cópia estão identificadas no índice de evidências.
 
 ---
 

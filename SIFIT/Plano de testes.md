@@ -1,10 +1,10 @@
 # 🧪 Plano de Testes — SIFIT
 
-**Atualização:** 14/11/2026 — 20 cenários documentados, com inclusão de CT-RF05 a CT-RF20.
+**Atualização:** 15/11/2026 — 21 cenários documentados, com inclusão de CT-RF21 / BUG-010.
 
 **Padronização documental:** 13/11/2026, com resultados e pendências preservados.
 
-**Escopo:** CT-RF01 a CT-RF20 — autenticação, recuperação de senha, perfil, Clientes, financeiro, período e personais da página inicial, modalidades / tema de SifitBox e Categorias Crossfit.
+**Escopo:** CT-RF01 a CT-RF21 — autenticação, recuperação de senha, perfil, Clientes, financeiro, período e personais da página inicial, modalidades / tema de SifitBox, Categorias Crossfit e Avaliações.
 
 ## 📌 1. Identificação
 
@@ -13,14 +13,14 @@
 | Projeto | SIFIT — Sistema de gestão de academias. |
 | Tipo de teste | Funcional manual, com análise exploratória e de evidências. |
 | Versão avaliada | Não confirmada; registrar por caso no reteste. |
-| Funcionalidades | Autenticação positiva e negativa, recuperação, Perfil, filtros de Clientes, financeiro, período, personais, modalidades / tema e Categorias Crossfit. |
-| Situação | 20 casos: 6 aprovados, 10 reprovados e 4 a validar; 9 defeitos abertos e 10 casos com reteste corretivo pendente. |
+| Funcionalidades | Autenticação positiva e negativa, recuperação, Perfil, filtros de Clientes, financeiro, período, personais, modalidades / tema, Categorias Crossfit e Avaliações. |
+| Situação | 21 casos: 6 aprovados, 11 reprovados e 4 a validar; 10 defeitos abertos e 11 casos com reteste corretivo pendente. |
 
 ---
 
 ## 🎯 2. Objetivo
 
-Verificar os fluxos dos 20 cenários, comparando os critérios de aceitação com as evidências de autenticação, recuperação, perfil, Clientes, financeiro, página inicial, SifitBox e Categorias Crossfit. Manter rastreabilidade entre requisitos, casos, Jam, vídeos, resultados e defeitos, distinguindo revisões documentais de novas execuções.
+Verificar os fluxos dos 21 cenários, comparando os critérios de aceitação com as evidências de autenticação, recuperação, perfil, Clientes, financeiro, página inicial, SifitBox, Categorias Crossfit e Avaliações. Manter rastreabilidade entre requisitos, casos, Jam, vídeos, resultados e defeitos, distinguindo revisões documentais de novas execuções.
 
 ---
 
@@ -46,6 +46,8 @@ Verificar os fluxos dos 20 cenários, comparando os critérios de aceitação co
 - CT-RF14–16: legibilidade no tema escuro, conclusão da edição e regra de remoção de modalidades.
 - CT-RF17–20: pesquisa, atualização, exclusão e criação de Categorias Crossfit.
 - As quatro regras a validar (CT-RF08, CT-RF11, CT-RF13 e CT-RF16) exigem confirmação de produto antes de conclusão definitiva.
+
+**Ampliação de escopo em 15/11/2026:** CT-RF21 — envio do cadastro de avaliação, tratamento de erro e critérios para reteste com dados válidos e inválidos; BUG-010 aberto.
 
 **Limites da cobertura atual:**
 
@@ -156,6 +158,12 @@ As ações de edição, criação e exclusão descritas ocorreram nas gravaçõe
 
 ---
 
+### CT-RF21 — ambiente e preparação
+
+Gravação de 15/11/2026, início às 15:07:51,265 BRT, na página https://sifit.centrion.com.br/avaliacoes. Chrome 157.0.8103.51 / Windows 11 (x86), captura 1536 × 742. Versão, zoom e classificação do ambiente não identificados.
+
+Para o reteste, preparar aluno existente selecionável pela busca, personal habilitado e data/hora permitidas. Os dados históricos são aluno 3423, funcionário 11, personal 7 e 15/11/2026 às 06:00; existência do aluno e regra de retroatividade precisam ser confirmadas. Conferir persistência antes de repetir envios.
+
 ## 📋 7. Casos de teste e situação
 
 | Requisito | Caso de teste | Tipo | Resultado nas evidências | Defeito | Próxima ação |
@@ -180,6 +188,7 @@ As ações de edição, criação e exclusão descritas ocorreram nas gravaçõe
 | [RF18](Analise%20de%20requisitos.md#rf18) | [CT-RF18](Cenario_Teste/CT-RF18_Atualizacao_Categoria.md) | Funcional manual / regressão | Aprovado conforme a gravação | Nenhum no fluxo avaliado | Usar como regressão; acrescentar recarga e nova consulta para ampliar a verificação de persistência. |
 | [RF19](Analise%20de%20requisitos.md#rf19) | [CT-RF19](Cenario_Teste/CT-RF19_Exclusao_Categoria.md) | Funcional / manifestação observada | Reprovado nas evidências | [BUG-009](Relatorio-de-Bugs.md#bug-009) | Investigar o HTTP 500 com logs do servidor e vínculos da categoria; corrigir e retestar cenários permitido e impedido. |
 | [RF20](Analise%20de%20requisitos.md#rf20) | [CT-RF20](Cenario_Teste/CT-RF20_Criacao_Categoria.md) | Funcional manual / regressão | Aprovado conforme a gravação | Nenhum no fluxo avaliado | Usar como regressão; campos vazios, nomes duplicados e limites de tamanho permanecem fora do cenário gravado. |
+| [RF21](Analise%20de%20requisitos.md#rf21) | [CT-RF21](Cenario_Teste/CT-RF21_Cadastro_Avaliacao.md) | Funcional manual / tratamento de erro | Reprovado nas evidências | [BUG-010](Relatorio-de-Bugs.md#bug-010) | Investigar o HTTP 500; retestar dados válidos, vínculo inválido, retroatividade e persistência. |
 
 ---
 
@@ -242,6 +251,20 @@ As ações de edição, criação e exclusão descritas ocorreram nas gravaçõe
 
 ---
 
+<a id="ct-rf21"></a>
+
+### CT-RF21 — reteste após correção
+
+1. Identificar a versão disponibilizada e confirmar as regras de vínculo do aluno e data/hora.
+2. Cadastrar avaliação com aluno selecionado pela busca, personal habilitado e horário permitido; conferir sucesso e registro após nova consulta.
+3. Repetir os dados históricos em ambiente de teste e exigir cadastro ou validação específica, sem HTTP 500.
+4. Comparar aluno inexistente, entrada manual sem seleção e horário passado/futuro; documentar cada resultado separadamente.
+5. Conferir ausência de registros parciais ou duplicados e anexar nova evidência antes de encerrar BUG-010.
+
+Todas essas variações permanecem planejadas e não são contadas como execuções nesta inclusão.
+
+---
+
 ## 🚦 9. Critérios de entrada, saída e aceitação
 
 **Entrada:** ambiente acessível, opção visível e ferramentas de captura disponíveis. Para Perfil, sessão válida e conta de teste com dados conhecidos. Para Clientes, sessão válida, empresa identificada, regras dos filtros confirmadas e base com resultados esperados por combinação. Para o reteste, correção disponibilizada em uma versão identificável.
@@ -250,7 +273,7 @@ As ações de edição, criação e exclusão descritas ocorreram nas gravaçõe
 
 **Entrada e aprovação do login:** página acessível, conta de teste com credenciais válidas e acesso ao painel, sem sessão autenticada no início. Aprovar o CT-RF04_loginComSucesso quando o envio autenticar o usuário, navegar para `/dashboard` e exibir o menu e resumo da academia, com senha mascarada no formulário. A aprovação se limita a esse fluxo positivo.
 
-**Aceitação da correção:** todos os critérios do respectivo caso atendidos e reteste documentado. BUG-001 a BUG-009 permanecem abertos até a confirmação de suas correções. A aprovação do CT-RF01 não comprova a recuperação completa da senha; a do CT-RF02_ERRO não comprova persistência de alterações no perfil. Para CT-RF03, cada combinação deve incluir todos os clientes esperados e excluir os incompatíveis, com a matriz executada e o estado vazio validado.
+**Aceitação da correção:** todos os critérios do respectivo caso atendidos e reteste documentado. BUG-001 a BUG-010 permanecem abertos até a confirmação de suas correções. A aprovação do CT-RF01 não comprova a recuperação completa da senha; a do CT-RF02_ERRO não comprova persistência de alterações no perfil. Para CT-RF03, cada combinação deve incluir todos os clientes esperados e excluir os incompatíveis, com a matriz executada e o estado vazio validado.
 
 ---
 
@@ -263,6 +286,7 @@ As ações de edição, criação e exclusão descritas ocorreram nas gravaçõe
 | Padronização dos documentos | Realizada | 13/11/2026. |
 | Análise do Jam e inclusão do CT-RF04_loginComSucesso | Realizada; aprovado conforme a gravação | 13/11/2026, sem nova execução no sistema. |
 | Inclusão documental de CT-RF05–CT-RF20 e cópia dos 16 vídeos | Realizada | 14/11/2026; revisão das evidências já consultadas, sem nova execução. |
+| Inclusão documental de CT-RF21 / RF21 / BUG-010 | Realizada | 15/11/2026; relato original, quadros e diagnósticos do Jam, sem nova execução. |
 | Confirmação das regras de CT-RF08/11/13/16 | Pendente | Responsável pelo produto; sem data definida. |
 | Investigação e correção dos defeitos | Pendente | Depende da equipe responsável pela aplicação; sem data definida. |
 | Execução dos retestes | Pendente | Após correção em versão identificável e preparação dos dados. |
@@ -272,7 +296,7 @@ As ações de edição, criação e exclusão descritas ocorreram nas gravaçõe
 
 Os defeitos são registrados no [relatório de bugs](Relatorio-de-Bugs.md), com identificação, severidade, prioridade, pré-condições, reprodução, resultado esperado e obtido, impacto e evidências. Hipóteses técnicas permanecem identificadas até a confirmação no código.
 
-Há nove defeitos abertos: BUG-001 a BUG-009. Os dois casos de contagem e filtro financeiro (CT-RF09 e CT-RF10) compartilham BUG-005; por isso dez casos reprovados correspondem a nove defeitos, não dez. CT-RF08, CT-RF11, CT-RF13 e CT-RF16 permanecem a validar, sem defeito confirmado. Após a correção, atualizar o caso, o relatório dos testes e o defeito com as evidências da versão retestada. As severidades e prioridades dos novos defeitos são propostas para triagem.
+Há dez defeitos abertos: BUG-001 a BUG-010. Os dois casos de contagem e filtro financeiro (CT-RF09 e CT-RF10) compartilham BUG-005; por isso onze casos reprovados correspondem a dez defeitos. CT-RF08, CT-RF11, CT-RF13 e CT-RF16 permanecem a validar, sem defeito confirmado. Após a correção, atualizar o caso, o relatório dos testes e o defeito com as evidências da versão retestada. As severidades e prioridades dos novos defeitos são propostas para triagem.
 
 ---
 
@@ -297,7 +321,7 @@ Há nove defeitos abertos: BUG-001 a BUG-009. Os dois casos de contagem e filtro
 
 ## 📁 13. Entregáveis e documentos associados
 
-Os entregáveis são a análise RF01–RF20, este plano, os 20 cenários BDD, as evidências disponíveis e os relatórios atualizados. CT-RF05–CT-RF20 possuem vídeo original, resumo, cronologia, capa, Jam e metadados locais. Seis casos estão aprovados conforme as evidências; os dez reprovados aguardam reteste e os quatro a validar dependem de confirmação de regra/contexto.
+Os entregáveis são a análise RF01–RF21, este plano, os 21 cenários BDD, as evidências disponíveis e os relatórios atualizados. CT-RF21 possui relato original, link do Jam, quadros, cronologia, requisição/resposta sem autenticação e metadados locais; o vídeo permanece no Jam. Os vídeos e demais evidências anteriores citados nos documentos de 14/11/2026 não estavam nesta cópia do repositório em 15/11/2026; consultar o índice de evidências para a disponibilidade. Seis casos estão aprovados conforme as evidências; os onze reprovados aguardam reteste e os quatro a validar dependem de confirmação de regra/contexto.
 
 - [Análise de requisitos](Analise%20de%20requisitos.md)
 - [Caso CT-RF01](Cenario_Teste/CT-RF01_Esqueci-senha.md)
@@ -309,7 +333,7 @@ Os entregáveis são a análise RF01–RF20, este plano, os 20 cenários BDD, as
 - [Relatório dos testes](Relatorio%20dos%20testes.md)
 - [Relatório de bugs](Relatorio-de-Bugs.md)
 
-- [Índice dos 20 cenários](Cenario_Teste/README.md)
+- [Índice dos 21 cenários](Cenario_Teste/README.md)
 - [Índice das evidências e dos Jams](Evidencias/README.md)
 - [Manifesto de integridade dos novos arquivos](Evidencias/manifesto_sha256.json)
 
