@@ -6,7 +6,7 @@
 
 **Datas das gravações do Jam:** CT-RF01 em 23/10/2026; CT-RF02_ERRO em 22/10/2026 às 21:45 BRT; CT-RF03 não confirmada.
 
-**Atualização documental:** 15/11/2026 — 19 defeitos registrados: 10 abertos (BUG-001 a BUG-010) e 9 em triagem (BUG-011 a BUG-019). BUG-018 registra múltiplos HTTP 500 no dashboard e BUG-019 o HTTP 500 no cadastro de objetivo de treino, ambos sem causa técnica confirmada. As análises anteriores foram preservadas.
+**Atualização documental:** 15/11/2026 — 19 defeitos registrados: 10 abertos (BUG-001 a BUG-010) e 9 em triagem (BUG-011 a BUG-019). BUG-019 registra o HTTP 500 no cadastro de objetivo de treino, sem causa técnica confirmada. As análises anteriores foram preservadas.
 
 **Padronização documental:** 13/11/2026, sem alteração do status dos defeitos.
 
@@ -896,7 +896,7 @@ Ao carregar o dashboard, a interface apresenta um diálogo de erro e diversas ch
 
 O HTTP 500 e o endpoint estão registrados no Jam. Sem logs do servidor, corpos da requisição e da resposta e acesso ao banco, não é possível distinguir exceção não tratada, rejeição de dados (a descrição continha `#@`) ou falha de infraestrutura. A causa técnica não foi confirmada no código. O sufixo `/1` tem significado não confirmado. Duas ocorrências de HTTP 500 para um único clique em Salvar registrado sugerem reenvio ou duplicidade de submissão; é uma hipótese a confirmar, relevante para evitar registros duplicados após a correção.
 
-O comportamento repete a assinatura de [BUG-009](#bug-009), [BUG-010](#bug-010), [BUG-016](#bug-016) e [BUG-018](#bug-018): resposta de erro interno em operação do servidor, em módulos distintos. O campo Código permaneceu vazio nos quadros apesar da digitação registrada; não foi tratado como defeito, pois pode ser atribuído automaticamente (ver [BUG-011](#bug-011) e [CT-RF31](Cenario_Teste/CT-RF31_Cadastro_GrupoMuscular.md)).
+O comportamento repete a assinatura de [BUG-009](#bug-009), [BUG-010](#bug-010), [BUG-016](#bug-016): resposta de erro interno em operação do servidor, em módulos distintos. O campo Código permaneceu vazio nos quadros apesar da digitação registrada; não foi tratado como defeito, pois pode ser atribuído automaticamente (ver [BUG-011](#bug-011) e [CT-RF31](Cenario_Teste/CT-RF31_Cadastro_GrupoMuscular.md)).
 
 **Reteste:** executar a [matriz do CT-RF35](Cenario_Teste/CT-RF35_Cadastro_Objetivo_Treino.md#critérios-de-aceitação-e-matriz-de-reteste-proposta), confirmar sucesso com dados válidos, validação para dados recusados, persistência, uma única gravação por clique e ausência de registros parciais. Investigar o HTTP 500 correlacionando o endpoint com 21:12:42 GMT de 15/11/2026 e o request ID. Manter em triagem até nova evidência em versão identificada.
 

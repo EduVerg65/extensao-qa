@@ -2,7 +2,7 @@
 
 Repositório de documentação de QA manual do **SIFIT**, sistema de gestão de academias. Reúne requisitos, plano, cenários BDD, resultados, defeitos e evidências com links do Jam.
 
-**Atualização documental:** 15/11/2026. Integrados CT-RF35, RF35 e BUG-019 em triagem (cadastro de objetivo de treino com HTTP 500). CT-RF22–CT-RF34 e os resultados anteriores foram preservados.
+**Atualização documental:** 15/11/2026. Integrados CT-RF35, RF35 e BUG-019 em triagem (cadastro de objetivo de treino com HTTP 500). CT-RF22–CT-RF33 e os resultados anteriores foram preservados.
 
 ## 📊 Situação consolidada
 
@@ -36,7 +36,7 @@ extensao-qa/
     ├── Cenario_Teste/
     │   ├── README.md
     │   ├── CT-RF01_Esqueci-senha.md
-    │   ├── ... CT-RF02 a CT-RF34
+    │   ├── ... CT-RF02 a CT-RF33
     │   └── CT-RF35_Cadastro_Objetivo_Treino.md
     └── Evidencias/
         ├── README.md
@@ -81,7 +81,6 @@ extensao-qa/
 | [CT-RF31](SIFIT/Cenario_Teste/CT-RF31_Cadastro_GrupoMuscular.md) | Cadastro de grupo muscular | Aprovado conforme a gravação | — | [Jam](https://jam.dev/c/98008390-0040-475e-ba7b-7f1e72cc0b2e) |
 | [CT-RF32](SIFIT/Cenario_Teste/CT-RF32_Edicao_TipoMembro.md) | Edição do tipo de membro | Aprovado conforme a gravação | — | [Jam](https://jam.dev/c/98008390-0040-475e-ba7b-7f1e72cc0b2e) |
 | [CT-RF33](SIFIT/Cenario_Teste/CT-RF33_Filtros_GruposMusculares.md) | Filtros de grupos musculares por código e tipo | Aprovado conforme a gravação | — | [Jam](https://jam.dev/c/98008390-0040-475e-ba7b-7f1e72cc0b2e) |
-| [CT-RF34](SIFIT/Cenario_Teste/CT-RF34_Erro_Servidor_Excesso_Requisicoes.md) | Carregamento do dashboard com múltiplos HTTP 500 | Reprovado nas evidências | [BUG-018](SIFIT/Relatorio-de-Bugs.md#bug-018), em triagem | [Jam](https://jam.dev/c/eea58e17-b62f-432b-97b2-b14c14bed555) |
 | [CT-RF35](SIFIT/Cenario_Teste/CT-RF35_Cadastro_Objetivo_Treino.md) | Cadastro de objetivo de treino retorna HTTP 500 | Reprovado nas evidências | [BUG-019](SIFIT/Relatorio-de-Bugs.md#bug-019), em triagem | [Jam](https://jam.dev/c/1d474477-2411-4a81-b85c-74207402b783) |
 
 ## 🔬 Como este projeto funciona
