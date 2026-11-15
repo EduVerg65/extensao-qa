@@ -2,11 +2,11 @@
 
 **Módulos:** Autenticação, Perfil, Clientes / Filtros, Financeiro, Página inicial / Personais, SifitBox / Modalidades e Turmas, Categorias Crossfit, Avaliações, Exercícios, Grupos Musculares, Dashboard e Objetivos de Treino.
 
-**Atualização:** 15/11/2026 — RF01 a RF35 e RF38 a RF47 consolidados, com inclusão de Categorias Crossfit (CT-RF38), SifitBox – Turmas (CT-RF39 a CT-RF41) e, a partir de CT-RF42, Pagar.me, Configurações, Despesas Fixas e Relatórios; BUG-011–BUG-021 em triagem.
+**Atualização:** 15/11/2026 — RF01 a RF35 e RF38 a RF48 consolidados, com inclusão de Categorias Crossfit (CT-RF38), SifitBox – Turmas (CT-RF39 a CT-RF41) e, a partir de CT-RF42, Pagar.me, Configurações, Despesas Fixas e Relatórios; BUG-011–BUG-021 em triagem.
 
 **Padronização documental:** 13/11/2026, sem alteração dos resultados registrados.
 
-Esta análise documenta 45 requisitos de QA para os cenários relacionados abaixo, com base nos relatos e nas evidências fornecidas. RF01–RF04 e suas análises históricas foram preservados; RF05–RF20 ampliam a cobertura em 14/11/2026; RF21 acrescenta Avaliações; RF22–RF28 acrescentam Exercícios; RF29–RF33 acrescentam Grupos Musculares; RF34 acrescenta o carregamento do dashboard RF35 acrescenta o cadastro de objetivos de treino e RF38 acrescenta o cadastro de categorias com código automático em 15/11/2026. RF39 acrescenta o cadastro de modalidade em SifitBox – Turmas. RF40 acrescenta a exclusão de turmas e modalidades. RF41 acrescenta o cadastro de turma. RF42 a RF56 acrescentam Pagar.me, Configurações, Despesas Fixas e Relatórios em 15/11/2026. Os critérios abaixo constituem a referência de QA para esses fluxos; não representam validação de uma especificação formal pelo responsável pelo produto.
+Esta análise documenta 46 requisitos de QA para os cenários relacionados abaixo, com base nos relatos e nas evidências fornecidas. RF01–RF04 e suas análises históricas foram preservados; RF05–RF20 ampliam a cobertura em 14/11/2026; RF21 acrescenta Avaliações; RF22–RF28 acrescentam Exercícios; RF29–RF33 acrescentam Grupos Musculares; RF34 acrescenta o carregamento do dashboard RF35 acrescenta o cadastro de objetivos de treino e RF38 acrescenta o cadastro de categorias com código automático em 15/11/2026. RF39 acrescenta o cadastro de modalidade em SifitBox – Turmas. RF40 acrescenta a exclusão de turmas e modalidades. RF41 acrescenta o cadastro de turma. RF42 a RF56 acrescentam Pagar.me, Configurações, Despesas Fixas e Relatórios em 15/11/2026. Os critérios abaixo constituem a referência de QA para esses fluxos; não representam validação de uma especificação formal pelo responsável pelo produto.
 
 ## 📋 Visão geral dos requisitos
 
@@ -57,6 +57,7 @@ Esta análise documenta 45 requisitos de QA para os cenários relacionados abaix
 | [RF45](#rf45) | Atualizar Recebimentos e gráfico conforme o período | Média, proposta | [CT-RF45](Cenario_Teste/CT-RF45_Painel_PagarMe_Periodo.md) |
 | [RF46](#rf46) | Filtrar despesas fixas por código e por nome | Média, proposta | [CT-RF46](Cenario_Teste/CT-RF46_Filtros_Despesas_Fixas.md) |
 | [RF47](#rf47) | Cadastrar despesa fixa com uma única gravação | Média, proposta | [CT-RF47](Cenario_Teste/CT-RF47_Cadastro_Despesa_Fixa.md) |
+| [RF48](#rf48) | Excluir despesa fixa com confirmação | Média, proposta | [CT-RF48](Cenario_Teste/CT-RF48_Exclusao_Despesa_Fixa.md) |
 
 ---
 
@@ -1317,6 +1318,35 @@ O corpo e a resposta da segunda requisição não foram capturados; não foi con
 
 ---
 
+<a id="rf48"></a>
+
+## RF48 — Excluir despesa fixa com confirmação
+
+| Campo | Descrição |
+| --- | --- |
+| Requisito de QA | A exclusão de despesa fixa deve pedir confirmação, excluir a despesa permitida, remover o registro da listagem e atualizar os cartões de resumo. |
+| Ator | Usuário autenticado com permissão para excluir despesas fixas. |
+| Pré-condições | Despesa de teste e cartões registrados antes da exclusão. |
+| Gatilho | Acionar a lixeira da despesa e confirmar no diálogo. |
+| Caso | [CT-RF48](Cenario_Teste/CT-RF48_Exclusao_Despesa_Fixa.md) |
+| Situação observada | Aprovado conforme a gravação. O diálogo "Deseja excluir a despesa fixa?" é confirmado, `POST deleta/despesa-fixa` retorna HTTP 200 e a listagem passa de 17 para 16 despesas. |
+| Defeito | Nenhum no fluxo avaliado |
+| Evidências | [Jam](https://jam.dev/c/a4bac99d-e436-4792-831e-8c3a875272bb) e [Evidências](Evidencias/CT-RF48_Exclusao_Despesa_Fixa/README.md). |
+
+### Critérios de aceitação do RF48
+
+1. A ação de exclusão apresenta confirmação explícita antes de efetivar a operação.
+2. A exclusão permitida remove o registro da listagem e atualiza os cartões.
+3. A resposta informa sucesso e o resultado se mantém após recarga da página.
+4. Cancelar no diálogo preserva o registro.
+5. Despesas com vínculo impeditivo recebem mensagem específica, sem erro interno.
+
+### Pontos a confirmar e limites do RF48
+
+A persistência após recarga, a natureza da exclusão (física ou lógica), Cancelar e a exclusão com vínculos não foram exercitados.
+
+---
+
 ## 🔗 Rastreabilidade
 
 | Requisito | Cenário / caso | Defeito | Resultado | Evidências |
@@ -1366,6 +1396,7 @@ O corpo e a resposta da segunda requisição não foram capturados; não foi con
 | RF45 | [CT-RF45](Cenario_Teste/CT-RF45_Painel_PagarMe_Periodo.md) | [BUG-021](Relatorio-de-Bugs.md#bug-021), em triagem | Reprovado nas evidências; reteste pendente. | [Evidências](Evidencias/CT-RF45_Painel_PagarMe_Periodo/README.md) e [Jam](https://jam.dev/c/e6e551ef-9196-4c79-b6a2-89747b1e8b33) |
 | RF46 | [CT-RF46](Cenario_Teste/CT-RF46_Filtros_Despesas_Fixas.md) | Nenhum no fluxo avaliado | Aprovado conforme a gravação | [Evidências](Evidencias/CT-RF46_Filtros_Despesas_Fixas/README.md) e [Jam](https://jam.dev/c/a4bac99d-e436-4792-831e-8c3a875272bb) |
 | RF47 | [CT-RF47](Cenario_Teste/CT-RF47_Cadastro_Despesa_Fixa.md) | Sem defeito confirmado | A validar — regra ou contexto pendente | [Evidências](Evidencias/CT-RF47_Cadastro_Despesa_Fixa/README.md) e [Jam](https://jam.dev/c/a4bac99d-e436-4792-831e-8c3a875272bb) |
+| RF48 | [CT-RF48](Cenario_Teste/CT-RF48_Exclusao_Despesa_Fixa.md) | Nenhum no fluxo avaliado | Aprovado conforme a gravação | [Evidências](Evidencias/CT-RF48_Exclusao_Despesa_Fixa/README.md) e [Jam](https://jam.dev/c/a4bac99d-e436-4792-831e-8c3a875272bb) |
 
 ---
 
@@ -1507,6 +1538,12 @@ Com RF46, a análise passa a cobrir 44 requisitos documentados. O CT-RF46 acresc
 RF47 utiliza os painéis Info, Console, Network e Actions do Jam "Despesas Fixas", o corpo e a resposta da primeira requisição de criação e os quadros de 0:34, 0:36 e 0:42. Foram registrados duas requisições de criação com HTTP 201 e um único registro novo visível. A segunda requisição não teve corpo nem resposta capturados. Não houve nova execução, acesso ao código ou ao banco, nem reteste.
 
 Com RF47, a análise passa a cobrir 45 requisitos documentados. O CT-RF47 acrescenta um ponto a validar, sem defeito confirmado.
+
+### Base da análise do RF48 — revisão de 15/11/2026
+
+RF48 utiliza os painéis Info, Console, Network e Actions do Jam "Despesas Fixas", o corpo e a resposta da exclusão e os quadros de 0:42, 0:44 e 0:51. Foram registrados o diálogo de confirmação, a requisição de exclusão com HTTP 200 e a atualização da listagem. Não houve nova execução, acesso ao código ou ao banco, nem reteste.
+
+Com RF48, a análise passa a cobrir 46 requisitos documentados. O CT-RF48 acrescenta uma aprovação limitada ao exemplo gravado.
 
 ---
 
