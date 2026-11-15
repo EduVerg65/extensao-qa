@@ -1,16 +1,18 @@
 # 🐞 Relatório de Bugs — SIFIT
 
-**Escopo:** defeitos de 39 casos documentados (CT-RF01–CT-RF35 e CT-RF38–CT-RF41): recuperação, Perfil, Clientes, financeiro, página inicial e dashboard, tema, modalidades, categorias, avaliações, exercícios, grupos musculares objetivos de treino e SifitBox – Turmas.
+**Escopo:** defeitos de 43 casos documentados (CT-RF01–CT-RF35 e CT-RF38–CT-RF45): recuperação, Perfil, Clientes, financeiro, página inicial e dashboard, tema, modalidades, categorias, avaliações, exercícios, grupos musculares, objetivos de treino, SifitBox – Turmas, Pagar.me, configurações, despesas fixas e relatórios.
 
 **Ambientes:** CT-RF01 em https://sifitalfa.centrion.com.br/login; CT-RF02_ERRO em https://sifit.centrion.com.br/profile. CT-RF03: URL do frontend não confirmada; backend informado em `https://backendsifit.centrion.com.br/api/clientesPorNome/1`.
 
 **Datas das gravações do Jam:** CT-RF01 em 23/10/2026; CT-RF02_ERRO em 22/10/2026 às 21:45 BRT; CT-RF03 não confirmada.
 
-**Atualização documental:** 15/11/2026 — 20 defeitos registrados: 10 abertos (BUG-001 a BUG-010) e 10 em triagem (BUG-011 a BUG-020). BUG-019 registra o HTTP 500 no cadastro de objetivo de treino e BUG-020 a ausência de retorno visível no cadastro de turma sem modalidade, ambos sem causa técnica confirmada. As análises anteriores foram preservadas.
+**Atualização documental:** 15/11/2026 — 21 defeitos registrados: 10 abertos (BUG-001 a BUG-010) e 11 em triagem (BUG-011 a BUG-021). BUG-019 registra o HTTP 500 no cadastro de objetivo de treino e BUG-020 a ausência de retorno visível no cadastro de turma sem modalidade, ambos sem causa técnica confirmada. As análises anteriores foram preservadas.
 
 **Padronização documental:** 13/11/2026, sem alteração do status dos defeitos.
 
 **Caso aprovado incluído em 13/11/2026:** [CT-RF04_loginComSucesso](Cenario_Teste/CT-RF04_loginComSucesso.md), vinculado ao RF04, não gerou defeito para o fluxo avaliado. O [Jam de login](https://jam.dev/c/5e4a28be-4e80-43d3-9587-1b113723cc38) mostra acesso ao dashboard após autenticação. Essa aprovação não altera os três bugs existentes; resultados e limites constam no [relatório dos testes](Relatorio%20dos%20testes.md).
+
+**Gravação de CT-RF42–CT-RF45:** 15/11/2026, Pagar.me e Configurações, 19:06 BRT, Chrome 157.0.8103.78 / Windows 11; uma única gravação; evidência e limites no BUG-021.
 
 **Gravação de CT-RF39–CT-RF41:** 15/11/2026, SifitBox – Turmas, 18:51 BRT, Chrome 157.0.8103.78 / Windows 11; uma única gravação; evidência e limites no BUG-020.
 
@@ -44,8 +46,9 @@
 | [BUG-018](#bug-018) | Dashboard apresenta múltiplos HTTP 500 durante o carregamento | Alta / Alta, propostas | Em triagem — causa não determinada | [CT-RF34](Cenario_Teste/CT-RF34_Erro_Servidor_Excesso_Requisicoes.md) |
 | [BUG-019](#bug-019) | Cadastro de objetivo de treino retorna HTTP 500 | Alta / Alta, propostas | Em triagem — causa não determinada | [CT-RF35](Cenario_Teste/CT-RF35_Cadastro_Objetivo_Treino.md) |
 | [BUG-020](#bug-020) | Cadastro de turma sem modalidade não apresenta retorno visível | Média / Alta, propostas | Em triagem — validação nativa não confirmada | [CT-RF41](Cenario_Teste/CT-RF41_Cadastro_Turma_Sem_Modalidade.md) |
+| [BUG-021](#bug-021) | Painel Pagar.me mantém Recebimentos e gráfico ao trocar o período | Média / Média, propostas | Em triagem — dados reais ou de demonstração não confirmados | [CT-RF45](Cenario_Teste/CT-RF45_Painel_PagarMe_Periodo.md) |
 
-BUG-001–BUG-010 aguardam correção e reteste. BUG-011–BUG-020 aguardam confirmação das premissas e triagem antes do encaminhamento de correção. As causas técnicas permanecem não confirmadas; o BUG-003 se apoia no relato e nas capturas fornecidos, com os limites registrados no caso.
+BUG-001–BUG-010 aguardam correção e reteste. BUG-011–BUG-021 aguardam confirmação das premissas e triagem antes do encaminhamento de correção. As causas técnicas permanecem não confirmadas; o BUG-003 se apoia no relato e nas capturas fornecidos, com os limites registrados no caso.
 
 ---
 
@@ -952,6 +955,52 @@ A ausência de requisição é compatível com validação no cliente (por exemp
 
 ---
 
+<a id="bug-021"></a>
+
+## BUG-021 — Painel Pagar.me mantém Recebimentos e gráfico ao trocar o período
+
+| Campo | Descrição |
+| --- | --- |
+| Status | Em triagem — causa não determinada; reteste pendente após correção. |
+| Severidade / prioridade | Média / Média, propostas para triagem. |
+| Módulo | Financeiro / Pagar.me / Painel |
+| Requisitos | [RF45](Analise%20de%20requisitos.md#rf45) |
+| Casos | [CT-RF45](Cenario_Teste/CT-RF45_Painel_PagarMe_Periodo.md) |
+| Data da evidência / revisão | 15/11/2026, 19:06 BRT; sem nova execução. |
+| Página | https://sifit.centrion.com.br/pagarme |
+| Ambiente | Chrome 157.0.8103.78 / Windows (x86) 11, janela 1920 × 911; versão e zoom não confirmados. |
+| Frequência conhecida | Um registro do Jam; recorrência não determinada. |
+
+### Pré-condições e reprodução
+
+**[CT-RF45](Cenario_Teste/CT-RF45_Painel_PagarMe_Periodo.md):** Sessão autenticada com acesso ao módulo Pagar.me e conta de pagamento com movimentação conhecida nos últimos 30 e 7 dias.
+
+1. Acessar o painel Pagar.me com o painel de rede aberto e registrar Recebimentos, o gráfico e os meios de pagamento em "Últimos 30 dias".
+2. Selecionar "Últimos 7 dias" no cartão Recebimentos.
+3. Comparar o valor, a variação, o gráfico e os meios de pagamento.
+4. Conferir os indicadores de saldo (Disponível para saque, Em processamento, Recebíveis futuros e Recebido no mês).
+
+### Esperado e obtido
+
+| Esperado | Obtido |
+| --- | --- |
+| Ao trocar o período, o valor de Recebimentos, o gráfico e o eixo de datas passam a representar o novo período, de forma coerente com os demais indicadores. | Com "Últimos 7 dias", Recebimentos permanece R$ 38.420,00 e o gráfico é idêntico ao de "Últimos 30 dias"; os indicadores de saldo permanecem "R$ --". |
+
+**Impacto:** O usuário não consegue analisar recebimentos por período e pode tomar decisões com base em valores que não correspondem ao período escolhido. O painel não distingue dados reais de dados de demonstração.
+
+### Evidências técnicas
+
+- [Jam — Pagar.me](https://jam.dev/c/e6e551ef-9196-4c79-b6a2-89747b1e8b33): quadro de 0:00 (período "Últimos 30 dias", Recebimentos R$ 38.420,00) e quadro de 0:25 (período "Últimos 7 dias", mesmo valor e mesmo gráfico); grupos repetidos de `POST` ver-saldo, pagarme, recebiveis e transacoes (HTTP 200) sem corpo capturado.
+- [Painel em 0:00](Evidencias/CT-RF45_Painel_PagarMe_Periodo/painel_00-00.png), [painel em 0:25](Evidencias/CT-RF45_Painel_PagarMe_Periodo/painel_periodo_7dias_00-25.png) e [Evidências](Evidencias/CT-RF45_Painel_PagarMe_Periodo/README.md).
+
+### Análise, limites e encaminhamento
+
+O valor e o gráfico idênticos em períodos diferentes são compatíveis com dados de demonstração ou com falha na atualização por período; a leitura do eixo de datas (aparentemente de maio) é aproximada. Os indicadores de saldo em "R$ --" sugerem indisponibilidade da conta de pagamento, o que reforça a hipótese de dados estáticos, sem confirmação. A causa técnica não foi confirmada no código; o clique no seletor não consta na cronologia do Jam.
+
+**Reteste:** Reproduzir com conta de movimentação conhecida, capturando corpo e resposta de `recebiveis`, `transacoes` e `pagarme`, e comparar os períodos; confirmar se os valores exibidos são reais. Manter em triagem até nova evidência em versão identificada.
+
+---
+
 ## Pontos a validar — sem defeito confirmado
 
 | Caso | Questão pendente | Evidência |
@@ -963,7 +1012,7 @@ A ausência de requisição é compatível com validação no cliente (por exemp
 | [CT-RF25](Cenario_Teste/CT-RF25_Envio_Exercicio_Imagem.md) | Conferir a imagem após reabrir e recarregar o exercício; criação visível não comprova associação persistida. | [Jam](https://jam.dev/c/25c37a9b-e9bd-4e0c-adf1-4da528ae1d58) e [Evidências](Evidencias/CT-RF25_Envio_Exercicio_Imagem/README.md) |
 | [CT-RF40](Cenario_Teste/CT-RF40_Exclusao_Turmas_Modalidades.md) | Confirmar a exclusão lógica de turmas e modalidades, a ausência de confirmação prévia e a exibição de registros inativos sob o filtro "Ativo"; registrar defeito apenas se houver divergência com a regra definida. | [Jam](https://jam.dev/c/ee9a133b-d6b1-442d-b4b0-dd87595b7e70) e [Evidências](Evidencias/CT-RF40_Exclusao_Turmas_Modalidades/README.md) |
 
-Esses seis pontos não entram na contagem de 20 defeitos registrados. BUG-011–BUG-020 são contabilizados separadamente como registros em triagem, com premissas, persistência ou validações técnicas ainda pendentes. O relato de numeração de personais não demonstrou diferença entre total e linhas; a inativação de modalidades pode ser exclusão lógica; encargos e métricas exigem regras explícitas.
+Esses seis pontos não entram na contagem de 21 defeitos registrados. BUG-011–BUG-021 são contabilizados separadamente como registros em triagem, com premissas, persistência ou validações técnicas ainda pendentes. O relato de numeração de personais não demonstrou diferença entre total e linhas; a inativação de modalidades pode ser exclusão lógica; encargos e métricas exigem regras explícitas.
 
 
 **Exclusão de exercício:** CT-RF23 está aprovado no trecho consultado, com remoção e total 11 para 10; não gerou defeito adicional. Persistência e efeitos sobre vínculos permanecem como verificações complementares.
