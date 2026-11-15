@@ -2,11 +2,11 @@
 
 **Módulos:** Autenticação, Perfil, Clientes / Filtros, Financeiro, Página inicial / Personais, SifitBox / Modalidades e Turmas, Categorias Crossfit, Avaliações, Exercícios, Grupos Musculares, Dashboard e Objetivos de Treino.
 
-**Atualização:** 15/11/2026 — RF01 a RF35 e RF38 a RF41 consolidados, com inclusão de Categorias Crossfit (CT-RF38) e de SifitBox – Turmas (CT-RF39 a CT-RF41); BUG-011–BUG-020 em triagem.
+**Atualização:** 15/11/2026 — RF01 a RF35 e RF38 a RF42 consolidados, com inclusão de Categorias Crossfit (CT-RF38), SifitBox – Turmas (CT-RF39 a CT-RF41) e, a partir de CT-RF42, Pagar.me, Configurações, Despesas Fixas e Relatórios; BUG-011–BUG-020 em triagem.
 
 **Padronização documental:** 13/11/2026, sem alteração dos resultados registrados.
 
-Esta análise documenta 39 requisitos de QA para os cenários relacionados abaixo, com base nos relatos e nas evidências fornecidas. RF01–RF04 e suas análises históricas foram preservados; RF05–RF20 ampliam a cobertura em 14/11/2026; RF21 acrescenta Avaliações; RF22–RF28 acrescentam Exercícios; RF29–RF33 acrescentam Grupos Musculares; RF34 acrescenta o carregamento do dashboard RF35 acrescenta o cadastro de objetivos de treino e RF38 acrescenta o cadastro de categorias com código automático em 15/11/2026. RF39 acrescenta o cadastro de modalidade em SifitBox – Turmas. RF40 acrescenta a exclusão de turmas e modalidades. RF41 acrescenta o cadastro de turma. Os critérios abaixo constituem a referência de QA para esses fluxos; não representam validação de uma especificação formal pelo responsável pelo produto.
+Esta análise documenta 40 requisitos de QA para os cenários relacionados abaixo, com base nos relatos e nas evidências fornecidas. RF01–RF04 e suas análises históricas foram preservados; RF05–RF20 ampliam a cobertura em 14/11/2026; RF21 acrescenta Avaliações; RF22–RF28 acrescentam Exercícios; RF29–RF33 acrescentam Grupos Musculares; RF34 acrescenta o carregamento do dashboard RF35 acrescenta o cadastro de objetivos de treino e RF38 acrescenta o cadastro de categorias com código automático em 15/11/2026. RF39 acrescenta o cadastro de modalidade em SifitBox – Turmas. RF40 acrescenta a exclusão de turmas e modalidades. RF41 acrescenta o cadastro de turma. RF42 a RF56 acrescentam Pagar.me, Configurações, Despesas Fixas e Relatórios em 15/11/2026. Os critérios abaixo constituem a referência de QA para esses fluxos; não representam validação de uma especificação formal pelo responsável pelo produto.
 
 ## 📋 Visão geral dos requisitos
 
@@ -51,6 +51,7 @@ Esta análise documenta 39 requisitos de QA para os cenários relacionados abaix
 | [RF39](#rf39) | Cadastrar modalidade e apresentá-la na listagem | Média, proposta | [CT-RF39](Cenario_Teste/CT-RF39_Cadastro_Modalidade.md) |
 | [RF40](#rf40) | Aplicar e comunicar a regra de exclusão de turmas e modalidades | Média, proposta | [CT-RF40](Cenario_Teste/CT-RF40_Exclusao_Turmas_Modalidades.md) |
 | [RF41](#rf41) | Cadastrar turma ou informar visivelmente o dado que impede o envio | Média, proposta | [CT-RF41](Cenario_Teste/CT-RF41_Cadastro_Turma_Sem_Modalidade.md) |
+| [RF42](#rf42) | Solicitar saque e informar o resultado | Alta, proposta | [CT-RF42](Cenario_Teste/CT-RF42_Solicitacao_Saque_PagarMe.md) |
 
 ---
 
@@ -1137,6 +1138,35 @@ Não foi confirmado se a modalidade é obrigatória nem se existe validação na
 
 ---
 
+<a id="rf42"></a>
+
+## RF42 — Solicitar saque e informar o resultado
+
+| Campo | Descrição |
+| --- | --- |
+| Requisito de QA | A solicitação de saque pelo painel Pagar.me deve registrar o pedido e informar ao usuário o resultado (sucesso ou impedimento), atualizando o saldo quando aplicável. |
+| Ator | Usuário autenticado com acesso ao módulo Pagar.me. |
+| Pré-condições | Conta de pagamento configurada; saldo disponível conhecido; regra de saque definida com o produto. |
+| Gatilho | Acionar Solicitar saque, informar o valor e confirmar. |
+| Caso | [CT-RF42](Cenario_Teste/CT-RF42_Solicitacao_Saque_PagarMe.md) |
+| Situação observada | A validar — regra ou contexto pendente. A confirmação do saque (valor 1000, saldo "R$ --") gera `POST sacar-saldo` com HTTP 200, mas a interface não apresenta mensagem de resultado. |
+| Defeito | Sem defeito confirmado |
+| Evidências | [Jam](https://jam.dev/c/e6e551ef-9196-4c79-b6a2-89747b1e8b33) e [Evidências](Evidencias/CT-RF42_Solicitacao_Saque_PagarMe/README.md). |
+
+### Critérios de aceitação do RF42
+
+1. A solicitação de saque informa o resultado (sucesso ou impedimento) de forma compreensível.
+2. Com saldo indisponível ou insuficiente, o sistema apresenta o impedimento antes ou depois do envio, sem aceitar silenciosamente.
+3. O valor informado é validado (mínimo, máximo e formato).
+4. O saldo e os indicadores são atualizados após uma solicitação bem-sucedida.
+5. A solicitação não é duplicada por cliques repetidos.
+
+### Pontos a confirmar e limites do RF42
+
+O corpo e a resposta da solicitação não foram capturados; não foram confirmados o registro do saque, a regra de saldo e a mensagem de retorno. O saldo indisponível ("R$ --") e a diferença em relação ao cartão Recebimentos são tratados no [RF45](#rf45).
+
+---
+
 ## 🔗 Rastreabilidade
 
 | Requisito | Cenário / caso | Defeito | Resultado | Evidências |
@@ -1180,6 +1210,7 @@ Não foi confirmado se a modalidade é obrigatória nem se existe validação na
 | RF39 | [CT-RF39](Cenario_Teste/CT-RF39_Cadastro_Modalidade.md) | Nenhum no fluxo avaliado | Aprovado conforme a gravação | [Evidências](Evidencias/CT-RF39_Cadastro_Modalidade/README.md) e [Jam](https://jam.dev/c/ee9a133b-d6b1-442d-b4b0-dd87595b7e70) |
 | RF40 | [CT-RF40](Cenario_Teste/CT-RF40_Exclusao_Turmas_Modalidades.md) | Sem defeito confirmado | A validar — regra ou contexto pendente | [Evidências](Evidencias/CT-RF40_Exclusao_Turmas_Modalidades/README.md) e [Jam](https://jam.dev/c/ee9a133b-d6b1-442d-b4b0-dd87595b7e70) |
 | RF41 | [CT-RF41](Cenario_Teste/CT-RF41_Cadastro_Turma_Sem_Modalidade.md) | [BUG-020](Relatorio-de-Bugs.md#bug-020), em triagem | Reprovado nas evidências; reteste pendente. | [Evidências](Evidencias/CT-RF41_Cadastro_Turma_Sem_Modalidade/README.md) e [Jam](https://jam.dev/c/ee9a133b-d6b1-442d-b4b0-dd87595b7e70) |
+| RF42 | [CT-RF42](Cenario_Teste/CT-RF42_Solicitacao_Saque_PagarMe.md) | Sem defeito confirmado | A validar — regra ou contexto pendente | [Evidências](Evidencias/CT-RF42_Solicitacao_Saque_PagarMe/README.md) e [Jam](https://jam.dev/c/e6e551ef-9196-4c79-b6a2-89747b1e8b33) |
 
 ---
 
@@ -1285,6 +1316,12 @@ Com RF40, a análise passa a cobrir 38 requisitos documentados. SifitBox – Tur
 RF41 utiliza os painéis Info, Console (atividade do usuário), Network e Actions do Jam "SifitBox – Turmas", o corpo da requisição e da resposta de atualização e os quadros de 0:19, 0:58, 1:29, 1:33 e 1:35. Nas 35 entradas de rede não há requisição de criação de turma. A classificação não confirma que a modalidade seja obrigatória nem que a validação esteja ausente. Não houve nova execução, acesso ao código ou ao banco, nem reteste. BUG-020 está em triagem.
 
 Com RF41, a análise passa a cobrir 39 requisitos documentados. SifitBox – Turmas acrescenta uma reprovação, vinculada ao BUG-020, em triagem.
+
+### Base da análise do RF42 — revisão de 15/11/2026
+
+RF42 utiliza os painéis Info, Console, Network e Actions do Jam "Pagar.me" e os quadros de 0:00, 0:04 e 0:05. Foram registrados a requisição de saque com HTTP 200 e a ausência de mensagem de resultado. Corpos de requisição e de resposta indisponíveis. Não houve nova execução, acesso ao código ou ao banco, nem reteste.
+
+Com RF42, a análise passa a cobrir 40 requisitos documentados. O CT-RF42 acrescenta um ponto a validar, sem defeito confirmado.
 
 ---
 
