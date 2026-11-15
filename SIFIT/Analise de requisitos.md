@@ -2,11 +2,11 @@
 
 **Módulos:** Autenticação, Perfil, Clientes / Filtros, Financeiro, Página inicial / Personais, SifitBox / Modalidades e Turmas, Categorias Crossfit, Avaliações, Exercícios, Grupos Musculares, Dashboard e Objetivos de Treino.
 
-**Atualização:** 15/11/2026 — RF01 a RF35 e RF38 a RF54 consolidados, com inclusão de Categorias Crossfit (CT-RF38), SifitBox – Turmas (CT-RF39 a CT-RF41) e, a partir de CT-RF42, Pagar.me, Configurações, Despesas Fixas e Relatórios; BUG-011–BUG-022 em triagem.
+**Atualização:** 15/11/2026 — RF01 a RF35 e RF38 a RF55 consolidados, com inclusão de Categorias Crossfit (CT-RF38), SifitBox – Turmas (CT-RF39 a CT-RF41) e, a partir de CT-RF42, Pagar.me, Configurações, Despesas Fixas e Relatórios; BUG-011–BUG-022 em triagem.
 
 **Padronização documental:** 13/11/2026, sem alteração dos resultados registrados.
 
-Esta análise documenta 52 requisitos de QA para os cenários relacionados abaixo, com base nos relatos e nas evidências fornecidas. RF01–RF04 e suas análises históricas foram preservados; RF05–RF20 ampliam a cobertura em 14/11/2026; RF21 acrescenta Avaliações; RF22–RF28 acrescentam Exercícios; RF29–RF33 acrescentam Grupos Musculares; RF34 acrescenta o carregamento do dashboard RF35 acrescenta o cadastro de objetivos de treino e RF38 acrescenta o cadastro de categorias com código automático em 15/11/2026. RF39 acrescenta o cadastro de modalidade em SifitBox – Turmas. RF40 acrescenta a exclusão de turmas e modalidades. RF41 acrescenta o cadastro de turma. RF42 a RF56 acrescentam Pagar.me, Configurações, Despesas Fixas e Relatórios em 15/11/2026. Os critérios abaixo constituem a referência de QA para esses fluxos; não representam validação de uma especificação formal pelo responsável pelo produto.
+Esta análise documenta 53 requisitos de QA para os cenários relacionados abaixo, com base nos relatos e nas evidências fornecidas. RF01–RF04 e suas análises históricas foram preservados; RF05–RF20 ampliam a cobertura em 14/11/2026; RF21 acrescenta Avaliações; RF22–RF28 acrescentam Exercícios; RF29–RF33 acrescentam Grupos Musculares; RF34 acrescenta o carregamento do dashboard RF35 acrescenta o cadastro de objetivos de treino e RF38 acrescenta o cadastro de categorias com código automático em 15/11/2026. RF39 acrescenta o cadastro de modalidade em SifitBox – Turmas. RF40 acrescenta a exclusão de turmas e modalidades. RF41 acrescenta o cadastro de turma. RF42 a RF56 acrescentam Pagar.me, Configurações, Despesas Fixas e Relatórios em 15/11/2026. Os critérios abaixo constituem a referência de QA para esses fluxos; não representam validação de uma especificação formal pelo responsável pelo produto.
 
 ## 📋 Visão geral dos requisitos
 
@@ -64,6 +64,7 @@ Esta análise documenta 52 requisitos de QA para os cenários relacionados abaix
 | [RF52](#rf52) | Gerar o relatório de Contas a Pagar (Pagas) | Média, proposta | [CT-RF52](Cenario_Teste/CT-RF52_Relatorio_Contas_Pagar_Pagas.md) |
 | [RF53](#rf53) | Gerar o relatório de Avaliações em PDF | Alta, proposta | [CT-RF53](Cenario_Teste/CT-RF53_Relatorio_Avaliacoes_Vazio.md) |
 | [RF54](#rf54) | Gerar o relatório de Clientes em PDF | Alta, proposta | [CT-RF54](Cenario_Teste/CT-RF54_Relatorio_Clientes_Vazio.md) |
+| [RF55](#rf55) | Gerar o relatório de Colaboradores em PDF | Alta, proposta | [CT-RF55](Cenario_Teste/CT-RF55_Relatorio_Colaboradores_Vazio.md) |
 
 ---
 
@@ -1527,6 +1528,35 @@ O conteúdo das respostas e a causa não foram capturados. A correspondência en
 
 ---
 
+<a id="rf55"></a>
+
+## RF55 — Gerar o relatório de Colaboradores em PDF
+
+| Campo | Descrição |
+| --- | --- |
+| Requisito de QA | A geração do relatório de Colaboradores deve produzir um PDF válido para o período e os filtros informados, com os registros do período ou a estrutura vazia explícita, e informar falhas ao usuário. |
+| Ator | Usuário autenticado com permissão para gerar relatórios. |
+| Pré-condições | Período e filtros registrados; base com e sem registros no período conhecida. |
+| Gatilho | Selecionar o tipo "Colaboradores", informar o período e acionar Gerar Relatório. |
+| Caso | [CT-RF55](Cenario_Teste/CT-RF55_Relatorio_Colaboradores_Vazio.md) |
+| Situação observada | Reprovado nas evidências. A requisição retorna HTTP 200, mas o arquivo baixado tem 0 bytes e não abre; nenhuma mensagem de erro foi observada. O defeito é compartilhado com os relatórios de Avaliações, Clientes, Colaboradores e Caixas. |
+| Defeito | [BUG-023](Relatorio-de-Bugs.md#bug-023), em triagem |
+| Evidências | [Jam](https://jam.dev/c/3b4777a4-e1b0-4038-9b06-26c73669d7d1) e [Evidências](Evidencias/CT-RF55_Relatorio_Colaboradores_Vazio/README.md). |
+
+### Critérios de aceitação do RF55
+
+1. O arquivo gerado é um PDF válido, com tamanho maior que zero, que abre no visualizador.
+2. O relatório apresenta cabeçalho, período, filtros e registros do período.
+3. Sem registros, o relatório apresenta a estrutura com totais zerados ou mensagem explícita, sem arquivo vazio.
+4. Falhas de geração são informadas ao usuário, sem resposta HTTP 200 com arquivo vazio.
+5. O nome e o tipo do arquivo correspondem ao relatório solicitado.
+
+### Pontos a confirmar e limites do RF55
+
+O conteúdo das respostas e a causa não foram capturados. A correspondência entre o arquivo e o tipo é inferida pela ordem dos downloads e dos tipos selecionados no vídeo.
+
+---
+
 ## 🔗 Rastreabilidade
 
 | Requisito | Cenário / caso | Defeito | Resultado | Evidências |
@@ -1583,6 +1613,7 @@ O conteúdo das respostas e a causa não foram capturados. A correspondência en
 | RF52 | [CT-RF52](Cenario_Teste/CT-RF52_Relatorio_Contas_Pagar_Pagas.md) | Sem defeito confirmado | A validar — regra ou contexto pendente | [Evidências](Evidencias/CT-RF52_Relatorio_Contas_Pagar_Pagas/README.md) e [Jam](https://jam.dev/c/3b4777a4-e1b0-4038-9b06-26c73669d7d1) |
 | RF53 | [CT-RF53](Cenario_Teste/CT-RF53_Relatorio_Avaliacoes_Vazio.md) | [BUG-023](Relatorio-de-Bugs.md#bug-023), em triagem | Reprovado nas evidências; reteste pendente. | [Evidências](Evidencias/CT-RF53_Relatorio_Avaliacoes_Vazio/README.md) e [Jam](https://jam.dev/c/3b4777a4-e1b0-4038-9b06-26c73669d7d1) |
 | RF54 | [CT-RF54](Cenario_Teste/CT-RF54_Relatorio_Clientes_Vazio.md) | [BUG-023](Relatorio-de-Bugs.md#bug-023), em triagem | Reprovado nas evidências; reteste pendente. | [Evidências](Evidencias/CT-RF54_Relatorio_Clientes_Vazio/README.md) e [Jam](https://jam.dev/c/3b4777a4-e1b0-4038-9b06-26c73669d7d1) |
+| RF55 | [CT-RF55](Cenario_Teste/CT-RF55_Relatorio_Colaboradores_Vazio.md) | [BUG-023](Relatorio-de-Bugs.md#bug-023), em triagem | Reprovado nas evidências; reteste pendente. | [Evidências](Evidencias/CT-RF55_Relatorio_Colaboradores_Vazio/README.md) e [Jam](https://jam.dev/c/3b4777a4-e1b0-4038-9b06-26c73669d7d1) |
 
 ---
 
@@ -1766,6 +1797,12 @@ Com RF53, a análise passa a cobrir 51 requisitos documentados. O CT-RF53 acresc
 RF54 utiliza os painéis Info, Console e Network do Jam "Relatórios", os quadros do vídeo e os arquivos baixados (tamanho zero e carimbos de hora). A atividade do usuário não foi registrada no Console do Jam. A correspondência do arquivo com o tipo é inferida. Não houve nova execução, acesso ao código ou ao banco, nem reteste. BUG-023 está em triagem.
 
 Com RF54, a análise passa a cobrir 52 requisitos documentados. O CT-RF54 acrescenta uma reprovação, vinculada ao BUG-023, em triagem.
+
+### Base da análise do RF55 — revisão de 15/11/2026
+
+RF55 utiliza os painéis Info, Console e Network do Jam "Relatórios", os quadros do vídeo e os arquivos baixados (tamanho zero e carimbos de hora). A atividade do usuário não foi registrada no Console do Jam. A correspondência do arquivo com o tipo é inferida. Não houve nova execução, acesso ao código ou ao banco, nem reteste. BUG-023 está em triagem.
+
+Com RF55, a análise passa a cobrir 53 requisitos documentados. O CT-RF55 acrescenta uma reprovação, vinculada ao BUG-023, em triagem.
 
 ---
 
