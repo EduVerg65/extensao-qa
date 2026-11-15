@@ -1,6 +1,6 @@
 # 🧪 Índice dos cenários de teste — SIFIT
 
-**Atualização:** 14/11/2026. São 20 cenários documentados: 6 aprovados, 10 reprovados e 4 a validar, com base nas evidências e limites registrados. Cada novo caso contém BDD, pré-condições, próximos passos e link direto do Jam. Os 16 novos casos seguem a ordem do JAM.txt, começando em CT-RF05.
+**Atualização:** 15/11/2026. São 21 cenários documentados: 6 aprovados, 11 reprovados e 4 a validar, com base nas evidências e limites registrados. CT-RF21 acrescenta o cadastro de avaliação, vinculado a RF21 e BUG-010. A ordem anterior de CT-RF05–CT-RF20 foi preservada.
 
 | Caso | Funcionalidade | Resultado | Defeito | Jam |
 | --- | --- | --- | --- | --- |
@@ -24,7 +24,8 @@
 | [CT-RF18](CT-RF18_Atualizacao_Categoria.md) | Atualização de categoria | Aprovado conforme a gravação | — | [Jam](https://jam.dev/c/67664a98-2a4a-4134-91a9-7ca9b8aa9dbd) |
 | [CT-RF19](CT-RF19_Exclusao_Categoria.md) | Exclusão de categoria retorna erro HTTP 500 | Reprovado nas evidências | [BUG-009](../../SIFIT/Relatorio-de-Bugs.md#bug-009) | [Jam](https://jam.dev/c/c5c78b3b-2865-4226-836f-bcb0a8fc612f) |
 | [CT-RF20](CT-RF20_Criacao_Categoria.md) | Criação de categoria | Aprovado conforme a gravação | — | [Jam](https://jam.dev/c/b48ab94e-517d-48d6-8e46-70b18c033b8b) |
+| [CT-RF21](CT-RF21_Cadastro_Avaliacao.md) | Cadastro de avaliação retorna HTTP 500 | Reprovado nas evidências | [BUG-010](../Relatorio-de-Bugs.md#bug-010) | [Jam](https://jam.dev/c/2e5eca1f-7cd2-4ee3-854b-02ef4635955a) |
 
-Os resultados são documentais; nenhuma nova execução ou reteste foi realizada nesta inclusão. Dez casos reprovados estão relacionados a nove defeitos, pois CT-RF09 e CT-RF10 compartilham BUG-005.
+Os resultados são documentais; nenhuma nova execução ou reteste foi realizada nesta inclusão. Onze casos reprovados estão relacionados a dez defeitos, pois CT-RF09 e CT-RF10 compartilham BUG-005.
 
 [← Início](../../README.md) · [Requisitos](../Analise%20de%20requisitos.md) · [Plano](../Plano%20de%20testes.md) · [Evidências](../Evidencias/README.md)

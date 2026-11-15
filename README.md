@@ -2,24 +2,24 @@
 
 Repositório de documentação de QA manual do **SIFIT**, sistema de gestão de academias. Reúne requisitos, plano, cenários BDD, resultados, defeitos e evidências com links do Jam.
 
-**Atualização documental:** 14/11/2026. Incluídos CT-RF05–CT-RF20, seguindo a ordem dos 16 links fornecidos. Os quatro cenários e resultados anteriores foram preservados.
+**Atualização documental:** 15/11/2026. Incluídos CT-RF21, RF21 e BUG-010, com evidência do erro ao cadastrar avaliação. Os cenários e resultados anteriores foram preservados.
 
 ## 📊 Situação consolidada
 
 | Cenários documentados | Aprovados | Reprovados | A validar | Bugs abertos | Casos com reteste corretivo pendente |
 | :---: | :---: | :---: | :---: | :---: | :---: |
-| 20 | 6 | 10 | 4 | 9 | 10 |
+| 21 | 6 | 11 | 4 | 10 | 11 |
 
-As classificações se baseiam nas fontes indicadas em cada cenário. CT-RF03 mantém a reprovação conforme o relato, com os limites da revisão original. CT-RF09 e CT-RF10 compartilham BUG-005; por isso dez casos reprovados correspondem a nove defeitos. Os quatro pontos a validar não entram na contagem de bugs.
+As classificações se baseiam nas fontes indicadas em cada cenário. CT-RF03 mantém a reprovação conforme o relato, com os limites da revisão original. CT-RF09 e CT-RF10 compartilham BUG-005; por isso onze casos reprovados correspondem a dez defeitos. Os quatro pontos a validar não entram na contagem de bugs.
 
 ## 📚 Documentos do projeto
 
 | Documento | Conteúdo |
 | --- | --- |
-| [Análise de requisitos](SIFIT/Analise%20de%20requisitos.md) | RF01–RF20, critérios de aceitação, dúvidas de regra e rastreabilidade. |
+| [Análise de requisitos](SIFIT/Analise%20de%20requisitos.md) | RF01–RF21, critérios de aceitação, dúvidas de regra e rastreabilidade. |
 | [Plano de testes](SIFIT/Plano%20de%20testes.md) | Escopo, ambientes, preparação, critérios, regressão e retestes. |
-| [Índice dos cenários](SIFIT/Cenario_Teste/README.md) | 20 cenários com pré-condições, BDD, passos, esperado, obtido e encaminhamento. |
-| [Relatório de bugs](SIFIT/Relatorio-de-Bugs.md) | BUG-001–BUG-009: reprodução, impacto, evidências, severidade/prioridade propostas e reteste. |
+| [Índice dos cenários](SIFIT/Cenario_Teste/README.md) | 21 cenários com pré-condições, BDD, passos, esperado, obtido e encaminhamento. |
+| [Relatório de bugs](SIFIT/Relatorio-de-Bugs.md) | BUG-001–BUG-010: reprodução, impacto, evidências, severidade/prioridade propostas e reteste. |
 | [Relatório dos testes](SIFIT/Relatorio%20dos%20testes.md) | Resultados consolidados, cobertura, limites e pendências. |
 | [Índice das evidências](SIFIT/Evidencias/README.md) | Jam por cenário e arquivos locais dos novos casos. |
 
@@ -36,18 +36,13 @@ extensao-qa/
     ├── Cenario_Teste/
     │   ├── README.md
     │   ├── CT-RF01_Esqueci-senha.md
-    │   ├── ... CT-RF02 a CT-RF19
-    │   └── CT-RF20_Criacao_Categoria.md
+    │   ├── ... CT-RF02 a CT-RF20
+    │   └── CT-RF21_Cadastro_Avaliacao.md
     └── Evidencias/
         ├── README.md
         ├── catalogo.json
         ├── manifesto_sha256.json
-        ├── CT-RF02_ERRO/
-        ├── CT-RF03_Filtros_Clientes/
-        ├── CT-RF04_loginComSucesso/
-        ├── CT-RF05_Login_SenhaIncorreta/
-        ├── ... CT-RF06 a CT-RF19
-        └── CT-RF20_Criacao_Categoria/
+        └── CT-RF21_Cadastro_Avaliacao/
 ```
 
 ## 📋 Cenários e resultados
@@ -74,6 +69,7 @@ extensao-qa/
 | [CT-RF18](SIFIT/Cenario_Teste/CT-RF18_Atualizacao_Categoria.md) | Atualização de categoria | Aprovado conforme a gravação | — | [Jam](https://jam.dev/c/67664a98-2a4a-4134-91a9-7ca9b8aa9dbd) |
 | [CT-RF19](SIFIT/Cenario_Teste/CT-RF19_Exclusao_Categoria.md) | Exclusão de categoria retorna erro HTTP 500 | Reprovado nas evidências | [BUG-009](SIFIT/Relatorio-de-Bugs.md#bug-009) | [Jam](https://jam.dev/c/c5c78b3b-2865-4226-836f-bcb0a8fc612f) |
 | [CT-RF20](SIFIT/Cenario_Teste/CT-RF20_Criacao_Categoria.md) | Criação de categoria | Aprovado conforme a gravação | — | [Jam](https://jam.dev/c/b48ab94e-517d-48d6-8e46-70b18c033b8b) |
+| [CT-RF21](SIFIT/Cenario_Teste/CT-RF21_Cadastro_Avaliacao.md) | Cadastro de avaliação retorna HTTP 500 | Reprovado nas evidências | [BUG-010](SIFIT/Relatorio-de-Bugs.md#bug-010) | [Jam](https://jam.dev/c/2e5eca1f-7cd2-4ee3-854b-02ef4635955a) |
 
 ## 🔬 Como este projeto funciona
 
@@ -87,13 +83,15 @@ Esta atualização organiza gravações existentes e **não é uma nova execuç�
 
 ## 🎥 Consultar os vídeos e a origem
 
-Cada novo cenário contém o link direto do Jam. Em sua pasta de evidências há `video.webm` original, `capa.png`, `resumo.txt`, `linha_do_tempo.txt`, `origem.url`, `metadados.json` e um README com o contexto. No GitHub, use o Jam para consultar a gravação ou baixe o WebM e abra em navegador compatível. A capa fornecida pelo Jam não substitui a demonstração do resultado no vídeo.
+Cada cenário contém o link do Jam. A evidência local de CT-RF21 inclui o relato original, o link fornecido, dois quadros extraídos da gravação, cronologia, requisição/resposta sem autenticação e metadados. O vídeo de CT-RF21 permanece no Jam.
 
-Foram copiados **16 vídeos, totalizando 39.490.598 bytes (39,49 MB)**; cada arquivo tem menos de 4 MB. Os hashes das cópias e do conjunto documental estão no [manifesto de integridade](SIFIT/Evidencias/manifesto_sha256.json). A numeração CT-RF05–CT-RF20 segue a ordem definida pelo solicitante; não há correspondência inferida com códigos da aplicação.
+A documentação de 14/11/2026 menciona 16 vídeos de CT-RF05–CT-RF20 (39.490.598 bytes), mas esses arquivos e as evidências locais de CT-RF02–CT-RF04 **não estavam nesta cópia do repositório** na revisão de 15/11/2026. O [índice de evidências](SIFIT/Evidencias/README.md) identifica os links disponíveis e essa pendência; o [manifesto](SIFIT/Evidencias/manifesto_sha256.json) cobre somente os arquivos locais incluídos agora.
 
 ## 🔐 Ambientes e limites
 
 CT-RF01 usa `sifitalfa.centrion.com.br`; CT-RF02 aponta para `/profile`, com divergência de rota na aba Info; o frontend de CT-RF03 permanece não confirmado. CT-RF04 e os 16 novos casos usam `sifit.centrion.com.br`. Os novos vídeos foram gravados em 14/11/2026 com Chrome 157.0.8103.51 / Windows 11. A versão da aplicação e o zoom não foram identificados; conferir antes de nova execução.
+
+CT-RF21 usa a página de Avaliações no mesmo domínio, com gravação de 15/11/2026 às 15:07:51 BRT, Chrome 157.0.8103.51 / Windows 11 e captura 1536 × 742. A causa do HTTP 500 e a persistência não foram confirmadas.
 
 As quatro decisões pendentes são: composição da cobrança (CT-RF08), escopo das métricas (CT-RF11), significado dos códigos de personais (CT-RF13) e exclusão lógica de modalidades (CT-RF16). Os vídeos de login negativo têm senha mascarada; os documentos não reproduzem senhas, tokens ou corpos de autenticação.
 

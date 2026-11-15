@@ -1,10 +1,10 @@
 # 📊 Relatório de Testes — SIFIT
 
-**Escopo:** CT-RF01–CT-RF20 — autenticação, recuperação, perfil, Clientes, financeiro, página inicial, modalidades / tema de SifitBox e Categorias Crossfit.
+**Escopo:** CT-RF01–CT-RF21 — autenticação, recuperação, perfil, Clientes, financeiro, página inicial, modalidades / tema de SifitBox, Categorias Crossfit e Avaliações.
 
-**Datas das gravações do Jam:** CT-RF01 em 23/10/2026; CT-RF02_ERRO em 22/10/2026 às 21:45 BRT; CT-RF03 não confirmada; CT-RF04_loginComSucesso em 13/11/2026; CT-RF05–CT-RF20 em 14/11/2026.
+**Datas das gravações do Jam:** CT-RF01 em 23/10/2026; CT-RF02_ERRO em 22/10/2026 às 21:45 BRT; CT-RF03 não confirmada; CT-RF04_loginComSucesso em 13/11/2026; CT-RF05–CT-RF20 em 14/11/2026; CT-RF21 em 15/11/2026 às 15:07:51,265 BRT.
 
-**Data da revisão documental:** 14/11/2026, com inclusão de 16 cenários e evidências do Jam. Resultados anteriores de 10/11, 12/11 e 13/11/2026 preservados.
+**Data da revisão documental:** 15/11/2026, com inclusão de CT-RF21 / BUG-010 e evidências do Jam. Resultados anteriores preservados.
 
 **Origem do resultado:** análise de evidências fornecidas; sem nova execução no sistema nesta revisão.
 
@@ -22,11 +22,11 @@ O **CT-RF03** foi classificado como **reprovado conforme o relato**: a busca com
 
 O **CT-RF04_loginComSucesso** foi classificado como **aprovado conforme a gravação**: o usuário preenche credenciais válidas, clica em Entrar e acessa `/dashboard`. As chamadas de login e verificação da sessão retornam HTTP 200; os quadros mostram o menu e o resumo da academia após a autenticação. Não houve nova execução no sistema.
 
-Os 16 novos cenários acrescentam **5 aprovações**, **7 reprovações nas evidências** e **4 pontos a validar**. Há **6 novos defeitos**, pois CT-RF09 e CT-RF10 compartilham BUG-005. As contagens consolidadas são:
+Os 16 novos cenários acrescentam **5 aprovações**, **7 reprovações nas evidências** e **4 pontos a validar**. Há **6 novos defeitos**, pois CT-RF09 e CT-RF10 compartilham BUG-005. CT-RF21 acrescenta uma reprovação e o BUG-010 em 15/11/2026: erro HTTP 500 ao salvar avaliação, confirmado no evento de rede e no alerta da interface. As contagens consolidadas são:
 
 | Casos documentados | Aprovados | Reprovados | A validar | Bugs abertos | Casos com reteste corretivo pendente |
 | :---: | :---: | :---: | :---: | :---: | :---: |
-| 20 | 6 | 10 | 4 | 9 | 10 |
+| 21 | 6 | 11 | 4 | 10 | 11 |
 
 As contagens representam os casos documentados com base nas fontes indicadas, sem novas execuções nesta revisão. As nove variações planejadas para o reteste do CT-RF03 não foram executadas e não são contabilizadas como testes adicionais realizados.
 
@@ -56,6 +56,7 @@ As contagens representam os casos documentados com base nas fontes indicadas, se
 | [CT-RF18](Cenario_Teste/CT-RF18_Atualizacao_Categoria.md) | [RF18](Analise%20de%20requisitos.md#rf18) | Persistir a alteração e atualizar a listagem. | O modal fecha e a lista exibe Barbell novo. | Aprovado conforme a gravação | Nenhum no fluxo avaliado |
 | [CT-RF19](Cenario_Teste/CT-RF19_Exclusao_Categoria.md) | [RF19](Analise%20de%20requisitos.md#rf19) | Concluir a exclusão permitida ou explicar de forma tratável por que o registro não pode ser excluído. | Após a confirmação, aparece o diálogo “Erro” / “Erro ao deletar categoria”. A categoria permanece na lista. | Reprovado nas evidências | [BUG-009](Relatorio-de-Bugs.md#bug-009) |
 | [CT-RF20](Cenario_Teste/CT-RF20_Criacao_Categoria.md) | [RF20](Analise%20de%20requisitos.md#rf20) | Criar a categoria e apresentar o novo registro na listagem. | O modal fecha, o contador passa de sete para oito e a lista passa a incluir cardio leve. | Aprovado conforme a gravação | Nenhum no fluxo avaliado |
+| [CT-RF21](Cenario_Teste/CT-RF21_Cadastro_Avaliacao.md) | [RF21](Analise%20de%20requisitos.md#rf21) | Cadastrar dados válidos ou informar validação específica, sem HTTP 500. | POST de agendamento retorna HTTP 500; alerta “Erro ao cadastrar Avaliação.”; formulário aberto. | Reprovado nas evidências | [BUG-010](Relatorio-de-Bugs.md#bug-010) |
 
 ---
 
@@ -72,6 +73,7 @@ As contagens representam os casos documentados com base nas fontes indicadas, se
 | [BUG-007](Relatorio-de-Bugs.md#bug-007) | Tema escuro reduz a legibilidade das tabelas de Box – Turmas | Média, proposta | Média, proposta | Aberto; reteste pendente. |
 | [BUG-008](Relatorio-de-Bugs.md#bug-008) | Edição de modalidade não apresenta ação clara para salvar | Média, proposta | Média, proposta | Aberto; reteste pendente. |
 | [BUG-009](Relatorio-de-Bugs.md#bug-009) | Exclusão de categoria retorna HTTP 500 e mensagem genérica | Média, proposta | Alta, proposta | Aberto; reteste pendente. |
+| [BUG-010](Relatorio-de-Bugs.md#bug-010) | Cadastro de avaliação retorna HTTP 500 | Alta, proposta | Alta, proposta | Aberto; reteste pendente. |
 
 As classificações propostas dependem de triagem. O BUG-003 mantém o resultado atribuído ao relato fornecido.
 
@@ -146,6 +148,16 @@ O domínio do CT-RF02_ERRO é diferente do domínio `sifitalfa.centrion.com.br` 
 
 ---
 
+### CT-RF21
+
+| Item | Registro |
+| --- | --- |
+| Página / API | https://sifit.centrion.com.br/avaliacoes / https://backendsifit.centrion.com.br |
+| Data / duração | 15/11/2026, início às 15:07:51,265 BRT / 20,420 s. |
+| Navegador / sistema / captura | Chrome 157.0.8103.51 / Windows 11 (x86) / 1536 × 742. |
+| Dados | Aluno 3423 digitado sem confirmação pela busca; personal 7; funcionário 11; 15/11/2026 às 06:00. |
+| Limites | Versão, zoom, classificação do ambiente, causa raiz e persistência não confirmados. |
+
 ## 📸 5. Evidências e observações
 
 | Evidência | Informação utilizada |
@@ -177,6 +189,7 @@ O domínio do CT-RF02_ERRO é diferente do domínio `sifitalfa.centrion.com.br` 
 | [Jam — CT-RF18: Teste de atualização funcionando](https://jam.dev/c/67664a98-2a4a-4134-91a9-7ca9b8aa9dbd) e [Evidências](Evidencias/CT-RF18_Atualizacao_Categoria/README.md) | 0:06: POST /api/categoria-exercicio-cross/atualizar com HTTP 200, seguido de GET /listar com HTTP 200. 0:08–0:11: nome atualizado na tabela. A atualização está demonstrada na própria gravação. Não houve novo teste de persistência após outra sessão ou novo login. |
 | [Jam — CT-RF19: Erro a o deletar categoria](https://jam.dev/c/c5c78b3b-2865-4226-836f-bcb0a8fc612f) e [Evidências](Evidencias/CT-RF19_Exclusao_Categoria/README.md) | 0:02: POST /api/categoria-exercicio-cross/excluir retorna HTTP 500. 0:03–0:05: mensagem de erro. O erro e o endpoint estão registrados. Sem o corpo completo da resposta, logs do servidor ou banco, a causa do HTTP 500 não foi determinada. |
 | [Jam — CT-RF20: Teste criação de nova categorias](https://jam.dev/c/b48ab94e-517d-48d6-8e46-70b18c033b8b) e [Evidências](Evidencias/CT-RF20_Criacao_Categoria/README.md) | 0:10: POST /api/categoria-exercicio-cross/criar retorna HTTP 201, seguido de GET /listar com HTTP 200. 0:11–0:15: novo registro visível. O teste demonstra criação no cenário gravado. Não cobre campos vazios, duplicidade ou validações de tamanho. |
+| [Jam — CT-RF21: erro no cadastro da avaliação](https://jam.dev/c/2e5eca1f-7cd2-4ee3-854b-02ef4635955a) e [Evidências](Evidencias/CT-RF21_Cadastro_Avaliacao/README.md) | Em 00:12, evento 16: POST /api/avaliacao/adicionar-agendamento/1 HTTP 500 em 1363 ms, resposta “Erro interno inesperado.”. Em 00:14,748: alerta “Erro ao cadastrar Avaliação.”. Sem confirmação de persistência ou causa raiz. |
 
 A mensagem de credenciais incorretas já aparece no início do vídeo do Jam; não foi considerada uma resposta ao clique em "Esqueci minha senha". A ausência de requisição, isoladamente, não caracteriza defeito se a interface abrir um formulário local. Aqui, o resultado reprovado decorre de o fluxo não abrir.
 
@@ -233,6 +246,14 @@ A aprovação considera o resultado visível após a autenticação, além da UR
 Os sete novos casos reprovados aguardam reteste corretivo e correspondem a seis defeitos. As quatro pendências de regra/contexto não foram reprovadas por suposição. CT-RF05/06/17/18/20 são referências de regressão; sua aprovação se limita aos exemplos gravados. Nenhuma variação planejada recebe contagem de execução sem evidência própria.
 
 As análises históricas de CT-RF01–CT-RF04 acima continuam com seus limites originais. A nova cobertura de login negativo está em CT-RF05 e CT-RF06; ela não amplia retroativamente a aprovação do CT-RF04.
+
+## Inclusão de 15/11/2026 — CT-RF21
+
+O caso [CT-RF21](Cenario_Teste/CT-RF21_Cadastro_Avaliacao.md) está reprovado nas evidências e vinculado ao [BUG-010](Relatorio-de-Bugs.md#bug-010), aberto, com severidade/prioridade altas propostas. Foram conferidos detalhes, cronologia, evento 16 e quadros do Jam; o relato original foi preservado, com dados de negócio sem autenticação.
+
+Confirmar existência/vínculo do aluno e regra de retroatividade, investigar os logs da API e executar a matriz de reteste com dados válidos e recusados. Essas verificações são propostas, sem resultado de execução. A persistência da tentativa original não foi consultada. Não houve nova execução nem correção da aplicação.
+
+O consolidado passa a 21 casos: 6 aprovados, 11 reprovados e 4 a validar; 10 bugs abertos e 11 retestes corretivos pendentes. As conclusões históricas de CT-RF01–CT-RF20 foram preservadas. Os arquivos locais de evidências anteriores citados nesses documentos não estavam nesta cópia; o [índice de evidências](Evidencias/README.md) registra essa disponibilidade.
 
 ---
 
