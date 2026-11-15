@@ -2,11 +2,11 @@
 
 **Módulos:** Autenticação, Perfil, Clientes / Filtros, Financeiro, Página inicial / Personais, SifitBox / Modalidades e Turmas, Categorias Crossfit, Avaliações, Exercícios, Grupos Musculares, Dashboard e Objetivos de Treino.
 
-**Atualização:** 15/11/2026 — RF01 a RF35 e RF38 a RF49 consolidados, com inclusão de Categorias Crossfit (CT-RF38), SifitBox – Turmas (CT-RF39 a CT-RF41) e, a partir de CT-RF42, Pagar.me, Configurações, Despesas Fixas e Relatórios; BUG-011–BUG-021 em triagem.
+**Atualização:** 15/11/2026 — RF01 a RF35 e RF38 a RF50 consolidados, com inclusão de Categorias Crossfit (CT-RF38), SifitBox – Turmas (CT-RF39 a CT-RF41) e, a partir de CT-RF42, Pagar.me, Configurações, Despesas Fixas e Relatórios; BUG-011–BUG-021 em triagem.
 
 **Padronização documental:** 13/11/2026, sem alteração dos resultados registrados.
 
-Esta análise documenta 47 requisitos de QA para os cenários relacionados abaixo, com base nos relatos e nas evidências fornecidas. RF01–RF04 e suas análises históricas foram preservados; RF05–RF20 ampliam a cobertura em 14/11/2026; RF21 acrescenta Avaliações; RF22–RF28 acrescentam Exercícios; RF29–RF33 acrescentam Grupos Musculares; RF34 acrescenta o carregamento do dashboard RF35 acrescenta o cadastro de objetivos de treino e RF38 acrescenta o cadastro de categorias com código automático em 15/11/2026. RF39 acrescenta o cadastro de modalidade em SifitBox – Turmas. RF40 acrescenta a exclusão de turmas e modalidades. RF41 acrescenta o cadastro de turma. RF42 a RF56 acrescentam Pagar.me, Configurações, Despesas Fixas e Relatórios em 15/11/2026. Os critérios abaixo constituem a referência de QA para esses fluxos; não representam validação de uma especificação formal pelo responsável pelo produto.
+Esta análise documenta 48 requisitos de QA para os cenários relacionados abaixo, com base nos relatos e nas evidências fornecidas. RF01–RF04 e suas análises históricas foram preservados; RF05–RF20 ampliam a cobertura em 14/11/2026; RF21 acrescenta Avaliações; RF22–RF28 acrescentam Exercícios; RF29–RF33 acrescentam Grupos Musculares; RF34 acrescenta o carregamento do dashboard RF35 acrescenta o cadastro de objetivos de treino e RF38 acrescenta o cadastro de categorias com código automático em 15/11/2026. RF39 acrescenta o cadastro de modalidade em SifitBox – Turmas. RF40 acrescenta a exclusão de turmas e modalidades. RF41 acrescenta o cadastro de turma. RF42 a RF56 acrescentam Pagar.me, Configurações, Despesas Fixas e Relatórios em 15/11/2026. Os critérios abaixo constituem a referência de QA para esses fluxos; não representam validação de uma especificação formal pelo responsável pelo produto.
 
 ## 📋 Visão geral dos requisitos
 
@@ -59,6 +59,7 @@ Esta análise documenta 47 requisitos de QA para os cenários relacionados abaix
 | [RF47](#rf47) | Cadastrar despesa fixa com uma única gravação | Média, proposta | [CT-RF47](Cenario_Teste/CT-RF47_Cadastro_Despesa_Fixa.md) |
 | [RF48](#rf48) | Excluir despesa fixa com confirmação | Média, proposta | [CT-RF48](Cenario_Teste/CT-RF48_Exclusao_Despesa_Fixa.md) |
 | [RF49](#rf49) | Editar despesa fixa preservando o registro | Média, proposta | [CT-RF49](Cenario_Teste/CT-RF49_Edicao_Despesa_Fixa.md) |
+| [RF50](#rf50) | Gerar o relatório de Matrículas em PDF | Média, proposta | [CT-RF50](Cenario_Teste/CT-RF50_Relatorio_Matriculas.md) |
 
 ---
 
@@ -1377,6 +1378,35 @@ A persistência após recarga, o pré-preenchimento da recorrência (o quadro de
 
 ---
 
+<a id="rf50"></a>
+
+## RF50 — Gerar o relatório de Matrículas em PDF
+
+| Campo | Descrição |
+| --- | --- |
+| Requisito de QA | A geração do relatório de Matrículas deve produzir um PDF válido com as matrículas do período e dos filtros informados, com valor e quantidade de registros coerentes. |
+| Ator | Usuário autenticado com permissão para gerar relatórios. |
+| Pré-condições | Matrículas do período conhecidas. |
+| Gatilho | Selecionar "Matrículas", informar o período e acionar Gerar Relatório. |
+| Caso | [CT-RF50](Cenario_Teste/CT-RF50_Relatorio_Matriculas.md) |
+| Situação observada | Aprovado conforme o PDF. O relatório abre e apresenta uma matrícula (Plano Diário, R$ 20,00) com "Quantidade de registros: 1". |
+| Defeito | Nenhum no fluxo avaliado |
+| Evidências | [Jam](https://jam.dev/c/3b4777a4-e1b0-4038-9b06-26c73669d7d1) e [Evidências](Evidencias/CT-RF50_Relatorio_Matriculas/README.md). |
+
+### Critérios de aceitação do RF50
+
+1. O PDF abre e apresenta cabeçalho, período e colunas do relatório.
+2. Os registros correspondem às matrículas do período e aos filtros informados.
+3. O valor e a quantidade de registros são coerentes com as linhas.
+4. Sem matrículas no período, o relatório apresenta a estrutura vazia explícita.
+5. Os filtros de Plano e de Tipo de Pagto restringem o conteúdo.
+
+### Pontos a confirmar e limites do RF50
+
+O conteúdo não foi conferido com a lista de matrículas do módulo; filtros de plano e de pagamento, mais de um registro e período sem matrículas não foram exercitados.
+
+---
+
 ## 🔗 Rastreabilidade
 
 | Requisito | Cenário / caso | Defeito | Resultado | Evidências |
@@ -1428,6 +1458,7 @@ A persistência após recarga, o pré-preenchimento da recorrência (o quadro de
 | RF47 | [CT-RF47](Cenario_Teste/CT-RF47_Cadastro_Despesa_Fixa.md) | Sem defeito confirmado | A validar — regra ou contexto pendente | [Evidências](Evidencias/CT-RF47_Cadastro_Despesa_Fixa/README.md) e [Jam](https://jam.dev/c/a4bac99d-e436-4792-831e-8c3a875272bb) |
 | RF48 | [CT-RF48](Cenario_Teste/CT-RF48_Exclusao_Despesa_Fixa.md) | Nenhum no fluxo avaliado | Aprovado conforme a gravação | [Evidências](Evidencias/CT-RF48_Exclusao_Despesa_Fixa/README.md) e [Jam](https://jam.dev/c/a4bac99d-e436-4792-831e-8c3a875272bb) |
 | RF49 | [CT-RF49](Cenario_Teste/CT-RF49_Edicao_Despesa_Fixa.md) | Nenhum no fluxo avaliado | Aprovado conforme a gravação | [Evidências](Evidencias/CT-RF49_Edicao_Despesa_Fixa/README.md) e [Jam](https://jam.dev/c/a4bac99d-e436-4792-831e-8c3a875272bb) |
+| RF50 | [CT-RF50](Cenario_Teste/CT-RF50_Relatorio_Matriculas.md) | Nenhum no fluxo avaliado | Aprovado conforme a gravação | [Evidências](Evidencias/CT-RF50_Relatorio_Matriculas/README.md) e [Jam](https://jam.dev/c/3b4777a4-e1b0-4038-9b06-26c73669d7d1) |
 
 ---
 
@@ -1581,6 +1612,12 @@ Com RF48, a análise passa a cobrir 46 requisitos documentados. O CT-RF48 acresc
 RF49 utiliza os painéis Info, Console, Network e Actions do Jam "Despesas Fixas", o corpo e a resposta de seleção e de edição e os quadros de 0:48 e 0:51. Foram registrados a requisição de edição com HTTP 200 e a nova recorrência na listagem. Não houve nova execução, acesso ao código ou ao banco, nem reteste.
 
 Com RF49, a análise passa a cobrir 47 requisitos documentados. O CT-RF49 acrescenta uma aprovação limitada ao exemplo gravado.
+
+### Base da análise do RF50 — revisão de 15/11/2026
+
+RF50 utiliza os painéis Info, Console e Network do Jam "Relatórios", o quadro de 0:38 e o conteúdo do PDF baixado. O PDF foi identificado pelo conteúdo. Não houve nova execução, acesso ao código ou ao banco, nem reteste.
+
+Com RF50, a análise passa a cobrir 48 requisitos documentados. O CT-RF50 acrescenta uma aprovação limitada ao exemplo gravado.
 
 ---
 
