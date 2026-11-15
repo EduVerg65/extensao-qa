@@ -1,0 +1,60 @@
+CT-RF38 — Cadastro de categoria com código automático e consulta pelo código
+Fonte: https://jam.dev/c/be1dbd05-217d-44c3-8a3d-240b7f6344e1
+Gravação: 15/11/2026, 18:41 BRT; duração: 37 s.
+Revisão documental: 15/11/2026.
+Página: https://sifit.centrion.com.br/categorias-exercicios-crossfit
+
+Cronologia (painel Console do Jam, atividade do usuário; seletores abreviados pelo Jam):
+0:00  Video started
+0:00  Clique no campo de filtro (Nome)
+0:01  Digitado: bar
+0:03  Digitado: quatro apagamentos
+0:06  Clique na área do filtro; clique no campo Código
+0:07  Digitado: 8
+0:10  Apagar; digitado: 9; apagar
+0:12  Clique no botão de alternância do filtro
+0:13  Clique no ícone de lua (tema Escuro) -> POST "tema" (HTTP 200)
+0:14  Clique em Claro -> POST "tema" (HTTP 200)
+0:15  Clique em botão do painel de notificações
+0:16-0:18  Cliques nas abas e no ícone de sino
+0:19-0:20  Cliques no ícone de usuário
+0:21  Clique em Nova Categoria (abre o formulário "Cadastrar Categoria")
+0:22  Clique em campo do formulário
+0:24  Digitado: teste
+0:24  Clique em campo do formulário
+0:25  Digitado: qwdas
+0:26  Clique em campo do formulário
+0:27  Clique em Salvar -> OPTIONS (204), POST criar (201)
+0:29  Clique no campo de filtro Código
+0:31  Digitado: 9
+0:31  Clique na barra superior
+0:32  Clique no campo de filtro
+0:33  Apagar
+0:37  Video stopped
+
+Quadros consultados (reprodução do Jam):
+0:00  Oito categorias (códigos 1 a 8); cartões Categorias 8, Exibidas 8, Atualizadas 8.
+0:02  Filtro Nome "bar": código 1 "Barbell novo"; Exibidas 1.
+0:08  Filtro Código "8": código 8 "cardio leve"; Exibidas 1.
+0:11  Listagem completa; filtros limpos.
+0:14  Tema Escuro aplicado (botão Escuro ativo).
+0:27  Formulário "Cadastrar Categoria": Nome "teste"; Código vazio; cursor sobre Salvar.
+0:28  Nove categorias; código 9 "teste", criado e atualizado em 15/11/2026; Categorias 9, Exibidas 9, Atualizadas 9.
+0:32  Filtro Código "9": código 9 "teste"; Exibidas 1; Categorias 9.
+0:36  Listagem completa com nove registros; filtros limpos.
+
+Rede do conjunto gravado (cinco entradas, domínio backendsifit.centrion.com.br):
+1-2  POST "tema"     HTTP 200   23 B   71 ms / 62 ms
+3    OPTIONS "criar" HTTP 204   -      70 ms
+4    POST "criar"    HTTP 201   66 B   68 ms
+5    GET "listar"    HTTP 200   910 B  53 ms
+Entrada 4: POST /api/categoria-exercicio-cross/criar. Corpo da requisição: {"nome": "teste"}.
+Resposta: {"verifica_erro": false, "mensagem": "Categoria criada com sucesso!"}.
+Cabeçalhos de resposta: content-type application/json; charset=utf-8; content-length 70;
+date Sun, 15 Nov 2026 21:41:24 GMT; x-hcdn-request-id 173c731fe43ed37d6022a2c0edfe1e13-asc-edge13; x-powered-by PHP/8.2.35.
+Autenticação omitida.
+
+Observações e verificações futuras:
+- O campo Código não retém o texto digitado e não consta no corpo da requisição; o código 9 é atribuído em sequência. Regra do produto não confirmada.
+- Os filtros por nome e por código não geram requisição; compatível com filtragem local, sem confirmação.
+- Não foram confirmados persistência após recarga, contrato dos cartões, nome vazio ou duplicado e código inexistente no filtro.
