@@ -2,11 +2,11 @@
 
 **Módulos:** Autenticação, Perfil, Clientes / Filtros, Financeiro, Página inicial / Personais, SifitBox / Modalidades e Turmas, Categorias Crossfit, Avaliações e Exercícios.
 
-**Atualização:** 15/11/2026 — RF01 a RF25, com inclusão de Exercícios (CT-RF22–CT-RF25 / BUG-011–BUG-012 em triagem).
+**Atualização:** 15/11/2026 — RF01 a RF28, com inclusão de Exercícios (CT-RF22–CT-RF28 / BUG-011–BUG-015 em triagem).
 
 **Padronização documental:** 13/11/2026, sem alteração dos resultados registrados.
 
-Esta análise documenta os 25 requisitos de QA para os cenários relacionados abaixo, com base nos relatos e nas evidências fornecidas. RF01–RF04 e suas análises históricas foram preservados; RF05–RF20 ampliam a cobertura em 14/11/2026; RF21 acrescenta Avaliações e RF22–RF25 acrescentam Exercícios em 15/11/2026. Os critérios abaixo constituem a referência de QA para esses fluxos; não representam validação de uma especificação formal pelo responsável pelo produto.
+Esta análise documenta os 28 requisitos de QA para os cenários relacionados abaixo, com base nos relatos e nas evidências fornecidas. RF01–RF04 e suas análises históricas foram preservados; RF05–RF20 ampliam a cobertura em 14/11/2026; RF21 acrescenta Avaliações e RF22–RF28 acrescentam Exercícios em 15/11/2026. Os critérios abaixo constituem a referência de QA para esses fluxos; não representam validação de uma especificação formal pelo responsável pelo produto.
 
 ## 📋 Visão geral dos requisitos
 
@@ -37,6 +37,9 @@ Esta análise documenta os 25 requisitos de QA para os cenários relacionados ab
 | [RF23](#rf23) | Exclusão de exercício | Média, proposta | [CT-RF23](Cenario_Teste/CT-RF23_Exclusao_Exercicio.md) |
 | [RF24](#rf24) | Edição de exercício aumenta o total e mantém duas entradas | Média, proposta | [CT-RF24](Cenario_Teste/CT-RF24_Edicao_Exercicio.md) |
 | [RF25](#rf25) | Envio de exercício com imagem | Média, proposta | [CT-RF25](Cenario_Teste/CT-RF25_Envio_Exercicio_Imagem.md) |
+| [RF26](#rf26) | Validar campos obrigatórios do exercício | Alta, proposta | [CT-RF26](Cenario_Teste/CT-RF26_Exercicio_Campos_Vazios.md) |
+| [RF27](#rf27) | Rejeitar vídeo no campo de imagem com feedback | Média, proposta | [CT-RF27](Cenario_Teste/CT-RF27_Video_Campo_Imagem.md) |
+| [RF28](#rf28) | Rejeitar imagem no campo de vídeo com feedback | Média, proposta | [CT-RF28](Cenario_Teste/CT-RF28_Imagem_Campo_Video.md) |
 
 ---
 
@@ -724,6 +727,90 @@ Não foram confirmados nome, formato, tamanho ou conteúdo integral do arquivo, 
 
 ---
 
+<a id="rf26"></a>
+
+## RF26 — Validar campos obrigatórios do exercício
+
+| Campo | Descrição |
+| --- | --- |
+| Requisito de QA | O sistema deve impedir o cadastro de exercício com campos obrigatórios vazios e indicar claramente quais dados precisam ser preenchidos. |
+| Ator | Usuário autenticado com permissão em Exercícios. |
+| Pré-condições | Formulário de novo exercício aberto, sem preenchimento dos campos obrigatórios. |
+| Gatilho | Clicar em Salvar com os campos obrigatórios vazios. |
+| Caso | [CT-RF26](Cenario_Teste/CT-RF26_Exercicio_Campos_Vazios.md) |
+| Situação observada | Reprovado conforme a gravação. O formulário permanece aberto sem mensagem, destaque ou orientação de validação visível. A evidência não demonstra criação de registro vazio. |
+| Defeito | [BUG-013](Relatorio-de-Bugs.md#bug-013), em triagem |
+| Evidências | [Jam](https://jam.dev/c/bc07ca5f-d3a9-45f6-84cb-12c0b562a211). |
+
+### Critérios de aceitação do RF26
+
+1. O envio com campos obrigatórios vazios é bloqueado.
+2. Cada campo inválido recebe indicação visual e textual compreensível.
+3. O foco é direcionado ao primeiro campo que exige correção.
+4. Nenhum registro vazio é criado, inclusive após recarregar a página.
+
+### Pontos a confirmar e limites do RF26
+
+A gravação não confirma resposta da API, persistência ou comportamento após recarregar a biblioteca. Reproduzir com total inicial conhecido, registrar as mensagens e confirmar que nenhum exercício vazio foi criado. A causa técnica não foi determinada.
+
+---
+
+<a id="rf27"></a>
+
+## RF27 — Rejeitar vídeo no campo de imagem com feedback
+
+| Campo | Descrição |
+| --- | --- |
+| Requisito de QA | O campo Imagem deve rejeitar arquivos de vídeo e informar os formatos e limites aceitos, sem descartar os demais dados do formulário. |
+| Ator | Usuário autenticado com permissão em Exercícios. |
+| Pré-condições | Formulário aberto e arquivo de vídeo de teste disponível, com extensão, MIME e tamanho conhecidos. |
+| Gatilho | Selecionar o vídeo no campo Imagem. |
+| Caso | [CT-RF27](Cenario_Teste/CT-RF27_Video_Campo_Imagem.md) |
+| Situação observada | Reprovado conforme a gravação. O arquivo não aparece anexado, porém não há mensagem visível explicando a rejeição ou os formatos permitidos. |
+| Defeito | [BUG-014](Relatorio-de-Bugs.md#bug-014), em triagem |
+| Evidências | [Jam](https://jam.dev/c/00740108-9a7d-4151-8723-171c89635567). |
+
+### Critérios de aceitação do RF27
+
+1. Arquivos de vídeo não são aceitos como imagem.
+2. A mensagem identifica o tipo incompatível e informa formatos e tamanho máximo aceitos.
+3. O formulário conserva os demais dados e permanece utilizável.
+4. Nenhum upload ou vínculo indevido é persistido.
+
+### Pontos a confirmar e limites do RF27
+
+Nome, extensão, MIME, tamanho do arquivo e resposta da API não ficaram confirmados. Repetir com arquivo controlado, observar cliente e rede e verificar ausência de vínculo após salvar e reabrir. A causa técnica não foi determinada.
+
+---
+
+<a id="rf28"></a>
+
+## RF28 — Rejeitar imagem no campo de vídeo com feedback
+
+| Campo | Descrição |
+| --- | --- |
+| Requisito de QA | O campo Vídeo deve rejeitar arquivos de imagem e informar os formatos e limites aceitos, sem descartar os demais dados do formulário. |
+| Ator | Usuário autenticado com permissão em Exercícios. |
+| Pré-condições | Formulário aberto e arquivo de imagem de teste disponível, com extensão, MIME e tamanho conhecidos. |
+| Gatilho | Selecionar a imagem no campo Vídeo. |
+| Caso | [CT-RF28](Cenario_Teste/CT-RF28_Imagem_Campo_Video.md) |
+| Situação observada | Reprovado conforme a gravação. O arquivo não aparece anexado, porém não há mensagem visível explicando a rejeição ou os formatos permitidos. |
+| Defeito | [BUG-015](Relatorio-de-Bugs.md#bug-015), em triagem |
+| Evidências | [Jam](https://jam.dev/c/be9437a4-4fe9-4756-a2af-6777d3f43e25). |
+
+### Critérios de aceitação do RF28
+
+1. Arquivos de imagem não são aceitos como vídeo.
+2. A mensagem identifica o tipo incompatível e informa formatos e tamanho máximo aceitos.
+3. O formulário conserva os demais dados e permanece utilizável.
+4. Nenhum upload ou vínculo indevido é persistido.
+
+### Pontos a confirmar e limites do RF28
+
+Nome, extensão, MIME, tamanho do arquivo e resposta da API não ficaram confirmados. Repetir com arquivo controlado, observar cliente e rede e verificar ausência de vínculo após salvar e reabrir. A causa técnica não foi determinada.
+
+---
+
 ## 🔗 Rastreabilidade
 
 | Requisito | Cenário / caso | Defeito | Resultado | Evidências |
@@ -753,6 +840,9 @@ Não foram confirmados nome, formato, tamanho ou conteúdo integral do arquivo, 
 | RF23 | [CT-RF23](Cenario_Teste/CT-RF23_Exclusao_Exercicio.md) | Sem defeito confirmado | Aprovado no trecho consultado. | [Jam](https://jam.dev/c/32adfca3-489f-4a4b-a08d-933c1d1a3c32) e [Evidências](Evidencias/CT-RF23_Exclusao_Exercicio/README.md) |
 | RF24 | [CT-RF24](Cenario_Teste/CT-RF24_Edicao_Exercicio.md) | [BUG-012](Relatorio-de-Bugs.md#bug-012), em triagem | Reprovado no trecho consultado; confirmar operação e identidade dos registros na reprodução. | [Jam](https://jam.dev/c/073f70d6-4052-4e0f-a4bb-e9f37305d618) e [Evidências](Evidencias/CT-RF24_Edicao_Exercicio/README.md) |
 | RF25 | [CT-RF25](Cenario_Teste/CT-RF25_Envio_Exercicio_Imagem.md) | Sem defeito confirmado | A validar — criação visível; persistência e associação da imagem não confirmadas. | [Jam](https://jam.dev/c/25c37a9b-e9bd-4e0c-adf1-4da528ae1d58) e [Evidências](Evidencias/CT-RF25_Envio_Exercicio_Imagem/README.md) |
+| RF26 | [CT-RF26](Cenario_Teste/CT-RF26_Exercicio_Campos_Vazios.md) | [BUG-013](Relatorio-de-Bugs.md#bug-013), em triagem | Reprovado — sem feedback de validação visível. | [Jam](https://jam.dev/c/bc07ca5f-d3a9-45f6-84cb-12c0b562a211) |
+| RF27 | [CT-RF27](Cenario_Teste/CT-RF27_Video_Campo_Imagem.md) | [BUG-014](Relatorio-de-Bugs.md#bug-014), em triagem | Reprovado — arquivo rejeitado sem feedback visível. | [Jam](https://jam.dev/c/00740108-9a7d-4151-8723-171c89635567) |
+| RF28 | [CT-RF28](Cenario_Teste/CT-RF28_Imagem_Campo_Video.md) | [BUG-015](Relatorio-de-Bugs.md#bug-015), em triagem | Reprovado — arquivo rejeitado sem feedback visível. | [Jam](https://jam.dev/c/be9437a4-4fe9-4756-a2af-6777d3f43e25) |
 
 ---
 
@@ -799,9 +889,9 @@ Os novos resultados são cinco aprovações, sete reprovações de manifestaçõ
 O relato original foi copiado integralmente. A consulta ao Jam confirmou os detalhes, a cronologia, o evento 16 (HTTP 500, 1363 ms, corpo “Erro interno inesperado.”) e os quadros do formulário em 00:12,479 e do alerta em 00:14,748. Foram preservados os dados de negócio sem autenticação. Não houve nova execução, acesso ao código/banco ou reteste. As referências históricas a evidências ausentes nesta cópia estão identificadas no índice de evidências.
 
 
-### Base da análise do RF22 ao RF25 — revisão de 15/11/2026
+### Base da análise do RF22 ao RF28 — revisão de 15/11/2026
 
-RF22 utiliza relato, imagem inicial e Info do Jam. RF23–RF25 utilizam quadros, Info e listagem Network. RF23 demonstra remoção e redução de 11 para 10; RF24 apresenta total de 10 para 11 no teste declarado como edição, exigindo confirmar operação e IDs; RF25 demonstra criação com imagem selecionada, sem conferir a imagem salva. BUG-011/012 estão em triagem. Não houve revisão integral quadro a quadro, nova execução, reteste ou diagnóstico de causa raiz.
+RF22 utiliza relato, imagem inicial e Info do Jam. RF23–RF25 utilizam quadros, Info e listagem Network. RF26–RF28 utilizam quadros e Info dos Jams, sem confirmação de arquivo, MIME, persistência ou resposta detalhada da API. RF23 demonstra remoção e redução de 11 para 10; RF24 apresenta total de 10 para 11 no teste declarado como edição, exigindo confirmar operação e IDs; RF25 demonstra criação com imagem selecionada, sem conferir a imagem salva; RF26–RF28 demonstram ausência de feedback visual nos testes negativos. BUG-011–BUG-015 estão em triagem. Não houve revisão integral quadro a quadro, nova execução, reteste ou diagnóstico de causa raiz.
 
 ---
 

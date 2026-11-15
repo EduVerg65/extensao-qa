@@ -1,12 +1,12 @@
 # 🐞 Relatório de Bugs — SIFIT
 
-**Escopo:** defeitos dos cenários CT-RF01–CT-RF25: recuperação, Perfil, Clientes, financeiro, período, tema, modalidades, categorias, avaliações e exercícios. Casos aprovados e pontos a validar permanecem no relatório dos testes.
+**Escopo:** defeitos dos cenários CT-RF01–CT-RF28: recuperação, Perfil, Clientes, financeiro, período, tema, modalidades, categorias, avaliações e exercícios. Casos aprovados e pontos a validar permanecem no relatório dos testes.
 
 **Ambientes:** CT-RF01 em https://sifitalfa.centrion.com.br/login; CT-RF02_ERRO em https://sifit.centrion.com.br/profile. CT-RF03: URL do frontend não confirmada; backend informado em `https://backendsifit.centrion.com.br/api/clientesPorNome/1`.
 
 **Datas das gravações do Jam:** CT-RF01 em 23/10/2026; CT-RF02_ERRO em 22/10/2026 às 21:45 BRT; CT-RF03 não confirmada.
 
-**Atualização documental:** 15/11/2026 — 12 defeitos registrados: 10 abertos (BUG-001 a BUG-010) e 2 em triagem (BUG-011 e BUG-012), relativos a código e edição de exercício. As análises anteriores foram preservadas.
+**Atualização documental:** 15/11/2026 — 15 defeitos registrados: 10 abertos (BUG-001 a BUG-010) e 5 em triagem (BUG-011 a BUG-015), incluindo código, edição, campos obrigatórios e validação de mídia em Exercícios. As análises anteriores foram preservadas.
 
 **Padronização documental:** 13/11/2026, sem alteração do status dos defeitos.
 
@@ -32,8 +32,11 @@
 | [BUG-010](#bug-010) | Cadastro de avaliação retorna HTTP 500 | Alta / Alta, propostas | Aberto | [CT-RF21](Cenario_Teste/CT-RF21_Cadastro_Avaliacao.md) |
 | [BUG-011](#bug-011) | Campo Código do exercício não aceita digitação conforme o relato | Média / Média, propostas | Em triagem — confirmação pendente | [CT-RF22](Cenario_Teste/CT-RF22_Digitacao_Codigo_Exercicio.md) |
 | [BUG-012](#bug-012) | Edição de exercício aumenta o total e mantém duas entradas | Média / Média, propostas | Em triagem — confirmação pendente | [CT-RF24](Cenario_Teste/CT-RF24_Edicao_Exercicio.md) |
+| [BUG-013](#bug-013) | Campos obrigatórios vazios sem feedback de validação | Média / Alta, propostas | Em triagem — persistência não confirmada | [CT-RF26](Cenario_Teste/CT-RF26_Exercicio_Campos_Vazios.md) |
+| [BUG-014](#bug-014) | Vídeo rejeitado no campo Imagem sem feedback | Baixa / Média, propostas | Em triagem — MIME não confirmado | [CT-RF27](Cenario_Teste/CT-RF27_Video_Campo_Imagem.md) |
+| [BUG-015](#bug-015) | Imagem rejeitada no campo Vídeo sem feedback | Baixa / Média, propostas | Em triagem — MIME não confirmado | [CT-RF28](Cenario_Teste/CT-RF28_Imagem_Campo_Video.md) |
 
-BUG-001–BUG-010 aguardam correção e reteste. BUG-011/012 aguardam confirmação das premissas e triagem antes do encaminhamento de correção. As causas técnicas permanecem não confirmadas; o BUG-003 se apoia no relato e nas capturas fornecidos, com os limites registrados no caso.
+BUG-001–BUG-010 aguardam correção e reteste. BUG-011–BUG-015 aguardam confirmação das premissas e triagem antes do encaminhamento de correção. As causas técnicas permanecem não confirmadas; o BUG-003 se apoia no relato e nas capturas fornecidos, com os limites registrados no caso.
 
 ---
 
@@ -592,6 +595,138 @@ O acionamento inicial da edição e os identificadores das duas entradas não fo
 
 ---
 
+<a id="bug-013"></a>
+
+## BUG-013 — Campos obrigatórios vazios sem feedback de validação
+
+| Campo | Descrição |
+| --- | --- |
+| Status | Em triagem — bloqueio aparente; persistência e causa técnica não confirmadas. |
+| Severidade / prioridade | Média / Alta, propostas para triagem. |
+| Módulo | Exercícios / Validação do cadastro |
+| Requisito / caso | [RF26](Analise%20de%20requisitos.md#rf26) / [CT-RF26](Cenario_Teste/CT-RF26_Exercicio_Campos_Vazios.md) |
+| Data da evidência / revisão | 15/11/2026, 16:11 BRT / 15/11/2026; sem nova execução. |
+| Página / ambiente | https://sifit.centrion.com.br/exercicios; Edge 157.0.8103.80 / Windows 11 (x86), janela 1912 × 960. |
+| Frequência conhecida | Um registro do Jam; recorrência não determinada. |
+
+### Pré-condições
+
+- Sessão autenticada com permissão para cadastrar exercícios.
+- Formulário de novo exercício aberto.
+- Campos obrigatórios mantidos vazios.
+
+### Passos para reproduzir
+
+1. Acessar Exercícios e abrir o formulário de novo exercício.
+2. Manter código, nome e demais campos obrigatórios vazios.
+3. Clicar em Salvar.
+4. Observar o formulário, as mensagens e a biblioteca.
+
+### Resultado esperado
+
+O envio deve ser bloqueado, cada campo obrigatório deve receber indicação compreensível e nenhum registro vazio deve ser criado.
+
+### Resultado obtido
+
+O formulário permanece aberto e não é observada mensagem, indicação por campo ou orientação visível. A gravação não demonstra se houve requisição ou persistência.
+
+**Impacto:** o usuário não sabe quais dados corrigir e pode repetir a tentativa sem compreender por que o cadastro não foi concluído.
+
+### Evidências, limites e encaminhamento
+
+- [Jam](https://jam.dev/c/bc07ca5f-d3a9-45f6-84cb-12c0b562a211).
+- Gravação aproximada de 4 segundos; resposta da API, persistência e consulta posterior à biblioteca não confirmadas.
+
+Investigar a validação do cliente e do servidor, implementar feedback junto aos campos e manter o registro em triagem até reprodução controlada.
+
+**Reteste:** registrar o total inicial, executar combinações de campos vazios, conferir foco e mensagens, observar a rede e confirmar após recarga que nenhum registro vazio foi criado.
+
+---
+
+<a id="bug-014"></a>
+
+## BUG-014 — Vídeo rejeitado no campo Imagem sem feedback
+
+| Campo | Descrição |
+| --- | --- |
+| Status | Em triagem — rejeição visual aparente; MIME, upload e causa técnica não confirmados. |
+| Severidade / prioridade | Baixa / Média, propostas para triagem. |
+| Módulo | Exercícios / Validação de mídia |
+| Requisito / caso | [RF27](Analise%20de%20requisitos.md#rf27) / [CT-RF27](Cenario_Teste/CT-RF27_Video_Campo_Imagem.md) |
+| Data da evidência / revisão | 15/11/2026, 16:08 BRT / 15/11/2026; sem nova execução. |
+| Página / ambiente | https://sifit.centrion.com.br/exercicios; Edge 157.0.8103.80 / Windows 11 (x86), janela 1912 × 960. |
+| Frequência conhecida | Um registro do Jam; recorrência não determinada. |
+
+### Passos para reproduzir
+
+1. Abrir o formulário de exercício.
+2. Acionar a seleção de arquivo do campo Imagem.
+3. Selecionar um arquivo de vídeo.
+4. Observar o campo, as mensagens e a rede.
+
+### Resultado esperado
+
+O vídeo deve ser rejeitado e o campo deve informar os formatos e limites aceitos para imagens, preservando os demais dados.
+
+### Resultado obtido
+
+O arquivo não aparece anexado, mas não é observada mensagem explicando a rejeição ou os formatos permitidos.
+
+**Impacto:** o usuário não recebe orientação para escolher um arquivo compatível e pode interpretar a ausência de anexo como falha do sistema.
+
+### Evidências, limites e encaminhamento
+
+- [Jam](https://jam.dev/c/00740108-9a7d-4151-8723-171c89635567).
+- Nome, extensão, MIME, tamanho, upload e resposta da API não foram confirmados.
+
+Exibir feedback no campo e validar tipo real e extensão tanto no cliente quanto no servidor, sem atribuir causa antes da inspeção.
+
+**Reteste:** usar vídeos controlados com extensões e MIME conhecidos, capturar rede, confirmar ausência de upload/vínculo e verificar preservação dos demais campos.
+
+---
+
+<a id="bug-015"></a>
+
+## BUG-015 — Imagem rejeitada no campo Vídeo sem feedback
+
+| Campo | Descrição |
+| --- | --- |
+| Status | Em triagem — rejeição visual aparente; MIME, upload e causa técnica não confirmados. |
+| Severidade / prioridade | Baixa / Média, propostas para triagem. |
+| Módulo | Exercícios / Validação de mídia |
+| Requisito / caso | [RF28](Analise%20de%20requisitos.md#rf28) / [CT-RF28](Cenario_Teste/CT-RF28_Imagem_Campo_Video.md) |
+| Data da evidência / revisão | 15/11/2026, 16:07 BRT / 15/11/2026; sem nova execução. |
+| Página / ambiente | https://sifit.centrion.com.br/exercicios; Edge 157.0.8103.80 / Windows 11 (x86), janela 1912 × 960. |
+| Frequência conhecida | Um registro do Jam; recorrência não determinada. |
+
+### Passos para reproduzir
+
+1. Abrir o formulário de exercício.
+2. Acionar a seleção de arquivo do campo Vídeo.
+3. Selecionar um arquivo de imagem.
+4. Observar o campo, as mensagens e a rede.
+
+### Resultado esperado
+
+A imagem deve ser rejeitada e o campo deve informar os formatos e limites aceitos para vídeos, preservando os demais dados.
+
+### Resultado obtido
+
+O arquivo não aparece anexado, mas não é observada mensagem explicando a rejeição ou os formatos permitidos.
+
+**Impacto:** o usuário não recebe orientação para escolher um arquivo compatível e pode interpretar a ausência de anexo como falha do sistema.
+
+### Evidências, limites e encaminhamento
+
+- [Jam](https://jam.dev/c/be9437a4-4fe9-4756-a2af-6777d3f43e25).
+- Nome, extensão, MIME, tamanho, upload e resposta da API não foram confirmados.
+
+Exibir feedback no campo e validar tipo real e extensão tanto no cliente quanto no servidor, sem atribuir causa antes da inspeção.
+
+**Reteste:** usar imagens controladas com extensões e MIME conhecidos, capturar rede, confirmar ausência de upload/vínculo e verificar preservação dos demais campos.
+
+---
+
 ## Pontos a validar — sem defeito confirmado
 
 | Caso | Questão pendente | Evidência |
@@ -602,7 +737,7 @@ O acionamento inicial da edição e os identificadores das duas entradas não fo
 | [CT-RF16](Cenario_Teste/CT-RF16_Exclusao_Modalidade.md) | Confirmar a exclusão lógica e a nomenclatura da ação; registrar defeito apenas se houver divergência com a regra definida. | [Jam](https://jam.dev/c/0f55f76a-cd31-4cee-93da-23c13b1ba637) e [Evidências](Evidencias/CT-RF16_Exclusao_Modalidade/README.md) |
 | [CT-RF25](Cenario_Teste/CT-RF25_Envio_Exercicio_Imagem.md) | Conferir a imagem após reabrir e recarregar o exercício; criação visível não comprova associação persistida. | [Jam](https://jam.dev/c/25c37a9b-e9bd-4e0c-adf1-4da528ae1d58) e [Evidências](Evidencias/CT-RF25_Envio_Exercicio_Imagem/README.md) |
 
-Esses cinco pontos não entram na contagem de 12 defeitos registrados. BUG-011/012 são contabilizados separadamente como registros em triagem, sem premissas confirmadas. O relato de numeração de personais não demonstrou diferença entre total e linhas; a inativação de modalidades pode ser exclusão lógica; encargos e métricas exigem regras explícitas.
+Esses cinco pontos não entram na contagem de 15 defeitos registrados. BUG-011–BUG-015 são contabilizados separadamente como registros em triagem, com premissas, persistência ou validações técnicas ainda pendentes. O relato de numeração de personais não demonstrou diferença entre total e linhas; a inativação de modalidades pode ser exclusão lógica; encargos e métricas exigem regras explícitas.
 
 
 **Exclusão de exercício:** CT-RF23 está aprovado no trecho consultado, com remoção e total 11 para 10; não gerou defeito adicional. Persistência e efeitos sobre vínculos permanecem como verificações complementares.
