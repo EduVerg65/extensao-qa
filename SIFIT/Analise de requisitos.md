@@ -2,11 +2,11 @@
 
 **Módulos:** Autenticação, Perfil, Clientes / Filtros, Financeiro, Página inicial / Personais, SifitBox / Modalidades e Turmas, Categorias Crossfit, Avaliações, Exercícios, Grupos Musculares, Dashboard e Objetivos de Treino.
 
-**Atualização:** 15/11/2026 — RF01 a RF35 e RF38 a RF51 consolidados, com inclusão de Categorias Crossfit (CT-RF38), SifitBox – Turmas (CT-RF39 a CT-RF41) e, a partir de CT-RF42, Pagar.me, Configurações, Despesas Fixas e Relatórios; BUG-011–BUG-022 em triagem.
+**Atualização:** 15/11/2026 — RF01 a RF35 e RF38 a RF52 consolidados, com inclusão de Categorias Crossfit (CT-RF38), SifitBox – Turmas (CT-RF39 a CT-RF41) e, a partir de CT-RF42, Pagar.me, Configurações, Despesas Fixas e Relatórios; BUG-011–BUG-022 em triagem.
 
 **Padronização documental:** 13/11/2026, sem alteração dos resultados registrados.
 
-Esta análise documenta 49 requisitos de QA para os cenários relacionados abaixo, com base nos relatos e nas evidências fornecidas. RF01–RF04 e suas análises históricas foram preservados; RF05–RF20 ampliam a cobertura em 14/11/2026; RF21 acrescenta Avaliações; RF22–RF28 acrescentam Exercícios; RF29–RF33 acrescentam Grupos Musculares; RF34 acrescenta o carregamento do dashboard RF35 acrescenta o cadastro de objetivos de treino e RF38 acrescenta o cadastro de categorias com código automático em 15/11/2026. RF39 acrescenta o cadastro de modalidade em SifitBox – Turmas. RF40 acrescenta a exclusão de turmas e modalidades. RF41 acrescenta o cadastro de turma. RF42 a RF56 acrescentam Pagar.me, Configurações, Despesas Fixas e Relatórios em 15/11/2026. Os critérios abaixo constituem a referência de QA para esses fluxos; não representam validação de uma especificação formal pelo responsável pelo produto.
+Esta análise documenta 50 requisitos de QA para os cenários relacionados abaixo, com base nos relatos e nas evidências fornecidas. RF01–RF04 e suas análises históricas foram preservados; RF05–RF20 ampliam a cobertura em 14/11/2026; RF21 acrescenta Avaliações; RF22–RF28 acrescentam Exercícios; RF29–RF33 acrescentam Grupos Musculares; RF34 acrescenta o carregamento do dashboard RF35 acrescenta o cadastro de objetivos de treino e RF38 acrescenta o cadastro de categorias com código automático em 15/11/2026. RF39 acrescenta o cadastro de modalidade em SifitBox – Turmas. RF40 acrescenta a exclusão de turmas e modalidades. RF41 acrescenta o cadastro de turma. RF42 a RF56 acrescentam Pagar.me, Configurações, Despesas Fixas e Relatórios em 15/11/2026. Os critérios abaixo constituem a referência de QA para esses fluxos; não representam validação de uma especificação formal pelo responsável pelo produto.
 
 ## 📋 Visão geral dos requisitos
 
@@ -61,6 +61,7 @@ Esta análise documenta 49 requisitos de QA para os cenários relacionados abaix
 | [RF49](#rf49) | Editar despesa fixa preservando o registro | Média, proposta | [CT-RF49](Cenario_Teste/CT-RF49_Edicao_Despesa_Fixa.md) |
 | [RF50](#rf50) | Gerar o relatório de Matrículas em PDF | Média, proposta | [CT-RF50](Cenario_Teste/CT-RF50_Relatorio_Matriculas.md) |
 | [RF51](#rf51) | Apresentar o valor a receber no relatório de Contas a Receber | Alta, proposta | [CT-RF51](Cenario_Teste/CT-RF51_Relatorio_Contas_Receber.md) |
+| [RF52](#rf52) | Gerar o relatório de Contas a Pagar (Pagas) | Média, proposta | [CT-RF52](Cenario_Teste/CT-RF52_Relatorio_Contas_Pagar_Pagas.md) |
 
 ---
 
@@ -1437,6 +1438,35 @@ Os valores não foram comparados com o módulo Contas a Receber; a opção Detal
 
 ---
 
+<a id="rf52"></a>
+
+## RF52 — Gerar o relatório de Contas a Pagar (Pagas)
+
+| Campo | Descrição |
+| --- | --- |
+| Requisito de QA | O relatório de Contas a Pagar (Pagas) deve apresentar as contas pagas do período, com valores bruto e líquido e totalizadores coerentes, ou a estrutura vazia explícita quando não houver pagamentos. |
+| Ator | Usuário autenticado com permissão para gerar relatórios. |
+| Pré-condições | Contas a pagar pagas do período conhecidas. |
+| Gatilho | Selecionar "Contas a Pagar", informar o período e acionar Gerar Relatório. |
+| Caso | [CT-RF52](Cenario_Teste/CT-RF52_Relatorio_Contas_Pagar_Pagas.md) |
+| Situação observada | A validar — regra ou contexto pendente. O PDF abre com a estrutura do relatório, sem linhas e com totalizadores R$ 0,00, coerente com um período sem contas pagas, a confirmar. |
+| Defeito | Sem defeito confirmado |
+| Evidências | [Jam](https://jam.dev/c/3b4777a4-e1b0-4038-9b06-26c73669d7d1) e [Evidências](Evidencias/CT-RF52_Relatorio_Contas_Pagar_Pagas/README.md). |
+
+### Critérios de aceitação do RF52
+
+1. O PDF abre e apresenta cabeçalho, período e colunas do relatório.
+2. As contas pagas do período aparecem com valores bruto e líquido coerentes com o módulo.
+3. Sem contas pagas, o relatório apresenta a estrutura vazia com totalizadores zerados ou mensagem explícita.
+4. Os totalizadores correspondem às linhas apresentadas.
+5. O título do relatório identifica o filtro aplicado (Pagas).
+
+### Pontos a confirmar e limites do RF52
+
+As contas a pagar do período no módulo não foram conferidas; o comportamento com pagamentos e a regra do escopo do filtro "Pagas" não foram exercitados.
+
+---
+
 ## 🔗 Rastreabilidade
 
 | Requisito | Cenário / caso | Defeito | Resultado | Evidências |
@@ -1490,6 +1520,7 @@ Os valores não foram comparados com o módulo Contas a Receber; a opção Detal
 | RF49 | [CT-RF49](Cenario_Teste/CT-RF49_Edicao_Despesa_Fixa.md) | Nenhum no fluxo avaliado | Aprovado conforme a gravação | [Evidências](Evidencias/CT-RF49_Edicao_Despesa_Fixa/README.md) e [Jam](https://jam.dev/c/a4bac99d-e436-4792-831e-8c3a875272bb) |
 | RF50 | [CT-RF50](Cenario_Teste/CT-RF50_Relatorio_Matriculas.md) | Nenhum no fluxo avaliado | Aprovado conforme a gravação | [Evidências](Evidencias/CT-RF50_Relatorio_Matriculas/README.md) e [Jam](https://jam.dev/c/3b4777a4-e1b0-4038-9b06-26c73669d7d1) |
 | RF51 | [CT-RF51](Cenario_Teste/CT-RF51_Relatorio_Contas_Receber.md) | [BUG-022](Relatorio-de-Bugs.md#bug-022), em triagem | Reprovado nas evidências; reteste pendente. | [Evidências](Evidencias/CT-RF51_Relatorio_Contas_Receber/README.md) e [Jam](https://jam.dev/c/3b4777a4-e1b0-4038-9b06-26c73669d7d1) |
+| RF52 | [CT-RF52](Cenario_Teste/CT-RF52_Relatorio_Contas_Pagar_Pagas.md) | Sem defeito confirmado | A validar — regra ou contexto pendente | [Evidências](Evidencias/CT-RF52_Relatorio_Contas_Pagar_Pagas/README.md) e [Jam](https://jam.dev/c/3b4777a4-e1b0-4038-9b06-26c73669d7d1) |
 
 ---
 
@@ -1655,6 +1686,12 @@ Com RF50, a análise passa a cobrir 48 requisitos documentados. O CT-RF50 acresc
 RF51 utiliza os painéis Info, Console e Network do Jam "Relatórios", o quadro de 0:43 e o conteúdo do PDF baixado, com três contas e o valor a receber ausente. Não houve nova execução, acesso ao código ou ao banco, nem reteste. BUG-022 está em triagem.
 
 Com RF51, a análise passa a cobrir 49 requisitos documentados. O CT-RF51 acrescenta uma reprovação, vinculada ao BUG-022, em triagem.
+
+### Base da análise do RF52 — revisão de 15/11/2026
+
+RF52 utiliza os painéis Info, Console e Network do Jam "Relatórios", o quadro de 0:48 e o conteúdo do PDF baixado, sem linhas e com totalizadores zerados. Não houve nova execução, acesso ao código ou ao banco, nem reteste.
+
+Com RF52, a análise passa a cobrir 50 requisitos documentados. O CT-RF52 acrescenta um ponto a validar, sem defeito confirmado.
 
 ---
 
