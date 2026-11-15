@@ -1,10 +1,10 @@
 # 📊 Relatório de Testes — SIFIT
 
-**Escopo:** 35 casos documentados entre CT-RF01 e CT-RF35 — autenticação, recuperação, perfil, Clientes, financeiro, página inicial e dashboard, modalidades / tema de SifitBox, Categorias Crossfit, Avaliações, Exercícios, Grupos Musculares e Objetivos de Treino.
+**Escopo:** 36 casos documentados (CT-RF01–CT-RF35 e CT-RF38) — autenticação, recuperação, perfil, Clientes, financeiro, página inicial e dashboard, modalidades / tema de SifitBox, Categorias Crossfit, Avaliações, Exercícios, Grupos Musculares, Objetivos de Treino e cadastro de categorias com código automático.
 
-**Datas das gravações do Jam:** CT-RF01 em 23/10/2026; CT-RF02_ERRO em 22/10/2026 às 21:45 BRT; CT-RF03 não confirmada; CT-RF04_loginComSucesso em 13/11/2026; CT-RF05–CT-RF20 em 14/11/2026; CT-RF21 em 15/11/2026 às 15:07:51,265 BRT; CT-RF22–28 em 15/11/2026 às 15:25, 15:40, 15:38, 15:35, 16:11, 16:08 e 16:07 BRT; CT-RF29–33 em 15/11/2026 às 15h56 BRT (uma única gravação); CT-RF34 em 15/11/2026 às 17:23 BRT; CT-RF35 em 15/11/2026 às 18:13 BRT.
+**Datas das gravações do Jam:** CT-RF01 em 23/10/2026; CT-RF02_ERRO em 22/10/2026 às 21:45 BRT; CT-RF03 não confirmada; CT-RF04_loginComSucesso em 13/11/2026; CT-RF05–CT-RF20 em 14/11/2026; CT-RF21 em 15/11/2026 às 15:07:51,265 BRT; CT-RF22–28 em 15/11/2026 às 15:25, 15:40, 15:38, 15:35, 16:11, 16:08 e 16:07 BRT; CT-RF29–33 em 15/11/2026 às 15h56 BRT (uma única gravação); CT-RF34 em 15/11/2026 às 17:23 BRT; CT-RF35 em 15/11/2026 às 18:13 BRT; CT-RF38 em 15/11/2026 às 18:41 BRT.
 
-**Data da revisão documental:** 15/11/2026, com integração de CT-RF22–CT-RF35; BUG-011–BUG-019 em triagem. Resultados anteriores preservados.
+**Data da revisão documental:** 15/11/2026, com integração de CT-RF22–CT-RF35 e CT-RF38; BUG-011–BUG-019 em triagem. Resultados anteriores preservados.
 
 **Origem do resultado:** análise de evidências fornecidas; sem nova execução no sistema nesta revisão.
 
@@ -26,11 +26,11 @@ Os 16 cenários incluídos em 14/11/2026 acrescentaram **5 aprovações**, **7 r
 
 O **CT-RF29** acrescenta uma reprovação e o BUG-016: a exclusão de grupo muscular retorna HTTP 500 em duas tentativas, com o corpo `{"verifica_erro": true, "mensagem": "Erro interno inesperado."}`; a interface apresenta o diálogo "Erro ao deletar Grupo" e o registro permanece na listagem. A causa não foi determinada.
 
-CT-RF30 acrescenta uma reprovação e o BUG-017 (imagens dos grupos musculares com HTTP 422); CT-RF31–33 acrescentam três aprovações limitadas aos exemplos gravados. O **CT-RF35** acrescenta uma reprovação e o BUG-019: o cadastro de objetivo de treino retorna HTTP 500 em duas ocorrências, com o diálogo "Erro ao salvar objetivo" e a listagem sem registros; o corpo da requisição e da resposta não foi capturado e a causa não foi determinada. As contagens consolidadas são:
+CT-RF30 acrescenta uma reprovação e o BUG-017 (imagens dos grupos musculares com HTTP 422); CT-RF31–33 acrescentam três aprovações limitadas aos exemplos gravados. O **CT-RF35** acrescenta uma reprovação e o BUG-019: o cadastro de objetivo de treino retorna HTTP 500 em duas ocorrências, com o diálogo "Erro ao salvar objetivo" e a listagem sem registros; o corpo da requisição e da resposta não foi capturado e a causa não foi determinada. O **CT-RF38** acrescenta uma aprovação limitada ao exemplo gravado: o cadastro de categoria cria o registro apenas com o nome (HTTP 201), o código 9 é atribuído pelo sistema e o filtro por código localiza o novo registro; sem defeito. As contagens consolidadas são:
 
 | Casos documentados | Aprovados | Reprovados | A validar | Defeitos registrados | Casos com reteste corretivo pendente |
 | :---: | :---: | :---: | :---: | :---: | :---: |
-| 35 | 10 | 20 | 5 | 19 (10 abertos + 9 em triagem) | 20 |
+| 36 | 11 | 20 | 5 | 19 (10 abertos + 9 em triagem) | 20 |
 
 Os 20 retestes incluem CT-RF22/24/26/27/28/29/30/35, sujeitos à confirmação funcional e técnica. As contagens representam os casos documentados com base nas fontes indicadas, sem novas execuções nesta revisão. As nove variações planejadas para o reteste do CT-RF03 não foram executadas e não são contabilizadas como testes adicionais realizados.
 
@@ -75,6 +75,7 @@ Os 20 retestes incluem CT-RF22/24/26/27/28/29/30/35, sujeitos à confirmação f
 | [CT-RF33](Cenario_Teste/CT-RF33_Filtros_GruposMusculares.md) | [RF33](Analise%20de%20requisitos.md#rf33) | Filtrar por código e tipo de membro, com rodapé coerente e resultado vazio informado. | Os filtros exercitados retornam conjuntos coerentes; o tipo sem registros apresenta "Nenhum grupo muscular encontrado". A lógica combinada não foi demonstrada. | Aprovado conforme a gravação | Nenhum no fluxo avaliado |
 | [CT-RF34](Cenario_Teste/CT-RF34_Erro_Servidor_Excesso_Requisicoes.md) | [RF34](Analise%20de%20requisitos.md#rf34) | Carregar os componentes do dashboard sem HTTP 500 e tratar falhas parciais de forma específica. | O dashboard apresenta diálogo de erro; entre 23 eventos visíveis, diversas chamadas GET/POST retornam HTTP 500. Endpoints e causa não foram confirmados. | Reprovado nas evidências. | [BUG-018](Relatorio-de-Bugs.md#bug-018), em triagem |
 | [CT-RF35](Cenario_Teste/CT-RF35_Cadastro_Objetivo_Treino.md) | [RF35](Analise%20de%20requisitos.md#rf35) | Cadastrar o objetivo e listá-lo, ou informar validação específica, sem HTTP 500. | `POST /api/objetivo-treino/salvar/1` retorna HTTP 500 (duas ocorrências); diálogo "Erro ao salvar objetivo"; a listagem permanece sem registros. | Reprovado nas evidências | [BUG-019](Relatorio-de-Bugs.md#bug-019), em triagem |
+| [CT-RF38](Cenario_Teste/CT-RF38_Cadastro_Categoria_Codigo_Automatico.md) | [RF38](Analise%20de%20requisitos.md#rf38) | Cadastrar a categoria com código atribuído pelo sistema, atualizar a listagem e os cartões e localizar o registro pelos filtros. | `POST /api/categoria-exercicio-cross/criar` retorna HTTP 201 com apenas o nome; a listagem passa de oito para nove categorias (código 9) e o filtro Código "9" retorna só o novo registro. O campo Código não retém o texto digitado. | Aprovado conforme a gravação | Nenhum no fluxo avaliado |
 
 ---
 
@@ -234,6 +235,16 @@ O domínio do CT-RF02_ERRO é diferente do domínio `sifitalfa.centrion.com.br` 
 | Material e limites | Painéis Info, Console, Network e Actions do Jam, cabeçalhos de resposta e quadros do vídeo, com pasta local de evidências. Corpo da requisição e da resposta indisponíveis no Jam; sem inspeção de código ou nova execução. |
 
 
+### CT-RF38
+
+| Item | Registro |
+| --- | --- |
+| Página / API | https://sifit.centrion.com.br/categorias-exercicios-crossfit / https://backendsifit.centrion.com.br |
+| Data / duração | 15/11/2026, 18:41 BRT / 37 s. |
+| Navegador / sistema / janela | Chrome 157.0.8103.78 / Windows (x86) 11 / 1920 × 911, conforme Info; autor do Jam: Gustavo Pelissari Oenning. |
+| Dados | Base com oito categorias (códigos 1 a 8); nome "teste"; texto "qwdas" digitado no campo Código; usuário exibido Jair. |
+| Material e limites | Painéis Info, Console, Network e Actions do Jam, corpo da requisição e da resposta de criação e quadros do vídeo, com pasta local de evidências. Filtros sem requisição de rede; persistência após recarga, regra do campo Código e contrato dos cartões não verificados; sem inspeção de código ou nova execução. |
+
 ## 📸 5. Evidências e observações
 
 | Evidência | Informação utilizada |
@@ -277,6 +288,7 @@ O domínio do CT-RF02_ERRO é diferente do domínio `sifitalfa.centrion.com.br` 
 | [Jam — CT-RF30 a CT-RF33: Tela de Grupos Musculares](https://jam.dev/c/98008390-0040-475e-ba7b-7f1e72cc0b2e) | CT-RF30: quatro arquivos de imagem requisitados, doze ocorrências de HTTP 422 entre 0:06 e 1:59 e três de `net::ERR_ABORTED`. CT-RF31: cadastro de Tríceps (código 6), listagem de 3 para 4 registros. CT-RF32: alteração do tipo de membro com cartões recalculados. CT-RF33: filtros por tipo e por código com rodapé coerente. Causas das falhas não determinadas. |
 | [Jam — CT-RF34](https://jam.dev/c/eea58e17-b62f-432b-97b2-b14c14bed555) e [Evidências](Evidencias/CT-RF34_Erro_Servidor_Excesso_Requisicoes/README.md) | O dashboard apresenta um diálogo de erro. A aba Network mostra 23 eventos visíveis: verificação de token HTTP 200, diversas chamadas GET/POST HTTP 500 e OPTIONS HTTP 204. Os endpoints aparecem truncados; a relação causal entre quantidade de chamadas e falhas não foi confirmada. |
 | [Jam — CT-RF35: Objetivos Treino](https://jam.dev/c/1d474477-2411-4a81-b85c-74207402b783) e [Evidências](Evidencias/CT-RF35_Cadastro_Objetivo_Treino/README.md) | 1:01 e 1:02: `POST /api/objetivo-treino/salvar/1` com HTTP 500 (1077 ms e 856 ms), OPTIONS HTTP 204; 1:04: diálogo "Erro ao salvar objetivo"; 1:11: listagem sem registros. O campo Código permanece vazio nos quadros apesar da digitação registrada (regra não confirmada) e a base vazia impede avaliar os filtros. Corpo da requisição e da resposta indisponíveis; sem causa raiz. |
+| [Jam — CT-RF38: Categorias Crossfit](https://jam.dev/c/be1dbd05-217d-44c3-8a3d-240b7f6344e1) e [Evidências](Evidencias/CT-RF38_Cadastro_Categoria_Codigo_Automatico/README.md) | 0:27: Salvar com o nome "teste" e o Código vazio; `POST /api/categoria-exercicio-cross/criar` com HTTP 201, corpo `{"nome": "teste"}` e "Categoria criada com sucesso!". 0:28: nove categorias, código 9 "teste". 0:32: filtro Código "9" retorna só esse registro; 0:02 e 0:08: filtros por nome e por código com uma linha cada. Os filtros não geram requisição de rede (compatível com filtragem local, sem confirmação). Regra do campo Código não confirmada. |
 
 A mensagem de credenciais incorretas já aparece no início do vídeo do Jam; não foi considerada uma resposta ao clique em "Esqueci minha senha". A ausência de requisição, isoladamente, não caracteriza defeito se a interface abrir um formulário local. Aqui, o resultado reprovado decorre de o fluxo não abrir.
 
@@ -383,6 +395,16 @@ As conclusões anteriores foram preservadas. Não houve nova execução nem corr
 O [BUG-019](Relatorio-de-Bugs.md#bug-019) está em triagem, com severidade e prioridade Altas propostas. O corpo da requisição e da resposta não foi capturado pelo Jam; o campo Código e a avaliação dos filtros com a base vazia permanecem como pontos a confirmar, sem defeito próprio.
 
 O consolidado atual, com a inclusão do CT-RF35, é de 35 casos documentados (CT-RF01–CT-RF35): 10 aprovados, 20 reprovados e 5 a validar; 19 defeitos registrados (10 abertos e 9 em triagem) e 20 casos com reteste corretivo pendente. CT-RF09/10 compartilham BUG-005, de modo que 20 casos reprovados correspondem a 19 defeitos. Sem nova execução.
+
+## Inclusão de 15/11/2026 — CT-RF38
+
+| Caso | Situação | Encaminhamento |
+| --- | --- | --- |
+| [CT-RF38](Cenario_Teste/CT-RF38_Cadastro_Categoria_Codigo_Automatico.md) | Aprovado conforme a gravação | Usar como regressão; nome vazio, nome duplicado, limites de tamanho, código inexistente no filtro e persistência após recarga exigem execuções adicionais; confirmar a regra do campo Código e o contrato dos cartões. |
+
+O CT-RF38 complementa os casos [CT-RF17](Cenario_Teste/CT-RF17_Filtros_Categorias.md) (filtros) e [CT-RF20](Cenario_Teste/CT-RF20_Criacao_Categoria.md) (criação) da mesma tela, sem substituí-los; não gera defeito. O campo Código não retém o texto digitado e não consta no corpo da requisição, o que é compatível com um código automático, como em CT-RF31 e CT-RF35, sem confirmação do produto.
+
+O consolidado atual é de 36 casos documentados (CT-RF01–CT-RF35 e CT-RF38): 11 aprovados, 20 reprovados e 5 a validar; 19 defeitos registrados (10 abertos e 9 em triagem) e 20 casos com reteste corretivo pendente. Sem nova execução.
 
 ---
 

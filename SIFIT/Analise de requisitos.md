@@ -2,11 +2,11 @@
 
 **Módulos:** Autenticação, Perfil, Clientes / Filtros, Financeiro, Página inicial / Personais, SifitBox / Modalidades e Turmas, Categorias Crossfit, Avaliações, Exercícios, Grupos Musculares, Dashboard e Objetivos de Treino.
 
-**Atualização:** 15/11/2026 — RF01 a RF35 consolidados, com inclusão de Objetivos de Treino (CT-RF35); BUG-011–BUG-019 em triagem.
+**Atualização:** 15/11/2026 — RF01 a RF35 e RF38 consolidados, com inclusão do cadastro de Categorias Crossfit com código automático (CT-RF38); BUG-011–BUG-019 em triagem.
 
 **Padronização documental:** 13/11/2026, sem alteração dos resultados registrados.
 
-Esta análise documenta 35 requisitos de QA para os cenários relacionados abaixo, com base nos relatos e nas evidências fornecidas. RF01–RF04 e suas análises históricas foram preservados; RF05–RF20 ampliam a cobertura em 14/11/2026; RF21 acrescenta Avaliações; RF22–RF28 acrescentam Exercícios; RF29–RF33 acrescentam Grupos Musculares; RF34 acrescenta o carregamento do dashboard e RF35 acrescenta o cadastro de objetivos de treino em 15/11/2026. Os critérios abaixo constituem a referência de QA para esses fluxos; não representam validação de uma especificação formal pelo responsável pelo produto.
+Esta análise documenta 36 requisitos de QA para os cenários relacionados abaixo, com base nos relatos e nas evidências fornecidas. RF01–RF04 e suas análises históricas foram preservados; RF05–RF20 ampliam a cobertura em 14/11/2026; RF21 acrescenta Avaliações; RF22–RF28 acrescentam Exercícios; RF29–RF33 acrescentam Grupos Musculares; RF34 acrescenta o carregamento do dashboard RF35 acrescenta o cadastro de objetivos de treino e RF38 acrescenta o cadastro de categorias com código automático em 15/11/2026. Os critérios abaixo constituem a referência de QA para esses fluxos; não representam validação de uma especificação formal pelo responsável pelo produto.
 
 ## 📋 Visão geral dos requisitos
 
@@ -47,6 +47,7 @@ Esta análise documenta 35 requisitos de QA para os cenários relacionados abaix
 | [RF33](#rf33) | Filtrar a listagem de grupos musculares por código e tipo | Média, proposta | [CT-RF33](Cenario_Teste/CT-RF33_Filtros_GruposMusculares.md) |
 | [RF34](#rf34) | Carregar o dashboard sem falhas de servidor ou requisições redundantes | Alta, proposta | [CT-RF34](Cenario_Teste/CT-RF34_Erro_Servidor_Excesso_Requisicoes.md) |
 | [RF35](#rf35) | Cadastrar objetivo de treino ou informar validação específica | Alta, proposta | [CT-RF35](Cenario_Teste/CT-RF35_Cadastro_Objetivo_Treino.md) |
+| [RF38](#rf38) | Cadastrar categoria com código automático e localizá-la pelos filtros | Média, proposta | [CT-RF38](Cenario_Teste/CT-RF38_Cadastro_Categoria_Codigo_Automatico.md) |
 
 ---
 
@@ -1013,6 +1014,38 @@ O campo Código permaneceu vazio nos quadros apesar da digitação registrada; a
 
 ---
 
+<a id="rf38"></a>
+
+## RF38 — Cadastrar categoria com código automático e localizá-la pelos filtros
+
+| Campo | Descrição |
+| --- | --- |
+| Requisito de QA | O cadastro de uma categoria deve exigir apenas o nome, com o código atribuído pelo sistema, e o novo registro deve constar na listagem e ser localizado pelos filtros de código e de nome, com o cartão Exibidas coerente. |
+| Ator | Usuário autenticado com permissão em Categorias Crossfit. |
+| Pré-condições | Base conhecida (quantidade de categorias e códigos registrados); nome de categoria de teste disponível; regra do campo Código confirmada com o produto. |
+| Gatilho | Clicar em Nova Categoria, informar o nome e clicar em Salvar; depois informar o código atribuído no filtro Código. |
+| Caso | [CT-RF38](Cenario_Teste/CT-RF38_Cadastro_Categoria_Codigo_Automatico.md) |
+| Situação observada | Aprovado conforme a gravação. `POST /api/categoria-exercicio-cross/criar` retorna HTTP 201 com o corpo `{"nome": "teste"}` e "Categoria criada com sucesso!"; a listagem passa de oito para nove categorias, com o código 9, e o filtro Código "9" retorna apenas esse registro. O campo Código não retém o texto digitado. |
+| Defeito | Nenhum no fluxo avaliado |
+| Evidências | [Jam](https://jam.dev/c/be1dbd05-217d-44c3-8a3d-240b7f6344e1) e [Evidências](Evidencias/CT-RF38_Cadastro_Categoria_Codigo_Automatico/README.md). |
+
+### Critérios de aceitação do RF38
+
+1. O formulário permite informar o nome e cria a categoria ao salvar, com mensagem de sucesso.
+2. O código é atribuído pelo sistema, sem depender de valor digitado pelo usuário, e não duplica um código existente.
+3. A listagem e os cartões de resumo refletem a inclusão.
+4. O filtro por nome e o filtro por código retornam apenas os registros correspondentes.
+5. A limpeza dos filtros restaura a listagem completa.
+6. O registro permanece após recarga da página.
+
+### Pontos a confirmar e limites do RF38
+
+A regra do campo Código não foi fornecida: o campo não retém o texto digitado e o código não consta no corpo da requisição, o que é compatível com um código automático (como nos [RF31](#rf31) e [RF35](#rf35)), mas também com um campo bloqueado à digitação, relacionado ao relato do [RF22](#rf22). Os filtros não geram requisição de rede, compatível com filtragem local, sem confirmação; o comportamento com bases maiores ou paginadas não foi avaliado. O contrato dos cartões de resumo, em especial Atualizadas, não foi fornecido, do mesmo modo que no [RF11](#rf11).
+
+Permanecem fora do cenário gravado: nome vazio, nome duplicado, limites de tamanho, caracteres especiais, código inexistente ou não numérico no filtro, combinação contraditória de código e nome, resultado vazio, paginação e persistência após recarga. O RF38 complementa o [RF17](#rf17) (filtros) e o [RF20](#rf20) (criação), sem substituí-los.
+
+---
+
 ## 🔗 Rastreabilidade
 
 | Requisito | Cenário / caso | Defeito | Resultado | Evidências |
@@ -1052,6 +1085,7 @@ O campo Código permaneceu vazio nos quadros apesar da digitação registrada; a
 | RF33 | [CT-RF33](Cenario_Teste/CT-RF33_Filtros_GruposMusculares.md) | Nenhum no fluxo avaliado | Aprovado conforme a gravação | [Jam](https://jam.dev/c/98008390-0040-475e-ba7b-7f1e72cc0b2e) |
 | RF34 | [CT-RF34](Cenario_Teste/CT-RF34_Erro_Servidor_Excesso_Requisicoes.md) | [BUG-018](Relatorio-de-Bugs.md#bug-018), em triagem | Reprovado — múltiplas requisições retornam HTTP 500. | [Jam](https://jam.dev/c/eea58e17-b62f-432b-97b2-b14c14bed555) e [Evidências](Evidencias/CT-RF34_Erro_Servidor_Excesso_Requisicoes/README.md) |
 | RF35 | [CT-RF35](Cenario_Teste/CT-RF35_Cadastro_Objetivo_Treino.md) | [BUG-019](Relatorio-de-Bugs.md#bug-019), em triagem | Reprovado nas evidências; reteste pendente. | [Evidências](Evidencias/CT-RF35_Cadastro_Objetivo_Treino/README.md) e [Jam](https://jam.dev/c/1d474477-2411-4a81-b85c-74207402b783) |
+| RF38 | [CT-RF38](Cenario_Teste/CT-RF38_Cadastro_Categoria_Codigo_Automatico.md) | Nenhum no fluxo avaliado | Aprovado conforme a gravação | [Evidências](Evidencias/CT-RF38_Cadastro_Categoria_Codigo_Automatico/README.md) e [Jam](https://jam.dev/c/be1dbd05-217d-44c3-8a3d-240b7f6344e1) |
 
 ---
 
@@ -1133,6 +1167,12 @@ Com RF29 a RF34, a análise passa a cobrir 34 requisitos. A tela Grupos Muscular
 RF35 utiliza os painéis Info, Console (atividade do usuário e erros de rede), Network e Actions do Jam "Objetivos Treino", lidos diretamente, os cabeçalhos de resposta da última requisição de gravação e os quadros de 0:04, 0:21, 0:41, 0:46, 0:52, 0:58, 1:00, 1:04, 1:06 e 1:11. Foram registrados o endpoint, as duas ocorrências de HTTP 500, o preflight HTTP 204, os tempos e o texto do diálogo de erro; o corpo da requisição e da resposta aparece como indisponível no Jam. As capturas e a cronologia estão na [pasta local de evidências](Evidencias/CT-RF35_Cadastro_Objetivo_Treino/README.md). Não houve nova execução, acesso ao código ou ao banco, nem reteste. BUG-019 está em triagem.
 
 Com RF35, a análise passa a cobrir 35 requisitos. A tela Objetivos Treino acrescenta uma reprovação, vinculada ao BUG-019, também em triagem.
+
+### Base da análise do RF38 — revisão de 15/11/2026
+
+RF38 utiliza os painéis Info, Console (atividade do usuário), Network e Actions do Jam "Categorias Crossfit", lidos diretamente, o corpo da requisição e da resposta de criação, os cabeçalhos de resposta e os quadros de 0:02, 0:08, 0:14, 0:27, 0:28, 0:32 e 0:36. Foram registrados o filtro por nome e por código, a tentativa de digitar no campo Código, a criação com HTTP 201, o código 9 atribuído e a localização do registro pelo filtro. As capturas e a cronologia estão na [pasta local de evidências](Evidencias/CT-RF38_Cadastro_Categoria_Codigo_Automatico/README.md). Não houve nova execução, acesso ao código ou ao banco, nem reteste.
+
+Com RF38, a análise passa a cobrir 36 requisitos documentados (RF01–RF35 e RF38). A tela Categorias Crossfit acrescenta uma aprovação limitada aos exemplos gravados.
 
 ---
 
