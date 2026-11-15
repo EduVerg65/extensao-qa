@@ -40,6 +40,7 @@ Esta análise documenta os 28 requisitos de QA para os cenários relacionados ab
 | [RF26](#rf26) | Validar campos obrigatórios do exercício | Alta, proposta | [CT-RF26](Cenario_Teste/CT-RF26_Exercicio_Campos_Vazios.md) |
 | [RF27](#rf27) | Rejeitar vídeo no campo de imagem com feedback | Média, proposta | [CT-RF27](Cenario_Teste/CT-RF27_Video_Campo_Imagem.md) |
 | [RF28](#rf28) | Rejeitar imagem no campo de vídeo com feedback | Média, proposta | [CT-RF28](Cenario_Teste/CT-RF28_Imagem_Campo_Video.md) |
+| [RF29](#rf29) | Excluir grupo muscular ou explicar o impedimento | Alta, proposta | [CT-RF29](Cenario_Teste/CT-RF29_Exclusao_GrupoMuscular.md) |
 
 ---
 
@@ -811,6 +812,33 @@ Nome, extensão, MIME, tamanho do arquivo e resposta da API não ficaram confirm
 
 ---
 
+## RF29 — Excluir grupo muscular ou explicar o impedimento
+
+| Campo | Descrição |
+| --- | --- |
+| Requisito de QA | A exclusão de um grupo muscular deve ser concluída quando permitida, removendo o registro da listagem e atualizando os contadores; quando houver impedimento de regra, o sistema deve informá-lo de forma específica e tratável, sem erro interno do servidor. |
+| Ator | Usuário autenticado com permissão em Grupos Musculares. |
+| Pré-condições | Listagem carregada, registro de teste conhecido e vínculos desse registro identificados antes da execução. |
+| Gatilho | Acionar a ação de exclusão na linha do registro e confirmar no diálogo "Deseja deletar o Grupo?". |
+| Caso | [CT-RF29](Cenario_Teste/CT-RF29_Exclusao_GrupoMuscular.md) |
+| Situação observada | Reprovado nas evidências. Duas tentativas de exclusão retornam HTTP 500 com o corpo "Erro interno inesperado."; a interface apresenta o diálogo "Erro ao deletar Grupo" e o registro permanece na listagem. |
+| Defeito | [BUG-016](Relatorio-de-Bugs.md#bug-016), em triagem |
+| Evidências | [Jam](https://jam.dev/c/98008390-0040-475e-ba7b-7f1e72cc0b2e). |
+
+### Critérios de aceitação do RF29
+
+1. A ação de exclusão apresenta confirmação explícita antes de efetivar a operação.
+2. A exclusão permitida remove o registro da listagem e atualiza os contadores do resumo.
+3. O impedimento de regra é comunicado com mensagem específica, sem erro interno do servidor.
+4. Nenhum cenário de exclusão retorna HTTP 500.
+5. O resultado se mantém após recarga da página.
+
+### Pontos a confirmar e limites do RF29
+
+Não foram consultados logs do servidor, corpo completo da resposta além dos 64 bytes retornados nem o banco de dados; a causa do HTTP 500 permanece indeterminada. Não foi confirmado se o registro permanece íntegro após as duas tentativas enviadas para o mesmo recurso. O cenário de exclusão com impedimento de regra não foi exercitado, de modo que não se sabe se o sistema distingue impedimento de falha. A mensagem "Erro ao deletar Grupo" é genérica e não informa a causa ao usuário.
+
+---
+
 ## 🔗 Rastreabilidade
 
 | Requisito | Cenário / caso | Defeito | Resultado | Evidências |
@@ -843,6 +871,7 @@ Nome, extensão, MIME, tamanho do arquivo e resposta da API não ficaram confirm
 | RF26 | [CT-RF26](Cenario_Teste/CT-RF26_Exercicio_Campos_Vazios.md) | [BUG-013](Relatorio-de-Bugs.md#bug-013), em triagem | Reprovado — sem feedback de validação visível. | [Jam](https://jam.dev/c/bc07ca5f-d3a9-45f6-84cb-12c0b562a211) |
 | RF27 | [CT-RF27](Cenario_Teste/CT-RF27_Video_Campo_Imagem.md) | [BUG-014](Relatorio-de-Bugs.md#bug-014), em triagem | Reprovado — arquivo rejeitado sem feedback visível. | [Jam](https://jam.dev/c/00740108-9a7d-4151-8723-171c89635567) |
 | RF28 | [CT-RF28](Cenario_Teste/CT-RF28_Imagem_Campo_Video.md) | [BUG-015](Relatorio-de-Bugs.md#bug-015), em triagem | Reprovado — arquivo rejeitado sem feedback visível. | [Jam](https://jam.dev/c/be9437a4-4fe9-4756-a2af-6777d3f43e25) |
+| RF29 | [CT-RF29](Cenario_Teste/CT-RF29_Exclusao_GrupoMuscular.md) | [BUG-016](Relatorio-de-Bugs.md#bug-016), em triagem | Reprovado nas evidências; reteste pendente. | [Jam](https://jam.dev/c/98008390-0040-475e-ba7b-7f1e72cc0b2e) |
 
 ---
 
@@ -892,6 +921,10 @@ O relato original foi copiado integralmente. A consulta ao Jam confirmou os deta
 ### Base da análise do RF22 ao RF28 — revisão de 15/11/2026
 
 RF22 utiliza relato, imagem inicial e Info do Jam. RF23–RF25 utilizam quadros, Info e listagem Network. RF26–RF28 utilizam quadros e Info dos Jams, sem confirmação de arquivo, MIME, persistência ou resposta detalhada da API. RF23 demonstra remoção e redução de 11 para 10; RF24 apresenta total de 10 para 11 no teste declarado como edição, exigindo confirmar operação e IDs; RF25 demonstra criação com imagem selecionada, sem conferir a imagem salva; RF26–RF28 demonstram ausência de feedback visual nos testes negativos. BUG-011–BUG-015 estão em triagem. Não houve revisão integral quadro a quadro, nova execução, reteste ou diagnóstico de causa raiz.
+
+### Base da análise do RF29 — revisão de 15/11/2026
+
+RF29 utiliza os painéis Informações, Rede e Console do Jam "Tela de Grupos Musculares", lidos diretamente, e os quadros de 1:18 e 1:21. As duas requisições de exclusão, seus horários, tempos de resposta, cabeçalhos e corpo de resposta foram registrados a partir do painel de rede. Não houve nova execução, acesso ao código ou ao banco, nem reteste. BUG-016 está em triagem.
 
 ---
 

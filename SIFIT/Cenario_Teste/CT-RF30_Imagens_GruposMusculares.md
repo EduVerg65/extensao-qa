@@ -15,7 +15,7 @@
 | Objetivo | Apresentar na listagem a imagem cadastrada de cada grupo muscular. |
 | Requisito | [RF30](../Analise%20de%20requisitos.md#rf30) |
 | Tipo / prioridade | Funcional manual, análise de evidências / Média, proposta para triagem. |
-| Defeito | [BUG-012](../Relatorio-de-Bugs.md#bug-012) |
+| Defeito | [BUG-017](../Relatorio-de-Bugs.md#bug-017) |
 | Encaminhamento | Verificar a existência dos arquivos no servidor, o caminho gravado para cada registro e a regra que responde HTTP 422 a uma requisição de imagem. |
 | Fonte | [Jam — Tela de Grupos Musculares](https://jam.dev/c/98008390-0040-475e-ba7b-7f1e72cc0b2e) |
 

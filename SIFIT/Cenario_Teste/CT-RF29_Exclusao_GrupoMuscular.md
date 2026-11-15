@@ -15,7 +15,7 @@
 | Objetivo | Excluir um grupo muscular pela listagem ou informar, de forma tratável, por que a exclusão não pode ser concluída. |
 | Requisito | [RF29](../Analise%20de%20requisitos.md#rf29) |
 | Tipo / prioridade | Funcional manual, análise de evidências / Alta, proposta para triagem. |
-| Defeito | [BUG-011](../Relatorio-de-Bugs.md#bug-011) |
+| Defeito | [BUG-016](../Relatorio-de-Bugs.md#bug-016) |
 | Encaminhamento | Investigar o HTTP 500 com logs do servidor e vínculos do registro; corrigir e retestar os cenários permitido e impedido. |
 | Fonte | [Jam — Tela de Grupos Musculares](https://jam.dev/c/98008390-0040-475e-ba7b-7f1e72cc0b2e) |
 
