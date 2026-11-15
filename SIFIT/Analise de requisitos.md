@@ -2,11 +2,11 @@
 
 **Módulos:** Autenticação, Perfil, Clientes / Filtros, Financeiro, Página inicial / Personais, SifitBox / Modalidades e Turmas, Categorias Crossfit, Avaliações e Exercícios.
 
-**Atualização:** 15/11/2026 — RF01 a RF28, com inclusão de Exercícios (CT-RF22–CT-RF28 / BUG-011–BUG-015 em triagem).
+**Atualização:** 15/11/2026 — 29 requisitos documentados entre RF01–RF28 e RF34; BUG-011–BUG-016 em triagem. RF29–RF33 ainda não estão consolidados neste documento.
 
 **Padronização documental:** 13/11/2026, sem alteração dos resultados registrados.
 
-Esta análise documenta os 28 requisitos de QA para os cenários relacionados abaixo, com base nos relatos e nas evidências fornecidas. RF01–RF04 e suas análises históricas foram preservados; RF05–RF20 ampliam a cobertura em 14/11/2026; RF21 acrescenta Avaliações e RF22–RF28 acrescentam Exercícios em 15/11/2026. Os critérios abaixo constituem a referência de QA para esses fluxos; não representam validação de uma especificação formal pelo responsável pelo produto.
+Esta análise documenta 29 requisitos de QA para os cenários relacionados abaixo, com base nos relatos e nas evidências fornecidas. RF01–RF04 e suas análises históricas foram preservados; RF05–RF20 ampliam a cobertura em 14/11/2026; RF21 acrescenta Avaliações; RF22–RF28 acrescentam Exercícios; e RF34 acrescenta o carregamento do dashboard em 15/11/2026. A numeração não é contínua porque RF29–RF33 ainda não estão consolidados. Os critérios abaixo constituem a referência de QA para esses fluxos; não representam validação de uma especificação formal pelo responsável pelo produto.
 
 ## 📋 Visão geral dos requisitos
 
@@ -40,6 +40,7 @@ Esta análise documenta os 28 requisitos de QA para os cenários relacionados ab
 | [RF26](#rf26) | Validar campos obrigatórios do exercício | Alta, proposta | [CT-RF26](Cenario_Teste/CT-RF26_Exercicio_Campos_Vazios.md) |
 | [RF27](#rf27) | Rejeitar vídeo no campo de imagem com feedback | Média, proposta | [CT-RF27](Cenario_Teste/CT-RF27_Video_Campo_Imagem.md) |
 | [RF28](#rf28) | Rejeitar imagem no campo de vídeo com feedback | Média, proposta | [CT-RF28](Cenario_Teste/CT-RF28_Imagem_Campo_Video.md) |
+| [RF34](#rf34) | Carregar o dashboard sem falhas de servidor ou requisições redundantes | Alta, proposta | [CT-RF34](Cenario_Teste/CT-RF34_Erro_Servidor_Excesso_Requisicoes.md) |
 
 ---
 
@@ -811,6 +812,35 @@ Nome, extensão, MIME, tamanho do arquivo e resposta da API não ficaram confirm
 
 ---
 
+<a id="rf34"></a>
+
+## RF34 — Carregar o dashboard sem falhas de servidor ou requisições redundantes
+
+| Campo | Descrição |
+| --- | --- |
+| Requisito de QA | O dashboard deve solicitar somente os dados necessários, receber respostas tratáveis e carregar seus componentes sem erro HTTP 500. Uma falha parcial deve identificar o componente afetado sem inutilizar todo o painel. |
+| Ator | Usuário autenticado com acesso ao dashboard. |
+| Pré-condições | Sessão válida, conta de teste com dados conhecidos e captura de rede ativa. |
+| Gatilho | Acessar ou recarregar controladamente o dashboard. |
+| Caso | [CT-RF34](Cenario_Teste/CT-RF34_Erro_Servidor_Excesso_Requisicoes.md) |
+| Situação observada | Reprovado nas evidências. O dashboard apresenta um diálogo de erro; a listagem visível contém 23 eventos, com verificação de token HTTP 200, diversas chamadas GET/POST HTTP 500 e OPTIONS HTTP 204. |
+| Defeito | [BUG-016](Relatorio-de-Bugs.md#bug-016), em triagem |
+| Evidências | [Jam](https://jam.dev/c/eea58e17-b62f-432b-97b2-b14c14bed555) e [Evidências](Evidencias/CT-RF34_Erro_Servidor_Excesso_Requisicoes/README.md). |
+
+### Critérios de aceitação do RF34
+
+1. Cada componente executa apenas as chamadas previstas pelo contrato.
+2. Nenhuma requisição necessária ao dashboard retorna HTTP 500.
+3. Falhas parciais são identificadas e não inutilizam componentes independentes.
+4. A quantidade e a sequência das chamadas permanecem estáveis após recarga controlada.
+5. Logs e identificadores permitem correlacionar qualquer resposta não bem-sucedida.
+
+### Pontos a confirmar e limites do RF34
+
+Os caminhos completos, parâmetros, corpos, logs e componentes de origem não foram confirmados. O título do Jam atribui o problema ao excesso de requisições, mas a relação causal não foi demonstrada. Correlacionar cada HTTP 500 ao endpoint e ao componente antes de concluir se há repetição indevida, retentativa descontrolada ou indisponibilidade simultânea do backend.
+
+---
+
 ## 🔗 Rastreabilidade
 
 | Requisito | Cenário / caso | Defeito | Resultado | Evidências |
@@ -843,6 +873,7 @@ Nome, extensão, MIME, tamanho do arquivo e resposta da API não ficaram confirm
 | RF26 | [CT-RF26](Cenario_Teste/CT-RF26_Exercicio_Campos_Vazios.md) | [BUG-013](Relatorio-de-Bugs.md#bug-013), em triagem | Reprovado — sem feedback de validação visível. | [Jam](https://jam.dev/c/bc07ca5f-d3a9-45f6-84cb-12c0b562a211) |
 | RF27 | [CT-RF27](Cenario_Teste/CT-RF27_Video_Campo_Imagem.md) | [BUG-014](Relatorio-de-Bugs.md#bug-014), em triagem | Reprovado — arquivo rejeitado sem feedback visível. | [Jam](https://jam.dev/c/00740108-9a7d-4151-8723-171c89635567) |
 | RF28 | [CT-RF28](Cenario_Teste/CT-RF28_Imagem_Campo_Video.md) | [BUG-015](Relatorio-de-Bugs.md#bug-015), em triagem | Reprovado — arquivo rejeitado sem feedback visível. | [Jam](https://jam.dev/c/be9437a4-4fe9-4756-a2af-6777d3f43e25) |
+| RF34 | [CT-RF34](Cenario_Teste/CT-RF34_Erro_Servidor_Excesso_Requisicoes.md) | [BUG-016](Relatorio-de-Bugs.md#bug-016), em triagem | Reprovado — múltiplas requisições retornam HTTP 500. | [Jam](https://jam.dev/c/eea58e17-b62f-432b-97b2-b14c14bed555) e [Evidências](Evidencias/CT-RF34_Erro_Servidor_Excesso_Requisicoes/README.md) |
 
 ---
 
@@ -892,6 +923,10 @@ O relato original foi copiado integralmente. A consulta ao Jam confirmou os deta
 ### Base da análise do RF22 ao RF28 — revisão de 15/11/2026
 
 RF22 utiliza relato, imagem inicial e Info do Jam. RF23–RF25 utilizam quadros, Info e listagem Network. RF26–RF28 utilizam quadros e Info dos Jams, sem confirmação de arquivo, MIME, persistência ou resposta detalhada da API. RF23 demonstra remoção e redução de 11 para 10; RF24 apresenta total de 10 para 11 no teste declarado como edição, exigindo confirmar operação e IDs; RF25 demonstra criação com imagem selecionada, sem conferir a imagem salva; RF26–RF28 demonstram ausência de feedback visual nos testes negativos. BUG-011–BUG-015 estão em triagem. Não houve revisão integral quadro a quadro, nova execução, reteste ou diagnóstico de causa raiz.
+
+### Base da análise do RF34 — revisão de 15/11/2026
+
+RF34 utiliza quadros, Info e a listagem Network do Jam. A evidência mostra 23 eventos visíveis, múltiplos HTTP 500 e um diálogo de erro, mas os endpoints aparecem truncados e não foram inspecionados corpos ou logs. BUG-016 permanece em triagem. Não houve nova execução, reteste ou diagnóstico de causa raiz.
 
 ---
 

@@ -1,0 +1,17 @@
+CT-RF34 — Erro no servidor por excesso de requisições
+Fonte: https://jam.dev/c/eea58e17-b62f-432b-97b2-b14c14bed555
+Gravação: 15/11/2026, 17:23 BRT; duração aproximada: 4 s.
+Revisão documental: 15/11/2026.
+
+0:00–0:04 — O dashboard do SIFIT permanece visível com um diálogo central de erro. O texto integral do diálogo não ficou legível no quadro consultado.
+
+Rede do conjunto gravado, sem atribuição de timestamps individuais:
+- 23 eventos aparecem na listagem visível.
+- A verificação de token apresenta POST com HTTP 200.
+- Diversas requisições GET e POST apresentam HTTP 500.
+- Requisições OPTIONS apresentam HTTP 204.
+- Três marcadores HTTP 500 aparecem na linha temporal do player.
+
+Limites: os nomes completos dos endpoints, parâmetros, corpos das requisições e respostas, logs do servidor e causa raiz não foram confirmados. O título do Jam menciona excesso de requisições, mas a relação causal não foi comprovada pela consulta documental.
+Não houve nova execução ou reteste.
+

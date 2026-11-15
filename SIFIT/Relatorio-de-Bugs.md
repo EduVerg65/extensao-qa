@@ -1,12 +1,12 @@
 # 🐞 Relatório de Bugs — SIFIT
 
-**Escopo:** defeitos dos cenários CT-RF01–CT-RF28: recuperação, Perfil, Clientes, financeiro, período, tema, modalidades, categorias, avaliações e exercícios. Casos aprovados e pontos a validar permanecem no relatório dos testes.
+**Escopo:** defeitos de 29 casos documentados entre CT-RF01–CT-RF28 e CT-RF34: recuperação, Perfil, Clientes, financeiro, página inicial e dashboard, tema, modalidades, categorias, avaliações e exercícios. CT-RF29–CT-RF33 ainda não estão consolidados neste relatório.
 
 **Ambientes:** CT-RF01 em https://sifitalfa.centrion.com.br/login; CT-RF02_ERRO em https://sifit.centrion.com.br/profile. CT-RF03: URL do frontend não confirmada; backend informado em `https://backendsifit.centrion.com.br/api/clientesPorNome/1`.
 
 **Datas das gravações do Jam:** CT-RF01 em 23/10/2026; CT-RF02_ERRO em 22/10/2026 às 21:45 BRT; CT-RF03 não confirmada.
 
-**Atualização documental:** 15/11/2026 — 15 defeitos registrados: 10 abertos (BUG-001 a BUG-010) e 5 em triagem (BUG-011 a BUG-015), incluindo código, edição, campos obrigatórios e validação de mídia em Exercícios. As análises anteriores foram preservadas.
+**Atualização documental:** 15/11/2026 — 16 defeitos registrados: 10 abertos (BUG-001 a BUG-010) e 6 em triagem (BUG-011 a BUG-016). BUG-016 registra múltiplos HTTP 500 no dashboard, sem causa técnica confirmada. As análises anteriores foram preservadas.
 
 **Padronização documental:** 13/11/2026, sem alteração do status dos defeitos.
 
@@ -35,8 +35,9 @@
 | [BUG-013](#bug-013) | Campos obrigatórios vazios sem feedback de validação | Média / Alta, propostas | Em triagem — persistência não confirmada | [CT-RF26](Cenario_Teste/CT-RF26_Exercicio_Campos_Vazios.md) |
 | [BUG-014](#bug-014) | Vídeo rejeitado no campo Imagem sem feedback | Baixa / Média, propostas | Em triagem — MIME não confirmado | [CT-RF27](Cenario_Teste/CT-RF27_Video_Campo_Imagem.md) |
 | [BUG-015](#bug-015) | Imagem rejeitada no campo Vídeo sem feedback | Baixa / Média, propostas | Em triagem — MIME não confirmado | [CT-RF28](Cenario_Teste/CT-RF28_Imagem_Campo_Video.md) |
+| [BUG-016](#bug-016) | Dashboard apresenta múltiplos HTTP 500 durante o carregamento | Alta / Alta, propostas | Em triagem — causa e repetição não confirmadas | [CT-RF34](Cenario_Teste/CT-RF34_Erro_Servidor_Excesso_Requisicoes.md) |
 
-BUG-001–BUG-010 aguardam correção e reteste. BUG-011–BUG-015 aguardam confirmação das premissas e triagem antes do encaminhamento de correção. As causas técnicas permanecem não confirmadas; o BUG-003 se apoia no relato e nas capturas fornecidos, com os limites registrados no caso.
+BUG-001–BUG-010 aguardam correção e reteste. BUG-011–BUG-016 aguardam confirmação das premissas e triagem antes do encaminhamento de correção. As causas técnicas permanecem não confirmadas; o BUG-003 se apoia no relato e nas capturas fornecidos, com os limites registrados no caso.
 
 ---
 
@@ -727,6 +728,57 @@ Exibir feedback no campo e validar tipo real e extensão tanto no cliente quanto
 
 ---
 
+<a id="bug-016"></a>
+
+## BUG-016 — Dashboard apresenta múltiplos HTTP 500 durante o carregamento
+
+| Campo | Descrição |
+| --- | --- |
+| Status | Em triagem — endpoints, repetição e causa técnica não confirmados. |
+| Severidade / prioridade | Alta / Alta, propostas para triagem. |
+| Módulo | Página inicial / Dashboard / Integrações |
+| Requisito / caso | [RF34](Analise%20de%20requisitos.md#rf34) / [CT-RF34](Cenario_Teste/CT-RF34_Erro_Servidor_Excesso_Requisicoes.md) |
+| Data da evidência / revisão | 15/11/2026, 17:23 BRT / 15/11/2026; sem nova execução. |
+| Página / ambiente | https://sifit.centrion.com.br/dashboard; Edge 157.0.8103.80 / Windows 11 (x86), janela 1912 × 960. |
+| Frequência conhecida | Um registro do Jam; recorrência não determinada. |
+
+### Pré-condições
+
+- Sessão autenticada com acesso ao dashboard.
+- Conta de teste com dados conhecidos para os componentes do painel.
+- Captura de Network e Console ativa e logs do backend disponíveis.
+
+### Passos para reproduzir
+
+1. Limpar a captura de rede e acessar o dashboard com sessão válida.
+2. Aguardar o carregamento completo sem outras interações.
+3. Registrar endpoint, método, parâmetros e componente de origem de cada chamada.
+4. Identificar respostas HTTP 500 e chamadas repetidas com os mesmos parâmetros.
+5. Correlacionar os erros com os logs do backend.
+
+### Resultado esperado
+
+O dashboard deve carregar com as requisições previstas e sem HTTP 500. Uma falha parcial deve identificar o componente afetado sem inutilizar os demais, evitando retentativas descontroladas.
+
+### Resultado obtido
+
+O dashboard apresenta um diálogo central de erro. A aba Network contém 23 eventos visíveis: a verificação de token retorna HTTP 200, diversas chamadas GET e POST retornam HTTP 500 e chamadas OPTIONS retornam HTTP 204. Três marcadores HTTP 500 aparecem na linha temporal.
+
+**Impacto:** os dados do dashboard podem não carregar e o usuário recebe um erro genérico, com possível indisponibilidade simultânea de vários componentes.
+
+### Evidências técnicas
+
+- [Jam](https://jam.dev/c/eea58e17-b62f-432b-97b2-b14c14bed555) e [Evidências](Evidencias/CT-RF34_Erro_Servidor_Excesso_Requisicoes/README.md).
+- Listagem visível com 23 eventos e múltiplos HTTP 500; endpoints completos e corpos não confirmados.
+
+### Análise, limites e encaminhamento
+
+O título do Jam menciona excesso de requisições, mas a gravação não comprova essa relação causal. Investigar os caminhos, componentes de origem, repetição de parâmetros e logs do servidor. Considerar como hipóteses, sem concluir antecipadamente, indisponibilidade do backend, falha simultânea de serviços, ciclo de renderização ou retentativa não limitada.
+
+**Reteste:** executar o [CT-RF34](Cenario_Teste/CT-RF34_Erro_Servidor_Excesso_Requisicoes.md) em versão identificada, mapear todas as chamadas e confirmar carregamento estável sem HTTP 500 antes de encerrar o defeito.
+
+---
+
 ## Pontos a validar — sem defeito confirmado
 
 | Caso | Questão pendente | Evidência |
@@ -737,7 +789,7 @@ Exibir feedback no campo e validar tipo real e extensão tanto no cliente quanto
 | [CT-RF16](Cenario_Teste/CT-RF16_Exclusao_Modalidade.md) | Confirmar a exclusão lógica e a nomenclatura da ação; registrar defeito apenas se houver divergência com a regra definida. | [Jam](https://jam.dev/c/0f55f76a-cd31-4cee-93da-23c13b1ba637) e [Evidências](Evidencias/CT-RF16_Exclusao_Modalidade/README.md) |
 | [CT-RF25](Cenario_Teste/CT-RF25_Envio_Exercicio_Imagem.md) | Conferir a imagem após reabrir e recarregar o exercício; criação visível não comprova associação persistida. | [Jam](https://jam.dev/c/25c37a9b-e9bd-4e0c-adf1-4da528ae1d58) e [Evidências](Evidencias/CT-RF25_Envio_Exercicio_Imagem/README.md) |
 
-Esses cinco pontos não entram na contagem de 15 defeitos registrados. BUG-011–BUG-015 são contabilizados separadamente como registros em triagem, com premissas, persistência ou validações técnicas ainda pendentes. O relato de numeração de personais não demonstrou diferença entre total e linhas; a inativação de modalidades pode ser exclusão lógica; encargos e métricas exigem regras explícitas.
+Esses cinco pontos não entram na contagem de 16 defeitos registrados. BUG-011–BUG-016 são contabilizados separadamente como registros em triagem, com premissas, persistência ou validações técnicas ainda pendentes. O relato de numeração de personais não demonstrou diferença entre total e linhas; a inativação de modalidades pode ser exclusão lógica; encargos e métricas exigem regras explícitas.
 
 
 **Exclusão de exercício:** CT-RF23 está aprovado no trecho consultado, com remoção e total 11 para 10; não gerou defeito adicional. Persistência e efeitos sobre vínculos permanecem como verificações complementares.
