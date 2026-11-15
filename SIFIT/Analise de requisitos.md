@@ -44,6 +44,7 @@ Esta análise documenta os 28 requisitos de QA para os cenários relacionados ab
 | [RF30](#rf30) | Exibir as imagens cadastradas dos grupos musculares | Média, proposta | [CT-RF30](Cenario_Teste/CT-RF30_Imagens_GruposMusculares.md) |
 | [RF31](#rf31) | Cadastrar e listar um grupo muscular | Média, proposta | [CT-RF31](Cenario_Teste/CT-RF31_Cadastro_GrupoMuscular.md) |
 | [RF32](#rf32) | Alterar o tipo de membro de um grupo muscular | Média, proposta | [CT-RF32](Cenario_Teste/CT-RF32_Edicao_TipoMembro.md) |
+| [RF33](#rf33) | Filtrar a listagem de grupos musculares por código e tipo | Média, proposta | [CT-RF33](Cenario_Teste/CT-RF33_Filtros_GruposMusculares.md) |
 
 ---
 
@@ -923,6 +924,35 @@ A edição recebeu um arquivo de imagem, com miniatura exibida corretamente na p
 
 ---
 
+## RF33 — Filtrar a listagem de grupos musculares por código e tipo
+
+| Campo | Descrição |
+| --- | --- |
+| Requisito de QA | A busca deve apresentar apenas os registros que atendam aos critérios informados, com a contagem do rodapé correspondente ao conjunto exibido, e informar explicitamente quando não houver correspondência. |
+| Ator | Usuário autenticado com acesso a Grupos Musculares. |
+| Pré-condições | Base conhecida, com a quantidade de registros por tipo de membro registrada e ao menos um tipo sem registros associados. |
+| Gatilho | Informar código, selecionar tipo de membro e acionar a busca. |
+| Caso | [CT-RF33](Cenario_Teste/CT-RF33_Filtros_GruposMusculares.md) |
+| Situação observada | Aprovado conforme a gravação. O filtro por tipo sem registros apresenta "Nenhum grupo muscular encontrado" e rodapé "Mostrando 0 a 0 de 0 grupos"; os filtros por tipo e por código retornam o registro correspondente, com rodapé coerente. |
+| Defeito | Nenhum no fluxo avaliado |
+| Evidências | [Jam](https://jam.dev/c/98008390-0040-475e-ba7b-7f1e72cc0b2e). |
+
+### Critérios de aceitação do RF33
+
+1. A busca por tipo de membro retorna apenas registros daquele tipo.
+2. A busca por código retorna o registro correspondente.
+3. A contagem do rodapé corresponde aos registros apresentados.
+4. A ausência de correspondência apresenta mensagem explícita, e não uma listagem vazia sem aviso.
+5. A limpeza dos critérios restaura a listagem completa.
+
+### Pontos a confirmar e limites do RF33
+
+A lógica de combinação dos critérios não ficou demonstrada. No quadro de 2:00 o código e o tipo de membro estão preenchidos ao mesmo tempo e o resultado atende aos dois, porém o único registro daquele código também é daquele tipo, de modo que o mesmo resultado seria obtido com apenas um dos critérios. A verificação exige um caso em que os critérios se contradigam, cujo retorno esperado é o conjunto vazio; esse caso não foi exercitado. Esse ponto é relevante porque filtros combinados são o aspecto reprovado no [RF03](#rf03--pesquisar-clientes-com-filtros-combinados).
+
+Permanecem fora do cenário gravado a busca por nome, código inexistente ou inválido, caracteres especiais, resultados com mais de uma linha, paginação do resultado filtrado e limpeza dos critérios. Os cartões de resumo não acompanham o filtro e mantêm o total da base, enquanto o rodapé acompanha o conjunto filtrado; o comportamento é coerente entre os quadros conferidos, mas o contrato de cada indicador não foi fornecido, do mesmo modo que no [RF11](#rf11).
+
+---
+
 ## 🔗 Rastreabilidade
 
 | Requisito | Cenário / caso | Defeito | Resultado | Evidências |
@@ -959,6 +989,7 @@ A edição recebeu um arquivo de imagem, com miniatura exibida corretamente na p
 | RF30 | [CT-RF30](Cenario_Teste/CT-RF30_Imagens_GruposMusculares.md) | [BUG-017](Relatorio-de-Bugs.md#bug-017), em triagem | Reprovado nas evidências; reteste pendente. | [Jam](https://jam.dev/c/98008390-0040-475e-ba7b-7f1e72cc0b2e) |
 | RF31 | [CT-RF31](Cenario_Teste/CT-RF31_Cadastro_GrupoMuscular.md) | Nenhum no fluxo avaliado | Aprovado conforme a gravação | [Jam](https://jam.dev/c/98008390-0040-475e-ba7b-7f1e72cc0b2e) |
 | RF32 | [CT-RF32](Cenario_Teste/CT-RF32_Edicao_TipoMembro.md) | Nenhum no fluxo avaliado | Aprovado conforme a gravação | [Jam](https://jam.dev/c/98008390-0040-475e-ba7b-7f1e72cc0b2e) |
+| RF33 | [CT-RF33](Cenario_Teste/CT-RF33_Filtros_GruposMusculares.md) | Nenhum no fluxo avaliado | Aprovado conforme a gravação | [Jam](https://jam.dev/c/98008390-0040-475e-ba7b-7f1e72cc0b2e) |
 
 ---
 
@@ -1024,6 +1055,12 @@ RF31 utiliza a cronologia do painel Console entre 0:17 e 0:53 e os quadros de 0:
 ### Base da análise do RF32 — revisão de 15/11/2026
 
 RF32 utiliza a cronologia do painel Console entre 0:57 e 1:38 e os quadros de 0:55, 1:02, 1:08, 1:45 e 2:00. O quadro de 1:02 mostra o formulário aberto em edição com os dados do registro de código 1; o de 1:08 mostra a listagem já com o novo tipo de membro e os cartões recalculados. As alterações posteriores a 1:08 não têm quadro de antes e depois individual e sustentam-se no quadro de 1:45 e nos cartões de 2:00. Não houve nova execução, acesso ao código ou ao banco, nem reteste.
+
+### Base da análise do RF33 — revisão de 15/11/2026
+
+RF33 utiliza a cronologia do painel Console e os quadros de 0:15, 1:45 e 2:00. O quadro de 0:15 registra o estado sem resultados; os de 1:45 e 2:00 registram buscas por tipo de membro e por código, com o rodapé correspondente. O resultado da busca pelo código "1", acionada entre 1:53 e 1:55, não teve quadro consultado e está registrado apenas como ação. Não houve nova execução, acesso ao código ou ao banco, nem reteste.
+
+Com RF29 a RF33 a análise passa a cobrir 33 requisitos. A tela Grupos Musculares acrescenta duas reprovações, com BUG-016 e BUG-017 em triagem, e três aprovações limitadas aos exemplos gravados.
 
 ---
 
