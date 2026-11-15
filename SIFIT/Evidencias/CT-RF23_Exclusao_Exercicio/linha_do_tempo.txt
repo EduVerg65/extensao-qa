@@ -1,0 +1,12 @@
+CT-RF23 — Exclusão de exercício
+Fonte: https://jam.dev/c/32adfca3-489f-4a4b-a08d-933c1d1a3c32
+Gravação: 15/11/2026, 15:40 BRT; duração aproximada: 6 s.
+Revisão documental: 15/11/2026.
+
+Quadros consultados: No quadro de aproximadamente 0:02, a biblioteca apresenta total 11 e o exercício Levantamento de Peso. No quadro final, em aproximadamente 0:06, esse registro não aparece e o total é 10. A lista continua contendo Levantamento de Peso 02, registro distinto.
+
+Rede do conjunto gravado, sem atribuição de timestamps individuais:
+A aba Network apresenta três entradas POST com HTTP 200 e uma OPTIONS com HTTP 204 no domínio backendsifit.centrion.com.br. Os caminhos e corpos não foram inspecionados; não se atribui uma operação específica a cada entrada.
+
+Limites: Não foram confirmados o diálogo de confirmação, a persistência após recarregar ou os efeitos sobre fichas de treino vinculadas.
+Não houve nova execução ou reteste.
