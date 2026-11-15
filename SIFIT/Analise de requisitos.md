@@ -41,6 +41,8 @@ Esta análise documenta os 28 requisitos de QA para os cenários relacionados ab
 | [RF27](#rf27) | Rejeitar vídeo no campo de imagem com feedback | Média, proposta | [CT-RF27](Cenario_Teste/CT-RF27_Video_Campo_Imagem.md) |
 | [RF28](#rf28) | Rejeitar imagem no campo de vídeo com feedback | Média, proposta | [CT-RF28](Cenario_Teste/CT-RF28_Imagem_Campo_Video.md) |
 | [RF29](#rf29) | Excluir grupo muscular ou explicar o impedimento | Alta, proposta | [CT-RF29](Cenario_Teste/CT-RF29_Exclusao_GrupoMuscular.md) |
+| [RF30](#rf30) | Exibir as imagens cadastradas dos grupos musculares | Média, proposta | [CT-RF30](Cenario_Teste/CT-RF30_Imagens_GruposMusculares.md) |
+| [RF31](#rf31) | Cadastrar e listar um grupo muscular | Média, proposta | [CT-RF31](Cenario_Teste/CT-RF31_Cadastro_GrupoMuscular.md) |
 
 ---
 
@@ -839,6 +841,59 @@ Não foram consultados logs do servidor, corpo completo da resposta além dos 64
 
 ---
 
+## RF30 — Exibir as imagens cadastradas dos grupos musculares
+
+| Campo | Descrição |
+| --- | --- |
+| Requisito de QA | A listagem deve apresentar a imagem de cada grupo muscular que a possua, com as requisições dos arquivos concluídas com sucesso, e adotar um estado neutro definido para registros sem imagem. |
+| Ator | Usuário autenticado com acesso a Grupos Musculares. |
+| Pré-condições | Listagem carregada e caminho esperado dos arquivos de imagem conhecido. |
+| Gatilho | Carregar a tela Grupos Musculares, aplicar filtros ou alternar o tema, situações em que a listagem é recarregada. |
+| Caso | [CT-RF30](Cenario_Teste/CT-RF30_Imagens_GruposMusculares.md) |
+| Situação observada | Reprovado nas evidências. As requisições dos quatro arquivos de imagem retornam HTTP 422 durante toda a gravação, com ocorrências de `net::ERR_ABORTED`, e a coluna IMAGEM apresenta o ícone de imagem quebrada em todas as linhas, nos dois temas e com ou sem filtro. |
+| Defeito | [BUG-017](Relatorio-de-Bugs.md#bug-017), em triagem |
+| Evidências | [Jam](https://jam.dev/c/98008390-0040-475e-ba7b-7f1e72cc0b2e). |
+
+### Critérios de aceitação do RF30
+
+1. Cada grupo muscular com imagem cadastrada apresenta a imagem na coluna IMAGEM.
+2. As requisições dos arquivos de imagem são concluídas com sucesso.
+3. Registros sem imagem apresentam um estado neutro definido pelo produto, e não um ícone de arquivo quebrado.
+4. O comportamento se mantém após busca, troca de página e troca de tema.
+
+### Pontos a confirmar e limites do RF30
+
+Não foi verificada a existência dos arquivos em `/img/grupos_musculares/imagens/`, nem o conteúdo do campo de imagem de cada registro no banco, nem o resultado do acesso direto às URLs fora da página. O código 422 não é o retorno usual para arquivo ausente ou sem permissão, o que sugere tratamento por aplicação em vez de entrega direta de arquivo estático; essa é uma hipótese a confirmar. Os status foram lidos na coluna Status da lista de rede, porque o painel de detalhe da ferramenta repetiu cabeçalhos e identificadores entre linhas distintas. Resta confirmar também o comportamento para registros criados sem imagem informada, que passam a ter um arquivo requisitado.
+
+---
+
+## RF31 — Cadastrar e listar um grupo muscular
+
+| Campo | Descrição |
+| --- | --- |
+| Requisito de QA | O sistema deve permitir cadastrar um grupo muscular, apresentá-lo na listagem e atualizar os contadores do resumo, mantendo a contagem do rodapé coerente com os registros exibidos. |
+| Ator | Usuário autenticado com permissão em Grupos Musculares. |
+| Pré-condições | Nome de grupo muscular de teste disponível e estado inicial da listagem e dos contadores registrado. |
+| Gatilho | Abrir o formulário de inclusão, informar nome e tipo de membro e confirmar em "Salvar". |
+| Caso | [CT-RF31](Cenario_Teste/CT-RF31_Cadastro_GrupoMuscular.md) |
+| Situação observada | Aprovado conforme a gravação. O registro "Tríceps" foi criado com o código 6 e tipo "Superiores"; a listagem passou de três para quatro registros e os cartões de Grupos cadastrados e Superiores acompanharam a inclusão. |
+| Defeito | Nenhum no fluxo avaliado |
+| Evidências | [Jam](https://jam.dev/c/98008390-0040-475e-ba7b-7f1e72cc0b2e). |
+
+### Critérios de aceitação do RF31
+
+1. O formulário permite informar nome e tipo de membro.
+2. O envio cria o registro e encerra o formulário.
+3. A listagem passa a exibir o novo grupo muscular, com o rodapé de contagem coerente.
+4. Os cartões de resumo refletem a inclusão, inclusive o cartão do tipo de membro escolhido.
+5. O registro permanece após recarga da página.
+
+### Pontos a confirmar e limites do RF31
+
+A cronologia não registra uma requisição de criação com o respectivo código de status; a conclusão apoia-se na comparação entre os quadros de 0:48 e 0:55. A persistência após recarga não foi verificada, nem houve consulta ao banco. Permanecem fora do cenário gravado campos obrigatórios em branco, nomes duplicados, limites de tamanho, caracteres especiais e cancelamento do formulário. O campo Código estava em branco no envio e o sistema atribuiu o código 6; a atribuição automática é compatível com os códigos não sequenciais da listagem, mas a regra não foi confirmada, nem foi testado o envio com código informado manualmente. O formulário foi enviado sem imagem e, ainda assim, passou a existir um arquivo requisitado para o novo registro, situação tratada no [RF30](#rf30).
+
+---
+
 ## 🔗 Rastreabilidade
 
 | Requisito | Cenário / caso | Defeito | Resultado | Evidências |
@@ -872,6 +927,8 @@ Não foram consultados logs do servidor, corpo completo da resposta além dos 64
 | RF27 | [CT-RF27](Cenario_Teste/CT-RF27_Video_Campo_Imagem.md) | [BUG-014](Relatorio-de-Bugs.md#bug-014), em triagem | Reprovado — arquivo rejeitado sem feedback visível. | [Jam](https://jam.dev/c/00740108-9a7d-4151-8723-171c89635567) |
 | RF28 | [CT-RF28](Cenario_Teste/CT-RF28_Imagem_Campo_Video.md) | [BUG-015](Relatorio-de-Bugs.md#bug-015), em triagem | Reprovado — arquivo rejeitado sem feedback visível. | [Jam](https://jam.dev/c/be9437a4-4fe9-4756-a2af-6777d3f43e25) |
 | RF29 | [CT-RF29](Cenario_Teste/CT-RF29_Exclusao_GrupoMuscular.md) | [BUG-016](Relatorio-de-Bugs.md#bug-016), em triagem | Reprovado nas evidências; reteste pendente. | [Jam](https://jam.dev/c/98008390-0040-475e-ba7b-7f1e72cc0b2e) |
+| RF30 | [CT-RF30](Cenario_Teste/CT-RF30_Imagens_GruposMusculares.md) | [BUG-017](Relatorio-de-Bugs.md#bug-017), em triagem | Reprovado nas evidências; reteste pendente. | [Jam](https://jam.dev/c/98008390-0040-475e-ba7b-7f1e72cc0b2e) |
+| RF31 | [CT-RF31](Cenario_Teste/CT-RF31_Cadastro_GrupoMuscular.md) | Nenhum no fluxo avaliado | Aprovado conforme a gravação | [Jam](https://jam.dev/c/98008390-0040-475e-ba7b-7f1e72cc0b2e) |
 
 ---
 
@@ -925,6 +982,14 @@ RF22 utiliza relato, imagem inicial e Info do Jam. RF23–RF25 utilizam quadros,
 ### Base da análise do RF29 — revisão de 15/11/2026
 
 RF29 utiliza os painéis Informações, Rede e Console do Jam "Tela de Grupos Musculares", lidos diretamente, e os quadros de 1:18 e 1:21. As duas requisições de exclusão, seus horários, tempos de resposta, cabeçalhos e corpo de resposta foram registrados a partir do painel de rede. Não houve nova execução, acesso ao código ou ao banco, nem reteste. BUG-016 está em triagem.
+
+### Base da análise do RF30 — revisão de 15/11/2026
+
+RF30 utiliza a lista de rede do Jam filtrada por erros, a cronologia do painel Console e os quadros de 0:20, 0:55, 1:18, 1:21, 1:45 e 2:00. Foram registrados os quatro arquivos requisitados, doze ocorrências de HTTP 422 entre 0:06 e 1:59 e três ocorrências de `net::ERR_ABORTED`. Os cabeçalhos de resposta das imagens não foram utilizados por inconsistência do painel de detalhe. Não houve verificação no servidor de arquivos, acesso ao banco, nova execução ou reteste. BUG-017 está em triagem.
+
+### Base da análise do RF31 — revisão de 15/11/2026
+
+RF31 utiliza a cronologia do painel Console entre 0:17 e 0:53 e os quadros de 0:20, 0:48 e 0:55. O quadro de 0:48 mostra o formulário no momento do envio, com o campo Código em branco e o campo Imagem em "Nenhum arquivo escolhido". A comparação com o quadro de 0:55 sustenta a criação do registro e a atualização dos cartões. Não houve nova execução, acesso ao código ou ao banco, nem reteste.
 
 ---
 
