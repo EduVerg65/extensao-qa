@@ -2,11 +2,11 @@
 
 **Módulos:** Autenticação, Perfil, Clientes / Filtros, Financeiro, Página inicial / Personais, SifitBox / Modalidades e Turmas, Categorias Crossfit, Avaliações, Exercícios, Grupos Musculares, Dashboard e Objetivos de Treino.
 
-**Atualização:** 15/11/2026 — RF01 a RF35 e RF38 a RF45 consolidados, com inclusão de Categorias Crossfit (CT-RF38), SifitBox – Turmas (CT-RF39 a CT-RF41) e, a partir de CT-RF42, Pagar.me, Configurações, Despesas Fixas e Relatórios; BUG-011–BUG-021 em triagem.
+**Atualização:** 15/11/2026 — RF01 a RF35 e RF38 a RF46 consolidados, com inclusão de Categorias Crossfit (CT-RF38), SifitBox – Turmas (CT-RF39 a CT-RF41) e, a partir de CT-RF42, Pagar.me, Configurações, Despesas Fixas e Relatórios; BUG-011–BUG-021 em triagem.
 
 **Padronização documental:** 13/11/2026, sem alteração dos resultados registrados.
 
-Esta análise documenta 43 requisitos de QA para os cenários relacionados abaixo, com base nos relatos e nas evidências fornecidas. RF01–RF04 e suas análises históricas foram preservados; RF05–RF20 ampliam a cobertura em 14/11/2026; RF21 acrescenta Avaliações; RF22–RF28 acrescentam Exercícios; RF29–RF33 acrescentam Grupos Musculares; RF34 acrescenta o carregamento do dashboard RF35 acrescenta o cadastro de objetivos de treino e RF38 acrescenta o cadastro de categorias com código automático em 15/11/2026. RF39 acrescenta o cadastro de modalidade em SifitBox – Turmas. RF40 acrescenta a exclusão de turmas e modalidades. RF41 acrescenta o cadastro de turma. RF42 a RF56 acrescentam Pagar.me, Configurações, Despesas Fixas e Relatórios em 15/11/2026. Os critérios abaixo constituem a referência de QA para esses fluxos; não representam validação de uma especificação formal pelo responsável pelo produto.
+Esta análise documenta 44 requisitos de QA para os cenários relacionados abaixo, com base nos relatos e nas evidências fornecidas. RF01–RF04 e suas análises históricas foram preservados; RF05–RF20 ampliam a cobertura em 14/11/2026; RF21 acrescenta Avaliações; RF22–RF28 acrescentam Exercícios; RF29–RF33 acrescentam Grupos Musculares; RF34 acrescenta o carregamento do dashboard RF35 acrescenta o cadastro de objetivos de treino e RF38 acrescenta o cadastro de categorias com código automático em 15/11/2026. RF39 acrescenta o cadastro de modalidade em SifitBox – Turmas. RF40 acrescenta a exclusão de turmas e modalidades. RF41 acrescenta o cadastro de turma. RF42 a RF56 acrescentam Pagar.me, Configurações, Despesas Fixas e Relatórios em 15/11/2026. Os critérios abaixo constituem a referência de QA para esses fluxos; não representam validação de uma especificação formal pelo responsável pelo produto.
 
 ## 📋 Visão geral dos requisitos
 
@@ -55,6 +55,7 @@ Esta análise documenta 43 requisitos de QA para os cenários relacionados abaix
 | [RF43](#rf43) | Criar cobrança pelo painel Pagar.me | Média, proposta | [CT-RF43](Cenario_Teste/CT-RF43_Criacao_Cobranca_PagarMe.md) |
 | [RF44](#rf44) | Salvar as configurações gerais de acesso e presença | Média, proposta | [CT-RF44](Cenario_Teste/CT-RF44_Configuracoes_Home_Salvamento.md) |
 | [RF45](#rf45) | Atualizar Recebimentos e gráfico conforme o período | Média, proposta | [CT-RF45](Cenario_Teste/CT-RF45_Painel_PagarMe_Periodo.md) |
+| [RF46](#rf46) | Filtrar despesas fixas por código e por nome | Média, proposta | [CT-RF46](Cenario_Teste/CT-RF46_Filtros_Despesas_Fixas.md) |
 
 ---
 
@@ -1257,6 +1258,35 @@ Não foi confirmado se o painel usa dados reais ou de demonstração; o clique n
 
 ---
 
+<a id="rf46"></a>
+
+## RF46 — Filtrar despesas fixas por código e por nome
+
+| Campo | Descrição |
+| --- | --- |
+| Requisito de QA | A busca da tela Despesas Fixas deve apresentar apenas as despesas que atendam aos critérios de código e de nome informados, com o Valor Listado correspondente ao conjunto exibido e restauração da listagem completa ao limpar os critérios. |
+| Ator | Usuário autenticado com acesso a Despesas Fixas. |
+| Pré-condições | Base conhecida, com códigos, nomes, status e recorrências registrados. |
+| Gatilho | Informar código ou nome e, depois, limpar os critérios. |
+| Caso | [CT-RF46](Cenario_Teste/CT-RF46_Filtros_Despesas_Fixas.md) |
+| Situação observada | Aprovado conforme a gravação. O filtro por código "1" lista os códigos 10 a 19 e o filtro por nome "Teste" retorna #5 e #7, com Valor Listado acompanhando o conjunto; os campos limpos restauram a listagem completa. |
+| Defeito | Nenhum no fluxo avaliado |
+| Evidências | [Jam](https://jam.dev/c/a4bac99d-e436-4792-831e-8c3a875272bb) e [Evidências](Evidencias/CT-RF46_Filtros_Despesas_Fixas/README.md). |
+
+### Critérios de aceitação do RF46
+
+1. O filtro por código retorna as despesas cujo código corresponde ao critério.
+2. O filtro por nome retorna as despesas cujo nome contém o critério, sem diferenciar maiúsculas de minúsculas.
+3. O cartão Valor Listado e o rodapé acompanham o conjunto exibido.
+4. A limpeza dos critérios restaura a listagem completa.
+5. Combinações sem correspondência apresentam mensagem explícita de resultado vazio.
+
+### Pontos a confirmar e limites do RF46
+
+A combinação de critérios, o resultado vazio, o filtro por Status e Recorrência com valores específicos e a regra de correspondência do código não foram exercitados. Os filtros não geram requisição de rede, compatível com filtragem local, sem confirmação. O contrato dos cartões não foi fornecido, como no [RF11](#rf11) e no [RF33](#rf33).
+
+---
+
 ## 🔗 Rastreabilidade
 
 | Requisito | Cenário / caso | Defeito | Resultado | Evidências |
@@ -1304,6 +1334,7 @@ Não foi confirmado se o painel usa dados reais ou de demonstração; o clique n
 | RF43 | [CT-RF43](Cenario_Teste/CT-RF43_Criacao_Cobranca_PagarMe.md) | Nenhum no fluxo avaliado | Aprovado conforme a gravação | [Evidências](Evidencias/CT-RF43_Criacao_Cobranca_PagarMe/README.md) e [Jam](https://jam.dev/c/e6e551ef-9196-4c79-b6a2-89747b1e8b33) |
 | RF44 | [CT-RF44](Cenario_Teste/CT-RF44_Configuracoes_Home_Salvamento.md) | Sem defeito confirmado | A validar — regra ou contexto pendente | [Evidências](Evidencias/CT-RF44_Configuracoes_Home_Salvamento/README.md) e [Jam](https://jam.dev/c/e6e551ef-9196-4c79-b6a2-89747b1e8b33) |
 | RF45 | [CT-RF45](Cenario_Teste/CT-RF45_Painel_PagarMe_Periodo.md) | [BUG-021](Relatorio-de-Bugs.md#bug-021), em triagem | Reprovado nas evidências; reteste pendente. | [Evidências](Evidencias/CT-RF45_Painel_PagarMe_Periodo/README.md) e [Jam](https://jam.dev/c/e6e551ef-9196-4c79-b6a2-89747b1e8b33) |
+| RF46 | [CT-RF46](Cenario_Teste/CT-RF46_Filtros_Despesas_Fixas.md) | Nenhum no fluxo avaliado | Aprovado conforme a gravação | [Evidências](Evidencias/CT-RF46_Filtros_Despesas_Fixas/README.md) e [Jam](https://jam.dev/c/a4bac99d-e436-4792-831e-8c3a875272bb) |
 
 ---
 
@@ -1433,6 +1464,12 @@ Com RF44, a análise passa a cobrir 42 requisitos documentados. O CT-RF44 acresc
 RF45 utiliza os painéis Info, Console, Network e Actions do Jam "Pagar.me" e os quadros de 0:00 e 0:25. A comparação entre os dois quadros mostra o mesmo valor e o mesmo gráfico com períodos diferentes. A leitura do eixo de datas é aproximada. Não houve nova execução, acesso ao código ou ao banco, nem reteste. BUG-021 está em triagem.
 
 Com RF45, a análise passa a cobrir 43 requisitos documentados. O CT-RF45 acrescenta uma reprovação, vinculada ao BUG-021, em triagem.
+
+### Base da análise do RF46 — revisão de 15/11/2026
+
+RF46 utiliza os painéis Info, Console, Network e Actions do Jam "Despesas Fixas" e os quadros de 0:03, 0:11, 0:19 e 0:42. Foram registrados os filtros por código e por nome, o cartão Valor Listado e a ausência de requisição nos filtros. Não houve nova execução, acesso ao código ou ao banco, nem reteste.
+
+Com RF46, a análise passa a cobrir 44 requisitos documentados. O CT-RF46 acrescenta uma aprovação limitada ao exemplo gravado.
 
 ---
 
