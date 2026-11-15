@@ -36,8 +36,9 @@
 | [BUG-014](#bug-014) | Vídeo rejeitado no campo Imagem sem feedback | Baixa / Média, propostas | Em triagem — MIME não confirmado | [CT-RF27](Cenario_Teste/CT-RF27_Video_Campo_Imagem.md) |
 | [BUG-015](#bug-015) | Imagem rejeitada no campo Vídeo sem feedback | Baixa / Média, propostas | Em triagem — MIME não confirmado | [CT-RF28](Cenario_Teste/CT-RF28_Imagem_Campo_Video.md) |
 | [BUG-016](#bug-016) | Exclusão de grupo muscular retorna HTTP 500 e mensagem genérica | Média / Alta, propostas | Em triagem — causa não determinada | [CT-RF29](Cenario_Teste/CT-RF29_Exclusao_GrupoMuscular.md) |
+| [BUG-017](#bug-017) | Imagens dos grupos musculares não são exibidas e retornam HTTP 422 | Média / Média, propostas | Em triagem — causa não determinada | [CT-RF30](Cenario_Teste/CT-RF30_Imagens_GruposMusculares.md) |
 
-BUG-001–BUG-010 aguardam correção e reteste. BUG-011–BUG-016 aguardam confirmação das premissas e triagem antes do encaminhamento de correção. As causas técnicas permanecem não confirmadas; o BUG-003 se apoia no relato e nas capturas fornecidos, com os limites registrados no caso.
+BUG-001–BUG-010 aguardam correção e reteste. BUG-011–BUG-017 aguardam confirmação das premissas e triagem antes do encaminhamento de correção. As causas técnicas permanecem não confirmadas; o BUG-003 se apoia no relato e nas capturas fornecidos, com os limites registrados no caso.
 
 ---
 
@@ -772,6 +773,56 @@ O HTTP 500 e o endpoint estão registrados no Jam. Não houve acesso a logs do s
 Não foi verificado se o registro permanece íntegro após as duas tentativas enviadas para o mesmo recurso, nem exercitado o cenário de exclusão com impedimento de regra. A mensagem "Erro ao deletar Grupo" é genérica e não informa a causa ao usuário.
 
 Investigar o HTTP 500 com logs do servidor e os vínculos do registro; corrigir e retestar os cenários permitido e impedido. O status permanece em triagem até que a causa seja determinada e uma nova execução comprove os critérios de aceitação do caso associado.
+
+---
+
+<a id="bug-017"></a>
+
+## BUG-017 — Imagens dos grupos musculares não são exibidas e retornam HTTP 422
+
+| Campo | Descrição |
+| --- | --- |
+| Status | Em triagem — causa não determinada; reteste pendente após correção. |
+| Severidade / prioridade | Média / Média, propostas para triagem. |
+| Módulo | Grupos Musculares / Listagem |
+| Requisitos | [RF30](Analise%20de%20requisitos.md#rf30) |
+| Casos | [CT-RF30](Cenario_Teste/CT-RF30_Imagens_GruposMusculares.md) |
+| Data da evidência / revisão | 15/11/2026; sem nova execução. |
+| Página | https://sifit.centrion.com.br/grupos-musculares |
+| Ambiente | Chrome 157.0.8103.78 / Windows (x86) 11; versão e zoom não confirmados. |
+
+### Pré-condições e reprodução
+
+**[CT-RF30](Cenario_Teste/CT-RF30_Imagens_GruposMusculares.md):** Sessão autenticada com acesso a Grupos Musculares. Ao menos um registro com imagem cadastrada e o caminho esperado dos arquivos conhecido.
+
+1. Acessar a tela Grupos Musculares com o painel de rede aberto.
+2. Observar a coluna IMAGEM de cada linha.
+3. Conferir o status das requisições para `/img/grupos_musculares/imagens/`.
+4. Repetir após uma busca e após a troca de tema.
+
+### Esperado e obtido
+
+| Caso | Esperado | Obtido |
+| --- | --- | --- |
+| CT-RF30 | A coluna IMAGEM apresenta a imagem de cada registro e as requisições dos arquivos são concluídas com sucesso. | Todas as linhas exibem o ícone de imagem quebrada e as requisições retornam HTTP 422, com ocorrências de `net::ERR_ABORTED`. |
+
+**Impacto:** A listagem não apresenta a identificação visual dos grupos musculares em nenhuma linha. A falha é constante durante toda a gravação e independe do filtro aplicado ou do tema selecionado.
+
+### Evidências
+
+- [CT-RF30](Cenario_Teste/CT-RF30_Imagens_GruposMusculares.md): [Jam — Tela de Grupos Musculares](https://jam.dev/c/98008390-0040-475e-ba7b-7f1e72cc0b2e). Ocorrências de HTTP 422 em 0:06, 0:16, 0:53, 0:57, 1:07, 1:09, 1:12, 1:33, 1:35, 1:39, 1:47 e 1:59; três ocorrências de `net::ERR_ABORTED` em 0:53, 0:57 e 1:12.
+- Arquivos requisitados: `6ad0c27c20a04.png`, `6abbd0a11ec04.png`, `655226c71114f.png` e `6afa0017749b3.jpg`, todos em `https://sifit.centrion.com.br/img/grupos_musculares/imagens/`.
+- Quadros de 0:20, 0:55, 1:18, 1:21, 1:45 e 2:00, com o ícone de imagem quebrada em todas as linhas, nos temas escuro e claro.
+
+### Análise, limites e encaminhamento
+
+Os códigos de status foram lidos na coluna Status da lista de rede. O painel de detalhe da ferramenta repetiu cabeçalhos de resposta e `x-hcdn-request-id` entre linhas distintas durante a consulta, de modo que os cabeçalhos de resposta das requisições de imagem não foram considerados confiáveis e não são reproduzidos aqui.
+
+O código 422 não é o retorno usual para arquivo ausente ou sem permissão, o que sugere tratamento por aplicação em vez de entrega direta de arquivo estático. Essa é uma hipótese a confirmar, não um diagnóstico. Não foi verificada a existência dos arquivos no servidor, nem o conteúdo do campo de imagem de cada registro no banco, nem o resultado do acesso direto às URLs fora da página.
+
+Verificar também o comportamento para registros criados sem imagem: o formulário de inclusão foi enviado com "Nenhum arquivo escolhido" e, a partir de 0:53, passa a existir um quarto arquivo requisitado com o mesmo 422. Nos trechos em que a listagem é filtrada e exibe apenas esse registro, ele é o único arquivo requisitado, o que o associa a ele; a associação decorre da correlação entre filtros e requisições, sem confirmação no banco.
+
+Investigar a existência dos arquivos no caminho indicado, o nome gravado em cada registro e a regra que responde HTTP 422 a uma requisição de imagem. O status permanece em triagem até que a causa seja determinada e uma nova execução comprove os critérios de aceitação do caso associado.
 
 ---
 
