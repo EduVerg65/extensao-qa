@@ -2,11 +2,11 @@
 
 **Módulos:** Autenticação, Perfil, Clientes / Filtros, Financeiro, Página inicial / Personais, SifitBox / Modalidades e Turmas, Categorias Crossfit, Avaliações, Exercícios, Grupos Musculares, Dashboard e Objetivos de Treino.
 
-**Atualização:** 15/11/2026 — RF01 a RF35 e RF38 consolidados, com inclusão do cadastro de Categorias Crossfit com código automático (CT-RF38); BUG-011–BUG-019 em triagem.
+**Atualização:** 15/11/2026 — RF01 a RF35, RF38 e RF39 consolidados, com inclusão de Categorias Crossfit (CT-RF38) e do cadastro de modalidade em SifitBox – Turmas (CT-RF39); BUG-011–BUG-019 em triagem.
 
 **Padronização documental:** 13/11/2026, sem alteração dos resultados registrados.
 
-Esta análise documenta 36 requisitos de QA para os cenários relacionados abaixo, com base nos relatos e nas evidências fornecidas. RF01–RF04 e suas análises históricas foram preservados; RF05–RF20 ampliam a cobertura em 14/11/2026; RF21 acrescenta Avaliações; RF22–RF28 acrescentam Exercícios; RF29–RF33 acrescentam Grupos Musculares; RF34 acrescenta o carregamento do dashboard RF35 acrescenta o cadastro de objetivos de treino e RF38 acrescenta o cadastro de categorias com código automático em 15/11/2026. Os critérios abaixo constituem a referência de QA para esses fluxos; não representam validação de uma especificação formal pelo responsável pelo produto.
+Esta análise documenta 37 requisitos de QA para os cenários relacionados abaixo, com base nos relatos e nas evidências fornecidas. RF01–RF04 e suas análises históricas foram preservados; RF05–RF20 ampliam a cobertura em 14/11/2026; RF21 acrescenta Avaliações; RF22–RF28 acrescentam Exercícios; RF29–RF33 acrescentam Grupos Musculares; RF34 acrescenta o carregamento do dashboard RF35 acrescenta o cadastro de objetivos de treino e RF38 acrescenta o cadastro de categorias com código automático em 15/11/2026. RF39 acrescenta o cadastro de modalidade em SifitBox – Turmas. Os critérios abaixo constituem a referência de QA para esses fluxos; não representam validação de uma especificação formal pelo responsável pelo produto.
 
 ## 📋 Visão geral dos requisitos
 
@@ -48,6 +48,7 @@ Esta análise documenta 36 requisitos de QA para os cenários relacionados abaix
 | [RF34](#rf34) | Carregar o dashboard sem falhas de servidor ou requisições redundantes | Alta, proposta | [CT-RF34](Cenario_Teste/CT-RF34_Erro_Servidor_Excesso_Requisicoes.md) |
 | [RF35](#rf35) | Cadastrar objetivo de treino ou informar validação específica | Alta, proposta | [CT-RF35](Cenario_Teste/CT-RF35_Cadastro_Objetivo_Treino.md) |
 | [RF38](#rf38) | Cadastrar categoria com código automático e localizá-la pelos filtros | Média, proposta | [CT-RF38](Cenario_Teste/CT-RF38_Cadastro_Categoria_Codigo_Automatico.md) |
+| [RF39](#rf39) | Cadastrar modalidade e apresentá-la na listagem | Média, proposta | [CT-RF39](Cenario_Teste/CT-RF39_Cadastro_Modalidade.md) |
 
 ---
 
@@ -1046,6 +1047,35 @@ Permanecem fora do cenário gravado: nome vazio, nome duplicado, limites de tama
 
 ---
 
+<a id="rf39"></a>
+
+## RF39 — Cadastrar modalidade em SifitBox – Turmas
+
+| Campo | Descrição |
+| --- | --- |
+| Requisito de QA | O cadastro de uma modalidade deve criar o registro com o nome, a descrição e o status informados, apresentá-lo na listagem de Modalidades e limpar o formulário. |
+| Ator | Usuário autenticado com permissão em SifitBox – Turmas. |
+| Pré-condições | Listagem de Modalidades conhecida; nome de modalidade de teste disponível. |
+| Gatilho | Preencher nome e descrição da modalidade, manter o status Ativo e acionar o botão de envio de Modalidade. |
+| Caso | [CT-RF39](Cenario_Teste/CT-RF39_Cadastro_Modalidade.md) |
+| Situação observada | Aprovado conforme a gravação. `POST /api/sifitbox/modalidades/salvar/1` retorna HTTP 201 com a modalidade de id 4 e status "ativo"; a listagem passa de três para quatro modalidades e o formulário é limpo. |
+| Defeito | Nenhum no fluxo avaliado |
+| Evidências | [Jam](https://jam.dev/c/ee9a133b-d6b1-442d-b4b0-dd87595b7e70) e [Evidências](Evidencias/CT-RF39_Cadastro_Modalidade/README.md). |
+
+### Critérios de aceitação do RF39
+
+1. O formulário permite informar nome, descrição e status e cria a modalidade ao confirmar.
+2. A resposta retorna sucesso e o registro com os dados informados e o status escolhido.
+3. A listagem passa a exibir a nova modalidade e o formulário é limpo.
+4. A modalidade permanece após recarga da página.
+5. Dados inválidos ou ausentes recebem validação específica, sem HTTP 500.
+
+### Pontos a confirmar e limites do RF39
+
+Não foram verificados a persistência após recarga, a mensagem de confirmação, o nome vazio, o nome duplicado e os limites de tamanho. O corpo enviado traz `"id": {}` (objeto vazio), aceito pelo sistema; o contrato da API não foi fornecido. As modalidades anteriores aparecem como "inativo" sob o filtro "Ativo", ponto tratado no [RF40](#rf40) e relacionado ao [RF16](#rf16).
+
+---
+
 ## 🔗 Rastreabilidade
 
 | Requisito | Cenário / caso | Defeito | Resultado | Evidências |
@@ -1086,6 +1116,7 @@ Permanecem fora do cenário gravado: nome vazio, nome duplicado, limites de tama
 | RF34 | [CT-RF34](Cenario_Teste/CT-RF34_Erro_Servidor_Excesso_Requisicoes.md) | [BUG-018](Relatorio-de-Bugs.md#bug-018), em triagem | Reprovado — múltiplas requisições retornam HTTP 500. | [Jam](https://jam.dev/c/eea58e17-b62f-432b-97b2-b14c14bed555) e [Evidências](Evidencias/CT-RF34_Erro_Servidor_Excesso_Requisicoes/README.md) |
 | RF35 | [CT-RF35](Cenario_Teste/CT-RF35_Cadastro_Objetivo_Treino.md) | [BUG-019](Relatorio-de-Bugs.md#bug-019), em triagem | Reprovado nas evidências; reteste pendente. | [Evidências](Evidencias/CT-RF35_Cadastro_Objetivo_Treino/README.md) e [Jam](https://jam.dev/c/1d474477-2411-4a81-b85c-74207402b783) |
 | RF38 | [CT-RF38](Cenario_Teste/CT-RF38_Cadastro_Categoria_Codigo_Automatico.md) | Nenhum no fluxo avaliado | Aprovado conforme a gravação | [Evidências](Evidencias/CT-RF38_Cadastro_Categoria_Codigo_Automatico/README.md) e [Jam](https://jam.dev/c/be1dbd05-217d-44c3-8a3d-240b7f6344e1) |
+| RF39 | [CT-RF39](Cenario_Teste/CT-RF39_Cadastro_Modalidade.md) | Nenhum no fluxo avaliado | Aprovado conforme a gravação | [Evidências](Evidencias/CT-RF39_Cadastro_Modalidade/README.md) e [Jam](https://jam.dev/c/ee9a133b-d6b1-442d-b4b0-dd87595b7e70) |
 
 ---
 
@@ -1173,6 +1204,12 @@ Com RF35, a análise passa a cobrir 35 requisitos. A tela Objetivos Treino acres
 RF38 utiliza os painéis Info, Console (atividade do usuário), Network e Actions do Jam "Categorias Crossfit", lidos diretamente, o corpo da requisição e da resposta de criação, os cabeçalhos de resposta e os quadros de 0:02, 0:08, 0:14, 0:27, 0:28, 0:32 e 0:36. Foram registrados o filtro por nome e por código, a tentativa de digitar no campo Código, a criação com HTTP 201, o código 9 atribuído e a localização do registro pelo filtro. As capturas e a cronologia estão na [pasta local de evidências](Evidencias/CT-RF38_Cadastro_Categoria_Codigo_Automatico/README.md). Não houve nova execução, acesso ao código ou ao banco, nem reteste.
 
 Com RF38, a análise passa a cobrir 36 requisitos documentados (RF01–RF35 e RF38). A tela Categorias Crossfit acrescenta uma aprovação limitada aos exemplos gravados.
+
+### Base da análise do RF39 — revisão de 15/11/2026
+
+RF39 utiliza os painéis Info, Console (atividade do usuário), Network e Actions do Jam "SifitBox – Turmas", o corpo da requisição e da resposta de criação e os quadros de 1:17, 1:28 e 1:35. Foram registrados o `POST modalidades/salvar` com HTTP 201, a modalidade de id 4 e a atualização da listagem. As capturas e a cronologia estão na [pasta local de evidências](Evidencias/CT-RF39_Cadastro_Modalidade/README.md). Não houve nova execução, acesso ao código ou ao banco, nem reteste.
+
+Com RF39, a análise passa a cobrir 37 requisitos documentados. A tela SifitBox – Turmas acrescenta uma aprovação limitada ao exemplo gravado.
 
 ---
 
