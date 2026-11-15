@@ -27,4 +27,15 @@
 
 Os resultados são documentais; nenhuma nova execução ou reteste foi realizada nesta inclusão. Dez casos reprovados estão relacionados a nove defeitos, pois CT-RF09 e CT-RF10 compartilham BUG-005.
 
+## Inclusão de 15/11/2026
+
+O consolidado acima registra os 20 cenários revisados em 14/11/2026. Com CT-RF22–CT-RF25, há 24 cenários documentados; a numeração solicitada foi mantida, sem criar CT-RF21. Esses quatro casos ainda não foram incorporados aos relatórios consolidados de 14/11/2026. As evidências documentais de CT-RF23–CT-RF25 estão em [Evidências](../Evidencias/README.md).
+
+| Caso | Funcionalidade | Resultado | Defeito | Jam |
+| --- | --- | --- | --- | --- |
+| [CT-RF22](CT-RF22_Digitacao_Codigo_Exercicio.md) | Digitação do código no formulário Exercício | Reprovado conforme o relato; reprodução independente pendente | Sem identificador atribuído | [Jam](https://jam.dev/c/2696db03-0a18-4c39-a75d-4987a43c04f0) |
+| [CT-RF23](CT-RF23_Exclusao_Exercicio.md) | Exclusão de exercício | Aprovado no trecho consultado | Sem defeito confirmado | [Jam](https://jam.dev/c/32adfca3-489f-4a4b-a08d-933c1d1a3c32) |
+| [CT-RF24](CT-RF24_Edicao_Exercicio.md) | Edição de exercício aumenta o total e mantém duas entradas | Reprovado no trecho consultado; confirmar operação e identidade dos registros na reprodução | Possível criação ao editar; sem ID atribuído | [Jam](https://jam.dev/c/073f70d6-4052-4e0f-a4bb-e9f37305d618) |
+| [CT-RF25](CT-RF25_Envio_Exercicio_Imagem.md) | Envio de exercício com imagem | A validar — criação visível; persistência e associação da imagem não confirmadas | Sem defeito confirmado | [Jam](https://jam.dev/c/25c37a9b-e9bd-4e0c-adf1-4da528ae1d58) |
+
 [← Início](../../README.md) · [Requisitos](../Analise%20de%20requisitos.md) · [Plano](../Plano%20de%20testes.md) · [Evidências](../Evidencias/README.md)
