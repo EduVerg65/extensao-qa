@@ -1,0 +1,12 @@
+CT-RF24 — Edição de exercício aumenta o total e mantém duas entradas
+Fonte: https://jam.dev/c/073f70d6-4052-4e0f-a4bb-e9f37305d618
+Gravação: 15/11/2026, 15:38 BRT; duração aproximada: 9 s.
+Revisão documental: 15/11/2026.
+
+Quadros consultados: O Jam está identificado como teste de edição. Nos quadros intermediários, o formulário Exercício está aberto com código 16, o nome é preenchido e a biblioteca ao fundo indica total 10. No quadro final, o formulário fecha, o total é 11 e a lista contém Levantamento de Peso e Levantamento de Peso 02. O aumento e a coexistência dos nomes divergem do resultado esperado para uma edição.
+
+Rede do conjunto gravado, sem atribuição de timestamps individuais:
+A aba Network apresenta POST com HTTP 200, GET de arquivo MP4 com HTTP 200, POST com HTTP 201 e outro POST com HTTP 200. O HTTP 201 é compatível com criação, mas isoladamente não confirma a causa: caminhos, corpos e contrato da API não foram inspecionados.
+
+Limites: O acionamento inicial da edição e os identificadores das duas entradas não foram confirmados. A classificação considera o propósito declarado do Jam e a divergência visual; se a operação tiver sido criação, reavaliar a conclusão.
+Não houve nova execução ou reteste.
