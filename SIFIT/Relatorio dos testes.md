@@ -1,10 +1,10 @@
 # 📊 Relatório de Testes — SIFIT
 
-**Escopo:** 39 casos documentados (CT-RF01–CT-RF35 e CT-RF38–CT-RF41) — autenticação, recuperação, perfil, Clientes, financeiro, página inicial e dashboard, modalidades / tema de SifitBox, Categorias Crossfit, Avaliações, Exercícios, Grupos Musculares, Objetivos de Treino cadastro de categorias com código automático e SifitBox – Turmas.
+**Escopo:** 54 casos documentados (CT-RF01–CT-RF35 e CT-RF38–CT-RF56) — autenticação, recuperação, perfil, Clientes, financeiro, página inicial e dashboard, modalidades / tema de SifitBox, Categorias Crossfit, Avaliações, Exercícios, Grupos Musculares, Objetivos de Treino cadastro de categorias com código automático, SifitBox – Turmas, Pagar.me, Configurações, Despesas Fixas e Relatórios.
 
-**Datas das gravações do Jam:** CT-RF01 em 23/10/2026; CT-RF02_ERRO em 22/10/2026 às 21:45 BRT; CT-RF03 não confirmada; CT-RF04_loginComSucesso em 13/11/2026; CT-RF05–CT-RF20 em 14/11/2026; CT-RF21 em 15/11/2026 às 15:07:51,265 BRT; CT-RF22–28 em 15/11/2026 às 15:25, 15:40, 15:38, 15:35, 16:11, 16:08 e 16:07 BRT; CT-RF29–33 em 15/11/2026 às 15h56 BRT (uma única gravação); CT-RF34 em 15/11/2026 às 17:23 BRT; CT-RF35 em 15/11/2026 às 18:13 BRT; CT-RF38 em 15/11/2026 às 18:41 BRT; CT-RF39–41 em 15/11/2026 às 18:51 BRT (uma única gravação).
+**Datas das gravações do Jam:** CT-RF01 em 23/10/2026; CT-RF02_ERRO em 22/10/2026 às 21:45 BRT; CT-RF03 não confirmada; CT-RF04_loginComSucesso em 13/11/2026; CT-RF05–CT-RF20 em 14/11/2026; CT-RF21 em 15/11/2026 às 15:07:51,265 BRT; CT-RF22–28 em 15/11/2026 às 15:25, 15:40, 15:38, 15:35, 16:11, 16:08 e 16:07 BRT; CT-RF29–33 em 15/11/2026 às 15h56 BRT (uma única gravação); CT-RF34 em 15/11/2026 às 17:23 BRT; CT-RF35 em 15/11/2026 às 18:13 BRT; CT-RF38 em 15/11/2026 às 18:41 BRT; CT-RF39–41 em 15/11/2026 às 18:51 BRT (uma única gravação); CT-RF42–45 às 19:06, CT-RF46–49 às 19:07 e CT-RF50–56 às 19:09 BRT (uma gravação por grupo).
 
-**Data da revisão documental:** 15/11/2026, com integração de CT-RF22–CT-RF35 e CT-RF38–CT-RF41; BUG-011–BUG-020 em triagem. Resultados anteriores preservados.
+**Data da revisão documental:** 15/11/2026, com integração de CT-RF22–CT-RF35 e CT-RF38–CT-RF56; BUG-011–BUG-023 em triagem. Resultados anteriores preservados.
 
 **Origem do resultado:** análise de evidências fornecidas; sem nova execução no sistema nesta revisão.
 
@@ -26,13 +26,13 @@ Os 16 cenários incluídos em 14/11/2026 acrescentaram **5 aprovações**, **7 r
 
 O **CT-RF29** acrescenta uma reprovação e o BUG-016: a exclusão de grupo muscular retorna HTTP 500 em duas tentativas, com o corpo `{"verifica_erro": true, "mensagem": "Erro interno inesperado."}`; a interface apresenta o diálogo "Erro ao deletar Grupo" e o registro permanece na listagem. A causa não foi determinada.
 
-CT-RF30 acrescenta uma reprovação e o BUG-017 (imagens dos grupos musculares com HTTP 422); CT-RF31–33 acrescentam três aprovações limitadas aos exemplos gravados. O **CT-RF35** acrescenta uma reprovação e o BUG-019: o cadastro de objetivo de treino retorna HTTP 500 em duas ocorrências, com o diálogo "Erro ao salvar objetivo" e a listagem sem registros; o corpo da requisição e da resposta não foi capturado e a causa não foi determinada. O **CT-RF38** acrescenta uma aprovação limitada ao exemplo gravado: o cadastro de categoria cria o registro apenas com o nome (HTTP 201), o código 9 é atribuído pelo sistema e o filtro por código localiza o novo registro; sem defeito. O **CT-RF39** acrescenta uma aprovação (cadastro de modalidade com HTTP 201); o **CT-RF40** acrescenta um ponto a validar (exclusão por lixeira que inativa os registros, regra a confirmar); o **CT-RF41** acrescenta uma reprovação e o BUG-020 (cadastro de turma sem modalidade, sem retorno visível; validação nativa não confirmada). As contagens consolidadas são:
+CT-RF30 acrescenta uma reprovação e o BUG-017 (imagens dos grupos musculares com HTTP 422); CT-RF31–33 acrescentam três aprovações limitadas aos exemplos gravados. O **CT-RF35** acrescenta uma reprovação e o BUG-019: o cadastro de objetivo de treino retorna HTTP 500 em duas ocorrências, com o diálogo "Erro ao salvar objetivo" e a listagem sem registros; o corpo da requisição e da resposta não foi capturado e a causa não foi determinada. O **CT-RF38** acrescenta uma aprovação limitada ao exemplo gravado: o cadastro de categoria cria o registro apenas com o nome (HTTP 201), o código 9 é atribuído pelo sistema e o filtro por código localiza o novo registro; sem defeito. O **CT-RF39** acrescenta uma aprovação (cadastro de modalidade com HTTP 201); o **CT-RF40** acrescenta um ponto a validar (exclusão por lixeira que inativa os registros, regra a confirmar); o **CT-RF41** acrescenta uma reprovação e o BUG-020 (cadastro de turma sem modalidade, sem retorno visível; validação nativa não confirmada). CT-RF42 a CT-RF45 (Pagar.me e Configurações) acrescentam uma aprovação (criação de cobrança), dois pontos a validar (saque e salvamento das configurações) e uma reprovação com o BUG-021 (painel que mantém Recebimentos ao trocar o período); CT-RF46 a CT-RF49 (Despesas Fixas) acrescentam três aprovações (filtros, exclusão e edição) e um ponto a validar (cadastro com duas requisições de criação); CT-RF50 a CT-RF56 (Relatórios) acrescentam uma aprovação (Matrículas), um ponto a validar (Contas a Pagar sem registros) e cinco reprovações, com o BUG-022 (Contas a Receber sem valor) e o BUG-023 (quatro relatórios com arquivo vazio de 0 bytes). As contagens consolidadas são:
 
 | Casos documentados | Aprovados | Reprovados | A validar | Defeitos registrados | Casos com reteste corretivo pendente |
 | :---: | :---: | :---: | :---: | :---: | :---: |
-| 39 | 12 | 21 | 6 | 20 (10 abertos + 10 em triagem) | 21 |
+| 54 | 17 | 27 | 10 | 23 (10 abertos + 13 em triagem) | 27 |
 
-Os 21 retestes incluem CT-RF22/24/26/27/28/29/30/35/41, sujeitos à confirmação funcional e técnica. As contagens representam os casos documentados com base nas fontes indicadas, sem novas execuções nesta revisão. As nove variações planejadas para o reteste do CT-RF03 não foram executadas e não são contabilizadas como testes adicionais realizados.
+Os 27 retestes incluem CT-RF22/24/26/27/28/29/30/35/41/45/51/53/54/55/56, sujeitos à confirmação funcional e técnica. As contagens representam os casos documentados com base nas fontes indicadas, sem novas execuções nesta revisão. As nove variações planejadas para o reteste do CT-RF03 não foram executadas e não são contabilizadas como testes adicionais realizados.
 
 ---
 
@@ -79,6 +79,21 @@ Os 21 retestes incluem CT-RF22/24/26/27/28/29/30/35/41, sujeitos à confirmaçã
 | [CT-RF39](Cenario_Teste/CT-RF39_Cadastro_Modalidade.md) | [RF39](Analise%20de%20requisitos.md#rf39) | Criar a modalidade com os dados informados, listá-la e limpar o formulário. | `POST /api/sifitbox/modalidades/salvar/1` retorna HTTP 201 (id 4, status "ativo"); a listagem passa de três para quatro modalidades. | Aprovado conforme a gravação | Nenhum no fluxo avaliado |
 | [CT-RF40](Cenario_Teste/CT-RF40_Exclusao_Turmas_Modalidades.md) | [RF40](Analise%20de%20requisitos.md#rf40) | Aplicar e comunicar a regra de exclusão e refletir o resultado na listagem conforme o filtro de status. | Quatro `POST turmas/excluir` e cinco `POST modalidades/excluir` retornam HTTP 200 e `{"erro": false}`; os registros continuam listados com o status "inativo", sem diálogo de confirmação. | A validar — regra ou contexto pendente | Sem defeito confirmado |
 | [CT-RF41](Cenario_Teste/CT-RF41_Cadastro_Turma_Sem_Modalidade.md) | [RF41](Analise%20de%20requisitos.md#rf41) | Bloquear o envio sem modalidade, indicar o campo pendente e não criar a turma. | Nenhuma mensagem de validação visível e nenhuma requisição de criação de turma nas tentativas de envio; o formulário permanece preenchido. | Reprovado — sem feedback de validação visível | [BUG-020](Relatorio-de-Bugs.md#bug-020), em triagem |
+| [CT-RF42](Cenario_Teste/CT-RF42_Solicitacao_Saque_PagarMe.md) | [RF42](Analise%20de%20requisitos.md#rf42) | Registrar a solicitação e informar o resultado ao usuário. | `POST sacar-saldo` retorna HTTP 200; sem mensagem de resultado visível e com o saldo "R$ --". | A validar — regra ou contexto pendente | Sem defeito confirmado |
+| [CT-RF43](Cenario_Teste/CT-RF43_Criacao_Cobranca_PagarMe.md) | [RF43](Analise%20de%20requisitos.md#rf43) | Criar a cobrança e informar o sucesso ao usuário. | `POST criar-cobranca` retorna HTTP 200 e o diálogo "Cobrança criada com sucesso!". | Aprovado conforme a gravação | Nenhum no fluxo avaliado |
+| [CT-RF44](Cenario_Teste/CT-RF44_Configuracoes_Home_Salvamento.md) | [RF44](Analise%20de%20requisitos.md#rf44) | Salvar com confirmação, persistir e refletir nas opções e no menu. | Opções e campo de dias alterados; menu lateral muda após Salvar Configurações; sem mensagem de confirmação visível. | A validar — regra ou contexto pendente | Sem defeito confirmado |
+| [CT-RF45](Cenario_Teste/CT-RF45_Painel_PagarMe_Periodo.md) | [RF45](Analise%20de%20requisitos.md#rf45) | Atualizar valor, gráfico e eixo conforme o período selecionado. | Recebimentos R$ 38.420,00 e gráfico idênticos em "Últimos 30 dias" e "Últimos 7 dias"; saldos "R$ --". | Reprovado nas evidências | [BUG-021](Relatorio-de-Bugs.md#bug-021), em triagem |
+| [CT-RF46](Cenario_Teste/CT-RF46_Filtros_Despesas_Fixas.md) | [RF46](Analise%20de%20requisitos.md#rf46) | Apresentar apenas as despesas correspondentes e restaurar a lista ao limpar. | Código "1" lista os códigos 10 a 19; nome "Teste" retorna #5 e #7; Valor Listado acompanha o filtro; os campos limpos restauram a lista. | Aprovado conforme a gravação | Nenhum no fluxo avaliado |
+| [CT-RF47](Cenario_Teste/CT-RF47_Cadastro_Despesa_Fixa.md) | [RF47](Analise%20de%20requisitos.md#rf47) | Criar uma única despesa com uma única requisição de criação. | Despesa 23 criada (16 para 17 registros); um clique gera dois `POST cria/despesa-fixa` com HTTP 201. | A validar — regra ou contexto pendente | Sem defeito confirmado |
+| [CT-RF48](Cenario_Teste/CT-RF48_Exclusao_Despesa_Fixa.md) | [RF48](Analise%20de%20requisitos.md#rf48) | Confirmar, excluir e atualizar a listagem e os cartões. | Diálogo de confirmação; `POST deleta/despesa-fixa` retorna HTTP 200; listagem de 17 para 16 despesas. | Aprovado conforme a gravação | Nenhum no fluxo avaliado |
+| [CT-RF49](Cenario_Teste/CT-RF49_Edicao_Despesa_Fixa.md) | [RF49](Analise%20de%20requisitos.md#rf49) | Atualizar a mesma despesa e refletir a alteração na listagem. | `POST edita/despesa-fixa` retorna HTTP 200; a despesa 7 passa a "7 Dias" e a quantidade de despesas permanece 16. | Aprovado conforme a gravação | Nenhum no fluxo avaliado |
+| [CT-RF50](Cenario_Teste/CT-RF50_Relatorio_Matriculas.md) | [RF50](Analise%20de%20requisitos.md#rf50) | Gerar PDF válido com as matrículas do período. | PDF de 7.784 bytes com cabeçalho, período e uma matrícula (R$ 20,00); "Quantidade de registros: 1". | Aprovado conforme a gravação | Nenhum no fluxo avaliado |
+| [CT-RF51](Cenario_Teste/CT-RF51_Relatorio_Contas_Receber.md) | [RF51](Analise%20de%20requisitos.md#rf51) | Apresentar o valor a receber de cada conta e totais coerentes. | PDF com três contas pendentes e Valor a Receber "----" em todas as linhas; "Valor Recebido: R$ 0,00". | Reprovado nas evidências | [BUG-022](Relatorio-de-Bugs.md#bug-022), em triagem |
+| [CT-RF52](Cenario_Teste/CT-RF52_Relatorio_Contas_Pagar_Pagas.md) | [RF52](Analise%20de%20requisitos.md#rf52) | Apresentar as contas pagas do período ou a estrutura vazia explícita. | PDF com a estrutura do relatório, sem linhas e com totalizadores R$ 0,00. | A validar — regra ou contexto pendente | Sem defeito confirmado |
+| [CT-RF53](Cenario_Teste/CT-RF53_Relatorio_Avaliacoes_Vazio.md) | [RF53](Analise%20de%20requisitos.md#rf53) | Gerar PDF válido com o conteúdo do relatório ou a estrutura vazia explícita. | HTTP 200 e arquivo PDF de 0 bytes, que não abre; sem mensagem de erro. | Reprovado nas evidências | [BUG-023](Relatorio-de-Bugs.md#bug-023), em triagem |
+| [CT-RF54](Cenario_Teste/CT-RF54_Relatorio_Clientes_Vazio.md) | [RF54](Analise%20de%20requisitos.md#rf54) | Gerar PDF válido com o conteúdo do relatório ou a estrutura vazia explícita. | HTTP 200 e arquivo PDF de 0 bytes, que não abre; sem mensagem de erro. | Reprovado nas evidências | [BUG-023](Relatorio-de-Bugs.md#bug-023), em triagem |
+| [CT-RF55](Cenario_Teste/CT-RF55_Relatorio_Colaboradores_Vazio.md) | [RF55](Analise%20de%20requisitos.md#rf55) | Gerar PDF válido com o conteúdo do relatório ou a estrutura vazia explícita. | HTTP 200 e arquivo PDF de 0 bytes, que não abre; sem mensagem de erro. | Reprovado nas evidências | [BUG-023](Relatorio-de-Bugs.md#bug-023), em triagem |
+| [CT-RF56](Cenario_Teste/CT-RF56_Relatorio_Caixas_Vazio.md) | [RF56](Analise%20de%20requisitos.md#rf56) | Gerar PDF válido com o conteúdo do relatório ou a estrutura vazia explícita. | HTTP 200 e arquivo PDF de 0 bytes, que não abre; sem mensagem de erro. | Reprovado nas evidências | [BUG-023](Relatorio-de-Bugs.md#bug-023), em triagem |
 
 ---
 
@@ -106,6 +121,9 @@ Os 21 retestes incluem CT-RF22/24/26/27/28/29/30/35/41, sujeitos à confirmaçã
 | [BUG-018](Relatorio-de-Bugs.md#bug-018) | Dashboard apresenta múltiplos HTTP 500 durante o carregamento | Alta, proposta | Alta, proposta | Em triagem; endpoints, repetição e causa pendentes. |
 | [BUG-019](Relatorio-de-Bugs.md#bug-019) | Cadastro de objetivo de treino retorna HTTP 500 | Alta, proposta | Alta, proposta | Em triagem; causa e reteste pendentes. |
 | [BUG-020](Relatorio-de-Bugs.md#bug-020) | Cadastro de turma sem modalidade não apresenta retorno visível | Média, proposta | Alta, proposta | Em triagem; validação nativa e reteste pendentes. |
+| [BUG-021](Relatorio-de-Bugs.md#bug-021) | Painel Pagar.me mantém Recebimentos e gráfico ao trocar o período | Média, proposta | Média, proposta | Em triagem; dados reais ou de demonstração e reteste pendentes. |
+| [BUG-022](Relatorio-de-Bugs.md#bug-022) | Relatório de Contas a Receber exibe "----" em Valor a Receber | Alta, proposta | Alta, proposta | Em triagem; comparação com o módulo e reteste pendentes. |
+| [BUG-023](Relatorio-de-Bugs.md#bug-023) | Relatórios de Avaliações, Clientes, Colaboradores e Caixas geram PDF vazio | Alta, proposta | Alta, proposta | Em triagem; causa e reteste pendentes. |
 
 As classificações propostas dependem de triagem. O BUG-003 mantém o resultado atribuído ao relato fornecido.
 
@@ -259,6 +277,33 @@ O domínio do CT-RF02_ERRO é diferente do domínio `sifitalfa.centrion.com.br` 
 | Dados | Três modalidades e quatro turmas existentes; modalidade "teste" criada; usuário exibido Jair. |
 | Material e limites | Painéis Info, Console, Network e Actions do Jam, corpos de requisições e respostas selecionadas e quadros do vídeo, com uma pasta local de evidências por caso. Corpos das exclusões, filtro "Inativo", envio válido de turma e persistência não verificados; sem inspeção de código ou nova execução. |
 
+### CT-RF42 a CT-RF45
+
+| Item | Registro |
+| --- | --- |
+| Página / API | https://sifit.centrion.com.br/pagarme / https://backendsifit.centrion.com.br |
+| Data / duração | 15/11/2026, 19:06 BRT / 1 min 11 s; uma única gravação cobre os casos do grupo. |
+| Navegador / sistema / janela | Chrome 157.0.8103.78 / Windows (x86) 11 / 1920 × 911, conforme Info; autor do Jam: Gustavo Pelissari Oenning. |
+| Material e limites | Painéis Info, Console, Network e Actions do Jam e quadros do vídeo, com uma pasta local de evidências por caso. Corpos de requisição e de resposta indisponíveis; resultado do saque, persistência das configurações e origem dos dados do painel não confirmados; sem inspeção de código ou nova execução. |
+
+### CT-RF46 a CT-RF49
+
+| Item | Registro |
+| --- | --- |
+| Página / API | https://sifit.centrion.com.br/despesas-fixas / https://backendsifit.centrion.com.br |
+| Data / duração | 15/11/2026, 19:07 BRT / 52 s; uma única gravação cobre os casos do grupo. |
+| Navegador / sistema / janela | Chrome 157.0.8103.78 / Windows (x86) 11 / 1920 × 911, conforme Info; autor do Jam: Gustavo Pelissari Oenning. |
+| Material e limites | Painéis Info, Console, Network e Actions do Jam, corpos de requisições e respostas selecionadas e quadros do vídeo, com uma pasta local por caso. Corpo e resposta da segunda criação, filtragem local e persistência não confirmados; sem inspeção de código ou nova execução. |
+
+### CT-RF50 a CT-RF56
+
+| Item | Registro |
+| --- | --- |
+| Página / API | https://sifit.centrion.com.br/relatorios / https://backendsifit.centrion.com.br |
+| Data / duração | 15/11/2026, 19:09 BRT / 58 s; uma única gravação cobre os casos do grupo. |
+| Navegador / sistema / janela | Chrome 157.0.8103.78 / Windows (x86) 11 / 1920 × 911, conforme Info; autor do Jam: Gustavo Pelissari Oenning. |
+| Material e limites | Painéis Info, Console e Network do Jam, quadros do vídeo e oito arquivos PDF baixados (três com conteúdo, cinco com 0 bytes), com uma pasta local por caso. A atividade do usuário não consta no Console do Jam; a correspondência dos arquivos vazios com os tipos é inferida pela ordem dos downloads; sem inspeção de código ou nova execução. |
+
 ## 📸 5. Evidências e observações
 
 | Evidência | Informação utilizada |
@@ -304,6 +349,9 @@ O domínio do CT-RF02_ERRO é diferente do domínio `sifitalfa.centrion.com.br` 
 | [Jam — CT-RF35: Objetivos Treino](https://jam.dev/c/1d474477-2411-4a81-b85c-74207402b783) e [Evidências](Evidencias/CT-RF35_Cadastro_Objetivo_Treino/README.md) | 1:01 e 1:02: `POST /api/objetivo-treino/salvar/1` com HTTP 500 (1077 ms e 856 ms), OPTIONS HTTP 204; 1:04: diálogo "Erro ao salvar objetivo"; 1:11: listagem sem registros. O campo Código permanece vazio nos quadros apesar da digitação registrada (regra não confirmada) e a base vazia impede avaliar os filtros. Corpo da requisição e da resposta indisponíveis; sem causa raiz. |
 | [Jam — CT-RF38: Categorias Crossfit](https://jam.dev/c/be1dbd05-217d-44c3-8a3d-240b7f6344e1) e [Evidências](Evidencias/CT-RF38_Cadastro_Categoria_Codigo_Automatico/README.md) | 0:27: Salvar com o nome "teste" e o Código vazio; `POST /api/categoria-exercicio-cross/criar` com HTTP 201, corpo `{"nome": "teste"}` e "Categoria criada com sucesso!". 0:28: nove categorias, código 9 "teste". 0:32: filtro Código "9" retorna só esse registro; 0:02 e 0:08: filtros por nome e por código com uma linha cada. Os filtros não geram requisição de rede (compatível com filtragem local, sem confirmação). Regra do campo Código não confirmada. |
 | [Jam — CT-RF39 a CT-RF41: SifitBox – Turmas](https://jam.dev/c/ee9a133b-d6b1-442d-b4b0-dd87595b7e70) e evidências ([CT-RF39](Evidencias/CT-RF39_Cadastro_Modalidade/README.md), [CT-RF40](Evidencias/CT-RF40_Exclusao_Turmas_Modalidades/README.md), [CT-RF41](Evidencias/CT-RF41_Cadastro_Turma_Sem_Modalidade/README.md)) | CT-RF39: `POST modalidades/salvar` com HTTP 201, modalidade de id 4 "ativo" e listagem de três para quatro modalidades (1:34–1:35). CT-RF40: quatro `POST turmas/excluir` e cinco `POST modalidades/excluir` com HTTP 200 e `{"erro": false}` entre 1:00 e 1:05, registros mantidos na listagem com o status "inativo" e sem confirmação visível. CT-RF41: sem requisição de criação de turma e sem mensagem visível nas tentativas de envio (0:17–0:20, 1:28 e 1:33), com a modalidade em branco; a edição da turma de id 4 gera `POST turmas/atualizar` com HTTP 200. Validação nativa do navegador, regras de exclusão e de obrigatoriedade e persistência não confirmadas. |
+| [Jam — Pagar.me e Configurações](https://jam.dev/c/e6e551ef-9196-4c79-b6a2-89747b1e8b33) e evidências por caso | CT-RF42: `sacar-saldo` com HTTP 200 sem mensagem de resultado visível. CT-RF43: `criar-cobranca` com HTTP 200 e "Cobrança criada com sucesso!". CT-RF44: configurações alteradas e menu lateral modificado após Salvar, sem mensagem de confirmação, com o campo de dias em -120 e depois 1100. CT-RF45: Recebimentos R$ 38.420,00 e gráfico idênticos em "Últimos 30 dias" e "Últimos 7 dias". |
+| [Jam — Despesas Fixas](https://jam.dev/c/a4bac99d-e436-4792-831e-8c3a875272bb) e evidências por caso | CT-RF46: filtros por código e nome com Valor Listado acompanhando o conjunto. CT-RF47: um clique em Salvar Despesa gera dois `POST cria/despesa-fixa` com HTTP 201 e um registro novo (código 23). CT-RF48: diálogo de confirmação e `POST deleta/despesa-fixa` com HTTP 200. CT-RF49: `POST edita/despesa-fixa` com HTTP 200 e recorrência "7 Dias" na listagem. |
+| [Jam — Relatórios](https://jam.dev/c/3b4777a4-e1b0-4038-9b06-26c73669d7d1) e evidências por caso | Oito `POST /api/relatorio/1` com HTTP 200 e oito arquivos baixados: Matrículas (uma matrícula, R$ 20,00), Contas a Receber (três contas com Valor a Receber "----") e Contas a Pagar (Pagas) sem linhas abrem; Avaliações (duas vezes), Clientes, Colaboradores e Caixas geram arquivos de 0 bytes. |
 
 A mensagem de credenciais incorretas já aparece no início do vídeo do Jam; não foi considerada uma resposta ao clique em "Esqueci minha senha". A ausência de requisição, isoladamente, não caracteriza defeito se a interface abrir um formulário local. Aqui, o resultado reprovado decorre de o fluxo não abrir.
 
@@ -432,6 +480,30 @@ O consolidado atual é de 36 casos documentados (CT-RF01–CT-RF35 e CT-RF38): 1
 O [BUG-020](Relatorio-de-Bugs.md#bug-020) está em triagem, com severidade Média e prioridade Alta propostas; repete o padrão de ausência de feedback do [BUG-013](Relatorio-de-Bugs.md#bug-013) em outro módulo. O CT-RF40 se relaciona ao ponto a validar do [CT-RF16](Cenario_Teste/CT-RF16_Exclusao_Modalidade.md).
 
 O consolidado atual é de 39 casos documentados (CT-RF01–CT-RF35 e CT-RF38–CT-RF41): 12 aprovados, 21 reprovados e 6 a validar; 20 defeitos registrados (10 abertos e 10 em triagem) e 21 casos com reteste corretivo pendente. CT-RF09/10 compartilham BUG-005, de modo que 21 casos reprovados correspondem a 20 defeitos. Sem nova execução.
+
+## Inclusão de 15/11/2026 — CT-RF42 a CT-RF56
+
+| Caso | Situação | Encaminhamento |
+| --- | --- | --- |
+| [CT-RF42](Cenario_Teste/CT-RF42_Solicitacao_Saque_PagarMe.md) | A validar — regra ou contexto pendente | Confirmar a regra de saque e reexecutar com saldo conhecido, capturando corpo e resposta; testar valor acima do saldo e valor inválido. |
+| [CT-RF43](Cenario_Teste/CT-RF43_Criacao_Cobranca_PagarMe.md) | Aprovado conforme a gravação | Usar como regressão; outros métodos, dados inválidos, link gerado e presença da cobrança em Transações recentes exigem execuções adicionais. |
+| [CT-RF44](Cenario_Teste/CT-RF44_Configuracoes_Home_Salvamento.md) | A validar — regra ou contexto pendente | Confirmar a faixa do campo de dias e a mensagem de salvamento; reexecutar com recarga, Cancelar e valores limite. |
+| [CT-RF45](Cenario_Teste/CT-RF45_Painel_PagarMe_Periodo.md) | Reprovado nas evidências | Reproduzir com conta de movimentação conhecida, comparar períodos e capturar corpo e resposta de recebiveis, transacoes e pagarme. |
+| [CT-RF46](Cenario_Teste/CT-RF46_Filtros_Despesas_Fixas.md) | Aprovado conforme a gravação | Usar como regressão; combinação de critérios, resultado vazio, filtros de status e recorrência e a regra de correspondência do código exigem execuções adicionais. |
+| [CT-RF47](Cenario_Teste/CT-RF47_Cadastro_Despesa_Fixa.md) | A validar — regra ou contexto pendente | Reproduzir capturando as duas requisições de criação e conferir a quantidade de registros após recarga; confirmar a regra do código. |
+| [CT-RF48](Cenario_Teste/CT-RF48_Exclusao_Despesa_Fixa.md) | Aprovado conforme a gravação | Usar como regressão; Cancelar, despesa com vínculos, natureza da exclusão e persistência após recarga exigem execuções adicionais. |
+| [CT-RF49](Cenario_Teste/CT-RF49_Edicao_Despesa_Fixa.md) | Aprovado conforme a gravação | Usar como regressão; edição de nome, valor e status, Cancelar, pré-preenchimento da recorrência e persistência após recarga exigem execuções adicionais. |
+| [CT-RF50](Cenario_Teste/CT-RF50_Relatorio_Matriculas.md) | Aprovado conforme a gravação | Usar como regressão; conferir com a lista de matrículas e exercitar filtros e período sem registros. |
+| [CT-RF51](Cenario_Teste/CT-RF51_Relatorio_Contas_Receber.md) | Reprovado nas evidências | Comparar com o módulo Contas a Receber e reexecutar com valores conhecidos, Detalhado e outros status. |
+| [CT-RF52](Cenario_Teste/CT-RF52_Relatorio_Contas_Pagar_Pagas.md) | A validar — regra ou contexto pendente | Conferir as contas pagas do período no módulo e reexecutar com um período que contenha pagamentos. |
+| [CT-RF53](Cenario_Teste/CT-RF53_Relatorio_Avaliacoes_Vazio.md) | Reprovado nas evidências | Investigar a geração com logs do servidor e retestar com e sem registros no período, comparando com os relatórios que abrem. |
+| [CT-RF54](Cenario_Teste/CT-RF54_Relatorio_Clientes_Vazio.md) | Reprovado nas evidências | Investigar a geração com logs do servidor e retestar com e sem registros no período, comparando com os relatórios que abrem. |
+| [CT-RF55](Cenario_Teste/CT-RF55_Relatorio_Colaboradores_Vazio.md) | Reprovado nas evidências | Investigar a geração com logs do servidor e retestar com e sem registros no período, comparando com os relatórios que abrem. |
+| [CT-RF56](Cenario_Teste/CT-RF56_Relatorio_Caixas_Vazio.md) | Reprovado nas evidências | Investigar a geração com logs do servidor e retestar com e sem registros no período, comparando com os relatórios que abrem. |
+
+Os defeitos [BUG-021](Relatorio-de-Bugs.md#bug-021), [BUG-022](Relatorio-de-Bugs.md#bug-022) e [BUG-023](Relatorio-de-Bugs.md#bug-023) estão em triagem. O BUG-023 é compartilhado por CT-RF53 a CT-RF56 (arquivos de 0 bytes) e, por isso, seis casos reprovados deste grupo correspondem a três defeitos. Os pontos a validar (CT-RF42, CT-RF44, CT-RF47 e CT-RF52) não geram defeito antes da confirmação da regra ou da duplicidade.
+
+O consolidado atual é de 54 casos documentados (CT-RF01–CT-RF35 e CT-RF38–CT-RF56): 17 aprovados, 27 reprovados e 10 a validar; 23 defeitos registrados (10 abertos e 13 em triagem) e 27 casos com reteste corretivo pendente. CT-RF09/10 compartilham BUG-005 e CT-RF53 a CT-RF56 compartilham BUG-023, de modo que 27 casos reprovados correspondem a 23 defeitos. Sem nova execução.
 
 ---
 
