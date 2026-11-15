@@ -1,10 +1,10 @@
 # 📊 Relatório de Testes — SIFIT
 
-**Escopo:** 36 casos documentados (CT-RF01–CT-RF35 e CT-RF38) — autenticação, recuperação, perfil, Clientes, financeiro, página inicial e dashboard, modalidades / tema de SifitBox, Categorias Crossfit, Avaliações, Exercícios, Grupos Musculares, Objetivos de Treino e cadastro de categorias com código automático.
+**Escopo:** 39 casos documentados (CT-RF01–CT-RF35 e CT-RF38–CT-RF41) — autenticação, recuperação, perfil, Clientes, financeiro, página inicial e dashboard, modalidades / tema de SifitBox, Categorias Crossfit, Avaliações, Exercícios, Grupos Musculares, Objetivos de Treino cadastro de categorias com código automático e SifitBox – Turmas.
 
-**Datas das gravações do Jam:** CT-RF01 em 23/10/2026; CT-RF02_ERRO em 22/10/2026 às 21:45 BRT; CT-RF03 não confirmada; CT-RF04_loginComSucesso em 13/11/2026; CT-RF05–CT-RF20 em 14/11/2026; CT-RF21 em 15/11/2026 às 15:07:51,265 BRT; CT-RF22–28 em 15/11/2026 às 15:25, 15:40, 15:38, 15:35, 16:11, 16:08 e 16:07 BRT; CT-RF29–33 em 15/11/2026 às 15h56 BRT (uma única gravação); CT-RF34 em 15/11/2026 às 17:23 BRT; CT-RF35 em 15/11/2026 às 18:13 BRT; CT-RF38 em 15/11/2026 às 18:41 BRT.
+**Datas das gravações do Jam:** CT-RF01 em 23/10/2026; CT-RF02_ERRO em 22/10/2026 às 21:45 BRT; CT-RF03 não confirmada; CT-RF04_loginComSucesso em 13/11/2026; CT-RF05–CT-RF20 em 14/11/2026; CT-RF21 em 15/11/2026 às 15:07:51,265 BRT; CT-RF22–28 em 15/11/2026 às 15:25, 15:40, 15:38, 15:35, 16:11, 16:08 e 16:07 BRT; CT-RF29–33 em 15/11/2026 às 15h56 BRT (uma única gravação); CT-RF34 em 15/11/2026 às 17:23 BRT; CT-RF35 em 15/11/2026 às 18:13 BRT; CT-RF38 em 15/11/2026 às 18:41 BRT; CT-RF39–41 em 15/11/2026 às 18:51 BRT (uma única gravação).
 
-**Data da revisão documental:** 15/11/2026, com integração de CT-RF22–CT-RF35 e CT-RF38; BUG-011–BUG-019 em triagem. Resultados anteriores preservados.
+**Data da revisão documental:** 15/11/2026, com integração de CT-RF22–CT-RF35 e CT-RF38–CT-RF41; BUG-011–BUG-020 em triagem. Resultados anteriores preservados.
 
 **Origem do resultado:** análise de evidências fornecidas; sem nova execução no sistema nesta revisão.
 
@@ -26,13 +26,13 @@ Os 16 cenários incluídos em 14/11/2026 acrescentaram **5 aprovações**, **7 r
 
 O **CT-RF29** acrescenta uma reprovação e o BUG-016: a exclusão de grupo muscular retorna HTTP 500 em duas tentativas, com o corpo `{"verifica_erro": true, "mensagem": "Erro interno inesperado."}`; a interface apresenta o diálogo "Erro ao deletar Grupo" e o registro permanece na listagem. A causa não foi determinada.
 
-CT-RF30 acrescenta uma reprovação e o BUG-017 (imagens dos grupos musculares com HTTP 422); CT-RF31–33 acrescentam três aprovações limitadas aos exemplos gravados. O **CT-RF35** acrescenta uma reprovação e o BUG-019: o cadastro de objetivo de treino retorna HTTP 500 em duas ocorrências, com o diálogo "Erro ao salvar objetivo" e a listagem sem registros; o corpo da requisição e da resposta não foi capturado e a causa não foi determinada. O **CT-RF38** acrescenta uma aprovação limitada ao exemplo gravado: o cadastro de categoria cria o registro apenas com o nome (HTTP 201), o código 9 é atribuído pelo sistema e o filtro por código localiza o novo registro; sem defeito. As contagens consolidadas são:
+CT-RF30 acrescenta uma reprovação e o BUG-017 (imagens dos grupos musculares com HTTP 422); CT-RF31–33 acrescentam três aprovações limitadas aos exemplos gravados. O **CT-RF35** acrescenta uma reprovação e o BUG-019: o cadastro de objetivo de treino retorna HTTP 500 em duas ocorrências, com o diálogo "Erro ao salvar objetivo" e a listagem sem registros; o corpo da requisição e da resposta não foi capturado e a causa não foi determinada. O **CT-RF38** acrescenta uma aprovação limitada ao exemplo gravado: o cadastro de categoria cria o registro apenas com o nome (HTTP 201), o código 9 é atribuído pelo sistema e o filtro por código localiza o novo registro; sem defeito. O **CT-RF39** acrescenta uma aprovação (cadastro de modalidade com HTTP 201); o **CT-RF40** acrescenta um ponto a validar (exclusão por lixeira que inativa os registros, regra a confirmar); o **CT-RF41** acrescenta uma reprovação e o BUG-020 (cadastro de turma sem modalidade, sem retorno visível; validação nativa não confirmada). As contagens consolidadas são:
 
 | Casos documentados | Aprovados | Reprovados | A validar | Defeitos registrados | Casos com reteste corretivo pendente |
 | :---: | :---: | :---: | :---: | :---: | :---: |
-| 36 | 11 | 20 | 5 | 19 (10 abertos + 9 em triagem) | 20 |
+| 39 | 12 | 21 | 6 | 20 (10 abertos + 10 em triagem) | 21 |
 
-Os 20 retestes incluem CT-RF22/24/26/27/28/29/30/35, sujeitos à confirmação funcional e técnica. As contagens representam os casos documentados com base nas fontes indicadas, sem novas execuções nesta revisão. As nove variações planejadas para o reteste do CT-RF03 não foram executadas e não são contabilizadas como testes adicionais realizados.
+Os 21 retestes incluem CT-RF22/24/26/27/28/29/30/35/41, sujeitos à confirmação funcional e técnica. As contagens representam os casos documentados com base nas fontes indicadas, sem novas execuções nesta revisão. As nove variações planejadas para o reteste do CT-RF03 não foram executadas e não são contabilizadas como testes adicionais realizados.
 
 ---
 
@@ -76,6 +76,9 @@ Os 20 retestes incluem CT-RF22/24/26/27/28/29/30/35, sujeitos à confirmação f
 | [CT-RF34](Cenario_Teste/CT-RF34_Erro_Servidor_Excesso_Requisicoes.md) | [RF34](Analise%20de%20requisitos.md#rf34) | Carregar os componentes do dashboard sem HTTP 500 e tratar falhas parciais de forma específica. | O dashboard apresenta diálogo de erro; entre 23 eventos visíveis, diversas chamadas GET/POST retornam HTTP 500. Endpoints e causa não foram confirmados. | Reprovado nas evidências. | [BUG-018](Relatorio-de-Bugs.md#bug-018), em triagem |
 | [CT-RF35](Cenario_Teste/CT-RF35_Cadastro_Objetivo_Treino.md) | [RF35](Analise%20de%20requisitos.md#rf35) | Cadastrar o objetivo e listá-lo, ou informar validação específica, sem HTTP 500. | `POST /api/objetivo-treino/salvar/1` retorna HTTP 500 (duas ocorrências); diálogo "Erro ao salvar objetivo"; a listagem permanece sem registros. | Reprovado nas evidências | [BUG-019](Relatorio-de-Bugs.md#bug-019), em triagem |
 | [CT-RF38](Cenario_Teste/CT-RF38_Cadastro_Categoria_Codigo_Automatico.md) | [RF38](Analise%20de%20requisitos.md#rf38) | Cadastrar a categoria com código atribuído pelo sistema, atualizar a listagem e os cartões e localizar o registro pelos filtros. | `POST /api/categoria-exercicio-cross/criar` retorna HTTP 201 com apenas o nome; a listagem passa de oito para nove categorias (código 9) e o filtro Código "9" retorna só o novo registro. O campo Código não retém o texto digitado. | Aprovado conforme a gravação | Nenhum no fluxo avaliado |
+| [CT-RF39](Cenario_Teste/CT-RF39_Cadastro_Modalidade.md) | [RF39](Analise%20de%20requisitos.md#rf39) | Criar a modalidade com os dados informados, listá-la e limpar o formulário. | `POST /api/sifitbox/modalidades/salvar/1` retorna HTTP 201 (id 4, status "ativo"); a listagem passa de três para quatro modalidades. | Aprovado conforme a gravação | Nenhum no fluxo avaliado |
+| [CT-RF40](Cenario_Teste/CT-RF40_Exclusao_Turmas_Modalidades.md) | [RF40](Analise%20de%20requisitos.md#rf40) | Aplicar e comunicar a regra de exclusão e refletir o resultado na listagem conforme o filtro de status. | Quatro `POST turmas/excluir` e cinco `POST modalidades/excluir` retornam HTTP 200 e `{"erro": false}`; os registros continuam listados com o status "inativo", sem diálogo de confirmação. | A validar — regra ou contexto pendente | Sem defeito confirmado |
+| [CT-RF41](Cenario_Teste/CT-RF41_Cadastro_Turma_Sem_Modalidade.md) | [RF41](Analise%20de%20requisitos.md#rf41) | Bloquear o envio sem modalidade, indicar o campo pendente e não criar a turma. | Nenhuma mensagem de validação visível e nenhuma requisição de criação de turma nas tentativas de envio; o formulário permanece preenchido. | Reprovado — sem feedback de validação visível | [BUG-020](Relatorio-de-Bugs.md#bug-020), em triagem |
 
 ---
 
@@ -102,6 +105,7 @@ Os 20 retestes incluem CT-RF22/24/26/27/28/29/30/35, sujeitos à confirmação f
 | [BUG-017](Relatorio-de-Bugs.md#bug-017) | Imagens dos grupos musculares retornam HTTP 422 | Média, proposta | Média, proposta | Em triagem; causa pendente. |
 | [BUG-018](Relatorio-de-Bugs.md#bug-018) | Dashboard apresenta múltiplos HTTP 500 durante o carregamento | Alta, proposta | Alta, proposta | Em triagem; endpoints, repetição e causa pendentes. |
 | [BUG-019](Relatorio-de-Bugs.md#bug-019) | Cadastro de objetivo de treino retorna HTTP 500 | Alta, proposta | Alta, proposta | Em triagem; causa e reteste pendentes. |
+| [BUG-020](Relatorio-de-Bugs.md#bug-020) | Cadastro de turma sem modalidade não apresenta retorno visível | Média, proposta | Alta, proposta | Em triagem; validação nativa e reteste pendentes. |
 
 As classificações propostas dependem de triagem. O BUG-003 mantém o resultado atribuído ao relato fornecido.
 
@@ -245,6 +249,16 @@ O domínio do CT-RF02_ERRO é diferente do domínio `sifitalfa.centrion.com.br` 
 | Dados | Base com oito categorias (códigos 1 a 8); nome "teste"; texto "qwdas" digitado no campo Código; usuário exibido Jair. |
 | Material e limites | Painéis Info, Console, Network e Actions do Jam, corpo da requisição e da resposta de criação e quadros do vídeo, com pasta local de evidências. Filtros sem requisição de rede; persistência após recarga, regra do campo Código e contrato dos cartões não verificados; sem inspeção de código ou nova execução. |
 
+### CT-RF39 a CT-RF41
+
+| Item | Registro |
+| --- | --- |
+| Página / API | https://sifit.centrion.com.br/sifitbox/turmas / https://backendsifit.centrion.com.br |
+| Data / duração | 15/11/2026, 18:51 BRT / 1 min 39 s; uma única gravação cobre os três casos. |
+| Navegador / sistema / janela | Chrome 157.0.8103.78 / Windows (x86) 11 / 1920 × 911, conforme Info; autor do Jam: Gustavo Pelissari Oenning. |
+| Dados | Três modalidades e quatro turmas existentes; modalidade "teste" criada; usuário exibido Jair. |
+| Material e limites | Painéis Info, Console, Network e Actions do Jam, corpos de requisições e respostas selecionadas e quadros do vídeo, com uma pasta local de evidências por caso. Corpos das exclusões, filtro "Inativo", envio válido de turma e persistência não verificados; sem inspeção de código ou nova execução. |
+
 ## 📸 5. Evidências e observações
 
 | Evidência | Informação utilizada |
@@ -289,6 +303,7 @@ O domínio do CT-RF02_ERRO é diferente do domínio `sifitalfa.centrion.com.br` 
 | [Jam — CT-RF34](https://jam.dev/c/eea58e17-b62f-432b-97b2-b14c14bed555) e [Evidências](Evidencias/CT-RF34_Erro_Servidor_Excesso_Requisicoes/README.md) | O dashboard apresenta um diálogo de erro. A aba Network mostra 23 eventos visíveis: verificação de token HTTP 200, diversas chamadas GET/POST HTTP 500 e OPTIONS HTTP 204. Os endpoints aparecem truncados; a relação causal entre quantidade de chamadas e falhas não foi confirmada. |
 | [Jam — CT-RF35: Objetivos Treino](https://jam.dev/c/1d474477-2411-4a81-b85c-74207402b783) e [Evidências](Evidencias/CT-RF35_Cadastro_Objetivo_Treino/README.md) | 1:01 e 1:02: `POST /api/objetivo-treino/salvar/1` com HTTP 500 (1077 ms e 856 ms), OPTIONS HTTP 204; 1:04: diálogo "Erro ao salvar objetivo"; 1:11: listagem sem registros. O campo Código permanece vazio nos quadros apesar da digitação registrada (regra não confirmada) e a base vazia impede avaliar os filtros. Corpo da requisição e da resposta indisponíveis; sem causa raiz. |
 | [Jam — CT-RF38: Categorias Crossfit](https://jam.dev/c/be1dbd05-217d-44c3-8a3d-240b7f6344e1) e [Evidências](Evidencias/CT-RF38_Cadastro_Categoria_Codigo_Automatico/README.md) | 0:27: Salvar com o nome "teste" e o Código vazio; `POST /api/categoria-exercicio-cross/criar` com HTTP 201, corpo `{"nome": "teste"}` e "Categoria criada com sucesso!". 0:28: nove categorias, código 9 "teste". 0:32: filtro Código "9" retorna só esse registro; 0:02 e 0:08: filtros por nome e por código com uma linha cada. Os filtros não geram requisição de rede (compatível com filtragem local, sem confirmação). Regra do campo Código não confirmada. |
+| [Jam — CT-RF39 a CT-RF41: SifitBox – Turmas](https://jam.dev/c/ee9a133b-d6b1-442d-b4b0-dd87595b7e70) e evidências ([CT-RF39](Evidencias/CT-RF39_Cadastro_Modalidade/README.md), [CT-RF40](Evidencias/CT-RF40_Exclusao_Turmas_Modalidades/README.md), [CT-RF41](Evidencias/CT-RF41_Cadastro_Turma_Sem_Modalidade/README.md)) | CT-RF39: `POST modalidades/salvar` com HTTP 201, modalidade de id 4 "ativo" e listagem de três para quatro modalidades (1:34–1:35). CT-RF40: quatro `POST turmas/excluir` e cinco `POST modalidades/excluir` com HTTP 200 e `{"erro": false}` entre 1:00 e 1:05, registros mantidos na listagem com o status "inativo" e sem confirmação visível. CT-RF41: sem requisição de criação de turma e sem mensagem visível nas tentativas de envio (0:17–0:20, 1:28 e 1:33), com a modalidade em branco; a edição da turma de id 4 gera `POST turmas/atualizar` com HTTP 200. Validação nativa do navegador, regras de exclusão e de obrigatoriedade e persistência não confirmadas. |
 
 A mensagem de credenciais incorretas já aparece no início do vídeo do Jam; não foi considerada uma resposta ao clique em "Esqueci minha senha". A ausência de requisição, isoladamente, não caracteriza defeito se a interface abrir um formulário local. Aqui, o resultado reprovado decorre de o fluxo não abrir.
 
@@ -405,6 +420,18 @@ O consolidado atual, com a inclusão do CT-RF35, é de 35 casos documentados (CT
 O CT-RF38 complementa os casos [CT-RF17](Cenario_Teste/CT-RF17_Filtros_Categorias.md) (filtros) e [CT-RF20](Cenario_Teste/CT-RF20_Criacao_Categoria.md) (criação) da mesma tela, sem substituí-los; não gera defeito. O campo Código não retém o texto digitado e não consta no corpo da requisição, o que é compatível com um código automático, como em CT-RF31 e CT-RF35, sem confirmação do produto.
 
 O consolidado atual é de 36 casos documentados (CT-RF01–CT-RF35 e CT-RF38): 11 aprovados, 20 reprovados e 5 a validar; 19 defeitos registrados (10 abertos e 9 em triagem) e 20 casos com reteste corretivo pendente. Sem nova execução.
+
+## Inclusão de 15/11/2026 — CT-RF39 a CT-RF41
+
+| Caso | Situação | Encaminhamento |
+| --- | --- | --- |
+| [CT-RF39](Cenario_Teste/CT-RF39_Cadastro_Modalidade.md) | Aprovado conforme a gravação | Usar como regressão; nome vazio, nome duplicado, limites de tamanho, status Inativo e persistência após recarga exigem execuções adicionais. |
+| [CT-RF40](Cenario_Teste/CT-RF40_Exclusao_Turmas_Modalidades.md) | A validar — regra ou contexto pendente | Confirmar a exclusão lógica, a confirmação prévia e a exibição de registros inativos sob o filtro "Ativo"; registrar defeito apenas se houver divergência com a regra definida. |
+| [CT-RF41](Cenario_Teste/CT-RF41_Cadastro_Turma_Sem_Modalidade.md) | Reprovado — sem feedback de validação visível | Confirmar a obrigatoriedade da modalidade, reproduzir com a validação nativa visível e retestar o envio válido e a persistência. |
+
+O [BUG-020](Relatorio-de-Bugs.md#bug-020) está em triagem, com severidade Média e prioridade Alta propostas; repete o padrão de ausência de feedback do [BUG-013](Relatorio-de-Bugs.md#bug-013) em outro módulo. O CT-RF40 se relaciona ao ponto a validar do [CT-RF16](Cenario_Teste/CT-RF16_Exclusao_Modalidade.md).
+
+O consolidado atual é de 39 casos documentados (CT-RF01–CT-RF35 e CT-RF38–CT-RF41): 12 aprovados, 21 reprovados e 6 a validar; 20 defeitos registrados (10 abertos e 10 em triagem) e 21 casos com reteste corretivo pendente. CT-RF09/10 compartilham BUG-005, de modo que 21 casos reprovados correspondem a 20 defeitos. Sem nova execução.
 
 ---
 
