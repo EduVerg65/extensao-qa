@@ -2,11 +2,11 @@
 
 **Módulos:** Autenticação, Perfil, Clientes / Filtros, Financeiro, Página inicial / Personais, SifitBox / Modalidades e Turmas, Categorias Crossfit, Avaliações, Exercícios, Grupos Musculares, Dashboard e Objetivos de Treino.
 
-**Atualização:** 15/11/2026 — RF01 a RF35, RF38 e RF39 consolidados, com inclusão de Categorias Crossfit (CT-RF38) e do cadastro de modalidade em SifitBox – Turmas (CT-RF39); BUG-011–BUG-019 em triagem.
+**Atualização:** 15/11/2026 — RF01 a RF35 e RF38 a RF40 consolidados, com inclusão de Categorias Crossfit (CT-RF38) e de SifitBox – Turmas (CT-RF39 e CT-RF40); BUG-011–BUG-019 em triagem.
 
 **Padronização documental:** 13/11/2026, sem alteração dos resultados registrados.
 
-Esta análise documenta 37 requisitos de QA para os cenários relacionados abaixo, com base nos relatos e nas evidências fornecidas. RF01–RF04 e suas análises históricas foram preservados; RF05–RF20 ampliam a cobertura em 14/11/2026; RF21 acrescenta Avaliações; RF22–RF28 acrescentam Exercícios; RF29–RF33 acrescentam Grupos Musculares; RF34 acrescenta o carregamento do dashboard RF35 acrescenta o cadastro de objetivos de treino e RF38 acrescenta o cadastro de categorias com código automático em 15/11/2026. RF39 acrescenta o cadastro de modalidade em SifitBox – Turmas. Os critérios abaixo constituem a referência de QA para esses fluxos; não representam validação de uma especificação formal pelo responsável pelo produto.
+Esta análise documenta 38 requisitos de QA para os cenários relacionados abaixo, com base nos relatos e nas evidências fornecidas. RF01–RF04 e suas análises históricas foram preservados; RF05–RF20 ampliam a cobertura em 14/11/2026; RF21 acrescenta Avaliações; RF22–RF28 acrescentam Exercícios; RF29–RF33 acrescentam Grupos Musculares; RF34 acrescenta o carregamento do dashboard RF35 acrescenta o cadastro de objetivos de treino e RF38 acrescenta o cadastro de categorias com código automático em 15/11/2026. RF39 acrescenta o cadastro de modalidade em SifitBox – Turmas. RF40 acrescenta a exclusão de turmas e modalidades. Os critérios abaixo constituem a referência de QA para esses fluxos; não representam validação de uma especificação formal pelo responsável pelo produto.
 
 ## 📋 Visão geral dos requisitos
 
@@ -49,6 +49,7 @@ Esta análise documenta 37 requisitos de QA para os cenários relacionados abaix
 | [RF35](#rf35) | Cadastrar objetivo de treino ou informar validação específica | Alta, proposta | [CT-RF35](Cenario_Teste/CT-RF35_Cadastro_Objetivo_Treino.md) |
 | [RF38](#rf38) | Cadastrar categoria com código automático e localizá-la pelos filtros | Média, proposta | [CT-RF38](Cenario_Teste/CT-RF38_Cadastro_Categoria_Codigo_Automatico.md) |
 | [RF39](#rf39) | Cadastrar modalidade e apresentá-la na listagem | Média, proposta | [CT-RF39](Cenario_Teste/CT-RF39_Cadastro_Modalidade.md) |
+| [RF40](#rf40) | Aplicar e comunicar a regra de exclusão de turmas e modalidades | Média, proposta | [CT-RF40](Cenario_Teste/CT-RF40_Exclusao_Turmas_Modalidades.md) |
 
 ---
 
@@ -1076,6 +1077,36 @@ Não foram verificados a persistência após recarga, a mensagem de confirmaçã
 
 ---
 
+<a id="rf40"></a>
+
+## RF40 — Excluir turmas e modalidades conforme a regra de exclusão
+
+| Campo | Descrição |
+| --- | --- |
+| Requisito de QA | A lixeira de turmas e de modalidades deve aplicar a regra de exclusão definida pelo produto (lógica ou física), com confirmação prévia quando exigida, informar o resultado ao usuário e refletir o resultado na listagem conforme o filtro de status selecionado. |
+| Ator | Usuário autenticado com permissão em SifitBox – Turmas. |
+| Pré-condições | Turmas e modalidades de teste com status e vínculos conhecidos; regra de exclusão e de confirmação definida com o produto. |
+| Gatilho | Acionar a lixeira de uma turma ou de uma modalidade na listagem. |
+| Caso | [CT-RF40](Cenario_Teste/CT-RF40_Exclusao_Turmas_Modalidades.md) |
+| Situação observada | A validar — regra ou contexto pendente. Os cliques na lixeira geram `POST turmas/excluir` e `POST modalidades/excluir` com HTTP 200 e `{"erro": false}`; os registros permanecem na listagem com o status "inativo", sem diálogo de confirmação nos quadros consultados. |
+| Defeito | Sem defeito confirmado |
+| Evidências | [Jam](https://jam.dev/c/ee9a133b-d6b1-442d-b4b0-dd87595b7e70) e [Evidências](Evidencias/CT-RF40_Exclusao_Turmas_Modalidades/README.md). |
+
+### Critérios de aceitação do RF40
+
+1. A lixeira aplica a regra de exclusão definida pelo produto, com confirmação prévia quando exigida.
+2. A resposta e a interface informam o resultado de forma compreensível.
+3. A listagem apresenta apenas registros compatíveis com o filtro de status selecionado.
+4. Turmas vinculadas a uma modalidade excluída ou inativada recebem tratamento definido e comunicado.
+5. A ação sobre um registro já inativo tem retorno coerente.
+6. O resultado se mantém após recarga da página.
+
+### Pontos a confirmar e limites do RF40
+
+Não foram confirmados a regra de exclusão lógica, a necessidade de confirmação, a exibição de registros inativos sob o filtro "Ativo", o efeito sobre turmas vinculadas e a persistência após recarga. Os corpos das requisições de exclusão e o filtro "Inativo" não foram inspecionados. O comportamento repete o ponto a validar do [RF16](#rf16). Registrar defeito apenas se houver divergência com a regra definida.
+
+---
+
 ## 🔗 Rastreabilidade
 
 | Requisito | Cenário / caso | Defeito | Resultado | Evidências |
@@ -1117,6 +1148,7 @@ Não foram verificados a persistência após recarga, a mensagem de confirmaçã
 | RF35 | [CT-RF35](Cenario_Teste/CT-RF35_Cadastro_Objetivo_Treino.md) | [BUG-019](Relatorio-de-Bugs.md#bug-019), em triagem | Reprovado nas evidências; reteste pendente. | [Evidências](Evidencias/CT-RF35_Cadastro_Objetivo_Treino/README.md) e [Jam](https://jam.dev/c/1d474477-2411-4a81-b85c-74207402b783) |
 | RF38 | [CT-RF38](Cenario_Teste/CT-RF38_Cadastro_Categoria_Codigo_Automatico.md) | Nenhum no fluxo avaliado | Aprovado conforme a gravação | [Evidências](Evidencias/CT-RF38_Cadastro_Categoria_Codigo_Automatico/README.md) e [Jam](https://jam.dev/c/be1dbd05-217d-44c3-8a3d-240b7f6344e1) |
 | RF39 | [CT-RF39](Cenario_Teste/CT-RF39_Cadastro_Modalidade.md) | Nenhum no fluxo avaliado | Aprovado conforme a gravação | [Evidências](Evidencias/CT-RF39_Cadastro_Modalidade/README.md) e [Jam](https://jam.dev/c/ee9a133b-d6b1-442d-b4b0-dd87595b7e70) |
+| RF40 | [CT-RF40](Cenario_Teste/CT-RF40_Exclusao_Turmas_Modalidades.md) | Sem defeito confirmado | A validar — regra ou contexto pendente | [Evidências](Evidencias/CT-RF40_Exclusao_Turmas_Modalidades/README.md) e [Jam](https://jam.dev/c/ee9a133b-d6b1-442d-b4b0-dd87595b7e70) |
 
 ---
 
@@ -1210,6 +1242,12 @@ Com RF38, a análise passa a cobrir 36 requisitos documentados (RF01–RF35 e RF
 RF39 utiliza os painéis Info, Console (atividade do usuário), Network e Actions do Jam "SifitBox – Turmas", o corpo da requisição e da resposta de criação e os quadros de 1:17, 1:28 e 1:35. Foram registrados o `POST modalidades/salvar` com HTTP 201, a modalidade de id 4 e a atualização da listagem. As capturas e a cronologia estão na [pasta local de evidências](Evidencias/CT-RF39_Cadastro_Modalidade/README.md). Não houve nova execução, acesso ao código ou ao banco, nem reteste.
 
 Com RF39, a análise passa a cobrir 37 requisitos documentados. A tela SifitBox – Turmas acrescenta uma aprovação limitada ao exemplo gravado.
+
+### Base da análise do RF40 — revisão de 15/11/2026
+
+RF40 utiliza os painéis Info, Console, Network e Actions do Jam "SifitBox – Turmas", os cabeçalhos e a resposta das exclusões, as listas retornadas (todas as turmas e modalidades com status "inativo") e os quadros de 1:00 e 1:05. Foram registrados quatro `POST turmas/excluir` e cinco `POST modalidades/excluir`, todos com HTTP 200. Não houve nova execução, acesso ao código ou ao banco, nem reteste. A regra permanece a confirmar.
+
+Com RF40, a análise passa a cobrir 38 requisitos documentados. SifitBox – Turmas acrescenta um ponto a validar, sem defeito confirmado.
 
 ---
 
