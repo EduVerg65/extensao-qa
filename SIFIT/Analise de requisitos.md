@@ -43,6 +43,7 @@ Esta análise documenta os 28 requisitos de QA para os cenários relacionados ab
 | [RF29](#rf29) | Excluir grupo muscular ou explicar o impedimento | Alta, proposta | [CT-RF29](Cenario_Teste/CT-RF29_Exclusao_GrupoMuscular.md) |
 | [RF30](#rf30) | Exibir as imagens cadastradas dos grupos musculares | Média, proposta | [CT-RF30](Cenario_Teste/CT-RF30_Imagens_GruposMusculares.md) |
 | [RF31](#rf31) | Cadastrar e listar um grupo muscular | Média, proposta | [CT-RF31](Cenario_Teste/CT-RF31_Cadastro_GrupoMuscular.md) |
+| [RF32](#rf32) | Alterar o tipo de membro de um grupo muscular | Média, proposta | [CT-RF32](Cenario_Teste/CT-RF32_Edicao_TipoMembro.md) |
 
 ---
 
@@ -894,6 +895,34 @@ A cronologia não registra uma requisição de criação com o respectivo códig
 
 ---
 
+## RF32 — Alterar o tipo de membro de um grupo muscular
+
+| Campo | Descrição |
+| --- | --- |
+| Requisito de QA | O sistema deve permitir alterar o tipo de membro de um grupo muscular existente, refletir a mudança na listagem e recalcular os cartões de resumo, mantendo a soma dos tipos igual ao total de registros. |
+| Ator | Usuário autenticado com permissão em Grupos Musculares. |
+| Pré-condições | Registro de teste com tipo de membro conhecido e estado inicial dos cartões de resumo registrado. |
+| Gatilho | Abrir a edição do registro, selecionar outro tipo de membro e confirmar em "Salvar". |
+| Caso | [CT-RF32](Cenario_Teste/CT-RF32_Edicao_TipoMembro.md) |
+| Situação observada | Aprovado conforme a gravação. O registro de código 1 passou de "Superiores" para "Inferiores" e os cartões acompanharam, de Superiores 3 / Inferiores 1 para Superiores 2 / Inferiores 2, com o total constante em quatro. |
+| Defeito | Nenhum no fluxo avaliado |
+| Evidências | [Jam](https://jam.dev/c/98008390-0040-475e-ba7b-7f1e72cc0b2e). |
+
+### Critérios de aceitação do RF32
+
+1. O formulário de edição abre preenchido com os dados atuais do registro.
+2. A alteração do tipo de membro é persistida e exibida na listagem.
+3. Os cartões de resumo são recalculados e a soma dos tipos corresponde ao total de registros.
+4. O resultado se mantém após recarga da página.
+
+### Pontos a confirmar e limites do RF32
+
+A cronologia não registra uma requisição de atualização com o respectivo código de status; a conclusão apoia-se na comparação entre os quadros de 1:02 e 1:08 e nos cartões de resumo. O controle que abre o formulário de edição não foi identificado com certeza na cronologia. A persistência após recarga não foi verificada, nem houve consulta ao banco. Permanecem fora do cenário gravado o cancelamento da edição, a alteração de nome, a alteração simultânea de vários campos e a validação de campos obrigatórios.
+
+A edição recebeu um arquivo de imagem, com miniatura exibida corretamente na pré-visualização, mas após o envio o registro continua sem imagem na listagem e o arquivo requisitado mantém o mesmo nome anterior. Isso é compatível tanto com sobrescrita sob o mesmo nome quanto com não persistência do envio, e não distingue as duas hipóteses, já que todas as requisições de imagem retornam HTTP 422 conforme o [RF30](#rf30).
+
+---
+
 ## 🔗 Rastreabilidade
 
 | Requisito | Cenário / caso | Defeito | Resultado | Evidências |
@@ -929,6 +958,7 @@ A cronologia não registra uma requisição de criação com o respectivo códig
 | RF29 | [CT-RF29](Cenario_Teste/CT-RF29_Exclusao_GrupoMuscular.md) | [BUG-016](Relatorio-de-Bugs.md#bug-016), em triagem | Reprovado nas evidências; reteste pendente. | [Jam](https://jam.dev/c/98008390-0040-475e-ba7b-7f1e72cc0b2e) |
 | RF30 | [CT-RF30](Cenario_Teste/CT-RF30_Imagens_GruposMusculares.md) | [BUG-017](Relatorio-de-Bugs.md#bug-017), em triagem | Reprovado nas evidências; reteste pendente. | [Jam](https://jam.dev/c/98008390-0040-475e-ba7b-7f1e72cc0b2e) |
 | RF31 | [CT-RF31](Cenario_Teste/CT-RF31_Cadastro_GrupoMuscular.md) | Nenhum no fluxo avaliado | Aprovado conforme a gravação | [Jam](https://jam.dev/c/98008390-0040-475e-ba7b-7f1e72cc0b2e) |
+| RF32 | [CT-RF32](Cenario_Teste/CT-RF32_Edicao_TipoMembro.md) | Nenhum no fluxo avaliado | Aprovado conforme a gravação | [Jam](https://jam.dev/c/98008390-0040-475e-ba7b-7f1e72cc0b2e) |
 
 ---
 
@@ -990,6 +1020,10 @@ RF30 utiliza a lista de rede do Jam filtrada por erros, a cronologia do painel C
 ### Base da análise do RF31 — revisão de 15/11/2026
 
 RF31 utiliza a cronologia do painel Console entre 0:17 e 0:53 e os quadros de 0:20, 0:48 e 0:55. O quadro de 0:48 mostra o formulário no momento do envio, com o campo Código em branco e o campo Imagem em "Nenhum arquivo escolhido". A comparação com o quadro de 0:55 sustenta a criação do registro e a atualização dos cartões. Não houve nova execução, acesso ao código ou ao banco, nem reteste.
+
+### Base da análise do RF32 — revisão de 15/11/2026
+
+RF32 utiliza a cronologia do painel Console entre 0:57 e 1:38 e os quadros de 0:55, 1:02, 1:08, 1:45 e 2:00. O quadro de 1:02 mostra o formulário aberto em edição com os dados do registro de código 1; o de 1:08 mostra a listagem já com o novo tipo de membro e os cartões recalculados. As alterações posteriores a 1:08 não têm quadro de antes e depois individual e sustentam-se no quadro de 1:45 e nos cartões de 2:00. Não houve nova execução, acesso ao código ou ao banco, nem reteste.
 
 ---
 
