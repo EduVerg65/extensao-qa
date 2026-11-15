@@ -1,10 +1,10 @@
 # 🧪 Plano de Testes — SIFIT
 
-**Atualização:** 15/11/2026 — 28 cenários documentados, com integração de CT-RF22–CT-RF28 e BUG-011–BUG-015 em triagem.
+**Atualização:** 15/11/2026 — 34 cenários documentados (CT-RF01–CT-RF33 e CT-RF35), com integração de CT-RF35 / Objetivos de Treino e BUG-018 em triagem. A numeração CT-RF34 permanece reservada, sem cenário integrado.
 
 **Padronização documental:** 13/11/2026, com resultados e pendências preservados.
 
-**Escopo:** CT-RF01 a CT-RF28 — autenticação, recuperação de senha, perfil, Clientes, financeiro, período e personais da página inicial, modalidades / tema de SifitBox, Categorias Crossfit, Avaliações e Exercícios.
+**Escopo:** CT-RF01 a CT-RF33 e CT-RF35 — autenticação, recuperação de senha, perfil, Clientes, financeiro, período e personais da página inicial, modalidades / tema de SifitBox, Categorias Crossfit, Avaliações, Exercícios, Grupos Musculares e Objetivos de Treino.
 
 ## 📌 1. Identificação
 
@@ -13,14 +13,14 @@
 | Projeto | SIFIT — Sistema de gestão de academias. |
 | Tipo de teste | Funcional manual, com análise exploratória e de evidências. |
 | Versão avaliada | Não confirmada; registrar por caso no reteste. |
-| Funcionalidades | Autenticação positiva e negativa, recuperação, Perfil, filtros de Clientes, financeiro, período, personais, modalidades / tema, Categorias Crossfit, Avaliações e Exercícios. |
-| Situação | 28 casos: 7 aprovados, 16 reprovados e 5 a validar; 15 defeitos registrados (10 abertos e 5 em triagem) e 16 casos com reteste corretivo pendente. |
+| Funcionalidades | Autenticação positiva e negativa, recuperação, Perfil, filtros de Clientes, financeiro, período, personais, modalidades / tema, Categorias Crossfit, Avaliações, Exercícios, Grupos Musculares e Objetivos de Treino. |
+| Situação | 34 casos: 10 aprovados, 19 reprovados e 5 a validar; 18 defeitos registrados (10 abertos e 8 em triagem) e 19 casos com reteste corretivo pendente. |
 
 ---
 
 ## 🎯 2. Objetivo
 
-Verificar os fluxos dos 28 cenários, comparando os critérios de aceitação com as evidências de autenticação, recuperação, perfil, Clientes, financeiro, página inicial, SifitBox, Categorias Crossfit, Avaliações e Exercícios. Manter rastreabilidade entre requisitos, casos, Jam, vídeos, resultados e defeitos, distinguindo revisões documentais de novas execuções.
+Verificar os fluxos dos 34 cenários, comparando os critérios de aceitação com as evidências de autenticação, recuperação, perfil, Clientes, financeiro, página inicial, SifitBox, Categorias Crossfit, Avaliações, Exercícios, Grupos Musculares e Objetivos de Treino. Manter rastreabilidade entre requisitos, casos, Jam, vídeos, resultados e defeitos, distinguindo revisões documentais de novas execuções.
 
 ---
 
@@ -52,6 +52,8 @@ Verificar os fluxos dos 28 cenários, comparando os critérios de aceitação co
 **Exercícios — CT-RF22–CT-RF28:** código conforme a regra, exclusão e totais, edição preservando identidade, cadastro com imagem, campos obrigatórios e validação cruzada dos tipos de mídia. BUG-011–BUG-015 aguardam triagem; a imagem persistida de CT-RF25 permanece a validar.
 
 **Grupos Musculares — CT-RF29–CT-RF33:** exclusão de registro, carregamento das imagens da listagem, cadastro, alteração do tipo de membro e filtros por código e por tipo. BUG-016 e BUG-017 aguardam triagem; a lógica de combinação dos filtros permanece não demonstrada.
+
+**Objetivos de Treino — CT-RF35:** cadastro de objetivo pela tela Objetivos Treino, tratamento do erro de gravação, regra do campo Código e critérios para reteste com dados válidos e recusados. BUG-018 aguarda triagem; filtros por código e nome da mesma tela não puderam ser avaliados com a base vazia da gravação. A numeração CT-RF34 permanece reservada.
 
 **Limites da cobertura atual:**
 
@@ -192,6 +194,19 @@ Para o reteste, preparar aluno existente selecionável pela busca, personal habi
 | Preparação | Registrar versão, zoom e ambiente; capturar listagem, cartões de resumo, rodapé de contagem, diálogos, rede e console antes e depois de cada operação. Omitir credenciais e tokens. |
 | Limites | Análise documental dos painéis do Jam, sem nova execução. Os cabeçalhos de resposta das imagens foram descartados por inconsistência do painel de detalhe. A cronologia não registra requisições de criação e de atualização com código de status. |
 
+### CT-RF35 — ambiente e preparação
+
+| Item | Definição |
+| --- | --- |
+| Página | https://sifit.centrion.com.br/objetivos-treino |
+| Backend de referência | https://backendsifit.centrion.com.br |
+| Navegador / sistema / janela | Chrome 157.0.8103.78 / Windows (x86) 11 / 1920 × 911, conforme Info. |
+| Gravação | 15/11/2026 às 18:13 BRT, duração de 1 min 12 s. |
+| Rede | Classificada como rápida no Jam: 8,8 Mbps, latência de 100 ms. |
+| Dados e permissões | Preparar objetivo de teste com nome disponível; definir a regra do campo Código e da descrição (caracteres especiais, tamanho); ter ao menos um objetivo cadastrado para exercitar filtros e cartões. |
+| Preparação | Registrar versão, zoom e ambiente; capturar listagem, cartões de resumo, formulário, diálogos, rede (incluindo payload e resposta) e console antes e depois do envio. Omitir credenciais e tokens. |
+| Limites | Análise documental dos painéis do Jam, sem nova execução. O Jam não capturou o corpo da requisição nem da resposta; a base estava vazia durante toda a gravação. |
+
 ---
 
 ## 📋 7. Casos de teste e situação
@@ -231,6 +246,7 @@ Para o reteste, preparar aluno existente selecionável pela busca, personal habi
 | [RF31](Analise%20de%20requisitos.md#rf31) | [CT-RF31](Cenario_Teste/CT-RF31_Cadastro_GrupoMuscular.md) | Funcional manual / regressão | Aprovado conforme a gravação | Nenhum no fluxo avaliado | Usar como regressão; campos em branco, nomes duplicados, limites de tamanho e código informado manualmente exigem execuções adicionais. |
 | [RF32](Analise%20de%20requisitos.md#rf32) | [CT-RF32](Cenario_Teste/CT-RF32_Edicao_TipoMembro.md) | Funcional manual / regressão | Aprovado conforme a gravação | Nenhum no fluxo avaliado | Usar como regressão; conferir persistência após recarga e confirmar se a imagem enviada na edição é salva. |
 | [RF33](Analise%20de%20requisitos.md#rf33) | [CT-RF33](Cenario_Teste/CT-RF33_Filtros_GruposMusculares.md) | Funcional manual / regressão | Aprovado conforme a gravação | Nenhum no fluxo avaliado | Usar como regressão; executar um caso com critérios contraditórios para demonstrar a lógica combinada, além de busca por nome, valores inválidos e paginação. |
+| [RF35](Analise%20de%20requisitos.md#rf35) | [CT-RF35](Cenario_Teste/CT-RF35_Cadastro_Objetivo_Treino.md) | Funcional manual / tratamento de erro | Reprovado nas evidências | [BUG-018](Relatorio-de-Bugs.md#bug-018), em triagem | Investigar o HTTP 500 com logs do servidor; retestar dados válidos, descrição com caracteres especiais, campos vazios, código manual e persistência; conferir que um clique gera uma única gravação. |
 
 ---
 
@@ -327,6 +343,16 @@ Todas essas variações permanecem planejadas e não são contadas como execuç�
 5. CT-RF33: filtrar por tipo sem registros, por tipo com registros e por código; executar um caso com código e tipo contraditórios, cujo retorno esperado é o conjunto vazio; limpar os critérios e conferir o retorno da listagem completa.
 6. Registrar versão e evidência; verificações planejadas não recebem resultado de execução.
 
+### CT-RF35 — próximos testes
+
+1. CT-RF35 / BUG-018: registrar a listagem e os cartões; abrir Novo Objetivo, informar nome e descrição simples e salvar; conferir mensagem, status da chamada, registro na listagem, cartões e persistência após recarga.
+2. Repetir com os dados históricos (descrição com `#@`) para comparar; confirmar no payload e na resposta o que o servidor recusa, com a captura de rede preparada antes do envio.
+3. Salvar com nome e descrição vazios, com nome duplicado e com texto longo; conferir validação por campo e ausência de registro vazio ou parcial.
+4. Tentar informar o Código manualmente e confirmar com o produto se o campo é automático (ver CT-RF22 / BUG-011 e CT-RF31).
+5. Conferir que um único clique em Salvar gera uma única requisição de gravação.
+6. Com ao menos um objetivo cadastrado, filtrar por código e nome, incluindo um resultado vazio, e conferir a mensagem "Nenhum objetivo encontrado" ou equivalente.
+7. Registrar versão e evidência; verificações planejadas não recebem resultado de execução.
+
 ---
 
 ## 🚦 9. Critérios de entrada, saída e aceitação
@@ -337,7 +363,7 @@ Todas essas variações permanecem planejadas e não são contadas como execuç�
 
 **Entrada e aprovação do login:** página acessível, conta de teste com credenciais válidas e acesso ao painel, sem sessão autenticada no início. Aprovar o CT-RF04_loginComSucesso quando o envio autenticar o usuário, navegar para `/dashboard` e exibir o menu e resumo da academia, com senha mascarada no formulário. A aprovação se limita a esse fluxo positivo.
 
-**Aceitação da correção:** todos os critérios do respectivo caso atendidos e reteste documentado. BUG-001 a BUG-010 permanecem abertos até a confirmação de suas correções. BUG-011–BUG-015 aguardam triagem e confirmação funcional antes do encaminhamento de correção. A aprovação do CT-RF01 não comprova a recuperação completa da senha; a do CT-RF02_ERRO não comprova persistência de alterações no perfil. Para CT-RF03, cada combinação deve incluir todos os clientes esperados e excluir os incompatíveis, com a matriz executada e o estado vazio validado.
+**Aceitação da correção:** todos os critérios do respectivo caso atendidos e reteste documentado. BUG-001 a BUG-010 permanecem abertos até a confirmação de suas correções. BUG-011–BUG-018 aguardam triagem e confirmação funcional antes do encaminhamento de correção. A aprovação do CT-RF01 não comprova a recuperação completa da senha; a do CT-RF02_ERRO não comprova persistência de alterações no perfil. Para CT-RF03, cada combinação deve incluir todos os clientes esperados e excluir os incompatíveis, com a matriz executada e o estado vazio validado.
 
 ---
 
@@ -354,6 +380,7 @@ Todas essas variações permanecem planejadas e não são contadas como execuç�
 | Integração de CT-RF22–CT-RF25 / RF22–RF25 | Realizada | 15/11/2026; sem nova execução; BUG-011/012 em triagem. |
 | Integração de CT-RF26–CT-RF28 / RF26–RF28 | Realizada | 15/11/2026; sem nova execução; BUG-013–BUG-015 em triagem. |
 | Integração de CT-RF29–CT-RF33 / RF29–RF33 | Realizada | 15/11/2026; sem nova execução; BUG-016 e BUG-017 em triagem. |
+| Integração de CT-RF35 / RF35 | Realizada | 15/11/2026; sem nova execução; BUG-018 em triagem; CT-RF34 reservado. |
 | Confirmação de código, operação de edição e imagem persistida | Pendente | RF22, RF24 e RF25; depende de regra e nova evidência. |
 | Demonstração da lógica combinada de filtros e do estado neutro de imagem | Pendente | RF33 e RF30; depende de caso com critérios contraditórios e de definição do produto. |
 | Confirmação das regras de CT-RF08/11/13/16 | Pendente | Responsável pelo produto; sem data definida. |
@@ -365,7 +392,7 @@ Todas essas variações permanecem planejadas e não são contadas como execuç�
 
 Os defeitos são registrados no [relatório de bugs](Relatorio-de-Bugs.md), com identificação, severidade, prioridade, pré-condições, reprodução, resultado esperado e obtido, impacto e evidências. Hipóteses técnicas permanecem identificadas até a confirmação no código.
 
-Há dez defeitos abertos (BUG-001 a BUG-010) e sete em triagem (BUG-011 a BUG-017). Os dois casos de contagem e filtro financeiro (CT-RF09 e CT-RF10) compartilham BUG-005; por isso dezoito casos reprovados correspondem a dezessete defeitos. CT-RF08, CT-RF11, CT-RF13, CT-RF16 e CT-RF25 permanecem a validar, sem defeito confirmado. Após a correção, atualizar o caso, o relatório dos testes e o defeito com as evidências da versão retestada. As severidades e prioridades dos novos defeitos são propostas para triagem.
+Há dez defeitos abertos (BUG-001 a BUG-010) e oito em triagem (BUG-011 a BUG-018). Os dois casos de contagem e filtro financeiro (CT-RF09 e CT-RF10) compartilham BUG-005; por isso dezenove casos reprovados correspondem a dezoito defeitos. CT-RF08, CT-RF11, CT-RF13, CT-RF16 e CT-RF25 permanecem a validar, sem defeito confirmado. Após a correção, atualizar o caso, o relatório dos testes e o defeito com as evidências da versão retestada. As severidades e prioridades dos novos defeitos são propostas para triagem.
 
 ---
 
@@ -390,7 +417,7 @@ Há dez defeitos abertos (BUG-001 a BUG-010) e sete em triagem (BUG-011 a BUG-01
 
 ## 📁 13. Entregáveis e documentos associados
 
-Os entregáveis são a análise RF01–RF33, este plano, os 33 cenários BDD, as evidências disponíveis e os relatórios atualizados. CT-RF21 possui relato original, link do Jam, quadros, cronologia, requisição/resposta sem autenticação e metadados locais; o vídeo permanece no Jam. Os vídeos e demais evidências anteriores citados nos documentos de 14/11/2026 não estavam nesta cópia do repositório em 15/11/2026; consultar o índice de evidências para a disponibilidade. Dez casos estão aprovados no alcance das evidências; dezoito reprovados aguardam reteste, incluindo CT-RF22/24/26/27/28/29/30 em triagem, e cinco a validar dependem de regra/contexto ou persistência. CT-RF23–25 possuem resumos, cronologias e origem locais; os vídeos de CT-RF22–CT-RF28 permanecem no Jam. CT-RF29–CT-RF33 têm como fonte uma única gravação, cujos painéis foram lidos diretamente; as pastas locais de evidências desses cinco casos ainda não foram criadas.
+Os entregáveis são a análise RF01–RF33 e RF35, este plano, os 34 cenários BDD, as evidências disponíveis e os relatórios atualizados. CT-RF21 possui relato original, link do Jam, quadros, cronologia, requisição/resposta sem autenticação e metadados locais; o vídeo permanece no Jam. Os vídeos e demais evidências anteriores citados nos documentos de 14/11/2026 não estavam nesta cópia do repositório em 15/11/2026; consultar o índice de evidências para a disponibilidade. Dez casos estão aprovados no alcance das evidências; dezenove reprovados aguardam reteste, incluindo CT-RF22/24/26/27/28/29/30/35 em triagem, e cinco a validar dependem de regra/contexto ou persistência. CT-RF23–25 possuem resumos, cronologias e origem locais; os vídeos de CT-RF22–CT-RF28 permanecem no Jam. CT-RF29–CT-RF33 têm como fonte uma única gravação, cujos painéis foram lidos diretamente; as pastas locais de evidências desses cinco casos ainda não foram criadas. CT-RF35 possui pasta local com capturas extraídas do Jam, cronologia, origem e hashes; o vídeo permanece no Jam.
 
 - [Análise de requisitos](Analise%20de%20requisitos.md)
 - [Caso CT-RF01](Cenario_Teste/CT-RF01_Esqueci-senha.md)
@@ -402,7 +429,9 @@ Os entregáveis são a análise RF01–RF33, este plano, os 33 cenários BDD, as
 - [Relatório dos testes](Relatorio%20dos%20testes.md)
 - [Relatório de bugs](Relatorio-de-Bugs.md)
 
-- [Índice dos 33 cenários](Cenario_Teste/README.md)
+- [Caso CT-RF35](Cenario_Teste/CT-RF35_Cadastro_Objetivo_Treino.md)
+- [Evidências do CT-RF35](Evidencias/CT-RF35_Cadastro_Objetivo_Treino/README.md)
+- [Índice dos 34 cenários](Cenario_Teste/README.md)
 - [Índice das evidências e dos Jams](Evidencias/README.md)
 - [Manifesto de integridade dos novos arquivos](Evidencias/manifesto_sha256.json)
 

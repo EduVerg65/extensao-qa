@@ -1,18 +1,20 @@
 # 🐞 Relatório de Bugs — SIFIT
 
-**Escopo:** defeitos dos cenários CT-RF01–CT-RF28: recuperação, Perfil, Clientes, financeiro, período, tema, modalidades, categorias, avaliações e exercícios. Casos aprovados e pontos a validar permanecem no relatório dos testes.
+**Escopo:** defeitos dos cenários CT-RF01–CT-RF33 e CT-RF35: recuperação, Perfil, Clientes, financeiro, período, tema, modalidades, categorias, avaliações, exercícios, grupos musculares e objetivos de treino. Casos aprovados e pontos a validar permanecem no relatório dos testes.
 
 **Ambientes:** CT-RF01 em https://sifitalfa.centrion.com.br/login; CT-RF02_ERRO em https://sifit.centrion.com.br/profile. CT-RF03: URL do frontend não confirmada; backend informado em `https://backendsifit.centrion.com.br/api/clientesPorNome/1`.
 
 **Datas das gravações do Jam:** CT-RF01 em 23/10/2026; CT-RF02_ERRO em 22/10/2026 às 21:45 BRT; CT-RF03 não confirmada.
 
-**Atualização documental:** 15/11/2026 — 15 defeitos registrados: 10 abertos (BUG-001 a BUG-010) e 5 em triagem (BUG-011 a BUG-015), incluindo código, edição, campos obrigatórios e validação de mídia em Exercícios. As análises anteriores foram preservadas.
+**Atualização documental:** 15/11/2026 — 18 defeitos registrados: 10 abertos (BUG-001 a BUG-010) e 8 em triagem (BUG-011 a BUG-018), incluindo código, edição, campos obrigatórios e validação de mídia em Exercícios, exclusão e imagens em Grupos Musculares e o cadastro de Objetivos de Treino (BUG-018). As análises anteriores foram preservadas.
 
 **Padronização documental:** 13/11/2026, sem alteração do status dos defeitos.
 
 **Caso aprovado incluído em 13/11/2026:** [CT-RF04_loginComSucesso](Cenario_Teste/CT-RF04_loginComSucesso.md), vinculado ao RF04, não gerou defeito para o fluxo avaliado. O [Jam de login](https://jam.dev/c/5e4a28be-4e80-43d3-9587-1b113723cc38) mostra acesso ao dashboard após autenticação. Essa aprovação não altera os três bugs existentes; resultados e limites constam no [relatório dos testes](Relatorio%20dos%20testes.md).
 
 **Gravação de CT-RF21:** 15/11/2026, Avaliações, início às 15:07:51,265 BRT; evidência e limites no BUG-010.
+
+**Gravação de CT-RF35:** 15/11/2026, Objetivos Treino, 18:13 BRT, Chrome 157.0.8103.78 / Windows 11; evidência e limites no BUG-018. A numeração CT-RF34 / BUG-018 não implica caso intermediário integrado: CT-RF34 permanece reservado.
 
 **Novas gravações de CT-RF05–CT-RF20:** 14/11/2026, Chrome 157.0.8103.51 / Windows 11, no domínio `sifit.centrion.com.br`. Cada cenário registra página, horário e limites. A inclusão é documental, sem nova execução ou reteste.
 
@@ -37,8 +39,9 @@
 | [BUG-015](#bug-015) | Imagem rejeitada no campo Vídeo sem feedback | Baixa / Média, propostas | Em triagem — MIME não confirmado | [CT-RF28](Cenario_Teste/CT-RF28_Imagem_Campo_Video.md) |
 | [BUG-016](#bug-016) | Exclusão de grupo muscular retorna HTTP 500 e mensagem genérica | Média / Alta, propostas | Em triagem — causa não determinada | [CT-RF29](Cenario_Teste/CT-RF29_Exclusao_GrupoMuscular.md) |
 | [BUG-017](#bug-017) | Imagens dos grupos musculares não são exibidas e retornam HTTP 422 | Média / Média, propostas | Em triagem — causa não determinada | [CT-RF30](Cenario_Teste/CT-RF30_Imagens_GruposMusculares.md) |
+| [BUG-018](#bug-018) | Cadastro de objetivo de treino retorna HTTP 500 | Alta / Alta, propostas | Em triagem — causa não determinada | [CT-RF35](Cenario_Teste/CT-RF35_Cadastro_Objetivo_Treino.md) |
 
-BUG-001–BUG-010 aguardam correção e reteste. BUG-011–BUG-017 aguardam confirmação das premissas e triagem antes do encaminhamento de correção. As causas técnicas permanecem não confirmadas; o BUG-003 se apoia no relato e nas capturas fornecidos, com os limites registrados no caso.
+BUG-001–BUG-010 aguardam correção e reteste. BUG-011–BUG-018 aguardam confirmação das premissas e triagem antes do encaminhamento de correção. As causas técnicas permanecem não confirmadas; o BUG-003 se apoia no relato e nas capturas fornecidos, com os limites registrados no caso.
 
 ---
 
@@ -826,6 +829,57 @@ Investigar a existência dos arquivos no caminho indicado, o nome gravado em cad
 
 ---
 
+<a id="bug-018"></a>
+
+## BUG-018 — Cadastro de objetivo de treino retorna HTTP 500
+
+| Campo | Descrição |
+| --- | --- |
+| Status | Em triagem — causa não determinada; reteste pendente após correção. |
+| Severidade / prioridade | Alta / Alta, propostas para triagem; impede confirmar o cadastro no cenário registrado. |
+| Módulo | Treinamento / Objetivos Treino / Cadastro |
+| Requisitos | [RF35](Analise%20de%20requisitos.md#rf35) |
+| Casos | [CT-RF35](Cenario_Teste/CT-RF35_Cadastro_Objetivo_Treino.md) |
+| Data da evidência / revisão | 15/11/2026, 18:13 BRT; sem nova execução. |
+| Página | https://sifit.centrion.com.br/objetivos-treino |
+| Ambiente | Chrome 157.0.8103.78 / Windows (x86) 11, janela 1920 × 911; versão e zoom não confirmados. |
+| Frequência conhecida | Um registro do Jam, com duas ocorrências de HTTP 500 na mesma tentativa; recorrência não determinada. |
+
+### Pré-condições e reprodução
+
+**[CT-RF35](Cenario_Teste/CT-RF35_Cadastro_Objetivo_Treino.md):** Sessão autenticada com acesso a Objetivos Treino e à ação Novo Objetivo. Nome de teste disponível, estado inicial da listagem registrado e regra do campo Código e da descrição confirmada.
+
+1. Acessar Objetivos Treino com o painel de rede aberto e registrar a listagem e os cartões.
+2. Clicar em Novo Objetivo.
+3. Informar o nome Gustavo e a descrição Gustavo 45254#@v.
+4. Clicar em Salvar.
+5. Observar o diálogo, o status da requisição e a listagem.
+
+### Esperado e obtido
+
+| Caso | Esperado | Obtido |
+| --- | --- | --- |
+| CT-RF35 | Cadastrar e confirmar dados válidos; informar validação específica para dados recusados, sem erro interno. | `POST /api/objetivo-treino/salvar/1` retorna HTTP 500; a interface exibe o diálogo "Erro ao salvar objetivo" e a listagem permanece sem registros. |
+
+**Impacto:** o objetivo não é cadastrado e a mensagem não orienta a correção dos dados. A persistência de registro parcial não foi conferida; verificar antes de reenviar.
+
+### Evidências técnicas
+
+- [Jam](https://jam.dev/c/1d474477-2411-4a81-b85c-74207402b783), 1:01: clique em Salvar e `POST https://backendsifit.centrion.com.br/api/objetivo-treino/salvar/1` com HTTP 500 (1077 ms); 1:02: segunda ocorrência de POST 500 (856 ms), com OPTIONS HTTP 204 (218 ms) na lista de rede.
+- Cabeçalhos de resposta da última entrada: `content-type: application/json; charset=utf-8`, `content-length: 64`, `x-powered-by: PHP/8.2.35`, `date: Sun, 15 Nov 2026 21:12:42 GMT`, `x-hcdn-request-id: dfcc75d79c00e3202a38d84598b45e4b-asc-edge13`. Autenticação omitida.
+- Corpo da requisição e da resposta: indisponíveis no Jam ("body unavailable").
+- [Formulário preenchido em 1:00](Evidencias/CT-RF35_Cadastro_Objetivo_Treino/formulario_preenchido_01-00.png), [diálogo de erro em 1:04](Evidencias/CT-RF35_Cadastro_Objetivo_Treino/erro_01-04.png), [listagem vazia em 1:11](Evidencias/CT-RF35_Cadastro_Objetivo_Treino/lista_vazia_01-11.png), [lista de rede](Evidencias/CT-RF35_Cadastro_Objetivo_Treino/rede_lista.png) e [Evidências](Evidencias/CT-RF35_Cadastro_Objetivo_Treino/README.md).
+
+### Análise, limites e encaminhamento
+
+O HTTP 500 e o endpoint estão registrados no Jam. Sem logs do servidor, corpos da requisição e da resposta e acesso ao banco, não é possível distinguir exceção não tratada, rejeição de dados (a descrição continha `#@`) ou falha de infraestrutura. A causa técnica não foi confirmada no código. O sufixo `/1` tem significado não confirmado. Duas ocorrências de HTTP 500 para um único clique em Salvar registrado sugerem reenvio ou duplicidade de submissão; é uma hipótese a confirmar, relevante para evitar registros duplicados após a correção.
+
+O comportamento repete a assinatura de [BUG-009](#bug-009), [BUG-010](#bug-010) e [BUG-016](#bug-016): resposta genérica de erro interno em operação de escrita, em módulos distintos. O campo Código permaneceu vazio nos quadros apesar da digitação registrada; não foi tratado como defeito, pois pode ser atribuído automaticamente (ver [BUG-011](#bug-011) e [CT-RF31](Cenario_Teste/CT-RF31_Cadastro_GrupoMuscular.md)).
+
+**Reteste:** executar a [matriz do CT-RF35](Cenario_Teste/CT-RF35_Cadastro_Objetivo_Treino.md#critérios-de-aceitação-e-matriz-de-reteste-proposta), confirmar sucesso com dados válidos, validação para dados recusados, persistência, uma única gravação por clique e ausência de registros parciais. Investigar o HTTP 500 correlacionando o endpoint com 21:12:42 GMT de 15/11/2026 e o request ID. Manter em triagem até nova evidência em versão identificada.
+
+---
+
 ## Pontos a validar — sem defeito confirmado
 
 | Caso | Questão pendente | Evidência |
@@ -836,7 +890,7 @@ Investigar a existência dos arquivos no caminho indicado, o nome gravado em cad
 | [CT-RF16](Cenario_Teste/CT-RF16_Exclusao_Modalidade.md) | Confirmar a exclusão lógica e a nomenclatura da ação; registrar defeito apenas se houver divergência com a regra definida. | [Jam](https://jam.dev/c/0f55f76a-cd31-4cee-93da-23c13b1ba637) e [Evidências](Evidencias/CT-RF16_Exclusao_Modalidade/README.md) |
 | [CT-RF25](Cenario_Teste/CT-RF25_Envio_Exercicio_Imagem.md) | Conferir a imagem após reabrir e recarregar o exercício; criação visível não comprova associação persistida. | [Jam](https://jam.dev/c/25c37a9b-e9bd-4e0c-adf1-4da528ae1d58) e [Evidências](Evidencias/CT-RF25_Envio_Exercicio_Imagem/README.md) |
 
-Esses cinco pontos não entram na contagem de 15 defeitos registrados. BUG-011–BUG-015 são contabilizados separadamente como registros em triagem, com premissas, persistência ou validações técnicas ainda pendentes. O relato de numeração de personais não demonstrou diferença entre total e linhas; a inativação de modalidades pode ser exclusão lógica; encargos e métricas exigem regras explícitas.
+Esses cinco pontos não entram na contagem de 18 defeitos registrados. BUG-011–BUG-018 são contabilizados separadamente como registros em triagem, com premissas, persistência ou validações técnicas ainda pendentes. O relato de numeração de personais não demonstrou diferença entre total e linhas; a inativação de modalidades pode ser exclusão lógica; encargos e métricas exigem regras explícitas.
 
 
 **Exclusão de exercício:** CT-RF23 está aprovado no trecho consultado, com remoção e total 11 para 10; não gerou defeito adicional. Persistência e efeitos sobre vínculos permanecem como verificações complementares.
