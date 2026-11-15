@@ -35,8 +35,9 @@
 | [BUG-013](#bug-013) | Campos obrigatórios vazios sem feedback de validação | Média / Alta, propostas | Em triagem — persistência não confirmada | [CT-RF26](Cenario_Teste/CT-RF26_Exercicio_Campos_Vazios.md) |
 | [BUG-014](#bug-014) | Vídeo rejeitado no campo Imagem sem feedback | Baixa / Média, propostas | Em triagem — MIME não confirmado | [CT-RF27](Cenario_Teste/CT-RF27_Video_Campo_Imagem.md) |
 | [BUG-015](#bug-015) | Imagem rejeitada no campo Vídeo sem feedback | Baixa / Média, propostas | Em triagem — MIME não confirmado | [CT-RF28](Cenario_Teste/CT-RF28_Imagem_Campo_Video.md) |
+| [BUG-016](#bug-016) | Exclusão de grupo muscular retorna HTTP 500 e mensagem genérica | Média / Alta, propostas | Em triagem — causa não determinada | [CT-RF29](Cenario_Teste/CT-RF29_Exclusao_GrupoMuscular.md) |
 
-BUG-001–BUG-010 aguardam correção e reteste. BUG-011–BUG-015 aguardam confirmação das premissas e triagem antes do encaminhamento de correção. As causas técnicas permanecem não confirmadas; o BUG-003 se apoia no relato e nas capturas fornecidos, com os limites registrados no caso.
+BUG-001–BUG-010 aguardam correção e reteste. BUG-011–BUG-016 aguardam confirmação das premissas e triagem antes do encaminhamento de correção. As causas técnicas permanecem não confirmadas; o BUG-003 se apoia no relato e nas capturas fornecidos, com os limites registrados no caso.
 
 ---
 
@@ -724,6 +725,53 @@ O arquivo não aparece anexado, mas não é observada mensagem explicando a reje
 Exibir feedback no campo e validar tipo real e extensão tanto no cliente quanto no servidor, sem atribuir causa antes da inspeção.
 
 **Reteste:** usar imagens controladas com extensões e MIME conhecidos, capturar rede, confirmar ausência de upload/vínculo e verificar preservação dos demais campos.
+
+---
+
+<a id="bug-016"></a>
+
+## BUG-016 — Exclusão de grupo muscular retorna HTTP 500 e mensagem genérica
+
+| Campo | Descrição |
+| --- | --- |
+| Status | Em triagem — causa não determinada; reteste pendente após correção. |
+| Severidade / prioridade | Média / Alta, propostas para triagem. |
+| Módulo | Grupos Musculares / Exclusão |
+| Requisitos | [RF29](Analise%20de%20requisitos.md#rf29) |
+| Casos | [CT-RF29](Cenario_Teste/CT-RF29_Exclusao_GrupoMuscular.md) |
+| Data da evidência / revisão | 15/11/2026; sem nova execução. |
+| Página | https://sifit.centrion.com.br/grupos-musculares |
+| Ambiente | Chrome 157.0.8103.78 / Windows (x86) 11; versão e zoom não confirmados. |
+
+### Pré-condições e reprodução
+
+**[CT-RF29](Cenario_Teste/CT-RF29_Exclusao_GrupoMuscular.md):** Sessão autenticada com permissão para excluir grupos musculares. Registro de teste cuja exclusão seja permitida, com vínculos conhecidos para distinguir impedimento de regra de falha do servidor.
+
+1. Acionar o ícone de exclusão na linha do grupo muscular.
+2. Confirmar a exclusão no diálogo "Deseja deletar o Grupo?".
+3. Conferir o retorno visual, o status da chamada e a presença do registro após a operação.
+
+### Esperado e obtido
+
+| Caso | Esperado | Obtido |
+| --- | --- | --- |
+| CT-RF29 | Concluir a exclusão permitida, removendo o registro e atualizando os contadores; ou explicar de forma tratável o impedimento, sem erro interno. | Diálogo "Erro" / "Erro ao deletar Grupo" com o botão "Fechar". O registro permanece na listagem e os contadores não se alteram. |
+
+**Impacto:** A exclusão não é concluída e o usuário recebe uma mensagem sem motivo tratável. O comportamento repete a assinatura de [BUG-009](#bug-009) e [BUG-010](#bug-010), em módulos distintos.
+
+### Evidências
+
+- [CT-RF29](Cenario_Teste/CT-RF29_Exclusao_GrupoMuscular.md): [Jam — Tela de Grupos Musculares](https://jam.dev/c/98008390-0040-475e-ba7b-7f1e72cc0b2e). 1:17: acionamento do ícone de exclusão. 1:18: diálogo de confirmação. 1:19: `POST /api/deleta/grupo-muscular/1` retorna HTTP 500 em 990 ms. 1:21: diálogo de erro, com a listagem inalterada. 1:23: segunda tentativa no mesmo endpoint, também HTTP 500, em 184 ms.
+- Corpo de resposta nas duas tentativas: `{"verifica_erro": true, "mensagem": "Erro interno inesperado."}`.
+- Cabeçalhos registrados: `content-type: application/json; charset=utf-8`, `content-length: 64`, `x-powered-by: PHP/8.2.35`. Primeira tentativa em `Dom, 15 de nov de 2026 18:55:46 GMT`, `x-hcdn-request-id: d7f7c4b73412a500c5bdb50eb9be6ec1-asc-edge11`; segunda em `18:55:49 GMT`, `x-hcdn-request-id: c467f11f867c2cdb2c23ce6029e59251-asc-edge11`.
+
+### Análise, limites e encaminhamento
+
+O HTTP 500 e o endpoint estão registrados no Jam. Não houve acesso a logs do servidor, ao corpo completo da resposta além dos 64 bytes retornados nem ao banco de dados, de modo que não é possível distinguir entre falha de infraestrutura, exceção não tratada na aplicação e restrição de integridade referencial não capturada. A causa técnica não foi confirmada no código.
+
+Não foi verificado se o registro permanece íntegro após as duas tentativas enviadas para o mesmo recurso, nem exercitado o cenário de exclusão com impedimento de regra. A mensagem "Erro ao deletar Grupo" é genérica e não informa a causa ao usuário.
+
+Investigar o HTTP 500 com logs do servidor e os vínculos do registro; corrigir e retestar os cenários permitido e impedido. O status permanece em triagem até que a causa seja determinada e uma nova execução comprove os critérios de aceitação do caso associado.
 
 ---
 
