@@ -1,0 +1,72 @@
+CT-RF35 — Cadastro de objetivo de treino
+Fonte: https://jam.dev/c/1d474477-2411-4a81-b85c-74207402b783
+Gravação: 15/11/2026, 18:13 BRT; duração: 1 min 12 s.
+Revisão documental: 15/11/2026.
+Página: https://sifit.centrion.com.br/objetivos-treino
+
+Cronologia (painel Console do Jam, atividade do usuário; seletores abreviados pelo Jam):
+0:00  Video started
+0:00  Clique inicial na página
+0:02  Clique no ícone de sol (tema) -> POST "tema" (HTTP 200)
+0:03  Clique no ícone de sino (notificações)
+0:04-0:10  Cliques em botões do painel de notificações (Tudo / Não lidas)
+0:11-0:12  Cliques no nome do usuário
+0:13  Clique no campo de filtro Código
+0:15  Digitado: 4152
+0:16  Clique no campo
+0:19  Digitado: Gudta, apagar, Ctrl+A, apagar
+0:20  Clique em Buscar
+0:22  Clique no grupo de campo; apagar
+0:23  Clique na lupa
+0:24  Clique no campo Código do filtro
+0:25  Digitado: 14526
+0:26  Clique no campo
+0:29  Digitado: Gustav e seis apagamentos
+0:32  Clique na área de conteúdo; apagar
+0:34  Digitado: abdo
+0:37  Ctrl+A; digitado: Gustavo
+0:39  Clique no campo
+0:40  Digitado: 15165
+0:42  Clique em Novo Objetivo (abre o formulário "Objetivo")
+0:43  Clique em campo do formulário
+0:44  Digitado: 15
+0:47  Digitado: 165
+0:49  Cliques em campos e na área do formulário
+0:50  Digitado: 9-561+651
+0:52  Clique em campo
+0:54  Digitado: Gustavo
+0:55  Clique no campo Descrição
+1:00  Digitado: Gustavo 45254# e @v
+1:01  Clique em Salvar (button#submit-button, type=submit)
+1:01  POST 500 https://backendsifit.centrion.com.br/api/objetivo-treino/salvar/1
+1:02  POST 500 (undefined) https://backendsifit.centrion.com.br/api/objetivo-treino/salvar/1
+1:05  Clique no botão do diálogo de erro
+1:06  Clique em botão do formulário (button#submit-button, type=button; provavelmente Cancelar)
+1:12  Video stopped
+
+Quadros consultados (reprodução do Jam):
+0:04  Painel Notificações: "Nenhuma pendente por aqui. Você está em dia."; cartões Objetivos 0, Exibidos 0, Com Descrição 0.
+0:21  Filtro Código 4152; listagem vazia "Nenhum objetivo cadastrado".
+0:41  Filtros Código 15165 e Nome Gustavo; listagem vazia.
+0:46  Formulário "Objetivo" aberto; campo Código focado e vazio.
+0:52  Mesmo estado, após a digitação de 0:50.
+0:58  Nome "Gustavo"; Descrição "Gustavo" (digitação em andamento).
+1:00  Descrição "Gustavo 45254#@v".
+1:04  Diálogo "Erro" / "Erro ao salvar objetivo" (texto parcialmente coberto pelo player).
+1:06  Formulário se fechando.
+1:11  Listagem vazia: cartões em 0; "Nenhum objetivo cadastrado"; "0 registro(s)".
+
+Rede do conjunto gravado (nove entradas; sem atribuição de timestamps individuais às quatro primeiras):
+1-4  POST "tema"     HTTP 200   23 B   226 ms / 58 ms / 63 ms / 56 ms
+5-6  GET  "1"        HTTP 200   2 B    62 ms / 70 ms
+7    POST "1"        HTTP 500   60 B   1077 ms
+8    OPTIONS "1"     HTTP 204   -      218 ms
+9    POST "1"        HTTP 500   -      856 ms
+Entrada 9: POST /api/objetivo-treino/salvar/1. Cabeçalhos de resposta: content-type application/json; charset=utf-8; content-length 64;
+date Sun, 15 Nov 2026 21:12:42 GMT; x-hcdn-request-id dfcc75d79c00e3202a38d84598b45e4b-asc-edge13; x-powered-by PHP/8.2.35.
+Corpo da requisição e da resposta: indisponíveis no Jam. Autenticação omitida.
+
+Observações e verificações futuras:
+- O campo Código permanece vazio nos quadros de 0:46 e 0:52 apesar da digitação registrada; regra não confirmada.
+- A base estava vazia durante toda a gravação; os filtros não puderam ser avaliados.
+- Não foram confirmados persistência de registros parciais, payload, mensagem do servidor ou causa do HTTP 500.

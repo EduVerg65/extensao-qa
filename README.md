@@ -2,24 +2,24 @@
 
 Repositório de documentação de QA manual do **SIFIT**, sistema de gestão de academias. Reúne requisitos, plano, cenários BDD, resultados, defeitos e evidências com links do Jam.
 
-**Atualização documental:** 15/11/2026. Integrados CT-RF22–CT-RF25, RF22–RF25 e BUG-011/012 em triagem. CT-RF21 e os resultados anteriores foram preservados.
+**Atualização documental:** 15/11/2026. Integrados CT-RF35, RF35 e BUG-019 em triagem (cadastro de objetivo de treino com HTTP 500). CT-RF22–CT-RF33 e os resultados anteriores foram preservados.
 
 ## 📊 Situação consolidada
 
 | Cenários documentados | Aprovados | Reprovados | A validar | Defeitos registrados | Casos com reteste corretivo pendente |
 | :---: | :---: | :---: | :---: | :---: | :---: |
-| 25 | 7 | 13 | 5 | 12 (10 abertos + 2 em triagem) | 13 |
+| 35 | 10 | 20 | 5 | 19 (10 abertos + 9 em triagem) | 20 |
 
-As classificações se baseiam nas fontes indicadas em cada cenário. CT-RF03 mantém a reprovação conforme o relato, com os limites da revisão original. CT-RF09 e CT-RF10 compartilham BUG-005; por isso 13 casos reprovados correspondem a 12 defeitos registrados. BUG-011/012 aguardam confirmação funcional e triagem; os cinco pontos a validar não entram nessa contagem.
+As classificações se baseiam nas fontes indicadas em cada cenário. CT-RF03 mantém a reprovação conforme o relato, com os limites da revisão original. CT-RF09 e CT-RF10 compartilham BUG-005; por isso 20 casos reprovados correspondem a 19 defeitos registrados. BUG-011–BUG-019 aguardam confirmação funcional e triagem; os cinco pontos a validar não entram nessa contagem.
 
 ## 📚 Documentos do projeto
 
 | Documento | Conteúdo |
 | --- | --- |
-| [Análise de requisitos](SIFIT/Analise%20de%20requisitos.md) | RF01–RF25, critérios de aceitação, dúvidas de regra e rastreabilidade. |
+| [Análise de requisitos](SIFIT/Analise%20de%20requisitos.md) | RF01–RF33 e RF35, critérios de aceitação, dúvidas de regra e rastreabilidade. |
 | [Plano de testes](SIFIT/Plano%20de%20testes.md) | Escopo, ambientes, preparação, critérios, regressão e retestes. |
-| [Índice dos cenários](SIFIT/Cenario_Teste/README.md) | 25 cenários com pré-condições, BDD, passos, esperado, obtido e encaminhamento. |
-| [Relatório de bugs](SIFIT/Relatorio-de-Bugs.md) | BUG-001–BUG-012: reprodução, impacto, evidências, severidade/prioridade propostas e reteste. |
+| [Índice dos cenários](SIFIT/Cenario_Teste/README.md) | 35 cenários com pré-condições, BDD, passos, esperado, obtido e encaminhamento. |
+| [Relatório de bugs](SIFIT/Relatorio-de-Bugs.md) | BUG-001–BUG-019: reprodução, impacto, evidências, severidade/prioridade propostas e reteste. |
 | [Relatório dos testes](SIFIT/Relatorio%20dos%20testes.md) | Resultados consolidados, cobertura, limites e pendências. |
 | [Índice das evidências](SIFIT/Evidencias/README.md) | Jam por cenário e arquivos locais dos novos casos. |
 
@@ -36,13 +36,12 @@ extensao-qa/
     ├── Cenario_Teste/
     │   ├── README.md
     │   ├── CT-RF01_Esqueci-senha.md
-    │   ├── ... CT-RF02 a CT-RF20
-    │   └── CT-RF21_Cadastro_Avaliacao.md
+    │   ├── ... CT-RF02 a CT-RF33
+    │   └── CT-RF35_Cadastro_Objetivo_Treino.md
     └── Evidencias/
         ├── README.md
-        ├── catalogo.json
-        ├── manifesto_sha256.json
-        └── CT-RF21_Cadastro_Avaliacao/
+        ├── CT-RF23_Exclusao_Exercicio/ ... CT-RF25_Envio_Exercicio_Imagem/
+        └── CT-RF35_Cadastro_Objetivo_Treino/
 ```
 
 ## 📋 Cenários e resultados
@@ -74,6 +73,15 @@ extensao-qa/
 | [CT-RF23](SIFIT/Cenario_Teste/CT-RF23_Exclusao_Exercicio.md) | Exclusão de exercício | Aprovado no trecho consultado. | Sem defeito confirmado | [Jam](https://jam.dev/c/32adfca3-489f-4a4b-a08d-933c1d1a3c32) |
 | [CT-RF24](SIFIT/Cenario_Teste/CT-RF24_Edicao_Exercicio.md) | Edição de exercício aumenta o total e mantém duas entradas | Reprovado no trecho consultado; confirmar operação e identidade dos registros na reprodução. | [BUG-012](SIFIT/Relatorio-de-Bugs.md#bug-012), em triagem | [Jam](https://jam.dev/c/073f70d6-4052-4e0f-a4bb-e9f37305d618) |
 | [CT-RF25](SIFIT/Cenario_Teste/CT-RF25_Envio_Exercicio_Imagem.md) | Envio de exercício com imagem | A validar — criação visível; persistência e associação da imagem não confirmadas. | Sem defeito confirmado | [Jam](https://jam.dev/c/25c37a9b-e9bd-4e0c-adf1-4da528ae1d58) |
+| [CT-RF26](SIFIT/Cenario_Teste/CT-RF26_Exercicio_Campos_Vazios.md) | Envio de exercício com campos obrigatórios vazios | Reprovado — sem feedback de validação visível. | [BUG-013](SIFIT/Relatorio-de-Bugs.md#bug-013), em triagem | [Jam](https://jam.dev/c/bc07ca5f-d3a9-45f6-84cb-12c0b562a211) |
+| [CT-RF27](SIFIT/Cenario_Teste/CT-RF27_Video_Campo_Imagem.md) | Vídeo selecionado no campo de imagem | Reprovado — arquivo rejeitado sem feedback visível. | [BUG-014](SIFIT/Relatorio-de-Bugs.md#bug-014), em triagem | [Jam](https://jam.dev/c/00740108-9a7d-4151-8723-171c89635567) |
+| [CT-RF28](SIFIT/Cenario_Teste/CT-RF28_Imagem_Campo_Video.md) | Imagem selecionada no campo de vídeo | Reprovado — arquivo rejeitado sem feedback visível. | [BUG-015](SIFIT/Relatorio-de-Bugs.md#bug-015), em triagem | [Jam](https://jam.dev/c/be9437a4-4fe9-4756-a2af-6777d3f43e25) |
+| [CT-RF29](SIFIT/Cenario_Teste/CT-RF29_Exclusao_GrupoMuscular.md) | Exclusão de grupo muscular retorna HTTP 500 | Reprovado nas evidências | [BUG-016](SIFIT/Relatorio-de-Bugs.md#bug-016), em triagem | [Jam](https://jam.dev/c/98008390-0040-475e-ba7b-7f1e72cc0b2e) |
+| [CT-RF30](SIFIT/Cenario_Teste/CT-RF30_Imagens_GruposMusculares.md) | Imagens dos grupos musculares retornam HTTP 422 | Reprovado nas evidências | [BUG-017](SIFIT/Relatorio-de-Bugs.md#bug-017), em triagem | [Jam](https://jam.dev/c/98008390-0040-475e-ba7b-7f1e72cc0b2e) |
+| [CT-RF31](SIFIT/Cenario_Teste/CT-RF31_Cadastro_GrupoMuscular.md) | Cadastro de grupo muscular | Aprovado conforme a gravação | — | [Jam](https://jam.dev/c/98008390-0040-475e-ba7b-7f1e72cc0b2e) |
+| [CT-RF32](SIFIT/Cenario_Teste/CT-RF32_Edicao_TipoMembro.md) | Edição do tipo de membro | Aprovado conforme a gravação | — | [Jam](https://jam.dev/c/98008390-0040-475e-ba7b-7f1e72cc0b2e) |
+| [CT-RF33](SIFIT/Cenario_Teste/CT-RF33_Filtros_GruposMusculares.md) | Filtros de grupos musculares por código e tipo | Aprovado conforme a gravação | — | [Jam](https://jam.dev/c/98008390-0040-475e-ba7b-7f1e72cc0b2e) |
+| [CT-RF35](SIFIT/Cenario_Teste/CT-RF35_Cadastro_Objetivo_Treino.md) | Cadastro de objetivo de treino retorna HTTP 500 | Reprovado nas evidências | [BUG-019](SIFIT/Relatorio-de-Bugs.md#bug-019), em triagem | [Jam](https://jam.dev/c/1d474477-2411-4a81-b85c-74207402b783) |
 
 ## 🔬 Como este projeto funciona
 
@@ -104,3 +112,5 @@ As quatro decisões pendentes são: composição da cobrança (CT-RF08), escopo 
 A apresentação foi adaptada do [repositório de referência de testes manuais](https://github.com/Adnyslougansilva/extensao-qa), com conteúdo e rastreabilidade próprios do SIFIT.
 
 CT-RF22–CT-RF25 estão integrados aos requisitos, plano e relatórios. A imagem persistida em CT-RF25 permanece a validar. As evidências locais de CT-RF23–25 contêm resumos e cronologias; os vídeos permanecem no Jam. Não houve nova execução ou reteste.
+
+CT-RF35 (Objetivos Treino, gravação de 15/11/2026 às 18:13 BRT, Chrome 157.0.8103.78 / Windows 11) tem pasta local com capturas extraídas do Jam, cronologia, origem e hashes; o vídeo permanece no Jam, e o Jam não capturou o corpo da requisição nem da resposta.

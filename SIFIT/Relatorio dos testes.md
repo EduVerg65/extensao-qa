@@ -1,10 +1,10 @@
 # 📊 Relatório de Testes — SIFIT
 
-**Escopo:** 34 casos documentados entre CT-RF01 e CT-RF34 — autenticação, recuperação, perfil, Clientes, financeiro, página inicial e dashboard, modalidades / tema de SifitBox, Categorias Crossfit, Avaliações, Exercícios e Grupos Musculares.
+**Escopo:** 35 casos documentados entre CT-RF01 e CT-RF35 — autenticação, recuperação, perfil, Clientes, financeiro, página inicial e dashboard, modalidades / tema de SifitBox, Categorias Crossfit, Avaliações, Exercícios, Grupos Musculares e Objetivos de Treino.
 
-**Datas das gravações do Jam:** CT-RF01 em 23/10/2026; CT-RF02_ERRO em 22/10/2026 às 21:45 BRT; CT-RF03 não confirmada; CT-RF04_loginComSucesso em 13/11/2026; CT-RF05–CT-RF20 em 14/11/2026; CT-RF21 em 15/11/2026 às 15:07:51,265 BRT; CT-RF22–28 em 15/11/2026 às 15:25, 15:40, 15:38, 15:35, 16:11, 16:08 e 16:07 BRT; CT-RF34 em 15/11/2026 às 17:23 BRT.
+**Datas das gravações do Jam:** CT-RF01 em 23/10/2026; CT-RF02_ERRO em 22/10/2026 às 21:45 BRT; CT-RF03 não confirmada; CT-RF04_loginComSucesso em 13/11/2026; CT-RF05–CT-RF20 em 14/11/2026; CT-RF21 em 15/11/2026 às 15:07:51,265 BRT; CT-RF22–28 em 15/11/2026 às 15:25, 15:40, 15:38, 15:35, 16:11, 16:08 e 16:07 BRT; CT-RF29–33 em 15/11/2026 às 15h56 BRT (uma única gravação); CT-RF34 em 15/11/2026 às 17:23 BRT; CT-RF35 em 15/11/2026 às 18:13 BRT.
 
-**Data da revisão documental:** 15/11/2026, com integração de CT-RF22–CT-RF34; BUG-011–BUG-018 em triagem. Resultados anteriores preservados.
+**Data da revisão documental:** 15/11/2026, com integração de CT-RF22–CT-RF35; BUG-011–BUG-019 em triagem. Resultados anteriores preservados.
 
 **Origem do resultado:** análise de evidências fornecidas; sem nova execução no sistema nesta revisão.
 
@@ -22,33 +22,17 @@ O **CT-RF03** foi classificado como **reprovado conforme o relato**: a busca com
 
 O **CT-RF04_loginComSucesso** foi classificado como **aprovado conforme a gravação**: o usuário preenche credenciais válidas, clica em Entrar e acessa `/dashboard`. As chamadas de login e verificação da sessão retornam HTTP 200; os quadros mostram o menu e o resumo da academia após a autenticação. Não houve nova execução no sistema.
 
-<<<<<<< HEAD
-Os 16 cenários incluídos em 14/11/2026 acrescentaram **5 aprovações**, **7 reprovações nas evidências** e **4 pontos a validar**. CT-RF21 acrescentou uma reprovação e o BUG-010. CT-RF22–25 acrescentaram uma aprovação, duas reprovações com confirmação pendente e um ponto a validar. CT-RF26–28 acrescentam três reprovações por ausência de feedback visual. CT-RF34 acrescenta uma reprovação por múltiplos HTTP 500 durante o carregamento do dashboard e o BUG-016 em triagem. As contagens consolidadas são:
-=======
 Os 16 cenários incluídos em 14/11/2026 acrescentaram **5 aprovações**, **7 reprovações nas evidências** e **4 pontos a validar**. CT-RF21 acrescentou uma reprovação e o BUG-010. CT-RF22–25 acrescentaram uma aprovação, duas reprovações com confirmação pendente e um ponto a validar. CT-RF26–28 acrescentam três reprovações por ausência de feedback visual nos testes negativos, vinculadas a BUG-013–BUG-015 em triagem.
 
-<<<<<<< HEAD
 O **CT-RF29** acrescenta uma reprovação e o BUG-016: a exclusão de grupo muscular retorna HTTP 500 em duas tentativas, com o corpo `{"verifica_erro": true, "mensagem": "Erro interno inesperado."}`; a interface apresenta o diálogo "Erro ao deletar Grupo" e o registro permanece na listagem. A causa não foi determinada.
 
-O **CT-RF30** acrescenta uma reprovação e o BUG-017: as requisições das imagens da listagem retornam HTTP 422 durante toda a gravação, com ocorrências de `net::ERR_ABORTED`, e a coluna IMAGEM apresenta o ícone de imagem quebrada em todas as linhas, nos dois temas e com ou sem filtro. A causa não foi determinada. As contagens consolidadas são:
-=======
-O **CT-RF29** acrescenta uma reprovação e o BUG-016: a exclusão de grupo muscular retorna HTTP 500 em duas tentativas, com o corpo `{"verifica_erro": true, "mensagem": "Erro interno inesperado."}`; a interface apresenta o diálogo "Erro ao deletar Grupo" e o registro permanece na listagem. A causa não foi determinada. As contagens consolidadas são:
->>>>>>> bea1da1f41faf0c807abdc025ade76b1a17433d8
->>>>>>> 01adc6482d6aca8fe40d109b31aca23f971df0dd
+CT-RF30 acrescenta uma reprovação e o BUG-017 (imagens dos grupos musculares com HTTP 422); CT-RF31–33 acrescentam três aprovações limitadas aos exemplos gravados. O **CT-RF35** acrescenta uma reprovação e o BUG-019: o cadastro de objetivo de treino retorna HTTP 500 em duas ocorrências, com o diálogo "Erro ao salvar objetivo" e a listagem sem registros; o corpo da requisição e da resposta não foi capturado e a causa não foi determinada. As contagens consolidadas são:
 
 | Casos documentados | Aprovados | Reprovados | A validar | Defeitos registrados | Casos com reteste corretivo pendente |
 | :---: | :---: | :---: | :---: | :---: | :---: |
-| 30 | 7 | 18 | 5 | 17 (10 abertos + 7 em triagem) | 18 |
+| 35 | 10 | 20 | 5 | 19 (10 abertos + 9 em triagem) | 20 |
 
-<<<<<<< HEAD
-Os 18 retestes incluem CT-RF22/24/26/27/28/29/30, sujeitos à confirmação funcional e técnica. As contagens representam os casos documentados com base nas fontes indicadas, sem novas execuções nesta revisão. As nove variações planejadas para o reteste do CT-RF03 não foram executadas e não são contabilizadas como testes adicionais realizados.
-=======
-<<<<<<< HEAD
-Os 17 retestes incluem CT-RF22/24/26/27/28/34, sujeitos à confirmação funcional e técnica. As contagens representam os casos documentados com base nas fontes indicadas, sem novas execuções nesta revisão. As nove variações planejadas para o reteste do CT-RF03 não foram executadas e não são contabilizadas como testes adicionais realizados.
-=======
-Os 17 retestes incluem CT-RF22/24/26/27/28/29, sujeitos à confirmação funcional e técnica. As contagens representam os casos documentados com base nas fontes indicadas, sem novas execuções nesta revisão. As nove variações planejadas para o reteste do CT-RF03 não foram executadas e não são contabilizadas como testes adicionais realizados.
->>>>>>> bea1da1f41faf0c807abdc025ade76b1a17433d8
->>>>>>> 01adc6482d6aca8fe40d109b31aca23f971df0dd
+Os 20 retestes incluem CT-RF22/24/26/27/28/29/30/35, sujeitos à confirmação funcional e técnica. As contagens representam os casos documentados com base nas fontes indicadas, sem novas execuções nesta revisão. As nove variações planejadas para o reteste do CT-RF03 não foram executadas e não são contabilizadas como testes adicionais realizados.
 
 ---
 
@@ -84,15 +68,13 @@ Os 17 retestes incluem CT-RF22/24/26/27/28/29, sujeitos à confirmação funcion
 | [CT-RF26](Cenario_Teste/CT-RF26_Exercicio_Campos_Vazios.md) | [RF26](Analise%20de%20requisitos.md#rf26) | Bloquear o envio, indicar os campos obrigatórios e não criar registro vazio. | O formulário permanece aberto após a tentativa de salvar, sem mensagem, destaque ou orientação de validação visível. A persistência não foi demonstrada. | Reprovado — sem feedback de validação visível. | [BUG-013](Relatorio-de-Bugs.md#bug-013), em triagem |
 | [CT-RF27](Cenario_Teste/CT-RF27_Video_Campo_Imagem.md) | [RF27](Analise%20de%20requisitos.md#rf27) | Rejeitar vídeo no campo Imagem e informar formatos e limites aceitos. | O vídeo não aparece anexado e não há mensagem visível explicando a rejeição ou os formatos permitidos. | Reprovado — arquivo rejeitado sem feedback visível. | [BUG-014](Relatorio-de-Bugs.md#bug-014), em triagem |
 | [CT-RF28](Cenario_Teste/CT-RF28_Imagem_Campo_Video.md) | [RF28](Analise%20de%20requisitos.md#rf28) | Rejeitar imagem no campo Vídeo e informar formatos e limites aceitos. | A imagem não aparece anexada e não há mensagem visível explicando a rejeição ou os formatos permitidos. | Reprovado — arquivo rejeitado sem feedback visível. | [BUG-015](Relatorio-de-Bugs.md#bug-015), em triagem |
-<<<<<<< HEAD
-| [CT-RF34](Cenario_Teste/CT-RF34_Erro_Servidor_Excesso_Requisicoes.md) | [RF34](Analise%20de%20requisitos.md#rf34) | Carregar os componentes do dashboard sem HTTP 500 e tratar falhas parciais de forma específica. | O dashboard apresenta diálogo de erro; entre 23 eventos visíveis, diversas chamadas GET/POST retornam HTTP 500. Endpoints e causa não foram confirmados. | Reprovado nas evidências. | [BUG-018](Relatorio-de-Bugs.md#bug-018), em triagem |
-=======
 | [CT-RF29](Cenario_Teste/CT-RF29_Exclusao_GrupoMuscular.md) | [RF29](Analise%20de%20requisitos.md#rf29) | Concluir a exclusão permitida, removendo o registro e atualizando os contadores, ou explicar de forma tratável o impedimento, sem erro interno. | Diálogo "Erro" / "Erro ao deletar Grupo" com o botão "Fechar". O registro permanece na listagem e os contadores não se alteram. Duas tentativas retornam HTTP 500. | Reprovado nas evidências | [BUG-016](Relatorio-de-Bugs.md#bug-016), em triagem |
-<<<<<<< HEAD
-| [CT-RF30](Cenario_Teste/CT-RF30_Imagens_GruposMusculares.md) | [RF30](Analise%20de%20requisitos.md#rf30) | A coluna IMAGEM apresenta a imagem de cada registro e as requisições dos arquivos são concluídas com sucesso. | Todas as linhas exibem o ícone de imagem quebrada. As requisições dos quatro arquivos retornam HTTP 422, com três ocorrências de `net::ERR_ABORTED`. | Reprovado nas evidências | [BUG-017](Relatorio-de-Bugs.md#bug-017), em triagem |
-=======
->>>>>>> bea1da1f41faf0c807abdc025ade76b1a17433d8
->>>>>>> 01adc6482d6aca8fe40d109b31aca23f971df0dd
+| [CT-RF30](Cenario_Teste/CT-RF30_Imagens_GruposMusculares.md) | [RF30](Analise%20de%20requisitos.md#rf30) | Apresentar a imagem cadastrada de cada grupo muscular. | Todas as linhas exibem o ícone de imagem quebrada; as requisições de arquivo retornam HTTP 422 durante toda a gravação. | Reprovado nas evidências | [BUG-017](Relatorio-de-Bugs.md#bug-017), em triagem |
+| [CT-RF31](Cenario_Teste/CT-RF31_Cadastro_GrupoMuscular.md) | [RF31](Analise%20de%20requisitos.md#rf31) | Criar o grupo muscular, listá-lo e atualizar os contadores. | O registro "Tríceps" é criado com código 6; listagem de 3 para 4 registros e cartões atualizados. | Aprovado conforme a gravação | Nenhum no fluxo avaliado |
+| [CT-RF32](Cenario_Teste/CT-RF32_Edicao_TipoMembro.md) | [RF32](Analise%20de%20requisitos.md#rf32) | Alterar o tipo de membro e refletir a mudança na listagem e nos cartões. | A alteração é aplicada, a listagem é atualizada e os cartões permanecem coerentes. | Aprovado conforme a gravação | Nenhum no fluxo avaliado |
+| [CT-RF33](Cenario_Teste/CT-RF33_Filtros_GruposMusculares.md) | [RF33](Analise%20de%20requisitos.md#rf33) | Filtrar por código e tipo de membro, com rodapé coerente e resultado vazio informado. | Os filtros exercitados retornam conjuntos coerentes; o tipo sem registros apresenta "Nenhum grupo muscular encontrado". A lógica combinada não foi demonstrada. | Aprovado conforme a gravação | Nenhum no fluxo avaliado |
+| [CT-RF34](Cenario_Teste/CT-RF34_Erro_Servidor_Excesso_Requisicoes.md) | [RF34](Analise%20de%20requisitos.md#rf34) | Carregar os componentes do dashboard sem HTTP 500 e tratar falhas parciais de forma específica. | O dashboard apresenta diálogo de erro; entre 23 eventos visíveis, diversas chamadas GET/POST retornam HTTP 500. Endpoints e causa não foram confirmados. | Reprovado nas evidências. | [BUG-018](Relatorio-de-Bugs.md#bug-018), em triagem |
+| [CT-RF35](Cenario_Teste/CT-RF35_Cadastro_Objetivo_Treino.md) | [RF35](Analise%20de%20requisitos.md#rf35) | Cadastrar o objetivo e listá-lo, ou informar validação específica, sem HTTP 500. | `POST /api/objetivo-treino/salvar/1` retorna HTTP 500 (duas ocorrências); diálogo "Erro ao salvar objetivo"; a listagem permanece sem registros. | Reprovado nas evidências | [BUG-019](Relatorio-de-Bugs.md#bug-019), em triagem |
 
 ---
 
@@ -115,17 +97,10 @@ Os 17 retestes incluem CT-RF22/24/26/27/28/29, sujeitos à confirmação funcion
 | [BUG-013](Relatorio-de-Bugs.md#bug-013) | Campos obrigatórios vazios sem feedback de validação | Média, proposta | Alta, proposta | Em triagem; confirmação de persistência e reteste pendentes. |
 | [BUG-014](Relatorio-de-Bugs.md#bug-014) | Vídeo rejeitado no campo Imagem sem feedback | Baixa, proposta | Média, proposta | Em triagem; MIME e reteste pendentes. |
 | [BUG-015](Relatorio-de-Bugs.md#bug-015) | Imagem rejeitada no campo Vídeo sem feedback | Baixa, proposta | Média, proposta | Em triagem; MIME e reteste pendentes. |
-<<<<<<< HEAD
 | [BUG-016](Relatorio-de-Bugs.md#bug-016) | Exclusão de grupo muscular retorna HTTP 500 | Média, proposta | Alta, proposta | Em triagem; causa pendente. |
 | [BUG-017](Relatorio-de-Bugs.md#bug-017) | Imagens dos grupos musculares retornam HTTP 422 | Média, proposta | Média, proposta | Em triagem; causa pendente. |
 | [BUG-018](Relatorio-de-Bugs.md#bug-018) | Dashboard apresenta múltiplos HTTP 500 durante o carregamento | Alta, proposta | Alta, proposta | Em triagem; endpoints, repetição e causa pendentes. |
-=======
-| [BUG-016](Relatorio-de-Bugs.md#bug-016) | Exclusão de grupo muscular retorna HTTP 500 e mensagem genérica | Média, proposta | Alta, proposta | Em triagem; causa não determinada e reteste pendentes. |
-<<<<<<< HEAD
-| [BUG-017](Relatorio-de-Bugs.md#bug-017) | Imagens dos grupos musculares não são exibidas e retornam HTTP 422 | Média, proposta | Média, proposta | Em triagem; causa não determinada e reteste pendentes. |
-=======
->>>>>>> bea1da1f41faf0c807abdc025ade76b1a17433d8
->>>>>>> 01adc6482d6aca8fe40d109b31aca23f971df0dd
+| [BUG-019](Relatorio-de-Bugs.md#bug-019) | Cadastro de objetivo de treino retorna HTTP 500 | Alta, proposta | Alta, proposta | Em triagem; causa e reteste pendentes. |
 
 As classificações propostas dependem de triagem. O BUG-003 mantém o resultado atribuído ao relato fornecido.
 
@@ -219,10 +194,25 @@ O domínio do CT-RF02_ERRO é diferente do domínio `sifitalfa.centrion.com.br` 
 | Data / duração | 15/11/2026; RF22: 15:25 / 5 s; RF23: 15:40 / 6 s; RF24: 15:38 / 9 s; RF25: 15:35 / 5 s; RF26: 16:11 / 4 s; RF27: 16:08 / 7 s; RF28: 16:07 / 7 s; durações aproximadas. |
 | Material e limites | RF22: relato, imagem inicial e Info. RF23–25: quadros, Info e Network, com resumo e cronologia locais. RF26–28: quadros e Info, sem confirmação de MIME, persistência ou resposta detalhada da API. Sem cópia dos vídeos, inspeção de código ou nova execução. |
 
-<<<<<<< HEAD
-### CT-RF29 e CT-RF30
-=======
-<<<<<<< HEAD
+### CT-RF29
+
+| Item | Registro |
+| --- | --- |
+| Página / backend | https://sifit.centrion.com.br/grupos-musculares / https://backendsifit.centrion.com.br. |
+| Navegador / sistema / janela | Chrome 157.0.8103.78 / Windows (x86) 11 / 1920 × 911, conforme Info. |
+| Data / duração | 15/11/2026 às 15h56 BRT; 2 min 3 s. |
+| Rede | Rápida, mais de 10 Mbps, latência de 50 ms, conforme Info. |
+| Servidor | `x-powered-by: PHP/8.2.35`, `servidor: hcdn`, `plataforma: hospedagem`. |
+| Material e limites | Painéis Informações, Rede e Console do Jam lidos diretamente, com cabeçalhos e corpo das duas requisições de exclusão, e quadros de 1:18 e 1:21. Sem logs do servidor, acesso ao banco, inspeção de código ou nova execução. |
+
+### CT-RF30 a CT-RF33
+
+| Item | Registro |
+| --- | --- |
+| Página / backend | https://sifit.centrion.com.br/grupos-musculares / https://backendsifit.centrion.com.br. |
+| Data / duração | 15/11/2026 às 15h56 BRT; 2 min 3 s; a mesma gravação de CT-RF29, com navegador, sistema e janela idênticos. |
+| Material e limites | CT-RF30: lista de rede filtrada por erros, cronologia e quadros de 0:20, 0:55, 1:18, 1:21, 1:45 e 2:00; os cabeçalhos de resposta das imagens foram descartados por inconsistência do painel. CT-RF31–33: cronologia do painel Console e quadros de 0:15, 0:20, 0:48, 0:55, 1:45 e 2:00; a cronologia não registra as requisições de criação, atualização e consulta com código de status. Sem pasta local de evidências, inspeção de código ou nova execução. |
+
 ### CT-RF34
 
 | Item | Registro |
@@ -232,23 +222,17 @@ O domínio do CT-RF02_ERRO é diferente do domínio `sifitalfa.centrion.com.br` 
 | Data / duração | 15/11/2026, 17:23 BRT / aproximadamente 4 s. |
 | Material e limites | Quadros, Info e Network. Há 23 eventos visíveis e múltiplos HTTP 500; endpoints completos, corpos, logs, componentes de origem e causa não foram confirmados. |
 
-=======
-### CT-RF29
->>>>>>> 01adc6482d6aca8fe40d109b31aca23f971df0dd
+
+### CT-RF35
 
 | Item | Registro |
 | --- | --- |
-| Página / backend | https://sifit.centrion.com.br/grupos-musculares / https://backendsifit.centrion.com.br. |
-| Navegador / sistema / janela | Chrome 157.0.8103.78 / Windows (x86) 11 / 1920 × 911, conforme Info. |
-| Data / duração | 15/11/2026 às 15h56 BRT; 2 min 3 s. |
-| Rede | Rápida, mais de 10 Mbps, latência de 50 ms, conforme Info. |
-| Servidor | `x-powered-by: PHP/8.2.35`, `servidor: hcdn`, `plataforma: hospedagem`. |
-<<<<<<< HEAD
-| Material e limites | Painéis Informações, Rede e Console do Jam lidos diretamente, com cabeçalhos e corpo das duas requisições de exclusão, e quadros de 0:20, 0:55, 1:18, 1:21, 1:45 e 2:00. Uma única gravação cobre os dois casos. Os cabeçalhos de resposta das requisições de imagem foram descartados, porque o painel de detalhe repetiu cabeçalhos e `x-hcdn-request-id` entre linhas distintas; os status foram lidos na coluna Status da lista de rede. Sem logs do servidor, verificação no servidor de arquivos, acesso ao banco, inspeção de código ou nova execução. |
-=======
-| Material e limites | Painéis Informações, Rede e Console do Jam lidos diretamente, com cabeçalhos e corpo das duas requisições de exclusão, e quadros de 1:18 e 1:21. Sem logs do servidor, acesso ao banco, inspeção de código ou nova execução. |
->>>>>>> bea1da1f41faf0c807abdc025ade76b1a17433d8
->>>>>>> 01adc6482d6aca8fe40d109b31aca23f971df0dd
+| Página / API | https://sifit.centrion.com.br/objetivos-treino / https://backendsifit.centrion.com.br |
+| Data / duração | 15/11/2026, 18:13 BRT / 1 min 12 s. |
+| Navegador / sistema / janela | Chrome 157.0.8103.78 / Windows (x86) 11 / 1920 × 911, conforme Info; autor do Jam: Gustavo Pelissari Oenning. |
+| Dados | Nome Gustavo e descrição Gustavo 45254#@v; base sem objetivos cadastrados; usuário exibido Jair. |
+| Material e limites | Painéis Info, Console, Network e Actions do Jam, cabeçalhos de resposta e quadros do vídeo, com pasta local de evidências. Corpo da requisição e da resposta indisponíveis no Jam; sem inspeção de código ou nova execução. |
+
 
 ## 📸 5. Evidências e observações
 
@@ -289,15 +273,10 @@ O domínio do CT-RF02_ERRO é diferente do domínio `sifitalfa.centrion.com.br` 
 | [Jam — CT-RF26](https://jam.dev/c/bc07ca5f-d3a9-45f6-84cb-12c0b562a211) | O formulário de exercício aparece com campos obrigatórios vazios. Após a tentativa de salvar, permanece aberto sem mensagem ou destaque de validação visível. A gravação não confirma resposta da API nem consulta posterior à biblioteca. |
 | [Jam — CT-RF27](https://jam.dev/c/00740108-9a7d-4151-8723-171c89635567) | Após selecionar um vídeo no campo Imagem, não há arquivo anexado nem mensagem visível sobre tipo incompatível. Nome, extensão, MIME, tamanho e resposta da API não foram confirmados. |
 | [Jam — CT-RF28](https://jam.dev/c/be9437a4-4fe9-4756-a2af-6777d3f43e25) | Após selecionar uma imagem no campo Vídeo, não há arquivo anexado nem mensagem visível sobre tipo incompatível. Nome, extensão, MIME, tamanho e resposta da API não foram confirmados. |
-<<<<<<< HEAD
-| [Jam — CT-RF34](https://jam.dev/c/eea58e17-b62f-432b-97b2-b14c14bed555) e [Evidências](Evidencias/CT-RF34_Erro_Servidor_Excesso_Requisicoes/README.md) | O dashboard apresenta um diálogo de erro. A aba Network mostra 23 eventos visíveis: verificação de token HTTP 200, diversas chamadas GET/POST HTTP 500 e OPTIONS HTTP 204. Os endpoints aparecem truncados; a relação causal entre quantidade de chamadas e falhas não foi confirmada. |
-=======
 | [Jam — CT-RF29: Tela de Grupos Musculares](https://jam.dev/c/98008390-0040-475e-ba7b-7f1e72cc0b2e) | 1:17: acionamento do ícone de exclusão. 1:18: diálogo "Deseja deletar o Grupo?" com Cancelar e Confirmar, listagem com quatro registros. 1:19: `POST /api/deleta/grupo-muscular/1` retorna HTTP 500 em 990 ms, com `x-hcdn-request-id: d7f7c4b73412a500c5bdb50eb9be6ec1-asc-edge11`. 1:21: diálogo "Erro" / "Erro ao deletar Grupo" / "Fechar", com a listagem inalterada. 1:23: segunda tentativa no mesmo endpoint, HTTP 500 em 184 ms. Corpo das duas respostas: `{"verifica_erro": true, "mensagem": "Erro interno inesperado."}`. A evidência registra o erro e o endpoint; não distingue entre falha de infraestrutura, exceção não tratada e restrição de integridade. |
-<<<<<<< HEAD
-| [Jam — CT-RF30: Tela de Grupos Musculares](https://jam.dev/c/98008390-0040-475e-ba7b-7f1e72cc0b2e) | Ocorrências de HTTP 422 em 0:06, 0:16, 0:53, 0:57, 1:07, 1:09, 1:12, 1:33, 1:35, 1:39, 1:47 e 1:59, nos arquivos `6ad0c27c20a04.png`, `6abbd0a11ec04.png`, `655226c71114f.png` e `6afa0017749b3.jpg`, em `/img/grupos_musculares/imagens/`. Três ocorrências de `net::ERR_ABORTED` em 0:53, 0:57 e 1:12. Nos quadros de 0:20, 0:55, 1:18, 1:21, 1:45 e 2:00 a coluna IMAGEM apresenta o ícone de imagem quebrada em todas as linhas, nos temas escuro e claro. O código 422 não é o retorno usual para arquivo ausente ou sem permissão, o que sugere tratamento por aplicação; é hipótese, não diagnóstico. |
-=======
->>>>>>> bea1da1f41faf0c807abdc025ade76b1a17433d8
->>>>>>> 01adc6482d6aca8fe40d109b31aca23f971df0dd
+| [Jam — CT-RF30 a CT-RF33: Tela de Grupos Musculares](https://jam.dev/c/98008390-0040-475e-ba7b-7f1e72cc0b2e) | CT-RF30: quatro arquivos de imagem requisitados, doze ocorrências de HTTP 422 entre 0:06 e 1:59 e três de `net::ERR_ABORTED`. CT-RF31: cadastro de Tríceps (código 6), listagem de 3 para 4 registros. CT-RF32: alteração do tipo de membro com cartões recalculados. CT-RF33: filtros por tipo e por código com rodapé coerente. Causas das falhas não determinadas. |
+| [Jam — CT-RF34](https://jam.dev/c/eea58e17-b62f-432b-97b2-b14c14bed555) e [Evidências](Evidencias/CT-RF34_Erro_Servidor_Excesso_Requisicoes/README.md) | O dashboard apresenta um diálogo de erro. A aba Network mostra 23 eventos visíveis: verificação de token HTTP 200, diversas chamadas GET/POST HTTP 500 e OPTIONS HTTP 204. Os endpoints aparecem truncados; a relação causal entre quantidade de chamadas e falhas não foi confirmada. |
+| [Jam — CT-RF35: Objetivos Treino](https://jam.dev/c/1d474477-2411-4a81-b85c-74207402b783) e [Evidências](Evidencias/CT-RF35_Cadastro_Objetivo_Treino/README.md) | 1:01 e 1:02: `POST /api/objetivo-treino/salvar/1` com HTTP 500 (1077 ms e 856 ms), OPTIONS HTTP 204; 1:04: diálogo "Erro ao salvar objetivo"; 1:11: listagem sem registros. O campo Código permanece vazio nos quadros apesar da digitação registrada (regra não confirmada) e a base vazia impede avaliar os filtros. Corpo da requisição e da resposta indisponíveis; sem causa raiz. |
 
 A mensagem de credenciais incorretas já aparece no início do vídeo do Jam; não foi considerada uma resposta ao clique em "Esqueci minha senha". A ausência de requisição, isoladamente, não caracteriza defeito se a interface abrir um formulário local. Aqui, o resultado reprovado decorre de o fluxo não abrir.
 
@@ -379,20 +358,31 @@ Na inclusão de CT-RF21, o consolidado histórico passou a 21 casos: 6 aprovados
 
 O consolidado atual é de 34 casos documentados: 10 aprovados, 19 reprovados e 5 a validar; 18 defeitos registrados (10 abertos e 8 em triagem) e 19 casos com reteste corretivo pendente. CT-RF09/10 compartilham BUG-005. BUG-018 registra os HTTP 500 do dashboard sem confirmar que excesso de requisições seja a causa. Sem nova execução.
 
-## Inclusão de 15/11/2026 — CT-RF29 e CT-RF30
+## Inclusão de 15/11/2026 — CT-RF29
 
 | Caso | Situação | Encaminhamento |
 | --- | --- | --- |
 | [CT-RF29](Cenario_Teste/CT-RF29_Exclusao_GrupoMuscular.md) | Reprovado nas evidências | Investigar o HTTP 500 com logs do servidor e os vínculos do registro; corrigir e retestar os cenários permitido e impedido. Verificar se o registro permanece íntegro após as duas tentativas enviadas ao mesmo recurso. |
-| [CT-RF30](Cenario_Teste/CT-RF30_Imagens_GruposMusculares.md) | Reprovado nas evidências | Verificar a existência dos arquivos no caminho indicado, o nome gravado em cada registro e a regra que responde HTTP 422; definir o estado neutro para registros sem imagem e retestar após busca e troca de tema. |
 
 O [BUG-016](Relatorio-de-Bugs.md#bug-016) está em triagem, com severidade Média e prioridade Alta propostas. O comportamento repete a assinatura de [BUG-009](Relatorio-de-Bugs.md#bug-009) e [BUG-010](Relatorio-de-Bugs.md#bug-010): mesmo corpo de resposta e mesmo tamanho, em três módulos distintos. Essa coincidência sugere um tratamento de exceção comum, mas não foi confirmada no código.
 
 O cenário de exclusão com impedimento de regra não foi exercitado, de modo que não se sabe se o sistema distingue impedimento de falha. A mensagem apresentada é genérica e não informa a causa ao usuário.
 
-O [BUG-017](Relatorio-de-Bugs.md#bug-017) está em triagem, com severidade e prioridade Médias propostas. A falha é constante e independe do filtro ou do tema. Resta confirmar o comportamento para registros criados sem imagem: o formulário de inclusão foi enviado sem arquivo e, ainda assim, passou a existir um quarto arquivo requisitado com o mesmo 422; a associação com esse registro decorre da correlação entre filtros e requisições, sem confirmação no banco.
+As conclusões anteriores foram preservadas. Não houve nova execução nem correção da aplicação.
 
-O consolidado passa a 30 casos: 7 aprovados, 18 reprovados e 5 a validar; 17 defeitos registrados (10 abertos e 7 em triagem) e 18 casos com reteste corretivo pendente. As conclusões anteriores foram preservadas. Não houve nova execução nem correção da aplicação.
+## Inclusão de 15/11/2026 — CT-RF30 a CT-RF33 e CT-RF35
+
+| Caso | Situação | Encaminhamento |
+| --- | --- | --- |
+| [CT-RF30](Cenario_Teste/CT-RF30_Imagens_GruposMusculares.md) | Reprovado nas evidências | Verificar a existência dos arquivos, o nome gravado em cada registro e a regra que responde 422; definir o estado neutro para registros sem imagem. |
+| [CT-RF31](Cenario_Teste/CT-RF31_Cadastro_GrupoMuscular.md) | Aprovado conforme a gravação | Usar como regressão; campos em branco, nomes duplicados, limites de tamanho e código informado manualmente exigem execuções adicionais. |
+| [CT-RF32](Cenario_Teste/CT-RF32_Edicao_TipoMembro.md) | Aprovado conforme a gravação | Usar como regressão; conferir persistência após recarga e confirmar se a imagem enviada na edição é salva. |
+| [CT-RF33](Cenario_Teste/CT-RF33_Filtros_GruposMusculares.md) | Aprovado conforme a gravação | Usar como regressão; executar um caso com critérios contraditórios para demonstrar a lógica combinada. |
+| [CT-RF35](Cenario_Teste/CT-RF35_Cadastro_Objetivo_Treino.md) | Reprovado nas evidências | Investigar o HTTP 500 com logs do servidor; retestar dados válidos, descrição com caracteres especiais, campos vazios, código manual e persistência; conferir que um clique gera uma única gravação. |
+
+O [BUG-019](Relatorio-de-Bugs.md#bug-019) está em triagem, com severidade e prioridade Altas propostas. O corpo da requisição e da resposta não foi capturado pelo Jam; o campo Código e a avaliação dos filtros com a base vazia permanecem como pontos a confirmar, sem defeito próprio.
+
+O consolidado atual, com a inclusão do CT-RF35, é de 35 casos documentados (CT-RF01–CT-RF35): 10 aprovados, 20 reprovados e 5 a validar; 19 defeitos registrados (10 abertos e 9 em triagem) e 20 casos com reteste corretivo pendente. CT-RF09/10 compartilham BUG-005, de modo que 20 casos reprovados correspondem a 19 defeitos. Sem nova execução.
 
 ---
 
