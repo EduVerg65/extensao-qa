@@ -1,10 +1,10 @@
 # 🧪 Plano de Testes — SIFIT
 
-**Atualização:** 15/11/2026 — 60 cenários documentados (CT-RF01–CT-RF35, CT-RF38–CT-RF56 e CT-RF65–CT-RF70); BUG-011–BUG-029 em triagem.
+**Atualização:** 15/11/2026 — 62 cenários documentados (CT-RF01–CT-RF35, CT-RF38–CT-RF58 e CT-RF65–CT-RF70); BUG-011–BUG-031 em triagem.
 
 **Padronização documental:** 13/11/2026, com resultados e pendências preservados.
 
-**Escopo:** 60 casos (CT-RF01–CT-RF35, CT-RF38–CT-RF56 e CT-RF65–CT-RF70), incluindo validações, funções e exclusão de Colaboradores.
+**Escopo:** 62 casos, incluindo Grupos (treino) e validações, funções e exclusão de Colaboradores.
 
 ## 📌 1. Identificação
 
@@ -14,7 +14,7 @@
 | Tipo de teste | Funcional manual, com análise exploratória e de evidências. |
 | Versão avaliada | Não confirmada; registrar por caso no reteste. |
 | Funcionalidades | Autenticação positiva e negativa, recuperação, Perfil, filtros de Clientes, financeiro, período, personais, modalidades / tema, Categorias Crossfit, Avaliações e Exercícios. |
-| Situação | 60 casos documentados: 17 aprovados, 33 reprovados e 10 a validar; 29 defeitos registrados (10 abertos e 19 em triagem) e 33 casos com reteste corretivo pendente. |
+| Situação | 62 casos documentados: 17 aprovados, 35 reprovados e 10 a validar; 31 defeitos registrados (10 abertos e 21 em triagem) e 35 casos com reteste corretivo pendente. |
 
 ---
 
@@ -64,6 +64,8 @@ Verificar os fluxos dos 54 cenários documentados, comparando os critérios de a
 **Despesas Fixas — CT-RF46–CT-RF49:** filtros por código e nome, cadastro (com duas requisições de criação), exclusão com confirmação e edição, a partir de uma única gravação. O cadastro permanece a validar quanto à duplicidade.
 
 **Relatórios — CT-RF50–CT-RF56:** geração de PDF de Matrículas, Contas a Receber, Contas a Pagar (Pagas), Avaliações, Clientes, Colaboradores e Caixas, a partir de uma gravação e de oito arquivos baixados (cinco vazios). BUG-022 e BUG-023 aguardam triagem.
+
+**Grupos (treino) — CT-RF57 e CT-RF58:** exclusão e edição de grupo pela listagem, a partir de uma única gravação que também mostra o cadastro bem-sucedido de um novo grupo. BUG-024 (exclusão, HTTP 500) e BUG-025 (edição, status não persistido) aguardam triagem; o BUG-024 coincide com o BUG-016 já registrado para grupos musculares.
 
 **Limites da cobertura atual:**
 
@@ -282,6 +284,34 @@ Para o reteste, preparar aluno existente selecionável pela busca, personal habi
 | Preparação | Registrar versão, zoom e ambiente; gerar um relatório por vez, capturando a requisição, o tamanho e o conteúdo do arquivo e comparando com os dados do módulo de origem. Omitir credenciais e tokens. |
 | Limites | Análise documental do Jam e dos arquivos baixados, sem nova execução. A atividade do usuário não foi registrada no Console do Jam; a correspondência dos arquivos vazios com os tipos é inferida pela ordem dos downloads. |
 
+### CT-RF57 — ambiente e preparação
+
+| Item | Definição |
+| --- | --- |
+| Página | https://sifit.centrion.com.br/grupos |
+| Backend de referência | https://backendsifit.centrion.com.br |
+| Navegador / sistema / janela | Chrome 157.0.8103.78 / Windows (x86) 11 / 1920 × 911, conforme Info. |
+| Gravação | 15/11/2026 às 21h03 BRT, duração de 1 min 38 s; uma única gravação cobre o cadastro e a tentativa de exclusão. |
+| Rede | Classificada como rápida no Jam: mais de 10 Mbps, latência de 50 ms. |
+| Dados e permissões | Grupo de teste conhecido (código 1, "Treino Livre") cuja exclusão é esperada ser permitida; vínculos não confirmados previamente. |
+| Preparação | Registrar versão, zoom e ambiente; capturar listagem, contadores, diálogo de confirmação, rede (corpo e cabeçalhos das duas tentativas) e console antes e depois da operação. Omitir credenciais e tokens. |
+| Limites | Análise documental dos painéis do Jam, sem nova execução. O texto do diálogo de erro não foi confirmado visualmente (fecha em menos de um segundo na gravação); persistência após recarga e cenário de impedimento de regra não exercitados. |
+
+---
+
+### CT-RF58 — ambiente e preparação
+
+| Item | Definição |
+| --- | --- |
+| Página | https://sifit.centrion.com.br/grupos |
+| Backend de referência | https://backendsifit.centrion.com.br |
+| Navegador / sistema / janela | Chrome 157.0.8103.78 / Windows (x86) 11 / 1920 × 911, conforme Info. |
+| Gravação | Mesma gravação do CT-RF57 — 15/11/2026 às 21h03 BRT, duração de 1 min 38 s; cobre o cadastro, duas edições e a tentativa de exclusão do grupo "Treino sla". |
+| Rede | Classificada como rápida no Jam: mais de 10 Mbps, latência de 50 ms. |
+| Dados e permissões | Grupo de teste conhecido (código 11, "Treino sla", recém-criado na mesma gravação) com todos os campos registrados antes de cada edição. |
+| Preparação | Registrar versão, zoom e ambiente; capturar o formulário de edição, a seleção de cada campo, a rede (corpo e cabeçalhos de cada `POST /api/edita/grupo/{id}` e das consultas seguintes) e o console antes e depois de cada alteração. Omitir credenciais e tokens. |
+| Limites | Análise documental dos painéis do Jam, sem nova execução. Não houve reteste alterando o status isoladamente de volta para "Ativo", nem verificação em outros grupos ou na entidade grupo muscular. |
+
 ---
 
 ## 📋 7. Casos de teste e situação
@@ -341,6 +371,8 @@ Para o reteste, preparar aluno existente selecionável pela busca, personal habi
 | [RF54](Analise%20de%20requisitos.md#rf54) | [CT-RF54](Cenario_Teste/CT-RF54_Relatorio_Clientes_Vazio.md) | Funcional manual / manifestação observada | Reprovado nas evidências | [BUG-023](Relatorio-de-Bugs.md#bug-023), em triagem | Investigar a geração com logs do servidor e retestar com e sem registros no período, comparando com os relatórios que abrem. |
 | [RF55](Analise%20de%20requisitos.md#rf55) | [CT-RF55](Cenario_Teste/CT-RF55_Relatorio_Colaboradores_Vazio.md) | Funcional manual / manifestação observada | Reprovado nas evidências | [BUG-023](Relatorio-de-Bugs.md#bug-023), em triagem | Investigar a geração com logs do servidor e retestar com e sem registros no período, comparando com os relatórios que abrem. |
 | [RF56](Analise%20de%20requisitos.md#rf56) | [CT-RF56](Cenario_Teste/CT-RF56_Relatorio_Caixas_Vazio.md) | Funcional manual / manifestação observada | Reprovado nas evidências | [BUG-023](Relatorio-de-Bugs.md#bug-023), em triagem | Investigar a geração com logs do servidor e retestar com e sem registros no período, comparando com os relatórios que abrem. |
+| [RF57](Analise%20de%20requisitos.md#rf57) | [CT-RF57](Cenario_Teste/CT-RF57_Exclusao_Grupo.md) | Funcional manual / análise de evidências | Reprovado nas evidências | [BUG-024](Relatorio-de-Bugs.md#bug-024), em triagem | Investigar o HTTP 500 com logs do servidor e os vínculos do grupo de código 1, em conjunto com o BUG-016; corrigir e retestar os cenários permitido e impedido. |
+| [RF58](Analise%20de%20requisitos.md#rf58) | [CT-RF58](Cenario_Teste/CT-RF58_Edicao_Grupo.md) | Funcional manual / análise de evidências | Reprovado nas evidências | [BUG-025](Relatorio-de-Bugs.md#bug-025), em triagem | Investigar a rotina de edição quanto ao campo status; corrigir e retestar a edição de cada campo isoladamente. |
 
 ---
 
@@ -489,6 +521,18 @@ Todas essas variações permanecem planejadas e não são contadas como execuç�
 7. CT-RF56 / BUG-023: Investigar a geração com logs do servidor e retestar com e sem registros no período, comparando com os relatórios que abrem.
 8. Registrar versão e evidência; verificações planejadas não recebem resultado de execução.
 
+### CT-RF57 — próximos testes
+
+1. CT-RF57 / BUG-024: Investigar o HTTP 500 com logs do servidor e os vínculos do grupo de código 1, em conjunto com o BUG-016 (mesmo endpoint e mensagem para grupos musculares); corrigir e retestar os cenários permitido e impedido.
+2. Confirmar o texto do diálogo de erro apresentado após a falha, não capturado visualmente nesta revisão.
+3. Verificar a persistência do registro após recarga da página e documentar o cadastro de grupo observado na mesma gravação em cenário próprio.
+
+### CT-RF58 — próximos testes
+
+1. CT-RF58 / BUG-025: Investigar a rotina de edição do grupo (`/api/edita/grupo/{id}`) quanto ao tratamento do campo status; corrigir e retestar a edição de cada campo isoladamente, incluindo a reativação (Inativo → Ativo).
+2. Verificar se o mesmo padrão ocorre em outros grupos e na entidade grupo muscular.
+3. Investigar o descompasso observado entre o cabeçalho HTTP `data` e o campo `updated_at` da resposta, sem relação confirmada com o defeito de status.
+
 ---
 
 ## 🚦 9. Critérios de entrada, saída e aceitação
@@ -499,7 +543,7 @@ Todas essas variações permanecem planejadas e não são contadas como execuç�
 
 **Entrada e aprovação do login:** página acessível, conta de teste com credenciais válidas e acesso ao painel, sem sessão autenticada no início. Aprovar o CT-RF04_loginComSucesso quando o envio autenticar o usuário, navegar para `/dashboard` e exibir o menu e resumo da academia, com senha mascarada no formulário. A aprovação se limita a esse fluxo positivo.
 
-**Aceitação da correção:** todos os critérios do respectivo caso atendidos e reteste documentado. BUG-001 a BUG-010 permanecem abertos até a confirmação de suas correções. BUG-011–BUG-029 aguardam triagem e confirmação funcional antes do encaminhamento de correção. A aprovação do CT-RF01 não comprova a recuperação completa da senha; a do CT-RF02_ERRO não comprova persistência de alterações no perfil. Para CT-RF03, cada combinação deve incluir todos os clientes esperados e excluir os incompatíveis, com a matriz executada e o estado vazio validado.
+**Aceitação da correção:** todos os critérios do respectivo caso atendidos e reteste documentado. BUG-001 a BUG-010 permanecem abertos até a confirmação de suas correções. BUG-011–BUG-031 aguardam triagem e confirmação funcional antes do encaminhamento de correção. A aprovação do CT-RF01 não comprova a recuperação completa da senha; a do CT-RF02_ERRO não comprova persistência de alterações no perfil. Para CT-RF03, cada combinação deve incluir todos os clientes esperados e excluir os incompatíveis, com a matriz executada e o estado vazio validado.
 
 ---
 
@@ -520,6 +564,8 @@ Todas essas variações permanecem planejadas e não são contadas como execuç�
 | Integração de CT-RF38 / RF38 | Realizada | 15/11/2026; sem nova execução; sem defeito no fluxo gravado. |
 | Integração de CT-RF39–CT-RF41 / RF39–RF41 | Realizada | 15/11/2026; sem nova execução; BUG-020 em triagem. |
 | Integração de CT-RF42–CT-RF56 / RF42–RF56 | Realizada | 15/11/2026; sem nova execução; BUG-021 a BUG-023 em triagem. |
+| Integração de CT-RF57 / RF57 | Realizada | 15/11/2026; sem nova execução; BUG-024 em triagem. |
+| Integração de CT-RF58 / RF58 | Realizada | 15/11/2026; sem nova execução; BUG-025 em triagem. |
 | Confirmação da regra de saque, da faixa do campo de dias, da duplicidade de criação e dos relatórios sem dados | Pendente | RF42, RF44, RF47 e RF52; depende do responsável pelo produto. |
 | Confirmação da regra de exclusão e da obrigatoriedade da modalidade | Pendente | RF40 e RF41; depende do responsável pelo produto. |
 | Confirmação de código, operação de edição e imagem persistida | Pendente | RF22, RF24 e RF25; depende de regra e nova evidência. |
@@ -533,7 +579,7 @@ Todas essas variações permanecem planejadas e não são contadas como execuç�
 
 Os defeitos são registrados no [relatório de bugs](Relatorio-de-Bugs.md), com identificação, severidade, prioridade, pré-condições, reprodução, resultado esperado e obtido, impacto e evidências. Hipóteses técnicas permanecem identificadas até a confirmação no código.
 
-Há dez defeitos abertos (BUG-001 a BUG-010) e treze em triagem (BUG-011 a BUG-023). Os dois casos de contagem e filtro financeiro (CT-RF09 e CT-RF10) compartilham BUG-005 e os quatro relatórios vazios (CT-RF53 a CT-RF56) compartilham BUG-023; por isso vinte e sete casos reprovados correspondem a vinte e três defeitos. CT-RF08, CT-RF11, CT-RF13, CT-RF16, CT-RF25, CT-RF40, CT-RF42, CT-RF44, CT-RF47 e CT-RF52 permanecem a validar, sem defeito confirmado. Após a correção, atualizar o caso, o relatório dos testes e o defeito com as evidências da versão retestada. As severidades e prioridades dos novos defeitos são propostas para triagem.
+Há dez defeitos abertos (BUG-001 a BUG-010) e vinte e um em triagem (BUG-011 a BUG-031). Os dois casos de contagem e filtro financeiro (CT-RF09 e CT-RF10) compartilham BUG-005 e os quatro relatórios vazios (CT-RF53 a CT-RF56) compartilham BUG-023; por isso trinta e cinco casos reprovados correspondem a trinta e um defeitos. CT-RF08, CT-RF11, CT-RF13, CT-RF16, CT-RF25, CT-RF40, CT-RF42, CT-RF44, CT-RF47 e CT-RF52 permanecem a validar, sem defeito confirmado. O endpoint e a mensagem genérica do BUG-024 coincidem com os do BUG-016. Após a correção, atualizar o caso, o relatório dos testes e o defeito com as evidências da versão retestada.
 
 ---
 
@@ -558,7 +604,7 @@ Há dez defeitos abertos (BUG-001 a BUG-010) e treze em triagem (BUG-011 a BUG-0
 
 ## 📁 13. Entregáveis e documentos associados
 
-Os entregáveis são a análise RF01–RF35 e RF38–RF56, este plano, os 54 cenários BDD, as evidências disponíveis e os relatórios atualizados. CT-RF21 possui relato original, link do Jam, quadros, cronologia, requisição/resposta sem autenticação e metadados locais; o vídeo permanece no Jam. Os vídeos e demais evidências anteriores citados nos documentos de 14/11/2026 não estavam nesta cópia do repositório em 15/11/2026; consultar o índice de evidências para a disponibilidade. Dezessete casos estão aprovados no alcance das evidências; vinte e sete reprovados aguardam reteste, incluindo CT-RF22/24/26/27/28/29/30/35/41/45/51/53/54/55/56 em triagem, e dez a validar dependem de regra/contexto ou persistência. CT-RF23–25, CT-RF35 e CT-RF38–CT-RF56 possuem pasta local com resumo, cronologia e origem (CT-RF35 e CT-RF38–CT-RF56 incluem também capturas extraídas do Jam e hashes; CT-RF50–CT-RF56 incluem os PDFs baixados); os vídeos permanecem no Jam. CT-RF29–CT-RF33 têm como fonte uma única gravação, cujos painéis foram lidos diretamente; as pastas locais de evidências desses cinco casos ainda não foram criadas.
+Os entregáveis são a análise RF01–RF35, RF38–RF56, RF57 e RF58, este plano, os 56 cenários BDD, as evidências disponíveis e os relatórios atualizados. CT-RF21 possui relato original, link do Jam, quadros, cronologia, requisição/resposta sem autenticação e metadados locais; o vídeo permanece no Jam. Os vídeos e demais evidências anteriores citados nos documentos de 14/11/2026 não estavam nesta cópia do repositório em 15/11/2026; consultar o índice de evidências para a disponibilidade. Dezessete casos estão aprovados no alcance das evidências; vinte e nove reprovados aguardam reteste, incluindo CT-RF22/24/26/27/28/29/30/35/41/45/51/53/54/55/56/57/58 em triagem, e dez a validar dependem de regra/contexto ou persistência. CT-RF23–25, CT-RF35 e CT-RF38–CT-RF56 possuem pasta local com resumo, cronologia e origem (CT-RF35 e CT-RF38–CT-RF56 incluem também capturas extraídas do Jam e hashes; CT-RF50–CT-RF56 incluem os PDFs baixados); os vídeos permanecem no Jam. CT-RF29–CT-RF33, CT-RF57 e CT-RF58 têm como fonte gravações únicas, cujos painéis foram lidos diretamente; as pastas locais de evidências desses casos ainda não foram criadas.
 
 - [Análise de requisitos](Analise%20de%20requisitos.md)
 - [Caso CT-RF01](Cenario_Teste/CT-RF01_Esqueci-senha.md)
@@ -592,7 +638,9 @@ Os entregáveis são a análise RF01–RF35 e RF38–RF56, este plano, os 54 cen
 - [Caso CT-RF54](Cenario_Teste/CT-RF54_Relatorio_Clientes_Vazio.md) e [evidências](Evidencias/CT-RF54_Relatorio_Clientes_Vazio/README.md)
 - [Caso CT-RF55](Cenario_Teste/CT-RF55_Relatorio_Colaboradores_Vazio.md) e [evidências](Evidencias/CT-RF55_Relatorio_Colaboradores_Vazio/README.md)
 - [Caso CT-RF56](Cenario_Teste/CT-RF56_Relatorio_Caixas_Vazio.md) e [evidências](Evidencias/CT-RF56_Relatorio_Caixas_Vazio/README.md)
-- [Índice dos 60 cenários](Cenario_Teste/README.md)
+- [Caso CT-RF57](Cenario_Teste/CT-RF57_Exclusao_Grupo.md)
+- [Caso CT-RF58](Cenario_Teste/CT-RF58_Edicao_Grupo.md)
+- [Índice dos 62 cenários](Cenario_Teste/README.md)
 - [Índice das evidências e dos Jams](Evidencias/README.md)
 - [Manifesto de integridade dos novos arquivos](Evidencias/manifesto_sha256.json)
 
@@ -602,12 +650,12 @@ Os entregáveis são a análise RF01–RF35 e RF38–RF56, este plano, os 54 cen
 
 | Caso | Técnica | Resultado | Reteste mínimo |
 | --- | --- | --- | --- |
-| [CT-RF65](Cenario_Teste/CT-RF65_Data_Nascimento_Futura_Colaborador.md) | Valor limite / data futura | Reprovado — BUG-024 | Data passada, atual e futura; confirmar persistência. |
-| [CT-RF66](Cenario_Teste/CT-RF66_Data_Nascimento_Obrigatoria_Colaborador.md) | Campo obrigatório | Reprovado — BUG-025 | Vazio, apagado, espaços e valor válido. |
-| [CT-RF67](Cenario_Teste/CT-RF67_CREF_Formato_Colaborador.md) | Partição de equivalência / formato | Reprovado — BUG-026 | Exemplos válidos e inválidos após confirmar a regra do CREF. |
-| [CT-RF68](Cenario_Teste/CT-RF68_Edicao_Colaborador_Campo_Obrigatorio_Vazio.md) | Obrigatoriedade campo a campo | Reprovado — BUG-027 | Cada obrigatório vazio isoladamente e em conjunto. |
-| [CT-RF69](Cenario_Teste/CT-RF69_Funcao_Duplicada_Colaborador.md) | Duplicidade / repetição | Reprovado — BUG-028 | Clique duplo, repetição sequencial e concorrência. |
-| [CT-RF70](Cenario_Teste/CT-RF70_Exclusao_Colaborador_Erro_500.md) | Exclusão permitida e impedida | Reprovado — BUG-029 | Registro sem vínculos e com cada vínculo conhecido. |
+| [CT-RF65](Cenario_Teste/CT-RF65_Data_Nascimento_Futura_Colaborador.md) | Valor limite / data futura | Reprovado — BUG-026 | Data passada, atual e futura; confirmar persistência. |
+| [CT-RF66](Cenario_Teste/CT-RF66_Data_Nascimento_Obrigatoria_Colaborador.md) | Campo obrigatório | Reprovado — BUG-027 | Vazio, apagado, espaços e valor válido. |
+| [CT-RF67](Cenario_Teste/CT-RF67_CREF_Formato_Colaborador.md) | Partição de equivalência / formato | Reprovado — BUG-028 | Exemplos válidos e inválidos após confirmar a regra do CREF. |
+| [CT-RF68](Cenario_Teste/CT-RF68_Edicao_Colaborador_Campo_Obrigatorio_Vazio.md) | Obrigatoriedade campo a campo | Reprovado — BUG-029 | Cada obrigatório vazio isoladamente e em conjunto. |
+| [CT-RF69](Cenario_Teste/CT-RF69_Funcao_Duplicada_Colaborador.md) | Duplicidade / repetição | Reprovado — BUG-030 | Clique duplo, repetição sequencial e concorrência. |
+| [CT-RF70](Cenario_Teste/CT-RF70_Exclusao_Colaborador_Erro_500.md) | Exclusão permitida e impedida | Reprovado — BUG-031 | Registro sem vínculos e com cada vínculo conhecido. |
 
 **Ambiente gravado:** `sifit.centrion.com.br`, backend `backendsifit.centrion.com.br`, Edge/Chromium 157 em Windows 11 conforme cabeçalhos; versão da aplicação e zoom não confirmados. As gravações ocorreram entre 22:06 e 22:13 BRT de 15/11/2026.
 

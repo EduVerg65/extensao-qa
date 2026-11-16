@@ -12,7 +12,7 @@
 | Objetivo | Impedir o salvamento de colaborador com data de nascimento posterior à data atual e apresentar validação compreensível. |
 | Requisito | [RF65](../Analise%20de%20requisitos.md#rf65), referência de QA proposta a partir da evidência. |
 | Tipo / prioridade | Funcional manual / teste negativo; Alta, proposta para triagem. |
-| Defeito | [BUG-024](../Relatorio-de-Bugs.md#bug-024), em triagem. |
+| Defeito | [BUG-026](../Relatorio-de-Bugs.md#bug-026), em triagem. |
 | Fonte | [Jam](https://jam.dev/c/6dd75961-8e8f-4c8e-939a-19595a1f8a32). |
 
 ## Pré-condições

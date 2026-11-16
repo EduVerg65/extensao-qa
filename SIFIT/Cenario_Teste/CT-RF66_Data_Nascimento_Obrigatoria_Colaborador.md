@@ -12,7 +12,7 @@
 | Objetivo | Impedir a atualização quando a data de nascimento obrigatória estiver vazia e orientar a correção. |
 | Requisito | [RF66](../Analise%20de%20requisitos.md#rf66), referência de QA proposta. |
 | Tipo / prioridade | Funcional manual / teste negativo; Alta, proposta. |
-| Defeito | [BUG-025](../Relatorio-de-Bugs.md#bug-025), em triagem. |
+| Defeito | [BUG-027](../Relatorio-de-Bugs.md#bug-027), em triagem. |
 | Fonte | [Jam](https://jam.dev/c/04aa5ba0-ac7e-43b6-a7f3-91ae82417a85). |
 
 ## Cenário BDD

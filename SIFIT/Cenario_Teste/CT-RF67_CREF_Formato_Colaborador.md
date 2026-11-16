@@ -12,7 +12,7 @@
 | Objetivo | Validar o CREF conforme formato definido pelo produto e impedir texto incompatível com essa regra. |
 | Requisito | [RF67](../Analise%20de%20requisitos.md#rf67), referência de QA proposta; formato oficial deve ser confirmado. |
 | Tipo / prioridade | Funcional manual / validação de campo; Média, proposta. |
-| Defeito | [BUG-026](../Relatorio-de-Bugs.md#bug-026), em triagem. |
+| Defeito | [BUG-028](../Relatorio-de-Bugs.md#bug-028), em triagem. |
 | Fonte | [Jam](https://jam.dev/c/243d9699-4bee-495d-ae65-9a02e42813b3). |
 
 ## Cenário BDD

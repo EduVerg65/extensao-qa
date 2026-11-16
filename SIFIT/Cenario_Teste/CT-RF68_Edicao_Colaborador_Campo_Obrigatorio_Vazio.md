@@ -12,7 +12,7 @@
 | Objetivo | Bloquear a edição quando qualquer campo definido como obrigatório estiver vazio e indicar o impedimento. |
 | Requisito | [RF68](../Analise%20de%20requisitos.md#rf68), referência de QA proposta. |
 | Tipo / prioridade | Funcional manual / teste negativo; Alta, proposta. |
-| Defeito | [BUG-027](../Relatorio-de-Bugs.md#bug-027), em triagem. |
+| Defeito | [BUG-029](../Relatorio-de-Bugs.md#bug-029), em triagem. |
 | Fonte | [Jam](https://jam.dev/c/4219c1b3-085e-4218-b181-5cf448d64cea). |
 
 ## Cenário BDD

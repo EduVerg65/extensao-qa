@@ -1,6 +1,6 @@
 # 🧪 Índice dos cenários de teste — SIFIT
 
-**Atualização:** 15/11/2026. 60 casos (CT-RF01–CT-RF35, CT-RF38–CT-RF56 e CT-RF65–CT-RF70): 17 aprovados, 33 reprovados e 10 a validar; 29 defeitos registrados (10 abertos e 19 em triagem).
+**Atualização:** 15/11/2026. 62 casos (CT-RF01–CT-RF35, CT-RF38–CT-RF58 e CT-RF65–CT-RF70): 17 aprovados, 35 reprovados e 10 a validar; 31 defeitos registrados (10 abertos e 21 em triagem).
 
 | Caso | Funcionalidade | Resultado | Defeito | Jam |
 | --- | --- | --- | --- | --- |
@@ -133,11 +133,20 @@ Cada grupo tem como fonte uma única gravação. Os resultados são documentais;
 
 | Caso | Funcionalidade | Resultado | Defeito | Jam |
 | --- | --- | --- | --- | --- |
-| [CT-RF65](CT-RF65_Data_Nascimento_Futura_Colaborador.md) | Data de nascimento futura | Reprovado — atualização aceita com HTTP 200 | [BUG-024](../Relatorio-de-Bugs.md#bug-024) | [Jam](https://jam.dev/c/6dd75961-8e8f-4c8e-939a-19595a1f8a32) |
-| [CT-RF66](CT-RF66_Data_Nascimento_Obrigatoria_Colaborador.md) | Data de nascimento obrigatória vazia | Reprovado — atualização aceita com HTTP 200 | [BUG-025](../Relatorio-de-Bugs.md#bug-025) | [Jam](https://jam.dev/c/04aa5ba0-ac7e-43b6-a7f3-91ae82417a85) |
-| [CT-RF67](CT-RF67_CREF_Formato_Colaborador.md) | Formato do CREF | Reprovado — texto livre aceito com HTTP 200 | [BUG-026](../Relatorio-de-Bugs.md#bug-026) | [Jam](https://jam.dev/c/243d9699-4bee-495d-ae65-9a02e42813b3) |
-| [CT-RF68](CT-RF68_Edicao_Colaborador_Campo_Obrigatorio_Vazio.md) | Edição com campo obrigatório vazio | Reprovado — atualização aceita com HTTP 200 | [BUG-027](../Relatorio-de-Bugs.md#bug-027) | [Jam](https://jam.dev/c/4219c1b3-085e-4218-b181-5cf448d64cea) |
-| [CT-RF69](CT-RF69_Funcao_Duplicada_Colaborador.md) | Função duplicada para o colaborador | Reprovado — três associações iguais | [BUG-028](../Relatorio-de-Bugs.md#bug-028) | [Jam](https://jam.dev/c/ba2400f9-dbb0-45bc-a509-187249dbe9da) |
-| [CT-RF70](CT-RF70_Exclusao_Colaborador_Erro_500.md) | Exclusão de colaborador | Reprovado — HTTP 500 e erro interno | [BUG-029](../Relatorio-de-Bugs.md#bug-029) | [Jam](https://jam.dev/c/05be297b-22d9-4d26-beff-937526bcd816) |
+| [CT-RF65](CT-RF65_Data_Nascimento_Futura_Colaborador.md) | Data de nascimento futura | Reprovado — atualização aceita com HTTP 200 | [BUG-026](../Relatorio-de-Bugs.md#bug-026) | [Jam](https://jam.dev/c/6dd75961-8e8f-4c8e-939a-19595a1f8a32) |
+| [CT-RF66](CT-RF66_Data_Nascimento_Obrigatoria_Colaborador.md) | Data de nascimento obrigatória vazia | Reprovado — atualização aceita com HTTP 200 | [BUG-027](../Relatorio-de-Bugs.md#bug-027) | [Jam](https://jam.dev/c/04aa5ba0-ac7e-43b6-a7f3-91ae82417a85) |
+| [CT-RF67](CT-RF67_CREF_Formato_Colaborador.md) | Formato do CREF | Reprovado — texto livre aceito com HTTP 200 | [BUG-028](../Relatorio-de-Bugs.md#bug-028) | [Jam](https://jam.dev/c/243d9699-4bee-495d-ae65-9a02e42813b3) |
+| [CT-RF68](CT-RF68_Edicao_Colaborador_Campo_Obrigatorio_Vazio.md) | Edição com campo obrigatório vazio | Reprovado — atualização aceita com HTTP 200 | [BUG-029](../Relatorio-de-Bugs.md#bug-029) | [Jam](https://jam.dev/c/4219c1b3-085e-4218-b181-5cf448d64cea) |
+| [CT-RF69](CT-RF69_Funcao_Duplicada_Colaborador.md) | Função duplicada para o colaborador | Reprovado — três associações iguais | [BUG-030](../Relatorio-de-Bugs.md#bug-030) | [Jam](https://jam.dev/c/ba2400f9-dbb0-45bc-a509-187249dbe9da) |
+| [CT-RF70](CT-RF70_Exclusao_Colaborador_Erro_500.md) | Exclusão de colaborador | Reprovado — HTTP 500 e erro interno | [BUG-031](../Relatorio-de-Bugs.md#bug-031) | [Jam](https://jam.dev/c/05be297b-22d9-4d26-beff-937526bcd816) |
+
+## Inclusão de 15/11/2026 — Grupos (treino)
+
+| Caso | Funcionalidade | Resultado | Defeito | Jam |
+| --- | --- | --- | --- | --- |
+| [CT-RF57](CT-RF57_Exclusao_Grupo.md) | Exclusão de grupo retorna HTTP 500 | Reprovado nas evidências | [BUG-024](../Relatorio-de-Bugs.md#bug-024), em triagem | [Jam](https://jam.dev/c/b1231a75-1a65-4bf0-b795-f52a8c7d3365) |
+| [CT-RF58](CT-RF58_Edicao_Grupo.md) | Edição de grupo não persiste o campo status | Reprovado nas evidências | [BUG-025](../Relatorio-de-Bugs.md#bug-025), em triagem | [Jam](https://jam.dev/c/b1231a75-1a65-4bf0-b795-f52a8c7d3365) |
+
+A mesma gravação mostra o cadastro bem-sucedido de um novo grupo ("Treino sla", código 11) antes das duas edições e da tentativa de exclusão aqui reprovadas. No CT-RF57, o endpoint e a mensagem genérica retornada coincidem com os já registrados no BUG-016 para a exclusão de grupo muscular. No CT-RF58, a alteração do campo Status para "Inativo" retorna sucesso sem persistir o valor, enquanto a alteração do campo Descrição é persistida corretamente. O resultado é documental; não houve nova execução ou reteste.
 
 [← Início](../../README.md) · [Requisitos](../Analise%20de%20requisitos.md) · [Plano](../Plano%20de%20testes.md) · [Evidências](../Evidencias/README.md)

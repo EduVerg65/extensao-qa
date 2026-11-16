@@ -1,12 +1,14 @@
 # 🐞 Relatório de Bugs — SIFIT
 
-**Escopo:** defeitos de 60 casos documentados (CT-RF01–CT-RF35, CT-RF38–CT-RF56 e CT-RF65–CT-RF70), incluindo validações, funções e exclusão de Colaboradores.
+**Escopo:** defeitos de 62 casos documentados (CT-RF01–CT-RF35, CT-RF38–CT-RF58 e CT-RF65–CT-RF70), incluindo Grupos (treino) e Colaboradores.
 
 **Ambientes:** CT-RF01 em https://sifitalfa.centrion.com.br/login; CT-RF02_ERRO em https://sifit.centrion.com.br/profile. CT-RF03: URL do frontend não confirmada; backend informado em `https://backendsifit.centrion.com.br/api/clientesPorNome/1`.
 
 **Datas das gravações do Jam:** CT-RF01 em 23/10/2026; CT-RF02_ERRO em 22/10/2026 às 21:45 BRT; CT-RF03 não confirmada.
 
-**Atualização documental:** 15/11/2026 — 29 defeitos registrados: 10 abertos (BUG-001 a BUG-010) e 19 em triagem (BUG-011 a BUG-029). BUG-024–BUG-029 cobrem as novas evidências de Colaboradores. As análises anteriores foram preservadas.
+**Atualização documental:** 15/11/2026 — 31 defeitos registrados: 10 abertos (BUG-001 a BUG-010) e 21 em triagem (BUG-011 a BUG-031). BUG-024 e BUG-025 cobrem Grupos (treino); BUG-026–BUG-031 cobrem Colaboradores. As análises anteriores foram preservadas.
+
+**Gravação de CT-RF57 e CT-RF58:** 15/11/2026, Grupos, 21h03 BRT, Chrome 157.0.8103.78 / Windows 11; mesma gravação, evidências e limites no BUG-024 e no BUG-025.
 
 **Padronização documental:** 13/11/2026, sem alteração do status dos defeitos.
 
@@ -51,14 +53,16 @@
 | [BUG-021](#bug-021) | Painel Pagar.me mantém Recebimentos e gráfico ao trocar o período | Média / Média, propostas | Em triagem — dados reais ou de demonstração não confirmados | [CT-RF45](Cenario_Teste/CT-RF45_Painel_PagarMe_Periodo.md) |
 | [BUG-022](#bug-022) | Relatório de Contas a Receber exibe "----" em Valor a Receber | Alta / Alta, propostas | Em triagem — origem do valor e comparação com o módulo não confirmadas | [CT-RF51](Cenario_Teste/CT-RF51_Relatorio_Contas_Receber.md) |
 | [BUG-023](#bug-023) | Relatórios de Avaliações, Clientes, Colaboradores e Caixas geram arquivo PDF vazio (0 bytes) | Alta / Alta, propostas | Em triagem — correspondência dos arquivos inferida; causa não determinada | [CT-RF53](Cenario_Teste/CT-RF53_Relatorio_Avaliacoes_Vazio.md), [CT-RF54](Cenario_Teste/CT-RF54_Relatorio_Clientes_Vazio.md), [CT-RF55](Cenario_Teste/CT-RF55_Relatorio_Colaboradores_Vazio.md) e [CT-RF56](Cenario_Teste/CT-RF56_Relatorio_Caixas_Vazio.md) |
-| [BUG-024](#bug-024) | Data de nascimento futura aceita na edição | Alta / Alta, propostas | Em triagem | [CT-RF65](Cenario_Teste/CT-RF65_Data_Nascimento_Futura_Colaborador.md) |
-| [BUG-025](#bug-025) | Data de nascimento obrigatória vazia aceita | Alta / Alta, propostas | Em triagem | [CT-RF66](Cenario_Teste/CT-RF66_Data_Nascimento_Obrigatoria_Colaborador.md) |
-| [BUG-026](#bug-026) | CREF aceita texto fora do formato esperado | Média / Média, propostas | Em triagem — formato a confirmar | [CT-RF67](Cenario_Teste/CT-RF67_CREF_Formato_Colaborador.md) |
-| [BUG-027](#bug-027) | Edição aceita campo obrigatório vazio | Alta / Alta, propostas | Em triagem | [CT-RF68](Cenario_Teste/CT-RF68_Edicao_Colaborador_Campo_Obrigatorio_Vazio.md) |
-| [BUG-028](#bug-028) | Mesma função pode ser associada repetidamente | Média / Alta, propostas | Em triagem | [CT-RF69](Cenario_Teste/CT-RF69_Funcao_Duplicada_Colaborador.md) |
-| [BUG-029](#bug-029) | Exclusão de colaborador retorna HTTP 500 | Alta / Alta, propostas | Em triagem — causa não determinada | [CT-RF70](Cenario_Teste/CT-RF70_Exclusao_Colaborador_Erro_500.md) |
+| [BUG-024](#bug-024) | Exclusão de grupo retorna HTTP 500 e mensagem genérica | Média / Alta, propostas | Em triagem — causa não determinada | [CT-RF57](Cenario_Teste/CT-RF57_Exclusao_Grupo.md) |
+| [BUG-025](#bug-025) | Edição de grupo não persiste o campo status apesar de retorno de sucesso | Média / Alta, propostas | Em triagem — causa não determinada | [CT-RF58](Cenario_Teste/CT-RF58_Edicao_Grupo.md) |
+| [BUG-026](#bug-026) | Data de nascimento futura aceita na edição | Alta / Alta, propostas | Em triagem | [CT-RF65](Cenario_Teste/CT-RF65_Data_Nascimento_Futura_Colaborador.md) |
+| [BUG-027](#bug-027) | Data de nascimento obrigatória vazia aceita | Alta / Alta, propostas | Em triagem | [CT-RF66](Cenario_Teste/CT-RF66_Data_Nascimento_Obrigatoria_Colaborador.md) |
+| [BUG-028](#bug-028) | CREF aceita texto fora do formato esperado | Média / Média, propostas | Em triagem — formato a confirmar | [CT-RF67](Cenario_Teste/CT-RF67_CREF_Formato_Colaborador.md) |
+| [BUG-029](#bug-029) | Edição aceita campo obrigatório vazio | Alta / Alta, propostas | Em triagem | [CT-RF68](Cenario_Teste/CT-RF68_Edicao_Colaborador_Campo_Obrigatorio_Vazio.md) |
+| [BUG-030](#bug-030) | Mesma função pode ser associada repetidamente | Média / Alta, propostas | Em triagem | [CT-RF69](Cenario_Teste/CT-RF69_Funcao_Duplicada_Colaborador.md) |
+| [BUG-031](#bug-031) | Exclusão de colaborador retorna HTTP 500 | Alta / Alta, propostas | Em triagem — causa não determinada | [CT-RF70](Cenario_Teste/CT-RF70_Exclusao_Colaborador_Erro_500.md) |
 
-BUG-001–BUG-010 aguardam correção e reteste. BUG-011–BUG-029 aguardam confirmação das premissas e triagem antes do encaminhamento de correção. As causas técnicas permanecem não confirmadas; o BUG-003 se apoia no relato e nas capturas fornecidos, com os limites registrados no caso.
+BUG-001–BUG-010 aguardam correção e reteste. BUG-011–BUG-031 aguardam confirmação das premissas e triagem antes do encaminhamento de correção. As causas técnicas permanecem não confirmadas; o BUG-003 se apoia no relato e nas capturas fornecidos, com os limites registrados no caso.
 
 ---
 
@@ -1104,18 +1108,106 @@ A geração com HTTP 200 e arquivo de 0 bytes é compatível com falha silencios
 
 ---
 
-## BUG-024 a BUG-029 — Colaboradores
+## BUG-026 a BUG-031 — Colaboradores
 
 | ID | Reprodução resumida | Esperado | Obtido / evidência | Encaminhamento |
 | --- | --- | --- | --- | --- |
-| <a id="bug-024"></a>BUG-024 | Informar `18/05/2222` e salvar. | Recusar data futura. | Atualização HTTP 200 e navegação à lista. | Validar limites e confirmar ausência de persistência. |
-| <a id="bug-025"></a>BUG-025 | Limpar a data obrigatória e salvar. | Bloquear e indicar o campo. | Atualização HTTP 200. | Mapear obrigatoriedade e preservar valor anterior. |
-| <a id="bug-026"></a>BUG-026 | Informar CREF `TESTEE` e salvar. | Aplicar formato definido. | Atualização HTTP 200. | Confirmar regra e testar exemplos válidos/inválidos. |
-| <a id="bug-027"></a>BUG-027 | Deixar campo obrigatório vazio e salvar. | Bloquear e identificar o campo. | Atualização HTTP 200. | Identificar o campo na reprodução e testar todos os obrigatórios. |
-| <a id="bug-028"></a>BUG-028 | Adicionar duas vezes `funcao_id: 2` ao colaborador 4. | Manter associação única. | Dois HTTP 201; consulta retorna ids 51, 154 e 155. | Impedir duplicidade no servidor e testar concorrência. |
-| <a id="bug-029"></a>BUG-029 | Confirmar exclusão do colaborador id 3. | Excluir ou explicar vínculo impeditivo. | HTTP 500 e `Erro interno inesperado`. | Consultar logs/vínculos e retestar permitido/impedido. |
+| <a id="bug-026"></a>BUG-026 | Informar `18/05/2222` e salvar. | Recusar data futura. | Atualização HTTP 200 e navegação à lista. | Validar limites e confirmar ausência de persistência. |
+| <a id="bug-027"></a>BUG-027 | Limpar a data obrigatória e salvar. | Bloquear e indicar o campo. | Atualização HTTP 200. | Mapear obrigatoriedade e preservar valor anterior. |
+| <a id="bug-028"></a>BUG-028 | Informar CREF `TESTEE` e salvar. | Aplicar formato definido. | Atualização HTTP 200. | Confirmar regra e testar exemplos válidos/inválidos. |
+| <a id="bug-029"></a>BUG-029 | Deixar campo obrigatório vazio e salvar. | Bloquear e identificar o campo. | Atualização HTTP 200. | Identificar o campo na reprodução e testar todos os obrigatórios. |
+| <a id="bug-030"></a>BUG-030 | Adicionar duas vezes `funcao_id: 2` ao colaborador 4. | Manter associação única. | Dois HTTP 201; consulta retorna ids 51, 154 e 155. | Impedir duplicidade no servidor e testar concorrência. |
+| <a id="bug-031"></a>BUG-031 | Confirmar exclusão do colaborador id 3. | Excluir ou explicar vínculo impeditivo. | HTTP 500 e `Erro interno inesperado`. | Consultar logs/vínculos e retestar permitido/impedido. |
 
 **Status comum:** Em triagem; severidades e prioridades propostas. As gravações ocorreram entre 22:06 e 22:13 BRT de 15/11/2026. Não houve nova execução, consulta ao banco ou inspeção do código.
+<a id="bug-024"></a>
+
+## BUG-024 — Exclusão de grupo retorna HTTP 500 e mensagem genérica
+
+| Campo | Descrição |
+| --- | --- |
+| Status | Em triagem — causa não determinada; reteste pendente após correção. |
+| Severidade / prioridade | Média / Alta, propostas para triagem. |
+| Módulo | Treinamento / Grupos / Exclusão |
+| Requisitos | [RF57](Analise%20de%20requisitos.md#rf57) |
+| Casos | [CT-RF57](Cenario_Teste/CT-RF57_Exclusao_Grupo.md) |
+| Data da evidência / revisão | 15/11/2026, 21h03 BRT; sem nova execução. |
+| Página | https://sifit.centrion.com.br/grupos |
+| Ambiente | Chrome 157.0.8103.78 / Windows (x86) 11; versão e zoom não confirmados. |
+
+### Pré-condições e reprodução
+
+**[CT-RF57](Cenario_Teste/CT-RF57_Exclusao_Grupo.md):** Sessão autenticada com permissão para excluir grupos. Registro de teste cuja exclusão seja permitida, com vínculos conhecidos para distinguir impedimento de regra de falha do servidor.
+
+1. Acionar o ícone de exclusão na linha do grupo.
+2. Confirmar a exclusão no diálogo "Deseja deletar o Grupo?".
+3. Conferir o retorno visual, o status da chamada e a presença do registro após a operação.
+
+### Esperado e obtido
+
+| Caso | Esperado | Obtido |
+| --- | --- | --- |
+| CT-RF57 | Concluir a exclusão permitida, removendo o registro e atualizando os contadores; ou explicar de forma tratável o impedimento, sem erro interno. | O registro (grupo código 1, "Treino Livre") permanece na listagem e os contadores de cartões não se alteram entre as tentativas. |
+
+**Impacto:** A exclusão não é concluída. O endpoint e a mensagem genérica retornada coincidem exatamente com os já registrados em [BUG-016](#bug-016) para a exclusão de grupo muscular, o que sugere uma causa comum no tratamento de exclusões do backend.
+
+### Evidências
+
+- [CT-RF57](Cenario_Teste/CT-RF57_Exclusao_Grupo.md): [Jam — Tela de Grupos](https://jam.dev/c/b1231a75-1a65-4bf0-b795-f52a8c7d3365). 1:19: acionamento do ícone de exclusão. 1:20: diálogo de confirmação "Deseja deletar o Grupo?". 1:21: `POST /api/deleta/grupo/1` retorna HTTP 500 em 987 ms. 1:30: segunda tentativa no mesmo endpoint, também HTTP 500, em 230 ms.
+- Corpo de resposta nas duas tentativas: `{"verifica_erro": true, "mensagem": "Erro interno inesperado."}`.
+- Cabeçalhos registrados: `content-type: application/json; charset=utf-8`, `content-length: 64`, `content-encoding: br`, `x-powered-by: PHP/8.2.35`. Primeira tentativa em `Seg, 16 de nov de 2026 00:03:09 GMT`, `x-hcdn-request-id: 8f18afe5ff0e3a9e3d1c944d69811576-asc-edge13`; segunda em `00:03:19 GMT`, `x-hcdn-request-id: bc5d59dc99d0c01de186f1b3125a9b80-asc-edge13`.
+
+### Análise, limites e encaminhamento
+
+O HTTP 500 e o endpoint estão registrados no Jam. Não houve acesso a logs do servidor, ao corpo completo da resposta além dos 64 bytes retornados nem ao banco de dados, de modo que não é possível distinguir entre falha de infraestrutura, exceção não tratada na aplicação e restrição de integridade referencial não capturada. Não foi possível confirmar visualmente o texto do diálogo de erro apresentado após a falha, pois o componente de alerta é fechado em menos de um segundo na gravação.
+
+Não foi verificado se o registro permanece íntegro após as duas tentativas enviadas para o mesmo recurso, nem exercitado o cenário de exclusão com impedimento de regra.
+
+Investigar o HTTP 500 com logs do servidor e os vínculos do registro, em conjunto com a investigação já proposta para o BUG-016, dada a coincidência de endpoint e mensagem; corrigir e retestar os cenários permitido e impedido. O status permanece em triagem até que a causa seja determinada e uma nova execução comprove os critérios de aceitação do caso associado.
+
+---
+
+<a id="bug-025"></a>
+
+## BUG-025 — Edição de grupo não persiste o campo status apesar de retorno de sucesso
+
+| Campo | Descrição |
+| --- | --- |
+| Status | Em triagem — causa não determinada; reteste pendente após correção. |
+| Severidade / prioridade | Média / Alta, propostas para triagem. |
+| Módulo | Treinamento / Grupos / Edição |
+| Requisitos | [RF58](Analise%20de%20requisitos.md#rf58) |
+| Casos | [CT-RF58](Cenario_Teste/CT-RF58_Edicao_Grupo.md) |
+| Data da evidência / revisão | 15/11/2026, 21h03 BRT; sem nova execução. |
+| Página | https://sifit.centrion.com.br/grupos |
+| Ambiente | Chrome 157.0.8103.78 / Windows (x86) 11; versão e zoom não confirmados. |
+
+### Pré-condições e reprodução
+
+**[CT-RF58](Cenario_Teste/CT-RF58_Edicao_Grupo.md):** Sessão autenticada com permissão para editar grupos. Grupo de teste com todos os campos atuais registrados antes da edição.
+
+1. Abrir a edição do grupo e alterar apenas o campo Status, mantendo os demais campos.
+2. Acionar o botão Salvar.
+3. Conferir a resposta da API e, em seguida, consultar novamente o registro.
+
+### Esperado e obtido
+
+| Caso | Esperado | Obtido |
+| --- | --- | --- |
+| CT-RF58 | A edição do campo Status retorna sucesso somente quando o valor é persistido; a consulta seguinte reflete o novo status. | A edição retorna sucesso (`verifica_erro: false`), mas a consulta imediatamente seguinte mostra o grupo ainda com o status anterior ("ativo"). |
+
+**Impacto:** O usuário recebe confirmação de sucesso para uma alteração que não foi salva, sem qualquer indicação de falha na interface. Na mesma sessão e no mesmo registro, a edição do campo Descrição é persistida corretamente, o que isola a falha ao campo `status` e descarta causa geral de sessão, rede ou salvamento.
+
+### Evidências
+
+- [CT-RF58](Cenario_Teste/CT-RF58_Edicao_Grupo.md): [Jam — Tela de Grupos](https://jam.dev/c/b1231a75-1a65-4bf0-b795-f52a8c7d3365). 0:58: clique no botão Salvar após selecionar Status = "Inativo". `POST /api/edita/grupo/1` com `{"id":11,"nome":"Treino sla","mostrar_home":"nao","caixa":"interno","descricao":"Esse treino","status":"inativo"}` retorna HTTP 200, `{"verifica_erro": false}`. No mesmo instante, `GET /api/grupos/1` e `POST /api/seleciona/grupo/1` retornam o grupo id 11 ainda com `"status": "ativo"`. 1:10: segunda edição, alterando apenas a descrição para "Ess"; `POST /api/edita/grupo/1` retorna HTTP 200, `{"verifica_erro": false}`, e a consulta seguinte confirma `"descricao": "Ess"` persistida.
+- Cabeçalhos registrados: `content-type: application/json; charset=utf-8`. Primeira edição em `Segunda-feira, 16 de novembro de 2026, 08:02:46 GMT`; segunda em `08:02:58 GMT`. O campo `updated_at` do corpo da resposta registra `12:02:46` e `12:02:58` para os mesmos instantes — descompasso de cerca de 4 horas em relação ao cabeçalho HTTP `data`, sem causa determinada.
+
+### Análise, limites e encaminhamento
+
+A falha é específica do campo `status`: o mesmo endpoint, no mesmo registro e na mesma sessão, persiste corretamente o campo `descricao` logo em seguida. Isso aponta para uma causa na rotina de edição do backend — por exemplo, uma whitelist de campos editáveis que exclui `status`, ou uma atualização que o ignora silenciosamente — e não para uma falha geral de sessão, rede ou salvamento. Não houve acesso a logs do servidor, ao código da rotina nem ao banco de dados para confirmar o valor realmente gravado.
+
+Investigar a rotina de edição do grupo (`/api/edita/grupo/{id}`), com foco no tratamento do campo `status`; verificar se o mesmo ocorre ao reativar um grupo (Inativo → Ativo) e em outras entidades com campo de status semelhante, incluindo grupo muscular, dado o padrão de nomenclatura de endpoints já observado nos BUG-016 e BUG-024. O status permanece em triagem até que a causa seja determinada e uma nova execução comprove os critérios de aceitação do caso associado.
 
 ---
 
@@ -1134,7 +1226,7 @@ A geração com HTTP 200 e arquivo de 0 bytes é compatível com falha silencios
 | [CT-RF47](Cenario_Teste/CT-RF47_Cadastro_Despesa_Fixa.md) | Confirmar se o segundo POST de criação (HTTP 201) gerou registro adicional ou foi descartado; registrar defeito apenas se houver duplicidade confirmada. | [Jam](https://jam.dev/c/a4bac99d-e436-4792-831e-8c3a875272bb) e [Evidências](Evidencias/CT-RF47_Cadastro_Despesa_Fixa/README.md) |
 | [CT-RF52](Cenario_Teste/CT-RF52_Relatorio_Contas_Pagar_Pagas.md) | Conferir se existem contas pagas no período; PDF sem linhas e com totalizadores R$ 0,00 é compatível com período sem pagamentos. | [Jam](https://jam.dev/c/3b4777a4-e1b0-4038-9b06-26c73669d7d1) e [Evidências](Evidencias/CT-RF52_Relatorio_Contas_Pagar_Pagas/README.md) |
 
-Esses dez pontos não entram na contagem de 29 defeitos registrados. BUG-011–BUG-029 são contabilizados separadamente como registros em triagem, com premissas, persistência ou validações técnicas ainda pendentes. O relato de numeração de personais não demonstrou diferença entre total e linhas; a inativação de modalidades pode ser exclusão lógica; encargos e métricas exigem regras explícitas.
+Esses dez pontos não entram na contagem de 31 defeitos registrados. BUG-011–BUG-031 são contabilizados separadamente como registros em triagem, com premissas, persistência ou validações técnicas ainda pendentes. O relato de numeração de personais não demonstrou diferença entre total e linhas; a inativação de modalidades pode ser exclusão lógica; encargos e métricas exigem regras explícitas.
 
 
 **Exclusão de exercício:** CT-RF23 está aprovado no trecho consultado, com remoção e total 11 para 10; não gerou defeito adicional. Persistência e efeitos sobre vínculos permanecem como verificações complementares.

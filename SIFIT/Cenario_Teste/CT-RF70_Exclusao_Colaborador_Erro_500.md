@@ -12,7 +12,7 @@
 | Objetivo | Excluir colaborador quando permitido ou explicar de forma tratável o impedimento, sem erro interno genérico. |
 | Requisito | [RF70](../Analise%20de%20requisitos.md#rf70), referência de QA proposta. |
 | Tipo / prioridade | Funcional manual / fluxo destrutivo controlado; Alta, proposta. |
-| Defeito | [BUG-029](../Relatorio-de-Bugs.md#bug-029), em triagem. |
+| Defeito | [BUG-031](../Relatorio-de-Bugs.md#bug-031), em triagem. |
 | Fonte | [Jam](https://jam.dev/c/05be297b-22d9-4d26-beff-937526bcd816). |
 
 ## Cenário BDD

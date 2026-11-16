@@ -12,7 +12,7 @@
 | Objetivo | Impedir associações duplicadas da mesma função ao mesmo colaborador. |
 | Requisito | [RF69](../Analise%20de%20requisitos.md#rf69), referência de QA proposta. |
 | Tipo / prioridade | Funcional manual / integridade e duplicidade; Média, proposta. |
-| Defeito | [BUG-028](../Relatorio-de-Bugs.md#bug-028), em triagem. |
+| Defeito | [BUG-030](../Relatorio-de-Bugs.md#bug-030), em triagem. |
 | Fonte | [Jam](https://jam.dev/c/ba2400f9-dbb0-45bc-a509-187249dbe9da). |
 
 ## Cenário BDD
