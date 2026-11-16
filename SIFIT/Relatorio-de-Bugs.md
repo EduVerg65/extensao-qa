@@ -1,16 +1,18 @@
 # 🐞 Relatório de Bugs — SIFIT
 
-**Escopo:** defeitos de 54 casos documentados (CT-RF01–CT-RF35 e CT-RF38–CT-RF56): recuperação, Perfil, Clientes, financeiro, página inicial e dashboard, tema, modalidades, categorias, avaliações, exercícios, grupos musculares, objetivos de treino, SifitBox – Turmas, Pagar.me, configurações, despesas fixas e relatórios.
+**Escopo:** defeitos de 60 casos documentados (CT-RF01–CT-RF35, CT-RF38–CT-RF56 e CT-RF58–CT-RF63): recuperação, Perfil, Clientes, financeiro, página inicial e dashboard, tema, modalidades, categorias, avaliações, exercícios, grupos musculares, objetivos de treino, SifitBox – Turmas, Pagar.me, configurações, despesas fixas, relatórios e prospecção de leads.
 
 **Ambientes:** CT-RF01 em https://sifitalfa.centrion.com.br/login; CT-RF02_ERRO em https://sifit.centrion.com.br/profile. CT-RF03: URL do frontend não confirmada; backend informado em `https://backendsifit.centrion.com.br/api/clientesPorNome/1`.
 
 **Datas das gravações do Jam:** CT-RF01 em 23/10/2026; CT-RF02_ERRO em 22/10/2026 às 21:45 BRT; CT-RF03 não confirmada.
 
-**Atualização documental:** 15/11/2026 — 23 defeitos registrados: 10 abertos (BUG-001 a BUG-010) e 13 em triagem (BUG-011 a BUG-023). BUG-019 registra o HTTP 500 no cadastro de objetivo de treino e BUG-020 a ausência de retorno visível no cadastro de turma sem modalidade, ambos sem causa técnica confirmada. As análises anteriores foram preservadas.
+**Atualização documental:** 15/11/2026 — 24 defeitos registrados: 10 abertos (BUG-001 a BUG-010) e 14 em triagem (BUG-011 a BUG-024). BUG-019 registra o HTTP 500 no cadastro de objetivo de treino e BUG-020 a ausência de retorno visível no cadastro de turma sem modalidade, ambos sem causa técnica confirmada. As análises anteriores foram preservadas.
 
 **Padronização documental:** 13/11/2026, sem alteração do status dos defeitos.
 
 **Caso aprovado incluído em 13/11/2026:** [CT-RF04_loginComSucesso](Cenario_Teste/CT-RF04_loginComSucesso.md), vinculado ao RF04, não gerou defeito para o fluxo avaliado. O [Jam de login](https://jam.dev/c/5e4a28be-4e80-43d3-9587-1b113723cc38) mostra acesso ao dashboard após autenticação. Essa aprovação não altera os três bugs existentes; resultados e limites constam no [relatório dos testes](Relatorio%20dos%20testes.md).
+
+**Gravação de CT-RF58–CT-RF63:** 15/11/2026, Prospecção, 21:52 BRT, Chrome 157.0.8103.78 / Windows 11; uma única gravação; evidência e limites no BUG-024.
 
 **Gravação de CT-RF42–CT-RF45:** 15/11/2026, Pagar.me e Configurações, 19:06 BRT, Chrome 157.0.8103.78 / Windows 11; uma única gravação; evidência e limites no BUG-021.
 
@@ -51,8 +53,9 @@
 | [BUG-021](#bug-021) | Painel Pagar.me mantém Recebimentos e gráfico ao trocar o período | Média / Média, propostas | Em triagem — dados reais ou de demonstração não confirmados | [CT-RF45](Cenario_Teste/CT-RF45_Painel_PagarMe_Periodo.md) |
 | [BUG-022](#bug-022) | Relatório de Contas a Receber exibe "----" em Valor a Receber | Alta / Alta, propostas | Em triagem — origem do valor e comparação com o módulo não confirmadas | [CT-RF51](Cenario_Teste/CT-RF51_Relatorio_Contas_Receber.md) |
 | [BUG-023](#bug-023) | Relatórios de Avaliações, Clientes, Colaboradores e Caixas geram arquivo PDF vazio (0 bytes) | Alta / Alta, propostas | Em triagem — correspondência dos arquivos inferida; causa não determinada | [CT-RF53](Cenario_Teste/CT-RF53_Relatorio_Avaliacoes_Vazio.md), [CT-RF54](Cenario_Teste/CT-RF54_Relatorio_Clientes_Vazio.md), [CT-RF55](Cenario_Teste/CT-RF55_Relatorio_Colaboradores_Vazio.md) e [CT-RF56](Cenario_Teste/CT-RF56_Relatorio_Caixas_Vazio.md) |
+| [BUG-024](#bug-024) | Telefone do lead aceita 30 dígitos sem máscara nem validação | Média / Média, propostas | Em triagem — regra do campo e validação no servidor não confirmadas | [CT-RF62](Cenario_Teste/CT-RF62_Telefone_Lead_Sem_Validacao.md) |
 
-BUG-001–BUG-010 aguardam correção e reteste. BUG-011–BUG-023 aguardam confirmação das premissas e triagem antes do encaminhamento de correção. As causas técnicas permanecem não confirmadas; o BUG-003 se apoia no relato e nas capturas fornecidos, com os limites registrados no caso.
+BUG-001–BUG-010 aguardam correção e reteste. BUG-011–BUG-024 aguardam confirmação das premissas e triagem antes do encaminhamento de correção. As causas técnicas permanecem não confirmadas; o BUG-003 se apoia no relato e nas capturas fornecidos, com os limites registrados no caso.
 
 ---
 
@@ -1098,6 +1101,53 @@ A geração com HTTP 200 e arquivo de 0 bytes é compatível com falha silencios
 
 ---
 
+<a id="bug-024"></a>
+
+## BUG-024 — Telefone do lead aceita 30 dígitos sem máscara nem validação
+
+| Campo | Descrição |
+| --- | --- |
+| Status | Em triagem — causa não determinada; reteste pendente após correção. |
+| Severidade / prioridade | Média / Média, propostas para triagem. |
+| Módulo | Prospecção / Leads / Validação do telefone |
+| Requisitos | [RF62](Analise%20de%20requisitos.md#rf62) |
+| Casos | [CT-RF62](Cenario_Teste/CT-RF62_Telefone_Lead_Sem_Validacao.md) |
+| Data da evidência / revisão | 15/11/2026, 21:52 BRT; sem nova execução. |
+| Página | https://sifit.centrion.com.br/prospeccao |
+| Ambiente | Chrome 157.0.8103.78 / Windows (x86) 11, janela 1920 × 911; versão e zoom não confirmados. |
+| Frequência conhecida | Um registro do Jam; recorrência não determinada. |
+
+### Pré-condições e reprodução
+
+**[CT-RF62](Cenario_Teste/CT-RF62_Telefone_Lead_Sem_Validacao.md):** Sessão autenticada com acesso a Prospecção e regra do campo Telefone definida com o produto.
+
+1. Acessar Prospecção e acionar Adicionar Lead.
+2. Preencher o nome e o estágio e informar no campo Telefone (placeholder "(00) 00000-0000") um valor de 30 dígitos, como 44999999999 seguido de 5757534534534534534.
+3. Acionar Salvar Lead e observar a mensagem de validação e a rede.
+4. Abrir o lead criado pela lupa e conferir o telefone gravado.
+5. Repetir com telefones de 8, 10 e 11 dígitos e com letras para confirmar o formato aceito.
+
+### Esperado e obtido
+
+| Esperado | Obtido |
+| --- | --- |
+| O campo limita o tamanho e os caracteres ao formato exibido e rejeita um telefone com 30 dígitos, com mensagem clara. | O campo aceitou 30 dígitos sem máscara, o lead foi criado (código 10) e o valor retornou na consulta do lead, sem mensagem de validação. |
+
+**Impacto:** O cadastro aceita telefones inválidos, o que compromete o contato com o lead e a qualidade da base de prospecção; o placeholder induz o usuário a esperar um formato que não é aplicado.
+
+### Evidências técnicas
+
+- [Jam — Prospecção](https://jam.dev/c/308607ff-8abc-40af-8c7c-429ce506ed64): quadro de 0:47 com o campo Telefone de valor longo e sem máscara; `POST /api/salvar-lead/1` (HTTP 200) com `"telefone"` de 30 dígitos e resposta `{"verifica_erro": false, "id": 10}`; `POST /api/buscar-lead/1` (HTTP 200) devolvendo o mesmo telefone.
+- [Telefone em 0:47](Evidencias/CT-RF62_Telefone_Lead_Sem_Validacao/telefone_30_digitos_00-47.png), [corpo do salvar-lead](Evidencias/CT-RF62_Telefone_Lead_Sem_Validacao/requisicao_salvar.png), [resposta do buscar-lead](Evidencias/CT-RF62_Telefone_Lead_Sem_Validacao/resposta_buscar.png) e [Evidências](Evidencias/CT-RF62_Telefone_Lead_Sem_Validacao/README.md).
+
+### Análise, limites e encaminhamento
+
+O valor gravado com 30 dígitos é compatível com ausência de validação de tamanho e de máscara no cliente e no servidor; não foi possível distinguir se a regra do campo permite texto livre, caso em que o ponto passa a ser a adequação do placeholder. A leitura assume que os dois trechos digitados em 0:33 e 0:37 pertencem ao mesmo campo, o que o quadro de 0:47 e o corpo da requisição sustentam, sem prova independente. A causa técnica não foi confirmada no código.
+
+**Reteste:** Reproduzir com telefones de 8, 10, 11 e 30 dígitos e com letras, capturando mensagem, corpo e resposta; confirmar a regra com o produto e a validação no servidor. Manter em triagem até nova evidência em versão identificada.
+
+---
+
 ## Pontos a validar — sem defeito confirmado
 
 | Caso | Questão pendente | Evidência |
@@ -1112,8 +1162,9 @@ A geração com HTTP 200 e arquivo de 0 bytes é compatível com falha silencios
 | [CT-RF44](Cenario_Teste/CT-RF44_Configuracoes_Home_Salvamento.md) | Confirmar a faixa do campo "Dias para contar cliente como ausente" (valor inicial -120 e valor informado 1100) e a mensagem de salvamento esperada. | [Jam](https://jam.dev/c/e6e551ef-9196-4c79-b6a2-89747b1e8b33) e [Evidências](Evidencias/CT-RF44_Configuracoes_Home_Salvamento/README.md) |
 | [CT-RF47](Cenario_Teste/CT-RF47_Cadastro_Despesa_Fixa.md) | Confirmar se o segundo POST de criação (HTTP 201) gerou registro adicional ou foi descartado; registrar defeito apenas se houver duplicidade confirmada. | [Jam](https://jam.dev/c/a4bac99d-e436-4792-831e-8c3a875272bb) e [Evidências](Evidencias/CT-RF47_Cadastro_Despesa_Fixa/README.md) |
 | [CT-RF52](Cenario_Teste/CT-RF52_Relatorio_Contas_Pagar_Pagas.md) | Conferir se existem contas pagas no período; PDF sem linhas e com totalizadores R$ 0,00 é compatível com período sem pagamentos. | [Jam](https://jam.dev/c/3b4777a4-e1b0-4038-9b06-26c73669d7d1) e [Evidências](Evidencias/CT-RF52_Relatorio_Contas_Pagar_Pagas/README.md) |
+| [CT-RF61](Cenario_Teste/CT-RF61_Cadastro_Lead_Prospeccao.md) | Cadastro de lead com duas requisições de criação | Confirmar se o segundo POST de criação gerou registro adicional ou foi descartado; registrar defeito apenas se houver duplicidade confirmada. | [Jam](https://jam.dev/c/308607ff-8abc-40af-8c7c-429ce506ed64) e [Evidências](Evidencias/CT-RF61_Cadastro_Lead_Prospeccao/README.md) |
 
-Esses dez pontos não entram na contagem de 23 defeitos registrados. BUG-011–BUG-023 são contabilizados separadamente como registros em triagem, com premissas, persistência ou validações técnicas ainda pendentes. O relato de numeração de personais não demonstrou diferença entre total e linhas; a inativação de modalidades pode ser exclusão lógica; encargos e métricas exigem regras explícitas.
+Esses onze pontos não entram na contagem de 24 defeitos registrados. BUG-011–BUG-024 são contabilizados separadamente como registros em triagem, com premissas, persistência ou validações técnicas ainda pendentes. O relato de numeração de personais não demonstrou diferença entre total e linhas; a inativação de modalidades pode ser exclusão lógica; encargos e métricas exigem regras explícitas.
 
 
 **Exclusão de exercício:** CT-RF23 está aprovado no trecho consultado, com remoção e total 11 para 10; não gerou defeito adicional. Persistência e efeitos sobre vínculos permanecem como verificações complementares.
