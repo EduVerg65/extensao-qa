@@ -1,12 +1,14 @@
 # 🐞 Relatório de Bugs — SIFIT
 
-**Escopo:** defeitos de 54 casos documentados (CT-RF01–CT-RF35 e CT-RF38–CT-RF56): recuperação, Perfil, Clientes, financeiro, página inicial e dashboard, tema, modalidades, categorias, avaliações, exercícios, grupos musculares, objetivos de treino, SifitBox – Turmas, Pagar.me, configurações, despesas fixas e relatórios.
+**Escopo:** defeitos de 55 casos documentados (CT-RF01–CT-RF35, CT-RF38–CT-RF56 e CT-RF57): recuperação, Perfil, Clientes, financeiro, página inicial e dashboard, tema, modalidades, categorias, avaliações, exercícios, grupos musculares, objetivos de treino, SifitBox – Turmas, Pagar.me, configurações, despesas fixas, relatórios e grupos (treino).
 
 **Ambientes:** CT-RF01 em https://sifitalfa.centrion.com.br/login; CT-RF02_ERRO em https://sifit.centrion.com.br/profile. CT-RF03: URL do frontend não confirmada; backend informado em `https://backendsifit.centrion.com.br/api/clientesPorNome/1`.
 
 **Datas das gravações do Jam:** CT-RF01 em 23/10/2026; CT-RF02_ERRO em 22/10/2026 às 21:45 BRT; CT-RF03 não confirmada.
 
-**Atualização documental:** 15/11/2026 — 23 defeitos registrados: 10 abertos (BUG-001 a BUG-010) e 13 em triagem (BUG-011 a BUG-023). BUG-019 registra o HTTP 500 no cadastro de objetivo de treino e BUG-020 a ausência de retorno visível no cadastro de turma sem modalidade, ambos sem causa técnica confirmada. As análises anteriores foram preservadas.
+**Atualização documental:** 15/11/2026 — 24 defeitos registrados: 10 abertos (BUG-001 a BUG-010) e 14 em triagem (BUG-011 a BUG-024). BUG-019 registra o HTTP 500 no cadastro de objetivo de treino, BUG-020 a ausência de retorno visível no cadastro de turma sem modalidade e BUG-024 o HTTP 500 na exclusão de grupo (treino), todos sem causa técnica confirmada. As análises anteriores foram preservadas.
+
+**Gravação de CT-RF57:** 15/11/2026, Grupos, 21h03 BRT, Chrome 157.0.8103.78 / Windows 11; evidência e limites no BUG-024.
 
 **Padronização documental:** 13/11/2026, sem alteração do status dos defeitos.
 
@@ -51,8 +53,9 @@
 | [BUG-021](#bug-021) | Painel Pagar.me mantém Recebimentos e gráfico ao trocar o período | Média / Média, propostas | Em triagem — dados reais ou de demonstração não confirmados | [CT-RF45](Cenario_Teste/CT-RF45_Painel_PagarMe_Periodo.md) |
 | [BUG-022](#bug-022) | Relatório de Contas a Receber exibe "----" em Valor a Receber | Alta / Alta, propostas | Em triagem — origem do valor e comparação com o módulo não confirmadas | [CT-RF51](Cenario_Teste/CT-RF51_Relatorio_Contas_Receber.md) |
 | [BUG-023](#bug-023) | Relatórios de Avaliações, Clientes, Colaboradores e Caixas geram arquivo PDF vazio (0 bytes) | Alta / Alta, propostas | Em triagem — correspondência dos arquivos inferida; causa não determinada | [CT-RF53](Cenario_Teste/CT-RF53_Relatorio_Avaliacoes_Vazio.md), [CT-RF54](Cenario_Teste/CT-RF54_Relatorio_Clientes_Vazio.md), [CT-RF55](Cenario_Teste/CT-RF55_Relatorio_Colaboradores_Vazio.md) e [CT-RF56](Cenario_Teste/CT-RF56_Relatorio_Caixas_Vazio.md) |
+| [BUG-024](#bug-024) | Exclusão de grupo retorna HTTP 500 e mensagem genérica | Média / Alta, propostas | Em triagem — causa não determinada | [CT-RF57](Cenario_Teste/CT-RF57_Exclusao_Grupo.md) |
 
-BUG-001–BUG-010 aguardam correção e reteste. BUG-011–BUG-023 aguardam confirmação das premissas e triagem antes do encaminhamento de correção. As causas técnicas permanecem não confirmadas; o BUG-003 se apoia no relato e nas capturas fornecidos, com os limites registrados no caso.
+BUG-001–BUG-010 aguardam correção e reteste. BUG-011–BUG-024 aguardam confirmação das premissas e triagem antes do encaminhamento de correção. As causas técnicas permanecem não confirmadas; o BUG-003 se apoia no relato e nas capturas fornecidos, com os limites registrados no caso.
 
 ---
 
@@ -1095,6 +1098,53 @@ Os valores ausentes são compatíveis com contas sem valor preenchido, com falha
 A geração com HTTP 200 e arquivo de 0 bytes é compatível com falha silenciosa na construção do PDF (exceção capturada sem retorno de erro), resposta vazia do servidor ou falha no download no navegador; não foi possível distinguir. A correspondência dos cinco arquivos vazios com os tipos é inferida pela ordem dos downloads e pela ordem dos tipos selecionados no vídeo; os arquivos 5 a 7 foram identificados pelo conteúdo e seguem a mesma ordem. O corpo e a resposta das requisições não foram capturados e a causa técnica não foi confirmada no código.
 
 **Reteste:** Reproduzir cada tipo separadamente, capturando requisição e resposta e o tamanho do arquivo, com e sem registros no período; confirmar a causa nos logs do servidor e comparar com os relatórios que abrem. Manter em triagem até nova evidência em versão identificada.
+
+---
+
+<a id="bug-024"></a>
+
+## BUG-024 — Exclusão de grupo retorna HTTP 500 e mensagem genérica
+
+| Campo | Descrição |
+| --- | --- |
+| Status | Em triagem — causa não determinada; reteste pendente após correção. |
+| Severidade / prioridade | Média / Alta, propostas para triagem. |
+| Módulo | Treinamento / Grupos / Exclusão |
+| Requisitos | [RF57](Analise%20de%20requisitos.md#rf57) |
+| Casos | [CT-RF57](Cenario_Teste/CT-RF57_Exclusao_Grupo.md) |
+| Data da evidência / revisão | 15/11/2026, 21h03 BRT; sem nova execução. |
+| Página | https://sifit.centrion.com.br/grupos |
+| Ambiente | Chrome 157.0.8103.78 / Windows (x86) 11; versão e zoom não confirmados. |
+
+### Pré-condições e reprodução
+
+**[CT-RF57](Cenario_Teste/CT-RF57_Exclusao_Grupo.md):** Sessão autenticada com permissão para excluir grupos. Registro de teste cuja exclusão seja permitida, com vínculos conhecidos para distinguir impedimento de regra de falha do servidor.
+
+1. Acionar o ícone de exclusão na linha do grupo.
+2. Confirmar a exclusão no diálogo "Deseja deletar o Grupo?".
+3. Conferir o retorno visual, o status da chamada e a presença do registro após a operação.
+
+### Esperado e obtido
+
+| Caso | Esperado | Obtido |
+| --- | --- | --- |
+| CT-RF57 | Concluir a exclusão permitida, removendo o registro e atualizando os contadores; ou explicar de forma tratável o impedimento, sem erro interno. | O registro (grupo código 1, "Treino Livre") permanece na listagem e os contadores de cartões não se alteram entre as tentativas. |
+
+**Impacto:** A exclusão não é concluída. O endpoint e a mensagem genérica retornada coincidem exatamente com os já registrados em [BUG-016](#bug-016) para a exclusão de grupo muscular, o que sugere uma causa comum no tratamento de exclusões do backend.
+
+### Evidências
+
+- [CT-RF57](Cenario_Teste/CT-RF57_Exclusao_Grupo.md): [Jam — Tela de Grupos](https://jam.dev/c/b1231a75-1a65-4bf0-b795-f52a8c7d3365). 1:19: acionamento do ícone de exclusão. 1:20: diálogo de confirmação "Deseja deletar o Grupo?". 1:21: `POST /api/deleta/grupo/1` retorna HTTP 500 em 987 ms. 1:30: segunda tentativa no mesmo endpoint, também HTTP 500, em 230 ms.
+- Corpo de resposta nas duas tentativas: `{"verifica_erro": true, "mensagem": "Erro interno inesperado."}`.
+- Cabeçalhos registrados: `content-type: application/json; charset=utf-8`, `content-length: 64`, `content-encoding: br`, `x-powered-by: PHP/8.2.35`. Primeira tentativa em `Seg, 16 de nov de 2026 00:03:09 GMT`, `x-hcdn-request-id: 8f18afe5ff0e3a9e3d1c944d69811576-asc-edge13`; segunda em `00:03:19 GMT`, `x-hcdn-request-id: bc5d59dc99d0c01de186f1b3125a9b80-asc-edge13`.
+
+### Análise, limites e encaminhamento
+
+O HTTP 500 e o endpoint estão registrados no Jam. Não houve acesso a logs do servidor, ao corpo completo da resposta além dos 64 bytes retornados nem ao banco de dados, de modo que não é possível distinguir entre falha de infraestrutura, exceção não tratada na aplicação e restrição de integridade referencial não capturada. Não foi possível confirmar visualmente o texto do diálogo de erro apresentado após a falha, pois o componente de alerta é fechado em menos de um segundo na gravação.
+
+Não foi verificado se o registro permanece íntegro após as duas tentativas enviadas para o mesmo recurso, nem exercitado o cenário de exclusão com impedimento de regra.
+
+Investigar o HTTP 500 com logs do servidor e os vínculos do registro, em conjunto com a investigação já proposta para o BUG-016, dada a coincidência de endpoint e mensagem; corrigir e retestar os cenários permitido e impedido. O status permanece em triagem até que a causa seja determinada e uma nova execução comprove os critérios de aceitação do caso associado.
 
 ---
 
