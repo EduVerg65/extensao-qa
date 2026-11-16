@@ -68,6 +68,7 @@ Esta análise documenta 60 requisitos de QA para os cenários relacionados abaix
 | [RF56](#rf56) | Gerar o relatório de Caixas em PDF | Alta, proposta | [CT-RF56](Cenario_Teste/CT-RF56_Relatorio_Caixas_Vazio.md) |
 | [RF58](#rf58) | Alternar o tema e consultar as notificações no cabeçalho | Baixa, proposta | [CT-RF58](Cenario_Teste/CT-RF58_Tema_Notificacoes_Prospeccao.md) |
 | [RF59](#rf59) | Buscar leads por texto na listagem de Prospecção | Média, proposta | [CT-RF59](Cenario_Teste/CT-RF59_Busca_Leads_Prospeccao.md) |
+| [RF60](#rf60) | Filtrar leads por estágio e restaurar a listagem | Média, proposta | [CT-RF60](Cenario_Teste/CT-RF60_Filtro_Estagio_Leads.md) |
 
 ---
 
@@ -1647,6 +1648,35 @@ O termo vigente em 0:12 não foi identificado com certeza; a regra de correspond
 
 ---
 
+<a id="rf60"></a>
+
+## RF60 — Filtrar leads por estágio e restaurar a listagem
+
+| Campo | Descrição |
+| --- | --- |
+| Requisito de QA | O seletor Estágio deve apresentar apenas os leads do estágio escolhido e o botão Limpar deve restaurar o seletor e a listagem completa. |
+| Ator | Usuário autenticado com acesso a Prospecção. |
+| Pré-condições | Base de leads conhecida, com estágios registrados. |
+| Gatilho | Selecionar um estágio e, depois, acionar Limpar. |
+| Caso | [CT-RF60](Cenario_Teste/CT-RF60_Filtro_Estagio_Leads.md) |
+| Situação observada | Aprovado conforme a gravação. "Novo Contato" apresenta os leads 7 e 8 e "Proposta" o lead 4; Limpar restaura a listagem completa. |
+| Defeito | Nenhum no fluxo avaliado |
+| Evidências | [Jam](https://jam.dev/c/308607ff-8abc-40af-8c7c-429ce506ed64) e [Evidências](Evidencias/CT-RF60_Filtro_Estagio_Leads/README.md). |
+
+### Critérios de aceitação do RF60
+
+1. Cada estágio apresenta apenas os leads desse estágio.
+2. O número de linhas de um estágio coincide com o indicador correspondente, quando existir.
+3. O botão Limpar restaura o seletor para Todos e a listagem completa.
+4. Um estágio sem leads apresenta mensagem explícita de resultado vazio.
+5. O filtro combina corretamente com a busca por texto.
+
+### Pontos a confirmar e limites do RF60
+
+Os demais estágios, a combinação com a busca por texto, o estágio sem leads e a lista completa de estágios do seletor não foram exercitados. O filtro não gera requisição de rede, compatível com filtragem local, sem confirmação.
+
+---
+
 ## 🔗 Rastreabilidade
 
 | Requisito | Cenário / caso | Defeito | Resultado | Evidências |
@@ -1707,6 +1737,7 @@ O termo vigente em 0:12 não foi identificado com certeza; a regra de correspond
 | RF56 | [CT-RF56](Cenario_Teste/CT-RF56_Relatorio_Caixas_Vazio.md) | [BUG-023](Relatorio-de-Bugs.md#bug-023), em triagem | Reprovado nas evidências; reteste pendente. | [Evidências](Evidencias/CT-RF56_Relatorio_Caixas_Vazio/README.md) e [Jam](https://jam.dev/c/3b4777a4-e1b0-4038-9b06-26c73669d7d1) |
 | RF58 | [CT-RF58](Cenario_Teste/CT-RF58_Tema_Notificacoes_Prospeccao.md) | Nenhum no fluxo avaliado | Aprovado conforme a gravação | [Evidências](Evidencias/CT-RF58_Tema_Notificacoes_Prospeccao/README.md) e [Jam](https://jam.dev/c/308607ff-8abc-40af-8c7c-429ce506ed64) |
 | RF59 | [CT-RF59](Cenario_Teste/CT-RF59_Busca_Leads_Prospeccao.md) | Nenhum no fluxo avaliado | Aprovado conforme a gravação | [Evidências](Evidencias/CT-RF59_Busca_Leads_Prospeccao/README.md) e [Jam](https://jam.dev/c/308607ff-8abc-40af-8c7c-429ce506ed64) |
+| RF60 | [CT-RF60](Cenario_Teste/CT-RF60_Filtro_Estagio_Leads.md) | Nenhum no fluxo avaliado | Aprovado conforme a gravação | [Evidências](Evidencias/CT-RF60_Filtro_Estagio_Leads/README.md) e [Jam](https://jam.dev/c/308607ff-8abc-40af-8c7c-429ce506ed64) |
 
 ---
 
@@ -1914,6 +1945,12 @@ Com RF58, a análise passa a cobrir 55 requisitos documentados. O CT-RF58 acresc
 RF59 utiliza os painéis Info, Console, Network e Actions do Jam "Prospecção" e os quadros de 0:12, 0:13 e 0:44. Foram registrados a busca por texto, os cartões e a ausência de requisição na busca. Não houve nova execução, acesso ao código ou ao banco, nem reteste.
 
 Com RF59, a análise passa a cobrir 56 requisitos documentados. O CT-RF59 acrescenta uma aprovação limitada ao exemplo gravado.
+
+### Base da análise do RF60 — revisão de 15/11/2026
+
+RF60 utiliza os painéis Info, Console, Network e Actions do Jam "Prospecção" e os quadros de 0:16, 0:19 e 0:21. Foram registrados o filtro por estágio, o indicador Novos Contatos, o botão Limpar e a ausência de requisição. Não houve nova execução, acesso ao código ou ao banco, nem reteste.
+
+Com RF60, a análise passa a cobrir 57 requisitos documentados. O CT-RF60 acrescenta uma aprovação limitada ao exemplo gravado.
 
 ---
 
