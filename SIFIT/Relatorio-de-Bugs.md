@@ -1,12 +1,12 @@
 # 🐞 Relatório de Bugs — SIFIT
 
-**Escopo:** defeitos de 103 casos documentados (CT-RF01–CT-RF35, CT-RF38–CT-RF59, CT-RF60, CT-RF61, CT-RF65–CT-RF84, CT-RF85–CT-RF103 e CT-RF104–CT-RF108): recuperação, Perfil, Clientes, financeiro, página inicial e dashboard, tema, modalidades, categorias, avaliações, exercícios, grupos musculares, objetivos de treino, SifitBox – Turmas, Pagar.me, configurações, despesas fixas, relatórios, grupos (treino), fichas de anamnese, colaboradores, modelos de anamnese, categorias de anamnese, Prospecção, Bandeiras de Cartão, Contas a Pagar, Modelos de Contrato, Planos e Tipos de Pagamento. CT-RF60 (Modelos de Anamnese) e CT-RF61 (Categorias de Anamnese) são aprovados conforme a gravação, sem defeito identificado; não alteram a contagem de 43 defeitos registrados.
+**Escopo:** defeitos de 104 casos documentados (CT-RF01–CT-RF35, CT-RF38–CT-RF59, CT-RF60, CT-RF61, CT-RF62, CT-RF65–CT-RF84, CT-RF85–CT-RF103 e CT-RF104–CT-RF108): recuperação, Perfil, Clientes, financeiro, página inicial e dashboard, tema, modalidades, categorias, avaliações, exercícios, grupos musculares, objetivos de treino, SifitBox – Turmas, Pagar.me, configurações, despesas fixas, relatórios, grupos (treino), fichas de anamnese, colaboradores, modelos de anamnese, categorias de anamnese, perguntas de anamnese, Prospecção, Bandeiras de Cartão, Contas a Pagar, Modelos de Contrato, Planos e Tipos de Pagamento. CT-RF60 (Modelos de Anamnese) e CT-RF61 (Categorias de Anamnese) são aprovados conforme a gravação, sem defeito identificado. CT-RF62 (Perguntas Anamnese) é reprovado nas evidências e acrescenta o BUG-044 (44 defeitos registrados).
 
 **Ambientes:** CT-RF01 em https://sifitalfa.centrion.com.br/login; CT-RF02_ERRO em https://sifit.centrion.com.br/profile. CT-RF03: URL do frontend não confirmada; backend informado em `https://backendsifit.centrion.com.br/api/clientesPorNome/1`.
 
 **Datas das gravações do Jam:** CT-RF01 em 23/10/2026; CT-RF02_ERRO em 22/10/2026 às 21:45 BRT; CT-RF03 não confirmada.
 
-**Atualização documental:** 16/11/2026 — 43 defeitos registrados: 10 abertos (BUG-001 a BUG-010) e 33 em triagem (BUG-011 a BUG-043). BUG-019 registra o HTTP 500 no cadastro de objetivo de treino, BUG-020 a ausência de retorno visível no cadastro de turma sem modalidade, BUG-024 e BUG-025 cobrem Grupos (treino), BUG-026–BUG-031 cobrem Colaboradores e BUG-032 o HTTP 500 no cadastro de anamnese (aplicar e rascunho), todos sem causa técnica confirmada. CT-RF60 (Modelos de Anamnese) e CT-RF61 (Categorias de Anamnese), incluídos em 16/11/2026, são aprovados conforme a gravação e não geram novo defeito. BUG-038 a BUG-041 cobrem Prospecção (telefone), Contas a Pagar, Modelos de Contrato e Planos; BUG-042 e BUG-043 cobrem Tipos de Pagamento (status e exclusão); BUG-035 e BUG-036 cobrem Bandeiras; BUG-037 registra o relato de cadastro de lead apenas com nome, com regra a confirmar. As análises anteriores foram preservadas.
+**Atualização documental:** 16/11/2026 — 44 defeitos registrados: 10 abertos (BUG-001 a BUG-010) e 34 em triagem (BUG-011 a BUG-044). BUG-019 registra o HTTP 500 no cadastro de objetivo de treino, BUG-020 a ausência de retorno visível no cadastro de turma sem modalidade, BUG-024 e BUG-025 cobrem Grupos (treino), BUG-026–BUG-031 cobrem Colaboradores e BUG-032 o HTTP 500 no cadastro de anamnese (aplicar e rascunho), todos sem causa técnica confirmada. CT-RF60 (Modelos de Anamnese) e CT-RF61 (Categorias de Anamnese), incluídos em 16/11/2026, são aprovados conforme a gravação e não geram novo defeito. BUG-038 a BUG-041 cobrem Prospecção (telefone), Contas a Pagar, Modelos de Contrato e Planos; BUG-042 e BUG-043 cobrem Tipos de Pagamento (status e exclusão); BUG-044, também em 16/11/2026, registra o HTTP 500 na edição do tipo de resposta de pergunta de anamnese (CT-RF62); BUG-035 e BUG-036 cobrem Bandeiras; BUG-037 registra o relato de cadastro de lead apenas com nome, com regra a confirmar. As análises anteriores foram preservadas.
 
 **Gravação de CT-RF104–CT-RF108:** 15/11/2026, Tipos de Pagamento, 22:03 BRT, Chrome 157.0.8103.78 / Windows 11; uma única gravação; evidência e limites no BUG-042 e no BUG-043.
 
@@ -18,7 +18,7 @@
 
 **Gravação de CT-RF85–CT-RF90:** 15/11/2026, Prospecção, 21:52 BRT, Chrome 157.0.8103.78 / Windows 11; uma única gravação; evidência e limites no BUG-038.
 
-**Gravação de CT-RF57 e CT-RF58:** 15/11/2026, Grupos, 21h03 BRT, Chrome 157.0.8103.78 / Windows 11; mesma gravação, evidências e limites no BUG-024 e no BUG-025. **Gravação de CT-RF59:** 15/11/2026, Fichas de Anamnese, 22h07 BRT, Chrome 157.0.8103.78 / Windows 11; evidências e limites no BUG-032. **Gravações de CT-RF65–CT-RF70:** 15/11/2026, Colaboradores, entre 22:06 e 22:13 BRT, Chrome 157.0.8103.78 / Windows 11; evidências e limites no BUG-026 a BUG-031. **Gravação de CT-RF60:** 15/11/2026, Modelos de Anamnese, 23h34 BRT, Chrome 157.0.8103.78 / Windows 11; aprovada conforme a gravação, sem defeito — ver [CT-RF60](Cenario_Teste/CT-RF60_Gestao_Modelos_Anamnese.md). **Gravação de CT-RF61:** 16/11/2026, Categorias de Anamnese, 15h24 BRT, Chrome 157.0.8103.78 / Windows 11; aprovada conforme a gravação, sem defeito — ver [CT-RF61](Cenario_Teste/CT-RF61_Gestao_Categorias_Anamnese.md).
+**Gravação de CT-RF57 e CT-RF58:** 15/11/2026, Grupos, 21h03 BRT, Chrome 157.0.8103.78 / Windows 11; mesma gravação, evidências e limites no BUG-024 e no BUG-025. **Gravação de CT-RF59:** 15/11/2026, Fichas de Anamnese, 22h07 BRT, Chrome 157.0.8103.78 / Windows 11; evidências e limites no BUG-032. **Gravações de CT-RF65–CT-RF70:** 15/11/2026, Colaboradores, entre 22:06 e 22:13 BRT, Chrome 157.0.8103.78 / Windows 11; evidências e limites no BUG-026 a BUG-031. **Gravação de CT-RF60:** 15/11/2026, Modelos de Anamnese, 23h34 BRT, Chrome 157.0.8103.78 / Windows 11; aprovada conforme a gravação, sem defeito — ver [CT-RF60](Cenario_Teste/CT-RF60_Gestao_Modelos_Anamnese.md). **Gravação de CT-RF61:** 16/11/2026, Categorias de Anamnese, 15h24 BRT, Chrome 157.0.8103.78 / Windows 11; aprovada conforme a gravação, sem defeito — ver [CT-RF61](Cenario_Teste/CT-RF61_Gestao_Categorias_Anamnese.md). **Gravação de CT-RF62:** 16/11/2026, Perguntas Anamnese, 15h57 BRT, Chrome 157.0.8103.78 / Windows 11; reprovada nas evidências, com o BUG-044 — ver [CT-RF62](Cenario_Teste/CT-RF62_Edicao_Pergunta_Anamnese.md).
 
 **Padronização documental:** 13/11/2026, sem alteração do status dos defeitos.
 
@@ -83,8 +83,9 @@
 | [BUG-041](#bug-041) | Cartão Ativos de Planos aumenta ao cadastrar e editar planos inativos | Média / Média, propostas | Em triagem — regra de cálculo do cartão não confirmada | [CT-RF102](Cenario_Teste/CT-RF102_Contador_Ativos_Planos.md) |
 | [BUG-042](#bug-042) | Status do tipo de pagamento não é enviado nem refletido: todos aparecem Inativo | Média / Média, propostas | Em triagem — regra do status do tipo de pagamento não confirmada | [CT-RF105](Cenario_Teste/CT-RF105_Cadastro_Tipo_Pagamento_Status.md) |
 | [BUG-043](#bug-043) | Exclusão de tipo de pagamento em uso retorna HTTP 404 com erro SQL e mensagem genérica | Média / Média, propostas | Em triagem — regra de exclusão e tratamento do erro não confirmados | [CT-RF107](Cenario_Teste/CT-RF107_Exclusao_Tipo_Pagamento_Em_Uso.md) |
+| [BUG-044](#bug-044) | Edição do tipo de resposta de pergunta de anamnese retorna HTTP 500 | Alta / Alta, propostas | Em triagem — causa não determinada | [CT-RF62](Cenario_Teste/CT-RF62_Edicao_Pergunta_Anamnese.md) |
 
-BUG-001–BUG-010 aguardam correção e reteste. BUG-011–BUG-043 aguardam confirmação das premissas e triagem antes do encaminhamento de correção. As causas técnicas permanecem não confirmadas; o BUG-003 se apoia no relato e nas capturas fornecidos, com os limites registrados no caso.
+BUG-001–BUG-010 aguardam correção e reteste. BUG-011–BUG-044 aguardam confirmação das premissas e triagem antes do encaminhamento de correção. As causas técnicas permanecem não confirmadas; o BUG-003 se apoia no relato e nas capturas fornecidos, com os limites registrados no caso.
 
 ---
 
@@ -1758,6 +1759,53 @@ O padrão é compatível com um campo de status que existe apenas na interface, 
 O impedimento de excluir um tipo referenciado é compatível com a integridade referencial do banco; o defeito apontado é o tratamento do erro (código HTTP, mensagem ao usuário e conteúdo da resposta), e não o bloqueio em si. O comportamento para um tipo sem uso não foi exercitado e a causa técnica não foi confirmada no código.
 
 **Reteste:** Reproduzir com tipo em uso e sem uso, conferindo código HTTP, corpo da resposta e mensagem da tela; verificar também se outras rotas de exclusão expõem erros SQL. Manter em triagem até nova evidência em versão identificada.
+
+---
+
+<a id="bug-044"></a>
+
+## BUG-044 — Edição do tipo de resposta de pergunta de anamnese retorna HTTP 500
+
+| Campo | Descrição |
+| --- | --- |
+| Status | Em triagem — causa não determinada; reteste pendente após correção. |
+| Severidade / prioridade | Alta / Alta, propostas para triagem. |
+| Módulo | Treinamento / Fichas de Anamnese / Perguntas Anamnese |
+| Requisitos | [RF62](Analise%20de%20requisitos.md#rf62--editar-pergunta-de-anamnese-sem-erro-de-servidor) |
+| Casos | [CT-RF62](Cenario_Teste/CT-RF62_Edicao_Pergunta_Anamnese.md) |
+| Data da evidência / revisão | 16/11/2026, 15h57 BRT; sem nova execução. |
+| Página | https://sifit.centrion.com.br/perguntas-anamnese |
+| Ambiente | Chrome 157.0.8103.78 / Windows 11; versão e zoom não confirmados. |
+| Frequência conhecida | Quatro tentativas consecutivas na mesma gravação, com valores de `resposta` e `status` diferentes; recorrência não determinada. |
+
+### Pré-condições e reprodução
+
+**[CT-RF62](Cenario_Teste/CT-RF62_Edicao_Pergunta_Anamnese.md):** Sessão autenticada com permissão para gerenciar perguntas de anamnese; pergunta cadastrada com um tipo de resposta.
+
+1. Cadastrar uma nova pergunta de anamnese com um tipo de resposta (por exemplo, "2 opções com complemento").
+2. Reabrir a pergunta pela ação de editar.
+3. Alterar o tipo de resposta (ou o status) e acionar "Salvar".
+4. Registrar o código HTTP e a resposta.
+5. Repetir com outros valores de tipo de resposta e de status.
+
+### Esperado e obtido
+
+| Caso | Esperado | Obtido |
+| --- | --- | --- |
+| CT-RF62 | A edição do tipo de resposta ou do status de uma pergunta cadastrada é persistida e retorna sucesso. | As quatro tentativas registradas (`resposta: "3opcoes"` duas vezes, `"2opcoes"` com status INATIVO e depois ATIVO) retornam HTTP 500 com a mesma mensagem genérica; nenhuma alteração é persistida. |
+
+**Impacto:** O usuário não consegue editar o tipo de resposta nem o status de uma pergunta de anamnese já cadastrada, em nenhuma das quatro tentativas registradas na gravação, com dois valores de tipo de resposta e os dois valores de status.
+
+### Evidências
+
+- [CT-RF62](Cenario_Teste/CT-RF62_Edicao_Pergunta_Anamnese.md): [Jam — Perguntas Anamnese](https://jam.dev/c/84b116fb-4640-4b1e-9148-9a169b8aa2b0). 1:00 e 1:04: `POST /api/pergunta-anamnese/alterar/1` com `{"id": 11, "nome": "Pergunta", "pergunta": "Pergunta isso", "resposta": "3opcoes", "numero": 12, "status": "INATIVO"}`, ambas HTTP 500. 1:08: mesmo endpoint com `"resposta": "2opcoes"`, status INATIVO, HTTP 500. 1:12: mesmo endpoint com `"resposta": "2opcoes"`, status ATIVO, HTTP 500. Todas as quatro respostas: `{"verifica_erro": true, "mensagem": "Erro interno inesperado."}` — mesmo padrão já observado nos BUG-016, BUG-024 e BUG-032.
+- As quatro requisições de erro aparecem também na visão "Erros de rede" do painel Console do Jam, nos mesmos instantes.
+
+### Análise, limites e encaminhamento
+
+A falha ocorre de forma idêntica para dois valores diferentes de tipo de resposta (`"3opcoes"` e `"2opcoes"`) e para os dois valores de status, sempre com a mesma mensagem genérica — o mesmo padrão de resposta já registrado em [BUG-016](#bug-016), [BUG-024](#bug-024) e [BUG-032](#bug-032). A pergunta foi criada com o tipo de resposta `"2opcoes_complemento"`, o que sugere que a rotina de alteração pode estar falhando ao tentar ajustar ou remover as opções/complementos associados ao tipo anterior, mas essa hipótese não foi confirmada. Não houve acesso a logs do servidor, ao código da rotina nem ao banco de dados.
+
+**Reteste:** Investigar a rotina de servidor acionada por `/api/pergunta-anamnese/alterar/{id}`, com acesso a logs, cobrindo especificamente a transição entre tipos de resposta com e sem complemento; confirmar também se o identificador final da URL corresponde ao `empresa_id`, como já hipotetizado em CT-RF59 a CT-RF61. Manter em triagem até nova evidência em versão identificada.
 
 ---
 

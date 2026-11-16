@@ -1,6 +1,6 @@
 # 🧪 Índice dos cenários de teste — SIFIT
 
-**Atualização:** 16/11/2026. 103 casos documentados: 42 aprovados, 47 reprovados e 14 a validar; 43 defeitos registrados (10 abertos e 33 em triagem) e 47 casos com reteste corretivo pendente (CT-RF01–CT-RF35, CT-RF38–CT-RF59, CT-RF60, CT-RF61, CT-RF65–CT-RF84, CT-RF85–CT-RF103 e CT-RF104–CT-RF108).
+**Atualização:** 16/11/2026. 104 casos documentados: 42 aprovados, 48 reprovados e 14 a validar; 44 defeitos registrados (10 abertos e 34 em triagem) e 48 casos com reteste corretivo pendente (CT-RF01–CT-RF35, CT-RF38–CT-RF59, CT-RF60, CT-RF61, CT-RF62, CT-RF65–CT-RF84, CT-RF85–CT-RF103 e CT-RF104–CT-RF108).
 
 | Caso | Funcionalidade | Resultado | Defeito | Jam |
 | --- | --- | --- | --- | --- |
@@ -177,6 +177,16 @@ Na mesma gravação, busca e filtro da listagem, cadastro de um modelo com três
 | [CT-RF61](CT-RF61_Gestao_Categorias_Anamnese.md) | Filtro, busca, cadastro, edição e exclusão de categorias de anamnese | Aprovado conforme a gravação | — | [Jam](https://jam.dev/c/fdb1c9f8-c428-4726-9742-617800325d09) |
 
 Na mesma gravação, filtro por status, busca por texto, cadastro de uma categoria, três edições sucessivas (ícone, nome e status), o cancelamento correto de uma quarta edição sem salvar e a exclusão da categoria retornam HTTP 200 ou 201 em todas as sete requisições identificadas aos endpoints `/api/categorias-anamnese/*`, sem nenhuma ocorrência de erro 4xx ou 5xx. Nenhum defeito foi identificado no fluxo avaliado. O resultado é documental; não houve nova execução ou reteste.
+
+---
+
+## Inclusão de 16/11/2026 — Perguntas Anamnese
+
+| Caso | Funcionalidade | Resultado | Defeito | Jam |
+| --- | --- | --- | --- | --- |
+| [CT-RF62](CT-RF62_Edicao_Pergunta_Anamnese.md) | Edição do tipo de resposta e do status de pergunta de anamnese | Reprovado nas evidências | [BUG-044](../Relatorio-de-Bugs.md#bug-044), em triagem | [Jam](https://jam.dev/c/84b116fb-4640-4b1e-9148-9a169b8aa2b0) |
+
+Na mesma gravação, o cadastro de uma nova pergunta de anamnese é concluído com sucesso, mas as quatro tentativas seguintes de editar o tipo de resposta e/ou o status dessa mesma pergunta retornam HTTP 500 em todas as ocorrências, com o mesmo corpo genérico de erro já observado em outros módulos; nenhuma alteração é persistida. O resultado é documental; não houve nova execução ou reteste.
 
 ---
 
