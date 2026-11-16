@@ -1,0 +1,56 @@
+CT-RF47 — Cadastro de despesa fixa com duas requisições de criação
+Fonte: https://jam.dev/c/a4bac99d-e436-4792-831e-8c3a875272bb
+Gravação: 15/11/2026, 19:07 BRT; duração: 52 s.
+Revisão documental: 15/11/2026.
+Página: https://sifit.centrion.com.br/despesas-fixas
+Foco deste caso: cadastro da despesa "teste gg" (0:26 a 0:42).
+
+Cronologia (painel Console do Jam, atividade do usuário; seletores abreviados pelo Jam):
+0:00  Video started; clique no campo Código (filtro)
+0:02  Digitado: 10 (o quadro de 0:02 mostra o campo com "1")
+0:03  Cliques na barra superior e no campo
+0:04  Clique no bloco de filtros; apagar
+0:05  Clique no campo Nome
+0:07  Digitado: T; 0:10 digitado: este (filtro Nome "Teste")
+0:11-0:13  Cliques na barra superior e nos filtros; apagar
+0:13-0:19  Cliques nos seletores Status e Recorrência (dfx-)
+0:20  Clique no alternador de tema (Claro) e ícone de sol
+0:21-0:23  Cliques no painel de notificações (sino e abas)
+0:24-0:25  Cliques na barra de busca e na lupa
+0:26  Clique no ícone de adicionar (Nova Despesa)
+0:27-0:28  Cliques nos campos do formulário
+0:30  Digitado: teste gg (Nome)
+0:31-0:32  Cliques nos seletores (Status e Recorrência)
+0:32  Clique no campo Valor; 0:33 digitado: 150
+0:35  Clique em Salvar Despesa (dfx-btn-salvar) -> POST cria/despesa-fixa/1 (HTTP 201) duas vezes
+0:36  Clique no campo Nome do filtro
+0:38  Digitado: teste (filtro Nome)
+0:44  Clique no ícone de lixeira (bi-trash); 0:45 clique em botão do diálogo (sdl-btn, Confirmar) -> POST deleta/despesa-fixa/1 (HTTP 200)
+0:46  Clique em botão de ação da linha (dfx-btn-action) -> POST seleciona/despesa-fixa/1 (HTTP 200)
+0:48  Cliques nos seletores (Status e Recorrência) do formulário Editar Despesa
+0:49  Clique no rodapé do modal e em Salvar Despesa (dfx-btn-salvar) -> POST edita/despesa-fixa/1 (HTTP 200)
+0:52  Video stopped
+
+Rede do conjunto gravado (16 entradas, domínio backendsifit.centrion.com.br; nenhuma falha):
+1-2   POST "tema" (HTTP 200, 23 B).
+3-4   GET de listas (HTTP 200, 2,6 KiB cada).
+5     POST /api/cria/despesa-fixa/1 (HTTP 201, 31 B); corpo {"recorrencia": "1 dia", "nome": "teste gg", "valor": "150", "status": "inativo"}; resposta {"verifica_erro": false, "id": 23}.
+6-7   OPTIONS (204) e novo POST /api/cria/despesa-fixa/1 (HTTP 201); corpo e resposta indisponíveis.
+8     GET de lista (HTTP 200, 2,8 KiB).
+9-10  OPTIONS (204) e POST /api/deleta/despesa-fixa/1 (HTTP 200, 23 B); corpo {"id": 23}; resposta {"verifica_erro": false}.
+11    GET de lista (HTTP 200, 2,6 KiB).
+12-13 OPTIONS (204) e POST /api/seleciona/despesa-fixa/1 (HTTP 200, 167 B); corpo {"id": 7}; resposta com a despesa 7 ("teste 323", valor 50, recorrência "1 Mês", status "ativo").
+14-15 OPTIONS (204) e POST /api/edita/despesa-fixa/1 (HTTP 200, 23 B); corpo {"id": 7, "recorrencia": "7 dias", "nome": "teste 323", "valor": 50, "status": "ativo"}; resposta {"verifica_erro": false}.
+16    GET de lista (HTTP 200, 2,6 KiB).
+Os filtros por código, nome, status e recorrência não geram entrada de rede.
+Autenticação omitida (o token aparece mascarado pelo Jam).
+
+Quadros consultados (reprodução do Jam):
+0:34  Formulário Nova Despesa: Código vazio; Nome teste gg; Status Inativo; Valor 150; Recorrência 1 Dia.
+0:36  Listagem com 17 despesas; Ativas 15; Inativas 2; Valor Listado R$ 8.210,00.
+0:42  Filtro "teste": #5, #7 e #23 teste gg (R$ 150,00; 1 Dia; inativo).
+
+Observações e verificações futuras:
+- Duas requisições POST de criação (HTTP 201) para um único clique em Salvar Despesa; a segunda sem corpo e resposta.
+- Não foi confirmada a existência de registro adicional.
+- Persistência após recarga não verificada.

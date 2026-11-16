@@ -2,13 +2,13 @@
 
 Repositório de documentação de QA manual do **SIFIT**, sistema de gestão de academias. Reúne requisitos, plano, cenários BDD, resultados, defeitos e evidências com links do Jam.
 
-**Atualização documental:** 15/11/2026. Integrados CT-RF38 e RF38 (cadastro de categoria com código automático, aprovado conforme a gravação) e, anteriormente, CT-RF35, RF35 e BUG-019 em triagem (cadastro de objetivo de treino com HTTP 500). CT-RF22–CT-RF33 e os resultados anteriores foram preservados.
+**Atualização documental:** 15/11/2026. Integrados CT-RF42 a CT-RF56 e RF42 a RF56 (Pagar.me, Configurações, Despesas Fixas e Relatórios, com BUG-021 a BUG-023 em triagem) e, anteriormente, CT-RF39 a CT-RF41 e RF39 a RF41 (SifitBox – Turmas: cadastro de modalidade aprovado, exclusão a validar e cadastro de turma sem retorno visível, com BUG-020 em triagem) e, anteriormente, CT-RF38 e RF38 (cadastro de categoria com código automático) e CT-RF35, RF35 e BUG-019 em triagem (cadastro de objetivo de treino com HTTP 500). CT-RF22–CT-RF33 e os resultados anteriores foram preservados.
 
 ## 📊 Situação consolidada
 
 | Cenários documentados | Aprovados | Reprovados | A validar | Defeitos registrados | Casos com reteste corretivo pendente |
 | :---: | :---: | :---: | :---: | :---: | :---: |
-| 36 | 11 | 20 | 5 | 19 (10 abertos + 9 em triagem) | 20 |
+| 54 | 17 | 27 | 10 | 23 (10 abertos + 13 em triagem) | 27 |
 
 As classificações se baseiam nas fontes indicadas em cada cenário. CT-RF03 mantém a reprovação conforme o relato, com os limites da revisão original. CT-RF09 e CT-RF10 compartilham BUG-005; por isso 20 casos reprovados correspondem a 19 defeitos registrados. BUG-011–BUG-019 aguardam confirmação funcional e triagem; os cinco pontos a validar não entram nessa contagem.
 
@@ -16,9 +16,9 @@ As classificações se baseiam nas fontes indicadas em cada cenário. CT-RF03 ma
 
 | Documento | Conteúdo |
 | --- | --- |
-| [Análise de requisitos](SIFIT/Analise%20de%20requisitos.md) | RF01–RF33, RF35 e RF38, critérios de aceitação, dúvidas de regra e rastreabilidade. |
+| [Análise de requisitos](SIFIT/Analise%20de%20requisitos.md) | RF01–RF33, RF35 e RF38–RF56, critérios de aceitação, dúvidas de regra e rastreabilidade. |
 | [Plano de testes](SIFIT/Plano%20de%20testes.md) | Escopo, ambientes, preparação, critérios, regressão e retestes. |
-| [Índice dos cenários](SIFIT/Cenario_Teste/README.md) | 36 cenários com pré-condições, BDD, passos, esperado, obtido e encaminhamento. |
+| [Índice dos cenários](SIFIT/Cenario_Teste/README.md) | 54 cenários com pré-condições, BDD, passos, esperado, obtido e encaminhamento. |
 | [Relatório de bugs](SIFIT/Relatorio-de-Bugs.md) | BUG-001–BUG-019: reprodução, impacto, evidências, severidade/prioridade propostas e reteste. |
 | [Relatório dos testes](SIFIT/Relatorio%20dos%20testes.md) | Resultados consolidados, cobertura, limites e pendências. |
 | [Índice das evidências](SIFIT/Evidencias/README.md) | Jam por cenário e arquivos locais dos novos casos. |
@@ -37,12 +37,16 @@ extensao-qa/
     │   ├── README.md
     │   ├── CT-RF01_Esqueci-senha.md
     │   ├── ... CT-RF02 a CT-RF35
-    │   └── CT-RF38_Cadastro_Categoria_Codigo_Automatico.md
+    │   ├── CT-RF38_Cadastro_Categoria_Codigo_Automatico.md
+    │   ├── CT-RF39 a CT-RF41 (SifitBox – Turmas)
+    │   └── CT-RF42 a CT-RF56 (Pagar.me, Despesas Fixas e Relatórios)
     └── Evidencias/
         ├── README.md
         ├── CT-RF23_Exclusao_Exercicio/ ... CT-RF25_Envio_Exercicio_Imagem/
         ├── CT-RF35_Cadastro_Objetivo_Treino/
-        └── CT-RF38_Cadastro_Categoria_Codigo_Automatico/
+        ├── CT-RF38_Cadastro_Categoria_Codigo_Automatico/
+        ├── CT-RF39 a CT-RF41 (uma pasta por caso)
+        └── CT-RF42 a CT-RF56 (uma pasta por caso, com os PDFs de CT-RF50 a CT-RF56)
 ```
 
 ## 📋 Cenários e resultados
@@ -84,6 +88,24 @@ extensao-qa/
 | [CT-RF33](SIFIT/Cenario_Teste/CT-RF33_Filtros_GruposMusculares.md) | Filtros de grupos musculares por código e tipo | Aprovado conforme a gravação | — | [Jam](https://jam.dev/c/98008390-0040-475e-ba7b-7f1e72cc0b2e) |
 | [CT-RF35](SIFIT/Cenario_Teste/CT-RF35_Cadastro_Objetivo_Treino.md) | Cadastro de objetivo de treino retorna HTTP 500 | Reprovado nas evidências | [BUG-019](SIFIT/Relatorio-de-Bugs.md#bug-019), em triagem | [Jam](https://jam.dev/c/1d474477-2411-4a81-b85c-74207402b783) |
 | [CT-RF38](SIFIT/Cenario_Teste/CT-RF38_Cadastro_Categoria_Codigo_Automatico.md) | Cadastro de categoria com código automático e consulta pelo código | Aprovado conforme a gravação | — | [Jam](https://jam.dev/c/be1dbd05-217d-44c3-8a3d-240b7f6344e1) |
+| [CT-RF39](SIFIT/Cenario_Teste/CT-RF39_Cadastro_Modalidade.md) | Cadastro de modalidade em SifitBox – Turmas | Aprovado conforme a gravação | — | [Jam](https://jam.dev/c/ee9a133b-d6b1-442d-b4b0-dd87595b7e70) |
+| [CT-RF40](SIFIT/Cenario_Teste/CT-RF40_Exclusao_Turmas_Modalidades.md) | Exclusão de turmas e modalidades pela lixeira | A validar — regra ou contexto pendente | — | [Jam](https://jam.dev/c/ee9a133b-d6b1-442d-b4b0-dd87595b7e70) |
+| [CT-RF41](SIFIT/Cenario_Teste/CT-RF41_Cadastro_Turma_Sem_Modalidade.md) | Cadastro de turma sem modalidade, sem retorno visível | Reprovado nas evidências | [BUG-020](SIFIT/Relatorio-de-Bugs.md#bug-020), em triagem | [Jam](https://jam.dev/c/ee9a133b-d6b1-442d-b4b0-dd87595b7e70) |
+| [CT-RF42](SIFIT/Cenario_Teste/CT-RF42_Solicitacao_Saque_PagarMe.md) | Solicitação de saque no painel Pagar.me | A validar — regra ou contexto pendente | — | [Jam](https://jam.dev/c/e6e551ef-9196-4c79-b6a2-89747b1e8b33) |
+| [CT-RF43](SIFIT/Cenario_Teste/CT-RF43_Criacao_Cobranca_PagarMe.md) | Criação de cobrança no painel Pagar.me | Aprovado conforme a gravação | — | [Jam](https://jam.dev/c/e6e551ef-9196-4c79-b6a2-89747b1e8b33) |
+| [CT-RF44](SIFIT/Cenario_Teste/CT-RF44_Configuracoes_Home_Salvamento.md) | Alteração e salvamento das Configurações (Home) | A validar — regra ou contexto pendente | — | [Jam](https://jam.dev/c/e6e551ef-9196-4c79-b6a2-89747b1e8b33) |
+| [CT-RF45](SIFIT/Cenario_Teste/CT-RF45_Painel_PagarMe_Periodo.md) | Painel Pagar.me mantém Recebimentos e gráfico ao trocar o período | Reprovado nas evidências | [BUG-021](SIFIT/Relatorio-de-Bugs.md#bug-021), em triagem | [Jam](https://jam.dev/c/e6e551ef-9196-4c79-b6a2-89747b1e8b33) |
+| [CT-RF46](SIFIT/Cenario_Teste/CT-RF46_Filtros_Despesas_Fixas.md) | Filtros da tela Despesas Fixas por código e por nome | Aprovado conforme a gravação | — | [Jam](https://jam.dev/c/a4bac99d-e436-4792-831e-8c3a875272bb) |
+| [CT-RF47](SIFIT/Cenario_Teste/CT-RF47_Cadastro_Despesa_Fixa.md) | Cadastro de despesa fixa com duas requisições de criação | A validar — regra ou contexto pendente | — | [Jam](https://jam.dev/c/a4bac99d-e436-4792-831e-8c3a875272bb) |
+| [CT-RF48](SIFIT/Cenario_Teste/CT-RF48_Exclusao_Despesa_Fixa.md) | Exclusão de despesa fixa com confirmação | Aprovado conforme a gravação | — | [Jam](https://jam.dev/c/a4bac99d-e436-4792-831e-8c3a875272bb) |
+| [CT-RF49](SIFIT/Cenario_Teste/CT-RF49_Edicao_Despesa_Fixa.md) | Edição de despesa fixa | Aprovado conforme a gravação | — | [Jam](https://jam.dev/c/a4bac99d-e436-4792-831e-8c3a875272bb) |
+| [CT-RF50](SIFIT/Cenario_Teste/CT-RF50_Relatorio_Matriculas.md) | Relatório de Matrículas em PDF | Aprovado conforme a gravação | — | [Jam](https://jam.dev/c/3b4777a4-e1b0-4038-9b06-26c73669d7d1) |
+| [CT-RF51](SIFIT/Cenario_Teste/CT-RF51_Relatorio_Contas_Receber.md) | Relatório de Contas a Receber sem Valor a Receber | Reprovado nas evidências | [BUG-022](SIFIT/Relatorio-de-Bugs.md#bug-022), em triagem | [Jam](https://jam.dev/c/3b4777a4-e1b0-4038-9b06-26c73669d7d1) |
+| [CT-RF52](SIFIT/Cenario_Teste/CT-RF52_Relatorio_Contas_Pagar_Pagas.md) | Relatório de Contas a Pagar (Pagas) sem registros | A validar — regra ou contexto pendente | — | [Jam](https://jam.dev/c/3b4777a4-e1b0-4038-9b06-26c73669d7d1) |
+| [CT-RF53](SIFIT/Cenario_Teste/CT-RF53_Relatorio_Avaliacoes_Vazio.md) | Relatório de Avaliações gera arquivo vazio | Reprovado nas evidências | [BUG-023](SIFIT/Relatorio-de-Bugs.md#bug-023), em triagem | [Jam](https://jam.dev/c/3b4777a4-e1b0-4038-9b06-26c73669d7d1) |
+| [CT-RF54](SIFIT/Cenario_Teste/CT-RF54_Relatorio_Clientes_Vazio.md) | Relatório de Clientes gera arquivo vazio | Reprovado nas evidências | [BUG-023](SIFIT/Relatorio-de-Bugs.md#bug-023), em triagem | [Jam](https://jam.dev/c/3b4777a4-e1b0-4038-9b06-26c73669d7d1) |
+| [CT-RF55](SIFIT/Cenario_Teste/CT-RF55_Relatorio_Colaboradores_Vazio.md) | Relatório de Colaboradores gera arquivo vazio | Reprovado nas evidências | [BUG-023](SIFIT/Relatorio-de-Bugs.md#bug-023), em triagem | [Jam](https://jam.dev/c/3b4777a4-e1b0-4038-9b06-26c73669d7d1) |
+| [CT-RF56](SIFIT/Cenario_Teste/CT-RF56_Relatorio_Caixas_Vazio.md) | Relatório de Caixas gera arquivo vazio | Reprovado nas evidências | [BUG-023](SIFIT/Relatorio-de-Bugs.md#bug-023), em triagem | [Jam](https://jam.dev/c/3b4777a4-e1b0-4038-9b06-26c73669d7d1) |
 
 ## 🔬 Como este projeto funciona
 

@@ -1,0 +1,53 @@
+CT-RF44 — Alteração e salvamento das Configurações (Home)
+Fonte: https://jam.dev/c/e6e551ef-9196-4c79-b6a2-89747b1e8b33
+Gravação: 15/11/2026, 19:06 BRT; duração: 1 min 11 s.
+Revisão documental: 15/11/2026.
+Página: https://sifit.centrion.com.br/configuracoes
+Foco deste caso: alteração e salvamento das configurações da aba Home (0:32 a 0:59).
+
+Cronologia (painel Console do Jam, atividade do usuário; seletores abreviados pelo Jam):
+0:00  Video started; clique em botão de ação do cartão (pgm-card-action)
+0:01  Clique no campo numérico (pgm-input); 0:03 digitado: 1000; clique em botão de envio (pgm-btn)
+0:05-0:12  Cliques em botões de ação dos cartões e botões de envio (pgm-btn), com modais informativos
+0:12-0:14  Cliques no alternador de tema (Claro/Escuro) -> dois POST "tema" (HTTP 200); sino e avatar
+0:15-0:20  Cliques em botões e em texto do painel
+0:22  Clique em botão de envio e em Ações rápidas (pgm-quick-action)
+0:24  Clique em botão de envio (pgm-btn)
+0:26  Clique no corpo do modal; clique no campo de texto (Descrição)
+0:28  Digitado: 11111
+0:28  Clique no campo numérico (Valor); 0:29 digitado: 11111
+0:30  Clique em botão de envio (Criar Cobrança) -> OPTIONS 204 e POST criar-cobranca (HTTP 200)
+0:31  Clique em botão do diálogo (sdl-btn) e em texto do painel
+0:32  Navegação para /pagarme e para /configuracoes (History API)
+0:34-0:40  Cliques em seletores da tela de Configurações (cfg-)
+0:40  Clique no campo numérico (Dias para contar cliente como ausente)
+0:41  Digitado: 1100
+0:42-0:45  Cliques em seletores; 0:45 clique em Salvar Configurações (cfg-btn-salvar)
+0:50  Clique na aba (cfg-tab)
+0:51-0:52  Cliques em seletores
+0:55  Clique em texto da tela
+0:59  Clique no menu lateral; navegação para /configuracoes e para /pagarme
+1:01  Clique em link (a); navegação para /pagarme#
+1:03  Clique em botão (pgm-more); 1:04 clique em botão de envio
+1:05-1:08  Cliques em links (a) com navegação para /pagarme#
+1:11  Video stopped
+
+Rede do conjunto gravado (aproximadamente 45 entradas, domínio backendsifit.centrion.com.br; todas HTTP 200 ou 204 nas entradas conferidas):
+- OPTIONS 204 e POST (HTTP 200) de nome "sacar-saldo", antes de qualquer outra chamada.
+- Grupos repetidos de quatro POST (HTTP 200) de nomes ver-saldo, pagarme, recebiveis e transacoes, cada grupo após uma ação no painel.
+- 2 POST "tema" (HTTP 200).
+- OPTIONS 204 e POST (HTTP 200) de nome "criar-cobranca"; POST "verifica-token" (HTTP 200).
+- Chamadas de leitura (GET) e de gravação (POST) da tela de Configurações, com HTTP 200 e OPTIONS 204; caminhos não conferidos.
+- Corpos de requisição e de resposta indisponíveis no Jam ("body unavailable") nas entradas conferidas.
+Autenticação omitida.
+
+Quadros consultados (reprodução do Jam):
+0:33  Aba Home com os valores iniciais; Dias para contar cliente como ausente -120.
+0:41  Opções alteradas (Desktop Não, Presença Biometria, SifitBox Não); campo de dias com 11 (digitação de 1100).
+0:46  Valores salvos; menu lateral com Presenças no lugar de Check-in e SifitBox.
+0:56  Aba Avaliação: Cobrar Avaliação do Cliente Sim; Tipo de avaliação Dobras; Teste Físico Não.
+
+Observações e verificações futuras:
+- A mensagem de confirmação do salvamento não foi observada.
+- Persistência após recarga não verificada.
+- O valor inicial -120 e a aceitação de 1100 no campo de dias exigem a regra do produto.

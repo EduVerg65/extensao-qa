@@ -1,0 +1,32 @@
+CT-RF50 — Relatório de Matrículas em PDF
+Fonte: https://jam.dev/c/3b4777a4-e1b0-4038-9b06-26c73669d7d1
+Gravação: 15/11/2026, 19:09 BRT; duração: 58 s.
+Revisão documental: 15/11/2026.
+Página: https://sifit.centrion.com.br/relatorios
+Foco deste caso: geração do relatório de Matrículas (PDF 5).
+
+Cronologia: o painel Console do Jam não registrou atividade do usuário nesta gravação (somente "Video started" em 0:00 e "Video stopped" em 0:58); a sequência abaixo foi reconstruída a partir dos quadros do vídeo e dos carimbos de hora dos arquivos baixados.
+Tipo de relatório selecionado nos quadros: 0:03 Clientes; 0:08–0:18 Avaliações; 0:23 Clientes; 0:28–0:33 Colaboradores; 0:38 Matrículas; 0:43 Contas a Receber; 0:48 Contas a Pagar; 0:53–0:57 Caixas.
+Período preenchido: 01/11/2026 a 15/11/2026 em todos os tipos, exceto Caixas (03/11/2026 a 10/11/2026 no quadro de 0:53).
+
+Arquivos baixados (pasta Downloads; hora local do arquivo):
+relatorio (1).pdf  19:09:01   0 bytes   (Avaliações, inferido)
+relatorio (2).pdf  19:09:08   0 bytes   (Avaliações, inferido)
+relatorio (3).pdf  19:09:17   0 bytes   (Clientes, inferido)
+relatorio (4).pdf  19:09:25   0 bytes   (Colaboradores, inferido)
+relatorio (5).pdf  19:09:33   7784 bytes (Matrículas; conteúdo conferido)
+relatorio (6).pdf  19:09:39   7882 bytes (Contas a Receber; conteúdo conferido)
+relatorio (7).pdf  19:09:44   7872 bytes (Contas a Pagar - Pagas; conteúdo conferido)
+relatorio (8).pdf  19:09:48   0 bytes   (Caixas, inferido)
+A correspondência dos arquivos 1 a 4 e 8 com os tipos é inferida pela ordem dos downloads e pela ordem de seleção dos tipos no vídeo; os arquivos 5 a 7 foram identificados pelo conteúdo.
+
+Rede do conjunto gravado (9 entradas, domínio backendsifit.centrion.com.br): 1 OPTIONS (HTTP 204) e 8 POST /api/relatorio/1 (HTTP 200), um por relatório gerado; corpos e respostas indisponíveis no Jam ("body unavailable"). Os oito POST correspondem aos oito arquivos baixados.
+Autenticação omitida.
+
+Quadros consultados (reprodução do Jam):
+0:38  Formulário com o tipo Matrículas; Plano Todos; Tipo de Pagto Todos; 01/11/2026 a 15/11/2026.
+
+Observações e verificações futuras:
+- O conteúdo não foi conferido com a lista de matrículas do módulo.
+- Filtros de plano e de pagamento não foram exercitados.
+- Apenas um registro no período.

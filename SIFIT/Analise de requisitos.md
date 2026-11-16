@@ -2,11 +2,11 @@
 
 **Módulos:** Autenticação, Perfil, Clientes / Filtros, Financeiro, Página inicial / Personais, SifitBox / Modalidades e Turmas, Categorias Crossfit, Avaliações, Exercícios, Grupos Musculares, Dashboard e Objetivos de Treino.
 
-**Atualização:** 15/11/2026 — RF01 a RF35 e RF38 consolidados, com inclusão do cadastro de Categorias Crossfit com código automático (CT-RF38); BUG-011–BUG-019 em triagem.
+**Atualização:** 15/11/2026 — RF01 a RF35 e RF38 a RF56 consolidados, com inclusão de Categorias Crossfit (CT-RF38), SifitBox – Turmas (CT-RF39 a CT-RF41) e, a partir de CT-RF42, Pagar.me, Configurações, Despesas Fixas e Relatórios; BUG-011–BUG-023 em triagem.
 
 **Padronização documental:** 13/11/2026, sem alteração dos resultados registrados.
 
-Esta análise documenta 36 requisitos de QA para os cenários relacionados abaixo, com base nos relatos e nas evidências fornecidas. RF01–RF04 e suas análises históricas foram preservados; RF05–RF20 ampliam a cobertura em 14/11/2026; RF21 acrescenta Avaliações; RF22–RF28 acrescentam Exercícios; RF29–RF33 acrescentam Grupos Musculares; RF34 acrescenta o carregamento do dashboard RF35 acrescenta o cadastro de objetivos de treino e RF38 acrescenta o cadastro de categorias com código automático em 15/11/2026. Os critérios abaixo constituem a referência de QA para esses fluxos; não representam validação de uma especificação formal pelo responsável pelo produto.
+Esta análise documenta 54 requisitos de QA para os cenários relacionados abaixo, com base nos relatos e nas evidências fornecidas. RF01–RF04 e suas análises históricas foram preservados; RF05–RF20 ampliam a cobertura em 14/11/2026; RF21 acrescenta Avaliações; RF22–RF28 acrescentam Exercícios; RF29–RF33 acrescentam Grupos Musculares; RF34 acrescenta o carregamento do dashboard RF35 acrescenta o cadastro de objetivos de treino e RF38 acrescenta o cadastro de categorias com código automático em 15/11/2026. RF39 acrescenta o cadastro de modalidade em SifitBox – Turmas. RF40 acrescenta a exclusão de turmas e modalidades. RF41 acrescenta o cadastro de turma. RF42 a RF56 acrescentam Pagar.me, Configurações, Despesas Fixas e Relatórios em 15/11/2026. Os critérios abaixo constituem a referência de QA para esses fluxos; não representam validação de uma especificação formal pelo responsável pelo produto.
 
 ## 📋 Visão geral dos requisitos
 
@@ -48,6 +48,24 @@ Esta análise documenta 36 requisitos de QA para os cenários relacionados abaix
 | [RF34](#rf34) | Carregar o dashboard sem falhas de servidor ou requisições redundantes | Alta, proposta | [CT-RF34](Cenario_Teste/CT-RF34_Erro_Servidor_Excesso_Requisicoes.md) |
 | [RF35](#rf35) | Cadastrar objetivo de treino ou informar validação específica | Alta, proposta | [CT-RF35](Cenario_Teste/CT-RF35_Cadastro_Objetivo_Treino.md) |
 | [RF38](#rf38) | Cadastrar categoria com código automático e localizá-la pelos filtros | Média, proposta | [CT-RF38](Cenario_Teste/CT-RF38_Cadastro_Categoria_Codigo_Automatico.md) |
+| [RF39](#rf39) | Cadastrar modalidade e apresentá-la na listagem | Média, proposta | [CT-RF39](Cenario_Teste/CT-RF39_Cadastro_Modalidade.md) |
+| [RF40](#rf40) | Aplicar e comunicar a regra de exclusão de turmas e modalidades | Média, proposta | [CT-RF40](Cenario_Teste/CT-RF40_Exclusao_Turmas_Modalidades.md) |
+| [RF41](#rf41) | Cadastrar turma ou informar visivelmente o dado que impede o envio | Média, proposta | [CT-RF41](Cenario_Teste/CT-RF41_Cadastro_Turma_Sem_Modalidade.md) |
+| [RF42](#rf42) | Solicitar saque e informar o resultado | Alta, proposta | [CT-RF42](Cenario_Teste/CT-RF42_Solicitacao_Saque_PagarMe.md) |
+| [RF43](#rf43) | Criar cobrança pelo painel Pagar.me | Média, proposta | [CT-RF43](Cenario_Teste/CT-RF43_Criacao_Cobranca_PagarMe.md) |
+| [RF44](#rf44) | Salvar as configurações gerais de acesso e presença | Média, proposta | [CT-RF44](Cenario_Teste/CT-RF44_Configuracoes_Home_Salvamento.md) |
+| [RF45](#rf45) | Atualizar Recebimentos e gráfico conforme o período | Média, proposta | [CT-RF45](Cenario_Teste/CT-RF45_Painel_PagarMe_Periodo.md) |
+| [RF46](#rf46) | Filtrar despesas fixas por código e por nome | Média, proposta | [CT-RF46](Cenario_Teste/CT-RF46_Filtros_Despesas_Fixas.md) |
+| [RF47](#rf47) | Cadastrar despesa fixa com uma única gravação | Média, proposta | [CT-RF47](Cenario_Teste/CT-RF47_Cadastro_Despesa_Fixa.md) |
+| [RF48](#rf48) | Excluir despesa fixa com confirmação | Média, proposta | [CT-RF48](Cenario_Teste/CT-RF48_Exclusao_Despesa_Fixa.md) |
+| [RF49](#rf49) | Editar despesa fixa preservando o registro | Média, proposta | [CT-RF49](Cenario_Teste/CT-RF49_Edicao_Despesa_Fixa.md) |
+| [RF50](#rf50) | Gerar o relatório de Matrículas em PDF | Média, proposta | [CT-RF50](Cenario_Teste/CT-RF50_Relatorio_Matriculas.md) |
+| [RF51](#rf51) | Apresentar o valor a receber no relatório de Contas a Receber | Alta, proposta | [CT-RF51](Cenario_Teste/CT-RF51_Relatorio_Contas_Receber.md) |
+| [RF52](#rf52) | Gerar o relatório de Contas a Pagar (Pagas) | Média, proposta | [CT-RF52](Cenario_Teste/CT-RF52_Relatorio_Contas_Pagar_Pagas.md) |
+| [RF53](#rf53) | Gerar o relatório de Avaliações em PDF | Alta, proposta | [CT-RF53](Cenario_Teste/CT-RF53_Relatorio_Avaliacoes_Vazio.md) |
+| [RF54](#rf54) | Gerar o relatório de Clientes em PDF | Alta, proposta | [CT-RF54](Cenario_Teste/CT-RF54_Relatorio_Clientes_Vazio.md) |
+| [RF55](#rf55) | Gerar o relatório de Colaboradores em PDF | Alta, proposta | [CT-RF55](Cenario_Teste/CT-RF55_Relatorio_Colaboradores_Vazio.md) |
+| [RF56](#rf56) | Gerar o relatório de Caixas em PDF | Alta, proposta | [CT-RF56](Cenario_Teste/CT-RF56_Relatorio_Caixas_Vazio.md) |
 
 ---
 
@@ -1046,6 +1064,529 @@ Permanecem fora do cenário gravado: nome vazio, nome duplicado, limites de tama
 
 ---
 
+<a id="rf39"></a>
+
+## RF39 — Cadastrar modalidade em SifitBox – Turmas
+
+| Campo | Descrição |
+| --- | --- |
+| Requisito de QA | O cadastro de uma modalidade deve criar o registro com o nome, a descrição e o status informados, apresentá-lo na listagem de Modalidades e limpar o formulário. |
+| Ator | Usuário autenticado com permissão em SifitBox – Turmas. |
+| Pré-condições | Listagem de Modalidades conhecida; nome de modalidade de teste disponível. |
+| Gatilho | Preencher nome e descrição da modalidade, manter o status Ativo e acionar o botão de envio de Modalidade. |
+| Caso | [CT-RF39](Cenario_Teste/CT-RF39_Cadastro_Modalidade.md) |
+| Situação observada | Aprovado conforme a gravação. `POST /api/sifitbox/modalidades/salvar/1` retorna HTTP 201 com a modalidade de id 4 e status "ativo"; a listagem passa de três para quatro modalidades e o formulário é limpo. |
+| Defeito | Nenhum no fluxo avaliado |
+| Evidências | [Jam](https://jam.dev/c/ee9a133b-d6b1-442d-b4b0-dd87595b7e70) e [Evidências](Evidencias/CT-RF39_Cadastro_Modalidade/README.md). |
+
+### Critérios de aceitação do RF39
+
+1. O formulário permite informar nome, descrição e status e cria a modalidade ao confirmar.
+2. A resposta retorna sucesso e o registro com os dados informados e o status escolhido.
+3. A listagem passa a exibir a nova modalidade e o formulário é limpo.
+4. A modalidade permanece após recarga da página.
+5. Dados inválidos ou ausentes recebem validação específica, sem HTTP 500.
+
+### Pontos a confirmar e limites do RF39
+
+Não foram verificados a persistência após recarga, a mensagem de confirmação, o nome vazio, o nome duplicado e os limites de tamanho. O corpo enviado traz `"id": {}` (objeto vazio), aceito pelo sistema; o contrato da API não foi fornecido. As modalidades anteriores aparecem como "inativo" sob o filtro "Ativo", ponto tratado no [RF40](#rf40) e relacionado ao [RF16](#rf16).
+
+---
+
+<a id="rf40"></a>
+
+## RF40 — Excluir turmas e modalidades conforme a regra de exclusão
+
+| Campo | Descrição |
+| --- | --- |
+| Requisito de QA | A lixeira de turmas e de modalidades deve aplicar a regra de exclusão definida pelo produto (lógica ou física), com confirmação prévia quando exigida, informar o resultado ao usuário e refletir o resultado na listagem conforme o filtro de status selecionado. |
+| Ator | Usuário autenticado com permissão em SifitBox – Turmas. |
+| Pré-condições | Turmas e modalidades de teste com status e vínculos conhecidos; regra de exclusão e de confirmação definida com o produto. |
+| Gatilho | Acionar a lixeira de uma turma ou de uma modalidade na listagem. |
+| Caso | [CT-RF40](Cenario_Teste/CT-RF40_Exclusao_Turmas_Modalidades.md) |
+| Situação observada | A validar — regra ou contexto pendente. Os cliques na lixeira geram `POST turmas/excluir` e `POST modalidades/excluir` com HTTP 200 e `{"erro": false}`; os registros permanecem na listagem com o status "inativo", sem diálogo de confirmação nos quadros consultados. |
+| Defeito | Sem defeito confirmado |
+| Evidências | [Jam](https://jam.dev/c/ee9a133b-d6b1-442d-b4b0-dd87595b7e70) e [Evidências](Evidencias/CT-RF40_Exclusao_Turmas_Modalidades/README.md). |
+
+### Critérios de aceitação do RF40
+
+1. A lixeira aplica a regra de exclusão definida pelo produto, com confirmação prévia quando exigida.
+2. A resposta e a interface informam o resultado de forma compreensível.
+3. A listagem apresenta apenas registros compatíveis com o filtro de status selecionado.
+4. Turmas vinculadas a uma modalidade excluída ou inativada recebem tratamento definido e comunicado.
+5. A ação sobre um registro já inativo tem retorno coerente.
+6. O resultado se mantém após recarga da página.
+
+### Pontos a confirmar e limites do RF40
+
+Não foram confirmados a regra de exclusão lógica, a necessidade de confirmação, a exibição de registros inativos sob o filtro "Ativo", o efeito sobre turmas vinculadas e a persistência após recarga. Os corpos das requisições de exclusão e o filtro "Inativo" não foram inspecionados. O comportamento repete o ponto a validar do [RF16](#rf16). Registrar defeito apenas se houver divergência com a regra definida.
+
+---
+
+<a id="rf41"></a>
+
+## RF41 — Cadastrar turma ou informar o dado que impede o envio
+
+| Campo | Descrição |
+| --- | --- |
+| Requisito de QA | O cadastro de turma deve criar a turma quando todos os dados obrigatórios forem informados; com dado obrigatório ausente (como a modalidade), deve bloquear o envio, indicar de forma visível o campo pendente e não criar registro. |
+| Ator | Usuário autenticado com permissão em SifitBox – Turmas. |
+| Pré-condições | Ao menos uma modalidade ativa; turmas existentes registradas; regra de obrigatoriedade dos campos definida com o produto. |
+| Gatilho | Preencher o formulário de Turma, sem selecionar a modalidade, e acionar o botão de envio de Turma. |
+| Caso | [CT-RF41](Cenario_Teste/CT-RF41_Cadastro_Turma_Sem_Modalidade.md) |
+| Situação observada | Reprovado nas evidências — sem feedback de validação visível. Nas tentativas com formulário vazio e com a modalidade em branco, o envio não gera requisição de criação de turma nem apresenta mensagem; o formulário permanece preenchido e a listagem não muda. |
+| Defeito | [BUG-020](Relatorio-de-Bugs.md#bug-020), em triagem |
+| Evidências | [Jam](https://jam.dev/c/ee9a133b-d6b1-442d-b4b0-dd87595b7e70) e [Evidências](Evidencias/CT-RF41_Cadastro_Turma_Sem_Modalidade/README.md). |
+
+### Critérios de aceitação do RF41
+
+1. O envio de Turma com campo obrigatório vazio é bloqueado e cada campo pendente recebe indicação compreensível.
+2. Nenhum registro vazio ou incompleto é criado.
+3. Com todos os dados válidos, a turma é criada, apresentada na listagem e mantida após recarga.
+4. A ação de envio informa o resultado (sucesso ou impedimento) ao usuário.
+5. O horário de término anterior ou igual ao de início recebe validação específica, conforme a regra do produto.
+
+### Pontos a confirmar e limites do RF41
+
+Não foi confirmado se a modalidade é obrigatória nem se existe validação nativa do navegador, cujo balão normalmente não aparece em gravações de tela. O envio válido, o horário de término igual ou anterior ao de início, o nome vazio e a persistência não foram exercitados. A edição da turma de id 4 gerou `POST turmas/atualizar` com HTTP 200, sem mensagem de confirmação observada. O padrão de ausência de feedback repete o do [RF26](#rf26).
+
+---
+
+<a id="rf42"></a>
+
+## RF42 — Solicitar saque e informar o resultado
+
+| Campo | Descrição |
+| --- | --- |
+| Requisito de QA | A solicitação de saque pelo painel Pagar.me deve registrar o pedido e informar ao usuário o resultado (sucesso ou impedimento), atualizando o saldo quando aplicável. |
+| Ator | Usuário autenticado com acesso ao módulo Pagar.me. |
+| Pré-condições | Conta de pagamento configurada; saldo disponível conhecido; regra de saque definida com o produto. |
+| Gatilho | Acionar Solicitar saque, informar o valor e confirmar. |
+| Caso | [CT-RF42](Cenario_Teste/CT-RF42_Solicitacao_Saque_PagarMe.md) |
+| Situação observada | A validar — regra ou contexto pendente. A confirmação do saque (valor 1000, saldo "R$ --") gera `POST sacar-saldo` com HTTP 200, mas a interface não apresenta mensagem de resultado. |
+| Defeito | Sem defeito confirmado |
+| Evidências | [Jam](https://jam.dev/c/e6e551ef-9196-4c79-b6a2-89747b1e8b33) e [Evidências](Evidencias/CT-RF42_Solicitacao_Saque_PagarMe/README.md). |
+
+### Critérios de aceitação do RF42
+
+1. A solicitação de saque informa o resultado (sucesso ou impedimento) de forma compreensível.
+2. Com saldo indisponível ou insuficiente, o sistema apresenta o impedimento antes ou depois do envio, sem aceitar silenciosamente.
+3. O valor informado é validado (mínimo, máximo e formato).
+4. O saldo e os indicadores são atualizados após uma solicitação bem-sucedida.
+5. A solicitação não é duplicada por cliques repetidos.
+
+### Pontos a confirmar e limites do RF42
+
+O corpo e a resposta da solicitação não foram capturados; não foram confirmados o registro do saque, a regra de saldo e a mensagem de retorno. O saldo indisponível ("R$ --") e a diferença em relação ao cartão Recebimentos são tratados no [RF45](#rf45).
+
+---
+
+<a id="rf43"></a>
+
+## RF43 — Criar cobrança pelo painel Pagar.me
+
+| Campo | Descrição |
+| --- | --- |
+| Requisito de QA | A criação de cobrança pelo painel Pagar.me deve aceitar descrição, valor e método de pagamento, criar a cobrança e informar o sucesso ao usuário. |
+| Ator | Usuário autenticado com acesso ao módulo Pagar.me. |
+| Pré-condições | Conta de pagamento configurada; descrição e valor de teste autorizados. |
+| Gatilho | Acionar Nova cobrança, informar descrição, valor e método e acionar Criar Cobrança. |
+| Caso | [CT-RF43](Cenario_Teste/CT-RF43_Criacao_Cobranca_PagarMe.md) |
+| Situação observada | Aprovado conforme a gravação. `POST criar-cobranca` retorna HTTP 200 e o sistema apresenta "Cobrança criada com sucesso!". |
+| Defeito | Nenhum no fluxo avaliado |
+| Evidências | [Jam](https://jam.dev/c/e6e551ef-9196-4c79-b6a2-89747b1e8b33) e [Evidências](Evidencias/CT-RF43_Criacao_Cobranca_PagarMe/README.md). |
+
+### Critérios de aceitação do RF43
+
+1. O formulário permite informar descrição, valor e método de pagamento.
+2. A criação retorna sucesso e a interface apresenta mensagem compreensível.
+3. A cobrança passa a constar nos registros do módulo (por exemplo, Transações recentes) conforme a regra do produto.
+4. Dados inválidos ou ausentes recebem validação específica.
+5. A cobrança não é duplicada por cliques repetidos.
+
+### Pontos a confirmar e limites do RF43
+
+Não foram verificados a presença da cobrança nos registros, o link gerado, outros métodos, valores inválidos e duplicidade; corpo e resposta da requisição não foram capturados.
+
+---
+
+<a id="rf44"></a>
+
+## RF44 — Salvar as configurações gerais de acesso e presença
+
+| Campo | Descrição |
+| --- | --- |
+| Requisito de QA | As alterações da aba Home de Configurações devem ser salvas com confirmação ao usuário, persistir após recarga, respeitar a faixa válida de cada campo e refletir-se nos cartões de resumo e no menu lateral. |
+| Ator | Usuário autenticado com permissão para alterar as Configurações. |
+| Pré-condições | Valores iniciais registrados; regra de cada opção e do campo de dias definida com o produto. |
+| Gatilho | Alterar as opções e o campo de dias da aba Home e acionar Salvar Configurações. |
+| Caso | [CT-RF44](Cenario_Teste/CT-RF44_Configuracoes_Home_Salvamento.md) |
+| Situação observada | A validar — regra ou contexto pendente. As alterações são refletidas nos cartões e no menu lateral após o envio, sem mensagem de confirmação visível; o campo de dias vai de -120 para 1100 sem validação visível. |
+| Defeito | Sem defeito confirmado |
+| Evidências | [Jam](https://jam.dev/c/e6e551ef-9196-4c79-b6a2-89747b1e8b33) e [Evidências](Evidencias/CT-RF44_Configuracoes_Home_Salvamento/README.md). |
+
+### Critérios de aceitação do RF44
+
+1. O salvamento informa o resultado (sucesso ou erro) de forma compreensível.
+2. As configurações salvas persistem após recarga da página.
+3. O campo "Dias para contar cliente como ausente" rejeita valores fora da faixa definida (incluindo negativos).
+4. O menu lateral e os cartões de resumo refletem as opções salvas.
+5. Cancelar descarta as alterações não salvas.
+
+### Pontos a confirmar e limites do RF44
+
+A mensagem de salvamento, a persistência após recarga, a faixa válida do campo de dias (valor inicial -120 e valor informado 1100) e os corpos das requisições não foram confirmados. As demais abas (Biometria, Avaliação, Aniversário, Pagamento, Integrações e Design) não foram avaliadas.
+
+---
+
+<a id="rf45"></a>
+
+## RF45 — Atualizar Recebimentos e gráfico conforme o período
+
+| Campo | Descrição |
+| --- | --- |
+| Requisito de QA | O painel Pagar.me deve apresentar Recebimentos, variação, gráfico e meios de pagamento correspondentes ao período selecionado, com indicadores de saldo coerentes ou com indicação explícita de indisponibilidade. |
+| Ator | Usuário autenticado com acesso ao módulo Pagar.me. |
+| Pré-condições | Conta de pagamento com movimentação conhecida; regra de apuração dos indicadores definida com o produto. |
+| Gatilho | Selecionar outro período no cartão Recebimentos. |
+| Caso | [CT-RF45](Cenario_Teste/CT-RF45_Painel_PagarMe_Periodo.md) |
+| Situação observada | Reprovado nas evidências. Com "Últimos 7 dias", Recebimentos permanece R$ 38.420,00 e o gráfico é idêntico ao de "Últimos 30 dias"; os indicadores de saldo permanecem "R$ --". |
+| Defeito | [BUG-021](Relatorio-de-Bugs.md#bug-021), em triagem |
+| Evidências | [Jam](https://jam.dev/c/e6e551ef-9196-4c79-b6a2-89747b1e8b33) e [Evidências](Evidencias/CT-RF45_Painel_PagarMe_Periodo/README.md). |
+
+### Critérios de aceitação do RF45
+
+1. O seletor de período atualiza o valor de Recebimentos, a variação, o gráfico e o eixo de datas.
+2. O eixo do gráfico apresenta datas compatíveis com o período selecionado e com a data atual.
+3. Os meios de pagamento correspondem ao período e ao total apresentado.
+4. Os indicadores de saldo apresentam valores quando a conta tem saldo, ou mensagem explícita de indisponibilidade.
+5. Valores de demonstração, se existirem, são identificados como tal.
+
+### Pontos a confirmar e limites do RF45
+
+Não foi confirmado se o painel usa dados reais ou de demonstração; o clique no seletor não consta na cronologia e a leitura do eixo de datas é aproximada. Os corpos das requisições não foram capturados.
+
+---
+
+<a id="rf46"></a>
+
+## RF46 — Filtrar despesas fixas por código e por nome
+
+| Campo | Descrição |
+| --- | --- |
+| Requisito de QA | A busca da tela Despesas Fixas deve apresentar apenas as despesas que atendam aos critérios de código e de nome informados, com o Valor Listado correspondente ao conjunto exibido e restauração da listagem completa ao limpar os critérios. |
+| Ator | Usuário autenticado com acesso a Despesas Fixas. |
+| Pré-condições | Base conhecida, com códigos, nomes, status e recorrências registrados. |
+| Gatilho | Informar código ou nome e, depois, limpar os critérios. |
+| Caso | [CT-RF46](Cenario_Teste/CT-RF46_Filtros_Despesas_Fixas.md) |
+| Situação observada | Aprovado conforme a gravação. O filtro por código "1" lista os códigos 10 a 19 e o filtro por nome "Teste" retorna #5 e #7, com Valor Listado acompanhando o conjunto; os campos limpos restauram a listagem completa. |
+| Defeito | Nenhum no fluxo avaliado |
+| Evidências | [Jam](https://jam.dev/c/a4bac99d-e436-4792-831e-8c3a875272bb) e [Evidências](Evidencias/CT-RF46_Filtros_Despesas_Fixas/README.md). |
+
+### Critérios de aceitação do RF46
+
+1. O filtro por código retorna as despesas cujo código corresponde ao critério.
+2. O filtro por nome retorna as despesas cujo nome contém o critério, sem diferenciar maiúsculas de minúsculas.
+3. O cartão Valor Listado e o rodapé acompanham o conjunto exibido.
+4. A limpeza dos critérios restaura a listagem completa.
+5. Combinações sem correspondência apresentam mensagem explícita de resultado vazio.
+
+### Pontos a confirmar e limites do RF46
+
+A combinação de critérios, o resultado vazio, o filtro por Status e Recorrência com valores específicos e a regra de correspondência do código não foram exercitados. Os filtros não geram requisição de rede, compatível com filtragem local, sem confirmação. O contrato dos cartões não foi fornecido, como no [RF11](#rf11) e no [RF33](#rf33).
+
+---
+
+<a id="rf47"></a>
+
+## RF47 — Cadastrar despesa fixa com uma única gravação
+
+| Campo | Descrição |
+| --- | --- |
+| Requisito de QA | O cadastro de despesa fixa deve criar uma única despesa com os dados informados, atribuir o código, apresentá-la na listagem e atualizar os cartões, sem requisições de criação duplicadas. |
+| Ator | Usuário autenticado com acesso a Despesas Fixas. |
+| Pré-condições | Quantidade de despesas e códigos registrados; nome de teste disponível. |
+| Gatilho | Preencher Nova Despesa e acionar Salvar Despesa. |
+| Caso | [CT-RF47](Cenario_Teste/CT-RF47_Cadastro_Despesa_Fixa.md) |
+| Situação observada | A validar — regra ou contexto pendente. A despesa de código 23 é criada e a listagem passa de 16 para 17 registros, mas um único clique em Salvar Despesa gera dois `POST cria/despesa-fixa` com HTTP 201. |
+| Defeito | Sem defeito confirmado |
+| Evidências | [Jam](https://jam.dev/c/a4bac99d-e436-4792-831e-8c3a875272bb) e [Evidências](Evidencias/CT-RF47_Cadastro_Despesa_Fixa/README.md). |
+
+### Critérios de aceitação do RF47
+
+1. Um único clique em Salvar Despesa gera uma única requisição de criação e um único registro.
+2. O código é atribuído pelo sistema e não duplica um código existente.
+3. A listagem e os cartões de resumo refletem a inclusão.
+4. A mensagem de sucesso ou de erro é apresentada ao usuário.
+5. A despesa permanece após recarga da página.
+
+### Pontos a confirmar e limites do RF47
+
+O corpo e a resposta da segunda requisição não foram capturados; não foi confirmado se houve registro adicional. A persistência após recarga, a mensagem de confirmação e a regra do código não foram verificadas.
+
+---
+
+<a id="rf48"></a>
+
+## RF48 — Excluir despesa fixa com confirmação
+
+| Campo | Descrição |
+| --- | --- |
+| Requisito de QA | A exclusão de despesa fixa deve pedir confirmação, excluir a despesa permitida, remover o registro da listagem e atualizar os cartões de resumo. |
+| Ator | Usuário autenticado com permissão para excluir despesas fixas. |
+| Pré-condições | Despesa de teste e cartões registrados antes da exclusão. |
+| Gatilho | Acionar a lixeira da despesa e confirmar no diálogo. |
+| Caso | [CT-RF48](Cenario_Teste/CT-RF48_Exclusao_Despesa_Fixa.md) |
+| Situação observada | Aprovado conforme a gravação. O diálogo "Deseja excluir a despesa fixa?" é confirmado, `POST deleta/despesa-fixa` retorna HTTP 200 e a listagem passa de 17 para 16 despesas. |
+| Defeito | Nenhum no fluxo avaliado |
+| Evidências | [Jam](https://jam.dev/c/a4bac99d-e436-4792-831e-8c3a875272bb) e [Evidências](Evidencias/CT-RF48_Exclusao_Despesa_Fixa/README.md). |
+
+### Critérios de aceitação do RF48
+
+1. A ação de exclusão apresenta confirmação explícita antes de efetivar a operação.
+2. A exclusão permitida remove o registro da listagem e atualiza os cartões.
+3. A resposta informa sucesso e o resultado se mantém após recarga da página.
+4. Cancelar no diálogo preserva o registro.
+5. Despesas com vínculo impeditivo recebem mensagem específica, sem erro interno.
+
+### Pontos a confirmar e limites do RF48
+
+A persistência após recarga, a natureza da exclusão (física ou lógica), Cancelar e a exclusão com vínculos não foram exercitados.
+
+---
+
+<a id="rf49"></a>
+
+## RF49 — Editar despesa fixa preservando o registro
+
+| Campo | Descrição |
+| --- | --- |
+| Requisito de QA | A edição de despesa fixa deve abrir o formulário com os dados da despesa, atualizar a mesma despesa ao salvar, apresentar a alteração na listagem e não criar registro adicional. |
+| Ator | Usuário autenticado com permissão para editar despesas fixas. |
+| Pré-condições | Despesa de teste com todos os campos registrados antes da edição. |
+| Gatilho | Abrir a despesa, alterar a recorrência e acionar Salvar Despesa. |
+| Caso | [CT-RF49](Cenario_Teste/CT-RF49_Edicao_Despesa_Fixa.md) |
+| Situação observada | Aprovado conforme a gravação. `POST edita/despesa-fixa` (despesa 7, recorrência "7 dias") retorna HTTP 200 e a listagem apresenta "7 Dias" sem alterar a quantidade de despesas. |
+| Defeito | Nenhum no fluxo avaliado |
+| Evidências | [Jam](https://jam.dev/c/a4bac99d-e436-4792-831e-8c3a875272bb) e [Evidências](Evidencias/CT-RF49_Edicao_Despesa_Fixa/README.md). |
+
+### Critérios de aceitação do RF49
+
+1. O formulário de edição é preenchido com todos os dados da despesa, incluindo a recorrência.
+2. Salvar atualiza a mesma despesa, sem criar registro adicional.
+3. A listagem apresenta a nova recorrência e os cartões permanecem coerentes.
+4. A alteração permanece após recarga da página.
+5. Cancelar descarta as alterações.
+
+### Pontos a confirmar e limites do RF49
+
+A persistência após recarga, o pré-preenchimento da recorrência (o quadro de 0:48 mostra o seletor sem valor visível, enquanto a resposta traz "1 Mês"), a mensagem de confirmação e a edição de outros campos não foram verificados.
+
+---
+
+<a id="rf50"></a>
+
+## RF50 — Gerar o relatório de Matrículas em PDF
+
+| Campo | Descrição |
+| --- | --- |
+| Requisito de QA | A geração do relatório de Matrículas deve produzir um PDF válido com as matrículas do período e dos filtros informados, com valor e quantidade de registros coerentes. |
+| Ator | Usuário autenticado com permissão para gerar relatórios. |
+| Pré-condições | Matrículas do período conhecidas. |
+| Gatilho | Selecionar "Matrículas", informar o período e acionar Gerar Relatório. |
+| Caso | [CT-RF50](Cenario_Teste/CT-RF50_Relatorio_Matriculas.md) |
+| Situação observada | Aprovado conforme o PDF. O relatório abre e apresenta uma matrícula (Plano Diário, R$ 20,00) com "Quantidade de registros: 1". |
+| Defeito | Nenhum no fluxo avaliado |
+| Evidências | [Jam](https://jam.dev/c/3b4777a4-e1b0-4038-9b06-26c73669d7d1) e [Evidências](Evidencias/CT-RF50_Relatorio_Matriculas/README.md). |
+
+### Critérios de aceitação do RF50
+
+1. O PDF abre e apresenta cabeçalho, período e colunas do relatório.
+2. Os registros correspondem às matrículas do período e aos filtros informados.
+3. O valor e a quantidade de registros são coerentes com as linhas.
+4. Sem matrículas no período, o relatório apresenta a estrutura vazia explícita.
+5. Os filtros de Plano e de Tipo de Pagto restringem o conteúdo.
+
+### Pontos a confirmar e limites do RF50
+
+O conteúdo não foi conferido com a lista de matrículas do módulo; filtros de plano e de pagamento, mais de um registro e período sem matrículas não foram exercitados.
+
+---
+
+<a id="rf51"></a>
+
+## RF51 — Apresentar o valor a receber no relatório de Contas a Receber
+
+| Campo | Descrição |
+| --- | --- |
+| Requisito de QA | O relatório de Contas a Receber deve apresentar o valor a receber de cada conta do período e dos filtros informados, com totais coerentes com as linhas. |
+| Ator | Usuário autenticado com permissão para gerar relatórios. |
+| Pré-condições | Contas a receber pendentes do período conhecidas, com valores. |
+| Gatilho | Selecionar "Contas a Receber", Status "Pendente", informar o período e acionar Gerar Relatório. |
+| Caso | [CT-RF51](Cenario_Teste/CT-RF51_Relatorio_Contas_Receber.md) |
+| Situação observada | Reprovado nas evidências. O PDF lista três contas pendentes, mas a coluna Valor a Receber apresenta "----" em todas as linhas. |
+| Defeito | [BUG-022](Relatorio-de-Bugs.md#bug-022), em triagem |
+| Evidências | [Jam](https://jam.dev/c/3b4777a4-e1b0-4038-9b06-26c73669d7d1) e [Evidências](Evidencias/CT-RF51_Relatorio_Contas_Receber/README.md). |
+
+### Critérios de aceitação do RF51
+
+1. Cada conta pendente apresenta o valor a receber no relatório.
+2. Os totais do relatório correspondem às linhas apresentadas.
+3. Os valores coincidem com os do módulo Contas a Receber para as mesmas contas.
+4. Rótulos e colunas são legíveis e sem duplicação (por exemplo, "D Vencimento" e "Plano Plano Diário").
+5. Sem valor disponível, o relatório apresenta indicação explícita e não um marcador.
+
+### Pontos a confirmar e limites do RF51
+
+Os valores não foram comparados com o módulo Contas a Receber; a opção Detalhado, outros status e o conteúdo da resposta da requisição não foram exercitados. O rótulo "D Vencimento" e a repetição em "Plano Plano Diário" foram observados sem classificação própria.
+
+---
+
+<a id="rf52"></a>
+
+## RF52 — Gerar o relatório de Contas a Pagar (Pagas)
+
+| Campo | Descrição |
+| --- | --- |
+| Requisito de QA | O relatório de Contas a Pagar (Pagas) deve apresentar as contas pagas do período, com valores bruto e líquido e totalizadores coerentes, ou a estrutura vazia explícita quando não houver pagamentos. |
+| Ator | Usuário autenticado com permissão para gerar relatórios. |
+| Pré-condições | Contas a pagar pagas do período conhecidas. |
+| Gatilho | Selecionar "Contas a Pagar", informar o período e acionar Gerar Relatório. |
+| Caso | [CT-RF52](Cenario_Teste/CT-RF52_Relatorio_Contas_Pagar_Pagas.md) |
+| Situação observada | A validar — regra ou contexto pendente. O PDF abre com a estrutura do relatório, sem linhas e com totalizadores R$ 0,00, coerente com um período sem contas pagas, a confirmar. |
+| Defeito | Sem defeito confirmado |
+| Evidências | [Jam](https://jam.dev/c/3b4777a4-e1b0-4038-9b06-26c73669d7d1) e [Evidências](Evidencias/CT-RF52_Relatorio_Contas_Pagar_Pagas/README.md). |
+
+### Critérios de aceitação do RF52
+
+1. O PDF abre e apresenta cabeçalho, período e colunas do relatório.
+2. As contas pagas do período aparecem com valores bruto e líquido coerentes com o módulo.
+3. Sem contas pagas, o relatório apresenta a estrutura vazia com totalizadores zerados ou mensagem explícita.
+4. Os totalizadores correspondem às linhas apresentadas.
+5. O título do relatório identifica o filtro aplicado (Pagas).
+
+### Pontos a confirmar e limites do RF52
+
+As contas a pagar do período no módulo não foram conferidas; o comportamento com pagamentos e a regra do escopo do filtro "Pagas" não foram exercitados.
+
+---
+
+<a id="rf53"></a>
+
+## RF53 — Gerar o relatório de Avaliações em PDF
+
+| Campo | Descrição |
+| --- | --- |
+| Requisito de QA | A geração do relatório de Avaliações deve produzir um PDF válido para o período e os filtros informados, com os registros do período ou a estrutura vazia explícita, e informar falhas ao usuário. |
+| Ator | Usuário autenticado com permissão para gerar relatórios. |
+| Pré-condições | Período e filtros registrados; base com e sem registros no período conhecida. |
+| Gatilho | Selecionar o tipo "Avaliações", informar o período e acionar Gerar Relatório. |
+| Caso | [CT-RF53](Cenario_Teste/CT-RF53_Relatorio_Avaliacoes_Vazio.md) |
+| Situação observada | Reprovado nas evidências. A requisição retorna HTTP 200, mas o arquivo baixado tem 0 bytes e não abre; nenhuma mensagem de erro foi observada. O defeito é compartilhado com os relatórios de Avaliações, Clientes, Colaboradores e Caixas. |
+| Defeito | [BUG-023](Relatorio-de-Bugs.md#bug-023), em triagem |
+| Evidências | [Jam](https://jam.dev/c/3b4777a4-e1b0-4038-9b06-26c73669d7d1) e [Evidências](Evidencias/CT-RF53_Relatorio_Avaliacoes_Vazio/README.md). |
+
+### Critérios de aceitação do RF53
+
+1. O arquivo gerado é um PDF válido, com tamanho maior que zero, que abre no visualizador.
+2. O relatório apresenta cabeçalho, período, filtros e registros do período.
+3. Sem registros, o relatório apresenta a estrutura com totais zerados ou mensagem explícita, sem arquivo vazio.
+4. Falhas de geração são informadas ao usuário, sem resposta HTTP 200 com arquivo vazio.
+5. O nome e o tipo do arquivo correspondem ao relatório solicitado.
+
+### Pontos a confirmar e limites do RF53
+
+O conteúdo das respostas e a causa não foram capturados. A correspondência entre o arquivo e o tipo é inferida pela ordem dos downloads e dos tipos selecionados no vídeo.
+
+---
+
+<a id="rf54"></a>
+
+## RF54 — Gerar o relatório de Clientes em PDF
+
+| Campo | Descrição |
+| --- | --- |
+| Requisito de QA | A geração do relatório de Clientes deve produzir um PDF válido para o período e os filtros informados, com os registros do período ou a estrutura vazia explícita, e informar falhas ao usuário. |
+| Ator | Usuário autenticado com permissão para gerar relatórios. |
+| Pré-condições | Período e filtros registrados; base com e sem registros no período conhecida. |
+| Gatilho | Selecionar o tipo "Clientes", informar o período e acionar Gerar Relatório. |
+| Caso | [CT-RF54](Cenario_Teste/CT-RF54_Relatorio_Clientes_Vazio.md) |
+| Situação observada | Reprovado nas evidências. A requisição retorna HTTP 200, mas o arquivo baixado tem 0 bytes e não abre; nenhuma mensagem de erro foi observada. O defeito é compartilhado com os relatórios de Avaliações, Clientes, Colaboradores e Caixas. |
+| Defeito | [BUG-023](Relatorio-de-Bugs.md#bug-023), em triagem |
+| Evidências | [Jam](https://jam.dev/c/3b4777a4-e1b0-4038-9b06-26c73669d7d1) e [Evidências](Evidencias/CT-RF54_Relatorio_Clientes_Vazio/README.md). |
+
+### Critérios de aceitação do RF54
+
+1. O arquivo gerado é um PDF válido, com tamanho maior que zero, que abre no visualizador.
+2. O relatório apresenta cabeçalho, período, filtros e registros do período.
+3. Sem registros, o relatório apresenta a estrutura com totais zerados ou mensagem explícita, sem arquivo vazio.
+4. Falhas de geração são informadas ao usuário, sem resposta HTTP 200 com arquivo vazio.
+5. O nome e o tipo do arquivo correspondem ao relatório solicitado.
+
+### Pontos a confirmar e limites do RF54
+
+O conteúdo das respostas e a causa não foram capturados. A correspondência entre o arquivo e o tipo é inferida pela ordem dos downloads e dos tipos selecionados no vídeo.
+
+---
+
+<a id="rf55"></a>
+
+## RF55 — Gerar o relatório de Colaboradores em PDF
+
+| Campo | Descrição |
+| --- | --- |
+| Requisito de QA | A geração do relatório de Colaboradores deve produzir um PDF válido para o período e os filtros informados, com os registros do período ou a estrutura vazia explícita, e informar falhas ao usuário. |
+| Ator | Usuário autenticado com permissão para gerar relatórios. |
+| Pré-condições | Período e filtros registrados; base com e sem registros no período conhecida. |
+| Gatilho | Selecionar o tipo "Colaboradores", informar o período e acionar Gerar Relatório. |
+| Caso | [CT-RF55](Cenario_Teste/CT-RF55_Relatorio_Colaboradores_Vazio.md) |
+| Situação observada | Reprovado nas evidências. A requisição retorna HTTP 200, mas o arquivo baixado tem 0 bytes e não abre; nenhuma mensagem de erro foi observada. O defeito é compartilhado com os relatórios de Avaliações, Clientes, Colaboradores e Caixas. |
+| Defeito | [BUG-023](Relatorio-de-Bugs.md#bug-023), em triagem |
+| Evidências | [Jam](https://jam.dev/c/3b4777a4-e1b0-4038-9b06-26c73669d7d1) e [Evidências](Evidencias/CT-RF55_Relatorio_Colaboradores_Vazio/README.md). |
+
+### Critérios de aceitação do RF55
+
+1. O arquivo gerado é um PDF válido, com tamanho maior que zero, que abre no visualizador.
+2. O relatório apresenta cabeçalho, período, filtros e registros do período.
+3. Sem registros, o relatório apresenta a estrutura com totais zerados ou mensagem explícita, sem arquivo vazio.
+4. Falhas de geração são informadas ao usuário, sem resposta HTTP 200 com arquivo vazio.
+5. O nome e o tipo do arquivo correspondem ao relatório solicitado.
+
+### Pontos a confirmar e limites do RF55
+
+O conteúdo das respostas e a causa não foram capturados. A correspondência entre o arquivo e o tipo é inferida pela ordem dos downloads e dos tipos selecionados no vídeo.
+
+---
+
+<a id="rf56"></a>
+
+## RF56 — Gerar o relatório de Caixas em PDF
+
+| Campo | Descrição |
+| --- | --- |
+| Requisito de QA | A geração do relatório de Caixas deve produzir um PDF válido para o período e os filtros informados, com os registros do período ou a estrutura vazia explícita, e informar falhas ao usuário. |
+| Ator | Usuário autenticado com permissão para gerar relatórios. |
+| Pré-condições | Período e filtros registrados; base com e sem registros no período conhecida. |
+| Gatilho | Selecionar o tipo "Caixas", informar o período e acionar Gerar Relatório. |
+| Caso | [CT-RF56](Cenario_Teste/CT-RF56_Relatorio_Caixas_Vazio.md) |
+| Situação observada | Reprovado nas evidências. A requisição retorna HTTP 200, mas o arquivo baixado tem 0 bytes e não abre; nenhuma mensagem de erro foi observada. O defeito é compartilhado com os relatórios de Avaliações, Clientes, Colaboradores e Caixas. |
+| Defeito | [BUG-023](Relatorio-de-Bugs.md#bug-023), em triagem |
+| Evidências | [Jam](https://jam.dev/c/3b4777a4-e1b0-4038-9b06-26c73669d7d1) e [Evidências](Evidencias/CT-RF56_Relatorio_Caixas_Vazio/README.md). |
+
+### Critérios de aceitação do RF56
+
+1. O arquivo gerado é um PDF válido, com tamanho maior que zero, que abre no visualizador.
+2. O relatório apresenta cabeçalho, período, filtros e registros do período.
+3. Sem registros, o relatório apresenta a estrutura com totais zerados ou mensagem explícita, sem arquivo vazio.
+4. Falhas de geração são informadas ao usuário, sem resposta HTTP 200 com arquivo vazio.
+5. O nome e o tipo do arquivo correspondem ao relatório solicitado.
+
+### Pontos a confirmar e limites do RF56
+
+O conteúdo das respostas e a causa não foram capturados. A correspondência entre o arquivo e o tipo é inferida pela ordem dos downloads e dos tipos selecionados no vídeo.
+
+---
+
 ## 🔗 Rastreabilidade
 
 | Requisito | Cenário / caso | Defeito | Resultado | Evidências |
@@ -1086,6 +1627,24 @@ Permanecem fora do cenário gravado: nome vazio, nome duplicado, limites de tama
 | RF34 | [CT-RF34](Cenario_Teste/CT-RF34_Erro_Servidor_Excesso_Requisicoes.md) | [BUG-018](Relatorio-de-Bugs.md#bug-018), em triagem | Reprovado — múltiplas requisições retornam HTTP 500. | [Jam](https://jam.dev/c/eea58e17-b62f-432b-97b2-b14c14bed555) e [Evidências](Evidencias/CT-RF34_Erro_Servidor_Excesso_Requisicoes/README.md) |
 | RF35 | [CT-RF35](Cenario_Teste/CT-RF35_Cadastro_Objetivo_Treino.md) | [BUG-019](Relatorio-de-Bugs.md#bug-019), em triagem | Reprovado nas evidências; reteste pendente. | [Evidências](Evidencias/CT-RF35_Cadastro_Objetivo_Treino/README.md) e [Jam](https://jam.dev/c/1d474477-2411-4a81-b85c-74207402b783) |
 | RF38 | [CT-RF38](Cenario_Teste/CT-RF38_Cadastro_Categoria_Codigo_Automatico.md) | Nenhum no fluxo avaliado | Aprovado conforme a gravação | [Evidências](Evidencias/CT-RF38_Cadastro_Categoria_Codigo_Automatico/README.md) e [Jam](https://jam.dev/c/be1dbd05-217d-44c3-8a3d-240b7f6344e1) |
+| RF39 | [CT-RF39](Cenario_Teste/CT-RF39_Cadastro_Modalidade.md) | Nenhum no fluxo avaliado | Aprovado conforme a gravação | [Evidências](Evidencias/CT-RF39_Cadastro_Modalidade/README.md) e [Jam](https://jam.dev/c/ee9a133b-d6b1-442d-b4b0-dd87595b7e70) |
+| RF40 | [CT-RF40](Cenario_Teste/CT-RF40_Exclusao_Turmas_Modalidades.md) | Sem defeito confirmado | A validar — regra ou contexto pendente | [Evidências](Evidencias/CT-RF40_Exclusao_Turmas_Modalidades/README.md) e [Jam](https://jam.dev/c/ee9a133b-d6b1-442d-b4b0-dd87595b7e70) |
+| RF41 | [CT-RF41](Cenario_Teste/CT-RF41_Cadastro_Turma_Sem_Modalidade.md) | [BUG-020](Relatorio-de-Bugs.md#bug-020), em triagem | Reprovado nas evidências; reteste pendente. | [Evidências](Evidencias/CT-RF41_Cadastro_Turma_Sem_Modalidade/README.md) e [Jam](https://jam.dev/c/ee9a133b-d6b1-442d-b4b0-dd87595b7e70) |
+| RF42 | [CT-RF42](Cenario_Teste/CT-RF42_Solicitacao_Saque_PagarMe.md) | Sem defeito confirmado | A validar — regra ou contexto pendente | [Evidências](Evidencias/CT-RF42_Solicitacao_Saque_PagarMe/README.md) e [Jam](https://jam.dev/c/e6e551ef-9196-4c79-b6a2-89747b1e8b33) |
+| RF43 | [CT-RF43](Cenario_Teste/CT-RF43_Criacao_Cobranca_PagarMe.md) | Nenhum no fluxo avaliado | Aprovado conforme a gravação | [Evidências](Evidencias/CT-RF43_Criacao_Cobranca_PagarMe/README.md) e [Jam](https://jam.dev/c/e6e551ef-9196-4c79-b6a2-89747b1e8b33) |
+| RF44 | [CT-RF44](Cenario_Teste/CT-RF44_Configuracoes_Home_Salvamento.md) | Sem defeito confirmado | A validar — regra ou contexto pendente | [Evidências](Evidencias/CT-RF44_Configuracoes_Home_Salvamento/README.md) e [Jam](https://jam.dev/c/e6e551ef-9196-4c79-b6a2-89747b1e8b33) |
+| RF45 | [CT-RF45](Cenario_Teste/CT-RF45_Painel_PagarMe_Periodo.md) | [BUG-021](Relatorio-de-Bugs.md#bug-021), em triagem | Reprovado nas evidências; reteste pendente. | [Evidências](Evidencias/CT-RF45_Painel_PagarMe_Periodo/README.md) e [Jam](https://jam.dev/c/e6e551ef-9196-4c79-b6a2-89747b1e8b33) |
+| RF46 | [CT-RF46](Cenario_Teste/CT-RF46_Filtros_Despesas_Fixas.md) | Nenhum no fluxo avaliado | Aprovado conforme a gravação | [Evidências](Evidencias/CT-RF46_Filtros_Despesas_Fixas/README.md) e [Jam](https://jam.dev/c/a4bac99d-e436-4792-831e-8c3a875272bb) |
+| RF47 | [CT-RF47](Cenario_Teste/CT-RF47_Cadastro_Despesa_Fixa.md) | Sem defeito confirmado | A validar — regra ou contexto pendente | [Evidências](Evidencias/CT-RF47_Cadastro_Despesa_Fixa/README.md) e [Jam](https://jam.dev/c/a4bac99d-e436-4792-831e-8c3a875272bb) |
+| RF48 | [CT-RF48](Cenario_Teste/CT-RF48_Exclusao_Despesa_Fixa.md) | Nenhum no fluxo avaliado | Aprovado conforme a gravação | [Evidências](Evidencias/CT-RF48_Exclusao_Despesa_Fixa/README.md) e [Jam](https://jam.dev/c/a4bac99d-e436-4792-831e-8c3a875272bb) |
+| RF49 | [CT-RF49](Cenario_Teste/CT-RF49_Edicao_Despesa_Fixa.md) | Nenhum no fluxo avaliado | Aprovado conforme a gravação | [Evidências](Evidencias/CT-RF49_Edicao_Despesa_Fixa/README.md) e [Jam](https://jam.dev/c/a4bac99d-e436-4792-831e-8c3a875272bb) |
+| RF50 | [CT-RF50](Cenario_Teste/CT-RF50_Relatorio_Matriculas.md) | Nenhum no fluxo avaliado | Aprovado conforme a gravação | [Evidências](Evidencias/CT-RF50_Relatorio_Matriculas/README.md) e [Jam](https://jam.dev/c/3b4777a4-e1b0-4038-9b06-26c73669d7d1) |
+| RF51 | [CT-RF51](Cenario_Teste/CT-RF51_Relatorio_Contas_Receber.md) | [BUG-022](Relatorio-de-Bugs.md#bug-022), em triagem | Reprovado nas evidências; reteste pendente. | [Evidências](Evidencias/CT-RF51_Relatorio_Contas_Receber/README.md) e [Jam](https://jam.dev/c/3b4777a4-e1b0-4038-9b06-26c73669d7d1) |
+| RF52 | [CT-RF52](Cenario_Teste/CT-RF52_Relatorio_Contas_Pagar_Pagas.md) | Sem defeito confirmado | A validar — regra ou contexto pendente | [Evidências](Evidencias/CT-RF52_Relatorio_Contas_Pagar_Pagas/README.md) e [Jam](https://jam.dev/c/3b4777a4-e1b0-4038-9b06-26c73669d7d1) |
+| RF53 | [CT-RF53](Cenario_Teste/CT-RF53_Relatorio_Avaliacoes_Vazio.md) | [BUG-023](Relatorio-de-Bugs.md#bug-023), em triagem | Reprovado nas evidências; reteste pendente. | [Evidências](Evidencias/CT-RF53_Relatorio_Avaliacoes_Vazio/README.md) e [Jam](https://jam.dev/c/3b4777a4-e1b0-4038-9b06-26c73669d7d1) |
+| RF54 | [CT-RF54](Cenario_Teste/CT-RF54_Relatorio_Clientes_Vazio.md) | [BUG-023](Relatorio-de-Bugs.md#bug-023), em triagem | Reprovado nas evidências; reteste pendente. | [Evidências](Evidencias/CT-RF54_Relatorio_Clientes_Vazio/README.md) e [Jam](https://jam.dev/c/3b4777a4-e1b0-4038-9b06-26c73669d7d1) |
+| RF55 | [CT-RF55](Cenario_Teste/CT-RF55_Relatorio_Colaboradores_Vazio.md) | [BUG-023](Relatorio-de-Bugs.md#bug-023), em triagem | Reprovado nas evidências; reteste pendente. | [Evidências](Evidencias/CT-RF55_Relatorio_Colaboradores_Vazio/README.md) e [Jam](https://jam.dev/c/3b4777a4-e1b0-4038-9b06-26c73669d7d1) |
+| RF56 | [CT-RF56](Cenario_Teste/CT-RF56_Relatorio_Caixas_Vazio.md) | [BUG-023](Relatorio-de-Bugs.md#bug-023), em triagem | Reprovado nas evidências; reteste pendente. | [Evidências](Evidencias/CT-RF56_Relatorio_Caixas_Vazio/README.md) e [Jam](https://jam.dev/c/3b4777a4-e1b0-4038-9b06-26c73669d7d1) |
 
 ---
 
@@ -1173,6 +1732,114 @@ Com RF35, a análise passa a cobrir 35 requisitos. A tela Objetivos Treino acres
 RF38 utiliza os painéis Info, Console (atividade do usuário), Network e Actions do Jam "Categorias Crossfit", lidos diretamente, o corpo da requisição e da resposta de criação, os cabeçalhos de resposta e os quadros de 0:02, 0:08, 0:14, 0:27, 0:28, 0:32 e 0:36. Foram registrados o filtro por nome e por código, a tentativa de digitar no campo Código, a criação com HTTP 201, o código 9 atribuído e a localização do registro pelo filtro. As capturas e a cronologia estão na [pasta local de evidências](Evidencias/CT-RF38_Cadastro_Categoria_Codigo_Automatico/README.md). Não houve nova execução, acesso ao código ou ao banco, nem reteste.
 
 Com RF38, a análise passa a cobrir 36 requisitos documentados (RF01–RF35 e RF38). A tela Categorias Crossfit acrescenta uma aprovação limitada aos exemplos gravados.
+
+### Base da análise do RF39 — revisão de 15/11/2026
+
+RF39 utiliza os painéis Info, Console (atividade do usuário), Network e Actions do Jam "SifitBox – Turmas", o corpo da requisição e da resposta de criação e os quadros de 1:17, 1:28 e 1:35. Foram registrados o `POST modalidades/salvar` com HTTP 201, a modalidade de id 4 e a atualização da listagem. As capturas e a cronologia estão na [pasta local de evidências](Evidencias/CT-RF39_Cadastro_Modalidade/README.md). Não houve nova execução, acesso ao código ou ao banco, nem reteste.
+
+Com RF39, a análise passa a cobrir 37 requisitos documentados. A tela SifitBox – Turmas acrescenta uma aprovação limitada ao exemplo gravado.
+
+### Base da análise do RF40 — revisão de 15/11/2026
+
+RF40 utiliza os painéis Info, Console, Network e Actions do Jam "SifitBox – Turmas", os cabeçalhos e a resposta das exclusões, as listas retornadas (todas as turmas e modalidades com status "inativo") e os quadros de 1:00 e 1:05. Foram registrados quatro `POST turmas/excluir` e cinco `POST modalidades/excluir`, todos com HTTP 200. Não houve nova execução, acesso ao código ou ao banco, nem reteste. A regra permanece a confirmar.
+
+Com RF40, a análise passa a cobrir 38 requisitos documentados. SifitBox – Turmas acrescenta um ponto a validar, sem defeito confirmado.
+
+### Base da análise do RF41 — revisão de 15/11/2026
+
+RF41 utiliza os painéis Info, Console (atividade do usuário), Network e Actions do Jam "SifitBox – Turmas", o corpo da requisição e da resposta de atualização e os quadros de 0:19, 0:58, 1:29, 1:33 e 1:35. Nas 35 entradas de rede não há requisição de criação de turma. A classificação não confirma que a modalidade seja obrigatória nem que a validação esteja ausente. Não houve nova execução, acesso ao código ou ao banco, nem reteste. BUG-020 está em triagem.
+
+Com RF41, a análise passa a cobrir 39 requisitos documentados. SifitBox – Turmas acrescenta uma reprovação, vinculada ao BUG-020, em triagem.
+
+### Base da análise do RF42 — revisão de 15/11/2026
+
+RF42 utiliza os painéis Info, Console, Network e Actions do Jam "Pagar.me" e os quadros de 0:00, 0:04 e 0:05. Foram registrados a requisição de saque com HTTP 200 e a ausência de mensagem de resultado. Corpos de requisição e de resposta indisponíveis. Não houve nova execução, acesso ao código ou ao banco, nem reteste.
+
+Com RF42, a análise passa a cobrir 40 requisitos documentados. O CT-RF42 acrescenta um ponto a validar, sem defeito confirmado.
+
+### Base da análise do RF43 — revisão de 15/11/2026
+
+RF43 utiliza os painéis Info, Console, Network e Actions do Jam "Pagar.me" e os quadros de 0:29 e 0:31. Foram registrados o formulário preenchido, a requisição de criação com HTTP 200 e a mensagem de sucesso. Corpos de requisição e de resposta indisponíveis. Não houve nova execução, acesso ao código ou ao banco, nem reteste.
+
+Com RF43, a análise passa a cobrir 41 requisitos documentados. O CT-RF43 acrescenta uma aprovação limitada ao exemplo gravado.
+
+### Base da análise do RF44 — revisão de 15/11/2026
+
+RF44 utiliza os painéis Info, Console, Network e Actions do Jam "Pagar.me" (trecho de Configurações) e os quadros de 0:33, 0:41, 0:46 e 0:56. Foram registrados as alterações, o valor 1100 no campo de dias, a mudança do menu lateral e a ausência de mensagem de confirmação. Não houve nova execução, acesso ao código ou ao banco, nem reteste.
+
+Com RF44, a análise passa a cobrir 42 requisitos documentados. O CT-RF44 acrescenta um ponto a validar, sem defeito confirmado.
+
+### Base da análise do RF45 — revisão de 15/11/2026
+
+RF45 utiliza os painéis Info, Console, Network e Actions do Jam "Pagar.me" e os quadros de 0:00 e 0:25. A comparação entre os dois quadros mostra o mesmo valor e o mesmo gráfico com períodos diferentes. A leitura do eixo de datas é aproximada. Não houve nova execução, acesso ao código ou ao banco, nem reteste. BUG-021 está em triagem.
+
+Com RF45, a análise passa a cobrir 43 requisitos documentados. O CT-RF45 acrescenta uma reprovação, vinculada ao BUG-021, em triagem.
+
+### Base da análise do RF46 — revisão de 15/11/2026
+
+RF46 utiliza os painéis Info, Console, Network e Actions do Jam "Despesas Fixas" e os quadros de 0:03, 0:11, 0:19 e 0:42. Foram registrados os filtros por código e por nome, o cartão Valor Listado e a ausência de requisição nos filtros. Não houve nova execução, acesso ao código ou ao banco, nem reteste.
+
+Com RF46, a análise passa a cobrir 44 requisitos documentados. O CT-RF46 acrescenta uma aprovação limitada ao exemplo gravado.
+
+### Base da análise do RF47 — revisão de 15/11/2026
+
+RF47 utiliza os painéis Info, Console, Network e Actions do Jam "Despesas Fixas", o corpo e a resposta da primeira requisição de criação e os quadros de 0:34, 0:36 e 0:42. Foram registrados duas requisições de criação com HTTP 201 e um único registro novo visível. A segunda requisição não teve corpo nem resposta capturados. Não houve nova execução, acesso ao código ou ao banco, nem reteste.
+
+Com RF47, a análise passa a cobrir 45 requisitos documentados. O CT-RF47 acrescenta um ponto a validar, sem defeito confirmado.
+
+### Base da análise do RF48 — revisão de 15/11/2026
+
+RF48 utiliza os painéis Info, Console, Network e Actions do Jam "Despesas Fixas", o corpo e a resposta da exclusão e os quadros de 0:42, 0:44 e 0:51. Foram registrados o diálogo de confirmação, a requisição de exclusão com HTTP 200 e a atualização da listagem. Não houve nova execução, acesso ao código ou ao banco, nem reteste.
+
+Com RF48, a análise passa a cobrir 46 requisitos documentados. O CT-RF48 acrescenta uma aprovação limitada ao exemplo gravado.
+
+### Base da análise do RF49 — revisão de 15/11/2026
+
+RF49 utiliza os painéis Info, Console, Network e Actions do Jam "Despesas Fixas", o corpo e a resposta de seleção e de edição e os quadros de 0:48 e 0:51. Foram registrados a requisição de edição com HTTP 200 e a nova recorrência na listagem. Não houve nova execução, acesso ao código ou ao banco, nem reteste.
+
+Com RF49, a análise passa a cobrir 47 requisitos documentados. O CT-RF49 acrescenta uma aprovação limitada ao exemplo gravado.
+
+### Base da análise do RF50 — revisão de 15/11/2026
+
+RF50 utiliza os painéis Info, Console e Network do Jam "Relatórios", o quadro de 0:38 e o conteúdo do PDF baixado. O PDF foi identificado pelo conteúdo. Não houve nova execução, acesso ao código ou ao banco, nem reteste.
+
+Com RF50, a análise passa a cobrir 48 requisitos documentados. O CT-RF50 acrescenta uma aprovação limitada ao exemplo gravado.
+
+### Base da análise do RF51 — revisão de 15/11/2026
+
+RF51 utiliza os painéis Info, Console e Network do Jam "Relatórios", o quadro de 0:43 e o conteúdo do PDF baixado, com três contas e o valor a receber ausente. Não houve nova execução, acesso ao código ou ao banco, nem reteste. BUG-022 está em triagem.
+
+Com RF51, a análise passa a cobrir 49 requisitos documentados. O CT-RF51 acrescenta uma reprovação, vinculada ao BUG-022, em triagem.
+
+### Base da análise do RF52 — revisão de 15/11/2026
+
+RF52 utiliza os painéis Info, Console e Network do Jam "Relatórios", o quadro de 0:48 e o conteúdo do PDF baixado, sem linhas e com totalizadores zerados. Não houve nova execução, acesso ao código ou ao banco, nem reteste.
+
+Com RF52, a análise passa a cobrir 50 requisitos documentados. O CT-RF52 acrescenta um ponto a validar, sem defeito confirmado.
+
+### Base da análise do RF53 — revisão de 15/11/2026
+
+RF53 utiliza os painéis Info, Console e Network do Jam "Relatórios", os quadros do vídeo e os arquivos baixados (tamanho zero e carimbos de hora). A atividade do usuário não foi registrada no Console do Jam. A correspondência do arquivo com o tipo é inferida. Não houve nova execução, acesso ao código ou ao banco, nem reteste. BUG-023 está em triagem.
+
+Com RF53, a análise passa a cobrir 51 requisitos documentados. O CT-RF53 acrescenta uma reprovação, vinculada ao BUG-023, em triagem.
+
+### Base da análise do RF54 — revisão de 15/11/2026
+
+RF54 utiliza os painéis Info, Console e Network do Jam "Relatórios", os quadros do vídeo e os arquivos baixados (tamanho zero e carimbos de hora). A atividade do usuário não foi registrada no Console do Jam. A correspondência do arquivo com o tipo é inferida. Não houve nova execução, acesso ao código ou ao banco, nem reteste. BUG-023 está em triagem.
+
+Com RF54, a análise passa a cobrir 52 requisitos documentados. O CT-RF54 acrescenta uma reprovação, vinculada ao BUG-023, em triagem.
+
+### Base da análise do RF55 — revisão de 15/11/2026
+
+RF55 utiliza os painéis Info, Console e Network do Jam "Relatórios", os quadros do vídeo e os arquivos baixados (tamanho zero e carimbos de hora). A atividade do usuário não foi registrada no Console do Jam. A correspondência do arquivo com o tipo é inferida. Não houve nova execução, acesso ao código ou ao banco, nem reteste. BUG-023 está em triagem.
+
+Com RF55, a análise passa a cobrir 53 requisitos documentados. O CT-RF55 acrescenta uma reprovação, vinculada ao BUG-023, em triagem.
+
+### Base da análise do RF56 — revisão de 15/11/2026
+
+RF56 utiliza os painéis Info, Console e Network do Jam "Relatórios", os quadros do vídeo e os arquivos baixados (tamanho zero e carimbos de hora). A atividade do usuário não foi registrada no Console do Jam. A correspondência do arquivo com o tipo é inferida. Não houve nova execução, acesso ao código ou ao banco, nem reteste. BUG-023 está em triagem.
+
+Com RF56, a análise passa a cobrir 54 requisitos documentados. O CT-RF56 acrescenta uma reprovação, vinculada ao BUG-023, em triagem.
 
 ---
 

@@ -1,16 +1,22 @@
 # 🐞 Relatório de Bugs — SIFIT
 
-**Escopo:** defeitos de 35 casos documentados entre CT-RF01 e CT-RF35: recuperação, Perfil, Clientes, financeiro, página inicial e dashboard, tema, modalidades, categorias, avaliações, exercícios, grupos musculares e objetivos de treino.
+**Escopo:** defeitos de 54 casos documentados (CT-RF01–CT-RF35 e CT-RF38–CT-RF56): recuperação, Perfil, Clientes, financeiro, página inicial e dashboard, tema, modalidades, categorias, avaliações, exercícios, grupos musculares, objetivos de treino, SifitBox – Turmas, Pagar.me, configurações, despesas fixas e relatórios.
 
 **Ambientes:** CT-RF01 em https://sifitalfa.centrion.com.br/login; CT-RF02_ERRO em https://sifit.centrion.com.br/profile. CT-RF03: URL do frontend não confirmada; backend informado em `https://backendsifit.centrion.com.br/api/clientesPorNome/1`.
 
 **Datas das gravações do Jam:** CT-RF01 em 23/10/2026; CT-RF02_ERRO em 22/10/2026 às 21:45 BRT; CT-RF03 não confirmada.
 
-**Atualização documental:** 15/11/2026 — 19 defeitos registrados: 10 abertos (BUG-001 a BUG-010) e 9 em triagem (BUG-011 a BUG-019). BUG-019 registra o HTTP 500 no cadastro de objetivo de treino, sem causa técnica confirmada. As análises anteriores foram preservadas.
+**Atualização documental:** 15/11/2026 — 23 defeitos registrados: 10 abertos (BUG-001 a BUG-010) e 13 em triagem (BUG-011 a BUG-023). BUG-019 registra o HTTP 500 no cadastro de objetivo de treino e BUG-020 a ausência de retorno visível no cadastro de turma sem modalidade, ambos sem causa técnica confirmada. As análises anteriores foram preservadas.
 
 **Padronização documental:** 13/11/2026, sem alteração do status dos defeitos.
 
 **Caso aprovado incluído em 13/11/2026:** [CT-RF04_loginComSucesso](Cenario_Teste/CT-RF04_loginComSucesso.md), vinculado ao RF04, não gerou defeito para o fluxo avaliado. O [Jam de login](https://jam.dev/c/5e4a28be-4e80-43d3-9587-1b113723cc38) mostra acesso ao dashboard após autenticação. Essa aprovação não altera os três bugs existentes; resultados e limites constam no [relatório dos testes](Relatorio%20dos%20testes.md).
+
+**Gravação de CT-RF42–CT-RF45:** 15/11/2026, Pagar.me e Configurações, 19:06 BRT, Chrome 157.0.8103.78 / Windows 11; uma única gravação; evidência e limites no BUG-021.
+
+**Gravação de CT-RF50–CT-RF56:** 15/11/2026, Relatórios, 19:09 BRT, Chrome 157.0.8103.78 / Windows 11; uma única gravação e oito arquivos PDF baixados; evidência e limites no BUG-022 e no BUG-023.
+
+**Gravação de CT-RF39–CT-RF41:** 15/11/2026, SifitBox – Turmas, 18:51 BRT, Chrome 157.0.8103.78 / Windows 11; uma única gravação; evidência e limites no BUG-020.
 
 **Gravação de CT-RF35:** 15/11/2026, Objetivos Treino, 18:13 BRT, Chrome 157.0.8103.78 / Windows 11; evidência e limites no BUG-019.
 
@@ -41,8 +47,12 @@
 | [BUG-017](#bug-017) | Imagens dos grupos musculares não são exibidas e retornam HTTP 422 | Média / Média, propostas | Em triagem — causa não determinada | [CT-RF30](Cenario_Teste/CT-RF30_Imagens_GruposMusculares.md) |
 | [BUG-018](#bug-018) | Dashboard apresenta múltiplos HTTP 500 durante o carregamento | Alta / Alta, propostas | Em triagem — causa não determinada | [CT-RF34](Cenario_Teste/CT-RF34_Erro_Servidor_Excesso_Requisicoes.md) |
 | [BUG-019](#bug-019) | Cadastro de objetivo de treino retorna HTTP 500 | Alta / Alta, propostas | Em triagem — causa não determinada | [CT-RF35](Cenario_Teste/CT-RF35_Cadastro_Objetivo_Treino.md) |
+| [BUG-020](#bug-020) | Cadastro de turma sem modalidade não apresenta retorno visível | Média / Alta, propostas | Em triagem — validação nativa não confirmada | [CT-RF41](Cenario_Teste/CT-RF41_Cadastro_Turma_Sem_Modalidade.md) |
+| [BUG-021](#bug-021) | Painel Pagar.me mantém Recebimentos e gráfico ao trocar o período | Média / Média, propostas | Em triagem — dados reais ou de demonstração não confirmados | [CT-RF45](Cenario_Teste/CT-RF45_Painel_PagarMe_Periodo.md) |
+| [BUG-022](#bug-022) | Relatório de Contas a Receber exibe "----" em Valor a Receber | Alta / Alta, propostas | Em triagem — origem do valor e comparação com o módulo não confirmadas | [CT-RF51](Cenario_Teste/CT-RF51_Relatorio_Contas_Receber.md) |
+| [BUG-023](#bug-023) | Relatórios de Avaliações, Clientes, Colaboradores e Caixas geram arquivo PDF vazio (0 bytes) | Alta / Alta, propostas | Em triagem — correspondência dos arquivos inferida; causa não determinada | [CT-RF53](Cenario_Teste/CT-RF53_Relatorio_Avaliacoes_Vazio.md), [CT-RF54](Cenario_Teste/CT-RF54_Relatorio_Clientes_Vazio.md), [CT-RF55](Cenario_Teste/CT-RF55_Relatorio_Colaboradores_Vazio.md) e [CT-RF56](Cenario_Teste/CT-RF56_Relatorio_Caixas_Vazio.md) |
 
-BUG-001–BUG-010 aguardam correção e reteste. BUG-011–BUG-019 aguardam confirmação das premissas e triagem antes do encaminhamento de correção. As causas técnicas permanecem não confirmadas; o BUG-003 se apoia no relato e nas capturas fornecidos, com os limites registrados no caso.
+BUG-001–BUG-010 aguardam correção e reteste. BUG-011–BUG-023 aguardam confirmação das premissas e triagem antes do encaminhamento de correção. As causas técnicas permanecem não confirmadas; o BUG-003 se apoia no relato e nas capturas fornecidos, com os limites registrados no caso.
 
 ---
 
@@ -902,6 +912,192 @@ O comportamento repete a assinatura de [BUG-009](#bug-009), [BUG-010](#bug-010),
 
 ---
 
+<a id="bug-020"></a>
+
+## BUG-020 — Cadastro de turma sem modalidade não apresenta retorno visível
+
+| Campo | Descrição |
+| --- | --- |
+| Status | Em triagem — validação nativa do navegador e obrigatoriedade da modalidade não confirmadas; reteste pendente. |
+| Severidade / prioridade | Média / Alta, propostas para triagem. |
+| Módulo | SifitBox / Turmas recorrentes / Cadastro |
+| Requisitos | [RF41](Analise%20de%20requisitos.md#rf41) |
+| Casos | [CT-RF41](Cenario_Teste/CT-RF41_Cadastro_Turma_Sem_Modalidade.md) |
+| Data da evidência / revisão | 15/11/2026, 18:51 BRT; sem nova execução. |
+| Página | https://sifit.centrion.com.br/sifitbox/turmas |
+| Ambiente | Chrome 157.0.8103.78 / Windows (x86) 11, janela 1920 × 911; versão e zoom não confirmados. |
+| Frequência conhecida | Um registro do Jam, com tentativas de envio em 0:17–0:20, 1:28 e 1:33; recorrência não determinada. |
+
+### Pré-condições e reprodução
+
+**[CT-RF41](Cenario_Teste/CT-RF41_Cadastro_Turma_Sem_Modalidade.md):** Sessão autenticada com acesso a SifitBox – Turmas, ao menos uma modalidade ativa e turmas existentes registradas.
+
+1. Acessar SifitBox – Turmas com o painel de rede aberto e registrar a listagem de turmas.
+2. No formulário de Turma, informar o nome "teste", os horários, os dias da semana e as vagas, mantendo o seletor Modalidade em branco.
+3. Acionar o botão de envio de Turma.
+4. Observar mensagens, foco, listagem e a rede.
+
+### Esperado e obtido
+
+| Caso | Esperado | Obtido |
+| --- | --- | --- |
+| CT-RF41 | Bloquear o envio, indicar de forma visível o campo pendente e não criar a turma. | Nenhuma mensagem de validação visível e nenhuma requisição de criação de turma; o formulário permanece preenchido e a listagem mantém as quatro turmas. |
+
+**Impacto:** o usuário não sabe se o envio foi aceito, por que a turma não foi criada nem qual dado corrigir, e pode repetir a tentativa sem compreender o impedimento.
+
+### Evidências técnicas
+
+- [Jam](https://jam.dev/c/ee9a133b-d6b1-442d-b4b0-dd87595b7e70): cinco cliques de envio com os formulários vazios em 0:17–0:20 (cursor sobre o botão Turma em 0:19) e cliques de envio com o formulário de Turma preenchido e a modalidade em branco em 1:28 e 1:33, sem mensagem visível.
+- Rede: 35 entradas, sem requisição de criação de turma; o único POST de criação é `modalidades/salvar` (HTTP 201), de outro fluxo.
+- [Formulário em 1:29](Evidencias/CT-RF41_Cadastro_Turma_Sem_Modalidade/formulario_turma_01-29.png), [formulário em 1:33](Evidencias/CT-RF41_Cadastro_Turma_Sem_Modalidade/formulario_turma_01-33.png), [listagens em 1:35](Evidencias/CT-RF41_Cadastro_Turma_Sem_Modalidade/lista_apos_tentativa_01-35.png) e [Evidências](Evidencias/CT-RF41_Cadastro_Turma_Sem_Modalidade/README.md).
+
+### Análise, limites e encaminhamento
+
+A ausência de requisição é compatível com validação no cliente (por exemplo, campo obrigatório com validação nativa do navegador), cujo balão normalmente não aparece em gravações de tela; nesse caso o defeito se reduz à falta de indicação própria do sistema, ou deixa de existir. Também é compatível com um envio que não dispara a ação. Não foi confirmado se a modalidade é obrigatória, qual botão foi acionado em 1:17 e em 1:28, nem a causa. O padrão repete o de [BUG-013](#bug-013) (campos obrigatórios vazios sem feedback), em outro módulo. O horário de início igual ao de término em 1:28 não foi tratado como causa.
+
+**Reteste:** reproduzir com a captura de rede preparada e a gravação da tela, confirmar a regra de obrigatoriedade, o foco e as mensagens, enviar a turma válida e conferir a criação e a persistência após recarga. Manter em triagem até nova evidência em versão identificada.
+
+---
+
+<a id="bug-021"></a>
+
+## BUG-021 — Painel Pagar.me mantém Recebimentos e gráfico ao trocar o período
+
+| Campo | Descrição |
+| --- | --- |
+| Status | Em triagem — causa não determinada; reteste pendente após correção. |
+| Severidade / prioridade | Média / Média, propostas para triagem. |
+| Módulo | Financeiro / Pagar.me / Painel |
+| Requisitos | [RF45](Analise%20de%20requisitos.md#rf45) |
+| Casos | [CT-RF45](Cenario_Teste/CT-RF45_Painel_PagarMe_Periodo.md) |
+| Data da evidência / revisão | 15/11/2026, 19:06 BRT; sem nova execução. |
+| Página | https://sifit.centrion.com.br/pagarme |
+| Ambiente | Chrome 157.0.8103.78 / Windows (x86) 11, janela 1920 × 911; versão e zoom não confirmados. |
+| Frequência conhecida | Um registro do Jam; recorrência não determinada. |
+
+### Pré-condições e reprodução
+
+**[CT-RF45](Cenario_Teste/CT-RF45_Painel_PagarMe_Periodo.md):** Sessão autenticada com acesso ao módulo Pagar.me e conta de pagamento com movimentação conhecida nos últimos 30 e 7 dias.
+
+1. Acessar o painel Pagar.me com o painel de rede aberto e registrar Recebimentos, o gráfico e os meios de pagamento em "Últimos 30 dias".
+2. Selecionar "Últimos 7 dias" no cartão Recebimentos.
+3. Comparar o valor, a variação, o gráfico e os meios de pagamento.
+4. Conferir os indicadores de saldo (Disponível para saque, Em processamento, Recebíveis futuros e Recebido no mês).
+
+### Esperado e obtido
+
+| Esperado | Obtido |
+| --- | --- |
+| Ao trocar o período, o valor de Recebimentos, o gráfico e o eixo de datas passam a representar o novo período, de forma coerente com os demais indicadores. | Com "Últimos 7 dias", Recebimentos permanece R$ 38.420,00 e o gráfico é idêntico ao de "Últimos 30 dias"; os indicadores de saldo permanecem "R$ --". |
+
+**Impacto:** O usuário não consegue analisar recebimentos por período e pode tomar decisões com base em valores que não correspondem ao período escolhido. O painel não distingue dados reais de dados de demonstração.
+
+### Evidências técnicas
+
+- [Jam — Pagar.me](https://jam.dev/c/e6e551ef-9196-4c79-b6a2-89747b1e8b33): quadro de 0:00 (período "Últimos 30 dias", Recebimentos R$ 38.420,00) e quadro de 0:25 (período "Últimos 7 dias", mesmo valor e mesmo gráfico); grupos repetidos de `POST` ver-saldo, pagarme, recebiveis e transacoes (HTTP 200) sem corpo capturado.
+- [Painel em 0:00](Evidencias/CT-RF45_Painel_PagarMe_Periodo/painel_00-00.png), [painel em 0:25](Evidencias/CT-RF45_Painel_PagarMe_Periodo/painel_periodo_7dias_00-25.png) e [Evidências](Evidencias/CT-RF45_Painel_PagarMe_Periodo/README.md).
+
+### Análise, limites e encaminhamento
+
+O valor e o gráfico idênticos em períodos diferentes são compatíveis com dados de demonstração ou com falha na atualização por período; a leitura do eixo de datas (aparentemente de maio) é aproximada. Os indicadores de saldo em "R$ --" sugerem indisponibilidade da conta de pagamento, o que reforça a hipótese de dados estáticos, sem confirmação. A causa técnica não foi confirmada no código; o clique no seletor não consta na cronologia do Jam.
+
+**Reteste:** Reproduzir com conta de movimentação conhecida, capturando corpo e resposta de `recebiveis`, `transacoes` e `pagarme`, e comparar os períodos; confirmar se os valores exibidos são reais. Manter em triagem até nova evidência em versão identificada.
+
+---
+
+<a id="bug-022"></a>
+
+## BUG-022 — Relatório de Contas a Receber exibe "----" em Valor a Receber
+
+| Campo | Descrição |
+| --- | --- |
+| Status | Em triagem — causa não determinada; reteste pendente após correção. |
+| Severidade / prioridade | Alta / Alta, propostas para triagem. |
+| Módulo | Relatórios / Contas a Receber |
+| Requisitos | [RF51](Analise%20de%20requisitos.md#rf51) |
+| Casos | [CT-RF51](Cenario_Teste/CT-RF51_Relatorio_Contas_Receber.md) |
+| Data da evidência / revisão | 15/11/2026, 19:09 BRT; sem nova execução. |
+| Página | https://sifit.centrion.com.br/relatorios |
+| Ambiente | Chrome 157.0.8103.78 / Windows (x86) 11, janela 1920 × 911; versão e zoom não confirmados. |
+| Frequência conhecida | Um relatório gerado; recorrência não determinada. |
+
+### Pré-condições e reprodução
+
+**[CT-RF51](Cenario_Teste/CT-RF51_Relatorio_Contas_Receber.md):** Sessão autenticada com permissão para gerar relatórios e contas a receber pendentes do período com valores conhecidos.
+
+1. Acessar Relatórios e selecionar "Contas a Receber", Tipo de Pagamento "Todos", Status "Pendente" e o período 01/11/2026 a 15/11/2026.
+2. Acionar Gerar Relatório.
+3. Abrir o PDF e conferir a coluna Valor a Receber e os totais.
+4. Comparar com as contas pendentes do módulo Contas a Receber.
+
+### Esperado e obtido
+
+| Esperado | Obtido |
+| --- | --- |
+| Cada conta pendente apresenta o valor a receber e os totais correspondem às linhas apresentadas. | O PDF lista três contas pendentes, mas a coluna Valor a Receber apresenta "----" em todas as linhas; o rodapé informa "Quantidade de registros: 3" e "Valor Recebido: R$ 0,00". |
+
+**Impacto:** O relatório não permite saber quanto há a receber, o que o torna inadequado para conferência financeira e cobrança.
+
+### Evidências técnicas
+
+- [Jam — Relatórios](https://jam.dev/c/3b4777a4-e1b0-4038-9b06-26c73669d7d1): `POST /api/relatorio/1` com HTTP 200 e quadro de 0:43 com o tipo Contas a Receber e o status Pendente; arquivo `relatorio (6).pdf` (7.882 bytes) gravado às 19:09:39.
+- [PDF gerado](Evidencias/CT-RF51_Relatorio_Contas_Receber/relatorio_6_contas_receber.pdf), [formulário em 0:43](Evidencias/CT-RF51_Relatorio_Contas_Receber/formulario_contas_receber_00-43.png) e [Evidências](Evidencias/CT-RF51_Relatorio_Contas_Receber/README.md).
+
+### Análise, limites e encaminhamento
+
+Os valores ausentes são compatíveis com contas sem valor preenchido, com falha na leitura do campo de valor pelo relatório ou com formatação que converte o valor em marcador. A matrícula do aluno de demonstração aparece com R$ 20,00 no relatório de Matrículas (CT-RF50) e com "----" neste relatório, o que sugere que o valor existe em outra origem. A causa técnica não foi confirmada no código; o conteúdo das contas no módulo não foi comparado.
+
+**Reteste:** Comparar as contas pendentes com o módulo Contas a Receber, reexecutar com valores conhecidos e com a opção Detalhado e confirmar valores e totais. Manter em triagem até nova evidência em versão identificada.
+
+---
+
+<a id="bug-023"></a>
+
+## BUG-023 — Relatórios de Avaliações, Clientes, Colaboradores e Caixas geram PDF vazio
+
+| Campo | Descrição |
+| --- | --- |
+| Status | Em triagem — causa não determinada; reteste pendente após correção. |
+| Severidade / prioridade | Alta / Alta, propostas para triagem. |
+| Módulo | Relatórios / Avaliações, Clientes, Colaboradores e Caixas |
+| Requisitos | [RF53](Analise%20de%20requisitos.md#rf53), [RF54](Analise%20de%20requisitos.md#rf54), [RF55](Analise%20de%20requisitos.md#rf55) e [RF56](Analise%20de%20requisitos.md#rf56) |
+| Casos | [CT-RF53](Cenario_Teste/CT-RF53_Relatorio_Avaliacoes_Vazio.md), [CT-RF54](Cenario_Teste/CT-RF54_Relatorio_Clientes_Vazio.md), [CT-RF55](Cenario_Teste/CT-RF55_Relatorio_Colaboradores_Vazio.md) e [CT-RF56](Cenario_Teste/CT-RF56_Relatorio_Caixas_Vazio.md) |
+| Data da evidência / revisão | 15/11/2026, 19:09 BRT; sem nova execução. |
+| Página | https://sifit.centrion.com.br/relatorios |
+| Ambiente | Chrome 157.0.8103.78 / Windows (x86) 11, janela 1920 × 911; versão e zoom não confirmados. |
+| Frequência conhecida | Cinco arquivos vazios em uma gravação (Avaliações duas vezes); recorrência não determinada. |
+
+### Pré-condições e reprodução
+
+**CT-RF53 a CT-RF56:** Sessão autenticada com permissão para gerar relatórios, visualizador de PDF e pasta de downloads conferida; período e filtros registrados.
+
+1. Acessar Relatórios, selecionar o tipo (Avaliações, Clientes, Colaboradores ou Caixas) e preencher o período.
+2. Acionar Gerar Relatório e observar a requisição de rede.
+3. Conferir o arquivo baixado (tamanho e abertura).
+4. Repetir para cada um dos quatro tipos e, como controle, para Matrículas.
+
+### Esperado e obtido
+
+| Esperado | Obtido |
+| --- | --- |
+| O sistema gera um PDF válido com o conteúdo do relatório ou a estrutura vazia explícita e informa falhas ao usuário. | Cada requisição `POST /api/relatorio/1` retorna HTTP 200, mas os arquivos baixados para Avaliações (duas vezes), Clientes, Colaboradores e Caixas têm 0 bytes e não abrem; os relatórios de Matrículas, Contas a Receber e Contas a Pagar abrem. |
+
+**Impacto:** O usuário não consegue obter quatro dos sete relatórios e não recebe mensagem de erro, repetindo a geração sem saber que o arquivo está vazio.
+
+### Evidências técnicas
+
+- [Jam — Relatórios](https://jam.dev/c/3b4777a4-e1b0-4038-9b06-26c73669d7d1): oito `POST /api/relatorio/1` com HTTP 200 e um `OPTIONS` HTTP 204; quadros com os tipos Avaliações (0:08–0:18), Clientes (0:23), Colaboradores (0:28–0:33) e Caixas (0:53–0:57).
+- Arquivos baixados: `relatorio (1).pdf`, `(2)`, `(3)`, `(4)` e `(8)` com 0 bytes (SHA-256 `e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855`); `(5)`, `(6)` e `(7)` com 7.784, 7.882 e 7.872 bytes.
+- [Evidências de CT-RF53](Evidencias/CT-RF53_Relatorio_Avaliacoes_Vazio/README.md), [CT-RF54](Evidencias/CT-RF54_Relatorio_Clientes_Vazio/README.md), [CT-RF55](Evidencias/CT-RF55_Relatorio_Colaboradores_Vazio/README.md) e [CT-RF56](Evidencias/CT-RF56_Relatorio_Caixas_Vazio/README.md).
+
+### Análise, limites e encaminhamento
+
+A geração com HTTP 200 e arquivo de 0 bytes é compatível com falha silenciosa na construção do PDF (exceção capturada sem retorno de erro), resposta vazia do servidor ou falha no download no navegador; não foi possível distinguir. A correspondência dos cinco arquivos vazios com os tipos é inferida pela ordem dos downloads e pela ordem dos tipos selecionados no vídeo; os arquivos 5 a 7 foram identificados pelo conteúdo e seguem a mesma ordem. O corpo e a resposta das requisições não foram capturados e a causa técnica não foi confirmada no código.
+
+**Reteste:** Reproduzir cada tipo separadamente, capturando requisição e resposta e o tamanho do arquivo, com e sem registros no período; confirmar a causa nos logs do servidor e comparar com os relatórios que abrem. Manter em triagem até nova evidência em versão identificada.
+
+---
+
 ## Pontos a validar — sem defeito confirmado
 
 | Caso | Questão pendente | Evidência |
@@ -911,8 +1107,13 @@ O comportamento repete a assinatura de [BUG-009](#bug-009), [BUG-010](#bug-010),
 | [CT-RF13](Cenario_Teste/CT-RF13_Codigos_Personais.md) | Confirmar a semântica da coluna Código; quatro linhas e total quatro não sustentam um defeito de quantidade. | [Jam](https://jam.dev/c/69330ca9-ef19-4ece-918f-31a460628016) e [Evidências](Evidencias/CT-RF13_Codigos_Personais/README.md) |
 | [CT-RF16](Cenario_Teste/CT-RF16_Exclusao_Modalidade.md) | Confirmar a exclusão lógica e a nomenclatura da ação; registrar defeito apenas se houver divergência com a regra definida. | [Jam](https://jam.dev/c/0f55f76a-cd31-4cee-93da-23c13b1ba637) e [Evidências](Evidencias/CT-RF16_Exclusao_Modalidade/README.md) |
 | [CT-RF25](Cenario_Teste/CT-RF25_Envio_Exercicio_Imagem.md) | Conferir a imagem após reabrir e recarregar o exercício; criação visível não comprova associação persistida. | [Jam](https://jam.dev/c/25c37a9b-e9bd-4e0c-adf1-4da528ae1d58) e [Evidências](Evidencias/CT-RF25_Envio_Exercicio_Imagem/README.md) |
+| [CT-RF40](Cenario_Teste/CT-RF40_Exclusao_Turmas_Modalidades.md) | Confirmar a exclusão lógica de turmas e modalidades, a ausência de confirmação prévia e a exibição de registros inativos sob o filtro "Ativo"; registrar defeito apenas se houver divergência com a regra definida. | [Jam](https://jam.dev/c/ee9a133b-d6b1-442d-b4b0-dd87595b7e70) e [Evidências](Evidencias/CT-RF40_Exclusao_Turmas_Modalidades/README.md) |
+| [CT-RF42](Cenario_Teste/CT-RF42_Solicitacao_Saque_PagarMe.md) | Confirmar a regra de saque com saldo indisponível e capturar corpo e resposta; o envio retorna HTTP 200 sem mensagem de resultado visível. | [Jam](https://jam.dev/c/e6e551ef-9196-4c79-b6a2-89747b1e8b33) e [Evidências](Evidencias/CT-RF42_Solicitacao_Saque_PagarMe/README.md) |
+| [CT-RF44](Cenario_Teste/CT-RF44_Configuracoes_Home_Salvamento.md) | Confirmar a faixa do campo "Dias para contar cliente como ausente" (valor inicial -120 e valor informado 1100) e a mensagem de salvamento esperada. | [Jam](https://jam.dev/c/e6e551ef-9196-4c79-b6a2-89747b1e8b33) e [Evidências](Evidencias/CT-RF44_Configuracoes_Home_Salvamento/README.md) |
+| [CT-RF47](Cenario_Teste/CT-RF47_Cadastro_Despesa_Fixa.md) | Confirmar se o segundo POST de criação (HTTP 201) gerou registro adicional ou foi descartado; registrar defeito apenas se houver duplicidade confirmada. | [Jam](https://jam.dev/c/a4bac99d-e436-4792-831e-8c3a875272bb) e [Evidências](Evidencias/CT-RF47_Cadastro_Despesa_Fixa/README.md) |
+| [CT-RF52](Cenario_Teste/CT-RF52_Relatorio_Contas_Pagar_Pagas.md) | Conferir se existem contas pagas no período; PDF sem linhas e com totalizadores R$ 0,00 é compatível com período sem pagamentos. | [Jam](https://jam.dev/c/3b4777a4-e1b0-4038-9b06-26c73669d7d1) e [Evidências](Evidencias/CT-RF52_Relatorio_Contas_Pagar_Pagas/README.md) |
 
-Esses cinco pontos não entram na contagem de 19 defeitos registrados. BUG-011–BUG-019 são contabilizados separadamente como registros em triagem, com premissas, persistência ou validações técnicas ainda pendentes. O relato de numeração de personais não demonstrou diferença entre total e linhas; a inativação de modalidades pode ser exclusão lógica; encargos e métricas exigem regras explícitas.
+Esses dez pontos não entram na contagem de 23 defeitos registrados. BUG-011–BUG-023 são contabilizados separadamente como registros em triagem, com premissas, persistência ou validações técnicas ainda pendentes. O relato de numeração de personais não demonstrou diferença entre total e linhas; a inativação de modalidades pode ser exclusão lógica; encargos e métricas exigem regras explícitas.
 
 
 **Exclusão de exercício:** CT-RF23 está aprovado no trecho consultado, com remoção e total 11 para 10; não gerou defeito adicional. Persistência e efeitos sobre vínculos permanecem como verificações complementares.

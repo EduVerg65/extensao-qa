@@ -35,3 +35,35 @@ A evidência RF34 registra os fatos visíveis no Jam sem confirmar que o volume 
 | [CT-RF38](../Cenario_Teste/CT-RF38_Cadastro_Categoria_Codigo_Automatico.md) | [Cadastro de categoria com código automático e consulta pelo código](CT-RF38_Cadastro_Categoria_Codigo_Automatico/README.md) | Aprovado conforme a gravação. |
 
 A pasta contém resumo, cronologia, origem, oito capturas extraídas da reprodução do Jam (incluindo o corpo da requisição e da resposta de criação) e seus hashes SHA-256; o vídeo permanece no Jam.
+
+## Inclusão de 15/11/2026 — CT-RF39 a CT-RF41
+
+| Caso | Evidência | Resultado |
+| --- | --- | --- |
+| [CT-RF39](../Cenario_Teste/CT-RF39_Cadastro_Modalidade.md) | [Cadastro de modalidade](CT-RF39_Cadastro_Modalidade/README.md) | Aprovado conforme a gravação. |
+| [CT-RF40](../Cenario_Teste/CT-RF40_Exclusao_Turmas_Modalidades.md) | [Exclusão de turmas e modalidades](CT-RF40_Exclusao_Turmas_Modalidades/README.md) | A validar — regra ou contexto pendente. |
+| [CT-RF41](../Cenario_Teste/CT-RF41_Cadastro_Turma_Sem_Modalidade.md) | [Cadastro de turma sem modalidade](CT-RF41_Cadastro_Turma_Sem_Modalidade/README.md) | Reprovado nas evidências; BUG-020 em triagem. |
+
+Uma única gravação do Jam ([SifitBox – Turmas](https://jam.dev/c/ee9a133b-d6b1-442d-b4b0-dd87595b7e70)) é a fonte dos três casos; cada pasta contém resumo, cronologia, origem, capturas extraídas da reprodução do Jam e seus hashes SHA-256. O vídeo permanece no Jam.
+
+## Inclusão de 15/11/2026 — CT-RF42 a CT-RF56
+
+| Caso | Evidência | Resultado |
+| --- | --- | --- |
+| [CT-RF42](../Cenario_Teste/CT-RF42_Solicitacao_Saque_PagarMe.md) | [Solicitação de saque no painel Pagar.me](CT-RF42_Solicitacao_Saque_PagarMe/README.md) | A validar — regra ou contexto pendente |
+| [CT-RF43](../Cenario_Teste/CT-RF43_Criacao_Cobranca_PagarMe.md) | [Criação de cobrança no painel Pagar.me](CT-RF43_Criacao_Cobranca_PagarMe/README.md) | Aprovado conforme a gravação |
+| [CT-RF44](../Cenario_Teste/CT-RF44_Configuracoes_Home_Salvamento.md) | [Alteração e salvamento das Configurações (Home)](CT-RF44_Configuracoes_Home_Salvamento/README.md) | A validar — regra ou contexto pendente |
+| [CT-RF45](../Cenario_Teste/CT-RF45_Painel_PagarMe_Periodo.md) | [Painel Pagar.me mantém Recebimentos e gráfico ao trocar o período](CT-RF45_Painel_PagarMe_Periodo/README.md) | Reprovado nas evidências; BUG-021 em triagem |
+| [CT-RF46](../Cenario_Teste/CT-RF46_Filtros_Despesas_Fixas.md) | [Filtros da tela Despesas Fixas por código e por nome](CT-RF46_Filtros_Despesas_Fixas/README.md) | Aprovado conforme a gravação |
+| [CT-RF47](../Cenario_Teste/CT-RF47_Cadastro_Despesa_Fixa.md) | [Cadastro de despesa fixa com duas requisições de criação](CT-RF47_Cadastro_Despesa_Fixa/README.md) | A validar — regra ou contexto pendente |
+| [CT-RF48](../Cenario_Teste/CT-RF48_Exclusao_Despesa_Fixa.md) | [Exclusão de despesa fixa com confirmação](CT-RF48_Exclusao_Despesa_Fixa/README.md) | Aprovado conforme a gravação |
+| [CT-RF49](../Cenario_Teste/CT-RF49_Edicao_Despesa_Fixa.md) | [Edição de despesa fixa](CT-RF49_Edicao_Despesa_Fixa/README.md) | Aprovado conforme a gravação |
+| [CT-RF50](../Cenario_Teste/CT-RF50_Relatorio_Matriculas.md) | [Relatório de Matrículas em PDF](CT-RF50_Relatorio_Matriculas/README.md) | Aprovado conforme a gravação |
+| [CT-RF51](../Cenario_Teste/CT-RF51_Relatorio_Contas_Receber.md) | [Relatório de Contas a Receber sem Valor a Receber](CT-RF51_Relatorio_Contas_Receber/README.md) | Reprovado nas evidências; BUG-022 em triagem |
+| [CT-RF52](../Cenario_Teste/CT-RF52_Relatorio_Contas_Pagar_Pagas.md) | [Relatório de Contas a Pagar (Pagas) sem registros](CT-RF52_Relatorio_Contas_Pagar_Pagas/README.md) | A validar — regra ou contexto pendente |
+| [CT-RF53](../Cenario_Teste/CT-RF53_Relatorio_Avaliacoes_Vazio.md) | [Relatório de Avaliações gera arquivo vazio](CT-RF53_Relatorio_Avaliacoes_Vazio/README.md) | Reprovado nas evidências; BUG-023 em triagem |
+| [CT-RF54](../Cenario_Teste/CT-RF54_Relatorio_Clientes_Vazio.md) | [Relatório de Clientes gera arquivo vazio](CT-RF54_Relatorio_Clientes_Vazio/README.md) | Reprovado nas evidências; BUG-023 em triagem |
+| [CT-RF55](../Cenario_Teste/CT-RF55_Relatorio_Colaboradores_Vazio.md) | [Relatório de Colaboradores gera arquivo vazio](CT-RF55_Relatorio_Colaboradores_Vazio/README.md) | Reprovado nas evidências; BUG-023 em triagem |
+| [CT-RF56](../Cenario_Teste/CT-RF56_Relatorio_Caixas_Vazio.md) | [Relatório de Caixas gera arquivo vazio](CT-RF56_Relatorio_Caixas_Vazio/README.md) | Reprovado nas evidências; BUG-023 em triagem |
+
+Três gravações do Jam ([Pagar.me e Configurações](https://jam.dev/c/e6e551ef-9196-4c79-b6a2-89747b1e8b33), [Despesas Fixas](https://jam.dev/c/a4bac99d-e436-4792-831e-8c3a875272bb) e [Relatórios](https://jam.dev/c/3b4777a4-e1b0-4038-9b06-26c73669d7d1)) são a fonte dos quinze casos; cada pasta contém resumo, cronologia, origem, capturas extraídas da reprodução do Jam e seus hashes SHA-256, e as pastas de CT-RF50 a CT-RF56 incluem os PDFs baixados (os arquivos vazios têm 0 bytes). Os vídeos permanecem no Jam.
