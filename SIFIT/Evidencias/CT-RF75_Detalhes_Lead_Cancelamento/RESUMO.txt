@@ -1,0 +1,28 @@
+CT-RF75 — Consultar os detalhes de um lead e cancelar a edição
+
+RESULTADO: SUCESSO
+Tela: Prospecção
+Título original do Jam: TelaDeDetalhesLead
+Evidência: https://jam.dev/c/7ef0ee0b-497e-48b8-a57d-cd914558d303
+Data da gravação e da análise: 16/11/2026
+
+OBJETIVO
+O sistema deve carregar os dados do lead e fechar a janela ao cancelar, sem enviar uma gravação da alteração.
+
+PASSOS OBSERVADOS
+1. Acionar a lupa do lead de código 3.
+2. Conferir os dados exibidos na janela Visualizar Lead.
+3. Digitar uma alteração no telefone e clicar em Cancelar.
+
+RESULTADO OBSERVADO
+Os dados do lead de código 3 são carregados, incluindo estágio Fechado, contato e observação. Após a alteração no telefone, Cancelar fecha a janela e retorna à listagem. Não há chamada de salvamento na linha do tempo.
+
+EVIDÊNCIAS DA GRAVAÇÃO
+- 00:00: POST /api/buscar-lead/1 e GET /api/planos/1 retornam HTTP 200.
+- 00:04: digitação no telefone.
+- 00:05: clique em Cancelar; quadro de 00:07.471 mostra a listagem.
+
+LIMITES DA ANÁLISE
+Não houve reabertura do registro para confirmar o valor persistido do telefone. O sucesso se refere à consulta e ao cancelamento observados.
+Análise da gravação e dos eventos capturados no Jam; não foi executado um novo teste no sistema.
+

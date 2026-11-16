@@ -1,0 +1,28 @@
+CT-RF83 — Validar cadastro de lead preenchendo apenas o nome
+
+RESULTADO: ERRO — cadastro aceito apenas com nome, conforme o cenário reportado
+Tela: Prospecção
+Título original do Jam: Bug - Criando propecção apenas com nome
+Evidência: https://jam.dev/c/ef3df03c-16ce-4cb6-b0c7-d04514cab4f6
+Data da gravação e da análise: 16/11/2026
+
+OBJETIVO
+Segundo o cenário identificado como bug pelo autor, o cadastro incompleto deveria ser bloqueado e os campos obrigatórios deveriam ser indicados.
+
+PASSOS OBSERVADOS
+1. Na janela Adicionar Lead, preencher somente o nome Leo.
+2. Manter telefone, e-mail e observação visualmente vazios e o estágio padrão Novo Contato.
+3. Clicar em Salvar Lead.
+
+RESULTADO OBSERVADO
+O sistema aceita o envio sem bloqueio visível, cria o lead de código 19 e atualiza a listagem. O total de leads passa de 14 para 15.
+
+EVIDÊNCIAS DA GRAVAÇÃO
+- 00:02: nome Leo preenchido; os demais campos de contato permanecem visualmente vazios.
+- 00:03: POST /api/salvar-lead/1 retorna HTTP 200, verifica_erro=false e id=19. O corpo enviado confirma telefone e observacao vazios.
+- 00:03: GET /api/leads/1 retorna HTTP 200; quadro de 00:08.223 mostra o registro de código 19.
+
+LIMITES DA ANÁLISE
+A classificação de erro acompanha o título do Jam. A regra formal dos campos obrigatórios não foi fornecida; é necessário validá-la para definir exatamente quais campos devem impedir o cadastro. O e-mail está mascarado nos dados de rede, e sua ausência foi avaliada visualmente.
+Análise da gravação e dos eventos capturados no Jam; não foi executado um novo teste no sistema.
+
