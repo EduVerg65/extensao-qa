@@ -70,6 +70,7 @@ Esta análise documenta 60 requisitos de QA para os cenários relacionados abaix
 | [RF59](#rf59) | Buscar leads por texto na listagem de Prospecção | Média, proposta | [CT-RF59](Cenario_Teste/CT-RF59_Busca_Leads_Prospeccao.md) |
 | [RF60](#rf60) | Filtrar leads por estágio e restaurar a listagem | Média, proposta | [CT-RF60](Cenario_Teste/CT-RF60_Filtro_Estagio_Leads.md) |
 | [RF61](#rf61) | Cadastrar um lead com uma única gravação | Média, proposta | [CT-RF61](Cenario_Teste/CT-RF61_Cadastro_Lead_Prospeccao.md) |
+| [RF62](#rf62) | Validar o telefone do lead | Média, proposta | [CT-RF62](Cenario_Teste/CT-RF62_Telefone_Lead_Sem_Validacao.md) |
 
 ---
 
@@ -1707,6 +1708,35 @@ O corpo e a resposta da segunda requisição, a persistência após recarga, os 
 
 ---
 
+<a id="rf62"></a>
+
+## RF62 — Validar o telefone do lead
+
+| Campo | Descrição |
+| --- | --- |
+| Requisito de QA | O campo Telefone do formulário de lead deve aceitar apenas valores no formato definido pelo produto (por exemplo, (00) 00000-0000) e rejeitar tamanhos e caracteres inválidos com mensagem clara. |
+| Ator | Usuário autenticado com acesso a Prospecção. |
+| Pré-condições | Formulário Adicionar Lead aberto; regra do campo definida com o produto. |
+| Gatilho | Informar um telefone com 30 dígitos e acionar Salvar Lead. |
+| Caso | [CT-RF62](Cenario_Teste/CT-RF62_Telefone_Lead_Sem_Validacao.md) |
+| Situação observada | Reprovado nas evidências. O telefone de 30 dígitos é aceito, gravado (lead 10) e devolvido na consulta, sem máscara nem mensagem de validação. |
+| Defeito | [BUG-024](Relatorio-de-Bugs.md#bug-024), em triagem |
+| Evidências | [Jam](https://jam.dev/c/308607ff-8abc-40af-8c7c-429ce506ed64) e [Evidências](Evidencias/CT-RF62_Telefone_Lead_Sem_Validacao/README.md). |
+
+### Critérios de aceitação do RF62
+
+1. O campo Telefone limita o tamanho e os caracteres ao formato definido pelo produto.
+2. Um telefone com tamanho ou caracteres inválidos é rejeitado antes da gravação, com mensagem clara.
+3. A máscara exibida no placeholder é aplicada durante a digitação.
+4. O servidor valida o telefone independentemente da interface.
+5. O telefone válido é gravado e exibido no formato definido.
+
+### Pontos a confirmar e limites do RF62
+
+A regra do campo e a validação no servidor não foram informadas ou verificadas; se o campo for livre, o placeholder "(00) 00000-0000" deve ser revisto. Telefones de outros tamanhos e valores com letras não foram exercitados.
+
+---
+
 ## 🔗 Rastreabilidade
 
 | Requisito | Cenário / caso | Defeito | Resultado | Evidências |
@@ -1769,6 +1799,7 @@ O corpo e a resposta da segunda requisição, a persistência após recarga, os 
 | RF59 | [CT-RF59](Cenario_Teste/CT-RF59_Busca_Leads_Prospeccao.md) | Nenhum no fluxo avaliado | Aprovado conforme a gravação | [Evidências](Evidencias/CT-RF59_Busca_Leads_Prospeccao/README.md) e [Jam](https://jam.dev/c/308607ff-8abc-40af-8c7c-429ce506ed64) |
 | RF60 | [CT-RF60](Cenario_Teste/CT-RF60_Filtro_Estagio_Leads.md) | Nenhum no fluxo avaliado | Aprovado conforme a gravação | [Evidências](Evidencias/CT-RF60_Filtro_Estagio_Leads/README.md) e [Jam](https://jam.dev/c/308607ff-8abc-40af-8c7c-429ce506ed64) |
 | RF61 | [CT-RF61](Cenario_Teste/CT-RF61_Cadastro_Lead_Prospeccao.md) | Sem defeito confirmado | A validar — regra ou contexto pendente | [Evidências](Evidencias/CT-RF61_Cadastro_Lead_Prospeccao/README.md) e [Jam](https://jam.dev/c/308607ff-8abc-40af-8c7c-429ce506ed64) |
+| RF62 | [CT-RF62](Cenario_Teste/CT-RF62_Telefone_Lead_Sem_Validacao.md) | [BUG-024](Relatorio-de-Bugs.md#bug-024), em triagem | Reprovado nas evidências; reteste pendente. | [Evidências](Evidencias/CT-RF62_Telefone_Lead_Sem_Validacao/README.md) e [Jam](https://jam.dev/c/308607ff-8abc-40af-8c7c-429ce506ed64) |
 
 ---
 
@@ -1988,6 +2019,12 @@ Com RF60, a análise passa a cobrir 57 requisitos documentados. O CT-RF60 acresc
 RF61 utiliza os painéis Info, Console, Network e Actions do Jam "Prospecção", os corpos da primeira requisição e os quadros de 0:24 e 0:39. Foram registrados o cadastro, os dois POST de criação e a atualização dos cartões. Não houve nova execução, acesso ao código ou ao banco, nem reteste.
 
 Com RF61, a análise passa a cobrir 58 requisitos documentados. O CT-RF61 acrescenta um ponto a validar, sem defeito confirmado.
+
+### Base da análise do RF62 — revisão de 15/11/2026
+
+RF62 utiliza os painéis Info, Console, Network e Actions do Jam "Prospecção", o corpo do salvar-lead, a resposta do buscar-lead e os quadros de 0:47. Foram registrados o telefone de 30 dígitos, a ausência de validação e a gravação do valor. Não houve nova execução, acesso ao código ou ao banco, nem reteste.
+
+Com RF62, a análise passa a cobrir 59 requisitos documentados. O CT-RF62 acrescenta uma reprovação, vinculada ao BUG-024, em triagem.
 
 ---
 
