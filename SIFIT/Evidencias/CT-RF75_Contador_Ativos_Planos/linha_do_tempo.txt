@@ -1,0 +1,44 @@
+CT-RF75 — Cartão Ativos de Planos aumenta ao cadastrar e editar planos inativos
+Fonte: https://jam.dev/c/233c5d21-e108-4a55-b6f6-8738cb3fc6a6
+Gravação: 15/11/2026, 21:54 BRT; duração: 1 min 10 s.
+Revisão documental: 15/11/2026.
+Página: https://sifit.centrion.com.br/planos
+Foco deste caso: cartões Planos e Ativos antes e depois do cadastro e da edição (0:03, 0:53 e 1:08).
+
+Cronologia (painel Console do Jam, atividade do usuário; seletores abreviados pelo Jam):
+0:00  Clique no campo Código do filtro; 0:02 digitado: ad e apagado (⌫⌫⌫ em 0:04)
+0:05  Clique no campo Nome; digitado: 7 e apagado (0:07)
+0:08-0:11  Cliques repetidos no seletor Status
+0:12-0:13  Cliques em Buscar (pla-btn-buscar)
+0:14-0:18  Cliques no alternador de tema (Escuro e Claro) e no cabeçalho
+0:19  Clique no sino; 0:20 clique em botão do painel de notificações
+0:21  Dois cliques no ícone de perfil
+0:22  Clique em Novo Plano (pla-btn-cadastrar); abre o modal Novo Plano
+0:23-0:45  Preenchimento: Nome rerererere, Grupo, Status Inativo, Cobrança, Parcelas, Valor, Personal e Dependentes (3)
+0:47-0:49  Clique em adicionar benefício (+) e digitado: sadas
+0:51  Clique em Salvar Plano (pla-btn-salvar) -> POST plano/salvar/1 (HTTP 200)
+0:56-0:57  Cliques nos cartões de resumo (pla-stat-card)
+0:59  Clique em botão de ação da linha (pla-btn-action) -> POST seleciona-plano/1 (HTTP 200)
+1:01-1:05  Modal Editar Plano; digitado asassdasd e sdasd (benefícios); clique em Salvar Plano -> POST plano/update/1 (HTTP 200)
+1:10  Video stopped
+
+Rede do conjunto gravado (25 entradas, domínio backendsifit.centrion.com.br; nenhuma falha):
+1-4    GET /api/planos/1 (HTTP 200, 8,1 KiB, três vezes após o início): listagem de planos.
+5-10   OPTIONS (204) e cinco POST /api/usuario/tema (HTTP 200, 23 B): alternância de tema.
+11-13  GET /api/grupos/1 (1,9 KiB) e GET /api/funcoes/1 (2,1 KiB): listas do formulário.
+15     POST /api/plano/salvar/1 (HTTP 200, 31 B); corpo com nome "rerererere", grupo_id 2, unidade_periodo "dias", qtd_parcelas "1", personal "sim", funcao_id 3, valor "44,44", benefícios [{"beneficio": "sadas"}], qtd_dependentes "3" e status "inativo"; resposta {"verifica_erro": false, "id": 66}.
+16-17  GET /api/planos/1 (8,3 KiB) e POST /api/matriculas/paginacao/1 (21,1 KiB): recarga da listagem e dos cartões.
+21     POST /api/seleciona-plano/1 (HTTP 200, 347 B): plano 41 "Teste Final", status "inativo", valor "1,00".
+23     POST /api/plano/update/1 (HTTP 200, 23 B); corpo com id 41, nome "Teste Final", status "inativo" e benefícios [{"beneficio": "asdasd"}]; resposta {"verifica_erro": false}.
+24-25  GET /api/planos/1 (8,3 KiB) e POST /api/matriculas/paginacao/1 (21,1 KiB): recarga após a edição.
+Autenticação omitida (o token aparece mascarado pelo Jam).
+
+Quadros consultados (reprodução do Jam):
+0:03  Planos 40 e Ativos 29.
+0:53  Planos 41 e Ativos 30.
+1:08  Planos 41 e Ativos 31.
+
+Observações e verificações futuras:
+- A regra de cálculo do cartão Ativos não foi informada.
+- A contagem de planos ativos na listagem não foi conferida registro a registro.
+- O status exato do plano 41 antes da edição foi lido na resposta de seleciona-plano ("inativo").
