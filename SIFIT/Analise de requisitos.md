@@ -80,6 +80,7 @@ Esta análise documenta 73 requisitos de QA para os cenários relacionados abaix
 | [RF69](#rf69) | Inserir variáveis e pré-visualizar o contrato | Média, proposta | [CT-RF69](Cenario_Teste/CT-RF69_Variaveis_Preview_Modelo_Contrato.md) |
 | [RF70](#rf70) | Cadastrar um modelo de contrato | Média, proposta | [CT-RF70](Cenario_Teste/CT-RF70_Cadastro_Modelo_Contrato.md) |
 | [RF71](#rf71) | Apresentar na listagem os modelos de contrato retornados pelo servidor | Alta, proposta | [CT-RF71](Cenario_Teste/CT-RF71_Listagem_Modelos_Contrato_Vazia.md) |
+| [RF72](#rf72) | Filtrar planos por código e por nome | Média, proposta | [CT-RF72](Cenario_Teste/CT-RF72_Filtros_Planos.md) |
 
 ---
 
@@ -2007,6 +2008,35 @@ A causa e o comportamento após recarga não foram confirmados; a lista completa
 
 ---
 
+<a id="rf72"></a>
+
+## RF72 — Filtrar planos por código e por nome
+
+| Campo | Descrição |
+| --- | --- |
+| Requisito de QA | A listagem de Planos deve apresentar apenas os planos que atendam aos critérios de código, nome e status e restaurar a listagem completa ao limpar os campos. |
+| Ator | Usuário autenticado com acesso ao módulo. |
+| Pré-condições | Base de planos conhecida, com códigos, nomes e status registrados. |
+| Gatilho | Informar código ou nome e, depois, limpar os campos. |
+| Caso | [CT-RF72](Cenario_Teste/CT-RF72_Filtros_Planos.md) |
+| Situação observada | Aprovado conforme a gravação. O código "7" lista os planos 37, 7 e 67 e o nome "a" lista planos de nomes aba e Aba; Buscar recarrega a listagem. |
+| Defeito | Nenhum no fluxo avaliado |
+| Evidências | [Jam](https://jam.dev/c/233c5d21-e108-4a55-b6f6-8738cb3fc6a6) e [Evidências](Evidencias/CT-RF72_Filtros_Planos/README.md). |
+
+### Critérios de aceitação do RF72
+
+1. O filtro por código retorna os planos cujo código contenha o critério.
+2. O filtro por nome retorna os planos cujo nome contenha o critério, sem diferenciar maiúsculas.
+3. O seletor Status filtra a listagem conforme a opção.
+4. Limpar os campos restaura a listagem completa.
+5. Critérios sem correspondência apresentam mensagem explícita.
+
+### Pontos a confirmar e limites do RF72
+
+O filtro por Status, a combinação de critérios, o resultado vazio e o contrato dos cartões não foram exercitados.
+
+---
+
 ## 🔗 Rastreabilidade
 
 | Requisito | Cenário / caso | Defeito | Resultado | Evidências |
@@ -2079,6 +2109,7 @@ A causa e o comportamento após recarga não foram confirmados; a lista completa
 | RF69 | [CT-RF69](Cenario_Teste/CT-RF69_Variaveis_Preview_Modelo_Contrato.md) | Nenhum no fluxo avaliado | Aprovado conforme a gravação | [Evidências](Evidencias/CT-RF69_Variaveis_Preview_Modelo_Contrato/README.md) e [Jam](https://jam.dev/c/44dbbd39-6915-45d6-8dd1-5f30c1432ca0) |
 | RF70 | [CT-RF70](Cenario_Teste/CT-RF70_Cadastro_Modelo_Contrato.md) | Nenhum no fluxo avaliado | Aprovado conforme a gravação | [Evidências](Evidencias/CT-RF70_Cadastro_Modelo_Contrato/README.md) e [Jam](https://jam.dev/c/44dbbd39-6915-45d6-8dd1-5f30c1432ca0) |
 | RF71 | [CT-RF71](Cenario_Teste/CT-RF71_Listagem_Modelos_Contrato_Vazia.md) | [BUG-026](Relatorio-de-Bugs.md#bug-026), em triagem | Reprovado nas evidências; reteste pendente. | [Evidências](Evidencias/CT-RF71_Listagem_Modelos_Contrato_Vazia/README.md) e [Jam](https://jam.dev/c/44dbbd39-6915-45d6-8dd1-5f30c1432ca0) |
+| RF72 | [CT-RF72](Cenario_Teste/CT-RF72_Filtros_Planos.md) | Nenhum no fluxo avaliado | Aprovado conforme a gravação | [Evidências](Evidencias/CT-RF72_Filtros_Planos/README.md) e [Jam](https://jam.dev/c/233c5d21-e108-4a55-b6f6-8738cb3fc6a6) |
 
 ---
 
@@ -2358,6 +2389,12 @@ Com RF70, a análise passa a cobrir 67 requisitos documentados. O CT-RF70 acresc
 RF71 utiliza os painéis Info, Console, Network e Actions do Jam "Modelos de Contrato", a resposta de modelos-contrato e os quadros de 0:00, 0:39, 0:45 e 0:49. Foram registrados a lista de 15 modelos e a tabela sem linhas. Não houve nova execução, acesso ao código ou ao banco, nem reteste.
 
 Com RF71, a análise passa a cobrir 68 requisitos documentados. O CT-RF71 acrescenta uma reprovação, vinculada ao BUG-026, em triagem.
+
+### Base da análise do RF72 — revisão de 15/11/2026
+
+RF72 utiliza os painéis Info, Console, Network e Actions do Jam "Planos" e os quadros de 0:03, 0:06 e 0:13. Foram registrados os filtros por código e nome e o botão Buscar. Não houve nova execução, acesso ao código ou ao banco, nem reteste.
+
+Com RF72, a análise passa a cobrir 69 requisitos documentados. O CT-RF72 acrescenta uma aprovação limitada ao exemplo gravado.
 
 ---
 
