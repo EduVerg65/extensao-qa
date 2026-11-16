@@ -77,6 +77,7 @@ Esta análise documenta 73 requisitos de QA para os cenários relacionados abaix
 | [RF66](#rf66) | Buscar e selecionar colaborador no cadastro de conta | Média, proposta | [CT-RF66](Cenario_Teste/CT-RF66_Busca_Colaborador_Conta_Pagar.md) |
 | [RF67](#rf67) | Visualizar os dados de uma conta a pagar | Baixa, proposta | [CT-RF67](Cenario_Teste/CT-RF67_Visualizacao_Conta_Pagar.md) |
 | [RF68](#rf68) | Excluir uma conta a pagar com confirmação | Média, proposta | [CT-RF68](Cenario_Teste/CT-RF68_Exclusao_Conta_Pagar.md) |
+| [RF69](#rf69) | Inserir variáveis e pré-visualizar o contrato | Média, proposta | [CT-RF69](Cenario_Teste/CT-RF69_Variaveis_Preview_Modelo_Contrato.md) |
 
 ---
 
@@ -1917,6 +1918,35 @@ Cancelar, recarga após a exclusão e contas pagas ou vinculadas não foram exer
 
 ---
 
+<a id="rf69"></a>
+
+## RF69 — Inserir variáveis e pré-visualizar o contrato
+
+| Campo | Descrição |
+| --- | --- |
+| Requisito de QA | O editor do modelo de contrato deve inserir as variáveis clicadas e a pré-visualização deve substituí-las por dados de exemplo, preservando a formatação. |
+| Ator | Usuário autenticado com acesso ao módulo. |
+| Pré-condições | Editor de modelo de contrato aberto; variáveis disponíveis. |
+| Gatilho | Clicar em variáveis e acionar Atualizar preview. |
+| Caso | [CT-RF69](Cenario_Teste/CT-RF69_Variaveis_Preview_Modelo_Contrato.md) |
+| Situação observada | Aprovado conforme a gravação. As variáveis {numero_contrato}, {nome_aluno} e {cpf_aluno} são inseridas e a pré-visualização apresenta "2024/001 João da Silva 123.456.789-00". |
+| Defeito | Nenhum no fluxo avaliado |
+| Evidências | [Jam](https://jam.dev/c/44dbbd39-6915-45d6-8dd1-5f30c1432ca0) e [Evidências](Evidencias/CT-RF69_Variaveis_Preview_Modelo_Contrato/README.md). |
+
+### Critérios de aceitação do RF69
+
+1. Cada variável clicada é inserida no ponto do cursor do editor.
+2. A pré-visualização substitui as variáveis por dados de exemplo coerentes.
+3. A formatação do texto é preservada na pré-visualização.
+4. Todas as variáveis dos quatro grupos funcionam.
+5. As variáveis permanecem no texto após salvar.
+
+### Pontos a confirmar e limites do RF69
+
+As demais variáveis, a formatação complexa e o texto gravado não foram exercitados.
+
+---
+
 ## 🔗 Rastreabilidade
 
 | Requisito | Cenário / caso | Defeito | Resultado | Evidências |
@@ -1986,6 +2016,7 @@ Cancelar, recarga após a exclusão e contas pagas ou vinculadas não foram exer
 | RF66 | [CT-RF66](Cenario_Teste/CT-RF66_Busca_Colaborador_Conta_Pagar.md) | Sem defeito confirmado | A validar — regra ou contexto pendente | [Evidências](Evidencias/CT-RF66_Busca_Colaborador_Conta_Pagar/README.md) e [Jam](https://jam.dev/c/5d0afaf4-5abd-4e85-923f-27448304a9ef) |
 | RF67 | [CT-RF67](Cenario_Teste/CT-RF67_Visualizacao_Conta_Pagar.md) | Nenhum no fluxo avaliado | Aprovado conforme a gravação | [Evidências](Evidencias/CT-RF67_Visualizacao_Conta_Pagar/README.md) e [Jam](https://jam.dev/c/5d0afaf4-5abd-4e85-923f-27448304a9ef) |
 | RF68 | [CT-RF68](Cenario_Teste/CT-RF68_Exclusao_Conta_Pagar.md) | Nenhum no fluxo avaliado | Aprovado conforme a gravação | [Evidências](Evidencias/CT-RF68_Exclusao_Conta_Pagar/README.md) e [Jam](https://jam.dev/c/5d0afaf4-5abd-4e85-923f-27448304a9ef) |
+| RF69 | [CT-RF69](Cenario_Teste/CT-RF69_Variaveis_Preview_Modelo_Contrato.md) | Nenhum no fluxo avaliado | Aprovado conforme a gravação | [Evidências](Evidencias/CT-RF69_Variaveis_Preview_Modelo_Contrato/README.md) e [Jam](https://jam.dev/c/44dbbd39-6915-45d6-8dd1-5f30c1432ca0) |
 
 ---
 
@@ -2247,6 +2278,12 @@ Com RF67, a análise passa a cobrir 64 requisitos documentados. O CT-RF67 acresc
 RF68 utiliza os painéis Info, Console, Network e Actions do Jam "Contas a Pagar", o corpo e a resposta da exclusão e os quadros de 0:54 e 0:59. Foram registrados o diálogo, a exclusão e a listagem. Não houve nova execução, acesso ao código ou ao banco, nem reteste.
 
 Com RF68, a análise passa a cobrir 65 requisitos documentados. O CT-RF68 acrescenta uma aprovação limitada ao exemplo gravado.
+
+### Base da análise do RF69 — revisão de 15/11/2026
+
+RF69 utiliza os painéis Info, Console, Network e Actions do Jam "Modelos de Contrato" e os quadros de 0:09, 0:21, 0:33 e 0:36. Foram registrados a inserção das variáveis e a pré-visualização. Não houve nova execução, acesso ao código ou ao banco, nem reteste.
+
+Com RF69, a análise passa a cobrir 66 requisitos documentados. O CT-RF69 acrescenta uma aprovação limitada ao exemplo gravado.
 
 ---
 
