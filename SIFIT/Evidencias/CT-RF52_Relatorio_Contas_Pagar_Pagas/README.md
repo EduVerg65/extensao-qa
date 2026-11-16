@@ -21,6 +21,7 @@ O PDF `relatorio (7).pdf` abre e apresenta a estrutura de "Relatório de Contas 
 | [relatorio_7_contas_pagar_pagas.pdf](relatorio_7_contas_pagar_pagas.pdf) | PDF sem linhas e com totalizadores R$ 0,00. | `3aa12ce66680e6ad8609e4618b96d124f8ae6948ce3d2d8c863d88a416d208d8` |
 | [formulario_contas_pagar_00-48.png](formulario_contas_pagar_00-48.png) | tipo Contas a Pagar com o período. | `0a273f0f99e50abc9180470287e3fbb867bdfe2ab238593d2c17d461b67da493` |
 | [rede_lista.png](rede_lista.png) | oito POST relatorio (HTTP 200) e um OPTIONS. | `ecd2414b90cbba8bf93464a4691473a1881f9089b4d3a45cd6d145f309dba798` |
+| [relatorio_7_contas_pagar_pagas_pagina1.png](relatorio_7_contas_pagar_pagas_pagina1.png) | Primeira página do PDF (`relatorio (7).pdf`) renderizada para consulta; o PDF original segue no arquivo acima. | `f63e1cde9cff523eb7cfa1a000012fe68bdc599027c5605d23bd66bdf58c9f5d` |
 | [linha_do_tempo.txt](linha_do_tempo.txt) | Cronologia de ações, digitação e rede do Jam. | — |
 | [origem.url](origem.url) | Endereço original do Jam. | — |
 

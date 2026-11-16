@@ -1,0 +1,3 @@
+# Preserve the original evidence summaries and their documented SHA-256 hashes.
+SIFIT/Evidencias/CT-RF7[4-9]_*/RESUMO.txt -text
+SIFIT/Evidencias/CT-RF8[0-4]_*/RESUMO.txt -text

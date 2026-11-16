@@ -1,0 +1,28 @@
+CT-RF84 — Cadastrar lead no estágio Fechado
+
+RESULTADO: SUCESSO
+Tela: Prospecção
+Título original do Jam: TesteFechado
+Evidência: https://jam.dev/c/775b9003-fdf7-4ad5-8882-15ba606b6674
+Data da gravação e da análise: 16/11/2026
+
+OBJETIVO
+O lead deve ser criado no estágio Fechado e aparecer na listagem.
+
+PASSOS OBSERVADOS
+1. Selecionar o estágio Fechado na janela Adicionar Lead.
+2. Preencher nome, e-mail, telefone e observação.
+3. Clicar em Salvar Lead.
+
+RESULTADO OBSERVADO
+A janela fecha após salvar, o total de leads passa de 12 para 13 e o registro testeFechado aparece com código 17 e identificação Fechado.
+
+EVIDÊNCIAS DA GRAVAÇÃO
+- 00:01: seleção de FECHADO.
+- 00:20: POST /api/salvar-lead/1 retorna HTTP 200, seguido de GET /api/leads/1 com HTTP 200.
+- Quadro de 00:22.648 mostra o registro de código 17 no estágio Fechado.
+
+LIMITES DA ANÁLISE
+O corpo da resposta de salvamento não está disponível no evento consultado; o resultado é sustentado pelo retorno HTTP e pelo registro visível na listagem.
+Análise da gravação e dos eventos capturados no Jam; não foi executado um novo teste no sistema.
+

@@ -1,0 +1,27 @@
+CT-RF76 — Excluir leads com confirmação
+
+RESULTADO: SUCESSO
+Tela: Prospecção
+Título original do Jam: TesteExcluindoLeads
+Evidência: https://jam.dev/c/2ac5e5ed-b10f-4cc9-9f97-7ba65ca560f8
+Data da gravação e da análise: 16/11/2026
+
+OBJETIVO
+Cada confirmação deve excluir o lead selecionado e atualizar a listagem e o total de registros.
+
+PASSOS OBSERVADOS
+1. Acionar a exclusão do primeiro lead e confirmar.
+2. Repetir a exclusão para o lead seguinte, também confirmando.
+
+RESULTADO OBSERVADO
+Os leads de códigos 3 e 4 deixam de aparecer após as confirmações. O total exibido diminui de 8 para 7 e depois para 6.
+
+EVIDÊNCIAS DA GRAVAÇÃO
+- 00:01 e 00:04: POST /api/deletar-lead/1 retorna HTTP 200, seguido de GET /api/leads/1 com HTTP 200.
+- A segunda exclusão envia id=4 e recebe verifica_erro=false.
+- Quadros de 00:03.179 e 00:05.723 mostram os totais 7 e 6.
+
+LIMITES DA ANÁLISE
+As duas exclusões foram agrupadas no mesmo caso porque pertencem ao mesmo cenário na gravação. O cancelamento da confirmação de exclusão não foi testado.
+Análise da gravação e dos eventos capturados no Jam; não foi executado um novo teste no sistema.
+

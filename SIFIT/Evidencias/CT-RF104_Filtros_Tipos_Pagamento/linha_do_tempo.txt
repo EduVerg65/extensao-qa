@@ -1,0 +1,45 @@
+CT-RF104 — Filtros de busca da tela Tipos de Pagamento
+Fonte: https://jam.dev/c/e8734e3d-3f8e-458b-8c7d-e85eea882e50
+Gravação: 15/11/2026, 22:03 BRT; duração: 1 min.
+Revisão documental: 15/11/2026.
+Página: https://sifit.centrion.com.br/tipos-pagamento
+Foco deste caso: filtros da listagem (0:00 a 0:14 e 0:28).
+
+Cronologia (painel Actions do Jam, atividade do usuário; seletores abreviados pelo Jam):
+0:00-0:03  Clique na barra de busca e no campo Nome; digitado "de" em 0:01 e apagado (3 retornos) em 0:03
+0:03-0:14  Cerca de 17 cliques nos seletores Status e Tipo do filtro; clique em Buscar (tpg-btn-buscar) em 0:14
+0:15  Clique em Novo (tpg-btn-cadastrar); abre o modal Tipo de Pagamento
+0:16-0:24  Digitado "44444" no campo Nome (0:18) e cliques nos seletores do formulário (Status, Tipo, Escolher Bandeira e Pagamento Pelo Sistema)
+0:25  Clique em Salvar (tpg-btn-salvar) -> POST cria/tipo-pagamento/1 (HTTP 201) e GET tipo-pagamento/1
+0:27-0:29  Clique no campo Nome; digitado "4" em 0:28 e apagado em 0:29
+0:32  Clique na lupa da linha do código 1 (Dinheiro); abre o modal em modo de edição
+0:33-0:34  Seletores do formulário; Salvar (tpg-btn-salvar) em 0:34 -> POST seleciona/tipo-pagamento/1, POST edita/tipo-pagamento/1 (HTTP 200) e GET tipo-pagamento/1
+0:36  Clique no ícone de exclusão da linha do código 1; diálogo "Deseja deletar o Tipo de Pagamento?"
+0:37-0:41  Alternância de tema; clique em Confirmar em 0:40 -> POST deleta/tipo-pagamento/1 (HTTP 404); diálogo "Erro ao deletar tipo de pagamento"; Fechar em 0:41
+0:42-0:45  Ícone de exclusão da linha do código 3; Confirmar em 0:43; novo POST deleta/tipo-pagamento/1 (HTTP 404); Fechar em 0:45
+0:46  Clique em Novo e em Cancelar (0:48)
+0:48-0:50  Alternância de tema; dois cliques no sino de notificações (0:49 e 0:50)
+0:56  Alternância de tema
+1:00  Video stopped
+
+Rede do conjunto gravado (18 entradas no painel; domínio backendsifit.centrion.com.br; preflights OPTIONS com HTTP 204 intercalados):
+1   GET /api/tipo-pagamento/1 (HTTP 200, 2,8 KiB): 16 tipos; os registros lidos (ids 1, 3, 4, 5) trazem id, empresa_id, nome, tipo, via_gateway, escolher_bandeira, created_at e updated_at, sem campo de status.
+3   POST /api/cria/tipo-pagamento/1 (HTTP 201, 23 B); corpo com nome "44444", tipo "debito", via_gateway "sim" e escolher_bandeira "sim", sem campo de status; resposta {"verifica_erro": false}.
+4   GET /api/tipo-pagamento/1 (HTTP 200, 2,9 KiB): lista recarregada com 17 tipos.
+6   POST /api/seleciona/tipo-pagamento/1 (HTTP 200, 174 B); corpo {"id": 1}; resposta com o tipo Dinheiro (tipo "credito", via_gateway "sim", escolher_bandeira "sim").
+8   POST /api/edita/tipo-pagamento/1 (HTTP 200, 23 B); corpo com id 1, nome "Dinheiro", tipo "credito", via_gateway "nao" e escolher_bandeira "sim"; resposta {"verifica_erro": false}.
+9   GET /api/tipo-pagamento/1 (HTTP 200, 2,9 KiB): lista recarregada.
+11  POST /api/deleta/tipo-pagamento/1 (HTTP 404, 359 B); corpo {"id": 1}; resposta {"verifica_erro": true, "erro": "SQLSTATE[23000]: Integrity constraint violation: 1451 Cannot delete or update a parent row: a foreign key constraint fails (... contas_receber, CONSTRAINT fk_contas_receber_tipo_pagamentos1 FOREIGN KEY (tipo_pagamento_id, tipo_pagamento_empresa_id) REFERENCES tipo_pagamentos (id, empresa_id))"}, com o nome do esquema do banco.
+15  POST /api/deleta/tipo-pagamento/1 (HTTP 404, 359 B); corpo {"id": 3}; mesma resposta de violação de chave estrangeira.
+12-14 e 16-18  Seis POST /api/usuario/tema (HTTP 200, 23 B).
+Autenticação omitida (o token aparece mascarado pelo Jam). Nenhuma requisição de listagem acompanha os cliques em Buscar (0:14) nem a digitação nos filtros.
+
+Quadros consultados (reprodução do Jam):
+0:00  Listagem inicial com 16 tipos, todos Inativo.
+0:14  Buscar acionado com os filtros em Todos; listagem inalterada.
+
+Observações e verificações futuras:
+- O valor escolhido em cada seletor não foi registrado.
+- Cada critério isolado não foi verificado com resultado conhecido.
+- A filtragem local ou no servidor não foi confirmada; não há requisição de listagem após Buscar.
+- O resultado vazio não foi exercitado.

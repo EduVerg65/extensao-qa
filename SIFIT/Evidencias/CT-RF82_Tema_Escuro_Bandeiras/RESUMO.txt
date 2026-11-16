@@ -1,0 +1,28 @@
+CT-RF82 — Verificar aplicação dos temas na tela de Bandeiras
+
+RESULTADO: ERRO — tema escuro aplicado de forma incompleta
+Tela: Bandeiras de Cartão
+Título original do Jam: Erro na acessibilidade!
+Evidência: https://jam.dev/c/ae4dc198-8a42-4451-898a-fb376596c744
+Data da gravação e da análise: 16/11/2026
+
+OBJETIVO
+O tema selecionado deve ser aplicado de forma consistente ao fundo, aos painéis e aos textos da tela.
+
+PASSOS OBSERVADOS
+1. Observar a tela com o tema Escuro selecionado.
+2. Alternar para Claro, retornar a Escuro e selecionar Claro novamente.
+3. Comparar o fundo da página com os painéis de busca e listagem.
+
+RESULTADO OBSERVADO
+No tema Escuro, os painéis ficam escuros, mas o fundo principal continua claro. Os textos da área vazia da listagem apresentam baixa legibilidade visual. A descrição do Jam relata: Fundo com falta de cores e modo escuro incompleto.
+
+EVIDÊNCIAS DA GRAVAÇÃO
+- Quadro de 00:03.800 mostra o tema Escuro selecionado, painéis escuros e fundo principal claro.
+- Quadros de 00:05.320 e 00:06.840 permitem comparar os temas Claro e Escuro.
+- 00:04–00:07: alterações de tema chamam POST /api/usuario/tema e recebem HTTP 200.
+
+LIMITES DA ANÁLISE
+O erro visual é observado na gravação. Não foram medidos índices de contraste nem feita auditoria formal de acessibilidade; a causa técnica não foi determinada.
+Análise da gravação e dos eventos capturados no Jam; não foi executado um novo teste no sistema.
+

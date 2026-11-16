@@ -21,6 +21,7 @@ O PDF `relatorio (6).pdf` abre e lista três contas pendentes (Aluno Demonstraca
 | [relatorio_6_contas_receber.pdf](relatorio_6_contas_receber.pdf) | PDF com três contas e Valor a Receber "----". | `3113e9c447f0c3d9eb81d236b1aaa73cf67d01e51cea2c7be26b7d4236f7d7ae` |
 | [formulario_contas_receber_00-43.png](formulario_contas_receber_00-43.png) | tipo Contas a Receber, Status Pendente. | `f74919c5d905ed611fd23150892816efc767a7fbbbde87fdb092122516552b92` |
 | [rede_lista.png](rede_lista.png) | oito POST relatorio (HTTP 200) e um OPTIONS. | `ecd2414b90cbba8bf93464a4691473a1881f9089b4d3a45cd6d145f309dba798` |
+| [relatorio_6_contas_receber_pagina1.png](relatorio_6_contas_receber_pagina1.png) | Primeira página do PDF (`relatorio (6).pdf`) renderizada para consulta; o PDF original segue no arquivo acima. | `885b3fda306153f3f4fc4b583996fff1b6b9000e6a3797f412a9ebb1bdb82acc` |
 | [linha_do_tempo.txt](linha_do_tempo.txt) | Cronologia de ações, digitação e rede do Jam. | — |
 | [origem.url](origem.url) | Endereço original do Jam. | — |
 

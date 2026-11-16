@@ -1,0 +1,28 @@
+CT-RF80 — Cadastrar lead no estágio Proposta
+
+RESULTADO: SUCESSO
+Tela: Prospecção
+Título original do Jam: testeProposta
+Evidência: https://jam.dev/c/84f94285-ae5f-4f95-b640-a9b107565aa6
+Data da gravação e da análise: 16/11/2026
+
+OBJETIVO
+O lead deve ser criado no estágio Proposta e aparecer na listagem.
+
+PASSOS OBSERVADOS
+1. Abrir Adicionar Lead e preencher os dados do lead e a observação.
+2. Selecionar o estágio Proposta.
+3. Clicar em Salvar Lead.
+
+RESULTADO OBSERVADO
+O cadastro retorna código 15 e o registro aparece na listagem com estágio Proposta. O total de leads passa de 10 para 11.
+
+EVIDÊNCIAS DA GRAVAÇÃO
+- 00:14: seleção de PROPOSTA.
+- 00:25: POST /api/salvar-lead/1 envia estagio=PROPOSTA e retorna HTTP 200, verifica_erro=false e id=15.
+- 00:25: GET /api/leads/1 retorna HTTP 200; quadro de 00:27.559 mostra o registro de código 15.
+
+LIMITES DA ANÁLISE
+O teste demonstra a classificação do lead no estágio Proposta; não demonstra emissão de proposta comercial.
+Análise da gravação e dos eventos capturados no Jam; não foi executado um novo teste no sistema.
+

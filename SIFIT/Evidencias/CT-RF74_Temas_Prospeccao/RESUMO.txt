@@ -1,0 +1,27 @@
+CT-RF74 — Alternar entre os temas claro e escuro na Prospecção
+
+RESULTADO: SUCESSO
+Tela: Prospecção
+Título original do Jam: TemaEscuroClaro
+Evidência: https://jam.dev/c/5dc9fc15-8e13-4f90-b21f-a49aedc6731e
+Data da gravação e da análise: 16/11/2026
+
+OBJETIVO
+A tela deve acompanhar a seleção de tema, mantendo os dados da listagem.
+
+PASSOS OBSERVADOS
+1. Selecionar o tema Claro.
+2. Selecionar novamente o tema Escuro pelo controle de tema.
+
+RESULTADO OBSERVADO
+A gravação mostra a tela passando de escura para clara e retornando ao tema escuro. A listagem permanece visível.
+
+EVIDÊNCIAS DA GRAVAÇÃO
+- 00:00–00:01: alternância nos controles de tema.
+- POST /api/usuario/tema retorna HTTP 200 nas duas alterações. A resposta consultada contém verifica_erro=false.
+- Quadros de 00:00.813 e 00:01.354 mostram, respectivamente, os temas claro e escuro.
+
+LIMITES DA ANÁLISE
+Classificação restrita à alternância visível nesta tela; a gravação não demonstra persistência após recarregar nem uma auditoria de contraste.
+Análise da gravação e dos eventos capturados no Jam; não foi executado um novo teste no sistema.
+
