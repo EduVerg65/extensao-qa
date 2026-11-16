@@ -2,11 +2,11 @@
 
 **Módulos:** Autenticação, Perfil, Clientes / Filtros, Financeiro, Página inicial / Personais, SifitBox / Modalidades e Turmas, Categorias Crossfit, Avaliações, Exercícios, Grupos Musculares, Dashboard e Objetivos de Treino.
 
-**Atualização:** 15/11/2026 — RF01 a RF35, RF38 a RF56 e RF58 a RF63 consolidados, com inclusão de Categorias Crossfit (CT-RF38), SifitBox – Turmas (CT-RF39 a CT-RF41), Pagar.me, Configurações, Despesas Fixas e Relatórios (CT-RF42 a CT-RF56) e, a partir de CT-RF58, Prospecção (leads); BUG-011–BUG-024 em triagem.
+**Atualização:** 15/11/2026 — RF01 a RF35, RF38 a RF56 e RF58 a RF76 consolidados, com inclusão de Categorias Crossfit (CT-RF38), SifitBox – Turmas (CT-RF39 a CT-RF41), Pagar.me, Configurações, Despesas Fixas e Relatórios (CT-RF42 a CT-RF56), Prospecção (CT-RF58 a CT-RF63) e, a partir de CT-RF64, Contas a Pagar, Modelos de Contrato e Planos; BUG-011–BUG-027 em triagem.
 
 **Padronização documental:** 13/11/2026, sem alteração dos resultados registrados.
 
-Esta análise documenta 60 requisitos de QA para os cenários relacionados abaixo, com base nos relatos e nas evidências fornecidas. RF01–RF04 e suas análises históricas foram preservados; RF05–RF20 ampliam a cobertura em 14/11/2026; RF21 acrescenta Avaliações; RF22–RF28 acrescentam Exercícios; RF29–RF33 acrescentam Grupos Musculares; RF34 acrescenta o carregamento do dashboard RF35 acrescenta o cadastro de objetivos de treino e RF38 acrescenta o cadastro de categorias com código automático em 15/11/2026. RF39 acrescenta o cadastro de modalidade em SifitBox – Turmas. RF40 acrescenta a exclusão de turmas e modalidades. RF41 acrescenta o cadastro de turma. RF42 a RF56 acrescentam Pagar.me, Configurações, Despesas Fixas e Relatórios em 15/11/2026. RF58 a RF63 acrescentam Prospecção (leads) em 15/11/2026. Os critérios abaixo constituem a referência de QA para esses fluxos; não representam validação de uma especificação formal pelo responsável pelo produto.
+Esta análise documenta 73 requisitos de QA para os cenários relacionados abaixo, com base nos relatos e nas evidências fornecidas. RF01–RF04 e suas análises históricas foram preservados; RF05–RF20 ampliam a cobertura em 14/11/2026; RF21 acrescenta Avaliações; RF22–RF28 acrescentam Exercícios; RF29–RF33 acrescentam Grupos Musculares; RF34 acrescenta o carregamento do dashboard RF35 acrescenta o cadastro de objetivos de treino e RF38 acrescenta o cadastro de categorias com código automático em 15/11/2026. RF39 acrescenta o cadastro de modalidade em SifitBox – Turmas. RF40 acrescenta a exclusão de turmas e modalidades. RF41 acrescenta o cadastro de turma. RF42 a RF56 acrescentam Pagar.me, Configurações, Despesas Fixas e Relatórios em 15/11/2026. RF58 a RF63 acrescentam Prospecção (leads) em 15/11/2026. RF64 a RF76 acrescentam Contas a Pagar, Modelos de Contrato e Planos em 15/11/2026. Os critérios abaixo constituem a referência de QA para esses fluxos; não representam validação de uma especificação formal pelo responsável pelo produto.
 
 ## 📋 Visão geral dos requisitos
 
@@ -72,6 +72,7 @@ Esta análise documenta 60 requisitos de QA para os cenários relacionados abaix
 | [RF61](#rf61) | Cadastrar um lead com uma única gravação | Média, proposta | [CT-RF61](Cenario_Teste/CT-RF61_Cadastro_Lead_Prospeccao.md) |
 | [RF62](#rf62) | Validar o telefone do lead | Média, proposta | [CT-RF62](Cenario_Teste/CT-RF62_Telefone_Lead_Sem_Validacao.md) |
 | [RF63](#rf63) | Visualizar e editar um lead | Média, proposta | [CT-RF63](Cenario_Teste/CT-RF63_Edicao_Lead_Prospeccao.md) |
+| [RF64](#rf64) | Filtrar contas a pagar por nome, data e status | Média, proposta | [CT-RF64](Cenario_Teste/CT-RF64_Filtros_Contas_Pagar.md) |
 
 ---
 
@@ -1767,6 +1768,35 @@ A edição dos demais campos, a persistência após recarga, os campos obrigató
 
 ---
 
+<a id="rf64"></a>
+
+## RF64 — Filtrar contas a pagar por nome, data e status
+
+| Campo | Descrição |
+| --- | --- |
+| Requisito de QA | A listagem de Contas a Pagar deve apresentar apenas as contas que atendam aos critérios de código, nome, tipo de data, período e status informados, com cartões coerentes e mensagem explícita de resultado vazio. |
+| Ator | Usuário autenticado com acesso ao módulo. |
+| Pré-condições | Base de contas conhecida, com nomes, datas e status registrados. |
+| Gatilho | Informar critérios e acionar Buscar. |
+| Caso | [CT-RF64](Cenario_Teste/CT-RF64_Filtros_Contas_Pagar.md) |
+| Situação observada | A validar — regra ou contexto pendente. A combinação Nome "teste", Pagamento, 06/11/2026 e Pago deixa a listagem vazia, compatível com os critérios, sem dado de controle. |
+| Defeito | Sem defeito confirmado |
+| Evidências | [Jam](https://jam.dev/c/5d0afaf4-5abd-4e85-923f-27448304a9ef) e [Evidências](Evidencias/CT-RF64_Filtros_Contas_Pagar/README.md). |
+
+### Critérios de aceitação do RF64
+
+1. Cada critério isolado (nome, tipo de data, período e status) filtra corretamente a listagem.
+2. A combinação de critérios aplica todos eles simultaneamente.
+3. Os cartões acompanham o conjunto exibido conforme o contrato definido.
+4. O resultado vazio apresenta mensagem explícita.
+5. Limpar os critérios restaura a listagem do período.
+
+### Pontos a confirmar e limites do RF64
+
+Cada critério isolado, a troca de Tipo de Data e o resultado vazio contra a base não foram verificados; o corpo da busca principal não foi capturado.
+
+---
+
 ## 🔗 Rastreabilidade
 
 | Requisito | Cenário / caso | Defeito | Resultado | Evidências |
@@ -1831,6 +1861,7 @@ A edição dos demais campos, a persistência após recarga, os campos obrigató
 | RF61 | [CT-RF61](Cenario_Teste/CT-RF61_Cadastro_Lead_Prospeccao.md) | Sem defeito confirmado | A validar — regra ou contexto pendente | [Evidências](Evidencias/CT-RF61_Cadastro_Lead_Prospeccao/README.md) e [Jam](https://jam.dev/c/308607ff-8abc-40af-8c7c-429ce506ed64) |
 | RF62 | [CT-RF62](Cenario_Teste/CT-RF62_Telefone_Lead_Sem_Validacao.md) | [BUG-024](Relatorio-de-Bugs.md#bug-024), em triagem | Reprovado nas evidências; reteste pendente. | [Evidências](Evidencias/CT-RF62_Telefone_Lead_Sem_Validacao/README.md) e [Jam](https://jam.dev/c/308607ff-8abc-40af-8c7c-429ce506ed64) |
 | RF63 | [CT-RF63](Cenario_Teste/CT-RF63_Edicao_Lead_Prospeccao.md) | Nenhum no fluxo avaliado | Aprovado conforme a gravação | [Evidências](Evidencias/CT-RF63_Edicao_Lead_Prospeccao/README.md) e [Jam](https://jam.dev/c/308607ff-8abc-40af-8c7c-429ce506ed64) |
+| RF64 | [CT-RF64](Cenario_Teste/CT-RF64_Filtros_Contas_Pagar.md) | Sem defeito confirmado | A validar — regra ou contexto pendente | [Evidências](Evidencias/CT-RF64_Filtros_Contas_Pagar/README.md) e [Jam](https://jam.dev/c/5d0afaf4-5abd-4e85-923f-27448304a9ef) |
 
 ---
 
@@ -2062,6 +2093,12 @@ Com RF62, a análise passa a cobrir 59 requisitos documentados. O CT-RF62 acresc
 RF63 utiliza os painéis Info, Console, Network e Actions do Jam "Prospecção", os corpos de buscar-lead e atualizar-lead e os quadros de 0:47, 0:57 e 1:01. Foram registrados a abertura do lead, a atualização do nome e a listagem atualizada. Não houve nova execução, acesso ao código ou ao banco, nem reteste.
 
 Com RF63, a análise passa a cobrir 60 requisitos documentados. O CT-RF63 acrescenta uma aprovação limitada ao exemplo gravado.
+
+### Base da análise do RF64 — revisão de 15/11/2026
+
+RF64 utiliza os painéis Info, Console, Network e Actions do Jam "Contas a Pagar" e os quadros de 0:03 e 0:12. Foram registrados os filtros por nome, tipo de data, período e status e o resultado vazio. Não houve nova execução, acesso ao código ou ao banco, nem reteste.
+
+Com RF64, a análise passa a cobrir 61 requisitos documentados. O CT-RF64 acrescenta um ponto a validar, sem defeito confirmado.
 
 ---
 
