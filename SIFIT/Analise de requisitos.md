@@ -2,11 +2,11 @@
 
 **Módulos:** Autenticação, Perfil, Clientes / Filtros, Financeiro, Página inicial / Personais, SifitBox / Modalidades e Turmas, Categorias Crossfit, Avaliações, Exercícios, Grupos Musculares, Dashboard, Objetivos de Treino, Fichas de Anamnese, Colaboradores, Prospecção e Bandeiras de Cartão.
 
-**Atualização:** 16/11/2026 — RF01 a RF35, RF38 a RF59 e RF65 a RF103 consolidados; BUG-011–BUG-041 em triagem.
+**Atualização:** 16/11/2026 — RF01 a RF35, RF38 a RF59 e RF65 a RF108 consolidados; BUG-011–BUG-043 em triagem.
 
 **Padronização documental:** 13/11/2026, sem alteração dos resultados registrados.
 
-Esta análise documenta 96 requisitos de QA para os cenários relacionados abaixo, com base nos relatos e nas evidências fornecidas. RF01–RF04 e suas análises históricas foram preservados; RF05–RF20 ampliam a cobertura em 14/11/2026; RF21 acrescenta Avaliações; RF22–RF28 acrescentam Exercícios; RF29–RF33 acrescentam Grupos Musculares; RF34 acrescenta o carregamento do dashboard RF35 acrescenta o cadastro de objetivos de treino e RF38 acrescenta o cadastro de categorias com código automático em 15/11/2026. RF39 acrescenta o cadastro de modalidade em SifitBox – Turmas. RF40 acrescenta a exclusão de turmas e modalidades. RF41 acrescenta o cadastro de turma. RF42 a RF56 acrescentam Pagar.me, Configurações, Despesas Fixas e Relatórios em 15/11/2026. RF85 a RF90 acrescentam Prospecção (leads) em 15/11/2026. RF91 a RF103 acrescentam Contas a Pagar, Modelos de Contrato e Planos em 15/11/2026. RF59 acrescenta Fichas de Anamnese; RF65–RF73 cobrem validações, operações e buscas de Colaboradores. RF74–RF84 acrescentam Prospecção e Bandeiras de Cartão a partir de resumos fornecidos. Os critérios abaixo constituem a referência de QA para esses fluxos; não representam validação de uma especificação formal pelo responsável pelo produto.
+Esta análise documenta 101 requisitos de QA para os cenários relacionados abaixo, com base nos relatos e nas evidências fornecidas. RF01–RF04 e suas análises históricas foram preservados; RF05–RF20 ampliam a cobertura em 14/11/2026; RF21 acrescenta Avaliações; RF22–RF28 acrescentam Exercícios; RF29–RF33 acrescentam Grupos Musculares; RF34 acrescenta o carregamento do dashboard RF35 acrescenta o cadastro de objetivos de treino e RF38 acrescenta o cadastro de categorias com código automático em 15/11/2026. RF39 acrescenta o cadastro de modalidade em SifitBox – Turmas. RF40 acrescenta a exclusão de turmas e modalidades. RF41 acrescenta o cadastro de turma. RF42 a RF56 acrescentam Pagar.me, Configurações, Despesas Fixas e Relatórios em 15/11/2026. RF85 a RF90 acrescentam Prospecção (leads) em 15/11/2026. RF91 a RF103 acrescentam Contas a Pagar, Modelos de Contrato e Planos em 15/11/2026. RF104 a RF108 acrescentam Tipos de Pagamento em 15/11/2026. RF59 acrescenta Fichas de Anamnese; RF65–RF73 cobrem validações, operações e buscas de Colaboradores. RF74–RF84 acrescentam Prospecção e Bandeiras de Cartão a partir de resumos fornecidos. Os critérios abaixo constituem a referência de QA para esses fluxos; não representam validação de uma especificação formal pelo responsável pelo produto.
 
 ## 📋 Visão geral dos requisitos
 
@@ -108,6 +108,11 @@ Esta análise documenta 96 requisitos de QA para os cenários relacionados abaix
 | [RF101](#rf101) | Cadastrar um plano | Alta, proposta | [CT-RF101](Cenario_Teste/CT-RF101_Cadastro_Plano.md) |
 | [RF102](#rf102) | Manter o cartão Ativos coerente com o status dos planos | Média, proposta | [CT-RF102](Cenario_Teste/CT-RF102_Contador_Ativos_Planos.md) |
 | [RF103](#rf103) | Editar um plano | Média, proposta | [CT-RF103](Cenario_Teste/CT-RF103_Edicao_Plano.md) |
+| [RF104](#rf104) | Filtrar tipos de pagamento por código, nome, status e tipo | Média, proposta | [CT-RF104](Cenario_Teste/CT-RF104_Filtros_Tipos_Pagamento.md) |
+| [RF105](#rf105) | Gravar e refletir o status do tipo de pagamento no cadastro | Média, proposta | [CT-RF105](Cenario_Teste/CT-RF105_Cadastro_Tipo_Pagamento_Status.md) |
+| [RF106](#rf106) | Editar um tipo de pagamento | Média, proposta | [CT-RF106](Cenario_Teste/CT-RF106_Edicao_Tipo_Pagamento.md) |
+| [RF107](#rf107) | Impedir a exclusão de tipo de pagamento em uso com mensagem clara | Média, proposta | [CT-RF107](Cenario_Teste/CT-RF107_Exclusao_Tipo_Pagamento_Em_Uso.md) |
+| [RF108](#rf108) | Alternar tema Claro/Escuro e abrir as notificações em Tipos de Pagamento | Baixa, proposta | [CT-RF108](Cenario_Teste/CT-RF108_Tema_Notificacoes_Tipos_Pagamento.md) |
 
 ---
 
@@ -2258,6 +2263,151 @@ A persistência após recarga, a edição dos demais campos e o efeito no cartã
 
 ---
 
+<a id="rf104"></a>
+
+## RF104 — Filtrar tipos de pagamento por código, nome, status e tipo
+
+| Campo | Descrição |
+| --- | --- |
+| Requisito de QA | A listagem de Tipos de Pagamento deve apresentar apenas os tipos que atendam aos critérios de código, nome, status e tipo informados, com cartões coerentes e mensagem explícita de resultado vazio. |
+| Ator | Usuário autenticado com acesso ao módulo. |
+| Pré-condições | Base de tipos conhecida, com nomes, tipos e status registrados. |
+| Gatilho | Informar critérios e acionar Buscar. |
+| Caso | [CT-RF104](Cenario_Teste/CT-RF104_Filtros_Tipos_Pagamento.md) |
+| Situação observada | A validar — regra ou contexto pendente. Os seletores e Buscar foram acionados sem requisição de listagem e a listagem permaneceu com 16 tipos; o valor escolhido não foi registrado. |
+| Defeito | Sem defeito confirmado |
+| Evidências | [Jam](https://jam.dev/c/e8734e3d-3f8e-458b-8c7d-e85eea882e50) e [Evidências](Evidencias/CT-RF104_Filtros_Tipos_Pagamento/README.md). |
+
+### Critérios de aceitação do RF104
+
+1. Cada critério isolado (código, nome, status e tipo) filtra corretamente a listagem.
+2. A combinação de critérios aplica todos eles simultaneamente.
+3. Os cartões acompanham o conjunto exibido conforme o contrato definido.
+4. O resultado vazio apresenta mensagem explícita.
+5. Limpar os critérios restaura a listagem completa.
+
+### Pontos a confirmar e limites do RF104
+
+Cada critério isolado, a filtragem local ou no servidor e o resultado vazio não foram verificados.
+
+---
+
+<a id="rf105"></a>
+
+## RF105 — Gravar e refletir o status do tipo de pagamento no cadastro
+
+| Campo | Descrição |
+| --- | --- |
+| Requisito de QA | O cadastro de tipo de pagamento deve gravar os valores informados, inclusive o status, e a listagem e os cartões Ativos e Inativos devem refletir o status real de cada tipo. |
+| Ator | Usuário autenticado com acesso ao módulo. |
+| Pré-condições | Modal Tipo de Pagamento aberto; regra do status definida com o produto. |
+| Gatilho | Informar os campos, manter o Status Ativo e acionar Salvar. |
+| Caso | [CT-RF105](Cenario_Teste/CT-RF105_Cadastro_Tipo_Pagamento_Status.md) |
+| Situação observada | Reprovado nas evidências. A criação retorna HTTP 201, mas o status Ativo não é enviado, a API não o devolve, todos os tipos aparecem como Inativo e o cartão Ativos permanece em 0. |
+| Defeito | [BUG-042](Relatorio-de-Bugs.md#bug-042), em triagem |
+| Evidências | [Jam](https://jam.dev/c/e8734e3d-3f8e-458b-8c7d-e85eea882e50) e [Evidências](Evidencias/CT-RF105_Cadastro_Tipo_Pagamento_Status/README.md). |
+
+### Critérios de aceitação do RF105
+
+1. O status escolhido no modal é enviado ao servidor e gravado.
+2. A listagem apresenta o status real de cada tipo, e não um valor fixo.
+3. O cartão Ativos conta os tipos ativos e Inativos os demais.
+4. O novo tipo aparece na listagem com nome, tipo, via gateway e status informados.
+5. Reabrir o tipo mostra os valores gravados.
+
+### Pontos a confirmar e limites do RF105
+
+A regra do status e a persistência após recarga não foram verificadas; o novo tipo não está visível nos quadros.
+
+---
+
+<a id="rf106"></a>
+
+## RF106 — Editar um tipo de pagamento
+
+| Campo | Descrição |
+| --- | --- |
+| Requisito de QA | A lupa da listagem deve abrir o tipo com os dados gravados e permitir alterá-los, gravando sem erro e atualizando a listagem e os cartões. |
+| Ator | Usuário autenticado com acesso ao módulo. |
+| Pré-condições | Listagem de tipos aberta e tipo existente. |
+| Gatilho | Abrir o tipo pela lupa, alterar um campo e acionar Salvar. |
+| Caso | [CT-RF106](Cenario_Teste/CT-RF106_Edicao_Tipo_Pagamento.md) |
+| Situação observada | Aprovado conforme a gravação. A edição do tipo Dinheiro retorna HTTP 200 sem erro e a listagem reflete Pagamento Pelo Sistema Não; Via gateway passa de 6 para 5. |
+| Defeito | Nenhum no fluxo avaliado |
+| Evidências | [Jam](https://jam.dev/c/e8734e3d-3f8e-458b-8c7d-e85eea882e50) e [Evidências](Evidencias/CT-RF106_Edicao_Tipo_Pagamento/README.md). |
+
+### Critérios de aceitação do RF106
+
+1. O tipo selecionado é aberto com os valores gravados.
+2. A alteração é gravada sem mensagem de erro.
+3. A listagem e o cartão Via gateway refletem a alteração.
+4. A alteração persiste após recarregar a página.
+5. A edição de nome e de tipo também é gravada.
+
+### Pontos a confirmar e limites do RF106
+
+A persistência após recarga e a edição de nome e tipo não foram verificadas.
+
+---
+
+<a id="rf107"></a>
+
+## RF107 — Impedir a exclusão de tipo de pagamento em uso com mensagem clara
+
+| Campo | Descrição |
+| --- | --- |
+| Requisito de QA | A exclusão de um tipo de pagamento em uso deve ser impedida com mensagem clara ao usuário, código HTTP compatível e sem expor detalhes internos do banco na resposta. |
+| Ator | Usuário autenticado com acesso ao módulo. |
+| Pré-condições | Tipo de pagamento referenciado por contas a receber; regra de exclusão definida com o produto. |
+| Gatilho | Acionar o ícone de exclusão e confirmar o diálogo. |
+| Caso | [CT-RF107](Cenario_Teste/CT-RF107_Exclusao_Tipo_Pagamento_Em_Uso.md) |
+| Situação observada | Reprovado nas evidências. Dois tipos em uso retornam HTTP 404 com o erro SQL completo na resposta; a tela mostra só "Erro ao deletar tipo de pagamento". |
+| Defeito | [BUG-043](Relatorio-de-Bugs.md#bug-043), em triagem |
+| Evidências | [Jam](https://jam.dev/c/e8734e3d-3f8e-458b-8c7d-e85eea882e50) e [Evidências](Evidencias/CT-RF107_Exclusao_Tipo_Pagamento_Em_Uso/README.md). |
+
+### Critérios de aceitação do RF107
+
+1. A exclusão de um tipo em uso é impedida com mensagem clara que informe o uso.
+2. A resposta do servidor não expõe nomes de esquema, tabela ou restrição do banco.
+3. O código HTTP é compatível com o conflito (por exemplo 409) e não 404.
+4. A listagem e os cartões permanecem íntegros após a falha.
+5. Um tipo sem uso é excluído e removido da listagem.
+
+### Pontos a confirmar e limites do RF107
+
+A regra de exclusão e a exclusão de um tipo sem uso não foram verificadas.
+
+---
+
+<a id="rf108"></a>
+
+## RF108 — Alternar tema Claro/Escuro e abrir as notificações em Tipos de Pagamento
+
+| Campo | Descrição |
+| --- | --- |
+| Requisito de QA | A tela de Tipos de Pagamento deve aplicar o tema escolhido a todos os elementos e o painel de notificações deve apresentar o estado das notificações. |
+| Ator | Usuário autenticado com acesso ao módulo. |
+| Pré-condições | Tela aberta com o controle de tema e o sino disponíveis. |
+| Gatilho | Alternar o tema e acionar o sino. |
+| Caso | [CT-RF108](Cenario_Teste/CT-RF108_Tema_Notificacoes_Tipos_Pagamento.md) |
+| Situação observada | Aprovado conforme a gravação. O tema Escuro foi aplicado de forma consistente, as notificações exibiram o estado vazio e o retorno a Claro restaurou a tela; seis chamadas de tema com HTTP 200. |
+| Defeito | Nenhum no fluxo avaliado |
+| Evidências | [Jam](https://jam.dev/c/e8734e3d-3f8e-458b-8c7d-e85eea882e50) e [Evidências](Evidencias/CT-RF108_Tema_Notificacoes_Tipos_Pagamento/README.md). |
+
+### Critérios de aceitação do RF108
+
+1. O tema Escuro é aplicado ao fundo, aos painéis, aos cartões e à listagem.
+2. O painel de notificações apresenta o estado das notificações.
+3. O retorno a Claro restaura a tela.
+4. O tema escolhido persiste após recarregar a página.
+5. Diálogos e modais acompanham o tema.
+
+### Pontos a confirmar e limites do RF108
+
+Contraste, persistência após recarga e modais no tema Escuro não foram verificados.
+
+---
+
 ## 🔗 Rastreabilidade
 
 | Requisito | Cenário / caso | Defeito | Resultado | Evidências |
@@ -2355,6 +2505,11 @@ A persistência após recarga, a edição dos demais campos e o efeito no cartã
 | RF101 | [CT-RF101](Cenario_Teste/CT-RF101_Cadastro_Plano.md) | Nenhum no fluxo avaliado | Aprovado conforme a gravação | [Evidências](Evidencias/CT-RF101_Cadastro_Plano/README.md) e [Jam](https://jam.dev/c/233c5d21-e108-4a55-b6f6-8738cb3fc6a6) |
 | RF102 | [CT-RF102](Cenario_Teste/CT-RF102_Contador_Ativos_Planos.md) | [BUG-041](Relatorio-de-Bugs.md#bug-041), em triagem | Reprovado nas evidências; reteste pendente. | [Evidências](Evidencias/CT-RF102_Contador_Ativos_Planos/README.md) e [Jam](https://jam.dev/c/233c5d21-e108-4a55-b6f6-8738cb3fc6a6) |
 | RF103 | [CT-RF103](Cenario_Teste/CT-RF103_Edicao_Plano.md) | Nenhum no fluxo avaliado | Aprovado conforme a gravação | [Evidências](Evidencias/CT-RF103_Edicao_Plano/README.md) e [Jam](https://jam.dev/c/233c5d21-e108-4a55-b6f6-8738cb3fc6a6) |
+| RF104 | [CT-RF104](Cenario_Teste/CT-RF104_Filtros_Tipos_Pagamento.md) | Sem defeito confirmado | A validar — regra ou contexto pendente | [Evidências](Evidencias/CT-RF104_Filtros_Tipos_Pagamento/README.md) e [Jam](https://jam.dev/c/e8734e3d-3f8e-458b-8c7d-e85eea882e50) |
+| RF105 | [CT-RF105](Cenario_Teste/CT-RF105_Cadastro_Tipo_Pagamento_Status.md) | [BUG-042](Relatorio-de-Bugs.md#bug-042), em triagem | Reprovado nas evidências; reteste pendente. | [Evidências](Evidencias/CT-RF105_Cadastro_Tipo_Pagamento_Status/README.md) e [Jam](https://jam.dev/c/e8734e3d-3f8e-458b-8c7d-e85eea882e50) |
+| RF106 | [CT-RF106](Cenario_Teste/CT-RF106_Edicao_Tipo_Pagamento.md) | Nenhum no fluxo avaliado | Aprovado conforme a gravação | [Evidências](Evidencias/CT-RF106_Edicao_Tipo_Pagamento/README.md) e [Jam](https://jam.dev/c/e8734e3d-3f8e-458b-8c7d-e85eea882e50) |
+| RF107 | [CT-RF107](Cenario_Teste/CT-RF107_Exclusao_Tipo_Pagamento_Em_Uso.md) | [BUG-043](Relatorio-de-Bugs.md#bug-043), em triagem | Reprovado nas evidências; reteste pendente. | [Evidências](Evidencias/CT-RF107_Exclusao_Tipo_Pagamento_Em_Uso/README.md) e [Jam](https://jam.dev/c/e8734e3d-3f8e-458b-8c7d-e85eea882e50) |
+| RF108 | [CT-RF108](Cenario_Teste/CT-RF108_Tema_Notificacoes_Tipos_Pagamento.md) | Nenhum no fluxo avaliado | Aprovado conforme a gravação | [Evidências](Evidencias/CT-RF108_Tema_Notificacoes_Tipos_Pagamento/README.md) e [Jam](https://jam.dev/c/e8734e3d-3f8e-458b-8c7d-e85eea882e50) |
 
 ---
 
@@ -3030,6 +3185,36 @@ Com RF102, a análise passa a cobrir 72 requisitos documentados. O CT-RF102 acre
 RF103 utiliza os painéis Info, Console, Network e Actions do Jam "Planos", os corpos das requisições e respostas de seleção e atualização e o quadro de 1:02. Foram registrados a abertura do plano e a atualização. Não houve nova execução, acesso ao código ou ao banco, nem reteste.
 
 Com RF103, a análise passa a cobrir 73 requisitos documentados. O CT-RF103 acrescenta uma aprovação limitada ao exemplo gravado.
+
+### Base da análise do RF104 — revisão de 16/11/2026
+
+RF104 utiliza os painéis Info, Console, Network e Actions do Jam "Tipos de Pagamento" e os quadros de 0:00 e 0:14. Foram registrados o preenchimento do nome, o acionamento dos seletores e de Buscar e a ausência de requisição de listagem. Não houve nova execução, acesso ao código ou ao banco, nem reteste.
+
+Com RF104, a análise passa a cobrir 97 requisitos documentados. O CT-RF104 acrescenta um ponto a validar, sem defeito confirmado.
+
+### Base da análise do RF105 — revisão de 16/11/2026
+
+RF105 utiliza os painéis Info, Console, Network e Actions do Jam "Tipos de Pagamento", o corpo e a resposta da criação, a resposta da lista e os quadros de 0:00, 0:19, 0:24 e 0:27. Foram registrados o cadastro com HTTP 201, a ausência de status no corpo e na resposta e os cartões. Não houve nova execução, acesso ao código ou ao banco, nem reteste.
+
+Com RF105, a análise passa a cobrir 98 requisitos documentados. O CT-RF105 acrescenta uma reprovação, vinculada ao BUG-042, em triagem.
+
+### Base da análise do RF106 — revisão de 16/11/2026
+
+RF106 utiliza os painéis Info, Console, Network e Actions do Jam "Tipos de Pagamento", o corpo e a resposta da seleção e da edição e os quadros de 0:34 e 0:45. Foram registrados a abertura do tipo, a edição e a atualização da listagem. Não houve nova execução, acesso ao código ou ao banco, nem reteste.
+
+Com RF106, a análise passa a cobrir 99 requisitos documentados. O CT-RF106 acrescenta uma aprovação limitada ao exemplo gravado.
+
+### Base da análise do RF107 — revisão de 16/11/2026
+
+RF107 utiliza os painéis Info, Console, Network e Actions do Jam "Tipos de Pagamento", os corpos e as respostas das duas exclusões e os quadros de 0:37, 0:40, 0:43 e 0:45. Foram registrados o HTTP 404, o erro de integridade referencial e a mensagem genérica da tela. Não houve nova execução, acesso ao código ou ao banco, nem reteste.
+
+Com RF107, a análise passa a cobrir 100 requisitos documentados. O CT-RF107 acrescenta uma reprovação, vinculada ao BUG-043, em triagem.
+
+### Base da análise do RF108 — revisão de 16/11/2026
+
+RF108 utiliza os painéis Info, Console, Network e Actions do Jam "Tipos de Pagamento" e os quadros de 0:41, 0:45, 0:50 e 0:57. Foram registrados a alternância de tema e o painel de notificações. Não houve nova execução, acesso ao código ou ao banco, nem reteste.
+
+Com RF108, a análise passa a cobrir 101 requisitos documentados. O CT-RF108 acrescenta uma aprovação limitada ao exemplo gravado.
 
 ---
 
