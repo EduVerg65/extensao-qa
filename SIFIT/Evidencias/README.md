@@ -67,3 +67,16 @@ Uma única gravação do Jam ([SifitBox – Turmas](https://jam.dev/c/ee9a133b-d
 | [CT-RF56](../Cenario_Teste/CT-RF56_Relatorio_Caixas_Vazio.md) | [Relatório de Caixas gera arquivo vazio](CT-RF56_Relatorio_Caixas_Vazio/README.md) | Reprovado nas evidências; BUG-023 em triagem |
 
 Três gravações do Jam ([Pagar.me e Configurações](https://jam.dev/c/e6e551ef-9196-4c79-b6a2-89747b1e8b33), [Despesas Fixas](https://jam.dev/c/a4bac99d-e436-4792-831e-8c3a875272bb) e [Relatórios](https://jam.dev/c/3b4777a4-e1b0-4038-9b06-26c73669d7d1)) são a fonte dos quinze casos; cada pasta contém resumo, cronologia, origem, capturas extraídas da reprodução do Jam e seus hashes SHA-256, e as pastas de CT-RF50 a CT-RF56 incluem os PDFs baixados (os arquivos vazios têm 0 bytes). Os vídeos permanecem no Jam.
+
+## Inclusão de 15/11/2026 — CT-RF58 a CT-RF63
+
+| Caso | Evidência | Resultado |
+| --- | --- | --- |
+| [CT-RF58](../Cenario_Teste/CT-RF58_Tema_Notificacoes_Prospeccao.md) | [Alternância de tema e painel de notificações em Prospecção](CT-RF58_Tema_Notificacoes_Prospeccao/README.md) | Aprovado conforme a gravação |
+| [CT-RF59](../Cenario_Teste/CT-RF59_Busca_Leads_Prospeccao.md) | [Busca de leads por texto na tela Prospecção](CT-RF59_Busca_Leads_Prospeccao/README.md) | Aprovado conforme a gravação |
+| [CT-RF60](../Cenario_Teste/CT-RF60_Filtro_Estagio_Leads.md) | [Filtro de leads por estágio e limpeza dos filtros](CT-RF60_Filtro_Estagio_Leads/README.md) | Aprovado conforme a gravação |
+| [CT-RF61](../Cenario_Teste/CT-RF61_Cadastro_Lead_Prospeccao.md) | [Cadastro de lead com duas requisições de criação](CT-RF61_Cadastro_Lead_Prospeccao/README.md) | A validar — regra ou contexto pendente |
+| [CT-RF62](../Cenario_Teste/CT-RF62_Telefone_Lead_Sem_Validacao.md) | [Telefone do lead aceita 30 dígitos sem validação](CT-RF62_Telefone_Lead_Sem_Validacao/README.md) | Reprovado nas evidências; BUG-024 em triagem |
+| [CT-RF63](../Cenario_Teste/CT-RF63_Edicao_Lead_Prospeccao.md) | [Visualização e edição de lead na tela Prospecção](CT-RF63_Edicao_Lead_Prospeccao/README.md) | Aprovado conforme a gravação |
+
+Uma gravação do Jam ([Prospecção](https://jam.dev/c/308607ff-8abc-40af-8c7c-429ce506ed64)) é a fonte dos seis casos; cada pasta contém resumo, cronologia, origem, capturas extraídas da reprodução do Jam e seus hashes SHA-256. Quadros que mostravam o e-mail digitado no formulário não foram incluídos; onde o modal de lead é mostrado, o recorte omite e-mail e telefone. O vídeo permanece no Jam.
