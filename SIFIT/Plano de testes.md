@@ -1,10 +1,10 @@
 # 🧪 Plano de Testes — SIFIT
 
-**Atualização:** 15/11/2026 — 63 cenários documentados (CT-RF01–CT-RF35, CT-RF38–CT-RF59 e CT-RF65–CT-RF70), com inclusão de CT-RF42 a CT-RF56 / Pagar.me, Configurações, Despesas Fixas e Relatórios, CT-RF57 e CT-RF58 / Grupos (treino), CT-RF59 / Fichas de Anamnese e CT-RF65 a CT-RF70 / Colaboradores; BUG-011–BUG-032 em triagem.
+**Atualização:** 16/11/2026 — 64 cenários documentados (CT-RF01–CT-RF35, CT-RF38–CT-RF59, CT-RF60 e CT-RF65–CT-RF70), com inclusão de CT-RF42 a CT-RF56 / Pagar.me, Configurações, Despesas Fixas e Relatórios, CT-RF57 e CT-RF58 / Grupos (treino), CT-RF59 / Fichas de Anamnese, CT-RF60 / Modelos de Anamnese e CT-RF65 a CT-RF70 / Colaboradores; BUG-011–BUG-032 em triagem.
 
 **Padronização documental:** 13/11/2026, com resultados e pendências preservados.
 
-**Escopo:** 63 casos (CT-RF01–CT-RF35, CT-RF38–CT-RF59 e CT-RF65–CT-RF70) — autenticação, recuperação de senha, perfil, Clientes, financeiro, página inicial e dashboard, modalidades / tema de SifitBox, Categorias Crossfit, Avaliações, Exercícios, Grupos Musculares, Objetivos de Treino, Grupos (treino), Fichas de Anamnese e validações, funções e exclusão de Colaboradores.
+**Escopo:** 64 casos (CT-RF01–CT-RF35, CT-RF38–CT-RF59, CT-RF60 e CT-RF65–CT-RF70) — autenticação, recuperação de senha, perfil, Clientes, financeiro, página inicial e dashboard, modalidades / tema de SifitBox, Categorias Crossfit, Avaliações, Exercícios, Grupos Musculares, Objetivos de Treino, Grupos (treino), Fichas de Anamnese, gestão de Modelos de Anamnese e validações, funções e exclusão de Colaboradores.
 
 ## 📌 1. Identificação
 
@@ -70,6 +70,8 @@ Verificar os fluxos dos 54 cenários documentados, comparando os critérios de a
 **Fichas de Anamnese — CT-RF59:** cadastro de anamnese para um aluno, testado com dois modelos e três respostas diferentes, tanto pela rota de aplicar quanto pela de salvar rascunho. BUG-032 (HTTP 500 em ambas as rotas, mensagem genérica) aguarda triagem; coincide no padrão de resposta com o BUG-016 e o BUG-024.
 
 **Colaboradores — CT-RF65 a CT-RF70:** validações de data de nascimento, formato de CREF e campos obrigatórios na edição, duplicidade de função e exclusão de colaborador, a partir de seis gravações distintas. BUG-026 a BUG-031 aguardam triagem; o BUG-031 (exclusão, HTTP 500) coincide no padrão de resposta com o BUG-016 e o BUG-024.
+
+**Ampliação de escopo em 16/11/2026:** CT-RF60 — Modelos de Anamnese: busca, filtro, cadastro com três perguntas do banco, duas edições e duas exclusões de modelo, a partir de uma única gravação. Aprovado conforme a gravação; nenhum defeito identificado no fluxo avaliado.
 
 **Limites da cobertura atual:**
 
@@ -668,13 +670,14 @@ Os entregáveis são a análise RF01–RF35, RF38–RF56, RF57, RF58 e RF59, est
 - [Caso CT-RF57](Cenario_Teste/CT-RF57_Exclusao_Grupo.md)
 - [Caso CT-RF58](Cenario_Teste/CT-RF58_Edicao_Grupo.md)
 - [Caso CT-RF59](Cenario_Teste/CT-RF59_Cadastro_Anamnese.md)
+- [Caso CT-RF60](Cenario_Teste/CT-RF60_Gestao_Modelos_Anamnese.md)
 - [Caso CT-RF65](Cenario_Teste/CT-RF65_Data_Nascimento_Futura_Colaborador.md)
 - [Caso CT-RF66](Cenario_Teste/CT-RF66_Data_Nascimento_Obrigatoria_Colaborador.md)
 - [Caso CT-RF67](Cenario_Teste/CT-RF67_CREF_Formato_Colaborador.md)
 - [Caso CT-RF68](Cenario_Teste/CT-RF68_Edicao_Colaborador_Campo_Obrigatorio_Vazio.md)
 - [Caso CT-RF69](Cenario_Teste/CT-RF69_Funcao_Duplicada_Colaborador.md)
 - [Caso CT-RF70](Cenario_Teste/CT-RF70_Exclusao_Colaborador_Erro_500.md)
-- [Índice dos 63 cenários](Cenario_Teste/README.md)
+- [Índice dos 64 cenários](Cenario_Teste/README.md)
 - [Índice das evidências e dos Jams](Evidencias/README.md)
 - [Manifesto de integridade dos novos arquivos](Evidencias/manifesto_sha256.json)
 
@@ -694,6 +697,18 @@ Os entregáveis são a análise RF01–RF35, RF38–RF56, RF57, RF58 e RF59, est
 **Ambiente gravado:** `sifit.centrion.com.br`, backend `backendsifit.centrion.com.br`, Edge/Chromium 157 em Windows 11 conforme cabeçalhos; versão da aplicação e zoom não confirmados. As gravações ocorreram entre 22:06 e 22:13 BRT de 15/11/2026.
 
 **Critério de saída:** seis casos retestados em versão identificada, sem persistência inválida ou duplicada e sem HTTP 500.
+
+---
+
+## Inclusão CT-RF60 — Modelos de Anamnese
+
+| Caso | Técnica | Resultado | Reteste mínimo |
+| --- | --- | --- | --- |
+| [CT-RF60](Cenario_Teste/CT-RF60_Gestao_Modelos_Anamnese.md) | Fluxo exploratório / CRUD completo | Aprovado conforme a gravação | Repetir busca, filtro, cadastro com perguntas do banco, edição e exclusão em versão identificada, confirmando os corpos de requisição e resposta. |
+
+**Ambiente gravado:** `sifit.centrion.com.br`, backend `backendsifit.centrion.com.br`, Chrome 157 em Windows 11 conforme cabeçalhos; versão da aplicação e zoom não confirmados. A gravação ocorreu às 23h34 BRT de 15/11/2026.
+
+**Critério de saída:** caso retestado em versão identificada, com os corpos de requisição e resposta capturados, mantendo o resultado aprovado sem HTTP 4xx ou 5xx.
 
 ---
 

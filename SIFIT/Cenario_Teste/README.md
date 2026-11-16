@@ -1,6 +1,6 @@
 # 🧪 Índice dos cenários de teste — SIFIT
 
-**Atualização:** 15/11/2026. 63 casos (CT-RF01–CT-RF35, CT-RF38–CT-RF59 e CT-RF65–CT-RF70): 17 aprovados, 36 reprovados e 10 a validar; 32 defeitos registrados (10 abertos e 22 em triagem).
+**Atualização:** 16/11/2026. 64 casos (CT-RF01–CT-RF35, CT-RF38–CT-RF59, CT-RF60 e CT-RF65–CT-RF70): 18 aprovados, 36 reprovados e 10 a validar; 32 defeitos registrados (10 abertos e 22 em triagem).
 
 | Caso | Funcionalidade | Resultado | Defeito | Jam |
 | --- | --- | --- | --- | --- |
@@ -156,5 +156,13 @@ A mesma gravação mostra o cadastro bem-sucedido de um novo grupo ("Treino sla"
 | [CT-RF59](CT-RF59_Cadastro_Anamnese.md) | Cadastro de anamnese retorna HTTP 500 ao salvar ou aplicar | Reprovado nas evidências | [BUG-032](../Relatorio-de-Bugs.md#bug-032), em triagem | [Jam](https://jam.dev/c/7be0fe71-3419-4050-b63f-473d943fa08e) |
 
 Na mesma gravação, sete tentativas de cadastrar uma anamnese para o aluno "Jorge" — quatro pela rota de aplicar e três pela de salvar rascunho, com dois modelos de anamnese e três respostas diferentes — retornam todas HTTP 500 com a mesma mensagem genérica, coincidindo com o padrão já registrado nos BUG-016 e BUG-024. Nenhuma anamnese é cadastrada com sucesso ao longo da gravação. O resultado é documental; não houve nova execução ou reteste.
+
+## Inclusão de 16/11/2026 — Modelos de Anamnese
+
+| Caso | Funcionalidade | Resultado | Defeito | Jam |
+| --- | --- | --- | --- | --- |
+| [CT-RF60](CT-RF60_Gestao_Modelos_Anamnese.md) | Busca, cadastro, edição e exclusão de modelos de anamnese | Aprovado conforme a gravação | — | [Jam](https://jam.dev/c/4c1e9deb-20ca-417f-ad09-48749857266e) |
+
+Na mesma gravação, busca e filtro da listagem, cadastro de um modelo com três perguntas do banco, duas edições e duas exclusões de modelos retornam HTTP 200 ou 201 em todas as quinze requisições identificadas aos endpoints `/api/modelos-anamnese/*`, sem nenhuma ocorrência de erro 4xx ou 5xx. Nenhum defeito foi identificado no fluxo avaliado. O resultado é documental; não houve nova execução ou reteste.
 
 [← Início](../../README.md) · [Requisitos](../Analise%20de%20requisitos.md) · [Plano](../Plano%20de%20testes.md) · [Evidências](../Evidencias/README.md)
