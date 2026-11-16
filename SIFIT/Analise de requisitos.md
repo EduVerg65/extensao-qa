@@ -2,11 +2,11 @@
 
 **Módulos:** Autenticação, Perfil, Clientes / Filtros, Financeiro, Página inicial / Personais, SifitBox / Modalidades e Turmas, Categorias Crossfit, Avaliações, Exercícios, Grupos Musculares, Dashboard e Objetivos de Treino.
 
-**Atualização:** 15/11/2026 — RF01 a RF35, RF38 a RF58 consolidados, com inclusão de Categorias Crossfit (CT-RF38), SifitBox – Turmas (CT-RF39 a CT-RF41), Pagar.me, Configurações, Despesas Fixas e Relatórios (CT-RF42 a CT-RF56) e, a partir de CT-RF57, Grupos (treino); BUG-011–BUG-025 em triagem.
+**Atualização:** 15/11/2026 — RF01 a RF35, RF38 a RF59 consolidados, com inclusão de Categorias Crossfit (CT-RF38), SifitBox – Turmas (CT-RF39 a CT-RF41), Pagar.me, Configurações, Despesas Fixas e Relatórios (CT-RF42 a CT-RF56), Grupos (treino) (CT-RF57 e CT-RF58) e, a partir de CT-RF59, Fichas de Anamnese; BUG-011–BUG-026 em triagem.
 
 **Padronização documental:** 13/11/2026, sem alteração dos resultados registrados.
 
-Esta análise documenta 56 requisitos de QA para os cenários relacionados abaixo, com base nos relatos e nas evidências fornecidas. RF01–RF04 e suas análises históricas foram preservados; RF05–RF20 ampliam a cobertura em 14/11/2026; RF21 acrescenta Avaliações; RF22–RF28 acrescentam Exercícios; RF29–RF33 acrescentam Grupos Musculares; RF34 acrescenta o carregamento do dashboard RF35 acrescenta o cadastro de objetivos de treino e RF38 acrescenta o cadastro de categorias com código automático em 15/11/2026. RF39 acrescenta o cadastro de modalidade em SifitBox – Turmas. RF40 acrescenta a exclusão de turmas e modalidades. RF41 acrescenta o cadastro de turma. RF42 a RF56 acrescentam Pagar.me, Configurações, Despesas Fixas e Relatórios em 15/11/2026. RF57 acrescenta a exclusão de grupo (treino) e RF58 acrescenta a edição de grupo (treino), ambos também em 15/11/2026. Os critérios abaixo constituem a referência de QA para esses fluxos; não representam validação de uma especificação formal pelo responsável pelo produto.
+Esta análise documenta 57 requisitos de QA para os cenários relacionados abaixo, com base nos relatos e nas evidências fornecidas. RF01–RF04 e suas análises históricas foram preservados; RF05–RF20 ampliam a cobertura em 14/11/2026; RF21 acrescenta Avaliações; RF22–RF28 acrescentam Exercícios; RF29–RF33 acrescentam Grupos Musculares; RF34 acrescenta o carregamento do dashboard RF35 acrescenta o cadastro de objetivos de treino e RF38 acrescenta o cadastro de categorias com código automático em 15/11/2026. RF39 acrescenta o cadastro de modalidade em SifitBox – Turmas. RF40 acrescenta a exclusão de turmas e modalidades. RF41 acrescenta o cadastro de turma. RF42 a RF56 acrescentam Pagar.me, Configurações, Despesas Fixas e Relatórios em 15/11/2026. RF57 acrescenta a exclusão de grupo (treino) e RF58 acrescenta a edição de grupo (treino), ambos também em 15/11/2026. RF59 acrescenta o cadastro de anamnese, também em 15/11/2026. Os critérios abaixo constituem a referência de QA para esses fluxos; não representam validação de uma especificação formal pelo responsável pelo produto.
 
 ## 📋 Visão geral dos requisitos
 
@@ -68,6 +68,7 @@ Esta análise documenta 56 requisitos de QA para os cenários relacionados abaix
 | [RF56](#rf56) | Gerar o relatório de Caixas em PDF | Alta, proposta | [CT-RF56](Cenario_Teste/CT-RF56_Relatorio_Caixas_Vazio.md) |
 | [RF57](#rf57) | Excluir grupo ou explicar o impedimento | Alta, proposta | [CT-RF57](Cenario_Teste/CT-RF57_Exclusao_Grupo.md) |
 | [RF58](#rf58) | Persistir todos os campos editados de um grupo | Alta, proposta | [CT-RF58](Cenario_Teste/CT-RF58_Edicao_Grupo.md) |
+| [RF59](#rf59) | Cadastrar anamnese sem erro de servidor | Alta, proposta para triagem | [CT-RF59](Cenario_Teste/CT-RF59_Cadastro_Anamnese.md) |
 
 ---
 
@@ -1643,6 +1644,33 @@ Não houve acesso a logs do servidor, ao código da rotina de edição nem ao ba
 
 ---
 
+## RF59 — Cadastrar anamnese sem erro de servidor
+
+| Campo | Descrição |
+| --- | --- |
+| Requisito de QA | Ao preencher as respostas de um modelo de anamnese e acionar "Salvar rascunho" ou a aplicação definitiva, o backend deve gravar o registro e retornar sucesso, sem erro genérico de servidor. |
+| Ator | Usuário autenticado com permissão em Fichas de Anamnese. |
+| Pré-condições | Aluno cadastrado e selecionável; modelo de anamnese com ao menos uma pergunta cadastrada. |
+| Gatilho | Selecionar aluno e modelo, responder à(s) pergunta(s) e acionar "Salvar rascunho" ou a aplicação definitiva da anamnese. |
+| Caso | [CT-RF59](Cenario_Teste/CT-RF59_Cadastro_Anamnese.md) |
+| Situação observada | Reprovado nas evidências. As sete tentativas registradas na gravação (quatro em `/api/anamnese/aplicar/{id}` e três em `/api/anamnese/rascunho/{id}`) retornam HTTP 500 com a mesma mensagem genérica, independentemente do modelo de anamnese ou da resposta informada; nenhuma anamnese é cadastrada com sucesso. |
+| Defeito | [BUG-026](Relatorio-de-Bugs.md#bug-026), em triagem |
+| Evidências | [Jam](https://jam.dev/c/7be0fe71-3419-4050-b63f-473d943fa08e). |
+
+### Critérios de aceitação do RF59
+
+1. Ao preencher corretamente as respostas de um modelo e acionar "Salvar rascunho", o backend grava o rascunho e retorna sucesso.
+2. Ao preencher corretamente as respostas e acionar a aplicação definitiva, o backend grava a anamnese com `status: "concluida"` e retorna sucesso.
+3. O comportamento é validado para mais de um modelo de anamnese e mais de um aluno.
+4. Uma anamnese salva com sucesso fica disponível para consulta na listagem.
+5. Um erro de validação específico (por exemplo, pergunta sem resposta) não deve ser reportado como "Erro interno inesperado.".
+
+### Pontos a confirmar e limites do RF59
+
+Não houve acesso a logs do servidor, ao código das rotinas de aplicar/rascunho nem ao banco de dados; a causa real do HTTP 500 não foi determinada. O padrão de resposta é idêntico ao já registrado em [BUG-016](Relatorio-de-Bugs.md#bug-016) e [BUG-024](Relatorio-de-Bugs.md#bug-024), o que sugere tratamento de erro genérico no backend, mas não foi confirmado se a causa de fundo é a mesma. Não foi confirmado se as tentativas de rascunho afetaram o mesmo registro ou criaram registros distintos.
+
+---
+
 ## 🔗 Rastreabilidade
 
 | Requisito | Cenário / caso | Defeito | Resultado | Evidências |
@@ -1703,6 +1731,7 @@ Não houve acesso a logs do servidor, ao código da rotina de edição nem ao ba
 | RF56 | [CT-RF56](Cenario_Teste/CT-RF56_Relatorio_Caixas_Vazio.md) | [BUG-023](Relatorio-de-Bugs.md#bug-023), em triagem | Reprovado nas evidências; reteste pendente. | [Evidências](Evidencias/CT-RF56_Relatorio_Caixas_Vazio/README.md) e [Jam](https://jam.dev/c/3b4777a4-e1b0-4038-9b06-26c73669d7d1) |
 | RF57 | [CT-RF57](Cenario_Teste/CT-RF57_Exclusao_Grupo.md) | [BUG-024](Relatorio-de-Bugs.md#bug-024), em triagem | Reprovado nas evidências; reteste pendente. | [Jam](https://jam.dev/c/b1231a75-1a65-4bf0-b795-f52a8c7d3365) |
 | RF58 | [CT-RF58](Cenario_Teste/CT-RF58_Edicao_Grupo.md) | [BUG-025](Relatorio-de-Bugs.md#bug-025), em triagem | Reprovado nas evidências; reteste pendente. | [Jam](https://jam.dev/c/b1231a75-1a65-4bf0-b795-f52a8c7d3365) |
+| RF59 | [CT-RF59](Cenario_Teste/CT-RF59_Cadastro_Anamnese.md) | [BUG-026](Relatorio-de-Bugs.md#bug-026), em triagem | Reprovado nas evidências; reteste pendente. | [Jam](https://jam.dev/c/7be0fe71-3419-4050-b63f-473d943fa08e) |
 
 ---
 
@@ -1910,6 +1939,12 @@ Com RF57, a análise passa a cobrir 55 requisitos documentados. O CT-RF57 acresc
 RF58 utiliza os painéis Informações, Console e Rede do mesmo Jam "Tela de Grupos" do RF57, os eventos de clique entre 0:57 e 1:16 e as requisições `POST /api/edita/grupo/1`, `GET /api/grupos/1` e `POST /api/seleciona/grupo/1` correspondentes às duas edições do grupo "Treino sla" (código 11). Foram registrados os corpos de requisição e resposta das duas edições e das consultas imediatamente seguintes. Não houve nova execução, acesso ao código ou ao banco, nem reteste.
 
 Com RF58, a análise passa a cobrir 56 requisitos documentados. O CT-RF58 acrescenta uma reprovação, vinculada ao BUG-025, em triagem.
+
+### Base da análise do RF59 — revisão de 15/11/2026
+
+RF59 utiliza os painéis Informações, Console e Rede do Jam "Fichas de Anamnese", os eventos de clique e digitação entre 0:00 e 1:28 e as sete requisições com HTTP 500 (quatro em `POST /api/anamnese/aplicar/1` e três em `POST /api/anamnese/rascunho/1`), registradas com dois modelos de anamnese e três respostas distintas. Foram registrados os corpos de requisição e resposta de duas dessas tentativas, representativas das demais. Não houve nova execução, acesso a logs, ao código ou ao banco, nem reteste.
+
+Com RF59, a análise passa a cobrir 57 requisitos documentados. O CT-RF59 acrescenta uma reprovação, vinculada ao BUG-026, em triagem.
 
 ---
 

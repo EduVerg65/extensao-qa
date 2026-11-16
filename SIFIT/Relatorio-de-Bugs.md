@@ -1,14 +1,14 @@
 # 🐞 Relatório de Bugs — SIFIT
 
-**Escopo:** defeitos de 56 casos documentados (CT-RF01–CT-RF35, CT-RF38–CT-RF56, CT-RF57 e CT-RF58): recuperação, Perfil, Clientes, financeiro, página inicial e dashboard, tema, modalidades, categorias, avaliações, exercícios, grupos musculares, objetivos de treino, SifitBox – Turmas, Pagar.me, configurações, despesas fixas, relatórios e grupos (treino).
+**Escopo:** defeitos de 57 casos documentados (CT-RF01–CT-RF35, CT-RF38–CT-RF56, CT-RF57, CT-RF58 e CT-RF59): recuperação, Perfil, Clientes, financeiro, página inicial e dashboard, tema, modalidades, categorias, avaliações, exercícios, grupos musculares, objetivos de treino, SifitBox – Turmas, Pagar.me, configurações, despesas fixas, relatórios, grupos (treino) e fichas de anamnese.
 
 **Ambientes:** CT-RF01 em https://sifitalfa.centrion.com.br/login; CT-RF02_ERRO em https://sifit.centrion.com.br/profile. CT-RF03: URL do frontend não confirmada; backend informado em `https://backendsifit.centrion.com.br/api/clientesPorNome/1`.
 
 **Datas das gravações do Jam:** CT-RF01 em 23/10/2026; CT-RF02_ERRO em 22/10/2026 às 21:45 BRT; CT-RF03 não confirmada.
 
-**Atualização documental:** 15/11/2026 — 25 defeitos registrados: 10 abertos (BUG-001 a BUG-010) e 15 em triagem (BUG-011 a BUG-025). BUG-019 registra o HTTP 500 no cadastro de objetivo de treino, BUG-020 a ausência de retorno visível no cadastro de turma sem modalidade, BUG-024 o HTTP 500 na exclusão de grupo (treino) e BUG-025 a não persistência do campo status na edição de grupo (treino), todos sem causa técnica confirmada. As análises anteriores foram preservadas.
+**Atualização documental:** 15/11/2026 — 26 defeitos registrados: 10 abertos (BUG-001 a BUG-010) e 16 em triagem (BUG-011 a BUG-026). BUG-019 registra o HTTP 500 no cadastro de objetivo de treino, BUG-020 a ausência de retorno visível no cadastro de turma sem modalidade, BUG-024 o HTTP 500 na exclusão de grupo (treino), BUG-025 a não persistência do campo status na edição de grupo (treino) e BUG-026 o HTTP 500 no cadastro de anamnese (aplicar e rascunho), todos sem causa técnica confirmada. As análises anteriores foram preservadas.
 
-**Gravação de CT-RF57 e CT-RF58:** 15/11/2026, Grupos, 21h03 BRT, Chrome 157.0.8103.78 / Windows 11; mesma gravação, evidências e limites no BUG-024 e no BUG-025.
+**Gravação de CT-RF57 e CT-RF58:** 15/11/2026, Grupos, 21h03 BRT, Chrome 157.0.8103.78 / Windows 11; mesma gravação, evidências e limites no BUG-024 e no BUG-025. **Gravação de CT-RF59:** 15/11/2026, Fichas de Anamnese, 22h07 BRT, Chrome 157.0.8103.78 / Windows 11; evidências e limites no BUG-026.
 
 **Padronização documental:** 13/11/2026, sem alteração do status dos defeitos.
 
@@ -55,8 +55,9 @@
 | [BUG-023](#bug-023) | Relatórios de Avaliações, Clientes, Colaboradores e Caixas geram arquivo PDF vazio (0 bytes) | Alta / Alta, propostas | Em triagem — correspondência dos arquivos inferida; causa não determinada | [CT-RF53](Cenario_Teste/CT-RF53_Relatorio_Avaliacoes_Vazio.md), [CT-RF54](Cenario_Teste/CT-RF54_Relatorio_Clientes_Vazio.md), [CT-RF55](Cenario_Teste/CT-RF55_Relatorio_Colaboradores_Vazio.md) e [CT-RF56](Cenario_Teste/CT-RF56_Relatorio_Caixas_Vazio.md) |
 | [BUG-024](#bug-024) | Exclusão de grupo retorna HTTP 500 e mensagem genérica | Média / Alta, propostas | Em triagem — causa não determinada | [CT-RF57](Cenario_Teste/CT-RF57_Exclusao_Grupo.md) |
 | [BUG-025](#bug-025) | Edição de grupo não persiste o campo status apesar de retorno de sucesso | Média / Alta, propostas | Em triagem — causa não determinada | [CT-RF58](Cenario_Teste/CT-RF58_Edicao_Grupo.md) |
+| [BUG-026](#bug-026) | Cadastro de anamnese retorna HTTP 500 ao salvar ou aplicar | Média / Alta, propostas | Em triagem — causa não determinada | [CT-RF59](Cenario_Teste/CT-RF59_Cadastro_Anamnese.md) |
 
-BUG-001–BUG-010 aguardam correção e reteste. BUG-011–BUG-025 aguardam confirmação das premissas e triagem antes do encaminhamento de correção. As causas técnicas permanecem não confirmadas; o BUG-003 se apoia no relato e nas capturas fornecidos, com os limites registrados no caso.
+BUG-001–BUG-010 aguardam correção e reteste. BUG-011–BUG-026 aguardam confirmação das premissas e triagem antes do encaminhamento de correção. As causas técnicas permanecem não confirmadas; o BUG-003 se apoia no relato e nas capturas fornecidos, com os limites registrados no caso.
 
 ---
 
@@ -1190,6 +1191,48 @@ Investigar o HTTP 500 com logs do servidor e os vínculos do registro, em conjun
 A falha é específica do campo `status`: o mesmo endpoint, no mesmo registro e na mesma sessão, persiste corretamente o campo `descricao` logo em seguida. Isso aponta para uma causa na rotina de edição do backend — por exemplo, uma whitelist de campos editáveis que exclui `status`, ou uma atualização que o ignora silenciosamente — e não para uma falha geral de sessão, rede ou salvamento. Não houve acesso a logs do servidor, ao código da rotina nem ao banco de dados para confirmar o valor realmente gravado.
 
 Investigar a rotina de edição do grupo (`/api/edita/grupo/{id}`), com foco no tratamento do campo `status`; verificar se o mesmo ocorre ao reativar um grupo (Inativo → Ativo) e em outras entidades com campo de status semelhante, incluindo grupo muscular, dado o padrão de nomenclatura de endpoints já observado nos BUG-016 e BUG-024. O status permanece em triagem até que a causa seja determinada e uma nova execução comprove os critérios de aceitação do caso associado.
+
+---
+
+## BUG-026 — Cadastro de anamnese retorna HTTP 500 ao salvar ou aplicar
+
+| Campo | Descrição |
+| --- | --- |
+| Status | Em triagem — causa não determinada; reteste pendente após correção. |
+| Severidade / prioridade | Média / Alta, propostas para triagem. |
+| Módulo | Treinamento / Fichas de Anamnese / Cadastro |
+| Requisitos | [RF59](Analise%20de%20requisitos.md#rf59) |
+| Casos | [CT-RF59](Cenario_Teste/CT-RF59_Cadastro_Anamnese.md) |
+| Data da evidência / revisão | 15/11/2026, 22h07 BRT; sem nova execução. |
+| Página | https://sifit.centrion.com.br/anamneses |
+| Ambiente | Chrome 157.0.8103.78 / Windows (x86) 11; versão e zoom não confirmados. |
+
+### Pré-condições e reprodução
+
+**[CT-RF59](Cenario_Teste/CT-RF59_Cadastro_Anamnese.md):** Sessão autenticada com permissão para cadastrar anamneses. Aluno cadastrado e selecionável; modelo de anamnese com ao menos uma pergunta.
+
+1. Abrir "Nova Anamnese", selecionar aluno e modelo, avançar até a pergunta.
+2. Preencher a resposta e avançar até a revisão final.
+3. Acionar "Salvar rascunho" ou a aplicação definitiva.
+
+### Esperado e obtido
+
+| Caso | Esperado | Obtido |
+| --- | --- | --- |
+| CT-RF59 | O backend grava o rascunho ou a anamnese aplicada e retorna sucesso. | As sete tentativas registradas (quatro em `aplicar`, três em `rascunho`) retornam HTTP 500 com a mesma mensagem genérica; nenhuma anamnese é cadastrada com sucesso. |
+
+**Impacto:** O usuário não consegue concluir o cadastro de nenhuma anamnese, nem como rascunho nem de forma definitiva, em nenhuma das tentativas registradas na gravação, com dois modelos e três respostas diferentes.
+
+### Evidências
+
+- [CT-RF59](Cenario_Teste/CT-RF59_Cadastro_Anamnese.md): [Jam — Fichas de Anamnese](https://jam.dev/c/7be0fe71-3419-4050-b63f-473d943fa08e). 0:28: `POST /api/anamnese/aplicar/1` com `{"modelo_id":3,"respostas":[{"pergunta_id":"5","resposta":"Esse"}],"status":"concluida"}` retorna HTTP 500, `{"verifica_erro": true, "mensagem": "Erro interno inesperado."}`. 0:42, 1:03 e 1:10: três tentativas de `POST /api/anamnese/rascunho/1` retornam o mesmo HTTP 500. 1:12: `POST /api/anamnese/aplicar/1` com `{"modelo_id":5,"respostas":[{"pergunta_id":"5","resposta":"Agachamento"}],"status":"concluida"}` retorna o mesmo HTTP 500.
+- Cabeçalhos registrados: `content-type: application/json; charset=utf-8`, `comprimento-do-conteúdo: 64`. Data registrada em uma das tentativas de rascunho: `Segunda-feira, 16 de novembro de 2026, 01:05:48 GMT`.
+
+### Análise, limites e encaminhamento
+
+O erro ocorre de forma idêntica nos dois endpoints envolvidos (`aplicar` e `rascunho`), em dois modelos de anamnese diferentes e com três respostas de conteúdo distinto, sempre com a mesma mensagem genérica — o mesmo padrão de resposta já registrado em [BUG-016](#bug-016) e [BUG-024](#bug-024). Não houve acesso a logs do servidor, ao código das rotinas nem ao banco de dados para identificar a exceção real por trás do erro.
+
+Investigar as rotinas de servidor acionadas por `/api/anamnese/aplicar/{id}` e `/api/anamnese/rascunho/{id}`, com acesso a logs para confirmar se a causa é a mesma do BUG-016/BUG-024 ou uma falha independente do módulo de anamnese; confirmar também se o identificador final da URL corresponde ao `empresa_id`. O status permanece em triagem até que a causa seja determinada e uma nova execução comprove os critérios de aceitação do caso associado.
 
 ---
 

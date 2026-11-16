@@ -1,6 +1,6 @@
 # 🧪 Índice dos cenários de teste — SIFIT
 
-**Atualização:** 15/11/2026. 56 casos (CT-RF01–CT-RF35, CT-RF38–CT-RF56, CT-RF57 e CT-RF58): 17 aprovados, 29 reprovados e 10 a validar; 25 defeitos registrados (10 abertos e 15 em triagem).
+**Atualização:** 15/11/2026. 57 casos (CT-RF01–CT-RF35, CT-RF38–CT-RF56, CT-RF57, CT-RF58 e CT-RF59): 17 aprovados, 30 reprovados e 10 a validar; 26 defeitos registrados (10 abertos e 16 em triagem).
 
 | Caso | Funcionalidade | Resultado | Defeito | Jam |
 | --- | --- | --- | --- | --- |
@@ -137,5 +137,13 @@ Cada grupo tem como fonte uma única gravação. Os resultados são documentais;
 | [CT-RF58](CT-RF58_Edicao_Grupo.md) | Edição de grupo não persiste o campo status | Reprovado nas evidências | [BUG-025](../Relatorio-de-Bugs.md#bug-025), em triagem | [Jam](https://jam.dev/c/b1231a75-1a65-4bf0-b795-f52a8c7d3365) |
 
 A mesma gravação mostra o cadastro bem-sucedido de um novo grupo ("Treino sla", código 11) antes das duas edições e da tentativa de exclusão aqui reprovadas. No CT-RF57, o endpoint e a mensagem genérica retornada coincidem com os já registrados no BUG-016 para a exclusão de grupo muscular. No CT-RF58, a alteração do campo Status para "Inativo" retorna sucesso sem persistir o valor, enquanto a alteração do campo Descrição, na mesma sessão e no mesmo registro, é persistida corretamente — isolando a falha ao campo status. O resultado é documental; não houve nova execução ou reteste.
+
+## Inclusão de 15/11/2026 — Fichas de Anamnese
+
+| Caso | Funcionalidade | Resultado | Defeito | Jam |
+| --- | --- | --- | --- | --- |
+| [CT-RF59](CT-RF59_Cadastro_Anamnese.md) | Cadastro de anamnese retorna HTTP 500 ao salvar ou aplicar | Reprovado nas evidências | [BUG-026](../Relatorio-de-Bugs.md#bug-026), em triagem | [Jam](https://jam.dev/c/7be0fe71-3419-4050-b63f-473d943fa08e) |
+
+Na mesma gravação, sete tentativas de cadastrar uma anamnese para o aluno "Jorge" — quatro pela rota de aplicar e três pela de salvar rascunho, com dois modelos de anamnese e três respostas diferentes — retornam todas HTTP 500 com a mesma mensagem genérica, coincidindo com o padrão já registrado nos BUG-016 e BUG-024. Nenhuma anamnese é cadastrada com sucesso ao longo da gravação. O resultado é documental; não houve nova execução ou reteste.
 
 [← Início](../../README.md) · [Requisitos](../Analise%20de%20requisitos.md) · [Plano](../Plano%20de%20testes.md) · [Evidências](../Evidencias/README.md)
