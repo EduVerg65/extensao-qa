@@ -1,10 +1,10 @@
 # 🧪 Plano de Testes — SIFIT
 
-**Atualização:** 15/11/2026 — 60 cenários documentados (CT-RF01–CT-RF35, CT-RF38–CT-RF56 e CT-RF58–CT-RF63), com inclusão de CT-RF58 a CT-RF63 / Prospecção (leads); BUG-011–BUG-024 em triagem.
+**Atualização:** 15/11/2026 — 73 cenários documentados (CT-RF01–CT-RF35, CT-RF38–CT-RF56 e CT-RF58–CT-RF76), com inclusão de CT-RF64 a CT-RF76 / Contas a Pagar, Modelos de Contrato e Planos; BUG-011–BUG-027 em triagem.
 
 **Padronização documental:** 13/11/2026, com resultados e pendências preservados.
 
-**Escopo:** 60 casos (CT-RF01–CT-RF35, CT-RF38–CT-RF56 e CT-RF58–CT-RF63) — autenticação, recuperação de senha, perfil, Clientes, financeiro, página inicial e dashboard, modalidades / tema de SifitBox, Categorias Crossfit, Avaliações, Exercícios, Grupos Musculares e Objetivos de Treino.
+**Escopo:** 73 casos (CT-RF01–CT-RF35, CT-RF38–CT-RF56 e CT-RF58–CT-RF76) — autenticação, recuperação de senha, perfil, Clientes, financeiro, página inicial e dashboard, modalidades / tema de SifitBox, Categorias Crossfit, Avaliações, Exercícios, Grupos Musculares e Objetivos de Treino.
 
 ## 📌 1. Identificação
 
@@ -14,13 +14,13 @@
 | Tipo de teste | Funcional manual, com análise exploratória e de evidências. |
 | Versão avaliada | Não confirmada; registrar por caso no reteste. |
 | Funcionalidades | Autenticação positiva e negativa, recuperação, Perfil, filtros de Clientes, financeiro, período, personais, modalidades / tema, Categorias Crossfit, Avaliações e Exercícios. |
-| Situação | 60 casos documentados: 21 aprovados, 28 reprovados e 11 a validar; 24 defeitos registrados (10 abertos e 14 em triagem) e 28 casos com reteste corretivo pendente. |
+| Situação | 73 casos documentados: 29 aprovados, 31 reprovados e 13 a validar; 27 defeitos registrados (10 abertos e 17 em triagem) e 31 casos com reteste corretivo pendente. |
 
 ---
 
 ## 🎯 2. Objetivo
 
-Verificar os fluxos dos 60 cenários documentados, comparando os critérios de aceitação com as evidências de autenticação, recuperação, perfil, Clientes, financeiro, página inicial, SifitBox, Categorias Crossfit, Avaliações, Exercícios e Grupos Musculares. Manter rastreabilidade entre requisitos, casos, Jam, vídeos, resultados e defeitos, distinguindo revisões documentais de novas execuções.
+Verificar os fluxos dos 73 cenários documentados, comparando os critérios de aceitação com as evidências de autenticação, recuperação, perfil, Clientes, financeiro, página inicial, SifitBox, Categorias Crossfit, Avaliações, Exercícios e Grupos Musculares. Manter rastreabilidade entre requisitos, casos, Jam, vídeos, resultados e defeitos, distinguindo revisões documentais de novas execuções.
 
 ---
 
@@ -66,6 +66,12 @@ Verificar os fluxos dos 60 cenários documentados, comparando os critérios de a
 **Relatórios — CT-RF50–CT-RF56:** geração de PDF de Matrículas, Contas a Receber, Contas a Pagar (Pagas), Avaliações, Clientes, Colaboradores e Caixas, a partir de uma gravação e de oito arquivos baixados (cinco vazios). BUG-022 e BUG-023 aguardam triagem.
 
 **Prospecção — CT-RF58–CT-RF63:** alternância de tema e notificações, busca por texto, filtro por estágio, cadastro de lead (com duas requisições de criação), validação do telefone e edição, a partir de uma única gravação. BUG-024 aguarda triagem; o cadastro permanece a validar quanto à duplicidade.
+
+**Contas a Pagar — CT-RF64–CT-RF68:** filtros, cadastro de conta a colaborador sem colaborador, busca de colaborador, visualização e exclusão, a partir de uma única gravação. BUG-025 aguarda triagem; filtros e busca de colaborador permanecem a validar.
+
+**Modelos de Contrato — CT-RF69–CT-RF71:** variáveis e pré-visualização, cadastro e listagem, a partir de uma única gravação. BUG-026 aguarda triagem.
+
+**Planos — CT-RF72–CT-RF76:** filtros, tema e notificações, cadastro, cartão Ativos e edição, a partir de uma única gravação. BUG-027 aguarda triagem.
 
 **Limites da cobertura atual:**
 
@@ -297,6 +303,45 @@ Para o reteste, preparar aluno existente selecionável pela busca, personal habi
 | Preparação | Registrar versão, zoom e ambiente; capturar listagem, cartões, formulários, rede (incluindo corpos, com atenção ao número de requisições de criação) e console antes e depois de cada operação. Omitir credenciais, tokens e e-mails. |
 | Limites | Análise documental dos painéis do Jam, sem nova execução. Busca e filtro por estágio sem requisição de rede (filtragem local não confirmada); corpo e resposta da segunda criação e persistência após recarga não verificados. |
 
+### CT-RF64 a CT-RF68 — ambiente e preparação
+
+| Item | Definição |
+| --- | --- |
+| Página | https://sifit.centrion.com.br/contas-pagar |
+| Backend de referência | https://backendsifit.centrion.com.br |
+| Navegador / sistema / janela | Chrome 157.0.8103.78 / Windows (x86) 11 / 1920 × 911, conforme Info. |
+| Gravação | 15/11/2026 às 21:58 BRT, duração de 1 min; uma única gravação cobre os 5 casos. |
+| Rede | Classificada como rápida no Jam: 7,8 Mbps, latência de 50 ms. |
+| Dados e permissões | Base de contas com fornecedores, colaboradores, categorias e locais conhecidos; conta descartável para cadastro, visualização e exclusão; regra de obrigatoriedade do colaborador definida com o produto. |
+| Preparação | Registrar versão, zoom e ambiente; capturar listagem, formulários, diálogos, rede (incluindo corpos) e console antes e depois de cada operação. Omitir credenciais, tokens e e-mails. |
+| Limites | Análise documental dos painéis do Jam, sem nova execução. Resultado vazio dos filtros sem dados de controle; busca de colaborador sem resultado e sem seleção; recarga da página após o cadastro. |
+
+### CT-RF69 a CT-RF71 — ambiente e preparação
+
+| Item | Definição |
+| --- | --- |
+| Página | https://sifit.centrion.com.br/modelos-contrato |
+| Backend de referência | https://backendsifit.centrion.com.br |
+| Navegador / sistema / janela | Chrome 157.0.8103.78 / Windows (x86) 11 / 1920 × 855, conforme Info. |
+| Gravação | 15/11/2026 às 21:55 BRT, duração de 50 s; uma única gravação cobre os 3 casos. |
+| Rede | Classificada como rápida no Jam: 7,8 Mbps, latência de 50 ms. |
+| Dados e permissões | Modelos de contrato existentes conhecidos; variáveis dos grupos Aluno, Plano, Academia e Contrato; modelo descartável. |
+| Preparação | Registrar versão, zoom e ambiente; capturar listagem, formulários, diálogos, rede (incluindo corpos) e console antes e depois de cada operação. Omitir credenciais, tokens e e-mails. |
+| Limites | Análise documental dos painéis do Jam, sem nova execução. Corpo e resposta da criação indisponíveis; causa da tabela vazia não determinada; variáveis exercitadas limitadas a três. |
+
+### CT-RF72 a CT-RF76 — ambiente e preparação
+
+| Item | Definição |
+| --- | --- |
+| Página | https://sifit.centrion.com.br/planos |
+| Backend de referência | https://backendsifit.centrion.com.br |
+| Navegador / sistema / janela | Chrome 157.0.8103.78 / Windows (x86) 11 / 1920 × 855, conforme Info. |
+| Gravação | 15/11/2026 às 21:54 BRT, duração de 1 min 10 s; uma única gravação cobre os 5 casos. |
+| Rede | Classificada como rápida no Jam: 7,8 Mbps, latência de 50 ms. |
+| Dados e permissões | Base de planos com status e alunos conhecidos; plano descartável para cadastro e edição; regra de cálculo dos cartões definida com o produto. |
+| Preparação | Registrar versão, zoom e ambiente; capturar listagem, formulários, diálogos, rede (incluindo corpos) e console antes e depois de cada operação. Omitir credenciais, tokens e e-mails. |
+| Limites | Análise documental dos painéis do Jam, sem nova execução. Filtros sem requisição de rede (filtragem local não confirmada); regra de cálculo do cartão Ativos não informada; persistência após recarga não verificada. |
+
 ---
 
 ## 📋 7. Casos de teste e situação
@@ -362,6 +407,19 @@ Para o reteste, preparar aluno existente selecionável pela busca, personal habi
 | [RF61](Analise%20de%20requisitos.md#rf61) | [CT-RF61](Cenario_Teste/CT-RF61_Cadastro_Lead_Prospeccao.md) | Exploratório / regra a confirmar | A validar — regra ou contexto pendente | Sem defeito confirmado | Confirmar se o segundo POST gerou registro adicional, capturando corpos e respostas, e testar campos obrigatórios; registrar defeito apenas se houver duplicidade confirmada. |
 | [RF62](Analise%20de%20requisitos.md#rf62) | [CT-RF62](Cenario_Teste/CT-RF62_Telefone_Lead_Sem_Validacao.md) | Funcional manual / teste negativo | Reprovado nas evidências | [BUG-024](Relatorio-de-Bugs.md#bug-024), em triagem | Confirmar a regra do campo, reproduzir com a validação visível e retestar telefones válidos e inválidos e a persistência. |
 | [RF63](Analise%20de%20requisitos.md#rf63) | [CT-RF63](Cenario_Teste/CT-RF63_Edicao_Lead_Prospeccao.md) | Funcional manual / regressão | Aprovado conforme a gravação | Nenhum no fluxo avaliado | Usar como regressão; edição dos demais campos, persistência após recarga e campos obrigatórios exigem execuções adicionais. |
+| [RF64](Analise%20de%20requisitos.md#rf64) | [CT-RF64](Cenario_Teste/CT-RF64_Filtros_Contas_Pagar.md) | Exploratório / regra a confirmar | A validar — regra ou contexto pendente | Sem defeito confirmado | Reexecutar com contas de controle e exercitar cada critério isolado e a combinação. |
+| [RF65](Analise%20de%20requisitos.md#rf65) | [CT-RF65](Cenario_Teste/CT-RF65_Cadastro_Conta_Colaborador_Sem_Colaborador.md) | Funcional manual / teste negativo | Reprovado nas evidências | [BUG-025](Relatorio-de-Bugs.md#bug-025), em triagem | Confirmar a regra, reproduzir com a validação visível e retestar envio válido e inválido e a persistência. |
+| [RF66](Analise%20de%20requisitos.md#rf66) | [CT-RF66](Cenario_Teste/CT-RF66_Busca_Colaborador_Conta_Pagar.md) | Exploratório / regra a confirmar | A validar — regra ou contexto pendente | Sem defeito confirmado | Reexecutar com um nome existente e confirmar a mensagem de resultado vazio. |
+| [RF67](Analise%20de%20requisitos.md#rf67) | [CT-RF67](Cenario_Teste/CT-RF67_Visualizacao_Conta_Pagar.md) | Funcional manual / regressão | Aprovado conforme a gravação | Nenhum no fluxo avaliado | Usar como regressão; contas de outros tipos e status e o rótulo do tipo exigem execuções adicionais. |
+| [RF68](Analise%20de%20requisitos.md#rf68) | [CT-RF68](Cenario_Teste/CT-RF68_Exclusao_Conta_Pagar.md) | Funcional manual / regressão | Aprovado conforme a gravação | Nenhum no fluxo avaliado | Usar como regressão; cancelar, recarga e contas vinculadas exigem execuções adicionais. |
+| [RF69](Analise%20de%20requisitos.md#rf69) | [CT-RF69](Cenario_Teste/CT-RF69_Variaveis_Preview_Modelo_Contrato.md) | Funcional manual / regressão | Aprovado conforme a gravação | Nenhum no fluxo avaliado | Usar como regressão; demais variáveis, formatação complexa e texto gravado exigem execuções adicionais. |
+| [RF70](Analise%20de%20requisitos.md#rf70) | [CT-RF70](Cenario_Teste/CT-RF70_Cadastro_Modelo_Contrato.md) | Funcional manual / regressão | Aprovado conforme a gravação | Nenhum no fluxo avaliado | Usar como regressão; campos obrigatórios e conferência do texto gravado exigem execuções adicionais. |
+| [RF71](Analise%20de%20requisitos.md#rf71) | [CT-RF71](Cenario_Teste/CT-RF71_Listagem_Modelos_Contrato_Vazia.md) | Funcional manual / manifestação observada | Reprovado nas evidências | [BUG-026](Relatorio-de-Bugs.md#bug-026), em triagem | Reproduzir comparando resposta e tabela, investigar a renderização e retestar após correção. |
+| [RF72](Analise%20de%20requisitos.md#rf72) | [CT-RF72](Cenario_Teste/CT-RF72_Filtros_Planos.md) | Funcional manual / regressão | Aprovado conforme a gravação | Nenhum no fluxo avaliado | Usar como regressão; filtro por Status, combinação de critérios e resultado vazio exigem execuções adicionais. |
+| [RF73](Analise%20de%20requisitos.md#rf73) | [CT-RF73](Cenario_Teste/CT-RF73_Tema_Notificacoes_Planos.md) | Funcional manual / regressão | Aprovado conforme a gravação | Nenhum no fluxo avaliado | Usar como regressão; persistência após recarga e notificações pendentes exigem execuções adicionais. |
+| [RF74](Analise%20de%20requisitos.md#rf74) | [CT-RF74](Cenario_Teste/CT-RF74_Cadastro_Plano.md) | Funcional manual / regressão | Aprovado conforme a gravação | Nenhum no fluxo avaliado | Usar como regressão; campos obrigatórios, valores extremos e conferência na listagem exigem execuções adicionais. |
+| [RF75](Analise%20de%20requisitos.md#rf75) | [CT-RF75](Cenario_Teste/CT-RF75_Contador_Ativos_Planos.md) | Funcional manual / manifestação observada | Reprovado nas evidências | [BUG-027](Relatorio-de-Bugs.md#bug-027), em triagem | Reproduzir com a base e o contrato do cartão conhecidos e retestar o cartão após cadastro, edição e alteração de status. |
+| [RF76](Analise%20de%20requisitos.md#rf76) | [CT-RF76](Cenario_Teste/CT-RF76_Edicao_Plano.md) | Funcional manual / regressão | Aprovado conforme a gravação | Nenhum no fluxo avaliado | Usar como regressão; persistência após recarga e demais campos exigem execuções adicionais. |
 
 ---
 
@@ -520,6 +578,31 @@ Todas essas variações permanecem planejadas e não são contadas como execuç�
 6. CT-RF63: Usar como regressão; edição dos demais campos, persistência após recarga e campos obrigatórios exigem execuções adicionais.
 7. Registrar versão e evidência; verificações planejadas não recebem resultado de execução.
 
+### CT-RF64 a CT-RF68 — próximos testes
+
+1. CT-RF64: Reexecutar com contas de controle e exercitar cada critério isolado e a combinação.
+2. CT-RF65 / BUG-025: Confirmar a regra, reproduzir com a validação visível e retestar envio válido e inválido e a persistência.
+3. CT-RF66: Reexecutar com um nome existente e confirmar a mensagem de resultado vazio.
+4. CT-RF67: Usar como regressão; contas de outros tipos e status e o rótulo do tipo exigem execuções adicionais.
+5. CT-RF68: Usar como regressão; cancelar, recarga e contas vinculadas exigem execuções adicionais.
+6. Registrar versão e evidência; verificações planejadas não recebem resultado de execução.
+
+### CT-RF69 a CT-RF71 — próximos testes
+
+1. CT-RF69: Usar como regressão; demais variáveis, formatação complexa e texto gravado exigem execuções adicionais.
+2. CT-RF70: Usar como regressão; campos obrigatórios e conferência do texto gravado exigem execuções adicionais.
+3. CT-RF71 / BUG-026: Reproduzir comparando resposta e tabela, investigar a renderização e retestar após correção.
+4. Registrar versão e evidência; verificações planejadas não recebem resultado de execução.
+
+### CT-RF72 a CT-RF76 — próximos testes
+
+1. CT-RF72: Usar como regressão; filtro por Status, combinação de critérios e resultado vazio exigem execuções adicionais.
+2. CT-RF73: Usar como regressão; persistência após recarga e notificações pendentes exigem execuções adicionais.
+3. CT-RF74: Usar como regressão; campos obrigatórios, valores extremos e conferência na listagem exigem execuções adicionais.
+4. CT-RF75 / BUG-027: Reproduzir com a base e o contrato do cartão conhecidos e retestar o cartão após cadastro, edição e alteração de status.
+5. CT-RF76: Usar como regressão; persistência após recarga e demais campos exigem execuções adicionais.
+6. Registrar versão e evidência; verificações planejadas não recebem resultado de execução.
+
 ---
 
 ## 🚦 9. Critérios de entrada, saída e aceitação
@@ -530,7 +613,7 @@ Todas essas variações permanecem planejadas e não são contadas como execuç�
 
 **Entrada e aprovação do login:** página acessível, conta de teste com credenciais válidas e acesso ao painel, sem sessão autenticada no início. Aprovar o CT-RF04_loginComSucesso quando o envio autenticar o usuário, navegar para `/dashboard` e exibir o menu e resumo da academia, com senha mascarada no formulário. A aprovação se limita a esse fluxo positivo.
 
-**Aceitação da correção:** todos os critérios do respectivo caso atendidos e reteste documentado. BUG-001 a BUG-010 permanecem abertos até a confirmação de suas correções. BUG-011–BUG-024 aguardam triagem e confirmação funcional antes do encaminhamento de correção. A aprovação do CT-RF01 não comprova a recuperação completa da senha; a do CT-RF02_ERRO não comprova persistência de alterações no perfil. Para CT-RF03, cada combinação deve incluir todos os clientes esperados e excluir os incompatíveis, com a matriz executada e o estado vazio validado.
+**Aceitação da correção:** todos os critérios do respectivo caso atendidos e reteste documentado. BUG-001 a BUG-010 permanecem abertos até a confirmação de suas correções. BUG-011–BUG-027 aguardam triagem e confirmação funcional antes do encaminhamento de correção. A aprovação do CT-RF01 não comprova a recuperação completa da senha; a do CT-RF02_ERRO não comprova persistência de alterações no perfil. Para CT-RF03, cada combinação deve incluir todos os clientes esperados e excluir os incompatíveis, com a matriz executada e o estado vazio validado.
 
 ---
 
@@ -552,6 +635,8 @@ Todas essas variações permanecem planejadas e não são contadas como execuç�
 | Integração de CT-RF39–CT-RF41 / RF39–RF41 | Realizada | 15/11/2026; sem nova execução; BUG-020 em triagem. |
 | Integração de CT-RF42–CT-RF56 / RF42–RF56 | Realizada | 15/11/2026; sem nova execução; BUG-021 a BUG-023 em triagem. |
 | Integração de CT-RF58–CT-RF63 / RF58–RF63 | Realizada | 15/11/2026; sem nova execução; BUG-024 em triagem. |
+| Integração de CT-RF64–CT-RF76 / RF64–RF76 | Realizada | 15/11/2026; sem nova execução; BUG-025 a BUG-027 em triagem. |
+| Confirmação da obrigatoriedade do colaborador, dos filtros de contas e da regra do cartão Ativos | Pendente | RF64, RF65, RF66 e RF75; depende do responsável pelo produto. |
 | Confirmação da regra do telefone e da duplicidade de criação de leads | Pendente | RF61 e RF62; depende do responsável pelo produto. |
 | Confirmação da regra de saque, da faixa do campo de dias, da duplicidade de criação e dos relatórios sem dados | Pendente | RF42, RF44, RF47 e RF52; depende do responsável pelo produto. |
 | Confirmação da regra de exclusão e da obrigatoriedade da modalidade | Pendente | RF40 e RF41; depende do responsável pelo produto. |
@@ -566,7 +651,7 @@ Todas essas variações permanecem planejadas e não são contadas como execuç�
 
 Os defeitos são registrados no [relatório de bugs](Relatorio-de-Bugs.md), com identificação, severidade, prioridade, pré-condições, reprodução, resultado esperado e obtido, impacto e evidências. Hipóteses técnicas permanecem identificadas até a confirmação no código.
 
-Há dez defeitos abertos (BUG-001 a BUG-010) e quatorze em triagem (BUG-011 a BUG-024). Os dois casos de contagem e filtro financeiro (CT-RF09 e CT-RF10) compartilham BUG-005 e os quatro relatórios vazios (CT-RF53 a CT-RF56) compartilham BUG-023; por isso vinte e oito casos reprovados correspondem a vinte e quatro defeitos. CT-RF08, CT-RF11, CT-RF13, CT-RF16, CT-RF25, CT-RF40, CT-RF42, CT-RF44, CT-RF47, CT-RF52 e CT-RF61 permanecem a validar, sem defeito confirmado. Após a correção, atualizar o caso, o relatório dos testes e o defeito com as evidências da versão retestada. As severidades e prioridades dos novos defeitos são propostas para triagem.
+Há dez defeitos abertos (BUG-001 a BUG-010) e dezessete em triagem (BUG-011 a BUG-027). Os dois casos de contagem e filtro financeiro (CT-RF09 e CT-RF10) compartilham BUG-005 e os quatro relatórios vazios (CT-RF53 a CT-RF56) compartilham BUG-023; por isso trinta e um casos reprovados correspondem a vinte e sete defeitos. CT-RF08, CT-RF11, CT-RF13, CT-RF16, CT-RF25, CT-RF40, CT-RF42, CT-RF44, CT-RF47, CT-RF52, CT-RF61, CT-RF64 e CT-RF66 permanecem a validar, sem defeito confirmado. Após a correção, atualizar o caso, o relatório dos testes e o defeito com as evidências da versão retestada. As severidades e prioridades dos novos defeitos são propostas para triagem.
 
 ---
 
@@ -591,7 +676,7 @@ Há dez defeitos abertos (BUG-001 a BUG-010) e quatorze em triagem (BUG-011 a BU
 
 ## 📁 13. Entregáveis e documentos associados
 
-Os entregáveis são a análise RF01–RF35, RF38–RF56 e RF58–RF63, este plano, os 60 cenários BDD, as evidências disponíveis e os relatórios atualizados. CT-RF21 possui relato original, link do Jam, quadros, cronologia, requisição/resposta sem autenticação e metadados locais; o vídeo permanece no Jam. Os vídeos e demais evidências anteriores citados nos documentos de 14/11/2026 não estavam nesta cópia do repositório em 15/11/2026; consultar o índice de evidências para a disponibilidade. Vinte e um casos estão aprovados no alcance das evidências; vinte e oito reprovados aguardam reteste, incluindo CT-RF22/24/26/27/28/29/30/35/41/45/51/53/54/55/56/62 em triagem, e onze a validar dependem de regra/contexto ou persistência. CT-RF23–25, CT-RF35, CT-RF38–CT-RF56 e CT-RF58–CT-RF63 possuem pasta local com resumo, cronologia e origem (CT-RF35, CT-RF38–CT-RF56 e CT-RF58–CT-RF63 incluem também capturas extraídas do Jam e hashes; CT-RF50–CT-RF56 incluem os PDFs baixados); os vídeos permanecem no Jam. CT-RF29–CT-RF33 têm como fonte uma única gravação, cujos painéis foram lidos diretamente; as pastas locais de evidências desses cinco casos ainda não foram criadas.
+Os entregáveis são a análise RF01–RF35, RF38–RF56 e RF58–RF76, este plano, os 73 cenários BDD, as evidências disponíveis e os relatórios atualizados. CT-RF21 possui relato original, link do Jam, quadros, cronologia, requisição/resposta sem autenticação e metadados locais; o vídeo permanece no Jam. Os vídeos e demais evidências anteriores citados nos documentos de 14/11/2026 não estavam nesta cópia do repositório em 15/11/2026; consultar o índice de evidências para a disponibilidade. Vinte e nove casos estão aprovados no alcance das evidências; trinta e um reprovados aguardam reteste, incluindo CT-RF22/24/26/27/28/29/30/35/41/45/51/53/54/55/56/62/65/71/75 em triagem, e treze a validar dependem de regra/contexto ou persistência. CT-RF23–25, CT-RF35, CT-RF38–CT-RF56 e CT-RF58–CT-RF76 possuem pasta local com resumo, cronologia e origem (CT-RF35, CT-RF38–CT-RF56 e CT-RF58–CT-RF76 incluem também capturas extraídas do Jam e hashes; CT-RF50–CT-RF56 incluem os PDFs baixados); os vídeos permanecem no Jam. CT-RF29–CT-RF33 têm como fonte uma única gravação, cujos painéis foram lidos diretamente; as pastas locais de evidências desses cinco casos ainda não foram criadas.
 
 - [Análise de requisitos](Analise%20de%20requisitos.md)
 - [Caso CT-RF01](Cenario_Teste/CT-RF01_Esqueci-senha.md)
@@ -631,7 +716,20 @@ Os entregáveis são a análise RF01–RF35, RF38–RF56 e RF58–RF63, este pla
 - [Caso CT-RF61](Cenario_Teste/CT-RF61_Cadastro_Lead_Prospeccao.md) e [evidências](Evidencias/CT-RF61_Cadastro_Lead_Prospeccao/README.md)
 - [Caso CT-RF62](Cenario_Teste/CT-RF62_Telefone_Lead_Sem_Validacao.md) e [evidências](Evidencias/CT-RF62_Telefone_Lead_Sem_Validacao/README.md)
 - [Caso CT-RF63](Cenario_Teste/CT-RF63_Edicao_Lead_Prospeccao.md) e [evidências](Evidencias/CT-RF63_Edicao_Lead_Prospeccao/README.md)
-- [Índice dos 60 cenários](Cenario_Teste/README.md)
+- [Caso CT-RF64](Cenario_Teste/CT-RF64_Filtros_Contas_Pagar.md) e [evidências](Evidencias/CT-RF64_Filtros_Contas_Pagar/README.md)
+- [Caso CT-RF65](Cenario_Teste/CT-RF65_Cadastro_Conta_Colaborador_Sem_Colaborador.md) e [evidências](Evidencias/CT-RF65_Cadastro_Conta_Colaborador_Sem_Colaborador/README.md)
+- [Caso CT-RF66](Cenario_Teste/CT-RF66_Busca_Colaborador_Conta_Pagar.md) e [evidências](Evidencias/CT-RF66_Busca_Colaborador_Conta_Pagar/README.md)
+- [Caso CT-RF67](Cenario_Teste/CT-RF67_Visualizacao_Conta_Pagar.md) e [evidências](Evidencias/CT-RF67_Visualizacao_Conta_Pagar/README.md)
+- [Caso CT-RF68](Cenario_Teste/CT-RF68_Exclusao_Conta_Pagar.md) e [evidências](Evidencias/CT-RF68_Exclusao_Conta_Pagar/README.md)
+- [Caso CT-RF69](Cenario_Teste/CT-RF69_Variaveis_Preview_Modelo_Contrato.md) e [evidências](Evidencias/CT-RF69_Variaveis_Preview_Modelo_Contrato/README.md)
+- [Caso CT-RF70](Cenario_Teste/CT-RF70_Cadastro_Modelo_Contrato.md) e [evidências](Evidencias/CT-RF70_Cadastro_Modelo_Contrato/README.md)
+- [Caso CT-RF71](Cenario_Teste/CT-RF71_Listagem_Modelos_Contrato_Vazia.md) e [evidências](Evidencias/CT-RF71_Listagem_Modelos_Contrato_Vazia/README.md)
+- [Caso CT-RF72](Cenario_Teste/CT-RF72_Filtros_Planos.md) e [evidências](Evidencias/CT-RF72_Filtros_Planos/README.md)
+- [Caso CT-RF73](Cenario_Teste/CT-RF73_Tema_Notificacoes_Planos.md) e [evidências](Evidencias/CT-RF73_Tema_Notificacoes_Planos/README.md)
+- [Caso CT-RF74](Cenario_Teste/CT-RF74_Cadastro_Plano.md) e [evidências](Evidencias/CT-RF74_Cadastro_Plano/README.md)
+- [Caso CT-RF75](Cenario_Teste/CT-RF75_Contador_Ativos_Planos.md) e [evidências](Evidencias/CT-RF75_Contador_Ativos_Planos/README.md)
+- [Caso CT-RF76](Cenario_Teste/CT-RF76_Edicao_Plano.md) e [evidências](Evidencias/CT-RF76_Edicao_Plano/README.md)
+- [Índice dos 73 cenários](Cenario_Teste/README.md)
 - [Índice das evidências e dos Jams](Evidencias/README.md)
 - [Manifesto de integridade dos novos arquivos](Evidencias/manifesto_sha256.json)
 
