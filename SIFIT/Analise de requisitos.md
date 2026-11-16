@@ -2,7 +2,7 @@
 
 **Módulos:** Autenticação, Perfil, Clientes / Filtros, Financeiro, Página inicial / Personais, SifitBox / Modalidades e Turmas, Categorias Crossfit, Avaliações, Exercícios, Grupos Musculares, Dashboard e Objetivos de Treino.
 
-**Atualização:** 15/11/2026 — RF01 a RF35 e RF38 a RF56 consolidados, com inclusão de Categorias Crossfit (CT-RF38), SifitBox – Turmas (CT-RF39 a CT-RF41) e, a partir de CT-RF42, Pagar.me, Configurações, Despesas Fixas e Relatórios; BUG-011–BUG-023 em triagem.
+**Atualização:** 15/11/2026 — RF01 a RF35, RF38 a RF56 e RF65 a RF70 consolidados; BUG-011–BUG-029 em triagem.
 
 **Padronização documental:** 13/11/2026, sem alteração dos resultados registrados.
 
@@ -1840,6 +1840,31 @@ Com RF55, a análise passa a cobrir 53 requisitos documentados. O CT-RF55 acresc
 RF56 utiliza os painéis Info, Console e Network do Jam "Relatórios", os quadros do vídeo e os arquivos baixados (tamanho zero e carimbos de hora). A atividade do usuário não foi registrada no Console do Jam. A correspondência do arquivo com o tipo é inferida. Não houve nova execução, acesso ao código ou ao banco, nem reteste. BUG-023 está em triagem.
 
 Com RF56, a análise passa a cobrir 54 requisitos documentados. O CT-RF56 acrescenta uma reprovação, vinculada ao BUG-023, em triagem.
+
+---
+
+## RF65 a RF70 — Validações e operações de Colaboradores
+
+| Requisito | Comportamento esperado | Caso | Defeito | Resultado observado |
+| --- | --- | --- | --- | --- |
+| <a id="rf65"></a>RF65 | Recusar data de nascimento posterior à data atual. | [CT-RF65](Cenario_Teste/CT-RF65_Data_Nascimento_Futura_Colaborador.md) | [BUG-024](Relatorio-de-Bugs.md#bug-024) | `18/05/2222` aceito; atualização HTTP 200. |
+| <a id="rf66"></a>RF66 | Exigir a data de nascimento definida como obrigatória. | [CT-RF66](Cenario_Teste/CT-RF66_Data_Nascimento_Obrigatoria_Colaborador.md) | [BUG-025](Relatorio-de-Bugs.md#bug-025) | Campo vazio aceito; atualização HTTP 200. |
+| <a id="rf67"></a>RF67 | Validar o CREF conforme o formato confirmado pelo produto. | [CT-RF67](Cenario_Teste/CT-RF67_CREF_Formato_Colaborador.md) | [BUG-026](Relatorio-de-Bugs.md#bug-026) | Texto `TESTEE` aceito; atualização HTTP 200. |
+| <a id="rf68"></a>RF68 | Bloquear edição com qualquer campo obrigatório vazio. | [CT-RF68](Cenario_Teste/CT-RF68_Edicao_Colaborador_Campo_Obrigatorio_Vazio.md) | [BUG-027](Relatorio-de-Bugs.md#bug-027) | Edição aceita sem validação visível; HTTP 200. |
+| <a id="rf69"></a>RF69 | Manter uma única associação por colaborador e função. | [CT-RF69](Cenario_Teste/CT-RF69_Funcao_Duplicada_Colaborador.md) | [BUG-028](Relatorio-de-Bugs.md#bug-028) | Mesma função associada três vezes; dois POST HTTP 201. |
+| <a id="rf70"></a>RF70 | Excluir colaborador permitido ou explicar o vínculo impeditivo sem HTTP 500. | [CT-RF70](Cenario_Teste/CT-RF70_Exclusao_Colaborador_Erro_500.md) | [BUG-029](Relatorio-de-Bugs.md#bug-029) | Exclusão retorna HTTP 500 e erro interno genérico. |
+
+### Critérios gerais de aceitação
+
+1. Regras de obrigatoriedade e formato devem ser aplicadas no cliente e no servidor.
+2. Tentativas inválidas não podem persistir dados parcial ou integralmente.
+3. A associação colaborador/função deve ser única e resistente a repetição ou concorrência.
+4. Impedimentos de exclusão devem ser tratados como regra de negócio, com mensagem específica.
+5. Todos os fluxos devem preservar os dados anteriores após falha e permitir correção.
+
+### Base da análise — revisão de 15/11/2026
+
+Os seis Jams foram lidos por metadados, eventos de interação e registros de rede. RF65–RF68 possuem POST de atualização HTTP 200 sem corpo capturado; por isso a aceitação do endpoint está comprovada, mas a persistência final deve ser reconfirmada. RF69 registra payloads, HTTP 201 e respostas subsequentes com três associações iguais. RF70 registra payload, HTTP 500 e `Erro interno inesperado`. Não houve nova execução, acesso ao banco, logs ou código. A análise passa a cobrir 60 requisitos documentados; RF36–RF37 e RF57–RF64 permanecem fora do conjunto fornecido.
 
 ---
 

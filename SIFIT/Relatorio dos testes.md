@@ -1,10 +1,10 @@
 # 📊 Relatório de Testes — SIFIT
 
-**Escopo:** 54 casos documentados (CT-RF01–CT-RF35 e CT-RF38–CT-RF56) — autenticação, recuperação, perfil, Clientes, financeiro, página inicial e dashboard, modalidades / tema de SifitBox, Categorias Crossfit, Avaliações, Exercícios, Grupos Musculares, Objetivos de Treino cadastro de categorias com código automático, SifitBox – Turmas, Pagar.me, Configurações, Despesas Fixas e Relatórios.
+**Escopo:** 60 casos documentados (CT-RF01–CT-RF35, CT-RF38–CT-RF56 e CT-RF65–CT-RF70), incluindo validações, funções e exclusão de Colaboradores.
 
 **Datas das gravações do Jam:** CT-RF01 em 23/10/2026; CT-RF02_ERRO em 22/10/2026 às 21:45 BRT; CT-RF03 não confirmada; CT-RF04_loginComSucesso em 13/11/2026; CT-RF05–CT-RF20 em 14/11/2026; CT-RF21 em 15/11/2026 às 15:07:51,265 BRT; CT-RF22–28 em 15/11/2026 às 15:25, 15:40, 15:38, 15:35, 16:11, 16:08 e 16:07 BRT; CT-RF29–33 em 15/11/2026 às 15h56 BRT (uma única gravação); CT-RF34 em 15/11/2026 às 17:23 BRT; CT-RF35 em 15/11/2026 às 18:13 BRT; CT-RF38 em 15/11/2026 às 18:41 BRT; CT-RF39–41 em 15/11/2026 às 18:51 BRT (uma única gravação); CT-RF42–45 às 19:06, CT-RF46–49 às 19:07 e CT-RF50–56 às 19:09 BRT (uma gravação por grupo).
 
-**Data da revisão documental:** 15/11/2026, com integração de CT-RF22–CT-RF35 e CT-RF38–CT-RF56; BUG-011–BUG-023 em triagem. Resultados anteriores preservados.
+**Data da revisão documental:** 15/11/2026, com integração de CT-RF65–CT-RF70; BUG-011–BUG-029 em triagem. Resultados anteriores preservados.
 
 **Origem do resultado:** análise de evidências fornecidas; sem nova execução no sistema nesta revisão.
 
@@ -30,7 +30,7 @@ CT-RF30 acrescenta uma reprovação e o BUG-017 (imagens dos grupos musculares c
 
 | Casos documentados | Aprovados | Reprovados | A validar | Defeitos registrados | Casos com reteste corretivo pendente |
 | :---: | :---: | :---: | :---: | :---: | :---: |
-| 54 | 17 | 27 | 10 | 23 (10 abertos + 13 em triagem) | 27 |
+| 60 | 17 | 33 | 10 | 29 (10 abertos + 19 em triagem) | 33 |
 
 Os 27 retestes incluem CT-RF22/24/26/27/28/29/30/35/41/45/51/53/54/55/56, sujeitos à confirmação funcional e técnica. As contagens representam os casos documentados com base nas fontes indicadas, sem novas execuções nesta revisão. As nove variações planejadas para o reteste do CT-RF03 não foram executadas e não são contabilizadas como testes adicionais realizados.
 
@@ -503,7 +503,22 @@ O consolidado atual é de 39 casos documentados (CT-RF01–CT-RF35 e CT-RF38–C
 
 Os defeitos [BUG-021](Relatorio-de-Bugs.md#bug-021), [BUG-022](Relatorio-de-Bugs.md#bug-022) e [BUG-023](Relatorio-de-Bugs.md#bug-023) estão em triagem. O BUG-023 é compartilhado por CT-RF53 a CT-RF56 (arquivos de 0 bytes) e, por isso, seis casos reprovados deste grupo correspondem a três defeitos. Os pontos a validar (CT-RF42, CT-RF44, CT-RF47 e CT-RF52) não geram defeito antes da confirmação da regra ou da duplicidade.
 
-O consolidado atual é de 54 casos documentados (CT-RF01–CT-RF35 e CT-RF38–CT-RF56): 17 aprovados, 27 reprovados e 10 a validar; 23 defeitos registrados (10 abertos e 13 em triagem) e 27 casos com reteste corretivo pendente. CT-RF09/10 compartilham BUG-005 e CT-RF53 a CT-RF56 compartilham BUG-023, de modo que 27 casos reprovados correspondem a 23 defeitos. Sem nova execução.
+O consolidado atual é de 60 casos documentados: 17 aprovados, 33 reprovados e 10 a validar; 29 defeitos registrados (10 abertos e 19 em triagem) e 33 casos com reteste corretivo pendente. CT-RF09/10 compartilham BUG-005 e CT-RF53 a CT-RF56 compartilham BUG-023. Sem nova execução.
+
+---
+
+## Resultado de CT-RF65 a CT-RF70 — Colaboradores
+
+| Caso | Resultado observado | Situação | Defeito |
+| --- | --- | --- | --- |
+| [CT-RF65](Cenario_Teste/CT-RF65_Data_Nascimento_Futura_Colaborador.md) | Data `18/05/2222`; atualização HTTP 200. | Reprovado | [BUG-024](Relatorio-de-Bugs.md#bug-024) |
+| [CT-RF66](Cenario_Teste/CT-RF66_Data_Nascimento_Obrigatoria_Colaborador.md) | Data obrigatória vazia; atualização HTTP 200. | Reprovado | [BUG-025](Relatorio-de-Bugs.md#bug-025) |
+| [CT-RF67](Cenario_Teste/CT-RF67_CREF_Formato_Colaborador.md) | CREF `TESTEE`; atualização HTTP 200. | Reprovado, com formato a confirmar | [BUG-026](Relatorio-de-Bugs.md#bug-026) |
+| [CT-RF68](Cenario_Teste/CT-RF68_Edicao_Colaborador_Campo_Obrigatorio_Vazio.md) | Campo obrigatório vazio; atualização HTTP 200. | Reprovado | [BUG-027](Relatorio-de-Bugs.md#bug-027) |
+| [CT-RF69](Cenario_Teste/CT-RF69_Funcao_Duplicada_Colaborador.md) | Consulta passa de uma para três funções idênticas. | Reprovado | [BUG-028](Relatorio-de-Bugs.md#bug-028) |
+| [CT-RF70](Cenario_Teste/CT-RF70_Exclusao_Colaborador_Erro_500.md) | Exclusão retorna HTTP 500 e erro interno. | Reprovado | [BUG-029](Relatorio-de-Bugs.md#bug-029) |
+
+RF65–RF68 precisam de reteste com corpo do POST e reabertura do cadastro para comprovar a persistência. RF69 possui evidência direta da duplicidade. RF70 confirma o erro interno, mas não sua causa.
 
 ---
 

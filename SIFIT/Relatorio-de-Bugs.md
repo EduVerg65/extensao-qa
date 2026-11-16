@@ -1,12 +1,12 @@
 # 🐞 Relatório de Bugs — SIFIT
 
-**Escopo:** defeitos de 54 casos documentados (CT-RF01–CT-RF35 e CT-RF38–CT-RF56): recuperação, Perfil, Clientes, financeiro, página inicial e dashboard, tema, modalidades, categorias, avaliações, exercícios, grupos musculares, objetivos de treino, SifitBox – Turmas, Pagar.me, configurações, despesas fixas e relatórios.
+**Escopo:** defeitos de 60 casos documentados (CT-RF01–CT-RF35, CT-RF38–CT-RF56 e CT-RF65–CT-RF70), incluindo validações, funções e exclusão de Colaboradores.
 
 **Ambientes:** CT-RF01 em https://sifitalfa.centrion.com.br/login; CT-RF02_ERRO em https://sifit.centrion.com.br/profile. CT-RF03: URL do frontend não confirmada; backend informado em `https://backendsifit.centrion.com.br/api/clientesPorNome/1`.
 
 **Datas das gravações do Jam:** CT-RF01 em 23/10/2026; CT-RF02_ERRO em 22/10/2026 às 21:45 BRT; CT-RF03 não confirmada.
 
-**Atualização documental:** 15/11/2026 — 23 defeitos registrados: 10 abertos (BUG-001 a BUG-010) e 13 em triagem (BUG-011 a BUG-023). BUG-019 registra o HTTP 500 no cadastro de objetivo de treino e BUG-020 a ausência de retorno visível no cadastro de turma sem modalidade, ambos sem causa técnica confirmada. As análises anteriores foram preservadas.
+**Atualização documental:** 15/11/2026 — 29 defeitos registrados: 10 abertos (BUG-001 a BUG-010) e 19 em triagem (BUG-011 a BUG-029). BUG-024–BUG-029 cobrem as novas evidências de Colaboradores. As análises anteriores foram preservadas.
 
 **Padronização documental:** 13/11/2026, sem alteração do status dos defeitos.
 
@@ -51,8 +51,14 @@
 | [BUG-021](#bug-021) | Painel Pagar.me mantém Recebimentos e gráfico ao trocar o período | Média / Média, propostas | Em triagem — dados reais ou de demonstração não confirmados | [CT-RF45](Cenario_Teste/CT-RF45_Painel_PagarMe_Periodo.md) |
 | [BUG-022](#bug-022) | Relatório de Contas a Receber exibe "----" em Valor a Receber | Alta / Alta, propostas | Em triagem — origem do valor e comparação com o módulo não confirmadas | [CT-RF51](Cenario_Teste/CT-RF51_Relatorio_Contas_Receber.md) |
 | [BUG-023](#bug-023) | Relatórios de Avaliações, Clientes, Colaboradores e Caixas geram arquivo PDF vazio (0 bytes) | Alta / Alta, propostas | Em triagem — correspondência dos arquivos inferida; causa não determinada | [CT-RF53](Cenario_Teste/CT-RF53_Relatorio_Avaliacoes_Vazio.md), [CT-RF54](Cenario_Teste/CT-RF54_Relatorio_Clientes_Vazio.md), [CT-RF55](Cenario_Teste/CT-RF55_Relatorio_Colaboradores_Vazio.md) e [CT-RF56](Cenario_Teste/CT-RF56_Relatorio_Caixas_Vazio.md) |
+| [BUG-024](#bug-024) | Data de nascimento futura aceita na edição | Alta / Alta, propostas | Em triagem | [CT-RF65](Cenario_Teste/CT-RF65_Data_Nascimento_Futura_Colaborador.md) |
+| [BUG-025](#bug-025) | Data de nascimento obrigatória vazia aceita | Alta / Alta, propostas | Em triagem | [CT-RF66](Cenario_Teste/CT-RF66_Data_Nascimento_Obrigatoria_Colaborador.md) |
+| [BUG-026](#bug-026) | CREF aceita texto fora do formato esperado | Média / Média, propostas | Em triagem — formato a confirmar | [CT-RF67](Cenario_Teste/CT-RF67_CREF_Formato_Colaborador.md) |
+| [BUG-027](#bug-027) | Edição aceita campo obrigatório vazio | Alta / Alta, propostas | Em triagem | [CT-RF68](Cenario_Teste/CT-RF68_Edicao_Colaborador_Campo_Obrigatorio_Vazio.md) |
+| [BUG-028](#bug-028) | Mesma função pode ser associada repetidamente | Média / Alta, propostas | Em triagem | [CT-RF69](Cenario_Teste/CT-RF69_Funcao_Duplicada_Colaborador.md) |
+| [BUG-029](#bug-029) | Exclusão de colaborador retorna HTTP 500 | Alta / Alta, propostas | Em triagem — causa não determinada | [CT-RF70](Cenario_Teste/CT-RF70_Exclusao_Colaborador_Erro_500.md) |
 
-BUG-001–BUG-010 aguardam correção e reteste. BUG-011–BUG-023 aguardam confirmação das premissas e triagem antes do encaminhamento de correção. As causas técnicas permanecem não confirmadas; o BUG-003 se apoia no relato e nas capturas fornecidos, com os limites registrados no caso.
+BUG-001–BUG-010 aguardam correção e reteste. BUG-011–BUG-029 aguardam confirmação das premissas e triagem antes do encaminhamento de correção. As causas técnicas permanecem não confirmadas; o BUG-003 se apoia no relato e nas capturas fornecidos, com os limites registrados no caso.
 
 ---
 
@@ -1098,6 +1104,21 @@ A geração com HTTP 200 e arquivo de 0 bytes é compatível com falha silencios
 
 ---
 
+## BUG-024 a BUG-029 — Colaboradores
+
+| ID | Reprodução resumida | Esperado | Obtido / evidência | Encaminhamento |
+| --- | --- | --- | --- | --- |
+| <a id="bug-024"></a>BUG-024 | Informar `18/05/2222` e salvar. | Recusar data futura. | Atualização HTTP 200 e navegação à lista. | Validar limites e confirmar ausência de persistência. |
+| <a id="bug-025"></a>BUG-025 | Limpar a data obrigatória e salvar. | Bloquear e indicar o campo. | Atualização HTTP 200. | Mapear obrigatoriedade e preservar valor anterior. |
+| <a id="bug-026"></a>BUG-026 | Informar CREF `TESTEE` e salvar. | Aplicar formato definido. | Atualização HTTP 200. | Confirmar regra e testar exemplos válidos/inválidos. |
+| <a id="bug-027"></a>BUG-027 | Deixar campo obrigatório vazio e salvar. | Bloquear e identificar o campo. | Atualização HTTP 200. | Identificar o campo na reprodução e testar todos os obrigatórios. |
+| <a id="bug-028"></a>BUG-028 | Adicionar duas vezes `funcao_id: 2` ao colaborador 4. | Manter associação única. | Dois HTTP 201; consulta retorna ids 51, 154 e 155. | Impedir duplicidade no servidor e testar concorrência. |
+| <a id="bug-029"></a>BUG-029 | Confirmar exclusão do colaborador id 3. | Excluir ou explicar vínculo impeditivo. | HTTP 500 e `Erro interno inesperado`. | Consultar logs/vínculos e retestar permitido/impedido. |
+
+**Status comum:** Em triagem; severidades e prioridades propostas. As gravações ocorreram entre 22:06 e 22:13 BRT de 15/11/2026. Não houve nova execução, consulta ao banco ou inspeção do código.
+
+---
+
 ## Pontos a validar — sem defeito confirmado
 
 | Caso | Questão pendente | Evidência |
@@ -1113,7 +1134,7 @@ A geração com HTTP 200 e arquivo de 0 bytes é compatível com falha silencios
 | [CT-RF47](Cenario_Teste/CT-RF47_Cadastro_Despesa_Fixa.md) | Confirmar se o segundo POST de criação (HTTP 201) gerou registro adicional ou foi descartado; registrar defeito apenas se houver duplicidade confirmada. | [Jam](https://jam.dev/c/a4bac99d-e436-4792-831e-8c3a875272bb) e [Evidências](Evidencias/CT-RF47_Cadastro_Despesa_Fixa/README.md) |
 | [CT-RF52](Cenario_Teste/CT-RF52_Relatorio_Contas_Pagar_Pagas.md) | Conferir se existem contas pagas no período; PDF sem linhas e com totalizadores R$ 0,00 é compatível com período sem pagamentos. | [Jam](https://jam.dev/c/3b4777a4-e1b0-4038-9b06-26c73669d7d1) e [Evidências](Evidencias/CT-RF52_Relatorio_Contas_Pagar_Pagas/README.md) |
 
-Esses dez pontos não entram na contagem de 23 defeitos registrados. BUG-011–BUG-023 são contabilizados separadamente como registros em triagem, com premissas, persistência ou validações técnicas ainda pendentes. O relato de numeração de personais não demonstrou diferença entre total e linhas; a inativação de modalidades pode ser exclusão lógica; encargos e métricas exigem regras explícitas.
+Esses dez pontos não entram na contagem de 29 defeitos registrados. BUG-011–BUG-029 são contabilizados separadamente como registros em triagem, com premissas, persistência ou validações técnicas ainda pendentes. O relato de numeração de personais não demonstrou diferença entre total e linhas; a inativação de modalidades pode ser exclusão lógica; encargos e métricas exigem regras explícitas.
 
 
 **Exclusão de exercício:** CT-RF23 está aprovado no trecho consultado, com remoção e total 11 para 10; não gerou defeito adicional. Persistência e efeitos sobre vínculos permanecem como verificações complementares.
