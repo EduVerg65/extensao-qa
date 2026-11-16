@@ -1,12 +1,12 @@
 # 🐞 Relatório de Bugs — SIFIT
 
-**Escopo:** defeitos de 66 casos documentados (CT-RF01–CT-RF35, CT-RF38–CT-RF59 e CT-RF65–CT-RF73), incluindo Fichas de Anamnese e Colaboradores.
+**Escopo:** defeitos de 77 casos documentados (CT-RF01–CT-RF35, CT-RF38–CT-RF59 e CT-RF65–CT-RF84), incluindo Prospecção e Bandeiras de Cartão.
 
 **Ambientes:** CT-RF01 em https://sifitalfa.centrion.com.br/login; CT-RF02_ERRO em https://sifit.centrion.com.br/profile. CT-RF03: URL do frontend não confirmada; backend informado em `https://backendsifit.centrion.com.br/api/clientesPorNome/1`.
 
 **Datas das gravações do Jam:** CT-RF01 em 23/10/2026; CT-RF02_ERRO em 22/10/2026 às 21:45 BRT; CT-RF03 não confirmada.
 
-**Atualização documental:** 15/11/2026 — 34 defeitos registrados: 10 abertos (BUG-001 a BUG-010) e 24 em triagem (BUG-011 a BUG-034). BUG-032 cobre o cadastro de anamnese; BUG-033 e BUG-034 cobrem buscas de Colaboradores. As análises anteriores foram preservadas.
+**Atualização documental:** 16/11/2026 — 37 defeitos registrados: 10 abertos (BUG-001 a BUG-010) e 27 em triagem (BUG-011 a BUG-037). BUG-035 e BUG-036 cobrem Bandeiras; BUG-037 registra o relato de cadastro de lead apenas com nome, com regra a confirmar. As análises anteriores foram preservadas.
 
 **Gravação de CT-RF57 e CT-RF58:** 15/11/2026, Grupos, 21h03 BRT, Chrome 157.0.8103.78 / Windows 11; mesma gravação, evidências e limites no BUG-024 e no BUG-025. **Gravação de CT-RF59:** 15/11/2026, Fichas de Anamnese, 22h07 BRT, Chrome 157.0.8103.78 / Windows 11; evidências e limites no BUG-032. **Gravações de CT-RF65–CT-RF70:** 15/11/2026, Colaboradores, entre 22:06 e 22:13 BRT, Chrome 157.0.8103.78 / Windows 11; evidências e limites no BUG-026 a BUG-031.
 
@@ -64,6 +64,9 @@
 | [BUG-032](#bug-032) | Cadastro de anamnese retorna HTTP 500 ao salvar ou aplicar | Média / Alta, propostas | Em triagem — causa não determinada | [CT-RF59](Cenario_Teste/CT-RF59_Cadastro_Anamnese.md) |
 | [BUG-033](#bug-033) | Busca por nome perde o filtro ao avançar a página | Média / Alta, propostas | Em triagem — causa não determinada | [CT-RF71](Cenario_Teste/CT-RF71_Busca_Nome_Colaborador_Paginacao.md) |
 | [BUG-034](#bug-034) | Busca por código inexistente renderiza linha vazia | Média / Alta, propostas | Em triagem — causa não determinada | [CT-RF73](Cenario_Teste/CT-RF73_Busca_Codigo_Inexistente_Colaborador.md) |
+| [BUG-035](#bug-035) | Bandeira criada com parcela não aparece na listagem | Média / Alta, propostas | Em triagem — causa não determinada | [CT-RF81](Cenario_Teste/CT-RF81_Cadastro_Bandeira_Parcela_Listagem.md) |
+| [BUG-036](#bug-036) | Tema escuro aplicado de forma incompleta em Bandeiras | Média / Média, propostas | Em triagem — causa não determinada | [CT-RF82](Cenario_Teste/CT-RF82_Tema_Escuro_Bandeiras.md) |
+| [BUG-037](#bug-037) | Cadastro de lead aceito apenas com nome, com obrigatoriedade a confirmar | Média / Alta, propostas | Em triagem — obrigatoriedade a confirmar | [CT-RF83](Cenario_Teste/CT-RF83_Cadastro_Lead_Apenas_Nome.md) |
 
 BUG-001–BUG-010 aguardam correção e reteste. BUG-011–BUG-034 aguardam confirmação das premissas e triagem antes do encaminhamento de correção. As causas técnicas permanecem não confirmadas; o BUG-003 se apoia no relato e nas capturas fornecidos, com os limites registrados no caso.
 
@@ -1280,6 +1283,188 @@ Investigar as rotinas de servidor acionadas por `/api/anamnese/aplicar/{id}` e `
 
 ---
 
+<a id="bug-035"></a>
+
+## BUG-035 — Bandeira criada com parcela não aparece na listagem
+
+| Campo | Descrição |
+| --- | --- |
+| Status | Em triagem — causa não determinada; reteste pendente após correção. |
+| Severidade / prioridade | Média / Alta, propostas para triagem. |
+| Módulo | Bandeiras de Cartão |
+| Requisito | [RF81](Analise%20de%20requisitos.md#rf81) |
+| Caso | [CT-RF81](Cenario_Teste/CT-RF81_Cadastro_Bandeira_Parcela_Listagem.md) |
+| Data da evidência / integração | 16/11/2026, conforme o resumo; sem nova execução. |
+| Ambiente | URL, navegador, sistema operacional, versão e zoom não informados no resumo. |
+
+### Pré-condições e reprodução
+
+- Sessão autenticada com permissão para cadastrar Bandeiras de Cartão.
+- Ambiente de teste com possibilidade de cadastrar uma bandeira e sua configuração de parcela.
+
+1. Clicar em Nova Bandeira.
+2. Informar nome master e taxas adicional e de débito de 1,11.
+3. Adicionar a configuração de parcela número 2 com taxa 3,33 e confirmar a inclusão.
+4. Clicar em Salvar e conferir a listagem.
+
+### Esperado e obtido
+
+| Caso | Esperado | Obtido |
+| --- | --- | --- |
+| CT-RF81 | A bandeira deve ser criada com a configuração de parcela e aparecer na listagem após o salvamento. | A API confirma a criação da bandeira de código 34 e da parcela, mas a consulta seguinte retorna [] e a interface continua exibindo Nenhuma bandeira encontrada. A criação da parcela tem retorno de sucesso; o fluxo completo apresenta erro na recuperação/exibição do cadastro. |
+
+**Impacto:** O usuário recebe retornos de criação bem-sucedida, mas não consegue localizar a bandeira; repetir o cadastro pode gerar duplicidade.
+
+### Evidências técnicas informadas no resumo
+
+- 00:11: POST /api/cria/bandeira/1 retorna HTTP 201, verifica_erro=false e id=34.
+- 00:11: POST /api/cria/parcela-bandeira/1 envia bandeira_id=34, n_parcela=2 e taxa=3,33; retorna HTTP 201 e verifica_erro=false.
+- 00:11: POST /api/bandeiras/1 retorna HTTP 200 com corpo [].
+- Quadro de 00:13.191 mostra a listagem vazia após fechar a janela.
+
+Fonte: [Evidências](Evidencias/CT-RF81_Cadastro_Bandeira_Parcela_Listagem/README.md) ([RESUMO.txt](Evidencias/CT-RF81_Cadastro_Bandeira_Parcela_Listagem/RESUMO.txt)) e [Jam](https://jam.dev/c/2f0280fb-6b7f-4cf0-a45c-02f8c16b6c5e).
+
+### Análise, limites e encaminhamento
+
+A causa da divergência e a persistência efetiva no banco não foram verificadas. A gravação comprova a diferença entre os retornos de criação e de listagem, sem permitir atribuir a causa ao frontend ou ao backend.
+Análise da gravação e dos eventos capturados no Jam; não foi executado um novo teste no sistema.
+
+Investigar a divergência criação/consulta; retestar listagem, reabertura e recarga com e sem parcela.
+
+Os retornos HTTP 201 de criação e HTTP 200 com lista vazia comprovam a divergência relatada no resumo; não permitem atribuir a causa ao frontend, ao backend ou à persistência no banco.
+
+### Critérios para reteste
+
+1. A criação da bandeira e da parcela é concluída de forma coerente.
+2. A consulta posterior inclui a bandeira confirmada pela criação.
+3. A listagem exibe o novo registro sem exigir um novo cadastro.
+4. Reabrir e recarregar a bandeira permite conferir taxas e configuração de parcela.
+5. Uma falha parcial deve produzir mensagem clara e permitir recuperação sem duplicidade.
+
+Integração documental dos arquivos RESUMO.txt fornecidos em `C:\Users\Leonardo\Desktop\evidencias`, com data de gravação e análise informada de 16/11/2026. Os Jams não foram reabertos nesta integração; eventos de rede, horários e quadros abaixo são transcritos dos resumos, sem verificação independente. Não houve nova execução do SIFIT, reteste, consulta ao banco, logs ou código.
+
+---
+
+<a id="bug-036"></a>
+
+## BUG-036 — Tema escuro aplicado de forma incompleta em Bandeiras
+
+| Campo | Descrição |
+| --- | --- |
+| Status | Em triagem — causa não determinada; reteste pendente após correção. |
+| Severidade / prioridade | Média / Média, propostas para triagem. |
+| Módulo | Bandeiras de Cartão |
+| Requisito | [RF82](Analise%20de%20requisitos.md#rf82) |
+| Caso | [CT-RF82](Cenario_Teste/CT-RF82_Tema_Escuro_Bandeiras.md) |
+| Data da evidência / integração | 16/11/2026, conforme o resumo; sem nova execução. |
+| Ambiente | URL, navegador, sistema operacional, versão e zoom não informados no resumo. |
+
+### Pré-condições e reprodução
+
+- Sessão autenticada com acesso à tela Bandeiras de Cartão.
+- Controle de tema disponível e listagem no estado vazio observado.
+
+1. Observar a tela com o tema Escuro selecionado.
+2. Alternar para Claro, retornar a Escuro e selecionar Claro novamente.
+3. Comparar o fundo da página com os painéis de busca e listagem.
+
+### Esperado e obtido
+
+| Caso | Esperado | Obtido |
+| --- | --- | --- |
+| CT-RF82 | O tema selecionado deve ser aplicado de forma consistente ao fundo, aos painéis e aos textos da tela. | No tema Escuro, os painéis ficam escuros, mas o fundo principal continua claro. Os textos da área vazia da listagem apresentam baixa legibilidade visual. A descrição do Jam relata: Fundo com falta de cores e modo escuro incompleto. |
+
+**Impacto:** A aplicação parcial do tema prejudica a consistência visual e a leitura do estado vazio da listagem.
+
+### Evidências técnicas informadas no resumo
+
+- Quadro de 00:03.800 mostra o tema Escuro selecionado, painéis escuros e fundo principal claro.
+- Quadros de 00:05.320 e 00:06.840 permitem comparar os temas Claro e Escuro.
+- 00:04–00:07: alterações de tema chamam POST /api/usuario/tema e recebem HTTP 200.
+
+Fonte: [Evidências](Evidencias/CT-RF82_Tema_Escuro_Bandeiras/README.md) ([RESUMO.txt](Evidencias/CT-RF82_Tema_Escuro_Bandeiras/RESUMO.txt)) e [Jam](https://jam.dev/c/ae4dc198-8a42-4451-898a-fb376596c744).
+
+### Análise, limites e encaminhamento
+
+O erro visual é observado na gravação. Não foram medidos índices de contraste nem feita auditoria formal de acessibilidade; a causa técnica não foi determinada.
+Análise da gravação e dos eventos capturados no Jam; não foi executado um novo teste no sistema.
+
+Revisar os estilos da página e retestar Claro/Escuro com lista vazia e preenchida; medir contraste separadamente.
+
+Não foram medidos índices de contraste; a classificação se limita à aplicação visual incompleta do tema descrita no resumo. A semelhança com BUG-007, de outra tela, não confirma causa compartilhada.
+
+### Critérios para reteste
+
+1. O tema Escuro é aplicado ao fundo principal e aos painéis.
+2. Os textos do estado vazio permanecem visualmente legíveis.
+3. Alternar os temas mantém a consistência entre fundo, painéis e textos.
+4. No reteste, conferir também a listagem preenchida.
+5. Medições de contraste, se realizadas, devem registrar valores e o critério adotado separadamente.
+
+Integração documental dos arquivos RESUMO.txt fornecidos em `C:\Users\Leonardo\Desktop\evidencias`, com data de gravação e análise informada de 16/11/2026. Os Jams não foram reabertos nesta integração; eventos de rede, horários e quadros abaixo são transcritos dos resumos, sem verificação independente. Não houve nova execução do SIFIT, reteste, consulta ao banco, logs ou código.
+
+---
+
+<a id="bug-037"></a>
+
+## BUG-037 — Cadastro de lead aceito apenas com nome, com obrigatoriedade a confirmar
+
+| Campo | Descrição |
+| --- | --- |
+| Status | Em triagem — regra de obrigatoriedade a confirmar antes de definir correção. |
+| Severidade / prioridade | Média / Alta, propostas para triagem. |
+| Módulo | Prospecção |
+| Requisito | [RF83](Analise%20de%20requisitos.md#rf83) |
+| Caso | [CT-RF83](Cenario_Teste/CT-RF83_Cadastro_Lead_Apenas_Nome.md) |
+| Data da evidência / integração | 16/11/2026, conforme o resumo; sem nova execução. |
+| Ambiente | URL, navegador, sistema operacional, versão e zoom não informados no resumo. |
+
+### Pré-condições e reprodução
+
+- Sessão autenticada com permissão para adicionar leads.
+- Para concluir o reteste, confirmar com o produto quais campos são obrigatórios além do nome; essa regra não acompanha a evidência.
+
+1. Na janela Adicionar Lead, preencher somente o nome Leo.
+2. Manter telefone, e-mail e observação visualmente vazios e o estágio padrão Novo Contato.
+3. Clicar em Salvar Lead.
+
+### Esperado e obtido
+
+| Caso | Esperado | Obtido |
+| --- | --- | --- |
+| CT-RF83 | Segundo o cenário identificado como bug pelo autor, o cadastro incompleto deveria ser bloqueado e os campos obrigatórios deveriam ser indicados. | O sistema aceita o envio sem bloqueio visível, cria o lead de código 19 e atualiza a listagem. O total de leads passa de 14 para 15. |
+
+**Impacto:** Se a regra exigir dados adicionais, o cadastro aceita leads incompletos e pode comprometer o contato posterior. O impacto depende da regra de produto.
+
+### Evidências técnicas informadas no resumo
+
+- 00:02: nome Leo preenchido; os demais campos de contato permanecem visualmente vazios.
+- 00:03: POST /api/salvar-lead/1 retorna HTTP 200, verifica_erro=false e id=19. O corpo enviado confirma telefone e observacao vazios.
+- 00:03: GET /api/leads/1 retorna HTTP 200; quadro de 00:08.223 mostra o registro de código 19.
+
+Fonte: [Evidências](Evidencias/CT-RF83_Cadastro_Lead_Apenas_Nome/README.md) ([RESUMO.txt](Evidencias/CT-RF83_Cadastro_Lead_Apenas_Nome/RESUMO.txt)) e [Jam](https://jam.dev/c/ef3df03c-16ce-4cb6-b0c7-d04514cab4f6).
+
+### Análise, limites e encaminhamento
+
+A classificação de erro acompanha o título do Jam. A regra formal dos campos obrigatórios não foi fornecida; é necessário validá-la para definir exatamente quais campos devem impedir o cadastro. O e-mail está mascarado nos dados de rede, e sua ausência foi avaliada visualmente.
+Análise da gravação e dos eventos capturados no Jam; não foi executado um novo teste no sistema.
+
+Confirmar obrigatoriedade com produto antes de definir correção; testar campos isolados, envio completo e ausência de criação inválida.
+
+O relato é mantido como reprovação provisória, sem afirmar que telefone, e-mail ou observação sejam obrigatórios. O e-mail está mascarado na rede e sua ausência foi avaliada visualmente pelo autor do resumo. Se o produto permitir cadastro somente com nome, reclassificar o caso e encerrar este relato como comportamento esperado.
+
+### Critérios para reteste
+
+1. Produto confirma e documenta os campos obrigatórios para o cadastro.
+2. Se a regra exigir dados além do nome, o envio incompleto é bloqueado e cada campo faltante é indicado.
+3. A validação confirmada é aplicada também no servidor, sem criar registro inválido.
+4. Um envio completo conforme a regra permite cadastrar o lead.
+5. Se apenas o nome for suficiente pela regra aprovada, reclassificar o caso e encerrar o relato como comportamento esperado.
+
+Integração documental dos arquivos RESUMO.txt fornecidos em `C:\Users\Leonardo\Desktop\evidencias`, com data de gravação e análise informada de 16/11/2026. Os Jams não foram reabertos nesta integração; eventos de rede, horários e quadros abaixo são transcritos dos resumos, sem verificação independente. Não houve nova execução do SIFIT, reteste, consulta ao banco, logs ou código.
+
+---
+
 ## Pontos a validar — sem defeito confirmado
 
 | Caso | Questão pendente | Evidência |
@@ -1295,7 +1480,7 @@ Investigar as rotinas de servidor acionadas por `/api/anamnese/aplicar/{id}` e `
 | [CT-RF47](Cenario_Teste/CT-RF47_Cadastro_Despesa_Fixa.md) | Confirmar se o segundo POST de criação (HTTP 201) gerou registro adicional ou foi descartado; registrar defeito apenas se houver duplicidade confirmada. | [Jam](https://jam.dev/c/a4bac99d-e436-4792-831e-8c3a875272bb) e [Evidências](Evidencias/CT-RF47_Cadastro_Despesa_Fixa/README.md) |
 | [CT-RF52](Cenario_Teste/CT-RF52_Relatorio_Contas_Pagar_Pagas.md) | Conferir se existem contas pagas no período; PDF sem linhas e com totalizadores R$ 0,00 é compatível com período sem pagamentos. | [Jam](https://jam.dev/c/3b4777a4-e1b0-4038-9b06-26c73669d7d1) e [Evidências](Evidencias/CT-RF52_Relatorio_Contas_Pagar_Pagas/README.md) |
 
-Esses dez pontos não entram na contagem de 34 defeitos registrados. BUG-011–BUG-034 são contabilizados separadamente como registros em triagem, com premissas, persistência ou validações técnicas ainda pendentes. O relato de numeração de personais não demonstrou diferença entre total e linhas; a inativação de modalidades pode ser exclusão lógica; encargos e métricas exigem regras explícitas.
+Esses dez pontos não entram na contagem de 37 defeitos registrados. BUG-011–BUG-037 são contabilizados separadamente como registros em triagem, com premissas, persistência ou validações técnicas ainda pendentes. O relato de numeração de personais não demonstrou diferença entre total e linhas; a inativação de modalidades pode ser exclusão lógica; encargos e métricas exigem regras explícitas.
 
 
 **Exclusão de exercício:** CT-RF23 está aprovado no trecho consultado, com remoção e total 11 para 10; não gerou defeito adicional. Persistência e efeitos sobre vínculos permanecem como verificações complementares.
