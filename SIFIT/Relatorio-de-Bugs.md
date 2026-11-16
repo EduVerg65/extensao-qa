@@ -6,11 +6,13 @@
 
 **Datas das gravações do Jam:** CT-RF01 em 23/10/2026; CT-RF02_ERRO em 22/10/2026 às 21:45 BRT; CT-RF03 não confirmada.
 
-**Atualização documental:** 15/11/2026 — 25 defeitos registrados: 10 abertos (BUG-001 a BUG-010) e 15 em triagem (BUG-011 a BUG-025). BUG-019 registra o HTTP 500 no cadastro de objetivo de treino e BUG-020 a ausência de retorno visível no cadastro de turma sem modalidade, ambos sem causa técnica confirmada. As análises anteriores foram preservadas.
+**Atualização documental:** 15/11/2026 — 26 defeitos registrados: 10 abertos (BUG-001 a BUG-010) e 16 em triagem (BUG-011 a BUG-026). BUG-019 registra o HTTP 500 no cadastro de objetivo de treino e BUG-020 a ausência de retorno visível no cadastro de turma sem modalidade, ambos sem causa técnica confirmada. As análises anteriores foram preservadas.
 
 **Padronização documental:** 13/11/2026, sem alteração do status dos defeitos.
 
 **Caso aprovado incluído em 13/11/2026:** [CT-RF04_loginComSucesso](Cenario_Teste/CT-RF04_loginComSucesso.md), vinculado ao RF04, não gerou defeito para o fluxo avaliado. O [Jam de login](https://jam.dev/c/5e4a28be-4e80-43d3-9587-1b113723cc38) mostra acesso ao dashboard após autenticação. Essa aprovação não altera os três bugs existentes; resultados e limites constam no [relatório dos testes](Relatorio%20dos%20testes.md).
+
+**Gravação de CT-RF69–CT-RF71:** 15/11/2026, Modelos de Contrato, 21:55 BRT, Chrome 157.0.8103.78 / Windows 11; uma única gravação; evidência e limites no BUG-026.
 
 **Gravação de CT-RF64–CT-RF68:** 15/11/2026, Contas a Pagar, 21:58 BRT, Chrome 157.0.8103.78 / Windows 11; uma única gravação; evidência e limites no BUG-025.
 
@@ -57,8 +59,9 @@
 | [BUG-023](#bug-023) | Relatórios de Avaliações, Clientes, Colaboradores e Caixas geram arquivo PDF vazio (0 bytes) | Alta / Alta, propostas | Em triagem — correspondência dos arquivos inferida; causa não determinada | [CT-RF53](Cenario_Teste/CT-RF53_Relatorio_Avaliacoes_Vazio.md), [CT-RF54](Cenario_Teste/CT-RF54_Relatorio_Clientes_Vazio.md), [CT-RF55](Cenario_Teste/CT-RF55_Relatorio_Colaboradores_Vazio.md) e [CT-RF56](Cenario_Teste/CT-RF56_Relatorio_Caixas_Vazio.md) |
 | [BUG-024](#bug-024) | Telefone do lead aceita 30 dígitos sem máscara nem validação | Média / Média, propostas | Em triagem — regra do campo e validação no servidor não confirmadas | [CT-RF62](Cenario_Teste/CT-RF62_Telefone_Lead_Sem_Validacao.md) |
 | [BUG-025](#bug-025) | Conta a pagar a colaborador é cadastrada sem colaborador informado | Alta / Alta, propostas | Em triagem — regra de obrigatoriedade e validação no servidor não confirmadas | [CT-RF65](Cenario_Teste/CT-RF65_Cadastro_Conta_Colaborador_Sem_Colaborador.md) |
+| [BUG-026](#bug-026) | Listagem de modelos de contrato aparece vazia com 15 modelos retornados | Alta / Alta, propostas | Em triagem — causa de renderização não confirmada | [CT-RF71](Cenario_Teste/CT-RF71_Listagem_Modelos_Contrato_Vazia.md) |
 
-BUG-001–BUG-010 aguardam correção e reteste. BUG-011–BUG-025 aguardam confirmação das premissas e triagem antes do encaminhamento de correção. As causas técnicas permanecem não confirmadas; o BUG-003 se apoia no relato e nas capturas fornecidos, com os limites registrados no caso.
+BUG-001–BUG-010 aguardam correção e reteste. BUG-011–BUG-026 aguardam confirmação das premissas e triagem antes do encaminhamento de correção. As causas técnicas permanecem não confirmadas; o BUG-003 se apoia no relato e nas capturas fornecidos, com os limites registrados no caso.
 
 ---
 
@@ -1198,6 +1201,52 @@ A gravação sem colaborador é compatível com ausência de validação no clie
 
 ---
 
+<a id="bug-026"></a>
+
+## BUG-026 — Listagem de modelos de contrato aparece vazia com 15 modelos retornados
+
+| Campo | Descrição |
+| --- | --- |
+| Status | Em triagem — causa não determinada; reteste pendente após correção. |
+| Severidade / prioridade | Alta / Alta, propostas para triagem. |
+| Módulo | Modelos de Contrato / Listagem |
+| Requisitos | [RF71](Analise%20de%20requisitos.md#rf71) |
+| Casos | [CT-RF71](Cenario_Teste/CT-RF71_Listagem_Modelos_Contrato_Vazia.md) |
+| Data da evidência / revisão | 15/11/2026, 21:55 BRT; sem nova execução. |
+| Página | https://sifit.centrion.com.br/modelos-contrato |
+| Ambiente | Chrome 157.0.8103.78 / Windows (x86) 11, janela 1920 × 855; versão e zoom não confirmados. |
+| Frequência conhecida | Observado durante toda a gravação; recorrência não determinada. |
+
+### Pré-condições e reprodução
+
+**[CT-RF71](Cenario_Teste/CT-RF71_Listagem_Modelos_Contrato_Vazia.md):** Sessão autenticada com acesso a Modelos de Contrato e modelos existentes no servidor.
+
+1. Acessar Modelos Contrato com o painel de rede aberto e registrar a resposta de `modelos-contrato`.
+2. Conferir a tabela da tela com a resposta do servidor.
+3. Cadastrar um modelo e voltar à listagem.
+4. Recarregar a página e conferir novamente.
+
+### Esperado e obtido
+
+| Esperado | Obtido |
+| --- | --- |
+| A tabela apresenta uma linha com código, nome e status para cada modelo retornado pelo servidor, inclusive o recém-criado, ou mensagem explícita quando não houver modelos. | O servidor devolveu 15 modelos em `GET modelos-contrato/1`, mas a tabela apresentou apenas o cabeçalho (Código, Nome e Status), sem linhas e sem mensagem, antes e depois do cadastro. |
+
+**Impacto:** O usuário não consegue consultar, editar ou excluir modelos de contrato pela tela e não sabe se o cadastro funcionou, podendo criar modelos duplicados.
+
+### Evidências técnicas
+
+- [Jam — Modelos de Contrato](https://jam.dev/c/44dbbd39-6915-45d6-8dd1-5f30c1432ca0): `GET /api/modelos-contrato/1` (HTTP 200, 1,0 KiB) com 15 modelos (ids 1 a 15, incluindo "teste eduardo") e quadros de 0:00, 0:39, 0:45 e 0:49 com a tabela sem linhas.
+- [Tabela em 0:39](Evidencias/CT-RF71_Listagem_Modelos_Contrato_Vazia/lista_vazia_00-39.png), [tabela em 0:49](Evidencias/CT-RF71_Listagem_Modelos_Contrato_Vazia/lista_vazia_00-49.png), [resposta do servidor](Evidencias/CT-RF71_Listagem_Modelos_Contrato_Vazia/lista_servidor_resposta.png) e [Evidências](Evidencias/CT-RF71_Listagem_Modelos_Contrato_Vazia/README.md).
+
+### Análise, limites e encaminhamento
+
+A divergência entre a resposta e a tabela é compatível com falha na renderização, divergência no formato dos campos esperados pela tela ou filtro implícito; não foi possível distinguir. A causa técnica não foi confirmada no código.
+
+**Reteste:** Reproduzir comparando a resposta de `modelos-contrato` com a tabela, investigar a renderização e o formato dos dados e retestar com e sem modelos. Manter em triagem até nova evidência em versão identificada.
+
+---
+
 ## Pontos a validar — sem defeito confirmado
 
 | Caso | Questão pendente | Evidência |
@@ -1216,7 +1265,7 @@ A gravação sem colaborador é compatível com ausência de validação no clie
 | [CT-RF64](Cenario_Teste/CT-RF64_Filtros_Contas_Pagar.md) | Filtros da tela Contas a Pagar por nome, data e status | Reexecutar com contas de controle e conferir cada critério isolado e combinado; o resultado vazio da combinação gravada não pôde ser conferido contra a base. | [Jam](https://jam.dev/c/5d0afaf4-5abd-4e85-923f-27448304a9ef) e [Evidências](Evidencias/CT-RF64_Filtros_Contas_Pagar/README.md) |
 | [CT-RF66](Cenario_Teste/CT-RF66_Busca_Colaborador_Conta_Pagar.md) | Busca de colaborador no cadastro de conta a pagar | Reexecutar com um nome existente para conferir listagem e seleção e confirmar a mensagem esperada de resultado vazio. | [Jam](https://jam.dev/c/5d0afaf4-5abd-4e85-923f-27448304a9ef) e [Evidências](Evidencias/CT-RF66_Busca_Colaborador_Conta_Pagar/README.md) |
 
-Esses treze pontos não entram na contagem de 25 defeitos registrados. BUG-011–BUG-025 são contabilizados separadamente como registros em triagem, com premissas, persistência ou validações técnicas ainda pendentes. O relato de numeração de personais não demonstrou diferença entre total e linhas; a inativação de modalidades pode ser exclusão lógica; encargos e métricas exigem regras explícitas.
+Esses treze pontos não entram na contagem de 26 defeitos registrados. BUG-011–BUG-026 são contabilizados separadamente como registros em triagem, com premissas, persistência ou validações técnicas ainda pendentes. O relato de numeração de personais não demonstrou diferença entre total e linhas; a inativação de modalidades pode ser exclusão lógica; encargos e métricas exigem regras explícitas.
 
 
 **Exclusão de exercício:** CT-RF23 está aprovado no trecho consultado, com remoção e total 11 para 10; não gerou defeito adicional. Persistência e efeitos sobre vínculos permanecem como verificações complementares.
