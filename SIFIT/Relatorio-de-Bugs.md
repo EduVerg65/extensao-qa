@@ -1,14 +1,14 @@
 # 🐞 Relatório de Bugs — SIFIT
 
-**Escopo:** defeitos de 65 casos documentados (CT-RF01–CT-RF35, CT-RF38–CT-RF58 e CT-RF65–CT-RF73), incluindo Grupos (treino) e Colaboradores.
+**Escopo:** defeitos de 66 casos documentados (CT-RF01–CT-RF35, CT-RF38–CT-RF59 e CT-RF65–CT-RF73), incluindo Fichas de Anamnese e Colaboradores.
 
 **Ambientes:** CT-RF01 em https://sifitalfa.centrion.com.br/login; CT-RF02_ERRO em https://sifit.centrion.com.br/profile. CT-RF03: URL do frontend não confirmada; backend informado em `https://backendsifit.centrion.com.br/api/clientesPorNome/1`.
 
 **Datas das gravações do Jam:** CT-RF01 em 23/10/2026; CT-RF02_ERRO em 22/10/2026 às 21:45 BRT; CT-RF03 não confirmada.
 
-**Atualização documental:** 15/11/2026 — 33 defeitos registrados: 10 abertos (BUG-001 a BUG-010) e 23 em triagem (BUG-011 a BUG-033). BUG-024 e BUG-025 cobrem Grupos (treino); BUG-026–BUG-033 cobrem Colaboradores. As análises anteriores foram preservadas.
+**Atualização documental:** 15/11/2026 — 34 defeitos registrados: 10 abertos (BUG-001 a BUG-010) e 24 em triagem (BUG-011 a BUG-034). BUG-032 cobre o cadastro de anamnese; BUG-033 e BUG-034 cobrem buscas de Colaboradores. As análises anteriores foram preservadas.
 
-**Gravação de CT-RF57 e CT-RF58:** 15/11/2026, Grupos, 21h03 BRT, Chrome 157.0.8103.78 / Windows 11; mesma gravação, evidências e limites no BUG-024 e no BUG-025.
+**Gravação de CT-RF57 e CT-RF58:** 15/11/2026, Grupos, 21h03 BRT, Chrome 157.0.8103.78 / Windows 11; mesma gravação, evidências e limites no BUG-024 e no BUG-025. **Gravação de CT-RF59:** 15/11/2026, Fichas de Anamnese, 22h07 BRT, Chrome 157.0.8103.78 / Windows 11; evidências e limites no BUG-032. **Gravações de CT-RF65–CT-RF70:** 15/11/2026, Colaboradores, entre 22:06 e 22:13 BRT, Chrome 157.0.8103.78 / Windows 11; evidências e limites no BUG-026 a BUG-031.
 
 **Padronização documental:** 13/11/2026, sem alteração do status dos defeitos.
 
@@ -61,10 +61,11 @@
 | [BUG-029](#bug-029) | Edição aceita campo obrigatório vazio | Alta / Alta, propostas | Em triagem | [CT-RF68](Cenario_Teste/CT-RF68_Edicao_Colaborador_Campo_Obrigatorio_Vazio.md) |
 | [BUG-030](#bug-030) | Mesma função pode ser associada repetidamente | Média / Alta, propostas | Em triagem | [CT-RF69](Cenario_Teste/CT-RF69_Funcao_Duplicada_Colaborador.md) |
 | [BUG-031](#bug-031) | Exclusão de colaborador retorna HTTP 500 | Alta / Alta, propostas | Em triagem — causa não determinada | [CT-RF70](Cenario_Teste/CT-RF70_Exclusao_Colaborador_Erro_500.md) |
-| [BUG-032](#bug-032) | Busca por nome perde o filtro ao avançar a página | Média / Alta, propostas | Em triagem — causa não determinada | [CT-RF71](Cenario_Teste/CT-RF71_Busca_Nome_Colaborador_Paginacao.md) |
-| [BUG-033](#bug-033) | Busca por código inexistente renderiza linha vazia | Média / Alta, propostas | Em triagem — causa não determinada | [CT-RF73](Cenario_Teste/CT-RF73_Busca_Codigo_Inexistente_Colaborador.md) |
+| [BUG-032](#bug-032) | Cadastro de anamnese retorna HTTP 500 ao salvar ou aplicar | Média / Alta, propostas | Em triagem — causa não determinada | [CT-RF59](Cenario_Teste/CT-RF59_Cadastro_Anamnese.md) |
+| [BUG-033](#bug-033) | Busca por nome perde o filtro ao avançar a página | Média / Alta, propostas | Em triagem — causa não determinada | [CT-RF71](Cenario_Teste/CT-RF71_Busca_Nome_Colaborador_Paginacao.md) |
+| [BUG-034](#bug-034) | Busca por código inexistente renderiza linha vazia | Média / Alta, propostas | Em triagem — causa não determinada | [CT-RF73](Cenario_Teste/CT-RF73_Busca_Codigo_Inexistente_Colaborador.md) |
 
-BUG-001–BUG-010 aguardam correção e reteste. BUG-011–BUG-033 aguardam confirmação das premissas e triagem antes do encaminhamento de correção. As causas técnicas permanecem não confirmadas; o BUG-003 se apoia no relato e nas capturas fornecidos, com os limites registrados no caso.
+BUG-001–BUG-010 aguardam correção e reteste. BUG-011–BUG-034 aguardam confirmação das premissas e triagem antes do encaminhamento de correção. As causas técnicas permanecem não confirmadas; o BUG-003 se apoia no relato e nas capturas fornecidos, com os limites registrados no caso.
 
 ---
 
@@ -1123,12 +1124,12 @@ A geração com HTTP 200 e arquivo de 0 bytes é compatível com falha silencios
 
 **Status comum:** Em triagem; severidades e prioridades propostas. As gravações ocorreram entre 22:06 e 22:13 BRT de 15/11/2026. Não houve nova execução, consulta ao banco ou inspeção do código.
 
-## BUG-032 e BUG-033 — Buscas de Colaboradores
+## BUG-033 e BUG-034 — Buscas de Colaboradores
 
 | ID | Reprodução resumida | Esperado | Obtido / evidência | Encaminhamento |
 | --- | --- | --- | --- | --- |
-| <a id="bug-032"></a>BUG-032 | Buscar colaborador por nome e avançar para a próxima página. | Manter o filtro e exibir somente nomes correspondentes em todas as páginas. | A página seguinte inclui nomes fora do filtro; [Jam](https://jam.dev/c/b35516e3-c571-47ea-b233-28f00d1fca4c). | Verificar parâmetros da paginação, total filtrado e estado do formulário; retestar avançar e voltar. |
-| <a id="bug-033"></a>BUG-033 | Buscar um código sem colaborador associado. | Exibir mensagem de nenhum resultado, sem linhas ou ações. | A tabela renderiza uma linha vazia; [Jam](https://jam.dev/c/cdbb3d76-3d6a-4d36-adf9-edd935b5a449). | Validar resposta vazia, normalização dos dados e renderização condicional da tabela. |
+| <a id="bug-033"></a>BUG-033 | Buscar colaborador por nome e avançar para a próxima página. | Manter o filtro e exibir somente nomes correspondentes em todas as páginas. | A página seguinte inclui nomes fora do filtro; [Jam](https://jam.dev/c/b35516e3-c571-47ea-b233-28f00d1fca4c). | Verificar parâmetros da paginação, total filtrado e estado do formulário; retestar avançar e voltar. |
+| <a id="bug-034"></a>BUG-034 | Buscar um código sem colaborador associado. | Exibir mensagem de nenhum resultado, sem linhas ou ações. | A tabela renderiza uma linha vazia; [Jam](https://jam.dev/c/cdbb3d76-3d6a-4d36-adf9-edd935b5a449). | Validar resposta vazia, normalização dos dados e renderização condicional da tabela. |
 
 **Status comum:** Em triagem; severidade Média e prioridade Alta propostas. Gravações em 15/11/2026, na página `/colaboradores`, Edge 157.0.8103.80 / Windows 11. A análise foi visual; requisições e respostas não foram inspecionadas, não houve nova execução e a causa técnica não foi confirmada.
 <a id="bug-024"></a>
@@ -1222,6 +1223,63 @@ Investigar a rotina de edição do grupo (`/api/edita/grupo/{id}`), com foco no 
 
 ---
 
+## BUG-026 a BUG-031 — Colaboradores
+
+| ID | Reprodução resumida | Esperado | Obtido / evidência | Encaminhamento |
+| --- | --- | --- | --- | --- |
+| <a id="bug-026"></a>BUG-026 | Informar `18/05/2222` e salvar. | Recusar data futura. | Atualização HTTP 200 e navegação à lista. | Validar limites e confirmar ausência de persistência. |
+| <a id="bug-027"></a>BUG-027 | Limpar a data obrigatória e salvar. | Bloquear e indicar o campo. | Atualização HTTP 200. | Mapear obrigatoriedade e preservar valor anterior. |
+| <a id="bug-028"></a>BUG-028 | Informar CREF `TESTEE` e salvar. | Aplicar formato definido. | Atualização HTTP 200. | Confirmar regra e testar exemplos válidos/inválidos. |
+| <a id="bug-029"></a>BUG-029 | Deixar campo obrigatório vazio e salvar. | Bloquear e identificar o campo. | Atualização HTTP 200. | Identificar o campo na reprodução e testar todos os obrigatórios. |
+| <a id="bug-030"></a>BUG-030 | Adicionar duas vezes `funcao_id: 2` ao colaborador 4. | Manter associação única. | Dois HTTP 201; consulta retorna ids 51, 154 e 155. | Impedir duplicidade no servidor e testar concorrência. |
+| <a id="bug-031"></a>BUG-031 | Confirmar exclusão do colaborador id 3. | Excluir ou explicar vínculo impeditivo. | HTTP 500 e `Erro interno inesperado`. | Consultar logs/vínculos e retestar permitido/impedido. |
+
+**Status comum:** Em triagem; severidades e prioridades propostas. As gravações ocorreram entre 22:06 e 22:13 BRT de 15/11/2026. Não houve nova execução, consulta ao banco ou inspeção do código.
+
+---
+
+## BUG-032 — Cadastro de anamnese retorna HTTP 500 ao salvar ou aplicar
+
+| Campo | Descrição |
+| --- | --- |
+| Status | Em triagem — causa não determinada; reteste pendente após correção. |
+| Severidade / prioridade | Média / Alta, propostas para triagem. |
+| Módulo | Treinamento / Fichas de Anamnese / Cadastro |
+| Requisitos | [RF59](Analise%20de%20requisitos.md#rf59) |
+| Casos | [CT-RF59](Cenario_Teste/CT-RF59_Cadastro_Anamnese.md) |
+| Data da evidência / revisão | 15/11/2026, 22h07 BRT; sem nova execução. |
+| Página | https://sifit.centrion.com.br/anamneses |
+| Ambiente | Chrome 157.0.8103.78 / Windows (x86) 11; versão e zoom não confirmados. |
+
+### Pré-condições e reprodução
+
+**[CT-RF59](Cenario_Teste/CT-RF59_Cadastro_Anamnese.md):** Sessão autenticada com permissão para cadastrar anamneses. Aluno cadastrado e selecionável; modelo de anamnese com ao menos uma pergunta.
+
+1. Abrir "Nova Anamnese", selecionar aluno e modelo, avançar até a pergunta.
+2. Preencher a resposta e avançar até a revisão final.
+3. Acionar "Salvar rascunho" ou a aplicação definitiva.
+
+### Esperado e obtido
+
+| Caso | Esperado | Obtido |
+| --- | --- | --- |
+| CT-RF59 | O backend grava o rascunho ou a anamnese aplicada e retorna sucesso. | As sete tentativas registradas (quatro em `aplicar`, três em `rascunho`) retornam HTTP 500 com a mesma mensagem genérica; nenhuma anamnese é cadastrada com sucesso. |
+
+**Impacto:** O usuário não consegue concluir o cadastro de nenhuma anamnese, nem como rascunho nem de forma definitiva, em nenhuma das tentativas registradas na gravação, com dois modelos e três respostas diferentes.
+
+### Evidências
+
+- [CT-RF59](Cenario_Teste/CT-RF59_Cadastro_Anamnese.md): [Jam — Fichas de Anamnese](https://jam.dev/c/7be0fe71-3419-4050-b63f-473d943fa08e). 0:28: `POST /api/anamnese/aplicar/1` com `{"modelo_id":3,"respostas":[{"pergunta_id":"5","resposta":"Esse"}],"status":"concluida"}` retorna HTTP 500, `{"verifica_erro": true, "mensagem": "Erro interno inesperado."}`. 0:42, 1:03 e 1:10: três tentativas de `POST /api/anamnese/rascunho/1` retornam o mesmo HTTP 500. 1:12: `POST /api/anamnese/aplicar/1` com `{"modelo_id":5,"respostas":[{"pergunta_id":"5","resposta":"Agachamento"}],"status":"concluida"}` retorna o mesmo HTTP 500.
+- Cabeçalhos registrados: `content-type: application/json; charset=utf-8`, `comprimento-do-conteúdo: 64`. Data registrada em uma das tentativas de rascunho: `Segunda-feira, 16 de novembro de 2026, 01:05:48 GMT`.
+
+### Análise, limites e encaminhamento
+
+O erro ocorre de forma idêntica nos dois endpoints envolvidos (`aplicar` e `rascunho`), em dois modelos de anamnese diferentes e com três respostas de conteúdo distinto, sempre com a mesma mensagem genérica — o mesmo padrão de resposta já registrado em [BUG-016](#bug-016) e [BUG-024](#bug-024). Não houve acesso a logs do servidor, ao código das rotinas nem ao banco de dados para identificar a exceção real por trás do erro.
+
+Investigar as rotinas de servidor acionadas por `/api/anamnese/aplicar/{id}` e `/api/anamnese/rascunho/{id}`, com acesso a logs para confirmar se a causa é a mesma do BUG-016/BUG-024 ou uma falha independente do módulo de anamnese; confirmar também se o identificador final da URL corresponde ao `empresa_id`. O status permanece em triagem até que a causa seja determinada e uma nova execução comprove os critérios de aceitação do caso associado.
+
+---
+
 ## Pontos a validar — sem defeito confirmado
 
 | Caso | Questão pendente | Evidência |
@@ -1237,7 +1295,7 @@ Investigar a rotina de edição do grupo (`/api/edita/grupo/{id}`), com foco no 
 | [CT-RF47](Cenario_Teste/CT-RF47_Cadastro_Despesa_Fixa.md) | Confirmar se o segundo POST de criação (HTTP 201) gerou registro adicional ou foi descartado; registrar defeito apenas se houver duplicidade confirmada. | [Jam](https://jam.dev/c/a4bac99d-e436-4792-831e-8c3a875272bb) e [Evidências](Evidencias/CT-RF47_Cadastro_Despesa_Fixa/README.md) |
 | [CT-RF52](Cenario_Teste/CT-RF52_Relatorio_Contas_Pagar_Pagas.md) | Conferir se existem contas pagas no período; PDF sem linhas e com totalizadores R$ 0,00 é compatível com período sem pagamentos. | [Jam](https://jam.dev/c/3b4777a4-e1b0-4038-9b06-26c73669d7d1) e [Evidências](Evidencias/CT-RF52_Relatorio_Contas_Pagar_Pagas/README.md) |
 
-Esses dez pontos não entram na contagem de 33 defeitos registrados. BUG-011–BUG-033 são contabilizados separadamente como registros em triagem, com premissas, persistência ou validações técnicas ainda pendentes. O relato de numeração de personais não demonstrou diferença entre total e linhas; a inativação de modalidades pode ser exclusão lógica; encargos e métricas exigem regras explícitas.
+Esses dez pontos não entram na contagem de 34 defeitos registrados. BUG-011–BUG-034 são contabilizados separadamente como registros em triagem, com premissas, persistência ou validações técnicas ainda pendentes. O relato de numeração de personais não demonstrou diferença entre total e linhas; a inativação de modalidades pode ser exclusão lógica; encargos e métricas exigem regras explícitas.
 
 
 **Exclusão de exercício:** CT-RF23 está aprovado no trecho consultado, com remoção e total 11 para 10; não gerou defeito adicional. Persistência e efeitos sobre vínculos permanecem como verificações complementares.

@@ -12,7 +12,7 @@
 | Objetivo | Exibir um estado vazio claro ao pesquisar um código de colaborador inexistente, sem criar linha vazia na tabela. |
 | Requisito | [RF73](../Analise%20de%20requisitos.md#rf73), referência de QA proposta a partir da evidência. |
 | Tipo / prioridade | Funcional manual / teste negativo; Média / Alta, propostas. |
-| Defeito | [BUG-033](../Relatorio-de-Bugs.md#bug-033), em triagem. |
+| Defeito | [BUG-034](../Relatorio-de-Bugs.md#bug-034), em triagem. |
 | Fonte | [Jam](https://jam.dev/c/cdbb3d76-3d6a-4d36-adf9-edd935b5a449). |
 
 ## Pré-condições

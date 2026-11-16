@@ -12,7 +12,7 @@
 | Objetivo | Garantir que a busca por nome retorne somente colaboradores correspondentes em todas as páginas do resultado. |
 | Requisito | [RF71](../Analise%20de%20requisitos.md#rf71), referência de QA proposta a partir da evidência. |
 | Tipo / prioridade | Funcional manual / filtro e paginação; Média / Alta, propostas. |
-| Defeito | [BUG-032](../Relatorio-de-Bugs.md#bug-032), em triagem. |
+| Defeito | [BUG-033](../Relatorio-de-Bugs.md#bug-033), em triagem. |
 | Fonte | [Jam](https://jam.dev/c/b35516e3-c571-47ea-b233-28f00d1fca4c). |
 
 ## Pré-condições

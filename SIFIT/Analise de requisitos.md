@@ -2,11 +2,11 @@
 
 **Módulos:** Autenticação, Perfil, Clientes / Filtros, Financeiro, Página inicial / Personais, SifitBox / Modalidades e Turmas, Categorias Crossfit, Avaliações, Exercícios, Grupos Musculares, Dashboard e Objetivos de Treino.
 
-**Atualização:** 15/11/2026 — RF01 a RF35, RF38 a RF58 e RF65 a RF73 consolidados; BUG-011–BUG-033 em triagem.
+**Atualização:** 15/11/2026 — RF01 a RF35, RF38 a RF59 e RF65 a RF73 consolidados; BUG-011–BUG-034 em triagem.
 
 **Padronização documental:** 13/11/2026, sem alteração dos resultados registrados.
 
-Esta análise documenta 65 requisitos de QA para os cenários relacionados abaixo, com base nos relatos e nas evidências fornecidas. RF01–RF04 e suas análises históricas foram preservados; RF05–RF20 ampliam a cobertura em 14/11/2026; RF21 acrescenta Avaliações; RF22–RF28 acrescentam Exercícios; RF29–RF33 acrescentam Grupos Musculares; RF34 acrescenta o carregamento do dashboard; RF35 acrescenta o cadastro de objetivos de treino; RF38–RF58 ampliam a cobertura de Categorias Crossfit, SifitBox, Pagar.me, Configurações, Despesas Fixas, Relatórios e Grupos; RF65–RF73 cobrem validações, operações e buscas de Colaboradores. Os critérios abaixo constituem a referência de QA para esses fluxos; não representam validação de uma especificação formal pelo responsável pelo produto.
+Esta análise documenta 66 requisitos de QA para os cenários relacionados abaixo. RF59 acrescenta Fichas de Anamnese; RF65–RF73 cobrem validações, operações e buscas de Colaboradores. Os critérios constituem referência de QA e não representam validação de especificação formal pelo produto.
 
 ## 📋 Visão geral dos requisitos
 
@@ -68,6 +68,7 @@ Esta análise documenta 65 requisitos de QA para os cenários relacionados abaix
 | [RF56](#rf56) | Gerar o relatório de Caixas em PDF | Alta, proposta | [CT-RF56](Cenario_Teste/CT-RF56_Relatorio_Caixas_Vazio.md) |
 | [RF57](#rf57) | Excluir grupo ou explicar o impedimento | Alta, proposta | [CT-RF57](Cenario_Teste/CT-RF57_Exclusao_Grupo.md) |
 | [RF58](#rf58) | Persistir todos os campos editados de um grupo | Alta, proposta | [CT-RF58](Cenario_Teste/CT-RF58_Edicao_Grupo.md) |
+| [RF59](#rf59) | Cadastrar anamnese sem erro de servidor | Alta, proposta para triagem | [CT-RF59](Cenario_Teste/CT-RF59_Cadastro_Anamnese.md) |
 | [RF65](#rf65) | Recusar data de nascimento futura | Alta, proposta | [CT-RF65](Cenario_Teste/CT-RF65_Data_Nascimento_Futura_Colaborador.md) |
 | [RF66](#rf66) | Exigir data de nascimento obrigatória | Alta, proposta | [CT-RF66](Cenario_Teste/CT-RF66_Data_Nascimento_Obrigatoria_Colaborador.md) |
 | [RF67](#rf67) | Validar o formato do CREF | Média, proposta | [CT-RF67](Cenario_Teste/CT-RF67_CREF_Formato_Colaborador.md) |
@@ -1652,6 +1653,33 @@ Não houve acesso a logs do servidor, ao código da rotina de edição nem ao ba
 
 ---
 
+## RF59 — Cadastrar anamnese sem erro de servidor
+
+| Campo | Descrição |
+| --- | --- |
+| Requisito de QA | Ao preencher as respostas de um modelo de anamnese e acionar "Salvar rascunho" ou a aplicação definitiva, o backend deve gravar o registro e retornar sucesso, sem erro genérico de servidor. |
+| Ator | Usuário autenticado com permissão em Fichas de Anamnese. |
+| Pré-condições | Aluno cadastrado e selecionável; modelo de anamnese com ao menos uma pergunta cadastrada. |
+| Gatilho | Selecionar aluno e modelo, responder à(s) pergunta(s) e acionar "Salvar rascunho" ou a aplicação definitiva da anamnese. |
+| Caso | [CT-RF59](Cenario_Teste/CT-RF59_Cadastro_Anamnese.md) |
+| Situação observada | Reprovado nas evidências. As sete tentativas registradas na gravação (quatro em `/api/anamnese/aplicar/{id}` e três em `/api/anamnese/rascunho/{id}`) retornam HTTP 500 com a mesma mensagem genérica, independentemente do modelo de anamnese ou da resposta informada; nenhuma anamnese é cadastrada com sucesso. |
+| Defeito | [BUG-032](Relatorio-de-Bugs.md#bug-032), em triagem |
+| Evidências | [Jam](https://jam.dev/c/7be0fe71-3419-4050-b63f-473d943fa08e). |
+
+### Critérios de aceitação do RF59
+
+1. Ao preencher corretamente as respostas de um modelo e acionar "Salvar rascunho", o backend grava o rascunho e retorna sucesso.
+2. Ao preencher corretamente as respostas e acionar a aplicação definitiva, o backend grava a anamnese com `status: "concluida"` e retorna sucesso.
+3. O comportamento é validado para mais de um modelo de anamnese e mais de um aluno.
+4. Uma anamnese salva com sucesso fica disponível para consulta na listagem.
+5. Um erro de validação específico (por exemplo, pergunta sem resposta) não deve ser reportado como "Erro interno inesperado.".
+
+### Pontos a confirmar e limites do RF59
+
+Não houve acesso a logs do servidor, ao código das rotinas de aplicar/rascunho nem ao banco de dados; a causa real do HTTP 500 não foi determinada. O padrão de resposta é idêntico ao já registrado em [BUG-016](Relatorio-de-Bugs.md#bug-016) e [BUG-024](Relatorio-de-Bugs.md#bug-024), o que sugere tratamento de erro genérico no backend, mas não foi confirmado se a causa de fundo é a mesma. Não foi confirmado se as tentativas de rascunho afetaram o mesmo registro ou criaram registros distintos.
+
+---
+
 ## 🔗 Rastreabilidade
 
 | Requisito | Cenário / caso | Defeito | Resultado | Evidências |
@@ -1712,6 +1740,13 @@ Não houve acesso a logs do servidor, ao código da rotina de edição nem ao ba
 | RF56 | [CT-RF56](Cenario_Teste/CT-RF56_Relatorio_Caixas_Vazio.md) | [BUG-023](Relatorio-de-Bugs.md#bug-023), em triagem | Reprovado nas evidências; reteste pendente. | [Evidências](Evidencias/CT-RF56_Relatorio_Caixas_Vazio/README.md) e [Jam](https://jam.dev/c/3b4777a4-e1b0-4038-9b06-26c73669d7d1) |
 | RF57 | [CT-RF57](Cenario_Teste/CT-RF57_Exclusao_Grupo.md) | [BUG-024](Relatorio-de-Bugs.md#bug-024), em triagem | Reprovado nas evidências; reteste pendente. | [Jam](https://jam.dev/c/b1231a75-1a65-4bf0-b795-f52a8c7d3365) |
 | RF58 | [CT-RF58](Cenario_Teste/CT-RF58_Edicao_Grupo.md) | [BUG-025](Relatorio-de-Bugs.md#bug-025), em triagem | Reprovado nas evidências; reteste pendente. | [Jam](https://jam.dev/c/b1231a75-1a65-4bf0-b795-f52a8c7d3365) |
+| RF59 | [CT-RF59](Cenario_Teste/CT-RF59_Cadastro_Anamnese.md) | [BUG-032](Relatorio-de-Bugs.md#bug-032), em triagem | Reprovado nas evidências; reteste pendente. | [Jam](https://jam.dev/c/7be0fe71-3419-4050-b63f-473d943fa08e) |
+| RF65 | [CT-RF65](Cenario_Teste/CT-RF65_Data_Nascimento_Futura_Colaborador.md) | [BUG-026](Relatorio-de-Bugs.md#bug-026), em triagem | Reprovado nas evidências; reteste pendente. | [Jam](https://jam.dev/c/6dd75961-8e8f-4c8e-939a-19595a1f8a32) |
+| RF66 | [CT-RF66](Cenario_Teste/CT-RF66_Data_Nascimento_Obrigatoria_Colaborador.md) | [BUG-027](Relatorio-de-Bugs.md#bug-027), em triagem | Reprovado nas evidências; reteste pendente. | [Jam](https://jam.dev/c/04aa5ba0-ac7e-43b6-a7f3-91ae82417a85) |
+| RF67 | [CT-RF67](Cenario_Teste/CT-RF67_CREF_Formato_Colaborador.md) | [BUG-028](Relatorio-de-Bugs.md#bug-028), em triagem | Reprovado nas evidências; formato a confirmar. | [Jam](https://jam.dev/c/243d9699-4bee-495d-ae65-9a02e42813b3) |
+| RF68 | [CT-RF68](Cenario_Teste/CT-RF68_Edicao_Colaborador_Campo_Obrigatorio_Vazio.md) | [BUG-029](Relatorio-de-Bugs.md#bug-029), em triagem | Reprovado nas evidências; campo exato pendente. | [Jam](https://jam.dev/c/4219c1b3-085e-4218-b181-5cf448d64cea) |
+| RF69 | [CT-RF69](Cenario_Teste/CT-RF69_Funcao_Duplicada_Colaborador.md) | [BUG-030](Relatorio-de-Bugs.md#bug-030), em triagem | Reprovado nas evidências; reteste pendente. | [Jam](https://jam.dev/c/ba2400f9-dbb0-45bc-a509-187249dbe9da) |
+| RF70 | [CT-RF70](Cenario_Teste/CT-RF70_Exclusao_Colaborador_Erro_500.md) | [BUG-031](Relatorio-de-Bugs.md#bug-031), em triagem | Reprovado nas evidências; reteste pendente. | [Jam](https://jam.dev/c/05be297b-22d9-4d26-beff-937526bcd816) |
 
 ---
 
@@ -1920,6 +1955,12 @@ RF58 utiliza os painéis Informações, Console e Rede do mesmo Jam "Tela de Gru
 
 Com RF58, a análise passa a cobrir 56 requisitos documentados. O CT-RF58 acrescenta uma reprovação, vinculada ao BUG-025, em triagem.
 
+### Base da análise do RF59 — revisão de 15/11/2026
+
+RF59 utiliza os painéis Informações, Console e Rede do Jam "Fichas de Anamnese", os eventos de clique e digitação entre 0:00 e 1:28 e as sete requisições com HTTP 500 (quatro em `POST /api/anamnese/aplicar/1` e três em `POST /api/anamnese/rascunho/1`), registradas com dois modelos de anamnese e três respostas distintas. Foram registrados os corpos de requisição e resposta de duas dessas tentativas, representativas das demais. Não houve nova execução, acesso a logs, ao código ou ao banco, nem reteste.
+
+Com RF59, a análise passava a cobrir 57 requisitos documentados (antes da integração de RF65 a RF70). O CT-RF59 acrescenta uma reprovação, vinculada ao BUG-032, em triagem.
+
 ---
 
 ## RF65 a RF73 — Validações, operações e buscas de Colaboradores
@@ -1932,9 +1973,9 @@ Com RF58, a análise passa a cobrir 56 requisitos documentados. O CT-RF58 acresc
 | <a id="rf68"></a>RF68 | Bloquear edição com qualquer campo obrigatório vazio. | [CT-RF68](Cenario_Teste/CT-RF68_Edicao_Colaborador_Campo_Obrigatorio_Vazio.md) | [BUG-029](Relatorio-de-Bugs.md#bug-029) | Edição aceita sem validação visível; HTTP 200. |
 | <a id="rf69"></a>RF69 | Manter uma única associação por colaborador e função. | [CT-RF69](Cenario_Teste/CT-RF69_Funcao_Duplicada_Colaborador.md) | [BUG-030](Relatorio-de-Bugs.md#bug-030) | Mesma função associada três vezes; dois POST HTTP 201. |
 | <a id="rf70"></a>RF70 | Excluir colaborador permitido ou explicar o vínculo impeditivo sem HTTP 500. | [CT-RF70](Cenario_Teste/CT-RF70_Exclusao_Colaborador_Erro_500.md) | [BUG-031](Relatorio-de-Bugs.md#bug-031) | Exclusão retorna HTTP 500 e erro interno genérico. |
-| <a id="rf71"></a>RF71 | Manter o filtro por nome aplicado em todas as páginas do resultado. | [CT-RF71](Cenario_Teste/CT-RF71_Busca_Nome_Colaborador_Paginacao.md) | [BUG-032](Relatorio-de-Bugs.md#bug-032) | A página seguinte exibe nomes fora do filtro. |
+| <a id="rf71"></a>RF71 | Manter o filtro por nome aplicado em todas as páginas do resultado. | [CT-RF71](Cenario_Teste/CT-RF71_Busca_Nome_Colaborador_Paginacao.md) | [BUG-033](Relatorio-de-Bugs.md#bug-033) | A página seguinte exibe nomes fora do filtro. |
 | <a id="rf72"></a>RF72 | Retornar somente o colaborador associado a um código existente. | [CT-RF72](Cenario_Teste/CT-RF72_Busca_Codigo_Existente_Colaborador.md) | — | Usuário correto retornado no exemplo gravado. |
-| <a id="rf73"></a>RF73 | Exibir estado vazio para código inexistente, sem linha residual. | [CT-RF73](Cenario_Teste/CT-RF73_Busca_Codigo_Inexistente_Colaborador.md) | [BUG-033](Relatorio-de-Bugs.md#bug-033) | A tabela apresenta uma linha vazia. |
+| <a id="rf73"></a>RF73 | Exibir estado vazio para código inexistente, sem linha residual. | [CT-RF73](Cenario_Teste/CT-RF73_Busca_Codigo_Inexistente_Colaborador.md) | [BUG-034](Relatorio-de-Bugs.md#bug-034) | A tabela apresenta uma linha vazia. |
 
 ### Critérios gerais de aceitação
 
@@ -1948,7 +1989,7 @@ Com RF58, a análise passa a cobrir 56 requisitos documentados. O CT-RF58 acresc
 
 ### Base da análise — revisão de 15/11/2026
 
-Os seis Jams de RF65–RF70 foram lidos por metadados, eventos de interação e registros de rede. RF65–RF68 possuem POST de atualização HTTP 200 sem corpo capturado; por isso a aceitação do endpoint está comprovada, mas a persistência final deve ser reconfirmada. RF69 registra payloads, HTTP 201 e respostas subsequentes com três associações iguais. RF70 registra payload, HTTP 500 e `Erro interno inesperado`. RF71–RF73 foram analisados visualmente em três Jams curtos: busca por nome com falha na paginação, busca válida por código e busca inexistente com linha vazia. Não houve nova execução, acesso ao banco, logs ou código. A análise passa a cobrir 65 requisitos documentados; RF36–RF37 e RF59–RF64 permanecem fora do conjunto fornecido.
+RF59 registra HTTP 500 no cadastro de anamnese. Os seis Jams de RF65–RF70 foram lidos por metadados, eventos de interação e rede. RF71–RF73 foram analisados visualmente: falha do filtro na paginação, busca válida por código e linha vazia para código inexistente. Não houve nova execução, acesso ao banco, logs ou código. A análise passa a cobrir 66 requisitos documentados; RF36–RF37 e RF60–RF64 permanecem fora do conjunto fornecido.
 
 ---
 
