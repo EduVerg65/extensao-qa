@@ -6,11 +6,13 @@
 
 **Datas das gravações do Jam:** CT-RF01 em 23/10/2026; CT-RF02_ERRO em 22/10/2026 às 21:45 BRT; CT-RF03 não confirmada.
 
-**Atualização documental:** 15/11/2026 — 26 defeitos registrados: 10 abertos (BUG-001 a BUG-010) e 16 em triagem (BUG-011 a BUG-026). BUG-019 registra o HTTP 500 no cadastro de objetivo de treino e BUG-020 a ausência de retorno visível no cadastro de turma sem modalidade, ambos sem causa técnica confirmada. As análises anteriores foram preservadas.
+**Atualização documental:** 15/11/2026 — 27 defeitos registrados: 10 abertos (BUG-001 a BUG-010) e 17 em triagem (BUG-011 a BUG-027). BUG-019 registra o HTTP 500 no cadastro de objetivo de treino e BUG-020 a ausência de retorno visível no cadastro de turma sem modalidade, ambos sem causa técnica confirmada. As análises anteriores foram preservadas.
 
 **Padronização documental:** 13/11/2026, sem alteração do status dos defeitos.
 
 **Caso aprovado incluído em 13/11/2026:** [CT-RF04_loginComSucesso](Cenario_Teste/CT-RF04_loginComSucesso.md), vinculado ao RF04, não gerou defeito para o fluxo avaliado. O [Jam de login](https://jam.dev/c/5e4a28be-4e80-43d3-9587-1b113723cc38) mostra acesso ao dashboard após autenticação. Essa aprovação não altera os três bugs existentes; resultados e limites constam no [relatório dos testes](Relatorio%20dos%20testes.md).
+
+**Gravação de CT-RF72–CT-RF76:** 15/11/2026, Planos, 21:54 BRT, Chrome 157.0.8103.78 / Windows 11; uma única gravação; evidência e limites no BUG-027.
 
 **Gravação de CT-RF69–CT-RF71:** 15/11/2026, Modelos de Contrato, 21:55 BRT, Chrome 157.0.8103.78 / Windows 11; uma única gravação; evidência e limites no BUG-026.
 
@@ -60,8 +62,9 @@
 | [BUG-024](#bug-024) | Telefone do lead aceita 30 dígitos sem máscara nem validação | Média / Média, propostas | Em triagem — regra do campo e validação no servidor não confirmadas | [CT-RF62](Cenario_Teste/CT-RF62_Telefone_Lead_Sem_Validacao.md) |
 | [BUG-025](#bug-025) | Conta a pagar a colaborador é cadastrada sem colaborador informado | Alta / Alta, propostas | Em triagem — regra de obrigatoriedade e validação no servidor não confirmadas | [CT-RF65](Cenario_Teste/CT-RF65_Cadastro_Conta_Colaborador_Sem_Colaborador.md) |
 | [BUG-026](#bug-026) | Listagem de modelos de contrato aparece vazia com 15 modelos retornados | Alta / Alta, propostas | Em triagem — causa de renderização não confirmada | [CT-RF71](Cenario_Teste/CT-RF71_Listagem_Modelos_Contrato_Vazia.md) |
+| [BUG-027](#bug-027) | Cartão Ativos de Planos aumenta ao cadastrar e editar planos inativos | Média / Média, propostas | Em triagem — regra de cálculo do cartão não confirmada | [CT-RF75](Cenario_Teste/CT-RF75_Contador_Ativos_Planos.md) |
 
-BUG-001–BUG-010 aguardam correção e reteste. BUG-011–BUG-026 aguardam confirmação das premissas e triagem antes do encaminhamento de correção. As causas técnicas permanecem não confirmadas; o BUG-003 se apoia no relato e nas capturas fornecidos, com os limites registrados no caso.
+BUG-001–BUG-010 aguardam correção e reteste. BUG-011–BUG-027 aguardam confirmação das premissas e triagem antes do encaminhamento de correção. As causas técnicas permanecem não confirmadas; o BUG-003 se apoia no relato e nas capturas fornecidos, com os limites registrados no caso.
 
 ---
 
@@ -1247,6 +1250,52 @@ A divergência entre a resposta e a tabela é compatível com falha na renderiza
 
 ---
 
+<a id="bug-027"></a>
+
+## BUG-027 — Cartão Ativos de Planos aumenta ao cadastrar e editar planos inativos
+
+| Campo | Descrição |
+| --- | --- |
+| Status | Em triagem — causa não determinada; reteste pendente após correção. |
+| Severidade / prioridade | Média / Média, propostas para triagem. |
+| Módulo | Planos / Cartões de resumo |
+| Requisitos | [RF75](Analise%20de%20requisitos.md#rf75) |
+| Casos | [CT-RF75](Cenario_Teste/CT-RF75_Contador_Ativos_Planos.md) |
+| Data da evidência / revisão | 15/11/2026, 21:54 BRT; sem nova execução. |
+| Página | https://sifit.centrion.com.br/planos |
+| Ambiente | Chrome 157.0.8103.78 / Windows (x86) 11, janela 1920 × 855; versão e zoom não confirmados. |
+| Frequência conhecida | Duas operações consecutivas na mesma gravação; recorrência não determinada. |
+
+### Pré-condições e reprodução
+
+**[CT-RF75](Cenario_Teste/CT-RF75_Contador_Ativos_Planos.md):** Sessão autenticada com acesso a Planos e base de planos com a regra do cartão Ativos definida com o produto.
+
+1. Acessar Planos e registrar os cartões Planos e Ativos.
+2. Cadastrar um plano com status Inativo e conferir os cartões.
+3. Editar o plano inativo sem alterar o status e conferir os cartões.
+4. Comparar o cartão Ativos com a contagem de planos ativos da listagem.
+
+### Esperado e obtido
+
+| Esperado | Obtido |
+| --- | --- |
+| O cartão Ativos conta apenas planos com status ativo; cadastrar ou editar um plano inativo não o altera. | Cadastrar um plano com `status` "inativo" elevou Planos de 40 para 41 e Ativos de 29 para 30; editar o plano 41, que continuou "inativo", elevou Ativos para 31. |
+
+**Impacto:** O indicador de planos ativos fica superestimado, o que distorce a leitura da carteira de planos e as decisões comerciais baseadas nele.
+
+### Evidências técnicas
+
+- [Jam — Planos](https://jam.dev/c/233c5d21-e108-4a55-b6f6-8738cb3fc6a6): quadros de 0:03 (Planos 40, Ativos 29), 0:53 (Planos 41, Ativos 30) e 1:08 (Planos 41, Ativos 31); `POST /api/plano/salvar/1` com `"status": "inativo"` e `POST /api/plano/update/1` com `"status": "inativo"`.
+- [Cartões em 0:03](Evidencias/CT-RF75_Contador_Ativos_Planos/cartoes_antes_00-03.png), [em 0:53](Evidencias/CT-RF75_Contador_Ativos_Planos/cartoes_apos_cadastro_00-53.png), [em 1:08](Evidencias/CT-RF75_Contador_Ativos_Planos/cartoes_apos_edicao_01-08.png) e [Evidências](Evidencias/CT-RF75_Contador_Ativos_Planos/README.md).
+
+### Análise, limites e encaminhamento
+
+O aumento do cartão Ativos a cada operação com planos inativos é compatível com contagem que não considera o status ou com cálculo baseado em outro critério (por exemplo, planos com matrículas); a regra do cartão não foi informada e a contagem da listagem por status não foi conferida. A causa técnica não foi confirmada no código.
+
+**Reteste:** Reproduzir com a base e o contrato do cartão conhecidos, comparando o cartão com a contagem por status da listagem, após cadastro, edição e alteração de status. Manter em triagem até nova evidência em versão identificada.
+
+---
+
 ## Pontos a validar — sem defeito confirmado
 
 | Caso | Questão pendente | Evidência |
@@ -1265,7 +1314,7 @@ A divergência entre a resposta e a tabela é compatível com falha na renderiza
 | [CT-RF64](Cenario_Teste/CT-RF64_Filtros_Contas_Pagar.md) | Filtros da tela Contas a Pagar por nome, data e status | Reexecutar com contas de controle e conferir cada critério isolado e combinado; o resultado vazio da combinação gravada não pôde ser conferido contra a base. | [Jam](https://jam.dev/c/5d0afaf4-5abd-4e85-923f-27448304a9ef) e [Evidências](Evidencias/CT-RF64_Filtros_Contas_Pagar/README.md) |
 | [CT-RF66](Cenario_Teste/CT-RF66_Busca_Colaborador_Conta_Pagar.md) | Busca de colaborador no cadastro de conta a pagar | Reexecutar com um nome existente para conferir listagem e seleção e confirmar a mensagem esperada de resultado vazio. | [Jam](https://jam.dev/c/5d0afaf4-5abd-4e85-923f-27448304a9ef) e [Evidências](Evidencias/CT-RF66_Busca_Colaborador_Conta_Pagar/README.md) |
 
-Esses treze pontos não entram na contagem de 26 defeitos registrados. BUG-011–BUG-026 são contabilizados separadamente como registros em triagem, com premissas, persistência ou validações técnicas ainda pendentes. O relato de numeração de personais não demonstrou diferença entre total e linhas; a inativação de modalidades pode ser exclusão lógica; encargos e métricas exigem regras explícitas.
+Esses treze pontos não entram na contagem de 27 defeitos registrados. BUG-011–BUG-027 são contabilizados separadamente como registros em triagem, com premissas, persistência ou validações técnicas ainda pendentes. O relato de numeração de personais não demonstrou diferença entre total e linhas; a inativação de modalidades pode ser exclusão lógica; encargos e métricas exigem regras explícitas.
 
 
 **Exclusão de exercício:** CT-RF23 está aprovado no trecho consultado, com remoção e total 11 para 10; não gerou defeito adicional. Persistência e efeitos sobre vínculos permanecem como verificações complementares.
