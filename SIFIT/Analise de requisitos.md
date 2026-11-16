@@ -2,11 +2,11 @@
 
 **Módulos:** Autenticação, Perfil, Clientes / Filtros, Financeiro, Página inicial / Personais, SifitBox / Modalidades e Turmas, Categorias Crossfit, Avaliações, Exercícios, Grupos Musculares, Dashboard e Objetivos de Treino.
 
-**Atualização:** 15/11/2026 — RF01 a RF35, RF38 a RF57 consolidados, com inclusão de Categorias Crossfit (CT-RF38), SifitBox – Turmas (CT-RF39 a CT-RF41), Pagar.me, Configurações, Despesas Fixas e Relatórios (CT-RF42 a CT-RF56) e, a partir de CT-RF57, Grupos (treino); BUG-011–BUG-024 em triagem.
+**Atualização:** 15/11/2026 — RF01 a RF35, RF38 a RF58 consolidados, com inclusão de Categorias Crossfit (CT-RF38), SifitBox – Turmas (CT-RF39 a CT-RF41), Pagar.me, Configurações, Despesas Fixas e Relatórios (CT-RF42 a CT-RF56) e, a partir de CT-RF57, Grupos (treino); BUG-011–BUG-025 em triagem.
 
 **Padronização documental:** 13/11/2026, sem alteração dos resultados registrados.
 
-Esta análise documenta 55 requisitos de QA para os cenários relacionados abaixo, com base nos relatos e nas evidências fornecidas. RF01–RF04 e suas análises históricas foram preservados; RF05–RF20 ampliam a cobertura em 14/11/2026; RF21 acrescenta Avaliações; RF22–RF28 acrescentam Exercícios; RF29–RF33 acrescentam Grupos Musculares; RF34 acrescenta o carregamento do dashboard RF35 acrescenta o cadastro de objetivos de treino e RF38 acrescenta o cadastro de categorias com código automático em 15/11/2026. RF39 acrescenta o cadastro de modalidade em SifitBox – Turmas. RF40 acrescenta a exclusão de turmas e modalidades. RF41 acrescenta o cadastro de turma. RF42 a RF56 acrescentam Pagar.me, Configurações, Despesas Fixas e Relatórios em 15/11/2026. RF57 acrescenta a exclusão de grupo (treino), também em 15/11/2026. Os critérios abaixo constituem a referência de QA para esses fluxos; não representam validação de uma especificação formal pelo responsável pelo produto.
+Esta análise documenta 56 requisitos de QA para os cenários relacionados abaixo, com base nos relatos e nas evidências fornecidas. RF01–RF04 e suas análises históricas foram preservados; RF05–RF20 ampliam a cobertura em 14/11/2026; RF21 acrescenta Avaliações; RF22–RF28 acrescentam Exercícios; RF29–RF33 acrescentam Grupos Musculares; RF34 acrescenta o carregamento do dashboard RF35 acrescenta o cadastro de objetivos de treino e RF38 acrescenta o cadastro de categorias com código automático em 15/11/2026. RF39 acrescenta o cadastro de modalidade em SifitBox – Turmas. RF40 acrescenta a exclusão de turmas e modalidades. RF41 acrescenta o cadastro de turma. RF42 a RF56 acrescentam Pagar.me, Configurações, Despesas Fixas e Relatórios em 15/11/2026. RF57 acrescenta a exclusão de grupo (treino) e RF58 acrescenta a edição de grupo (treino), ambos também em 15/11/2026. Os critérios abaixo constituem a referência de QA para esses fluxos; não representam validação de uma especificação formal pelo responsável pelo produto.
 
 ## 📋 Visão geral dos requisitos
 
@@ -67,6 +67,7 @@ Esta análise documenta 55 requisitos de QA para os cenários relacionados abaix
 | [RF55](#rf55) | Gerar o relatório de Colaboradores em PDF | Alta, proposta | [CT-RF55](Cenario_Teste/CT-RF55_Relatorio_Colaboradores_Vazio.md) |
 | [RF56](#rf56) | Gerar o relatório de Caixas em PDF | Alta, proposta | [CT-RF56](Cenario_Teste/CT-RF56_Relatorio_Caixas_Vazio.md) |
 | [RF57](#rf57) | Excluir grupo ou explicar o impedimento | Alta, proposta | [CT-RF57](Cenario_Teste/CT-RF57_Exclusao_Grupo.md) |
+| [RF58](#rf58) | Persistir todos os campos editados de um grupo | Alta, proposta | [CT-RF58](Cenario_Teste/CT-RF58_Edicao_Grupo.md) |
 
 ---
 
@@ -1615,6 +1616,33 @@ Não foram consultados logs do servidor, corpo completo da resposta além dos 64
 
 ---
 
+## RF58 — Persistir todos os campos editados de um grupo
+
+| Campo | Descrição |
+| --- | --- |
+| Requisito de QA | Ao salvar a edição de um grupo, todo campo alterado deve ser persistido pelo backend; uma resposta de sucesso não deve ser retornada para uma alteração que não foi efetivamente salva. |
+| Ator | Usuário autenticado com permissão em Grupos. |
+| Pré-condições | Grupo de teste conhecido, com todos os campos atuais registrados antes da edição. |
+| Gatilho | Abrir a edição do grupo, alterar um campo isoladamente (por exemplo, Status) e acionar Salvar. |
+| Caso | [CT-RF58](Cenario_Teste/CT-RF58_Edicao_Grupo.md) |
+| Situação observada | Reprovado nas evidências. A alteração do campo Status de "Ativo" para "Inativo" retorna sucesso (`verifica_erro: false`), mas a consulta imediatamente seguinte mostra o registro ainda com status "Ativo". Na mesma sessão e no mesmo registro, a alteração do campo Descrição é persistida corretamente, descartando falha geral de salvamento, sessão ou rede. |
+| Defeito | [BUG-025](Relatorio-de-Bugs.md#bug-025), em triagem |
+| Evidências | [Jam](https://jam.dev/c/b1231a75-1a65-4bf0-b795-f52a8c7d3365). |
+
+### Critérios de aceitação do RF58
+
+1. A edição de qualquer campo do grupo retorna sucesso somente quando o valor é efetivamente persistido.
+2. O campo Status, especificamente, é persistido ao ser alterado e confirmado por consulta subsequente.
+3. Uma resposta de sucesso nunca é retornada para uma alteração que não foi salva.
+4. O resultado se mantém após recarga da página e nova consulta ao registro.
+5. O comportamento é validado também para outros grupos e, se aplicável, para a entidade grupo muscular.
+
+### Pontos a confirmar e limites do RF58
+
+Não houve acesso a logs do servidor, ao código da rotina de edição nem ao banco de dados para confirmar o valor realmente gravado. A causa da falha isolada no campo `status` não foi determinada: pode ser uma whitelist de campos editáveis que exclui esse campo, uma rotina de atualização que o ignora silenciosamente, ou outra causa não identificada. Foi observado também um descompasso de cerca de 4 horas entre o cabeçalho HTTP `data` e o campo `updated_at` da resposta, sem relação confirmada com o defeito.
+
+---
+
 ## 🔗 Rastreabilidade
 
 | Requisito | Cenário / caso | Defeito | Resultado | Evidências |
@@ -1674,6 +1702,7 @@ Não foram consultados logs do servidor, corpo completo da resposta além dos 64
 | RF55 | [CT-RF55](Cenario_Teste/CT-RF55_Relatorio_Colaboradores_Vazio.md) | [BUG-023](Relatorio-de-Bugs.md#bug-023), em triagem | Reprovado nas evidências; reteste pendente. | [Evidências](Evidencias/CT-RF55_Relatorio_Colaboradores_Vazio/README.md) e [Jam](https://jam.dev/c/3b4777a4-e1b0-4038-9b06-26c73669d7d1) |
 | RF56 | [CT-RF56](Cenario_Teste/CT-RF56_Relatorio_Caixas_Vazio.md) | [BUG-023](Relatorio-de-Bugs.md#bug-023), em triagem | Reprovado nas evidências; reteste pendente. | [Evidências](Evidencias/CT-RF56_Relatorio_Caixas_Vazio/README.md) e [Jam](https://jam.dev/c/3b4777a4-e1b0-4038-9b06-26c73669d7d1) |
 | RF57 | [CT-RF57](Cenario_Teste/CT-RF57_Exclusao_Grupo.md) | [BUG-024](Relatorio-de-Bugs.md#bug-024), em triagem | Reprovado nas evidências; reteste pendente. | [Jam](https://jam.dev/c/b1231a75-1a65-4bf0-b795-f52a8c7d3365) |
+| RF58 | [CT-RF58](Cenario_Teste/CT-RF58_Edicao_Grupo.md) | [BUG-025](Relatorio-de-Bugs.md#bug-025), em triagem | Reprovado nas evidências; reteste pendente. | [Jam](https://jam.dev/c/b1231a75-1a65-4bf0-b795-f52a8c7d3365) |
 
 ---
 
@@ -1875,6 +1904,12 @@ Com RF56, a análise passa a cobrir 54 requisitos documentados. O CT-RF56 acresc
 RF57 utiliza os painéis Informações, Console e Rede do Jam "Tela de Grupos", os quadros do vídeo entre 0:00 e 1:38 e as duas requisições de exclusão com HTTP 500. Não houve nova execução, acesso ao código ou ao banco, nem reteste.
 
 Com RF57, a análise passa a cobrir 55 requisitos documentados. O CT-RF57 acrescenta uma reprovação, vinculada ao BUG-024, em triagem.
+
+### Base da análise do RF58 — revisão de 15/11/2026
+
+RF58 utiliza os painéis Informações, Console e Rede do mesmo Jam "Tela de Grupos" do RF57, os eventos de clique entre 0:57 e 1:16 e as requisições `POST /api/edita/grupo/1`, `GET /api/grupos/1` e `POST /api/seleciona/grupo/1` correspondentes às duas edições do grupo "Treino sla" (código 11). Foram registrados os corpos de requisição e resposta das duas edições e das consultas imediatamente seguintes. Não houve nova execução, acesso ao código ou ao banco, nem reteste.
+
+Com RF58, a análise passa a cobrir 56 requisitos documentados. O CT-RF58 acrescenta uma reprovação, vinculada ao BUG-025, em triagem.
 
 ---
 

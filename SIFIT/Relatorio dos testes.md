@@ -1,10 +1,10 @@
 # 📊 Relatório de Testes — SIFIT
 
-**Escopo:** 55 casos documentados (CT-RF01–CT-RF35, CT-RF38–CT-RF56 e CT-RF57) — autenticação, recuperação, perfil, Clientes, financeiro, página inicial e dashboard, modalidades / tema de SifitBox, Categorias Crossfit, Avaliações, Exercícios, Grupos Musculares, Objetivos de Treino cadastro de categorias com código automático, SifitBox – Turmas, Pagar.me, Configurações, Despesas Fixas, Relatórios e Grupos (treino).
+**Escopo:** 56 casos documentados (CT-RF01–CT-RF35, CT-RF38–CT-RF56, CT-RF57 e CT-RF58) — autenticação, recuperação, perfil, Clientes, financeiro, página inicial e dashboard, modalidades / tema de SifitBox, Categorias Crossfit, Avaliações, Exercícios, Grupos Musculares, Objetivos de Treino cadastro de categorias com código automático, SifitBox – Turmas, Pagar.me, Configurações, Despesas Fixas, Relatórios e Grupos (treino).
 
-**Datas das gravações do Jam:** CT-RF01 em 23/10/2026; CT-RF02_ERRO em 22/10/2026 às 21:45 BRT; CT-RF03 não confirmada; CT-RF04_loginComSucesso em 13/11/2026; CT-RF05–CT-RF20 em 14/11/2026; CT-RF21 em 15/11/2026 às 15:07:51,265 BRT; CT-RF22–28 em 15/11/2026 às 15:25, 15:40, 15:38, 15:35, 16:11, 16:08 e 16:07 BRT; CT-RF29–33 em 15/11/2026 às 15h56 BRT (uma única gravação); CT-RF34 em 15/11/2026 às 17:23 BRT; CT-RF35 em 15/11/2026 às 18:13 BRT; CT-RF38 em 15/11/2026 às 18:41 BRT; CT-RF39–41 em 15/11/2026 às 18:51 BRT (uma única gravação); CT-RF42–45 às 19:06, CT-RF46–49 às 19:07 e CT-RF50–56 às 19:09 BRT (uma gravação por grupo); CT-RF57 em 15/11/2026 às 21h03 BRT.
+**Datas das gravações do Jam:** CT-RF01 em 23/10/2026; CT-RF02_ERRO em 22/10/2026 às 21:45 BRT; CT-RF03 não confirmada; CT-RF04_loginComSucesso em 13/11/2026; CT-RF05–CT-RF20 em 14/11/2026; CT-RF21 em 15/11/2026 às 15:07:51,265 BRT; CT-RF22–28 em 15/11/2026 às 15:25, 15:40, 15:38, 15:35, 16:11, 16:08 e 16:07 BRT; CT-RF29–33 em 15/11/2026 às 15h56 BRT (uma única gravação); CT-RF34 em 15/11/2026 às 17:23 BRT; CT-RF35 em 15/11/2026 às 18:13 BRT; CT-RF38 em 15/11/2026 às 18:41 BRT; CT-RF39–41 em 15/11/2026 às 18:51 BRT (uma única gravação); CT-RF42–45 às 19:06, CT-RF46–49 às 19:07 e CT-RF50–56 às 19:09 BRT (uma gravação por grupo); CT-RF57 e CT-RF58 em 15/11/2026 às 21h03 BRT (mesma gravação).
 
-**Data da revisão documental:** 15/11/2026, com integração de CT-RF22–CT-RF35, CT-RF38–CT-RF56 e CT-RF57; BUG-011–BUG-024 em triagem. Resultados anteriores preservados.
+**Data da revisão documental:** 15/11/2026, com integração de CT-RF22–CT-RF35, CT-RF38–CT-RF56, CT-RF57 e CT-RF58; BUG-011–BUG-025 em triagem. Resultados anteriores preservados.
 
 **Origem do resultado:** análise de evidências fornecidas; sem nova execução no sistema nesta revisão.
 
@@ -26,13 +26,13 @@ Os 16 cenários incluídos em 14/11/2026 acrescentaram **5 aprovações**, **7 r
 
 O **CT-RF29** acrescenta uma reprovação e o BUG-016: a exclusão de grupo muscular retorna HTTP 500 em duas tentativas, com o corpo `{"verifica_erro": true, "mensagem": "Erro interno inesperado."}`; a interface apresenta o diálogo "Erro ao deletar Grupo" e o registro permanece na listagem. A causa não foi determinada.
 
-CT-RF30 acrescenta uma reprovação e o BUG-017 (imagens dos grupos musculares com HTTP 422); CT-RF31–33 acrescentam três aprovações limitadas aos exemplos gravados. O **CT-RF35** acrescenta uma reprovação e o BUG-019: o cadastro de objetivo de treino retorna HTTP 500 em duas ocorrências, com o diálogo "Erro ao salvar objetivo" e a listagem sem registros; o corpo da requisição e da resposta não foi capturado e a causa não foi determinada. O **CT-RF38** acrescenta uma aprovação limitada ao exemplo gravado: o cadastro de categoria cria o registro apenas com o nome (HTTP 201), o código 9 é atribuído pelo sistema e o filtro por código localiza o novo registro; sem defeito. O **CT-RF39** acrescenta uma aprovação (cadastro de modalidade com HTTP 201); o **CT-RF40** acrescenta um ponto a validar (exclusão por lixeira que inativa os registros, regra a confirmar); o **CT-RF41** acrescenta uma reprovação e o BUG-020 (cadastro de turma sem modalidade, sem retorno visível; validação nativa não confirmada). CT-RF42 a CT-RF45 (Pagar.me e Configurações) acrescentam uma aprovação (criação de cobrança), dois pontos a validar (saque e salvamento das configurações) e uma reprovação com o BUG-021 (painel que mantém Recebimentos ao trocar o período); CT-RF46 a CT-RF49 (Despesas Fixas) acrescentam três aprovações (filtros, exclusão e edição) e um ponto a validar (cadastro com duas requisições de criação); CT-RF50 a CT-RF56 (Relatórios) acrescentam uma aprovação (Matrículas), um ponto a validar (Contas a Pagar sem registros) e cinco reprovações, com o BUG-022 (Contas a Receber sem valor) e o BUG-023 (quatro relatórios com arquivo vazio de 0 bytes). O **CT-RF57** acrescenta uma reprovação e o BUG-024: a exclusão de grupo retorna HTTP 500 em duas tentativas, com o corpo `{"verifica_erro": true, "mensagem": "Erro interno inesperado."}` — endpoint e mensagem idênticos aos do BUG-016 para grupos musculares; o registro permanece na listagem e a causa não foi determinada. As contagens consolidadas são:
+CT-RF30 acrescenta uma reprovação e o BUG-017 (imagens dos grupos musculares com HTTP 422); CT-RF31–33 acrescentam três aprovações limitadas aos exemplos gravados. O **CT-RF35** acrescenta uma reprovação e o BUG-019: o cadastro de objetivo de treino retorna HTTP 500 em duas ocorrências, com o diálogo "Erro ao salvar objetivo" e a listagem sem registros; o corpo da requisição e da resposta não foi capturado e a causa não foi determinada. O **CT-RF38** acrescenta uma aprovação limitada ao exemplo gravado: o cadastro de categoria cria o registro apenas com o nome (HTTP 201), o código 9 é atribuído pelo sistema e o filtro por código localiza o novo registro; sem defeito. O **CT-RF39** acrescenta uma aprovação (cadastro de modalidade com HTTP 201); o **CT-RF40** acrescenta um ponto a validar (exclusão por lixeira que inativa os registros, regra a confirmar); o **CT-RF41** acrescenta uma reprovação e o BUG-020 (cadastro de turma sem modalidade, sem retorno visível; validação nativa não confirmada). CT-RF42 a CT-RF45 (Pagar.me e Configurações) acrescentam uma aprovação (criação de cobrança), dois pontos a validar (saque e salvamento das configurações) e uma reprovação com o BUG-021 (painel que mantém Recebimentos ao trocar o período); CT-RF46 a CT-RF49 (Despesas Fixas) acrescentam três aprovações (filtros, exclusão e edição) e um ponto a validar (cadastro com duas requisições de criação); CT-RF50 a CT-RF56 (Relatórios) acrescentam uma aprovação (Matrículas), um ponto a validar (Contas a Pagar sem registros) e cinco reprovações, com o BUG-022 (Contas a Receber sem valor) e o BUG-023 (quatro relatórios com arquivo vazio de 0 bytes). O **CT-RF57** acrescenta uma reprovação e o BUG-024: a exclusão de grupo retorna HTTP 500 em duas tentativas, com o corpo `{"verifica_erro": true, "mensagem": "Erro interno inesperado."}` — endpoint e mensagem idênticos aos do BUG-016 para grupos musculares; o registro permanece na listagem e a causa não foi determinada. O **CT-RF58**, na mesma gravação, acrescenta uma reprovação e o BUG-025: a edição do grupo retorna sucesso (`verifica_erro: false`) ao alterar o campo Status para "Inativo", mas a consulta seguinte mostra o registro ainda com o status anterior; na mesma sessão, a edição do campo Descrição é persistida corretamente, isolando a falha ao campo status. As contagens consolidadas são:
 
 | Casos documentados | Aprovados | Reprovados | A validar | Defeitos registrados | Casos com reteste corretivo pendente |
 | :---: | :---: | :---: | :---: | :---: | :---: |
-| 55 | 17 | 28 | 10 | 24 (10 abertos + 14 em triagem) | 28 |
+| 56 | 17 | 29 | 10 | 25 (10 abertos + 15 em triagem) | 29 |
 
-Os 28 retestes incluem CT-RF22/24/26/27/28/29/30/35/41/45/51/53/54/55/56/57, sujeitos à confirmação funcional e técnica. As contagens representam os casos documentados com base nas fontes indicadas, sem novas execuções nesta revisão. As nove variações planejadas para o reteste do CT-RF03 não foram executadas e não são contabilizadas como testes adicionais realizados.
+Os 29 retestes incluem CT-RF22/24/26/27/28/29/30/35/41/45/51/53/54/55/56/57/58, sujeitos à confirmação funcional e técnica. As contagens representam os casos documentados com base nas fontes indicadas, sem novas execuções nesta revisão. As nove variações planejadas para o reteste do CT-RF03 não foram executadas e não são contabilizadas como testes adicionais realizados.
 
 ---
 
@@ -95,6 +95,7 @@ Os 28 retestes incluem CT-RF22/24/26/27/28/29/30/35/41/45/51/53/54/55/56/57, suj
 | [CT-RF55](Cenario_Teste/CT-RF55_Relatorio_Colaboradores_Vazio.md) | [RF55](Analise%20de%20requisitos.md#rf55) | Gerar PDF válido com o conteúdo do relatório ou a estrutura vazia explícita. | HTTP 200 e arquivo PDF de 0 bytes, que não abre; sem mensagem de erro. | Reprovado nas evidências | [BUG-023](Relatorio-de-Bugs.md#bug-023), em triagem |
 | [CT-RF56](Cenario_Teste/CT-RF56_Relatorio_Caixas_Vazio.md) | [RF56](Analise%20de%20requisitos.md#rf56) | Gerar PDF válido com o conteúdo do relatório ou a estrutura vazia explícita. | HTTP 200 e arquivo PDF de 0 bytes, que não abre; sem mensagem de erro. | Reprovado nas evidências | [BUG-023](Relatorio-de-Bugs.md#bug-023), em triagem |
 | [CT-RF57](Cenario_Teste/CT-RF57_Exclusao_Grupo.md) | [RF57](Analise%20de%20requisitos.md#rf57) | Excluir o grupo de teste e atualizar a listagem e os contadores. | Duas tentativas de `POST /api/deleta/grupo/1` retornam HTTP 500 com o corpo "Erro interno inesperado."; o registro permanece na listagem. | Reprovado nas evidências | [BUG-024](Relatorio-de-Bugs.md#bug-024), em triagem |
+| [CT-RF58](Cenario_Teste/CT-RF58_Edicao_Grupo.md) | [RF58](Analise%20de%20requisitos.md#rf58) | Editar o campo Status do grupo de teste e confirmar a persistência na consulta seguinte. | `POST /api/edita/grupo/1` com `status: "inativo"` retorna HTTP 200, `{"verifica_erro": false}`, mas a consulta seguinte mantém o status "ativo"; a edição do campo descrição, na mesma sessão, persiste normalmente. | Reprovado nas evidências | [BUG-025](Relatorio-de-Bugs.md#bug-025), em triagem |
 
 ---
 
@@ -126,6 +127,7 @@ Os 28 retestes incluem CT-RF22/24/26/27/28/29/30/35/41/45/51/53/54/55/56/57, suj
 | [BUG-022](Relatorio-de-Bugs.md#bug-022) | Relatório de Contas a Receber exibe "----" em Valor a Receber | Alta, proposta | Alta, proposta | Em triagem; comparação com o módulo e reteste pendentes. |
 | [BUG-023](Relatorio-de-Bugs.md#bug-023) | Relatórios de Avaliações, Clientes, Colaboradores e Caixas geram PDF vazio | Alta, proposta | Alta, proposta | Em triagem; causa e reteste pendentes. |
 | [BUG-024](Relatorio-de-Bugs.md#bug-024) | Exclusão de grupo retorna HTTP 500 | Média, proposta | Alta, proposta | Em triagem; causa pendente. |
+| [BUG-025](Relatorio-de-Bugs.md#bug-025) | Edição de grupo não persiste o campo status | Média, proposta | Alta, proposta | Em triagem; causa pendente. |
 
 As classificações propostas dependem de triagem. O BUG-003 mantém o resultado atribuído ao relato fornecido.
 
@@ -315,6 +317,15 @@ O domínio do CT-RF02_ERRO é diferente do domínio `sifitalfa.centrion.com.br` 
 | Navegador / sistema / janela | Chrome 157.0.8103.78 / Windows (x86) 11 / 1920 × 911, conforme Info; autor do Jam: Eduardo Vergentino Malaquias. |
 | Material e limites | Painéis Informações, Console e Rede do Jam, quadros do vídeo entre 0:00 e 1:38 e as duas requisições de exclusão com HTTP 500. O texto do diálogo de erro não foi confirmado visualmente; sem inspeção de código, acesso a logs ou nova execução. |
 
+### CT-RF58
+
+| Item | Registro |
+| --- | --- |
+| Página / API | https://sifit.centrion.com.br/grupos / https://backendsifit.centrion.com.br |
+| Data / duração | 15/11/2026, 21h03 BRT / 1 min 38 s; mesma gravação do CT-RF57. |
+| Navegador / sistema / janela | Chrome 157.0.8103.78 / Windows (x86) 11 / 1920 × 911, conforme Info; autor do Jam: Eduardo Vergentino Malaquias. |
+| Material e limites | Painéis Informações, Console e Rede do Jam, eventos de clique entre 0:57 e 1:16 e as requisições de edição (`POST /api/edita/grupo/1`) e de consulta (`GET /api/grupos/1`, `POST /api/seleciona/grupo/1`) correspondentes às duas edições do grupo. Reteste alterando o status isoladamente de volta para "Ativo" e verificação em outros grupos não exercitados; sem inspeção de código, acesso a logs ou nova execução. |
+
 ## 📸 5. Evidências e observações
 
 | Evidência | Informação utilizada |
@@ -364,6 +375,7 @@ O domínio do CT-RF02_ERRO é diferente do domínio `sifitalfa.centrion.com.br` 
 | [Jam — Despesas Fixas](https://jam.dev/c/a4bac99d-e436-4792-831e-8c3a875272bb) e evidências por caso | CT-RF46: filtros por código e nome com Valor Listado acompanhando o conjunto. CT-RF47: um clique em Salvar Despesa gera dois `POST cria/despesa-fixa` com HTTP 201 e um registro novo (código 23). CT-RF48: diálogo de confirmação e `POST deleta/despesa-fixa` com HTTP 200. CT-RF49: `POST edita/despesa-fixa` com HTTP 200 e recorrência "7 Dias" na listagem. |
 | [Jam — Relatórios](https://jam.dev/c/3b4777a4-e1b0-4038-9b06-26c73669d7d1) e evidências por caso | Oito `POST /api/relatorio/1` com HTTP 200 e oito arquivos baixados: Matrículas (uma matrícula, R$ 20,00), Contas a Receber (três contas com Valor a Receber "----") e Contas a Pagar (Pagas) sem linhas abrem; Avaliações (duas vezes), Clientes, Colaboradores e Caixas geram arquivos de 0 bytes. |
 | [Jam — CT-RF57: Tela de Grupos](https://jam.dev/c/b1231a75-1a65-4bf0-b795-f52a8c7d3365) | 1:19: acionamento do ícone de exclusão do grupo código 1 ("Treino Livre"). 1:20: diálogo "Deseja deletar o Grupo?" com Cancelar e Confirmar, listagem com 10 registros. 1:21: `POST /api/deleta/grupo/1` retorna HTTP 500 em 987 ms, com `x-hcdn-request-id: 8f18afe5ff0e3a9e3d1c944d69811576-asc-edge13`. 1:30: segunda tentativa no mesmo endpoint, HTTP 500 em 230 ms. Corpo das duas respostas: `{"verifica_erro": true, "mensagem": "Erro interno inesperado."}` — idêntico ao do CT-RF29. O texto do diálogo de erro não foi confirmado visualmente. A mesma gravação mostra o cadastro bem-sucedido de um novo grupo ("Treino sla", código 11). |
+| [Jam — CT-RF58: Tela de Grupos](https://jam.dev/c/b1231a75-1a65-4bf0-b795-f52a8c7d3365) | Mesma gravação do CT-RF57. 0:58: clique em Salvar após selecionar Status = "Inativo" no grupo 11 ("Treino sla"); `POST /api/edita/grupo/1` retorna HTTP 200, `{"verifica_erro": false}`, mas `GET /api/grupos/1` e `POST /api/seleciona/grupo/1`, no mesmo instante, mostram o grupo ainda com `"status": "ativo"`. 1:10: segunda edição, alterando apenas a descrição para "Ess"; HTTP 200, `{"verifica_erro": false}`, e a consulta seguinte confirma a descrição persistida. Cabeçalhos "data" em `08:02:46 GMT` e `08:02:58 GMT`; campo `updated_at` do corpo com `12:02:46` e `12:02:58` — descompasso de cerca de 4 horas não investigado. |
 
 A mensagem de credenciais incorretas já aparece no início do vídeo do Jam; não foi considerada uma resposta ao clique em "Esqueci minha senha". A ausência de requisição, isoladamente, não caracteriza defeito se a interface abrir um formulário local. Aqui, o resultado reprovado decorre de o fluxo não abrir.
 
@@ -525,9 +537,21 @@ O consolidado em 15/11/2026, antes da inclusão de CT-RF57, era de 54 casos docu
 | --- | --- | --- |
 | [CT-RF57](Cenario_Teste/CT-RF57_Exclusao_Grupo.md) | Reprovado nas evidências | Investigar o HTTP 500 com logs do servidor e os vínculos do grupo de código 1, em conjunto com o BUG-016 (mesmo endpoint e mensagem para grupos musculares); corrigir e retestar os cenários permitido e impedido. |
 
-O defeito [BUG-024](Relatorio-de-Bugs.md#bug-024) está em triagem. O endpoint `/api/deleta/grupo/{id}` e a mensagem genérica retornada coincidem exatamente com os já registrados no BUG-016 para `/api/deleta/grupo-muscular/{id}`, o que sugere uma causa comum no tratamento de exclusões do backend. A mesma gravação também mostra o cadastro bem-sucedido de um novo grupo, não documentado em caso próprio nesta revisão.
+O defeito [BUG-024](Relatorio-de-Bugs.md#bug-024) está em triagem. O endpoint `/api/deleta/grupo/{id}` e a mensagem genérica retornada coincidem exatamente com os já registrados no BUG-016 para `/api/deleta/grupo-muscular/{id}`, o que sugere uma causa comum no tratamento de exclusões do backend. A mesma gravação também mostra o cadastro bem-sucedido de um novo grupo e duas edições desse grupo, tratadas em caso próprio (CT-RF58).
 
-O consolidado atual é de 55 casos documentados (CT-RF01–CT-RF35, CT-RF38–CT-RF56 e CT-RF57): 17 aprovados, 28 reprovados e 10 a validar; 24 defeitos registrados (10 abertos e 14 em triagem) e 28 casos com reteste corretivo pendente. CT-RF09/10 compartilham BUG-005 e CT-RF53 a CT-RF56 compartilham BUG-023, de modo que 28 casos reprovados correspondem a 24 defeitos. Sem nova execução.
+O consolidado em 15/11/2026, antes da inclusão de CT-RF58, era de 55 casos documentados (CT-RF01–CT-RF35, CT-RF38–CT-RF56 e CT-RF57): 17 aprovados, 28 reprovados e 10 a validar; 24 defeitos registrados (10 abertos e 14 em triagem) e 28 casos com reteste corretivo pendente. CT-RF09/10 compartilham BUG-005 e CT-RF53 a CT-RF56 compartilham BUG-023, de modo que 28 casos reprovados correspondem a 24 defeitos. Sem nova execução.
+
+---
+
+## Inclusão de 15/11/2026 — CT-RF58
+
+| Caso | Situação | Encaminhamento |
+| --- | --- | --- |
+| [CT-RF58](Cenario_Teste/CT-RF58_Edicao_Grupo.md) | Reprovado nas evidências | Investigar a rotina de edição do grupo (`/api/edita/grupo/{id}`) quanto ao tratamento do campo status; corrigir e retestar a edição de cada campo isoladamente, incluindo a reativação. |
+
+O defeito [BUG-025](Relatorio-de-Bugs.md#bug-025) está em triagem. Na mesma gravação do CT-RF57, a alteração do campo Status do grupo "Treino sla" (código 11) de "Ativo" para "Inativo" retorna sucesso (`verifica_erro: false`), mas a consulta imediatamente seguinte mostra o registro ainda com o status anterior. Na mesma sessão e no mesmo registro, a alteração do campo Descrição é persistida corretamente, o que isola a falha ao campo `status` e descarta causa geral de sessão, rede ou salvamento. Foi observado também um descompasso de cerca de 4 horas entre o cabeçalho HTTP `data` e o campo `updated_at` da resposta, sem causa determinada e sem relação confirmada com o defeito.
+
+O consolidado atual é de 56 casos documentados (CT-RF01–CT-RF35, CT-RF38–CT-RF56, CT-RF57 e CT-RF58): 17 aprovados, 29 reprovados e 10 a validar; 25 defeitos registrados (10 abertos e 15 em triagem) e 29 casos com reteste corretivo pendente. CT-RF09/10 compartilham BUG-005 e CT-RF53 a CT-RF56 compartilham BUG-023, de modo que 29 casos reprovados correspondem a 25 defeitos. Sem nova execução.
 
 ---
 

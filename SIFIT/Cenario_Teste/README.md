@@ -1,6 +1,6 @@
 # 🧪 Índice dos cenários de teste — SIFIT
 
-**Atualização:** 15/11/2026. 55 casos (CT-RF01–CT-RF35, CT-RF38–CT-RF56 e CT-RF57): 17 aprovados, 28 reprovados e 10 a validar; 24 defeitos registrados (10 abertos e 14 em triagem).
+**Atualização:** 15/11/2026. 56 casos (CT-RF01–CT-RF35, CT-RF38–CT-RF56, CT-RF57 e CT-RF58): 17 aprovados, 29 reprovados e 10 a validar; 25 defeitos registrados (10 abertos e 15 em triagem).
 
 | Caso | Funcionalidade | Resultado | Defeito | Jam |
 | --- | --- | --- | --- | --- |
@@ -134,7 +134,8 @@ Cada grupo tem como fonte uma única gravação. Os resultados são documentais;
 | Caso | Funcionalidade | Resultado | Defeito | Jam |
 | --- | --- | --- | --- | --- |
 | [CT-RF57](CT-RF57_Exclusao_Grupo.md) | Exclusão de grupo retorna HTTP 500 | Reprovado nas evidências | [BUG-024](../Relatorio-de-Bugs.md#bug-024), em triagem | [Jam](https://jam.dev/c/b1231a75-1a65-4bf0-b795-f52a8c7d3365) |
+| [CT-RF58](CT-RF58_Edicao_Grupo.md) | Edição de grupo não persiste o campo status | Reprovado nas evidências | [BUG-025](../Relatorio-de-Bugs.md#bug-025), em triagem | [Jam](https://jam.dev/c/b1231a75-1a65-4bf0-b795-f52a8c7d3365) |
 
-A mesma gravação mostra o cadastro bem-sucedido de um novo grupo antes da tentativa de exclusão aqui reprovada. O endpoint e a mensagem genérica retornada coincidem com os já registrados no BUG-016 para a exclusão de grupo muscular. O resultado é documental; não houve nova execução ou reteste.
+A mesma gravação mostra o cadastro bem-sucedido de um novo grupo ("Treino sla", código 11) antes das duas edições e da tentativa de exclusão aqui reprovadas. No CT-RF57, o endpoint e a mensagem genérica retornada coincidem com os já registrados no BUG-016 para a exclusão de grupo muscular. No CT-RF58, a alteração do campo Status para "Inativo" retorna sucesso sem persistir o valor, enquanto a alteração do campo Descrição, na mesma sessão e no mesmo registro, é persistida corretamente — isolando a falha ao campo status. O resultado é documental; não houve nova execução ou reteste.
 
 [← Início](../../README.md) · [Requisitos](../Analise%20de%20requisitos.md) · [Plano](../Plano%20de%20testes.md) · [Evidências](../Evidencias/README.md)

@@ -1,14 +1,14 @@
 # 🐞 Relatório de Bugs — SIFIT
 
-**Escopo:** defeitos de 55 casos documentados (CT-RF01–CT-RF35, CT-RF38–CT-RF56 e CT-RF57): recuperação, Perfil, Clientes, financeiro, página inicial e dashboard, tema, modalidades, categorias, avaliações, exercícios, grupos musculares, objetivos de treino, SifitBox – Turmas, Pagar.me, configurações, despesas fixas, relatórios e grupos (treino).
+**Escopo:** defeitos de 56 casos documentados (CT-RF01–CT-RF35, CT-RF38–CT-RF56, CT-RF57 e CT-RF58): recuperação, Perfil, Clientes, financeiro, página inicial e dashboard, tema, modalidades, categorias, avaliações, exercícios, grupos musculares, objetivos de treino, SifitBox – Turmas, Pagar.me, configurações, despesas fixas, relatórios e grupos (treino).
 
 **Ambientes:** CT-RF01 em https://sifitalfa.centrion.com.br/login; CT-RF02_ERRO em https://sifit.centrion.com.br/profile. CT-RF03: URL do frontend não confirmada; backend informado em `https://backendsifit.centrion.com.br/api/clientesPorNome/1`.
 
 **Datas das gravações do Jam:** CT-RF01 em 23/10/2026; CT-RF02_ERRO em 22/10/2026 às 21:45 BRT; CT-RF03 não confirmada.
 
-**Atualização documental:** 15/11/2026 — 24 defeitos registrados: 10 abertos (BUG-001 a BUG-010) e 14 em triagem (BUG-011 a BUG-024). BUG-019 registra o HTTP 500 no cadastro de objetivo de treino, BUG-020 a ausência de retorno visível no cadastro de turma sem modalidade e BUG-024 o HTTP 500 na exclusão de grupo (treino), todos sem causa técnica confirmada. As análises anteriores foram preservadas.
+**Atualização documental:** 15/11/2026 — 25 defeitos registrados: 10 abertos (BUG-001 a BUG-010) e 15 em triagem (BUG-011 a BUG-025). BUG-019 registra o HTTP 500 no cadastro de objetivo de treino, BUG-020 a ausência de retorno visível no cadastro de turma sem modalidade, BUG-024 o HTTP 500 na exclusão de grupo (treino) e BUG-025 a não persistência do campo status na edição de grupo (treino), todos sem causa técnica confirmada. As análises anteriores foram preservadas.
 
-**Gravação de CT-RF57:** 15/11/2026, Grupos, 21h03 BRT, Chrome 157.0.8103.78 / Windows 11; evidência e limites no BUG-024.
+**Gravação de CT-RF57 e CT-RF58:** 15/11/2026, Grupos, 21h03 BRT, Chrome 157.0.8103.78 / Windows 11; mesma gravação, evidências e limites no BUG-024 e no BUG-025.
 
 **Padronização documental:** 13/11/2026, sem alteração do status dos defeitos.
 
@@ -54,8 +54,9 @@
 | [BUG-022](#bug-022) | Relatório de Contas a Receber exibe "----" em Valor a Receber | Alta / Alta, propostas | Em triagem — origem do valor e comparação com o módulo não confirmadas | [CT-RF51](Cenario_Teste/CT-RF51_Relatorio_Contas_Receber.md) |
 | [BUG-023](#bug-023) | Relatórios de Avaliações, Clientes, Colaboradores e Caixas geram arquivo PDF vazio (0 bytes) | Alta / Alta, propostas | Em triagem — correspondência dos arquivos inferida; causa não determinada | [CT-RF53](Cenario_Teste/CT-RF53_Relatorio_Avaliacoes_Vazio.md), [CT-RF54](Cenario_Teste/CT-RF54_Relatorio_Clientes_Vazio.md), [CT-RF55](Cenario_Teste/CT-RF55_Relatorio_Colaboradores_Vazio.md) e [CT-RF56](Cenario_Teste/CT-RF56_Relatorio_Caixas_Vazio.md) |
 | [BUG-024](#bug-024) | Exclusão de grupo retorna HTTP 500 e mensagem genérica | Média / Alta, propostas | Em triagem — causa não determinada | [CT-RF57](Cenario_Teste/CT-RF57_Exclusao_Grupo.md) |
+| [BUG-025](#bug-025) | Edição de grupo não persiste o campo status apesar de retorno de sucesso | Média / Alta, propostas | Em triagem — causa não determinada | [CT-RF58](Cenario_Teste/CT-RF58_Edicao_Grupo.md) |
 
-BUG-001–BUG-010 aguardam correção e reteste. BUG-011–BUG-024 aguardam confirmação das premissas e triagem antes do encaminhamento de correção. As causas técnicas permanecem não confirmadas; o BUG-003 se apoia no relato e nas capturas fornecidos, com os limites registrados no caso.
+BUG-001–BUG-010 aguardam correção e reteste. BUG-011–BUG-025 aguardam confirmação das premissas e triagem antes do encaminhamento de correção. As causas técnicas permanecem não confirmadas; o BUG-003 se apoia no relato e nas capturas fornecidos, com os limites registrados no caso.
 
 ---
 
@@ -1145,6 +1146,50 @@ O HTTP 500 e o endpoint estão registrados no Jam. Não houve acesso a logs do s
 Não foi verificado se o registro permanece íntegro após as duas tentativas enviadas para o mesmo recurso, nem exercitado o cenário de exclusão com impedimento de regra.
 
 Investigar o HTTP 500 com logs do servidor e os vínculos do registro, em conjunto com a investigação já proposta para o BUG-016, dada a coincidência de endpoint e mensagem; corrigir e retestar os cenários permitido e impedido. O status permanece em triagem até que a causa seja determinada e uma nova execução comprove os critérios de aceitação do caso associado.
+
+---
+
+<a id="bug-025"></a>
+
+## BUG-025 — Edição de grupo não persiste o campo status apesar de retorno de sucesso
+
+| Campo | Descrição |
+| --- | --- |
+| Status | Em triagem — causa não determinada; reteste pendente após correção. |
+| Severidade / prioridade | Média / Alta, propostas para triagem. |
+| Módulo | Treinamento / Grupos / Edição |
+| Requisitos | [RF58](Analise%20de%20requisitos.md#rf58) |
+| Casos | [CT-RF58](Cenario_Teste/CT-RF58_Edicao_Grupo.md) |
+| Data da evidência / revisão | 15/11/2026, 21h03 BRT; sem nova execução. |
+| Página | https://sifit.centrion.com.br/grupos |
+| Ambiente | Chrome 157.0.8103.78 / Windows (x86) 11; versão e zoom não confirmados. |
+
+### Pré-condições e reprodução
+
+**[CT-RF58](Cenario_Teste/CT-RF58_Edicao_Grupo.md):** Sessão autenticada com permissão para editar grupos. Grupo de teste com todos os campos atuais registrados antes da edição.
+
+1. Abrir a edição do grupo e alterar apenas o campo Status, mantendo os demais campos.
+2. Acionar o botão Salvar.
+3. Conferir a resposta da API e, em seguida, consultar novamente o registro.
+
+### Esperado e obtido
+
+| Caso | Esperado | Obtido |
+| --- | --- | --- |
+| CT-RF58 | A edição do campo Status retorna sucesso somente quando o valor é persistido; a consulta seguinte reflete o novo status. | A edição retorna sucesso (`verifica_erro: false`), mas a consulta imediatamente seguinte mostra o grupo ainda com o status anterior ("ativo"). |
+
+**Impacto:** O usuário recebe confirmação de sucesso para uma alteração que não foi salva, sem qualquer indicação de falha na interface. Na mesma sessão e no mesmo registro, a edição do campo Descrição é persistida corretamente, o que isola a falha ao campo `status` e descarta causa geral de sessão, rede ou salvamento.
+
+### Evidências
+
+- [CT-RF58](Cenario_Teste/CT-RF58_Edicao_Grupo.md): [Jam — Tela de Grupos](https://jam.dev/c/b1231a75-1a65-4bf0-b795-f52a8c7d3365). 0:58: clique no botão Salvar após selecionar Status = "Inativo". `POST /api/edita/grupo/1` com `{"id":11,"nome":"Treino sla","mostrar_home":"nao","caixa":"interno","descricao":"Esse treino","status":"inativo"}` retorna HTTP 200, `{"verifica_erro": false}`. No mesmo instante, `GET /api/grupos/1` e `POST /api/seleciona/grupo/1` retornam o grupo id 11 ainda com `"status": "ativo"`. 1:10: segunda edição, alterando apenas a descrição para "Ess"; `POST /api/edita/grupo/1` retorna HTTP 200, `{"verifica_erro": false}`, e a consulta seguinte confirma `"descricao": "Ess"` persistida.
+- Cabeçalhos registrados: `content-type: application/json; charset=utf-8`. Primeira edição em `Segunda-feira, 16 de novembro de 2026, 08:02:46 GMT`; segunda em `08:02:58 GMT`. O campo `updated_at` do corpo da resposta registra `12:02:46` e `12:02:58` para os mesmos instantes — descompasso de cerca de 4 horas em relação ao cabeçalho HTTP `data`, sem causa determinada.
+
+### Análise, limites e encaminhamento
+
+A falha é específica do campo `status`: o mesmo endpoint, no mesmo registro e na mesma sessão, persiste corretamente o campo `descricao` logo em seguida. Isso aponta para uma causa na rotina de edição do backend — por exemplo, uma whitelist de campos editáveis que exclui `status`, ou uma atualização que o ignora silenciosamente — e não para uma falha geral de sessão, rede ou salvamento. Não houve acesso a logs do servidor, ao código da rotina nem ao banco de dados para confirmar o valor realmente gravado.
+
+Investigar a rotina de edição do grupo (`/api/edita/grupo/{id}`), com foco no tratamento do campo `status`; verificar se o mesmo ocorre ao reativar um grupo (Inativo → Ativo) e em outras entidades com campo de status semelhante, incluindo grupo muscular, dado o padrão de nomenclatura de endpoints já observado nos BUG-016 e BUG-024. O status permanece em triagem até que a causa seja determinada e uma nova execução comprove os critérios de aceitação do caso associado.
 
 ---
 
