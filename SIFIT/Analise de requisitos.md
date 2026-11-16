@@ -83,6 +83,7 @@ Esta análise documenta 73 requisitos de QA para os cenários relacionados abaix
 | [RF72](#rf72) | Filtrar planos por código e por nome | Média, proposta | [CT-RF72](Cenario_Teste/CT-RF72_Filtros_Planos.md) |
 | [RF73](#rf73) | Alternar o tema e consultar as notificações na tela Planos | Baixa, proposta | [CT-RF73](Cenario_Teste/CT-RF73_Tema_Notificacoes_Planos.md) |
 | [RF74](#rf74) | Cadastrar um plano | Alta, proposta | [CT-RF74](Cenario_Teste/CT-RF74_Cadastro_Plano.md) |
+| [RF75](#rf75) | Manter o cartão Ativos coerente com o status dos planos | Média, proposta | [CT-RF75](Cenario_Teste/CT-RF75_Contador_Ativos_Planos.md) |
 
 ---
 
@@ -2097,6 +2098,35 @@ A linha do plano na listagem, os campos obrigatórios e os benefícios não fora
 
 ---
 
+<a id="rf75"></a>
+
+## RF75 — Manter o cartão Ativos coerente com o status dos planos
+
+| Campo | Descrição |
+| --- | --- |
+| Requisito de QA | O cartão Ativos da tela Planos deve contar apenas planos com status ativo e não aumentar ao cadastrar ou editar planos inativos, enquanto o cartão Planos acompanha o total de registros. |
+| Ator | Usuário autenticado com acesso ao módulo. |
+| Pré-condições | Base de planos conhecida, com a regra do cartão definida com o produto. |
+| Gatilho | Cadastrar um plano inativo e editar um plano inativo. |
+| Caso | [CT-RF75](Cenario_Teste/CT-RF75_Contador_Ativos_Planos.md) |
+| Situação observada | Reprovado nas evidências. O cartão Ativos sobe de 29 para 31 após cadastrar e editar planos inativos. |
+| Defeito | [BUG-027](Relatorio-de-Bugs.md#bug-027), em triagem |
+| Evidências | [Jam](https://jam.dev/c/233c5d21-e108-4a55-b6f6-8738cb3fc6a6) e [Evidências](Evidencias/CT-RF75_Contador_Ativos_Planos/README.md). |
+
+### Critérios de aceitação do RF75
+
+1. O cartão Ativos conta apenas planos com status ativo.
+2. Cadastrar um plano inativo não altera o cartão Ativos.
+3. Editar um plano sem alterar o status não altera o cartão Ativos.
+4. O cartão Planos acompanha o total de registros.
+5. O cartão é recalculado de forma consistente após recarregar a página.
+
+### Pontos a confirmar e limites do RF75
+
+A regra de cálculo do cartão e a contagem da listagem não foram verificadas.
+
+---
+
 ## 🔗 Rastreabilidade
 
 | Requisito | Cenário / caso | Defeito | Resultado | Evidências |
@@ -2172,6 +2202,7 @@ A linha do plano na listagem, os campos obrigatórios e os benefícios não fora
 | RF72 | [CT-RF72](Cenario_Teste/CT-RF72_Filtros_Planos.md) | Nenhum no fluxo avaliado | Aprovado conforme a gravação | [Evidências](Evidencias/CT-RF72_Filtros_Planos/README.md) e [Jam](https://jam.dev/c/233c5d21-e108-4a55-b6f6-8738cb3fc6a6) |
 | RF73 | [CT-RF73](Cenario_Teste/CT-RF73_Tema_Notificacoes_Planos.md) | Nenhum no fluxo avaliado | Aprovado conforme a gravação | [Evidências](Evidencias/CT-RF73_Tema_Notificacoes_Planos/README.md) e [Jam](https://jam.dev/c/233c5d21-e108-4a55-b6f6-8738cb3fc6a6) |
 | RF74 | [CT-RF74](Cenario_Teste/CT-RF74_Cadastro_Plano.md) | Nenhum no fluxo avaliado | Aprovado conforme a gravação | [Evidências](Evidencias/CT-RF74_Cadastro_Plano/README.md) e [Jam](https://jam.dev/c/233c5d21-e108-4a55-b6f6-8738cb3fc6a6) |
+| RF75 | [CT-RF75](Cenario_Teste/CT-RF75_Contador_Ativos_Planos.md) | [BUG-027](Relatorio-de-Bugs.md#bug-027), em triagem | Reprovado nas evidências; reteste pendente. | [Evidências](Evidencias/CT-RF75_Contador_Ativos_Planos/README.md) e [Jam](https://jam.dev/c/233c5d21-e108-4a55-b6f6-8738cb3fc6a6) |
 
 ---
 
@@ -2469,6 +2500,12 @@ Com RF73, a análise passa a cobrir 70 requisitos documentados. O CT-RF73 acresc
 RF74 utiliza os painéis Info, Console, Network e Actions do Jam "Planos", o corpo e a resposta da criação e os quadros de 0:24, 0:46 e 0:53. Foram registrados o cadastro e o contador de planos. Não houve nova execução, acesso ao código ou ao banco, nem reteste.
 
 Com RF74, a análise passa a cobrir 71 requisitos documentados. O CT-RF74 acrescenta uma aprovação limitada ao exemplo gravado.
+
+### Base da análise do RF75 — revisão de 15/11/2026
+
+RF75 utiliza os painéis Info, Console, Network e Actions do Jam "Planos", os corpos das requisições de criação e atualização e os quadros de 0:03, 0:53 e 1:08. Foram registrados os cartões Planos e Ativos e o status dos planos nas requisições. Não houve nova execução, acesso ao código ou ao banco, nem reteste.
+
+Com RF75, a análise passa a cobrir 72 requisitos documentados. O CT-RF75 acrescenta uma reprovação, vinculada ao BUG-027, em triagem.
 
 ---
 
