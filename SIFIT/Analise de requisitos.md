@@ -74,6 +74,7 @@ Esta análise documenta 73 requisitos de QA para os cenários relacionados abaix
 | [RF63](#rf63) | Visualizar e editar um lead | Média, proposta | [CT-RF63](Cenario_Teste/CT-RF63_Edicao_Lead_Prospeccao.md) |
 | [RF64](#rf64) | Filtrar contas a pagar por nome, data e status | Média, proposta | [CT-RF64](Cenario_Teste/CT-RF64_Filtros_Contas_Pagar.md) |
 | [RF65](#rf65) | Exigir o colaborador no cadastro de conta a pagar a colaborador | Alta, proposta | [CT-RF65](Cenario_Teste/CT-RF65_Cadastro_Conta_Colaborador_Sem_Colaborador.md) |
+| [RF66](#rf66) | Buscar e selecionar colaborador no cadastro de conta | Média, proposta | [CT-RF66](Cenario_Teste/CT-RF66_Busca_Colaborador_Conta_Pagar.md) |
 
 ---
 
@@ -1827,6 +1828,35 @@ A regra de obrigatoriedade e a validação no servidor não foram verificadas; o
 
 ---
 
+<a id="rf66"></a>
+
+## RF66 — Buscar e selecionar colaborador no cadastro de conta
+
+| Campo | Descrição |
+| --- | --- |
+| Requisito de QA | O modal Buscar Colaborador deve listar os colaboradores correspondentes ao nome informado, permitir a seleção e informar explicitamente quando não houver resultado. |
+| Ator | Usuário autenticado com acesso ao módulo. |
+| Pré-condições | Colaboradores cadastrados; modal aberto a partir do tipo Pagto. Colaborador. |
+| Gatilho | Informar um nome no modal e acionar Pesquisar. |
+| Caso | [CT-RF66](Cenario_Teste/CT-RF66_Busca_Colaborador_Conta_Pagar.md) |
+| Situação observada | A validar — regra ou contexto pendente. O termo "sds" devolve lista vazia, sem mensagem visível; a busca com resultado e a seleção não foram exercitadas. |
+| Defeito | Sem defeito confirmado |
+| Evidências | [Jam](https://jam.dev/c/5d0afaf4-5abd-4e85-923f-27448304a9ef) e [Evidências](Evidencias/CT-RF66_Busca_Colaborador_Conta_Pagar/README.md). |
+
+### Critérios de aceitação do RF66
+
+1. A busca lista os colaboradores cujo nome contenha o termo.
+2. A seleção preenche Código e Colaborador no formulário.
+3. Sem correspondência, o modal apresenta mensagem explícita.
+4. O modal pode ser fechado sem alterar o formulário.
+5. O colaborador selecionado é gravado na conta.
+
+### Pontos a confirmar e limites do RF66
+
+A busca com resultado, a seleção e a mensagem de resultado vazio esperada não foram verificadas.
+
+---
+
 ## 🔗 Rastreabilidade
 
 | Requisito | Cenário / caso | Defeito | Resultado | Evidências |
@@ -1893,6 +1923,7 @@ A regra de obrigatoriedade e a validação no servidor não foram verificadas; o
 | RF63 | [CT-RF63](Cenario_Teste/CT-RF63_Edicao_Lead_Prospeccao.md) | Nenhum no fluxo avaliado | Aprovado conforme a gravação | [Evidências](Evidencias/CT-RF63_Edicao_Lead_Prospeccao/README.md) e [Jam](https://jam.dev/c/308607ff-8abc-40af-8c7c-429ce506ed64) |
 | RF64 | [CT-RF64](Cenario_Teste/CT-RF64_Filtros_Contas_Pagar.md) | Sem defeito confirmado | A validar — regra ou contexto pendente | [Evidências](Evidencias/CT-RF64_Filtros_Contas_Pagar/README.md) e [Jam](https://jam.dev/c/5d0afaf4-5abd-4e85-923f-27448304a9ef) |
 | RF65 | [CT-RF65](Cenario_Teste/CT-RF65_Cadastro_Conta_Colaborador_Sem_Colaborador.md) | [BUG-025](Relatorio-de-Bugs.md#bug-025), em triagem | Reprovado nas evidências; reteste pendente. | [Evidências](Evidencias/CT-RF65_Cadastro_Conta_Colaborador_Sem_Colaborador/README.md) e [Jam](https://jam.dev/c/5d0afaf4-5abd-4e85-923f-27448304a9ef) |
+| RF66 | [CT-RF66](Cenario_Teste/CT-RF66_Busca_Colaborador_Conta_Pagar.md) | Sem defeito confirmado | A validar — regra ou contexto pendente | [Evidências](Evidencias/CT-RF66_Busca_Colaborador_Conta_Pagar/README.md) e [Jam](https://jam.dev/c/5d0afaf4-5abd-4e85-923f-27448304a9ef) |
 
 ---
 
@@ -2136,6 +2167,12 @@ Com RF64, a análise passa a cobrir 61 requisitos documentados. O CT-RF64 acresc
 RF65 utiliza os painéis Info, Console, Network e Actions do Jam "Contas a Pagar", o corpo e a resposta da criação e os quadros de 0:15, 0:41 e 0:50. Foram registrados o cadastro sem colaborador, o HTTP 201 e a listagem com "-". Não houve nova execução, acesso ao código ou ao banco, nem reteste.
 
 Com RF65, a análise passa a cobrir 62 requisitos documentados. O CT-RF65 acrescenta uma reprovação, vinculada ao BUG-025, em triagem.
+
+### Base da análise do RF66 — revisão de 15/11/2026
+
+RF66 utiliza os painéis Info, Console, Network e Actions do Jam "Contas a Pagar" e o quadro de 0:26. Foram registrados a abertura do modal, a busca sem resultado e a resposta de 2 B. Não houve nova execução, acesso ao código ou ao banco, nem reteste.
+
+Com RF66, a análise passa a cobrir 63 requisitos documentados. O CT-RF66 acrescenta um ponto a validar, sem defeito confirmado.
 
 ---
 
