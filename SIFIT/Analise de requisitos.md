@@ -76,6 +76,7 @@ Esta análise documenta 73 requisitos de QA para os cenários relacionados abaix
 | [RF65](#rf65) | Exigir o colaborador no cadastro de conta a pagar a colaborador | Alta, proposta | [CT-RF65](Cenario_Teste/CT-RF65_Cadastro_Conta_Colaborador_Sem_Colaborador.md) |
 | [RF66](#rf66) | Buscar e selecionar colaborador no cadastro de conta | Média, proposta | [CT-RF66](Cenario_Teste/CT-RF66_Busca_Colaborador_Conta_Pagar.md) |
 | [RF67](#rf67) | Visualizar os dados de uma conta a pagar | Baixa, proposta | [CT-RF67](Cenario_Teste/CT-RF67_Visualizacao_Conta_Pagar.md) |
+| [RF68](#rf68) | Excluir uma conta a pagar com confirmação | Média, proposta | [CT-RF68](Cenario_Teste/CT-RF68_Exclusao_Conta_Pagar.md) |
 
 ---
 
@@ -1887,6 +1888,35 @@ Contas de fornecedor, pagas e atrasadas e o rótulo esperado do tipo não foram 
 
 ---
 
+<a id="rf68"></a>
+
+## RF68 — Excluir uma conta a pagar com confirmação
+
+| Campo | Descrição |
+| --- | --- |
+| Requisito de QA | A lixeira da listagem deve exigir confirmação e, confirmada, remover a conta sem erro, atualizando a listagem e os cartões. |
+| Ator | Usuário autenticado com acesso ao módulo. |
+| Pré-condições | Conta a pagar descartável cadastrada. |
+| Gatilho | Acionar a lixeira da conta e confirmar o diálogo. |
+| Caso | [CT-RF68](Cenario_Teste/CT-RF68_Exclusao_Conta_Pagar.md) |
+| Situação observada | Aprovado conforme a gravação. O diálogo pede confirmação e `deletar-conta-pagar` retorna HTTP 200 sem erro; a conta 29 deixa a listagem. |
+| Defeito | Nenhum no fluxo avaliado |
+| Evidências | [Jam](https://jam.dev/c/5d0afaf4-5abd-4e85-923f-27448304a9ef) e [Evidências](Evidencias/CT-RF68_Exclusao_Conta_Pagar/README.md). |
+
+### Critérios de aceitação do RF68
+
+1. A exclusão exige confirmação do usuário.
+2. Cancelar preserva a conta.
+3. Confirmar remove a conta sem erro e atualiza a listagem e os cartões.
+4. A conta excluída não reaparece após recarga.
+5. Contas vinculadas a pagamentos ou ao caixa têm tratamento explícito.
+
+### Pontos a confirmar e limites do RF68
+
+Cancelar, recarga após a exclusão e contas pagas ou vinculadas não foram exercitados.
+
+---
+
 ## 🔗 Rastreabilidade
 
 | Requisito | Cenário / caso | Defeito | Resultado | Evidências |
@@ -1955,6 +1985,7 @@ Contas de fornecedor, pagas e atrasadas e o rótulo esperado do tipo não foram 
 | RF65 | [CT-RF65](Cenario_Teste/CT-RF65_Cadastro_Conta_Colaborador_Sem_Colaborador.md) | [BUG-025](Relatorio-de-Bugs.md#bug-025), em triagem | Reprovado nas evidências; reteste pendente. | [Evidências](Evidencias/CT-RF65_Cadastro_Conta_Colaborador_Sem_Colaborador/README.md) e [Jam](https://jam.dev/c/5d0afaf4-5abd-4e85-923f-27448304a9ef) |
 | RF66 | [CT-RF66](Cenario_Teste/CT-RF66_Busca_Colaborador_Conta_Pagar.md) | Sem defeito confirmado | A validar — regra ou contexto pendente | [Evidências](Evidencias/CT-RF66_Busca_Colaborador_Conta_Pagar/README.md) e [Jam](https://jam.dev/c/5d0afaf4-5abd-4e85-923f-27448304a9ef) |
 | RF67 | [CT-RF67](Cenario_Teste/CT-RF67_Visualizacao_Conta_Pagar.md) | Nenhum no fluxo avaliado | Aprovado conforme a gravação | [Evidências](Evidencias/CT-RF67_Visualizacao_Conta_Pagar/README.md) e [Jam](https://jam.dev/c/5d0afaf4-5abd-4e85-923f-27448304a9ef) |
+| RF68 | [CT-RF68](Cenario_Teste/CT-RF68_Exclusao_Conta_Pagar.md) | Nenhum no fluxo avaliado | Aprovado conforme a gravação | [Evidências](Evidencias/CT-RF68_Exclusao_Conta_Pagar/README.md) e [Jam](https://jam.dev/c/5d0afaf4-5abd-4e85-923f-27448304a9ef) |
 
 ---
 
@@ -2210,6 +2241,12 @@ Com RF66, a análise passa a cobrir 63 requisitos documentados. O CT-RF66 acresc
 RF67 utiliza os painéis Info, Console, Network e Actions do Jam "Contas a Pagar" e o quadro de 0:52. Foram registrados a abertura do modal e os dados apresentados. Não houve nova execução, acesso ao código ou ao banco, nem reteste.
 
 Com RF67, a análise passa a cobrir 64 requisitos documentados. O CT-RF67 acrescenta uma aprovação limitada ao exemplo gravado.
+
+### Base da análise do RF68 — revisão de 15/11/2026
+
+RF68 utiliza os painéis Info, Console, Network e Actions do Jam "Contas a Pagar", o corpo e a resposta da exclusão e os quadros de 0:54 e 0:59. Foram registrados o diálogo, a exclusão e a listagem. Não houve nova execução, acesso ao código ou ao banco, nem reteste.
+
+Com RF68, a análise passa a cobrir 65 requisitos documentados. O CT-RF68 acrescenta uma aprovação limitada ao exemplo gravado.
 
 ---
 
