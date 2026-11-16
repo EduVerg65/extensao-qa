@@ -1,6 +1,6 @@
 # 🧪 Índice dos cenários de teste — SIFIT
 
-**Atualização:** 15/11/2026. 57 casos (CT-RF01–CT-RF35, CT-RF38–CT-RF56, CT-RF57, CT-RF58 e CT-RF59): 17 aprovados, 30 reprovados e 10 a validar; 26 defeitos registrados (10 abertos e 16 em triagem).
+**Atualização:** 15/11/2026. 63 casos (CT-RF01–CT-RF35, CT-RF38–CT-RF59 e CT-RF65–CT-RF70): 17 aprovados, 36 reprovados e 10 a validar; 32 defeitos registrados (10 abertos e 22 em triagem).
 
 | Caso | Funcionalidade | Resultado | Defeito | Jam |
 | --- | --- | --- | --- | --- |
@@ -129,6 +129,17 @@ Cada grupo tem como fonte uma única gravação. Os resultados são documentais;
 
 Cada grupo tem como fonte uma única gravação. Os resultados são documentais; nenhuma nova execução ou reteste foi realizada. Os PDFs baixados estão nas pastas de evidências de CT-RF50 a CT-RF56.
 
+## Inclusão de 15/11/2026 — Colaboradores
+
+| Caso | Funcionalidade | Resultado | Defeito | Jam |
+| --- | --- | --- | --- | --- |
+| [CT-RF65](CT-RF65_Data_Nascimento_Futura_Colaborador.md) | Data de nascimento futura | Reprovado — atualização aceita com HTTP 200 | [BUG-026](../Relatorio-de-Bugs.md#bug-026) | [Jam](https://jam.dev/c/6dd75961-8e8f-4c8e-939a-19595a1f8a32) |
+| [CT-RF66](CT-RF66_Data_Nascimento_Obrigatoria_Colaborador.md) | Data de nascimento obrigatória vazia | Reprovado — atualização aceita com HTTP 200 | [BUG-027](../Relatorio-de-Bugs.md#bug-027) | [Jam](https://jam.dev/c/04aa5ba0-ac7e-43b6-a7f3-91ae82417a85) |
+| [CT-RF67](CT-RF67_CREF_Formato_Colaborador.md) | Formato do CREF | Reprovado — texto livre aceito com HTTP 200 | [BUG-028](../Relatorio-de-Bugs.md#bug-028) | [Jam](https://jam.dev/c/243d9699-4bee-495d-ae65-9a02e42813b3) |
+| [CT-RF68](CT-RF68_Edicao_Colaborador_Campo_Obrigatorio_Vazio.md) | Edição com campo obrigatório vazio | Reprovado — atualização aceita com HTTP 200 | [BUG-029](../Relatorio-de-Bugs.md#bug-029) | [Jam](https://jam.dev/c/4219c1b3-085e-4218-b181-5cf448d64cea) |
+| [CT-RF69](CT-RF69_Funcao_Duplicada_Colaborador.md) | Função duplicada para o colaborador | Reprovado — três associações iguais | [BUG-030](../Relatorio-de-Bugs.md#bug-030) | [Jam](https://jam.dev/c/ba2400f9-dbb0-45bc-a509-187249dbe9da) |
+| [CT-RF70](CT-RF70_Exclusao_Colaborador_Erro_500.md) | Exclusão de colaborador | Reprovado — HTTP 500 e erro interno | [BUG-031](../Relatorio-de-Bugs.md#bug-031) | [Jam](https://jam.dev/c/05be297b-22d9-4d26-beff-937526bcd816) |
+
 ## Inclusão de 15/11/2026 — Grupos (treino)
 
 | Caso | Funcionalidade | Resultado | Defeito | Jam |
@@ -136,13 +147,13 @@ Cada grupo tem como fonte uma única gravação. Os resultados são documentais;
 | [CT-RF57](CT-RF57_Exclusao_Grupo.md) | Exclusão de grupo retorna HTTP 500 | Reprovado nas evidências | [BUG-024](../Relatorio-de-Bugs.md#bug-024), em triagem | [Jam](https://jam.dev/c/b1231a75-1a65-4bf0-b795-f52a8c7d3365) |
 | [CT-RF58](CT-RF58_Edicao_Grupo.md) | Edição de grupo não persiste o campo status | Reprovado nas evidências | [BUG-025](../Relatorio-de-Bugs.md#bug-025), em triagem | [Jam](https://jam.dev/c/b1231a75-1a65-4bf0-b795-f52a8c7d3365) |
 
-A mesma gravação mostra o cadastro bem-sucedido de um novo grupo ("Treino sla", código 11) antes das duas edições e da tentativa de exclusão aqui reprovadas. No CT-RF57, o endpoint e a mensagem genérica retornada coincidem com os já registrados no BUG-016 para a exclusão de grupo muscular. No CT-RF58, a alteração do campo Status para "Inativo" retorna sucesso sem persistir o valor, enquanto a alteração do campo Descrição, na mesma sessão e no mesmo registro, é persistida corretamente — isolando a falha ao campo status. O resultado é documental; não houve nova execução ou reteste.
+A mesma gravação mostra o cadastro bem-sucedido de um novo grupo ("Treino sla", código 11) antes das duas edições e da tentativa de exclusão aqui reprovadas. No CT-RF57, o endpoint e a mensagem genérica retornada coincidem com os já registrados no BUG-016 para a exclusão de grupo muscular. No CT-RF58, a alteração do campo Status para "Inativo" retorna sucesso sem persistir o valor, enquanto a alteração do campo Descrição é persistida corretamente. O resultado é documental; não houve nova execução ou reteste.
 
 ## Inclusão de 15/11/2026 — Fichas de Anamnese
 
 | Caso | Funcionalidade | Resultado | Defeito | Jam |
 | --- | --- | --- | --- | --- |
-| [CT-RF59](CT-RF59_Cadastro_Anamnese.md) | Cadastro de anamnese retorna HTTP 500 ao salvar ou aplicar | Reprovado nas evidências | [BUG-026](../Relatorio-de-Bugs.md#bug-026), em triagem | [Jam](https://jam.dev/c/7be0fe71-3419-4050-b63f-473d943fa08e) |
+| [CT-RF59](CT-RF59_Cadastro_Anamnese.md) | Cadastro de anamnese retorna HTTP 500 ao salvar ou aplicar | Reprovado nas evidências | [BUG-032](../Relatorio-de-Bugs.md#bug-032), em triagem | [Jam](https://jam.dev/c/7be0fe71-3419-4050-b63f-473d943fa08e) |
 
 Na mesma gravação, sete tentativas de cadastrar uma anamnese para o aluno "Jorge" — quatro pela rota de aplicar e três pela de salvar rascunho, com dois modelos de anamnese e três respostas diferentes — retornam todas HTTP 500 com a mesma mensagem genérica, coincidindo com o padrão já registrado nos BUG-016 e BUG-024. Nenhuma anamnese é cadastrada com sucesso ao longo da gravação. O resultado é documental; não houve nova execução ou reteste.
 

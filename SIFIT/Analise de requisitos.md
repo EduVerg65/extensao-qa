@@ -2,11 +2,11 @@
 
 **Módulos:** Autenticação, Perfil, Clientes / Filtros, Financeiro, Página inicial / Personais, SifitBox / Modalidades e Turmas, Categorias Crossfit, Avaliações, Exercícios, Grupos Musculares, Dashboard e Objetivos de Treino.
 
-**Atualização:** 15/11/2026 — RF01 a RF35, RF38 a RF59 consolidados, com inclusão de Categorias Crossfit (CT-RF38), SifitBox – Turmas (CT-RF39 a CT-RF41), Pagar.me, Configurações, Despesas Fixas e Relatórios (CT-RF42 a CT-RF56), Grupos (treino) (CT-RF57 e CT-RF58) e, a partir de CT-RF59, Fichas de Anamnese; BUG-011–BUG-026 em triagem.
+**Atualização:** 15/11/2026 — RF01 a RF35, RF38 a RF59 e RF65 a RF70 consolidados, com inclusão de Categorias Crossfit (CT-RF38), SifitBox – Turmas (CT-RF39 a CT-RF41), Pagar.me, Configurações, Despesas Fixas e Relatórios (CT-RF42 a CT-RF56), Grupos (treino) (CT-RF57 e CT-RF58), Fichas de Anamnese (CT-RF59) e Colaboradores (CT-RF65 a CT-RF70); BUG-011–BUG-032 em triagem.
 
 **Padronização documental:** 13/11/2026, sem alteração dos resultados registrados.
 
-Esta análise documenta 57 requisitos de QA para os cenários relacionados abaixo, com base nos relatos e nas evidências fornecidas. RF01–RF04 e suas análises históricas foram preservados; RF05–RF20 ampliam a cobertura em 14/11/2026; RF21 acrescenta Avaliações; RF22–RF28 acrescentam Exercícios; RF29–RF33 acrescentam Grupos Musculares; RF34 acrescenta o carregamento do dashboard RF35 acrescenta o cadastro de objetivos de treino e RF38 acrescenta o cadastro de categorias com código automático em 15/11/2026. RF39 acrescenta o cadastro de modalidade em SifitBox – Turmas. RF40 acrescenta a exclusão de turmas e modalidades. RF41 acrescenta o cadastro de turma. RF42 a RF56 acrescentam Pagar.me, Configurações, Despesas Fixas e Relatórios em 15/11/2026. RF57 acrescenta a exclusão de grupo (treino) e RF58 acrescenta a edição de grupo (treino), ambos também em 15/11/2026. RF59 acrescenta o cadastro de anamnese, também em 15/11/2026. Os critérios abaixo constituem a referência de QA para esses fluxos; não representam validação de uma especificação formal pelo responsável pelo produto.
+Esta análise documenta 63 requisitos de QA para os cenários relacionados abaixo, com base nos relatos e nas evidências fornecidas. RF01–RF04 e suas análises históricas foram preservados; RF05–RF20 ampliam a cobertura em 14/11/2026; RF21 acrescenta Avaliações; RF22–RF28 acrescentam Exercícios; RF29–RF33 acrescentam Grupos Musculares; RF34 acrescenta o carregamento do dashboard RF35 acrescenta o cadastro de objetivos de treino e RF38 acrescenta o cadastro de categorias com código automático em 15/11/2026. RF39 acrescenta o cadastro de modalidade em SifitBox – Turmas. RF40 acrescenta a exclusão de turmas e modalidades. RF41 acrescenta o cadastro de turma. RF42 a RF56 acrescentam Pagar.me, Configurações, Despesas Fixas e Relatórios em 15/11/2026. RF57 acrescenta a exclusão de grupo (treino) e RF58 acrescenta a edição de grupo (treino), ambos também em 15/11/2026. RF59 acrescenta o cadastro de anamnese, também em 15/11/2026. RF65 a RF70 acrescentam validações e operações de Colaboradores, também em 15/11/2026. Os critérios abaixo constituem a referência de QA para esses fluxos; não representam validação de uma especificação formal pelo responsável pelo produto.
 
 ## 📋 Visão geral dos requisitos
 
@@ -69,6 +69,12 @@ Esta análise documenta 57 requisitos de QA para os cenários relacionados abaix
 | [RF57](#rf57) | Excluir grupo ou explicar o impedimento | Alta, proposta | [CT-RF57](Cenario_Teste/CT-RF57_Exclusao_Grupo.md) |
 | [RF58](#rf58) | Persistir todos os campos editados de um grupo | Alta, proposta | [CT-RF58](Cenario_Teste/CT-RF58_Edicao_Grupo.md) |
 | [RF59](#rf59) | Cadastrar anamnese sem erro de servidor | Alta, proposta para triagem | [CT-RF59](Cenario_Teste/CT-RF59_Cadastro_Anamnese.md) |
+| [RF65](#rf65) | Recusar data de nascimento futura na edição de colaborador | Alta, proposta | [CT-RF65](Cenario_Teste/CT-RF65_Data_Nascimento_Futura_Colaborador.md) |
+| [RF66](#rf66) | Exigir data de nascimento obrigatória do colaborador | Alta, proposta | [CT-RF66](Cenario_Teste/CT-RF66_Data_Nascimento_Obrigatoria_Colaborador.md) |
+| [RF67](#rf67) | Validar o formato do CREF do colaborador | Média, proposta | [CT-RF67](Cenario_Teste/CT-RF67_CREF_Formato_Colaborador.md) |
+| [RF68](#rf68) | Bloquear edição de colaborador com campo obrigatório vazio | Alta, proposta | [CT-RF68](Cenario_Teste/CT-RF68_Edicao_Colaborador_Campo_Obrigatorio_Vazio.md) |
+| [RF69](#rf69) | Impedir função duplicada para o mesmo colaborador | Média, proposta | [CT-RF69](Cenario_Teste/CT-RF69_Funcao_Duplicada_Colaborador.md) |
+| [RF70](#rf70) | Excluir colaborador sem erro de servidor | Alta, proposta | [CT-RF70](Cenario_Teste/CT-RF70_Exclusao_Colaborador_Erro_500.md) |
 
 ---
 
@@ -1654,7 +1660,7 @@ Não houve acesso a logs do servidor, ao código da rotina de edição nem ao ba
 | Gatilho | Selecionar aluno e modelo, responder à(s) pergunta(s) e acionar "Salvar rascunho" ou a aplicação definitiva da anamnese. |
 | Caso | [CT-RF59](Cenario_Teste/CT-RF59_Cadastro_Anamnese.md) |
 | Situação observada | Reprovado nas evidências. As sete tentativas registradas na gravação (quatro em `/api/anamnese/aplicar/{id}` e três em `/api/anamnese/rascunho/{id}`) retornam HTTP 500 com a mesma mensagem genérica, independentemente do modelo de anamnese ou da resposta informada; nenhuma anamnese é cadastrada com sucesso. |
-| Defeito | [BUG-026](Relatorio-de-Bugs.md#bug-026), em triagem |
+| Defeito | [BUG-032](Relatorio-de-Bugs.md#bug-032), em triagem |
 | Evidências | [Jam](https://jam.dev/c/7be0fe71-3419-4050-b63f-473d943fa08e). |
 
 ### Critérios de aceitação do RF59
@@ -1731,7 +1737,13 @@ Não houve acesso a logs do servidor, ao código das rotinas de aplicar/rascunho
 | RF56 | [CT-RF56](Cenario_Teste/CT-RF56_Relatorio_Caixas_Vazio.md) | [BUG-023](Relatorio-de-Bugs.md#bug-023), em triagem | Reprovado nas evidências; reteste pendente. | [Evidências](Evidencias/CT-RF56_Relatorio_Caixas_Vazio/README.md) e [Jam](https://jam.dev/c/3b4777a4-e1b0-4038-9b06-26c73669d7d1) |
 | RF57 | [CT-RF57](Cenario_Teste/CT-RF57_Exclusao_Grupo.md) | [BUG-024](Relatorio-de-Bugs.md#bug-024), em triagem | Reprovado nas evidências; reteste pendente. | [Jam](https://jam.dev/c/b1231a75-1a65-4bf0-b795-f52a8c7d3365) |
 | RF58 | [CT-RF58](Cenario_Teste/CT-RF58_Edicao_Grupo.md) | [BUG-025](Relatorio-de-Bugs.md#bug-025), em triagem | Reprovado nas evidências; reteste pendente. | [Jam](https://jam.dev/c/b1231a75-1a65-4bf0-b795-f52a8c7d3365) |
-| RF59 | [CT-RF59](Cenario_Teste/CT-RF59_Cadastro_Anamnese.md) | [BUG-026](Relatorio-de-Bugs.md#bug-026), em triagem | Reprovado nas evidências; reteste pendente. | [Jam](https://jam.dev/c/7be0fe71-3419-4050-b63f-473d943fa08e) |
+| RF59 | [CT-RF59](Cenario_Teste/CT-RF59_Cadastro_Anamnese.md) | [BUG-032](Relatorio-de-Bugs.md#bug-032), em triagem | Reprovado nas evidências; reteste pendente. | [Jam](https://jam.dev/c/7be0fe71-3419-4050-b63f-473d943fa08e) |
+| RF65 | [CT-RF65](Cenario_Teste/CT-RF65_Data_Nascimento_Futura_Colaborador.md) | [BUG-026](Relatorio-de-Bugs.md#bug-026), em triagem | Reprovado nas evidências; reteste pendente. | [Jam](https://jam.dev/c/6dd75961-8e8f-4c8e-939a-19595a1f8a32) |
+| RF66 | [CT-RF66](Cenario_Teste/CT-RF66_Data_Nascimento_Obrigatoria_Colaborador.md) | [BUG-027](Relatorio-de-Bugs.md#bug-027), em triagem | Reprovado nas evidências; reteste pendente. | [Jam](https://jam.dev/c/04aa5ba0-ac7e-43b6-a7f3-91ae82417a85) |
+| RF67 | [CT-RF67](Cenario_Teste/CT-RF67_CREF_Formato_Colaborador.md) | [BUG-028](Relatorio-de-Bugs.md#bug-028), em triagem | Reprovado nas evidências; formato a confirmar. | [Jam](https://jam.dev/c/243d9699-4bee-495d-ae65-9a02e42813b3) |
+| RF68 | [CT-RF68](Cenario_Teste/CT-RF68_Edicao_Colaborador_Campo_Obrigatorio_Vazio.md) | [BUG-029](Relatorio-de-Bugs.md#bug-029), em triagem | Reprovado nas evidências; campo exato pendente. | [Jam](https://jam.dev/c/4219c1b3-085e-4218-b181-5cf448d64cea) |
+| RF69 | [CT-RF69](Cenario_Teste/CT-RF69_Funcao_Duplicada_Colaborador.md) | [BUG-030](Relatorio-de-Bugs.md#bug-030), em triagem | Reprovado nas evidências; reteste pendente. | [Jam](https://jam.dev/c/ba2400f9-dbb0-45bc-a509-187249dbe9da) |
+| RF70 | [CT-RF70](Cenario_Teste/CT-RF70_Exclusao_Colaborador_Erro_500.md) | [BUG-031](Relatorio-de-Bugs.md#bug-031), em triagem | Reprovado nas evidências; reteste pendente. | [Jam](https://jam.dev/c/05be297b-22d9-4d26-beff-937526bcd816) |
 
 ---
 
@@ -1944,7 +1956,32 @@ Com RF58, a análise passa a cobrir 56 requisitos documentados. O CT-RF58 acresc
 
 RF59 utiliza os painéis Informações, Console e Rede do Jam "Fichas de Anamnese", os eventos de clique e digitação entre 0:00 e 1:28 e as sete requisições com HTTP 500 (quatro em `POST /api/anamnese/aplicar/1` e três em `POST /api/anamnese/rascunho/1`), registradas com dois modelos de anamnese e três respostas distintas. Foram registrados os corpos de requisição e resposta de duas dessas tentativas, representativas das demais. Não houve nova execução, acesso a logs, ao código ou ao banco, nem reteste.
 
-Com RF59, a análise passa a cobrir 57 requisitos documentados. O CT-RF59 acrescenta uma reprovação, vinculada ao BUG-026, em triagem.
+Com RF59, a análise passava a cobrir 57 requisitos documentados (antes da integração de RF65 a RF70). O CT-RF59 acrescenta uma reprovação, vinculada ao BUG-032, em triagem.
+
+---
+
+## RF65 a RF70 — Validações e operações de Colaboradores
+
+| Requisito | Comportamento esperado | Caso | Defeito | Resultado observado |
+| --- | --- | --- | --- | --- |
+| <a id="rf65"></a>RF65 | Recusar data de nascimento posterior à data atual. | [CT-RF65](Cenario_Teste/CT-RF65_Data_Nascimento_Futura_Colaborador.md) | [BUG-026](Relatorio-de-Bugs.md#bug-026) | `18/05/2222` aceito; atualização HTTP 200. |
+| <a id="rf66"></a>RF66 | Exigir a data de nascimento definida como obrigatória. | [CT-RF66](Cenario_Teste/CT-RF66_Data_Nascimento_Obrigatoria_Colaborador.md) | [BUG-027](Relatorio-de-Bugs.md#bug-027) | Campo vazio aceito; atualização HTTP 200. |
+| <a id="rf67"></a>RF67 | Validar o CREF conforme o formato confirmado pelo produto. | [CT-RF67](Cenario_Teste/CT-RF67_CREF_Formato_Colaborador.md) | [BUG-028](Relatorio-de-Bugs.md#bug-028) | Texto `TESTEE` aceito; atualização HTTP 200. |
+| <a id="rf68"></a>RF68 | Bloquear edição com qualquer campo obrigatório vazio. | [CT-RF68](Cenario_Teste/CT-RF68_Edicao_Colaborador_Campo_Obrigatorio_Vazio.md) | [BUG-029](Relatorio-de-Bugs.md#bug-029) | Edição aceita sem validação visível; HTTP 200. |
+| <a id="rf69"></a>RF69 | Manter uma única associação por colaborador e função. | [CT-RF69](Cenario_Teste/CT-RF69_Funcao_Duplicada_Colaborador.md) | [BUG-030](Relatorio-de-Bugs.md#bug-030) | Mesma função associada três vezes; dois POST HTTP 201. |
+| <a id="rf70"></a>RF70 | Excluir colaborador permitido ou explicar o vínculo impeditivo sem HTTP 500. | [CT-RF70](Cenario_Teste/CT-RF70_Exclusao_Colaborador_Erro_500.md) | [BUG-031](Relatorio-de-Bugs.md#bug-031) | Exclusão retorna HTTP 500 e erro interno genérico. |
+
+### Critérios gerais de aceitação
+
+1. Regras de obrigatoriedade e formato devem ser aplicadas no cliente e no servidor.
+2. Tentativas inválidas não podem persistir dados parcial ou integralmente.
+3. A associação colaborador/função deve ser única e resistente a repetição ou concorrência.
+4. Impedimentos de exclusão devem ser tratados como regra de negócio, com mensagem específica.
+5. Todos os fluxos devem preservar os dados anteriores após falha e permitir correção.
+
+### Base da análise — revisão de 15/11/2026
+
+Os seis Jams foram lidos por metadados, eventos de interação e registros de rede. RF65–RF68 possuem POST de atualização HTTP 200 sem corpo capturado; por isso a aceitação do endpoint está comprovada, mas a persistência final deve ser reconfirmada. RF69 registra payloads, HTTP 201 e respostas subsequentes com três associações iguais. RF70 registra payload, HTTP 500 e `Erro interno inesperado`. Não houve nova execução, acesso ao banco, logs ou código. Com a inclusão de RF59 (Fichas de Anamnese), a análise passa a cobrir 63 requisitos documentados; RF36–RF37 e RF60–RF64 permanecem fora do conjunto fornecido.
 
 ---
 

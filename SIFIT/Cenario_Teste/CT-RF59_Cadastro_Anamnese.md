@@ -15,7 +15,7 @@
 | Objetivo | Selecionar um aluno, preencher as respostas de um modelo de anamnese e salvar o registro (como rascunho ou aplicando definitivamente) e confirmar que o backend processa a gravação sem erro. |
 | Requisito | [RF59](../Analise%20de%20requisitos.md#rf59) |
 | Tipo / prioridade | Funcional manual, análise de evidências / Alta, proposta para triagem. |
-| Defeito | [BUG-026](../Relatorio-de-Bugs.md#bug-026) |
+| Defeito | [BUG-032](../Relatorio-de-Bugs.md#bug-032) |
 | Encaminhamento | Investigar a rotina de servidor acionada por `/api/anamnese/aplicar/{id}` e `/api/anamnese/rascunho/{id}`; obter logs do backend para identificar a exceção por trás do erro genérico; corrigir e retestar o cadastro completo de uma anamnese. |
 | Fonte | [Jam — Fichas de Anamnese](https://jam.dev/c/7be0fe71-3419-4050-b63f-473d943fa08e) |
 
