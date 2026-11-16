@@ -84,6 +84,7 @@ Esta análise documenta 73 requisitos de QA para os cenários relacionados abaix
 | [RF73](#rf73) | Alternar o tema e consultar as notificações na tela Planos | Baixa, proposta | [CT-RF73](Cenario_Teste/CT-RF73_Tema_Notificacoes_Planos.md) |
 | [RF74](#rf74) | Cadastrar um plano | Alta, proposta | [CT-RF74](Cenario_Teste/CT-RF74_Cadastro_Plano.md) |
 | [RF75](#rf75) | Manter o cartão Ativos coerente com o status dos planos | Média, proposta | [CT-RF75](Cenario_Teste/CT-RF75_Contador_Ativos_Planos.md) |
+| [RF76](#rf76) | Editar um plano | Média, proposta | [CT-RF76](Cenario_Teste/CT-RF76_Edicao_Plano.md) |
 
 ---
 
@@ -2127,6 +2128,35 @@ A regra de cálculo do cartão e a contagem da listagem não foram verificadas.
 
 ---
 
+<a id="rf76"></a>
+
+## RF76 — Editar um plano
+
+| Campo | Descrição |
+| --- | --- |
+| Requisito de QA | O botão de ação da listagem deve abrir o plano com os dados atuais e permitir a alteração dos campos, gravando sem erro e atualizando a listagem. |
+| Ator | Usuário autenticado com acesso ao módulo. |
+| Pré-condições | Plano descartável cadastrado e visível na listagem. |
+| Gatilho | Acionar o botão de ação do plano, alterar os benefícios e acionar Salvar Plano. |
+| Caso | [CT-RF76](Cenario_Teste/CT-RF76_Edicao_Plano.md) |
+| Situação observada | Aprovado conforme a gravação. O modal abre com os dados do plano 41 e plano/update retorna HTTP 200 sem erro. |
+| Defeito | Nenhum no fluxo avaliado |
+| Evidências | [Jam](https://jam.dev/c/233c5d21-e108-4a55-b6f6-8738cb3fc6a6) e [Evidências](Evidencias/CT-RF76_Edicao_Plano/README.md). |
+
+### Critérios de aceitação do RF76
+
+1. O botão de ação abre o plano com os dados atuais.
+2. A alteração de qualquer campo é enviada e gravada sem erro.
+3. A listagem reflete a alteração.
+4. A alteração permanece após recarregar.
+5. O cartão Ativos não é alterado por edição sem mudança de status (CT-RF75).
+
+### Pontos a confirmar e limites do RF76
+
+A persistência após recarga, a edição dos demais campos e o efeito no cartão Ativos não foram exercitados.
+
+---
+
 ## 🔗 Rastreabilidade
 
 | Requisito | Cenário / caso | Defeito | Resultado | Evidências |
@@ -2203,6 +2233,7 @@ A regra de cálculo do cartão e a contagem da listagem não foram verificadas.
 | RF73 | [CT-RF73](Cenario_Teste/CT-RF73_Tema_Notificacoes_Planos.md) | Nenhum no fluxo avaliado | Aprovado conforme a gravação | [Evidências](Evidencias/CT-RF73_Tema_Notificacoes_Planos/README.md) e [Jam](https://jam.dev/c/233c5d21-e108-4a55-b6f6-8738cb3fc6a6) |
 | RF74 | [CT-RF74](Cenario_Teste/CT-RF74_Cadastro_Plano.md) | Nenhum no fluxo avaliado | Aprovado conforme a gravação | [Evidências](Evidencias/CT-RF74_Cadastro_Plano/README.md) e [Jam](https://jam.dev/c/233c5d21-e108-4a55-b6f6-8738cb3fc6a6) |
 | RF75 | [CT-RF75](Cenario_Teste/CT-RF75_Contador_Ativos_Planos.md) | [BUG-027](Relatorio-de-Bugs.md#bug-027), em triagem | Reprovado nas evidências; reteste pendente. | [Evidências](Evidencias/CT-RF75_Contador_Ativos_Planos/README.md) e [Jam](https://jam.dev/c/233c5d21-e108-4a55-b6f6-8738cb3fc6a6) |
+| RF76 | [CT-RF76](Cenario_Teste/CT-RF76_Edicao_Plano.md) | Nenhum no fluxo avaliado | Aprovado conforme a gravação | [Evidências](Evidencias/CT-RF76_Edicao_Plano/README.md) e [Jam](https://jam.dev/c/233c5d21-e108-4a55-b6f6-8738cb3fc6a6) |
 
 ---
 
@@ -2506,6 +2537,12 @@ Com RF74, a análise passa a cobrir 71 requisitos documentados. O CT-RF74 acresc
 RF75 utiliza os painéis Info, Console, Network e Actions do Jam "Planos", os corpos das requisições de criação e atualização e os quadros de 0:03, 0:53 e 1:08. Foram registrados os cartões Planos e Ativos e o status dos planos nas requisições. Não houve nova execução, acesso ao código ou ao banco, nem reteste.
 
 Com RF75, a análise passa a cobrir 72 requisitos documentados. O CT-RF75 acrescenta uma reprovação, vinculada ao BUG-027, em triagem.
+
+### Base da análise do RF76 — revisão de 15/11/2026
+
+RF76 utiliza os painéis Info, Console, Network e Actions do Jam "Planos", os corpos das requisições e respostas de seleção e atualização e o quadro de 1:02. Foram registrados a abertura do plano e a atualização. Não houve nova execução, acesso ao código ou ao banco, nem reteste.
+
+Com RF76, a análise passa a cobrir 73 requisitos documentados. O CT-RF76 acrescenta uma aprovação limitada ao exemplo gravado.
 
 ---
 
