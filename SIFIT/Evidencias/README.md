@@ -120,3 +120,15 @@ Uma gravação do Jam ([Prospecção](https://jam.dev/c/308607ff-8abc-40af-8c7c-
 | [CT-RF103](../Cenario_Teste/CT-RF103_Edicao_Plano.md) | [Edição de plano pelo modal Editar Plano](CT-RF103_Edicao_Plano/README.md) | Aprovado conforme a gravação |
 
 Três gravações do Jam ([Contas a Pagar](https://jam.dev/c/5d0afaf4-5abd-4e85-923f-27448304a9ef), [Modelos de Contrato](https://jam.dev/c/44dbbd39-6915-45d6-8dd1-5f30c1432ca0) e [Planos](https://jam.dev/c/233c5d21-e108-4a55-b6f6-8738cb3fc6a6)) são a fonte dos treze casos; cada pasta contém resumo, cronologia, origem, capturas extraídas da reprodução do Jam e seus hashes SHA-256. Os vídeos permanecem no Jam.
+
+## Inclusão de 16/11/2026 — CT-RF104 a CT-RF108
+
+| Caso | Evidência | Resultado |
+| --- | --- | --- |
+| [CT-RF104](../Cenario_Teste/CT-RF104_Filtros_Tipos_Pagamento.md) | [Filtros de busca da tela Tipos de Pagamento](CT-RF104_Filtros_Tipos_Pagamento/README.md) | A validar — regra ou contexto pendente |
+| [CT-RF105](../Cenario_Teste/CT-RF105_Cadastro_Tipo_Pagamento_Status.md) | [Cadastro de tipo de pagamento com status Ativo não é refletido](CT-RF105_Cadastro_Tipo_Pagamento_Status/README.md) | Reprovado nas evidências; BUG-042 em triagem |
+| [CT-RF106](../Cenario_Teste/CT-RF106_Edicao_Tipo_Pagamento.md) | [Edição de tipo de pagamento pela lupa da listagem](CT-RF106_Edicao_Tipo_Pagamento/README.md) | Aprovado conforme a gravação |
+| [CT-RF107](../Cenario_Teste/CT-RF107_Exclusao_Tipo_Pagamento_Em_Uso.md) | [Exclusão de tipo de pagamento em uso retorna HTTP 404 com erro SQL](CT-RF107_Exclusao_Tipo_Pagamento_Em_Uso/README.md) | Reprovado nas evidências; BUG-043 em triagem |
+| [CT-RF108](../Cenario_Teste/CT-RF108_Tema_Notificacoes_Tipos_Pagamento.md) | [Tema Claro/Escuro e notificações na tela Tipos de Pagamento](CT-RF108_Tema_Notificacoes_Tipos_Pagamento/README.md) | Aprovado conforme a gravação |
+
+Uma gravação do Jam ([Tipos de Pagamento](https://jam.dev/c/e8734e3d-3f8e-458b-8c7d-e85eea882e50)) é a fonte dos cinco casos; cada pasta contém resumo, cronologia, origem, capturas extraídas da reprodução do Jam e seus hashes SHA-256. O vídeo permanece no Jam.

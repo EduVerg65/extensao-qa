@@ -2,13 +2,13 @@
 
 Repositório de documentação de QA manual do **SIFIT**, sistema de gestão de academias. Reúne requisitos, plano, cenários BDD, resultados, defeitos e evidências com links do Jam.
 
-**Atualização documental:** 16/11/2026. Integrados CT-RF85 a CT-RF103 e RF85 a RF103 (Prospecção, Contas a Pagar, Modelos de Contrato e Planos, com BUG-038 a BUG-041 em triagem) e, anteriormente, CT-RF74–CT-RF84 e RF74–RF84 (Prospecção e Bandeiras de Cartão), com BUG-035–BUG-037 em triagem, a partir dos resumos locais fornecidos. Os casos CT-RF35 a CT-RF56 e os resultados anteriores foram preservados.
+**Atualização documental:** 16/11/2026. Integrados CT-RF104 a CT-RF108 e RF104 a RF108 (Tipos de Pagamento, com BUG-042 e BUG-043 em triagem) e, anteriormente, CT-RF85 a CT-RF103 e RF85 a RF103 (Prospecção, Contas a Pagar, Modelos de Contrato e Planos, com BUG-038 a BUG-041 em triagem) e, anteriormente, CT-RF74–CT-RF84 e RF74–RF84 (Prospecção e Bandeiras de Cartão), com BUG-035–BUG-037 em triagem, a partir dos resumos locais fornecidos. Os casos CT-RF35 a CT-RF56 e os resultados anteriores foram preservados.
 
 ## 📊 Situação consolidada
 
 | Cenários documentados | Aprovados | Reprovados | A validar | Defeitos registrados | Casos com reteste corretivo pendente |
 | :---: | :---: | :---: | :---: | :---: | :---: |
-| 96 | 38 | 45 | 13 | 41 (10 abertos + 31 em triagem) | 45 |
+| 101 | 40 | 47 | 14 | 43 (10 abertos + 33 em triagem) | 47 |
 
 As classificações se baseiam nas fontes indicadas em cada cenário. CT-RF09/10 compartilham BUG-005 e CT-RF53–CT-RF56 compartilham BUG-023; por isso 41 reprovações correspondem a 37 defeitos registrados. BUG-011–BUG-037 aguardam triagem. CT-RF83 mantém a reprovação do relato com regra de obrigatoriedade a confirmar; os dez casos a validar são preservados.
 
@@ -16,10 +16,10 @@ As classificações se baseiam nas fontes indicadas em cada cenário. CT-RF09/10
 
 | Documento | Conteúdo |
 | --- | --- |
-| [Análise de requisitos](SIFIT/Analise%20de%20requisitos.md) | RF01–RF35, RF38–RF59 e RF65–RF103, critérios de aceitação, dúvidas de regra e rastreabilidade. |
+| [Análise de requisitos](SIFIT/Analise%20de%20requisitos.md) | RF01–RF35, RF38–RF59 e RF65–RF108, critérios de aceitação, dúvidas de regra e rastreabilidade. |
 | [Plano de testes](SIFIT/Plano%20de%20testes.md) | Escopo, ambientes, preparação, critérios, regressão e retestes. |
-| [Índice dos cenários](SIFIT/Cenario_Teste/README.md) | 96 cenários com pré-condições, BDD, passos, esperado, obtido e encaminhamento. |
-| [Relatório de bugs](SIFIT/Relatorio-de-Bugs.md) | BUG-001–BUG-041: reprodução, impacto, evidências, severidade/prioridade propostas e reteste. |
+| [Índice dos cenários](SIFIT/Cenario_Teste/README.md) | 101 cenários com pré-condições, BDD, passos, esperado, obtido e encaminhamento. |
+| [Relatório de bugs](SIFIT/Relatorio-de-Bugs.md) | BUG-001–BUG-043: reprodução, impacto, evidências, severidade/prioridade propostas e reteste. |
 | [Relatório dos testes](SIFIT/Relatorio%20dos%20testes.md) | Resultados consolidados, cobertura, limites e pendências. |
 | [Índice das evidências](SIFIT/Evidencias/README.md) | Jam por cenário e arquivos locais dos novos casos. |
 
@@ -42,7 +42,8 @@ extensao-qa/
     │   ├── CT-RF42 a CT-RF56 (Pagar.me, Despesas Fixas e Relatórios)
     │   ├── CT-RF57 a CT-RF59 e CT-RF65 a CT-RF73 (Grupos, Anamnese e Colaboradores)
     │   ├── CT-RF74 a CT-RF84 (Prospecção e Bandeiras de Cartão)
-    │   └── CT-RF85 a CT-RF103 (Prospecção, Contas a Pagar, Modelos de Contrato e Planos)
+    │   ├── CT-RF85 a CT-RF103 (Prospecção, Contas a Pagar, Modelos de Contrato e Planos)
+    │   └── CT-RF104 a CT-RF108 (Tipos de Pagamento)
     └── Evidencias/
         ├── README.md
         ├── CT-RF23_Exclusao_Exercicio/ ... CT-RF25_Envio_Exercicio_Imagem/
@@ -51,7 +52,8 @@ extensao-qa/
         ├── CT-RF39 a CT-RF41 (uma pasta por caso)
         ├── CT-RF42 a CT-RF56 (uma pasta por caso, com os PDFs de CT-RF50 a CT-RF56)
         ├── CT-RF74 a CT-RF84 (uma pasta por caso, com RESUMO.txt e README.md)
-        └── CT-RF85 a CT-RF103 (uma pasta por caso)
+        ├── CT-RF85 a CT-RF103 (uma pasta por caso)
+        └── CT-RF104 a CT-RF108 (uma pasta por caso)
 ```
 
 ## 📋 Cenários e resultados
@@ -130,6 +132,11 @@ extensao-qa/
 | [CT-RF101](SIFIT/Cenario_Teste/CT-RF101_Cadastro_Plano.md) | Cadastro de plano pelo modal Novo Plano | Aprovado conforme a gravação | — | [Jam](https://jam.dev/c/233c5d21-e108-4a55-b6f6-8738cb3fc6a6) |
 | [CT-RF102](SIFIT/Cenario_Teste/CT-RF102_Contador_Ativos_Planos.md) | Cartão Ativos de Planos aumenta ao cadastrar e editar planos inativos | Reprovado nas evidências | [BUG-041](SIFIT/Relatorio-de-Bugs.md#bug-041), em triagem | [Jam](https://jam.dev/c/233c5d21-e108-4a55-b6f6-8738cb3fc6a6) |
 | [CT-RF103](SIFIT/Cenario_Teste/CT-RF103_Edicao_Plano.md) | Edição de plano pelo modal Editar Plano | Aprovado conforme a gravação | — | [Jam](https://jam.dev/c/233c5d21-e108-4a55-b6f6-8738cb3fc6a6) |
+| [CT-RF104](SIFIT/Cenario_Teste/CT-RF104_Filtros_Tipos_Pagamento.md) | Filtros de busca da tela Tipos de Pagamento | A validar — regra ou contexto pendente | — | [Jam](https://jam.dev/c/e8734e3d-3f8e-458b-8c7d-e85eea882e50) |
+| [CT-RF105](SIFIT/Cenario_Teste/CT-RF105_Cadastro_Tipo_Pagamento_Status.md) | Cadastro de tipo de pagamento com status Ativo não é refletido | Reprovado nas evidências | [BUG-042](SIFIT/Relatorio-de-Bugs.md#bug-042), em triagem | [Jam](https://jam.dev/c/e8734e3d-3f8e-458b-8c7d-e85eea882e50) |
+| [CT-RF106](SIFIT/Cenario_Teste/CT-RF106_Edicao_Tipo_Pagamento.md) | Edição de tipo de pagamento pela lupa da listagem | Aprovado conforme a gravação | — | [Jam](https://jam.dev/c/e8734e3d-3f8e-458b-8c7d-e85eea882e50) |
+| [CT-RF107](SIFIT/Cenario_Teste/CT-RF107_Exclusao_Tipo_Pagamento_Em_Uso.md) | Exclusão de tipo de pagamento em uso retorna HTTP 404 com erro SQL | Reprovado nas evidências | [BUG-043](SIFIT/Relatorio-de-Bugs.md#bug-043), em triagem | [Jam](https://jam.dev/c/e8734e3d-3f8e-458b-8c7d-e85eea882e50) |
+| [CT-RF108](SIFIT/Cenario_Teste/CT-RF108_Tema_Notificacoes_Tipos_Pagamento.md) | Tema Claro/Escuro e notificações na tela Tipos de Pagamento | Aprovado conforme a gravação | — | [Jam](https://jam.dev/c/e8734e3d-3f8e-458b-8c7d-e85eea882e50) |
 
 ## 🔬 Como este projeto funciona
 

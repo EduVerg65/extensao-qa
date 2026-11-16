@@ -1,6 +1,6 @@
 # 🧪 Índice dos cenários de teste — SIFIT
 
-**Atualização:** 16/11/2026. 96 casos documentados: 38 aprovados, 45 reprovados e 13 a validar; 41 defeitos registrados (10 abertos e 31 em triagem) e 45 casos com reteste corretivo pendente (CT-RF01–CT-RF35, CT-RF38–CT-RF59, CT-RF65–CT-RF84 e CT-RF85–CT-RF103).
+**Atualização:** 16/11/2026. 101 casos documentados: 40 aprovados, 47 reprovados e 14 a validar; 43 defeitos registrados (10 abertos e 33 em triagem) e 47 casos com reteste corretivo pendente (CT-RF01–CT-RF35, CT-RF38–CT-RF59, CT-RF65–CT-RF84, CT-RF85–CT-RF103 e CT-RF104–CT-RF108).
 
 | Caso | Funcionalidade | Resultado | Defeito | Jam |
 | --- | --- | --- | --- | --- |
@@ -229,5 +229,17 @@ Cada grupo tem como fonte uma única gravação. Os resultados são documentais;
 | [CT-RF103](CT-RF103_Edicao_Plano.md) | Edição de plano pelo modal Editar Plano | Aprovado conforme a gravação | — | [Jam](https://jam.dev/c/233c5d21-e108-4a55-b6f6-8738cb3fc6a6) |
 
 Cada grupo tem como fonte uma única gravação. Os resultados são documentais; nenhuma nova execução ou reteste foi realizada.
+
+## Inclusão de 16/11/2026 — Tipos de Pagamento
+
+| Caso | Funcionalidade | Resultado | Defeito | Jam |
+| --- | --- | --- | --- | --- |
+| [CT-RF104](CT-RF104_Filtros_Tipos_Pagamento.md) | Filtros de busca da tela Tipos de Pagamento | A validar — regra ou contexto pendente | — | [Jam](https://jam.dev/c/e8734e3d-3f8e-458b-8c7d-e85eea882e50) |
+| [CT-RF105](CT-RF105_Cadastro_Tipo_Pagamento_Status.md) | Cadastro de tipo de pagamento com status Ativo não é refletido | Reprovado nas evidências | [BUG-042](../Relatorio-de-Bugs.md#bug-042), em triagem | [Jam](https://jam.dev/c/e8734e3d-3f8e-458b-8c7d-e85eea882e50) |
+| [CT-RF106](CT-RF106_Edicao_Tipo_Pagamento.md) | Edição de tipo de pagamento pela lupa da listagem | Aprovado conforme a gravação | — | [Jam](https://jam.dev/c/e8734e3d-3f8e-458b-8c7d-e85eea882e50) |
+| [CT-RF107](CT-RF107_Exclusao_Tipo_Pagamento_Em_Uso.md) | Exclusão de tipo de pagamento em uso retorna HTTP 404 com erro SQL | Reprovado nas evidências | [BUG-043](../Relatorio-de-Bugs.md#bug-043), em triagem | [Jam](https://jam.dev/c/e8734e3d-3f8e-458b-8c7d-e85eea882e50) |
+| [CT-RF108](CT-RF108_Tema_Notificacoes_Tipos_Pagamento.md) | Tema Claro/Escuro e notificações na tela Tipos de Pagamento | Aprovado conforme a gravação | — | [Jam](https://jam.dev/c/e8734e3d-3f8e-458b-8c7d-e85eea882e50) |
+
+Os cinco casos têm como fonte uma única gravação. Os resultados são documentais; nenhuma nova execução ou reteste foi realizada.
 
 [← Início](../../README.md) · [Requisitos](../Analise%20de%20requisitos.md) · [Plano](../Plano%20de%20testes.md) · [Evidências](../Evidencias/README.md)
