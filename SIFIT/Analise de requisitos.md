@@ -71,6 +71,7 @@ Esta análise documenta 60 requisitos de QA para os cenários relacionados abaix
 | [RF60](#rf60) | Filtrar leads por estágio e restaurar a listagem | Média, proposta | [CT-RF60](Cenario_Teste/CT-RF60_Filtro_Estagio_Leads.md) |
 | [RF61](#rf61) | Cadastrar um lead com uma única gravação | Média, proposta | [CT-RF61](Cenario_Teste/CT-RF61_Cadastro_Lead_Prospeccao.md) |
 | [RF62](#rf62) | Validar o telefone do lead | Média, proposta | [CT-RF62](Cenario_Teste/CT-RF62_Telefone_Lead_Sem_Validacao.md) |
+| [RF63](#rf63) | Visualizar e editar um lead | Média, proposta | [CT-RF63](Cenario_Teste/CT-RF63_Edicao_Lead_Prospeccao.md) |
 
 ---
 
@@ -1737,6 +1738,35 @@ A regra do campo e a validação no servidor não foram informadas ou verificada
 
 ---
 
+<a id="rf63"></a>
+
+## RF63 — Visualizar e editar um lead
+
+| Campo | Descrição |
+| --- | --- |
+| Requisito de QA | A lupa da listagem deve abrir os dados do lead e permitir a alteração dos campos, gravando a alteração sem erro e refletindo-a na listagem. |
+| Ator | Usuário autenticado com acesso a Prospecção. |
+| Pré-condições | Lead descartável cadastrado e visível na listagem. |
+| Gatilho | Acionar a lupa do lead, alterar o nome e acionar Salvar Lead. |
+| Caso | [CT-RF63](Cenario_Teste/CT-RF63_Edicao_Lead_Prospeccao.md) |
+| Situação observada | Aprovado conforme a gravação. O modal abre com os dados do lead 10, o nome é atualizado para "testetete" com HTTP 200 e a listagem apresenta o novo nome. |
+| Defeito | Nenhum no fluxo avaliado |
+| Evidências | [Jam](https://jam.dev/c/308607ff-8abc-40af-8c7c-429ce506ed64) e [Evidências](Evidencias/CT-RF63_Edicao_Lead_Prospeccao/README.md). |
+
+### Critérios de aceitação do RF63
+
+1. A lupa abre o modal com os dados do lead selecionado.
+2. A alteração de qualquer campo é enviada ao servidor e gravada sem erro.
+3. A listagem reflete o novo valor sem recarga manual.
+4. O valor permanece após recarregar a página.
+5. O título do modal corresponde à ação disponível (visualizar ou editar).
+
+### Pontos a confirmar e limites do RF63
+
+A edição dos demais campos, a persistência após recarga, os campos obrigatórios e a revisão do título "Visualizar Lead" em um modal editável não foram exercitadas.
+
+---
+
 ## 🔗 Rastreabilidade
 
 | Requisito | Cenário / caso | Defeito | Resultado | Evidências |
@@ -1800,6 +1830,7 @@ A regra do campo e a validação no servidor não foram informadas ou verificada
 | RF60 | [CT-RF60](Cenario_Teste/CT-RF60_Filtro_Estagio_Leads.md) | Nenhum no fluxo avaliado | Aprovado conforme a gravação | [Evidências](Evidencias/CT-RF60_Filtro_Estagio_Leads/README.md) e [Jam](https://jam.dev/c/308607ff-8abc-40af-8c7c-429ce506ed64) |
 | RF61 | [CT-RF61](Cenario_Teste/CT-RF61_Cadastro_Lead_Prospeccao.md) | Sem defeito confirmado | A validar — regra ou contexto pendente | [Evidências](Evidencias/CT-RF61_Cadastro_Lead_Prospeccao/README.md) e [Jam](https://jam.dev/c/308607ff-8abc-40af-8c7c-429ce506ed64) |
 | RF62 | [CT-RF62](Cenario_Teste/CT-RF62_Telefone_Lead_Sem_Validacao.md) | [BUG-024](Relatorio-de-Bugs.md#bug-024), em triagem | Reprovado nas evidências; reteste pendente. | [Evidências](Evidencias/CT-RF62_Telefone_Lead_Sem_Validacao/README.md) e [Jam](https://jam.dev/c/308607ff-8abc-40af-8c7c-429ce506ed64) |
+| RF63 | [CT-RF63](Cenario_Teste/CT-RF63_Edicao_Lead_Prospeccao.md) | Nenhum no fluxo avaliado | Aprovado conforme a gravação | [Evidências](Evidencias/CT-RF63_Edicao_Lead_Prospeccao/README.md) e [Jam](https://jam.dev/c/308607ff-8abc-40af-8c7c-429ce506ed64) |
 
 ---
 
@@ -2025,6 +2056,12 @@ Com RF61, a análise passa a cobrir 58 requisitos documentados. O CT-RF61 acresc
 RF62 utiliza os painéis Info, Console, Network e Actions do Jam "Prospecção", o corpo do salvar-lead, a resposta do buscar-lead e os quadros de 0:47. Foram registrados o telefone de 30 dígitos, a ausência de validação e a gravação do valor. Não houve nova execução, acesso ao código ou ao banco, nem reteste.
 
 Com RF62, a análise passa a cobrir 59 requisitos documentados. O CT-RF62 acrescenta uma reprovação, vinculada ao BUG-024, em triagem.
+
+### Base da análise do RF63 — revisão de 15/11/2026
+
+RF63 utiliza os painéis Info, Console, Network e Actions do Jam "Prospecção", os corpos de buscar-lead e atualizar-lead e os quadros de 0:47, 0:57 e 1:01. Foram registrados a abertura do lead, a atualização do nome e a listagem atualizada. Não houve nova execução, acesso ao código ou ao banco, nem reteste.
+
+Com RF63, a análise passa a cobrir 60 requisitos documentados. O CT-RF63 acrescenta uma aprovação limitada ao exemplo gravado.
 
 ---
 
