@@ -78,6 +78,7 @@ Esta análise documenta 73 requisitos de QA para os cenários relacionados abaix
 | [RF67](#rf67) | Visualizar os dados de uma conta a pagar | Baixa, proposta | [CT-RF67](Cenario_Teste/CT-RF67_Visualizacao_Conta_Pagar.md) |
 | [RF68](#rf68) | Excluir uma conta a pagar com confirmação | Média, proposta | [CT-RF68](Cenario_Teste/CT-RF68_Exclusao_Conta_Pagar.md) |
 | [RF69](#rf69) | Inserir variáveis e pré-visualizar o contrato | Média, proposta | [CT-RF69](Cenario_Teste/CT-RF69_Variaveis_Preview_Modelo_Contrato.md) |
+| [RF70](#rf70) | Cadastrar um modelo de contrato | Média, proposta | [CT-RF70](Cenario_Teste/CT-RF70_Cadastro_Modelo_Contrato.md) |
 
 ---
 
@@ -1947,6 +1948,35 @@ As demais variáveis, a formatação complexa e o texto gravado não foram exerc
 
 ---
 
+<a id="rf70"></a>
+
+## RF70 — Cadastrar um modelo de contrato
+
+| Campo | Descrição |
+| --- | --- |
+| Requisito de QA | O formulário Adicionar Modelo Contrato deve criar o modelo com título, status e texto informados e devolvê-lo na lista de modelos. |
+| Ator | Usuário autenticado com acesso ao módulo. |
+| Pré-condições | Formulário preenchido; modelos existentes conhecidos. |
+| Gatilho | Preencher título, status e texto e acionar Salvar modelo. |
+| Caso | [CT-RF70](Cenario_Teste/CT-RF70_Cadastro_Modelo_Contrato.md) |
+| Situação observada | Aprovado conforme a gravação. `modelo-contrato/salvar` retorna HTTP 201 e o servidor passa a listar o modelo de id 15 ("teste eduardo", Ativo). |
+| Defeito | Nenhum no fluxo avaliado |
+| Evidências | [Jam](https://jam.dev/c/44dbbd39-6915-45d6-8dd1-5f30c1432ca0) e [Evidências](Evidencias/CT-RF70_Cadastro_Modelo_Contrato/README.md). |
+
+### Critérios de aceitação do RF70
+
+1. Salvar com dados válidos cria o modelo e retorna sucesso.
+2. O modelo criado é devolvido pelo servidor na lista de modelos.
+3. A listagem na tela apresenta o modelo criado.
+4. Título e texto obrigatórios são validados antes da gravação.
+5. O texto e as variáveis são gravados sem perda.
+
+### Pontos a confirmar e limites do RF70
+
+O corpo da criação, o texto gravado, os campos obrigatórios e a apresentação na listagem não foram verificados.
+
+---
+
 ## 🔗 Rastreabilidade
 
 | Requisito | Cenário / caso | Defeito | Resultado | Evidências |
@@ -2017,6 +2047,7 @@ As demais variáveis, a formatação complexa e o texto gravado não foram exerc
 | RF67 | [CT-RF67](Cenario_Teste/CT-RF67_Visualizacao_Conta_Pagar.md) | Nenhum no fluxo avaliado | Aprovado conforme a gravação | [Evidências](Evidencias/CT-RF67_Visualizacao_Conta_Pagar/README.md) e [Jam](https://jam.dev/c/5d0afaf4-5abd-4e85-923f-27448304a9ef) |
 | RF68 | [CT-RF68](Cenario_Teste/CT-RF68_Exclusao_Conta_Pagar.md) | Nenhum no fluxo avaliado | Aprovado conforme a gravação | [Evidências](Evidencias/CT-RF68_Exclusao_Conta_Pagar/README.md) e [Jam](https://jam.dev/c/5d0afaf4-5abd-4e85-923f-27448304a9ef) |
 | RF69 | [CT-RF69](Cenario_Teste/CT-RF69_Variaveis_Preview_Modelo_Contrato.md) | Nenhum no fluxo avaliado | Aprovado conforme a gravação | [Evidências](Evidencias/CT-RF69_Variaveis_Preview_Modelo_Contrato/README.md) e [Jam](https://jam.dev/c/44dbbd39-6915-45d6-8dd1-5f30c1432ca0) |
+| RF70 | [CT-RF70](Cenario_Teste/CT-RF70_Cadastro_Modelo_Contrato.md) | Nenhum no fluxo avaliado | Aprovado conforme a gravação | [Evidências](Evidencias/CT-RF70_Cadastro_Modelo_Contrato/README.md) e [Jam](https://jam.dev/c/44dbbd39-6915-45d6-8dd1-5f30c1432ca0) |
 
 ---
 
@@ -2284,6 +2315,12 @@ Com RF68, a análise passa a cobrir 65 requisitos documentados. O CT-RF68 acresc
 RF69 utiliza os painéis Info, Console, Network e Actions do Jam "Modelos de Contrato" e os quadros de 0:09, 0:21, 0:33 e 0:36. Foram registrados a inserção das variáveis e a pré-visualização. Não houve nova execução, acesso ao código ou ao banco, nem reteste.
 
 Com RF69, a análise passa a cobrir 66 requisitos documentados. O CT-RF69 acrescenta uma aprovação limitada ao exemplo gravado.
+
+### Base da análise do RF70 — revisão de 15/11/2026
+
+RF70 utiliza os painéis Info, Console, Network e Actions do Jam "Modelos de Contrato" e a resposta da lista de modelos. Foram registrados a criação (HTTP 201) e o modelo de id 15 na lista do servidor. Não houve nova execução, acesso ao código ou ao banco, nem reteste.
+
+Com RF70, a análise passa a cobrir 67 requisitos documentados. O CT-RF70 acrescenta uma aprovação limitada ao exemplo gravado.
 
 ---
 
