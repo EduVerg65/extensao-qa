@@ -2,11 +2,11 @@
 
 **Módulos:** Autenticação, Perfil, Clientes / Filtros, Financeiro, Página inicial / Personais, SifitBox / Modalidades e Turmas, Categorias Crossfit, Avaliações, Exercícios, Grupos Musculares, Dashboard, Objetivos de Treino, Fichas de Anamnese, Colaboradores, Prospecção e Bandeiras de Cartão.
 
-**Atualização:** 16/11/2026 — RF01 a RF35, RF38 a RF60 e RF65 a RF108 consolidados, com inclusão de Categorias Crossfit (CT-RF38), SifitBox – Turmas (CT-RF39 a CT-RF41), Pagar.me, Configurações, Despesas Fixas e Relatórios (CT-RF42 a CT-RF56), Grupos (treino) (CT-RF57 e CT-RF58), Fichas de Anamnese (CT-RF59), Modelos de Anamnese (CT-RF60), Colaboradores (CT-RF65 a CT-RF73), Prospecção e Bandeiras de Cartão (CT-RF74 a CT-RF90), Contas a Pagar / Modelos de Contrato / Planos (CT-RF91 a CT-RF103) e Tipos de Pagamento (CT-RF104 a CT-RF108); BUG-011–BUG-043 em triagem.
+**Atualização:** 16/11/2026 — RF01 a RF35, RF38 a RF61 e RF65 a RF108 consolidados, com inclusão de Categorias Crossfit (CT-RF38), SifitBox – Turmas (CT-RF39 a CT-RF41), Pagar.me, Configurações, Despesas Fixas e Relatórios (CT-RF42 a CT-RF56), Grupos (treino) (CT-RF57 e CT-RF58), Fichas de Anamnese (CT-RF59), Modelos de Anamnese (CT-RF60), Categorias de Anamnese (CT-RF61), Colaboradores (CT-RF65 a CT-RF73), Prospecção e Bandeiras de Cartão (CT-RF74 a CT-RF90), Contas a Pagar / Modelos de Contrato / Planos (CT-RF91 a CT-RF103) e Tipos de Pagamento (CT-RF104 a CT-RF108); BUG-011–BUG-043 em triagem.
 
 **Padronização documental:** 13/11/2026, sem alteração dos resultados registrados.
 
-Esta análise documenta 102 requisitos de QA para os cenários relacionados abaixo, com base nos relatos e nas evidências fornecidas. RF01–RF04 e suas análises históricas foram preservados; RF05–RF20 ampliam a cobertura em 14/11/2026; RF21 acrescenta Avaliações; RF22–RF28 acrescentam Exercícios; RF29–RF33 acrescentam Grupos Musculares; RF34 acrescenta o carregamento do dashboard RF35 acrescenta o cadastro de objetivos de treino e RF38 acrescenta o cadastro de categorias com código automático em 15/11/2026. RF39 acrescenta o cadastro de modalidade em SifitBox – Turmas. RF40 acrescenta a exclusão de turmas e modalidades. RF41 acrescenta o cadastro de turma. RF42 a RF56 acrescentam Pagar.me, Configurações, Despesas Fixas e Relatórios em 15/11/2026. RF57 acrescenta a exclusão de grupo (treino) e RF58 acrescenta a edição de grupo (treino), ambos também em 15/11/2026. RF59 acrescenta o cadastro de anamnese, também em 15/11/2026. RF60 acrescenta a gestão de modelos de anamnese (busca, cadastro, edição e exclusão), em 16/11/2026. RF65–RF73 cobrem validações, operações e buscas de Colaboradores, também em 15/11/2026. RF74–RF84 acrescentam Prospecção e Bandeiras de Cartão a partir de resumos fornecidos, em 16/11/2026. RF85 a RF90 acrescentam Prospecção (leads) em 15/11/2026. RF91 a RF103 acrescentam Contas a Pagar, Modelos de Contrato e Planos em 15/11/2026. RF104 a RF108 acrescentam Tipos de Pagamento em 15/11/2026. Os critérios abaixo constituem a referência de QA para esses fluxos; não representam validação de uma especificação formal pelo responsável pelo produto.
+Esta análise documenta 103 requisitos de QA para os cenários relacionados abaixo, com base nos relatos e nas evidências fornecidas. RF01–RF04 e suas análises históricas foram preservados; RF05–RF20 ampliam a cobertura em 14/11/2026; RF21 acrescenta Avaliações; RF22–RF28 acrescentam Exercícios; RF29–RF33 acrescentam Grupos Musculares; RF34 acrescenta o carregamento do dashboard RF35 acrescenta o cadastro de objetivos de treino e RF38 acrescenta o cadastro de categorias com código automático em 15/11/2026. RF39 acrescenta o cadastro de modalidade em SifitBox – Turmas. RF40 acrescenta a exclusão de turmas e modalidades. RF41 acrescenta o cadastro de turma. RF42 a RF56 acrescentam Pagar.me, Configurações, Despesas Fixas e Relatórios em 15/11/2026. RF57 acrescenta a exclusão de grupo (treino) e RF58 acrescenta a edição de grupo (treino), ambos também em 15/11/2026. RF59 acrescenta o cadastro de anamnese, também em 15/11/2026. RF60 acrescenta a gestão de modelos de anamnese (busca, cadastro, edição e exclusão), em 16/11/2026. RF61 acrescenta a gestão de categorias de anamnese (filtro, busca, cadastro, edição, cancelamento de edição e exclusão), também em 16/11/2026. RF65–RF73 cobrem validações, operações e buscas de Colaboradores, também em 15/11/2026. RF74–RF84 acrescentam Prospecção e Bandeiras de Cartão a partir de resumos fornecidos, em 16/11/2026. RF85 a RF90 acrescentam Prospecção (leads) em 15/11/2026. RF91 a RF103 acrescentam Contas a Pagar, Modelos de Contrato e Planos em 15/11/2026. RF104 a RF108 acrescentam Tipos de Pagamento em 15/11/2026. Os critérios abaixo constituem a referência de QA para esses fluxos; não representam validação de uma especificação formal pelo responsável pelo produto.
 
 ## 📋 Visão geral dos requisitos
 
@@ -70,6 +70,7 @@ Esta análise documenta 102 requisitos de QA para os cenários relacionados abai
 | [RF58](#rf58) | Persistir todos os campos editados de um grupo | Alta, proposta | [CT-RF58](Cenario_Teste/CT-RF58_Edicao_Grupo.md) |
 | [RF59](#rf59) | Cadastrar anamnese sem erro de servidor | Alta, proposta para triagem | [CT-RF59](Cenario_Teste/CT-RF59_Cadastro_Anamnese.md) |
 | [RF60](#rf60--gerenciar-modelos-de-anamnese-sem-erro-de-servidor) | Gerenciar modelos de anamnese sem erro de servidor | Média | [CT-RF60](Cenario_Teste/CT-RF60_Gestao_Modelos_Anamnese.md) |
+| [RF61](#rf61--gerenciar-categorias-de-anamnese-sem-erro-de-servidor) | Gerenciar categorias de anamnese sem erro de servidor | Média | [CT-RF61](Cenario_Teste/CT-RF61_Gestao_Categorias_Anamnese.md) |
 | [RF65](#rf65) | Recusar data de nascimento futura na edição de colaborador | Alta, proposta | [CT-RF65](Cenario_Teste/CT-RF65_Data_Nascimento_Futura_Colaborador.md) |
 | [RF66](#rf66) | Exigir data de nascimento obrigatória do colaborador | Alta, proposta | [CT-RF66](Cenario_Teste/CT-RF66_Data_Nascimento_Obrigatoria_Colaborador.md) |
 | [RF67](#rf67) | Validar o formato do CREF do colaborador | Média, proposta | [CT-RF67](Cenario_Teste/CT-RF67_CREF_Formato_Colaborador.md) |
@@ -2471,6 +2472,7 @@ Contraste, persistência após recarga e modais no tema Escuro não foram verifi
 | RF58 | [CT-RF58](Cenario_Teste/CT-RF58_Edicao_Grupo.md) | [BUG-025](Relatorio-de-Bugs.md#bug-025), em triagem | Reprovado nas evidências; reteste pendente. | [Jam](https://jam.dev/c/b1231a75-1a65-4bf0-b795-f52a8c7d3365) |
 | RF59 | [CT-RF59](Cenario_Teste/CT-RF59_Cadastro_Anamnese.md) | [BUG-032](Relatorio-de-Bugs.md#bug-032), em triagem | Reprovado nas evidências; reteste pendente. | [Jam](https://jam.dev/c/7be0fe71-3419-4050-b63f-473d943fa08e) |
 | RF60 | [CT-RF60](Cenario_Teste/CT-RF60_Gestao_Modelos_Anamnese.md) | Nenhum identificado no fluxo avaliado | Aprovado conforme a gravação | [Jam](https://jam.dev/c/4c1e9deb-20ca-417f-ad09-48749857266e) |
+| RF61 | [CT-RF61](Cenario_Teste/CT-RF61_Gestao_Categorias_Anamnese.md) | Nenhum identificado no fluxo avaliado | Aprovado conforme a gravação | [Jam](https://jam.dev/c/fdb1c9f8-c428-4726-9742-617800325d09) |
 | RF65 | [CT-RF65](Cenario_Teste/CT-RF65_Data_Nascimento_Futura_Colaborador.md) | [BUG-026](Relatorio-de-Bugs.md#bug-026), em triagem | Reprovado nas evidências; reteste pendente. | [Jam](https://jam.dev/c/6dd75961-8e8f-4c8e-939a-19595a1f8a32) |
 | RF66 | [CT-RF66](Cenario_Teste/CT-RF66_Data_Nascimento_Obrigatoria_Colaborador.md) | [BUG-027](Relatorio-de-Bugs.md#bug-027), em triagem | Reprovado nas evidências; reteste pendente. | [Jam](https://jam.dev/c/04aa5ba0-ac7e-43b6-a7f3-91ae82417a85) |
 | RF67 | [CT-RF67](Cenario_Teste/CT-RF67_CREF_Formato_Colaborador.md) | [BUG-028](Relatorio-de-Bugs.md#bug-028), em triagem | Reprovado nas evidências; formato a confirmar. | [Jam](https://jam.dev/c/243d9699-4bee-495d-ae65-9a02e42813b3) |
@@ -2761,6 +2763,40 @@ Com RF60, a análise passa a cobrir 58 requisitos documentados (antes da integra
 
 ---
 
+## RF61 — Gerenciar categorias de anamnese sem erro de servidor
+
+| Campo | Descrição |
+| --- | --- |
+| Requisito de QA | Ao filtrar por status, pesquisar, cadastrar, editar, cancelar uma edição e excluir categorias de anamnese, o backend deve processar cada operação e retornar sucesso, sem erro de servidor, e não enviar requisição alguma quando a edição é cancelada. |
+| Ator | Usuário autenticado com permissão em Categorias de Anamnese. |
+| Pré-condições | Ao menos uma categoria de anamnese já cadastrada, para exercitar o filtro por status e a busca. |
+| Gatilho | Filtrar/pesquisar a listagem, cadastrar uma categoria, editá-la (ícone, nome e status), cancelar uma edição em andamento e excluí-la pelo ícone do cartão. |
+| Caso | [CT-RF61](Cenario_Teste/CT-RF61_Gestao_Categorias_Anamnese.md) |
+| Situação observada | Aprovado conforme a gravação. As sete requisições identificadas aos endpoints `/api/categorias-anamnese/*` (cadastro, três edições e exclusão) retornam HTTP 200 ou 201; a quarta tentativa de edição é cancelada e não gera requisição; nenhuma requisição ao backend do SIFIT retorna erro 4xx ou 5xx na gravação. |
+| Defeito | Nenhum identificado no fluxo avaliado. |
+| Evidências | [Jam](https://jam.dev/c/fdb1c9f8-c428-4726-9742-617800325d09). |
+
+### Critérios de aceitação do RF61
+
+1. O filtro de status e a busca por texto na listagem de categorias aplicam-se de forma consistente, sem gerar erro.
+2. Uma nova categoria é cadastrada com nome, cor, ícone e status, e passa a constar na listagem.
+3. Uma categoria cadastrada pode ser editada mais de uma vez (ícone, nome e status, isoladamente ou em conjunto), preservando as alterações salvas.
+4. Ao cancelar uma edição em andamento, nenhuma alteração é enviada ao backend e os valores salvos anteriormente são mantidos.
+5. Uma categoria pode ser excluída e deixa de constar na listagem após a exclusão.
+6. Nenhuma das operações acima deve retornar erro HTTP 4xx ou 5xx em uso normal.
+
+### Pontos a confirmar e limites do RF61
+
+Os endpoints de escrita (`salvar/1`, `alterar/1` e `deletar/1`) e o de leitura (`GET /api/categorias-anamnese/1`) usam o mesmo sufixo numérico `1`, independentemente da categoria manipulada — reforçando a hipótese já registrada em RF59 e RF60 de que esse identificador corresponde ao `empresa_id` da conta, e não ao id da categoria. Diferentemente de RF60, aqui o cadastro retorna HTTP 201 e as edições e a exclusão retornam HTTP 200, um padrão mais previsível entre operações semelhantes, registrado para confirmação com a equipe de desenvolvimento. A ferramenta de gravação (Jam) apresentou instabilidade ao exibir os cabeçalhos de detalhe de algumas requisições com o mesmo identificador e horário repetidos entre linhas diferentes — tratado como limitação da ferramenta de captura, já que URL, método e código de status de cada requisição permaneceram corretos ao serem reconferidos. Não houve nova execução, acesso a logs, ao código ou ao banco, nem reteste.
+
+### Base da análise do RF61 — revisão de 16/11/2026
+
+RF61 utiliza os painéis Informações, Console, Rede e Ações do Jam "Categorias de Anamnese", os eventos de clique e digitação entre 0:00 e 1:35 e as sete requisições aos endpoints `/api/categorias-anamnese/*`, todas com HTTP 200 ou 201. A única requisição não relacionada ao backend do SIFIT é um *beacon* de telemetria de uma extensão de antivírus do navegador, também com retorno de sucesso. Não foram registradas mensagens de erro no console. Não houve nova execução, acesso a logs, ao código ou ao banco, nem reteste.
+
+Com RF61, a análise passa a cobrir 59 requisitos documentados (antes da integração de RF65 a RF70).
+
+---
+
 ## RF65 a RF73 — Validações, operações e buscas de Colaboradores
 
 | Requisito | Comportamento esperado | Caso | Defeito | Resultado observado |
@@ -2787,7 +2823,7 @@ Com RF60, a análise passa a cobrir 58 requisitos documentados (antes da integra
 
 ### Base da análise — revisão de 15/11/2026
 
-RF59 registra HTTP 500 no cadastro de anamnese. Os seis Jams de RF65–RF70 foram lidos por metadados, eventos de interação e registros de rede: RF65–RF68 possuem POST de atualização HTTP 200 sem corpo capturado, por isso a aceitação do endpoint está comprovada, mas a persistência final deve ser reconfirmada; RF69 registra payloads, HTTP 201 e respostas subsequentes com três associações iguais; RF70 registra payload, HTTP 500 e `Erro interno inesperado`. Com a inclusão de RF60 (Modelos de Anamnese), a gravação foi lida por metadados, eventos de interação e registros de rede, confirmando a aprovação sem erro de servidor. RF71–RF73 foram analisados visualmente: falha do filtro na paginação, busca válida por código e linha vazia para código inexistente. Não houve nova execução, acesso ao banco, logs ou código. A análise passa a cobrir 67 requisitos documentados; RF36–RF37 e RF61–RF64 permanecem fora do conjunto fornecido.
+RF59 registra HTTP 500 no cadastro de anamnese. Os seis Jams de RF65–RF70 foram lidos por metadados, eventos de interação e registros de rede: RF65–RF68 possuem POST de atualização HTTP 200 sem corpo capturado, por isso a aceitação do endpoint está comprovada, mas a persistência final deve ser reconfirmada; RF69 registra payloads, HTTP 201 e respostas subsequentes com três associações iguais; RF70 registra payload, HTTP 500 e `Erro interno inesperado`. Com a inclusão de RF60 (Modelos de Anamnese), a gravação foi lida por metadados, eventos de interação e registros de rede, confirmando a aprovação sem erro de servidor. RF71–RF73 foram analisados visualmente: falha do filtro na paginação, busca válida por código e linha vazia para código inexistente. Não houve nova execução, acesso ao banco, logs ou código. A análise passa a cobrir 68 requisitos documentados; RF36–RF37 e RF62–RF64 permanecem fora do conjunto fornecido.
 
 ---
 
@@ -3106,7 +3142,7 @@ Análise da gravação e dos eventos capturados no Jam; não foi executado um no
 
 Encaminhamento: Repetir o cadastro e conferir os dados após reabertura; capturar o corpo da resposta de salvamento.
 
-A análise passa a cobrir 78 requisitos documentados. RF36–RF37 e RF61–RF64 permanecem fora do conjunto fornecido.
+A análise passa a cobrir 79 requisitos documentados. RF36–RF37 e RF62–RF64 permanecem fora do conjunto fornecido.
 ### Base da análise do RF85 — revisão de 15/11/2026
 
 RF85 utiliza os painéis Info, Console, Network e Actions do Jam "Prospecção" e os quadros de 0:01 e 0:03. Foram registrados a troca de tema, os POST usuario/tema e o painel de Notificações. Não houve nova execução, acesso ao código ou ao banco, nem reteste.

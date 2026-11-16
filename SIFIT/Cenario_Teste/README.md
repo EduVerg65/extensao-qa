@@ -1,6 +1,6 @@
 # 🧪 Índice dos cenários de teste — SIFIT
 
-**Atualização:** 16/11/2026. 102 casos documentados: 41 aprovados, 47 reprovados e 14 a validar; 43 defeitos registrados (10 abertos e 33 em triagem) e 47 casos com reteste corretivo pendente (CT-RF01–CT-RF35, CT-RF38–CT-RF59, CT-RF60, CT-RF65–CT-RF84, CT-RF85–CT-RF103 e CT-RF104–CT-RF108).
+**Atualização:** 16/11/2026. 103 casos documentados: 42 aprovados, 47 reprovados e 14 a validar; 43 defeitos registrados (10 abertos e 33 em triagem) e 47 casos com reteste corretivo pendente (CT-RF01–CT-RF35, CT-RF38–CT-RF59, CT-RF60, CT-RF61, CT-RF65–CT-RF84, CT-RF85–CT-RF103 e CT-RF104–CT-RF108).
 
 | Caso | Funcionalidade | Resultado | Defeito | Jam |
 | --- | --- | --- | --- | --- |
@@ -167,6 +167,16 @@ Na mesma gravação, sete tentativas de cadastrar uma anamnese para o aluno "Jor
 | [CT-RF60](CT-RF60_Gestao_Modelos_Anamnese.md) | Busca, cadastro, edição e exclusão de modelos de anamnese | Aprovado conforme a gravação | — | [Jam](https://jam.dev/c/4c1e9deb-20ca-417f-ad09-48749857266e) |
 
 Na mesma gravação, busca e filtro da listagem, cadastro de um modelo com três perguntas do banco, duas edições e duas exclusões de modelos retornam HTTP 200 ou 201 em todas as quinze requisições identificadas aos endpoints `/api/modelos-anamnese/*`, sem nenhuma ocorrência de erro 4xx ou 5xx. Nenhum defeito foi identificado no fluxo avaliado. O resultado é documental; não houve nova execução ou reteste.
+
+---
+
+## Inclusão de 16/11/2026 — Categorias de Anamnese
+
+| Caso | Funcionalidade | Resultado | Defeito | Jam |
+| --- | --- | --- | --- | --- |
+| [CT-RF61](CT-RF61_Gestao_Categorias_Anamnese.md) | Filtro, busca, cadastro, edição e exclusão de categorias de anamnese | Aprovado conforme a gravação | — | [Jam](https://jam.dev/c/fdb1c9f8-c428-4726-9742-617800325d09) |
+
+Na mesma gravação, filtro por status, busca por texto, cadastro de uma categoria, três edições sucessivas (ícone, nome e status), o cancelamento correto de uma quarta edição sem salvar e a exclusão da categoria retornam HTTP 200 ou 201 em todas as sete requisições identificadas aos endpoints `/api/categorias-anamnese/*`, sem nenhuma ocorrência de erro 4xx ou 5xx. Nenhum defeito foi identificado no fluxo avaliado. O resultado é documental; não houve nova execução ou reteste.
 
 ---
 

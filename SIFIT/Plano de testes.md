@@ -1,10 +1,10 @@
 # 🧪 Plano de Testes — SIFIT
 
-**Atualização:** 16/11/2026 — 102 cenários documentados (CT-RF01–CT-RF35, CT-RF38–CT-RF59, CT-RF60 e CT-RF65–CT-RF108), com inclusão de CT-RF42 a CT-RF56 / Pagar.me, Configurações, Despesas Fixas e Relatórios, CT-RF57 e CT-RF58 / Grupos (treino), CT-RF59 / Fichas de Anamnese, CT-RF60 / Modelos de Anamnese, CT-RF65 a CT-RF73 / Colaboradores e CT-RF74 a CT-RF108 / Prospecção, Bandeiras de Cartão, Contas a Pagar, Modelos de Contrato, Planos e Tipos de Pagamento; BUG-011–BUG-043 em triagem.
+**Atualização:** 16/11/2026 — 103 cenários documentados (CT-RF01–CT-RF35, CT-RF38–CT-RF59, CT-RF60, CT-RF61 e CT-RF65–CT-RF108), com inclusão de CT-RF42 a CT-RF56 / Pagar.me, Configurações, Despesas Fixas e Relatórios, CT-RF57 e CT-RF58 / Grupos (treino), CT-RF59 / Fichas de Anamnese, CT-RF60 / Modelos de Anamnese, CT-RF61 / Categorias de Anamnese, CT-RF65 a CT-RF73 / Colaboradores e CT-RF74 a CT-RF108 / Prospecção, Bandeiras de Cartão, Contas a Pagar, Modelos de Contrato, Planos e Tipos de Pagamento; BUG-011–BUG-043 em triagem.
 
 **Padronização documental:** 13/11/2026, com resultados e pendências preservados.
 
-**Escopo:** 102 casos (CT-RF01–CT-RF35, CT-RF38–CT-RF59, CT-RF60 e CT-RF65–CT-RF108) — autenticação, recuperação de senha, perfil, Clientes, financeiro, página inicial e dashboard, modalidades / tema de SifitBox, Categorias Crossfit, Avaliações, Exercícios, Grupos Musculares, Objetivos de Treino, Grupos (treino), Fichas de Anamnese, gestão de Modelos de Anamnese, validações/funções/exclusão/busca de Colaboradores, Prospecção, Bandeiras de Cartão, Contas a Pagar, Modelos de Contrato, Planos e Tipos de Pagamento.
+**Escopo:** 103 casos (CT-RF01–CT-RF35, CT-RF38–CT-RF59, CT-RF60, CT-RF61 e CT-RF65–CT-RF108) — autenticação, recuperação de senha, perfil, Clientes, financeiro, página inicial e dashboard, modalidades / tema de SifitBox, Categorias Crossfit, Avaliações, Exercícios, Grupos Musculares, Objetivos de Treino, Grupos (treino), Fichas de Anamnese, gestão de Modelos de Anamnese, gestão de Categorias de Anamnese, validações/funções/exclusão/busca de Colaboradores, Prospecção, Bandeiras de Cartão, Contas a Pagar, Modelos de Contrato, Planos e Tipos de Pagamento.
 
 ## 📌 1. Identificação
 
@@ -866,6 +866,7 @@ Os entregáveis são a análise RF01–RF35, RF38–RF59, RF65–RF84, RF85–RF
 - [Caso CT-RF58](Cenario_Teste/CT-RF58_Edicao_Grupo.md)
 - [Caso CT-RF59](Cenario_Teste/CT-RF59_Cadastro_Anamnese.md)
 - [Caso CT-RF60](Cenario_Teste/CT-RF60_Gestao_Modelos_Anamnese.md)
+- [Caso CT-RF61](Cenario_Teste/CT-RF61_Gestao_Categorias_Anamnese.md)
 - [Caso CT-RF65](Cenario_Teste/CT-RF65_Data_Nascimento_Futura_Colaborador.md)
 - [Caso CT-RF66](Cenario_Teste/CT-RF66_Data_Nascimento_Obrigatoria_Colaborador.md)
 - [Caso CT-RF67](Cenario_Teste/CT-RF67_CREF_Formato_Colaborador.md)
@@ -896,7 +897,7 @@ Os entregáveis são a análise RF01–RF35, RF38–RF59, RF65–RF84, RF85–RF
 - [Caso CT-RF106](Cenario_Teste/CT-RF106_Edicao_Tipo_Pagamento.md) e [evidências](Evidencias/CT-RF106_Edicao_Tipo_Pagamento/README.md)
 - [Caso CT-RF107](Cenario_Teste/CT-RF107_Exclusao_Tipo_Pagamento_Em_Uso.md) e [evidências](Evidencias/CT-RF107_Exclusao_Tipo_Pagamento_Em_Uso/README.md)
 - [Caso CT-RF108](Cenario_Teste/CT-RF108_Tema_Notificacoes_Tipos_Pagamento.md) e [evidências](Evidencias/CT-RF108_Tema_Notificacoes_Tipos_Pagamento/README.md)
-- [Índice dos 102 cenários](Cenario_Teste/README.md)
+- [Índice dos 103 cenários](Cenario_Teste/README.md)
 - [Índice das evidências e dos Jams](Evidencias/README.md)
 - [Manifesto de integridade dos novos arquivos](Evidencias/manifesto_sha256.json)
 
@@ -960,6 +961,18 @@ CT-RF74–CT-RF84 acrescentam oito aprovações e três reprovações conforme o
 | [CT-RF60](Cenario_Teste/CT-RF60_Gestao_Modelos_Anamnese.md) | Fluxo exploratório / CRUD completo | Aprovado conforme a gravação | Repetir busca, filtro, cadastro com perguntas do banco, edição e exclusão em versão identificada, confirmando os corpos de requisição e resposta. |
 
 **Ambiente gravado:** `sifit.centrion.com.br`, backend `backendsifit.centrion.com.br`, Chrome 157 em Windows 11 conforme cabeçalhos; versão da aplicação e zoom não confirmados. A gravação ocorreu às 23h34 BRT de 15/11/2026.
+
+**Critério de saída:** caso retestado em versão identificada, com os corpos de requisição e resposta capturados, mantendo o resultado aprovado sem HTTP 4xx ou 5xx.
+
+---
+
+## Inclusão CT-RF61 — Categorias de Anamnese
+
+| Caso | Técnica | Resultado | Reteste mínimo |
+| --- | --- | --- | --- |
+| [CT-RF61](Cenario_Teste/CT-RF61_Gestao_Categorias_Anamnese.md) | Fluxo exploratório / CRUD completo, incluindo cancelamento de edição | Aprovado conforme a gravação | Repetir filtro por status, busca, cadastro, edição (ícone, nome e status), cancelamento de edição e exclusão em versão identificada, confirmando os corpos de requisição e resposta ainda não capturados. |
+
+**Ambiente gravado:** `sifit.centrion.com.br`, backend `backendsifit.centrion.com.br`, Chrome 157 em Windows 11 conforme cabeçalhos; versão da aplicação e zoom não confirmados. A gravação ocorreu às 15h24 BRT de 16/11/2026.
 
 **Critério de saída:** caso retestado em versão identificada, com os corpos de requisição e resposta capturados, mantendo o resultado aprovado sem HTTP 4xx ou 5xx.
 
