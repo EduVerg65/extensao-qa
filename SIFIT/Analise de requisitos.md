@@ -73,6 +73,7 @@ Esta análise documenta 73 requisitos de QA para os cenários relacionados abaix
 | [RF62](#rf62) | Validar o telefone do lead | Média, proposta | [CT-RF62](Cenario_Teste/CT-RF62_Telefone_Lead_Sem_Validacao.md) |
 | [RF63](#rf63) | Visualizar e editar um lead | Média, proposta | [CT-RF63](Cenario_Teste/CT-RF63_Edicao_Lead_Prospeccao.md) |
 | [RF64](#rf64) | Filtrar contas a pagar por nome, data e status | Média, proposta | [CT-RF64](Cenario_Teste/CT-RF64_Filtros_Contas_Pagar.md) |
+| [RF65](#rf65) | Exigir o colaborador no cadastro de conta a pagar a colaborador | Alta, proposta | [CT-RF65](Cenario_Teste/CT-RF65_Cadastro_Conta_Colaborador_Sem_Colaborador.md) |
 
 ---
 
@@ -1797,6 +1798,35 @@ Cada critério isolado, a troca de Tipo de Data e o resultado vazio contra a bas
 
 ---
 
+<a id="rf65"></a>
+
+## RF65 — Exigir o colaborador no cadastro de conta a pagar a colaborador
+
+| Campo | Descrição |
+| --- | --- |
+| Requisito de QA | O formulário Cadastrar Conta a Pagar deve exigir o colaborador favorecido quando o tipo for Pagto. Colaborador, com mensagem clara e rejeição também no servidor. |
+| Ator | Usuário autenticado com acesso ao módulo. |
+| Pré-condições | Formulário aberto com o tipo Pagto. Colaborador; regra de obrigatoriedade definida com o produto. |
+| Gatilho | Preencher o formulário sem colaborador e acionar Salvar. |
+| Caso | [CT-RF65](Cenario_Teste/CT-RF65_Cadastro_Conta_Colaborador_Sem_Colaborador.md) |
+| Situação observada | Reprovado nas evidências. A conta é gravada (HTTP 201) com colaborador vazio e listada com "-" no colaborador, sem mensagem de validação. |
+| Defeito | [BUG-025](Relatorio-de-Bugs.md#bug-025), em triagem |
+| Evidências | [Jam](https://jam.dev/c/5d0afaf4-5abd-4e85-923f-27448304a9ef) e [Evidências](Evidencias/CT-RF65_Cadastro_Conta_Colaborador_Sem_Colaborador/README.md). |
+
+### Critérios de aceitação do RF65
+
+1. Conta do tipo Pagto. Colaborador exige o colaborador antes da gravação.
+2. A ausência do colaborador gera mensagem de validação junto ao campo.
+3. O servidor rejeita a criação sem colaborador, independentemente da interface.
+4. A listagem apresenta o colaborador na coluna Fornecedor / Colaborador.
+5. Conta com colaborador informado é gravada e listada corretamente.
+
+### Pontos a confirmar e limites do RF65
+
+A regra de obrigatoriedade e a validação no servidor não foram verificadas; o tipo fornecedor sem fornecedor não foi exercitado.
+
+---
+
 ## 🔗 Rastreabilidade
 
 | Requisito | Cenário / caso | Defeito | Resultado | Evidências |
@@ -1862,6 +1892,7 @@ Cada critério isolado, a troca de Tipo de Data e o resultado vazio contra a bas
 | RF62 | [CT-RF62](Cenario_Teste/CT-RF62_Telefone_Lead_Sem_Validacao.md) | [BUG-024](Relatorio-de-Bugs.md#bug-024), em triagem | Reprovado nas evidências; reteste pendente. | [Evidências](Evidencias/CT-RF62_Telefone_Lead_Sem_Validacao/README.md) e [Jam](https://jam.dev/c/308607ff-8abc-40af-8c7c-429ce506ed64) |
 | RF63 | [CT-RF63](Cenario_Teste/CT-RF63_Edicao_Lead_Prospeccao.md) | Nenhum no fluxo avaliado | Aprovado conforme a gravação | [Evidências](Evidencias/CT-RF63_Edicao_Lead_Prospeccao/README.md) e [Jam](https://jam.dev/c/308607ff-8abc-40af-8c7c-429ce506ed64) |
 | RF64 | [CT-RF64](Cenario_Teste/CT-RF64_Filtros_Contas_Pagar.md) | Sem defeito confirmado | A validar — regra ou contexto pendente | [Evidências](Evidencias/CT-RF64_Filtros_Contas_Pagar/README.md) e [Jam](https://jam.dev/c/5d0afaf4-5abd-4e85-923f-27448304a9ef) |
+| RF65 | [CT-RF65](Cenario_Teste/CT-RF65_Cadastro_Conta_Colaborador_Sem_Colaborador.md) | [BUG-025](Relatorio-de-Bugs.md#bug-025), em triagem | Reprovado nas evidências; reteste pendente. | [Evidências](Evidencias/CT-RF65_Cadastro_Conta_Colaborador_Sem_Colaborador/README.md) e [Jam](https://jam.dev/c/5d0afaf4-5abd-4e85-923f-27448304a9ef) |
 
 ---
 
@@ -2099,6 +2130,12 @@ Com RF63, a análise passa a cobrir 60 requisitos documentados. O CT-RF63 acresc
 RF64 utiliza os painéis Info, Console, Network e Actions do Jam "Contas a Pagar" e os quadros de 0:03 e 0:12. Foram registrados os filtros por nome, tipo de data, período e status e o resultado vazio. Não houve nova execução, acesso ao código ou ao banco, nem reteste.
 
 Com RF64, a análise passa a cobrir 61 requisitos documentados. O CT-RF64 acrescenta um ponto a validar, sem defeito confirmado.
+
+### Base da análise do RF65 — revisão de 15/11/2026
+
+RF65 utiliza os painéis Info, Console, Network e Actions do Jam "Contas a Pagar", o corpo e a resposta da criação e os quadros de 0:15, 0:41 e 0:50. Foram registrados o cadastro sem colaborador, o HTTP 201 e a listagem com "-". Não houve nova execução, acesso ao código ou ao banco, nem reteste.
+
+Com RF65, a análise passa a cobrir 62 requisitos documentados. O CT-RF65 acrescenta uma reprovação, vinculada ao BUG-025, em triagem.
 
 ---
 
