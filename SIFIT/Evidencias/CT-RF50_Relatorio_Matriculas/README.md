@@ -21,6 +21,7 @@ O PDF `relatorio (5).pdf` abre e apresenta "Relatório de Matrículas" com Data 
 | [relatorio_5_matriculas.pdf](relatorio_5_matriculas.pdf) | PDF gerado com uma matrícula (R$ 20,00). | `ee1c647227b00798b3538233b9305a73fcec2f279ee7a4a48e6e83787bc3aeec` |
 | [formulario_matriculas_00-38.png](formulario_matriculas_00-38.png) | tipo Matrículas com Plano e Tipo de Pagto "Todos". | `b15b2e29dfc9059cc47806dae93b75badd134f7da898c1fc7a1b500c4e3927fe` |
 | [rede_lista.png](rede_lista.png) | oito POST relatorio (HTTP 200) e um OPTIONS. | `ecd2414b90cbba8bf93464a4691473a1881f9089b4d3a45cd6d145f309dba798` |
+| [relatorio_5_matriculas_pagina1.png](relatorio_5_matriculas_pagina1.png) | Primeira página do PDF (`relatorio (5).pdf`) renderizada para consulta; o PDF original segue no arquivo acima. | `60c9ae6c0276028411f8d1c37e51d06302fca65994076c96b95c6291e6683c50` |
 | [linha_do_tempo.txt](linha_do_tempo.txt) | Cronologia de ações, digitação e rede do Jam. | — |
 | [origem.url](origem.url) | Endereço original do Jam. | — |
 
