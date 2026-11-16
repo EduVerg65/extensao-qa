@@ -75,6 +75,7 @@ Esta análise documenta 73 requisitos de QA para os cenários relacionados abaix
 | [RF64](#rf64) | Filtrar contas a pagar por nome, data e status | Média, proposta | [CT-RF64](Cenario_Teste/CT-RF64_Filtros_Contas_Pagar.md) |
 | [RF65](#rf65) | Exigir o colaborador no cadastro de conta a pagar a colaborador | Alta, proposta | [CT-RF65](Cenario_Teste/CT-RF65_Cadastro_Conta_Colaborador_Sem_Colaborador.md) |
 | [RF66](#rf66) | Buscar e selecionar colaborador no cadastro de conta | Média, proposta | [CT-RF66](Cenario_Teste/CT-RF66_Busca_Colaborador_Conta_Pagar.md) |
+| [RF67](#rf67) | Visualizar os dados de uma conta a pagar | Baixa, proposta | [CT-RF67](Cenario_Teste/CT-RF67_Visualizacao_Conta_Pagar.md) |
 
 ---
 
@@ -1857,6 +1858,35 @@ A busca com resultado, a seleção e a mensagem de resultado vazio esperada não
 
 ---
 
+<a id="rf67"></a>
+
+## RF67 — Visualizar os dados de uma conta a pagar
+
+| Campo | Descrição |
+| --- | --- |
+| Requisito de QA | A lupa da listagem deve abrir os dados da conta selecionada, com informações gerais, dados da conta, do colaborador ou fornecedor e do documento, em rótulos legíveis. |
+| Ator | Usuário autenticado com acesso ao módulo. |
+| Pré-condições | Conta a pagar cadastrada e visível na listagem. |
+| Gatilho | Acionar a lupa da linha da conta. |
+| Caso | [CT-RF67](Cenario_Teste/CT-RF67_Visualizacao_Conta_Pagar.md) |
+| Situação observada | Aprovado conforme a gravação. O modal apresenta os dados da conta 29 e fecha corretamente; o tipo aparece como "PAG_COLABORADOR". |
+| Defeito | Nenhum no fluxo avaliado |
+| Evidências | [Jam](https://jam.dev/c/5d0afaf4-5abd-4e85-923f-27448304a9ef) e [Evidências](Evidencias/CT-RF67_Visualizacao_Conta_Pagar/README.md). |
+
+### Critérios de aceitação do RF67
+
+1. O modal apresenta os dados da conta selecionada conforme gravados.
+2. Os rótulos exibidos ao usuário são legíveis (sem códigos internos).
+3. As seções do colaborador ou do fornecedor apresentam o favorecido quando informado.
+4. O botão Fechar retorna à listagem sem alterações.
+5. A consulta não altera a conta.
+
+### Pontos a confirmar e limites do RF67
+
+Contas de fornecedor, pagas e atrasadas e o rótulo esperado do tipo não foram exercitados.
+
+---
+
 ## 🔗 Rastreabilidade
 
 | Requisito | Cenário / caso | Defeito | Resultado | Evidências |
@@ -1924,6 +1954,7 @@ A busca com resultado, a seleção e a mensagem de resultado vazio esperada não
 | RF64 | [CT-RF64](Cenario_Teste/CT-RF64_Filtros_Contas_Pagar.md) | Sem defeito confirmado | A validar — regra ou contexto pendente | [Evidências](Evidencias/CT-RF64_Filtros_Contas_Pagar/README.md) e [Jam](https://jam.dev/c/5d0afaf4-5abd-4e85-923f-27448304a9ef) |
 | RF65 | [CT-RF65](Cenario_Teste/CT-RF65_Cadastro_Conta_Colaborador_Sem_Colaborador.md) | [BUG-025](Relatorio-de-Bugs.md#bug-025), em triagem | Reprovado nas evidências; reteste pendente. | [Evidências](Evidencias/CT-RF65_Cadastro_Conta_Colaborador_Sem_Colaborador/README.md) e [Jam](https://jam.dev/c/5d0afaf4-5abd-4e85-923f-27448304a9ef) |
 | RF66 | [CT-RF66](Cenario_Teste/CT-RF66_Busca_Colaborador_Conta_Pagar.md) | Sem defeito confirmado | A validar — regra ou contexto pendente | [Evidências](Evidencias/CT-RF66_Busca_Colaborador_Conta_Pagar/README.md) e [Jam](https://jam.dev/c/5d0afaf4-5abd-4e85-923f-27448304a9ef) |
+| RF67 | [CT-RF67](Cenario_Teste/CT-RF67_Visualizacao_Conta_Pagar.md) | Nenhum no fluxo avaliado | Aprovado conforme a gravação | [Evidências](Evidencias/CT-RF67_Visualizacao_Conta_Pagar/README.md) e [Jam](https://jam.dev/c/5d0afaf4-5abd-4e85-923f-27448304a9ef) |
 
 ---
 
@@ -2173,6 +2204,12 @@ Com RF65, a análise passa a cobrir 62 requisitos documentados. O CT-RF65 acresc
 RF66 utiliza os painéis Info, Console, Network e Actions do Jam "Contas a Pagar" e o quadro de 0:26. Foram registrados a abertura do modal, a busca sem resultado e a resposta de 2 B. Não houve nova execução, acesso ao código ou ao banco, nem reteste.
 
 Com RF66, a análise passa a cobrir 63 requisitos documentados. O CT-RF66 acrescenta um ponto a validar, sem defeito confirmado.
+
+### Base da análise do RF67 — revisão de 15/11/2026
+
+RF67 utiliza os painéis Info, Console, Network e Actions do Jam "Contas a Pagar" e o quadro de 0:52. Foram registrados a abertura do modal e os dados apresentados. Não houve nova execução, acesso ao código ou ao banco, nem reteste.
+
+Com RF67, a análise passa a cobrir 64 requisitos documentados. O CT-RF67 acrescenta uma aprovação limitada ao exemplo gravado.
 
 ---
 
