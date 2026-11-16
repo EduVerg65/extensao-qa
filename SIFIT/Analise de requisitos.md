@@ -81,6 +81,7 @@ Esta análise documenta 73 requisitos de QA para os cenários relacionados abaix
 | [RF70](#rf70) | Cadastrar um modelo de contrato | Média, proposta | [CT-RF70](Cenario_Teste/CT-RF70_Cadastro_Modelo_Contrato.md) |
 | [RF71](#rf71) | Apresentar na listagem os modelos de contrato retornados pelo servidor | Alta, proposta | [CT-RF71](Cenario_Teste/CT-RF71_Listagem_Modelos_Contrato_Vazia.md) |
 | [RF72](#rf72) | Filtrar planos por código e por nome | Média, proposta | [CT-RF72](Cenario_Teste/CT-RF72_Filtros_Planos.md) |
+| [RF73](#rf73) | Alternar o tema e consultar as notificações na tela Planos | Baixa, proposta | [CT-RF73](Cenario_Teste/CT-RF73_Tema_Notificacoes_Planos.md) |
 
 ---
 
@@ -2037,6 +2038,35 @@ O filtro por Status, a combinação de critérios, o resultado vazio e o contrat
 
 ---
 
+<a id="rf73"></a>
+
+## RF73 — Alternar o tema e consultar as notificações na tela Planos
+
+| Campo | Descrição |
+| --- | --- |
+| Requisito de QA | O cabeçalho da tela Planos deve permitir alternar o tema, gravando a escolha, e abrir o painel de notificações com o estado correspondente. |
+| Ator | Usuário autenticado com acesso ao módulo. |
+| Pré-condições | Sessão autenticada; tema inicial e notificações conhecidos. |
+| Gatilho | Acionar o alternador de tema e o sino. |
+| Caso | [CT-RF73](Cenario_Teste/CT-RF73_Tema_Notificacoes_Planos.md) |
+| Situação observada | Aprovado conforme a gravação. O tema escuro é aplicado e o claro restaurado, com POST usuario/tema (HTTP 200) a cada troca; o painel de Notificações abre sem pendências. |
+| Defeito | Nenhum no fluxo avaliado |
+| Evidências | [Jam](https://jam.dev/c/233c5d21-e108-4a55-b6f6-8738cb3fc6a6) e [Evidências](Evidencias/CT-RF73_Tema_Notificacoes_Planos/README.md). |
+
+### Critérios de aceitação do RF73
+
+1. Cada acionamento troca o tema sem perda de legibilidade.
+2. Cada troca é gravada no servidor e permanece após recarregar.
+3. O sino abre o painel de Notificações com as abas Tudo e Não lidas.
+4. Sem pendências, o painel apresenta mensagem explícita.
+5. Com pendências, o painel lista os itens.
+
+### Pontos a confirmar e limites do RF73
+
+A persistência após recarga e as notificações pendentes não foram exercitadas.
+
+---
+
 ## 🔗 Rastreabilidade
 
 | Requisito | Cenário / caso | Defeito | Resultado | Evidências |
@@ -2110,6 +2140,7 @@ O filtro por Status, a combinação de critérios, o resultado vazio e o contrat
 | RF70 | [CT-RF70](Cenario_Teste/CT-RF70_Cadastro_Modelo_Contrato.md) | Nenhum no fluxo avaliado | Aprovado conforme a gravação | [Evidências](Evidencias/CT-RF70_Cadastro_Modelo_Contrato/README.md) e [Jam](https://jam.dev/c/44dbbd39-6915-45d6-8dd1-5f30c1432ca0) |
 | RF71 | [CT-RF71](Cenario_Teste/CT-RF71_Listagem_Modelos_Contrato_Vazia.md) | [BUG-026](Relatorio-de-Bugs.md#bug-026), em triagem | Reprovado nas evidências; reteste pendente. | [Evidências](Evidencias/CT-RF71_Listagem_Modelos_Contrato_Vazia/README.md) e [Jam](https://jam.dev/c/44dbbd39-6915-45d6-8dd1-5f30c1432ca0) |
 | RF72 | [CT-RF72](Cenario_Teste/CT-RF72_Filtros_Planos.md) | Nenhum no fluxo avaliado | Aprovado conforme a gravação | [Evidências](Evidencias/CT-RF72_Filtros_Planos/README.md) e [Jam](https://jam.dev/c/233c5d21-e108-4a55-b6f6-8738cb3fc6a6) |
+| RF73 | [CT-RF73](Cenario_Teste/CT-RF73_Tema_Notificacoes_Planos.md) | Nenhum no fluxo avaliado | Aprovado conforme a gravação | [Evidências](Evidencias/CT-RF73_Tema_Notificacoes_Planos/README.md) e [Jam](https://jam.dev/c/233c5d21-e108-4a55-b6f6-8738cb3fc6a6) |
 
 ---
 
@@ -2395,6 +2426,12 @@ Com RF71, a análise passa a cobrir 68 requisitos documentados. O CT-RF71 acresc
 RF72 utiliza os painéis Info, Console, Network e Actions do Jam "Planos" e os quadros de 0:03, 0:06 e 0:13. Foram registrados os filtros por código e nome e o botão Buscar. Não houve nova execução, acesso ao código ou ao banco, nem reteste.
 
 Com RF72, a análise passa a cobrir 69 requisitos documentados. O CT-RF72 acrescenta uma aprovação limitada ao exemplo gravado.
+
+### Base da análise do RF73 — revisão de 15/11/2026
+
+RF73 utiliza os painéis Info, Console, Network e Actions do Jam "Planos" e os quadros de 0:16 e 0:19. Foram registrados a troca de tema, os POST usuario/tema e o painel de Notificações. Não houve nova execução, acesso ao código ou ao banco, nem reteste.
+
+Com RF73, a análise passa a cobrir 70 requisitos documentados. O CT-RF73 acrescenta uma aprovação limitada ao exemplo gravado.
 
 ---
 
