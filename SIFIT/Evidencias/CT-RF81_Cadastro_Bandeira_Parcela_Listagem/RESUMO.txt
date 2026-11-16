@@ -1,0 +1,30 @@
+CT-RF81 — Cadastrar bandeira com parcela e conferir a listagem
+
+RESULTADO: ERRO — cadastro confirmado pela API, mas ausente na listagem
+Tela: Bandeiras de Cartão
+Título original do Jam: TesteParcela
+Evidência: https://jam.dev/c/2f0280fb-6b7f-4cf0-a45c-02f8c16b6c5e
+Data da gravação e da análise: 16/11/2026
+
+OBJETIVO
+A bandeira deve ser criada com a configuração de parcela e aparecer na listagem após o salvamento.
+
+PASSOS OBSERVADOS
+1. Clicar em Nova Bandeira.
+2. Informar nome master e taxas adicional e de débito de 1,11.
+3. Adicionar a configuração de parcela número 2 com taxa 3,33 e confirmar a inclusão.
+4. Clicar em Salvar e conferir a listagem.
+
+RESULTADO OBSERVADO
+A API confirma a criação da bandeira de código 34 e da parcela, mas a consulta seguinte retorna [] e a interface continua exibindo Nenhuma bandeira encontrada. A criação da parcela tem retorno de sucesso; o fluxo completo apresenta erro na recuperação/exibição do cadastro.
+
+EVIDÊNCIAS DA GRAVAÇÃO
+- 00:11: POST /api/cria/bandeira/1 retorna HTTP 201, verifica_erro=false e id=34.
+- 00:11: POST /api/cria/parcela-bandeira/1 envia bandeira_id=34, n_parcela=2 e taxa=3,33; retorna HTTP 201 e verifica_erro=false.
+- 00:11: POST /api/bandeiras/1 retorna HTTP 200 com corpo [].
+- Quadro de 00:13.191 mostra a listagem vazia após fechar a janela.
+
+LIMITES DA ANÁLISE
+A causa da divergência e a persistência efetiva no banco não foram verificadas. A gravação comprova a diferença entre os retornos de criação e de listagem, sem permitir atribuir a causa ao frontend ou ao backend.
+Análise da gravação e dos eventos capturados no Jam; não foi executado um novo teste no sistema.
+

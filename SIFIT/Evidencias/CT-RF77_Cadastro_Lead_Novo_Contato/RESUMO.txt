@@ -1,0 +1,28 @@
+CT-RF77 — Cadastrar lead no estágio Novo Contato
+
+RESULTADO: SUCESSO
+Tela: Prospecção
+Título original do Jam: CriandoLeadContato
+Evidência: https://jam.dev/c/29447c6a-90f5-48b2-ac5d-d43cad44a782
+Data da gravação e da análise: 16/11/2026
+
+OBJETIVO
+O lead deve ser criado no estágio Novo Contato e aparecer na listagem.
+
+PASSOS OBSERVADOS
+1. Clicar em Adicionar Lead e preencher nome, e-mail, telefone e observação.
+2. Alterar o estágio durante o preenchimento e finalizar com Novo Contato.
+3. Clicar em Salvar Lead.
+
+RESULTADO OBSERVADO
+O lead de teste é criado com o estágio NOVO_CONTATO, recebe código 11 e aparece na listagem. O total passa de 6 para 7, e o indicador Novo Contato passa de 2 para 3.
+
+EVIDÊNCIAS DA GRAVAÇÃO
+- 00:14: seleção final de Novo Contato.
+- 00:22: POST /api/salvar-lead/1 envia estagio=NOVO_CONTATO e retorna HTTP 200, verifica_erro=false e id=11.
+- 00:23: GET /api/leads/1 retorna HTTP 200; quadro de 00:25.604 mostra o novo registro.
+
+LIMITES DA ANÁLISE
+A classificação considera o cadastro mostrado; não houve reabertura do registro para revisar todos os campos.
+Análise da gravação e dos eventos capturados no Jam; não foi executado um novo teste no sistema.
+

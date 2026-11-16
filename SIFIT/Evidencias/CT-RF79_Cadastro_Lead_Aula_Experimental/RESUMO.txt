@@ -1,0 +1,28 @@
+CT-RF79 — Cadastrar lead no estágio Fez Aula Experimental
+
+RESULTADO: SUCESSO
+Tela: Prospecção
+Título original do Jam: TesteFezAula
+Evidência: https://jam.dev/c/bef3d877-056b-4274-87c3-da37869c54fd
+Data da gravação e da análise: 16/11/2026
+
+OBJETIVO
+O lead deve ser criado com o estágio Fez Aula Experimental e aparecer na listagem.
+
+PASSOS OBSERVADOS
+1. Abrir Adicionar Lead e preencher os dados de contato.
+2. Selecionar Fez Aula Experimental e preencher a observação.
+3. Clicar em Salvar Lead.
+
+RESULTADO OBSERVADO
+O lead é criado com código 14 e estágio FEZ_AULA_EXP. A linha correspondente aparece ao final, e o total de leads passa de 9 para 10.
+
+EVIDÊNCIAS DA GRAVAÇÃO
+- 00:04: seleção de FEZ_AULA_EXP.
+- 00:16: POST /api/salvar-lead/1 retorna HTTP 200, verifica_erro=false e id=14.
+- 00:16: GET /api/leads/1 retorna HTTP 200; quadro de 00:17.747 mostra o lead no estágio escolhido.
+
+LIMITES DA ANÁLISE
+A gravação valida o cadastro no estágio indicado; não demonstra agendamento ou realização de uma aula.
+Análise da gravação e dos eventos capturados no Jam; não foi executado um novo teste no sistema.
+

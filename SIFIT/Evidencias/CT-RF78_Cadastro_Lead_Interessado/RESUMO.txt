@@ -1,0 +1,28 @@
+CT-RF78 — Cadastrar lead no estágio Interessado
+
+RESULTADO: SUCESSO
+Tela: Prospecção
+Título original do Jam: testeInterresado
+Evidência: https://jam.dev/c/f8735cbf-4043-4467-b43f-3cad7eff0da8
+Data da gravação e da análise: 16/11/2026
+
+OBJETIVO
+O lead deve ser criado no estágio Interessado e aparecer na listagem.
+
+PASSOS OBSERVADOS
+1. Abrir Adicionar Lead e selecionar Interessado.
+2. Preencher nome, e-mail, telefone e observação.
+3. Clicar em Salvar Lead.
+
+RESULTADO OBSERVADO
+O cadastro retorna código 12 e o lead aparece na listagem com a identificação Interessado.
+
+EVIDÊNCIAS DA GRAVAÇÃO
+- 00:02: seleção de INTERESSADO.
+- 00:17: POST /api/salvar-lead/1 envia estagio=INTERESSADO e retorna HTTP 200, verifica_erro=false e id=12.
+- 00:17: GET /api/leads/1 retorna HTTP 200; quadro de 00:19.843 mostra o registro de código 12.
+
+LIMITES DA ANÁLISE
+A gravação não demonstra reabertura ou alteração posterior do registro.
+Análise da gravação e dos eventos capturados no Jam; não foi executado um novo teste no sistema.
+

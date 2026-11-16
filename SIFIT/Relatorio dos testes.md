@@ -1,10 +1,10 @@
 # 📊 Relatório de Testes — SIFIT
 
-**Escopo:** 73 casos documentados (CT-RF01–CT-RF35, CT-RF38–CT-RF56 e CT-RF85–CT-RF103) — autenticação, recuperação, perfil, Clientes, financeiro, página inicial e dashboard, modalidades / tema de SifitBox, Categorias Crossfit, Avaliações, Exercícios, Grupos Musculares, Objetivos de Treino cadastro de categorias com código automático, SifitBox – Turmas, Pagar.me, Configurações, Despesas Fixas, Relatórios, Prospecção (leads), Contas a Pagar, Modelos de Contrato e Planos.
+**Escopo:** 96 casos documentados (CT-RF01–CT-RF35, CT-RF38–CT-RF59, CT-RF65–CT-RF84 e CT-RF85–CT-RF103), incluindo Prospecção, Bandeiras de Cartão, Contas a Pagar, Modelos de Contrato e Planos.
 
-**Datas das gravações do Jam:** CT-RF01 em 23/10/2026; CT-RF02_ERRO em 22/10/2026 às 21:45 BRT; CT-RF03 não confirmada; CT-RF04_loginComSucesso em 13/11/2026; CT-RF05–CT-RF20 em 14/11/2026; CT-RF21 em 15/11/2026 às 15:07:51,265 BRT; CT-RF22–28 em 15/11/2026 às 15:25, 15:40, 15:38, 15:35, 16:11, 16:08 e 16:07 BRT; CT-RF29–33 em 15/11/2026 às 15h56 BRT (uma única gravação); CT-RF34 em 15/11/2026 às 17:23 BRT; CT-RF35 em 15/11/2026 às 18:13 BRT; CT-RF38 em 15/11/2026 às 18:41 BRT; CT-RF39–41 em 15/11/2026 às 18:51 BRT (uma única gravação); CT-RF42–45 às 19:06, CT-RF46–49 às 19:07 e CT-RF50–56 às 19:09 e CT-RF85–90 às 21:52, CT-RF91–95 às 21:58, CT-RF96–98 às 21:55 e CT-RF99–103 às 21:54 BRT (uma gravação por grupo).
+**Datas das gravações do Jam:** CT-RF01 em 23/10/2026; CT-RF02_ERRO em 22/10/2026 às 21:45 BRT; CT-RF03 não confirmada; CT-RF04_loginComSucesso em 13/11/2026; CT-RF05–CT-RF20 em 14/11/2026; CT-RF21 em 15/11/2026 às 15:07:51,265 BRT; CT-RF22–28 em 15/11/2026 às 15:25, 15:40, 15:38, 15:35, 16:11, 16:08 e 16:07 BRT; CT-RF29–33 em 15/11/2026 às 15h56 BRT (uma única gravação); CT-RF34 em 15/11/2026 às 17:23 BRT; CT-RF35 em 15/11/2026 às 18:13 BRT; CT-RF38 em 15/11/2026 às 18:41 BRT; CT-RF39–41 em 15/11/2026 às 18:51 BRT (uma única gravação); CT-RF42–45 às 19:06, CT-RF46–49 às 19:07 e CT-RF50–56 às 19:09 BRT (uma gravação por grupo); CT-RF57 e CT-RF58 em 15/11/2026 às 21h03 BRT (mesma gravação); CT-RF59 em 15/11/2026 às 22h07 BRT. CT-RF74–CT-RF84: 16/11/2026 conforme os resumos, sem horário informado. CT-RF85–90 às 21:52, CT-RF91–95 às 21:58, CT-RF96–98 às 21:55 e CT-RF99–103 às 21:54 BRT em 15/11/2026 (uma gravação por grupo).
 
-**Data da revisão documental:** 15/11/2026, com integração de CT-RF22–CT-RF35, CT-RF38–CT-RF56 e CT-RF85–CT-RF103; BUG-011–BUG-041 em triagem. Resultados anteriores preservados.
+**Data da revisão documental:** 16/11/2026, com integração de CT-RF74–CT-RF84 e CT-RF85–CT-RF103; BUG-011–BUG-041 em triagem. Resultados anteriores preservados.
 
 **Origem do resultado:** análise de evidências fornecidas; sem nova execução no sistema nesta revisão.
 
@@ -26,13 +26,15 @@ Os 16 cenários incluídos em 14/11/2026 acrescentaram **5 aprovações**, **7 r
 
 O **CT-RF29** acrescenta uma reprovação e o BUG-016: a exclusão de grupo muscular retorna HTTP 500 em duas tentativas, com o corpo `{"verifica_erro": true, "mensagem": "Erro interno inesperado."}`; a interface apresenta o diálogo "Erro ao deletar Grupo" e o registro permanece na listagem. A causa não foi determinada.
 
-CT-RF30 acrescenta uma reprovação e o BUG-017 (imagens dos grupos musculares com HTTP 422); CT-RF31–33 acrescentam três aprovações limitadas aos exemplos gravados. O **CT-RF35** acrescenta uma reprovação e o BUG-019: o cadastro de objetivo de treino retorna HTTP 500 em duas ocorrências, com o diálogo "Erro ao salvar objetivo" e a listagem sem registros; o corpo da requisição e da resposta não foi capturado e a causa não foi determinada. O **CT-RF38** acrescenta uma aprovação limitada ao exemplo gravado: o cadastro de categoria cria o registro apenas com o nome (HTTP 201), o código 9 é atribuído pelo sistema e o filtro por código localiza o novo registro; sem defeito. O **CT-RF39** acrescenta uma aprovação (cadastro de modalidade com HTTP 201); o **CT-RF40** acrescenta um ponto a validar (exclusão por lixeira que inativa os registros, regra a confirmar); o **CT-RF41** acrescenta uma reprovação e o BUG-020 (cadastro de turma sem modalidade, sem retorno visível; validação nativa não confirmada). CT-RF42 a CT-RF45 (Pagar.me e Configurações) acrescentam uma aprovação (criação de cobrança), dois pontos a validar (saque e salvamento das configurações) e uma reprovação com o BUG-021 (painel que mantém Recebimentos ao trocar o período); CT-RF46 a CT-RF49 (Despesas Fixas) acrescentam três aprovações (filtros, exclusão e edição) e um ponto a validar (cadastro com duas requisições de criação); CT-RF50 a CT-RF56 (Relatórios) acrescentam uma aprovação (Matrículas), um ponto a validar (Contas a Pagar sem registros) e cinco reprovações, com o BUG-022 (Contas a Receber sem valor) e o BUG-023 (quatro relatórios com arquivo vazio de 0 bytes). CT-RF85 a CT-RF90 (Prospecção) acrescentam quatro aprovações (tema e notificações, busca, filtro por estágio e edição), um ponto a validar (cadastro de lead com duas requisições de criação) e uma reprovação com o BUG-038 (telefone com 30 dígitos aceito sem validação). CT-RF91 a CT-RF95 (Contas a Pagar) acrescentam duas aprovações (visualização e exclusão), dois pontos a validar (filtros e busca de colaborador) e uma reprovação com o BUG-039 (conta a colaborador gravada sem colaborador); CT-RF96 a CT-RF98 (Modelos de Contrato) acrescentam duas aprovações (variáveis e cadastro) e uma reprovação com o BUG-040 (tabela vazia com 15 modelos retornados); CT-RF99 a CT-RF103 (Planos) acrescentam quatro aprovações (filtros, tema, cadastro e edição) e uma reprovação com o BUG-041 (cartão Ativos aumenta com planos inativos). As contagens consolidadas são:
+CT-RF30 acrescenta uma reprovação e o BUG-017 (imagens dos grupos musculares com HTTP 422); CT-RF31–33 acrescentam três aprovações limitadas aos exemplos gravados. O **CT-RF35** acrescenta uma reprovação e o BUG-019: o cadastro de objetivo de treino retorna HTTP 500 em duas ocorrências, com o diálogo "Erro ao salvar objetivo" e a listagem sem registros; o corpo da requisição e da resposta não foi capturado e a causa não foi determinada. O **CT-RF38** acrescenta uma aprovação limitada ao exemplo gravado: o cadastro de categoria cria o registro apenas com o nome (HTTP 201), o código 9 é atribuído pelo sistema e o filtro por código localiza o novo registro; sem defeito. O **CT-RF39** acrescenta uma aprovação (cadastro de modalidade com HTTP 201); o **CT-RF40** acrescenta um ponto a validar (exclusão por lixeira que inativa os registros, regra a confirmar); o **CT-RF41** acrescenta uma reprovação e o BUG-020 (cadastro de turma sem modalidade, sem retorno visível; validação nativa não confirmada). CT-RF42 a CT-RF45 (Pagar.me e Configurações) acrescentam uma aprovação (criação de cobrança), dois pontos a validar (saque e salvamento das configurações) e uma reprovação com o BUG-021 (painel que mantém Recebimentos ao trocar o período); CT-RF46 a CT-RF49 (Despesas Fixas) acrescentam três aprovações (filtros, exclusão e edição) e um ponto a validar (cadastro com duas requisições de criação); CT-RF50 a CT-RF56 (Relatórios) acrescentam uma aprovação (Matrículas), um ponto a validar (Contas a Pagar sem registros) e cinco reprovações, com o BUG-022 (Contas a Receber sem valor) e o BUG-023 (quatro relatórios com arquivo vazio de 0 bytes). O **CT-RF57** acrescenta uma reprovação e o BUG-024: a exclusão de grupo retorna HTTP 500 em duas tentativas, com o corpo `{"verifica_erro": true, "mensagem": "Erro interno inesperado."}` — endpoint e mensagem idênticos aos do BUG-016 para grupos musculares; o registro permanece na listagem e a causa não foi determinada. O **CT-RF58**, na mesma gravação, acrescenta uma reprovação e o BUG-025: a edição do grupo retorna sucesso (`verifica_erro: false`) ao alterar o campo Status para "Inativo", mas a consulta seguinte mostra o registro ainda com o status anterior; na mesma sessão, a edição do campo Descrição é persistida corretamente, isolando a falha ao campo status. O **CT-RF59** acrescenta uma reprovação e o BUG-032: o cadastro de uma anamnese retorna HTTP 500 em sete tentativas — quatro pela rota de aplicar e três pela de salvar rascunho, com dois modelos e três respostas diferentes — sempre com o corpo `{"verifica_erro": true, "mensagem": "Erro interno inesperado."}`, mesmo padrão já observado nos BUG-016 e BUG-024; nenhuma anamnese é cadastrada com sucesso na gravação. Os **CT-RF65 a CT-RF70** acrescentam seis reprovações e os BUG-026 a BUG-031: validações de data de nascimento, formato de CREF e campos obrigatórios aceitam atualização com HTTP 200 e sem validação visível; a mesma função pode ser associada repetidamente ao colaborador; e a exclusão de colaborador retorna HTTP 500 com o mesmo corpo genérico já observado nos BUG-016 e BUG-024. CT-RF85 a CT-RF90 (Prospecção) acrescentam quatro aprovações (tema e notificações, busca, filtro por estágio e edição), um ponto a validar (cadastro de lead com duas requisições de criação) e uma reprovação com o BUG-038 (telefone com 30 dígitos aceito sem validação). CT-RF91 a CT-RF95 (Contas a Pagar) acrescentam duas aprovações (visualização e exclusão), dois pontos a validar (filtros e busca de colaborador) e uma reprovação com o BUG-039 (conta a colaborador gravada sem colaborador); CT-RF96 a CT-RF98 (Modelos de Contrato) acrescentam duas aprovações (variáveis e cadastro) e uma reprovação com o BUG-040 (tabela vazia com 15 modelos retornados); CT-RF99 a CT-RF103 (Planos) acrescentam quatro aprovações (filtros, tema, cadastro e edição) e uma reprovação com o BUG-041 (cartão Ativos aumenta com planos inativos). As contagens consolidadas são:
+
+CT-RF74–CT-RF84 acrescentam oito aprovações e três reprovações conforme os resumos fornecidos, com BUG-035–BUG-037 em triagem. CT-RF83 mantém a classificação do relato, condicionada à confirmação da regra de obrigatoriedade. Os dez casos anteriores a validar permanecem inalterados.
 
 | Casos documentados | Aprovados | Reprovados | A validar | Defeitos registrados | Casos com reteste corretivo pendente |
 | :---: | :---: | :---: | :---: | :---: | :---: |
-| 73 | 29 | 31 | 13 | 27 (10 abertos + 17 em triagem) | 31 |
+| 96 | 38 | 45 | 13 | 41 (10 abertos + 31 em triagem) | 45 |
 
-Os 31 retestes incluem CT-RF22/24/26/27/28/29/30/35/41/45/51/53/54/55/56/89/92/98/102, sujeitos à confirmação funcional e técnica. As contagens representam os casos documentados com base nas fontes indicadas, sem novas execuções nesta revisão. As nove variações planejadas para o reteste do CT-RF03 não foram executadas e não são contabilizadas como testes adicionais realizados.
+Os 45 retestes incluem CT-RF22/24/26/27/28/29/30/35/41/45/51/53/54/55/56/57/58/59/65/66/67/68/69/70/71/73/81/82/83/89/92/98/102, sujeitos à confirmação funcional e técnica. As contagens representam os casos documentados com base nas fontes indicadas, sem novas execuções nesta revisão. As nove variações planejadas para o reteste do CT-RF03 não foram executadas e não são contabilizadas como testes adicionais realizados.
 
 ---
 
@@ -94,6 +96,26 @@ Os 31 retestes incluem CT-RF22/24/26/27/28/29/30/35/41/45/51/53/54/55/56/89/92/9
 | [CT-RF54](Cenario_Teste/CT-RF54_Relatorio_Clientes_Vazio.md) | [RF54](Analise%20de%20requisitos.md#rf54) | Gerar PDF válido com o conteúdo do relatório ou a estrutura vazia explícita. | HTTP 200 e arquivo PDF de 0 bytes, que não abre; sem mensagem de erro. | Reprovado nas evidências | [BUG-023](Relatorio-de-Bugs.md#bug-023), em triagem |
 | [CT-RF55](Cenario_Teste/CT-RF55_Relatorio_Colaboradores_Vazio.md) | [RF55](Analise%20de%20requisitos.md#rf55) | Gerar PDF válido com o conteúdo do relatório ou a estrutura vazia explícita. | HTTP 200 e arquivo PDF de 0 bytes, que não abre; sem mensagem de erro. | Reprovado nas evidências | [BUG-023](Relatorio-de-Bugs.md#bug-023), em triagem |
 | [CT-RF56](Cenario_Teste/CT-RF56_Relatorio_Caixas_Vazio.md) | [RF56](Analise%20de%20requisitos.md#rf56) | Gerar PDF válido com o conteúdo do relatório ou a estrutura vazia explícita. | HTTP 200 e arquivo PDF de 0 bytes, que não abre; sem mensagem de erro. | Reprovado nas evidências | [BUG-023](Relatorio-de-Bugs.md#bug-023), em triagem |
+| [CT-RF57](Cenario_Teste/CT-RF57_Exclusao_Grupo.md) | [RF57](Analise%20de%20requisitos.md#rf57) | Excluir o grupo de teste e atualizar a listagem e os contadores. | Duas tentativas de `POST /api/deleta/grupo/1` retornam HTTP 500 com o corpo "Erro interno inesperado."; o registro permanece na listagem. | Reprovado nas evidências | [BUG-024](Relatorio-de-Bugs.md#bug-024), em triagem |
+| [CT-RF58](Cenario_Teste/CT-RF58_Edicao_Grupo.md) | [RF58](Analise%20de%20requisitos.md#rf58) | Editar o campo Status do grupo de teste e confirmar a persistência na consulta seguinte. | `POST /api/edita/grupo/1` com `status: "inativo"` retorna HTTP 200, `{"verifica_erro": false}`, mas a consulta seguinte mantém o status "ativo"; a edição do campo descrição, na mesma sessão, persiste normalmente. | Reprovado nas evidências | [BUG-025](Relatorio-de-Bugs.md#bug-025), em triagem |
+| [CT-RF59](Cenario_Teste/CT-RF59_Cadastro_Anamnese.md) | [RF59](Analise%20de%20requisitos.md#rf59) | Cadastrar uma anamnese (rascunho ou aplicada) para um aluno sem erro de servidor. | Sete tentativas (`aplicar` e `rascunho`) retornam HTTP 500 com o mesmo corpo "Erro interno inesperado.", em dois modelos e três respostas diferentes; nenhuma anamnese é cadastrada. | Reprovado nas evidências | [BUG-032](Relatorio-de-Bugs.md#bug-032), em triagem |
+| [CT-RF65](Cenario_Teste/CT-RF65_Data_Nascimento_Futura_Colaborador.md) | [RF65](Analise%20de%20requisitos.md#rf65) | Recusar data de nascimento futura na edição de colaborador. | Informar `18/05/2222` e salvar retorna HTTP 200 e navegação à lista, sem bloqueio visível. | Reprovado nas evidências | [BUG-026](Relatorio-de-Bugs.md#bug-026), em triagem |
+| [CT-RF66](Cenario_Teste/CT-RF66_Data_Nascimento_Obrigatoria_Colaborador.md) | [RF66](Analise%20de%20requisitos.md#rf66) | Exigir data de nascimento obrigatória do colaborador. | Limpar a data obrigatória e salvar retorna HTTP 200, sem bloqueio visível. | Reprovado nas evidências | [BUG-027](Relatorio-de-Bugs.md#bug-027), em triagem |
+| [CT-RF67](Cenario_Teste/CT-RF67_CREF_Formato_Colaborador.md) | [RF67](Analise%20de%20requisitos.md#rf67) | Validar o formato do CREF do colaborador. | Informar CREF `TESTEE` e salvar retorna HTTP 200, sem aplicação de formato. | Reprovado, com formato a confirmar | [BUG-028](Relatorio-de-Bugs.md#bug-028), em triagem |
+| [CT-RF68](Cenario_Teste/CT-RF68_Edicao_Colaborador_Campo_Obrigatorio_Vazio.md) | [RF68](Analise%20de%20requisitos.md#rf68) | Bloquear edição de colaborador com campo obrigatório vazio. | Deixar campo obrigatório vazio e salvar retorna HTTP 200, sem validação visível. | Reprovado nas evidências | [BUG-029](Relatorio-de-Bugs.md#bug-029), em triagem |
+| [CT-RF69](Cenario_Teste/CT-RF69_Funcao_Duplicada_Colaborador.md) | [RF69](Analise%20de%20requisitos.md#rf69) | Impedir função duplicada para o mesmo colaborador. | Adicionar duas vezes `funcao_id: 2` ao colaborador 4 gera dois HTTP 201 e a consulta passa de uma para três funções idênticas. | Reprovado nas evidências | [BUG-030](Relatorio-de-Bugs.md#bug-030), em triagem |
+| [CT-RF70](Cenario_Teste/CT-RF70_Exclusao_Colaborador_Erro_500.md) | [RF70](Analise%20de%20requisitos.md#rf70) | Excluir colaborador sem erro de servidor. | Confirmar exclusão do colaborador id 3 retorna HTTP 500 e `Erro interno inesperado`. | Reprovado nas evidências | [BUG-031](Relatorio-de-Bugs.md#bug-031), em triagem |
+| [CT-RF74](Cenario_Teste/CT-RF74_Temas_Prospeccao.md) | [RF74](Analise%20de%20requisitos.md#rf74) | A tela deve acompanhar a seleção de tema, mantendo os dados da listagem. | A gravação mostra a tela passando de escura para clara e retornando ao tema escuro. A listagem permanece visível. | Aprovado conforme o resumo da gravação | — |
+| [CT-RF75](Cenario_Teste/CT-RF75_Detalhes_Lead_Cancelamento.md) | [RF75](Analise%20de%20requisitos.md#rf75) | O sistema deve carregar os dados do lead e fechar a janela ao cancelar, sem enviar uma gravação da alteração. | Os dados do lead de código 3 são carregados, incluindo estágio Fechado, contato e observação. Após a alteração no telefone, Cancelar fecha a janela e retorna à listagem. Não há chamada de salvamento na linha do tempo. | Aprovado conforme o resumo da gravação | — |
+| [CT-RF76](Cenario_Teste/CT-RF76_Exclusao_Leads_Confirmacao.md) | [RF76](Analise%20de%20requisitos.md#rf76) | Cada confirmação deve excluir o lead selecionado e atualizar a listagem e o total de registros. | Os leads de códigos 3 e 4 deixam de aparecer após as confirmações. O total exibido diminui de 8 para 7 e depois para 6. | Aprovado conforme o resumo da gravação | — |
+| [CT-RF77](Cenario_Teste/CT-RF77_Cadastro_Lead_Novo_Contato.md) | [RF77](Analise%20de%20requisitos.md#rf77) | O lead deve ser criado no estágio Novo Contato e aparecer na listagem. | O lead de teste é criado com o estágio NOVO_CONTATO, recebe código 11 e aparece na listagem. O total passa de 6 para 7, e o indicador Novo Contato passa de 2 para 3. | Aprovado conforme o resumo da gravação | — |
+| [CT-RF78](Cenario_Teste/CT-RF78_Cadastro_Lead_Interessado.md) | [RF78](Analise%20de%20requisitos.md#rf78) | O lead deve ser criado no estágio Interessado e aparecer na listagem. | O cadastro retorna código 12 e o lead aparece na listagem com a identificação Interessado. | Aprovado conforme o resumo da gravação | — |
+| [CT-RF79](Cenario_Teste/CT-RF79_Cadastro_Lead_Aula_Experimental.md) | [RF79](Analise%20de%20requisitos.md#rf79) | O lead deve ser criado com o estágio Fez Aula Experimental e aparecer na listagem. | O lead é criado com código 14 e estágio FEZ_AULA_EXP. A linha correspondente aparece ao final, e o total de leads passa de 9 para 10. | Aprovado conforme o resumo da gravação | — |
+| [CT-RF80](Cenario_Teste/CT-RF80_Cadastro_Lead_Proposta.md) | [RF80](Analise%20de%20requisitos.md#rf80) | O lead deve ser criado no estágio Proposta e aparecer na listagem. | O cadastro retorna código 15 e o registro aparece na listagem com estágio Proposta. O total de leads passa de 10 para 11. | Aprovado conforme o resumo da gravação | — |
+| [CT-RF81](Cenario_Teste/CT-RF81_Cadastro_Bandeira_Parcela_Listagem.md) | [RF81](Analise%20de%20requisitos.md#rf81) | A bandeira deve ser criada com a configuração de parcela e aparecer na listagem após o salvamento. | A API confirma a criação da bandeira de código 34 e da parcela, mas a consulta seguinte retorna [] e a interface continua exibindo Nenhuma bandeira encontrada. A criação da parcela tem retorno de sucesso; o fluxo completo apresenta erro na recuperação/exibição do cadastro. | Reprovado nas evidências resumidas | [BUG-035](Relatorio-de-Bugs.md#bug-035) |
+| [CT-RF82](Cenario_Teste/CT-RF82_Tema_Escuro_Bandeiras.md) | [RF82](Analise%20de%20requisitos.md#rf82) | O tema selecionado deve ser aplicado de forma consistente ao fundo, aos painéis e aos textos da tela. | No tema Escuro, os painéis ficam escuros, mas o fundo principal continua claro. Os textos da área vazia da listagem apresentam baixa legibilidade visual. A descrição do Jam relata: Fundo com falta de cores e modo escuro incompleto. | Reprovado nas evidências resumidas | [BUG-036](Relatorio-de-Bugs.md#bug-036) |
+| [CT-RF83](Cenario_Teste/CT-RF83_Cadastro_Lead_Apenas_Nome.md) | [RF83](Analise%20de%20requisitos.md#rf83) | Segundo o cenário identificado como bug pelo autor, o cadastro incompleto deveria ser bloqueado e os campos obrigatórios deveriam ser indicados. | O sistema aceita o envio sem bloqueio visível, cria o lead de código 19 e atualiza a listagem. O total de leads passa de 14 para 15. | Reprovado conforme o relato; regra de obrigatoriedade a confirmar | [BUG-037](Relatorio-de-Bugs.md#bug-037) |
+| [CT-RF84](Cenario_Teste/CT-RF84_Cadastro_Lead_Fechado.md) | [RF84](Analise%20de%20requisitos.md#rf84) | O lead deve ser criado no estágio Fechado e aparecer na listagem. | A janela fecha após salvar, o total de leads passa de 12 para 13 e o registro testeFechado aparece com código 17 e identificação Fechado. | Aprovado conforme o resumo da gravação | — |
 | [CT-RF85](Cenario_Teste/CT-RF85_Tema_Notificacoes_Prospeccao.md) | [RF85](Analise%20de%20requisitos.md#rf85) | Trocar o tema, gravar a escolha e abrir o painel de notificações. | Tema escuro e claro aplicados com POST usuario/tema (HTTP 200); painel de Notificações aberto sem pendências. | Aprovado conforme a gravação | Nenhum no fluxo avaliado |
 | [CT-RF86](Cenario_Teste/CT-RF86_Busca_Leads_Prospeccao.md) | [RF86](Analise%20de%20requisitos.md#rf86) | Apresentar apenas os leads correspondentes e restaurar a lista ao limpar. | Termos digitados reduzem a lista (códigos 3 e 7; 4 e 10 com "tes"); campo vazio restaura os 7 leads. | Aprovado conforme a gravação | Nenhum no fluxo avaliado |
 | [CT-RF87](Cenario_Teste/CT-RF87_Filtro_Estagio_Leads.md) | [RF87](Analise%20de%20requisitos.md#rf87) | Apresentar apenas os leads do estágio e restaurar a lista ao limpar. | Novo Contato lista os leads 7 e 8; Proposta lista o lead 4; Limpar restaura os 7 leads. | Aprovado conforme a gravação | Nenhum no fluxo avaliado |
@@ -143,6 +165,18 @@ Os 31 retestes incluem CT-RF22/24/26/27/28/29/30/35/41/45/51/53/54/55/56/89/92/9
 | [BUG-021](Relatorio-de-Bugs.md#bug-021) | Painel Pagar.me mantém Recebimentos e gráfico ao trocar o período | Média, proposta | Média, proposta | Em triagem; dados reais ou de demonstração e reteste pendentes. |
 | [BUG-022](Relatorio-de-Bugs.md#bug-022) | Relatório de Contas a Receber exibe "----" em Valor a Receber | Alta, proposta | Alta, proposta | Em triagem; comparação com o módulo e reteste pendentes. |
 | [BUG-023](Relatorio-de-Bugs.md#bug-023) | Relatórios de Avaliações, Clientes, Colaboradores e Caixas geram PDF vazio | Alta, proposta | Alta, proposta | Em triagem; causa e reteste pendentes. |
+| [BUG-024](Relatorio-de-Bugs.md#bug-024) | Exclusão de grupo retorna HTTP 500 | Média, proposta | Alta, proposta | Em triagem; causa pendente. |
+| [BUG-025](Relatorio-de-Bugs.md#bug-025) | Edição de grupo não persiste o campo status | Média, proposta | Alta, proposta | Em triagem; causa pendente. |
+| [BUG-026](Relatorio-de-Bugs.md#bug-026) | Data de nascimento futura aceita na edição de colaborador | Média, proposta | Alta, proposta | Em triagem; confirmação e reteste pendentes. |
+| [BUG-027](Relatorio-de-Bugs.md#bug-027) | Data de nascimento obrigatória não exigida na edição de colaborador | Média, proposta | Alta, proposta | Em triagem; confirmação e reteste pendentes. |
+| [BUG-028](Relatorio-de-Bugs.md#bug-028) | Formato de CREF não validado no colaborador | Média, proposta | Média, proposta | Em triagem; regra e exemplos pendentes. |
+| [BUG-029](Relatorio-de-Bugs.md#bug-029) | Edição de colaborador aceita campo obrigatório vazio | Média, proposta | Alta, proposta | Em triagem; campo exato e reteste pendentes. |
+| [BUG-030](Relatorio-de-Bugs.md#bug-030) | Função duplicada aceita para o mesmo colaborador | Média, proposta | Média, proposta | Em triagem; causa e reteste pendentes. |
+| [BUG-031](Relatorio-de-Bugs.md#bug-031) | Exclusão de colaborador retorna HTTP 500 | Média, proposta | Alta, proposta | Em triagem; causa pendente. |
+| [BUG-032](Relatorio-de-Bugs.md#bug-032) | Cadastro de anamnese retorna HTTP 500 | Média, proposta | Alta, proposta | Em triagem; causa pendente. |
+| [BUG-035](Relatorio-de-Bugs.md#bug-035) | Bandeira criada com parcela não aparece na listagem | Média, proposta | Alta, proposta | Em triagem; causa e reteste pendentes. |
+| [BUG-036](Relatorio-de-Bugs.md#bug-036) | Tema escuro aplicado de forma incompleta em Bandeiras | Média, proposta | Média, proposta | Em triagem; causa e reteste pendentes. |
+| [BUG-037](Relatorio-de-Bugs.md#bug-037) | Cadastro de lead aceito apenas com nome, com obrigatoriedade a confirmar | Média, proposta | Alta, proposta | Em triagem; obrigatoriedade a confirmar. |
 | [BUG-038](Relatorio-de-Bugs.md#bug-038) | Telefone do lead aceita 30 dígitos sem máscara nem validação | Média, proposta | Média, proposta | Em triagem; regra do campo e reteste pendentes. |
 | [BUG-039](Relatorio-de-Bugs.md#bug-039) | Conta a pagar a colaborador é cadastrada sem colaborador informado | Alta, proposta | Alta, proposta | Em triagem; regra do campo e reteste pendentes. |
 | [BUG-040](Relatorio-de-Bugs.md#bug-040) | Listagem de modelos de contrato aparece vazia com 15 modelos retornados | Alta, proposta | Alta, proposta | Em triagem; causa de renderização e reteste pendentes. |
@@ -327,6 +361,40 @@ O domínio do CT-RF02_ERRO é diferente do domínio `sifitalfa.centrion.com.br` 
 | Navegador / sistema / janela | Chrome 157.0.8103.78 / Windows (x86) 11 / 1920 × 911, conforme Info; autor do Jam: Gustavo Pelissari Oenning. |
 | Material e limites | Painéis Info, Console e Network do Jam, quadros do vídeo e oito arquivos PDF baixados (três com conteúdo, cinco com 0 bytes), com uma pasta local por caso. A atividade do usuário não consta no Console do Jam; a correspondência dos arquivos vazios com os tipos é inferida pela ordem dos downloads; sem inspeção de código ou nova execução. |
 
+### CT-RF57
+
+| Item | Registro |
+| --- | --- |
+| Página / API | https://sifit.centrion.com.br/grupos / https://backendsifit.centrion.com.br |
+| Data / duração | 15/11/2026, 21h03 BRT / 1 min 38 s. |
+| Navegador / sistema / janela | Chrome 157.0.8103.78 / Windows (x86) 11 / 1920 × 911, conforme Info; autor do Jam: Eduardo Vergentino Malaquias. |
+| Material e limites | Painéis Informações, Console e Rede do Jam, quadros do vídeo entre 0:00 e 1:38 e as duas requisições de exclusão com HTTP 500. O texto do diálogo de erro não foi confirmado visualmente; sem inspeção de código, acesso a logs ou nova execução. |
+
+### CT-RF58
+
+| Item | Registro |
+| --- | --- |
+| Página / API | https://sifit.centrion.com.br/grupos / https://backendsifit.centrion.com.br |
+| Data / duração | 15/11/2026, 21h03 BRT / 1 min 38 s; mesma gravação do CT-RF57. |
+| Navegador / sistema / janela | Chrome 157.0.8103.78 / Windows (x86) 11 / 1920 × 911, conforme Info; autor do Jam: Eduardo Vergentino Malaquias. |
+| Material e limites | Painéis Informações, Console e Rede do Jam, eventos de clique entre 0:57 e 1:16 e as requisições de edição (`POST /api/edita/grupo/1`) e de consulta (`GET /api/grupos/1`, `POST /api/seleciona/grupo/1`) correspondentes às duas edições do grupo. Reteste alterando o status isoladamente de volta para "Ativo" e verificação em outros grupos não exercitados; sem inspeção de código, acesso a logs ou nova execução. |
+
+### CT-RF59
+
+| Item | Registro |
+| --- | --- |
+| Página / API | https://sifit.centrion.com.br/anamneses / https://backendsifit.centrion.com.br |
+| Data / duração | 15/11/2026, 22h07 BRT / 1 min 28 s. |
+| Navegador / sistema / janela | Chrome 157.0.8103.78 / Windows (x86) 11 / 1920 × 911, conforme Info; autor do Jam: Eduardo Vergentino Malaquias. |
+| Material e limites | Painéis Informações, Console e Rede do Jam, eventos de clique e digitação entre 0:00 e 1:28 e as sete requisições com HTTP 500 (quatro em `POST /api/anamnese/aplicar/1`, três em `POST /api/anamnese/rascunho/1`), com corpos de requisição e resposta de duas tentativas representativas. Não foi confirmado se as tentativas de rascunho afetaram o mesmo registro ou criaram registros distintos; sem inspeção de código, acesso a logs ou nova execução. |
+
+### CT-RF74 a CT-RF84
+
+- Telas: Prospecção (CT-RF74–CT-RF80, CT-RF83 e CT-RF84) e Bandeiras de Cartão (CT-RF81 e CT-RF82).
+- Data informada dos registros: 16/11/2026; sem horário, fuso, navegador, sistema, versão ou zoom nos resumos.
+- Fonte desta integração: onze arquivos RESUMO.txt fornecidos, preservados nas pastas de evidências. Não houve consulta direta aos Jams nesta revisão.
+
+---
 ### CT-RF85 a CT-RF90
 
 | Item | Registro |
@@ -411,6 +479,9 @@ O domínio do CT-RF02_ERRO é diferente do domínio `sifitalfa.centrion.com.br` 
 | [Jam — Pagar.me e Configurações](https://jam.dev/c/e6e551ef-9196-4c79-b6a2-89747b1e8b33) e evidências por caso | CT-RF42: `sacar-saldo` com HTTP 200 sem mensagem de resultado visível. CT-RF43: `criar-cobranca` com HTTP 200 e "Cobrança criada com sucesso!". CT-RF44: configurações alteradas e menu lateral modificado após Salvar, sem mensagem de confirmação, com o campo de dias em -120 e depois 1100. CT-RF45: Recebimentos R$ 38.420,00 e gráfico idênticos em "Últimos 30 dias" e "Últimos 7 dias". |
 | [Jam — Despesas Fixas](https://jam.dev/c/a4bac99d-e436-4792-831e-8c3a875272bb) e evidências por caso | CT-RF46: filtros por código e nome com Valor Listado acompanhando o conjunto. CT-RF47: um clique em Salvar Despesa gera dois `POST cria/despesa-fixa` com HTTP 201 e um registro novo (código 23). CT-RF48: diálogo de confirmação e `POST deleta/despesa-fixa` com HTTP 200. CT-RF49: `POST edita/despesa-fixa` com HTTP 200 e recorrência "7 Dias" na listagem. |
 | [Jam — Relatórios](https://jam.dev/c/3b4777a4-e1b0-4038-9b06-26c73669d7d1) e evidências por caso | Oito `POST /api/relatorio/1` com HTTP 200 e oito arquivos baixados: Matrículas (uma matrícula, R$ 20,00), Contas a Receber (três contas com Valor a Receber "----") e Contas a Pagar (Pagas) sem linhas abrem; Avaliações (duas vezes), Clientes, Colaboradores e Caixas geram arquivos de 0 bytes. |
+| [Jam — CT-RF57: Tela de Grupos](https://jam.dev/c/b1231a75-1a65-4bf0-b795-f52a8c7d3365) | 1:19: acionamento do ícone de exclusão do grupo código 1 ("Treino Livre"). 1:20: diálogo "Deseja deletar o Grupo?" com Cancelar e Confirmar, listagem com 10 registros. 1:21: `POST /api/deleta/grupo/1` retorna HTTP 500 em 987 ms, com `x-hcdn-request-id: 8f18afe5ff0e3a9e3d1c944d69811576-asc-edge13`. 1:30: segunda tentativa no mesmo endpoint, HTTP 500 em 230 ms. Corpo das duas respostas: `{"verifica_erro": true, "mensagem": "Erro interno inesperado."}` — idêntico ao do CT-RF29. O texto do diálogo de erro não foi confirmado visualmente. A mesma gravação mostra o cadastro bem-sucedido de um novo grupo ("Treino sla", código 11). |
+| [Jam — CT-RF58: Tela de Grupos](https://jam.dev/c/b1231a75-1a65-4bf0-b795-f52a8c7d3365) | Mesma gravação do CT-RF57. 0:58: clique em Salvar após selecionar Status = "Inativo" no grupo 11 ("Treino sla"); `POST /api/edita/grupo/1` retorna HTTP 200, `{"verifica_erro": false}`, mas `GET /api/grupos/1` e `POST /api/seleciona/grupo/1`, no mesmo instante, mostram o grupo ainda com `"status": "ativo"`. 1:10: segunda edição, alterando apenas a descrição para "Ess"; HTTP 200, `{"verifica_erro": false}`, e a consulta seguinte confirma a descrição persistida. Cabeçalhos "data" em `08:02:46 GMT` e `08:02:58 GMT`; campo `updated_at` do corpo com `12:02:46` e `12:02:58` — descompasso de cerca de 4 horas não investigado. |
+| [Jam — CT-RF59: Fichas de Anamnese](https://jam.dev/c/7be0fe71-3419-4050-b63f-473d943fa08e) | 0:28: seleção do aluno "Jorge" e do modelo de anamnese; `POST /api/anamnese/aplicar/1` com `{"modelo_id":3,"respostas":[{"pergunta_id":"5","resposta":"Esse"}],"status":"concluida"}` retorna HTTP 500, `{"verifica_erro": true, "mensagem": "Erro interno inesperado."}`. 0:39, 0:56 e 1:12: novas tentativas de aplicar, com respostas e, na última, modelo diferentes (`modelo_id: 5`, resposta "Agachamento"); mesmo HTTP 500. 0:42, 1:03 e 1:10: três tentativas de `POST /api/anamnese/rascunho/1`, mesmo HTTP 500 — data registrada em uma delas: `Segunda-feira, 16 de novembro de 2026, 01:05:48 GMT`. Nenhuma das sete tentativas é concluída com sucesso. |
 | [Jam — Prospecção](https://jam.dev/c/308607ff-8abc-40af-8c7c-429ce506ed64) e evidências por caso | CT-RF85: quatro `POST usuario/tema` (HTTP 200) e painel de Notificações sem pendências. CT-RF86: busca por texto reduz a listagem (códigos 3 e 7; 4 e 10 com "tes") sem requisição de rede. CT-RF87: filtro por estágio (Novo Contato: códigos 7 e 8; Proposta: código 4) e Limpar. CT-RF88: um clique em Salvar Lead gera dois `POST salvar-lead` com HTTP 200 e um lead novo (código 10). CT-RF89: telefone de 30 dígitos aceito e gravado sem máscara nem mensagem. CT-RF90: `POST atualizar-lead` com HTTP 200 e nome atualizado na listagem. |
 | [Jam — Contas a Pagar](https://jam.dev/c/5d0afaf4-5abd-4e85-923f-27448304a9ef) e evidências por caso | CT-RF91: filtros combinados deixam a listagem vazia, sem dado de controle. CT-RF92: `POST cadastrar-conta-pagar` com HTTP 201 e colaborador vazio; conta 29 listada com "-". CT-RF93: busca de colaborador "sds" sem resultado e sem mensagem. CT-RF94: modal Visualizar Conta a Pagar com os dados da conta. CT-RF95: `POST deletar-conta-pagar` com HTTP 200 e conta removida. |
 | [Jam — Modelos de Contrato](https://jam.dev/c/44dbbd39-6915-45d6-8dd1-5f30c1432ca0) e evidências por caso | CT-RF96: variáveis inseridas e pré-visualização com dados de exemplo. CT-RF97: `POST modelo-contrato/salvar` com HTTP 201 e modelo de id 15 na lista do servidor. CT-RF98: tabela vazia com 15 modelos retornados. |
@@ -566,7 +637,112 @@ O consolidado atual é de 39 casos documentados (CT-RF01–CT-RF35 e CT-RF38–C
 
 Os defeitos [BUG-021](Relatorio-de-Bugs.md#bug-021), [BUG-022](Relatorio-de-Bugs.md#bug-022) e [BUG-023](Relatorio-de-Bugs.md#bug-023) estão em triagem. O BUG-023 é compartilhado por CT-RF53 a CT-RF56 (arquivos de 0 bytes) e, por isso, seis casos reprovados deste grupo correspondem a três defeitos. Os pontos a validar (CT-RF42, CT-RF44, CT-RF47 e CT-RF52) não geram defeito antes da confirmação da regra ou da duplicidade.
 
-O consolidado atual é de 54 casos documentados (CT-RF01–CT-RF35 e CT-RF38–CT-RF56): 17 aprovados, 27 reprovados e 10 a validar; 23 defeitos registrados (10 abertos e 13 em triagem) e 27 casos com reteste corretivo pendente. CT-RF09/10 compartilham BUG-005 e CT-RF53 a CT-RF56 compartilham BUG-023, de modo que 27 casos reprovados correspondem a 23 defeitos. Sem nova execução.
+O consolidado atual é de 66 casos documentados: 18 aprovados, 38 reprovados e 10 a validar; 34 defeitos registrados (10 abertos e 24 em triagem) e 38 casos com reteste corretivo pendente. CT-RF09/10 compartilham BUG-005 e CT-RF53 a CT-RF56 compartilham BUG-023. Sem nova execução.
+
+---
+
+## Resultado de CT-RF65 a CT-RF70 — Colaboradores
+
+| Caso | Resultado observado | Situação | Defeito |
+| --- | --- | --- | --- |
+| [CT-RF65](Cenario_Teste/CT-RF65_Data_Nascimento_Futura_Colaborador.md) | Data `18/05/2222`; atualização HTTP 200. | Reprovado | [BUG-026](Relatorio-de-Bugs.md#bug-026) |
+| [CT-RF66](Cenario_Teste/CT-RF66_Data_Nascimento_Obrigatoria_Colaborador.md) | Data obrigatória vazia; atualização HTTP 200. | Reprovado | [BUG-027](Relatorio-de-Bugs.md#bug-027) |
+| [CT-RF67](Cenario_Teste/CT-RF67_CREF_Formato_Colaborador.md) | CREF `TESTEE`; atualização HTTP 200. | Reprovado, com formato a confirmar | [BUG-028](Relatorio-de-Bugs.md#bug-028) |
+| [CT-RF68](Cenario_Teste/CT-RF68_Edicao_Colaborador_Campo_Obrigatorio_Vazio.md) | Campo obrigatório vazio; atualização HTTP 200. | Reprovado | [BUG-029](Relatorio-de-Bugs.md#bug-029) |
+| [CT-RF69](Cenario_Teste/CT-RF69_Funcao_Duplicada_Colaborador.md) | Consulta passa de uma para três funções idênticas. | Reprovado | [BUG-030](Relatorio-de-Bugs.md#bug-030) |
+| [CT-RF70](Cenario_Teste/CT-RF70_Exclusao_Colaborador_Erro_500.md) | Exclusão retorna HTTP 500 e erro interno. | Reprovado | [BUG-031](Relatorio-de-Bugs.md#bug-031) |
+
+RF65–RF68 precisam de reteste com corpo do POST e reabertura do cadastro para comprovar a persistência. RF69 possui evidência direta da duplicidade. RF70 confirma o erro interno, mas não sua causa.
+
+## Resultado de CT-RF71 a CT-RF73 — Buscas de Colaboradores
+
+| Caso | Resultado observado | Situação | Defeito |
+| --- | --- | --- | --- |
+| [CT-RF71](Cenario_Teste/CT-RF71_Busca_Nome_Colaborador_Paginacao.md) | A busca por nome retorna correspondências, mas a próxima página inclui nomes fora do filtro. | Reprovado | [BUG-033](Relatorio-de-Bugs.md#bug-033) |
+| [CT-RF72](Cenario_Teste/CT-RF72_Busca_Codigo_Existente_Colaborador.md) | A busca por código existente retorna o usuário correto no exemplo gravado. | Aprovado conforme a gravação | — |
+| [CT-RF73](Cenario_Teste/CT-RF73_Busca_Codigo_Inexistente_Colaborador.md) | A busca por código inexistente renderiza uma linha vazia. | Reprovado | [BUG-034](Relatorio-de-Bugs.md#bug-034) |
+
+As três gravações foram realizadas em 15/11/2026, entre 21:58 e 22:01 BRT, na página de Colaboradores. A análise foi visual e documental; não houve nova execução nem inspeção das respostas de rede. CT-RF71 e CT-RF73 aguardam correção e reteste, enquanto a aprovação de CT-RF72 se limita ao código existente demonstrado.
+O consolidado em 15/11/2026, antes da inclusão de CT-RF57, era de 54 casos documentados (CT-RF01–CT-RF35 e CT-RF38–CT-RF56): 17 aprovados, 27 reprovados e 10 a validar; 23 defeitos registrados (10 abertos e 13 em triagem) e 27 casos com reteste corretivo pendente. CT-RF09/10 compartilham BUG-005 e CT-RF53 a CT-RF56 compartilham BUG-023, de modo que 27 casos reprovados correspondem a 23 defeitos. Sem nova execução.
+
+---
+
+## Inclusão de 15/11/2026 — CT-RF57
+
+| Caso | Situação | Encaminhamento |
+| --- | --- | --- |
+| [CT-RF57](Cenario_Teste/CT-RF57_Exclusao_Grupo.md) | Reprovado nas evidências | Investigar o HTTP 500 com logs do servidor e os vínculos do grupo de código 1, em conjunto com o BUG-016 (mesmo endpoint e mensagem para grupos musculares); corrigir e retestar os cenários permitido e impedido. |
+
+O defeito [BUG-024](Relatorio-de-Bugs.md#bug-024) está em triagem. O endpoint `/api/deleta/grupo/{id}` e a mensagem genérica retornada coincidem exatamente com os já registrados no BUG-016 para `/api/deleta/grupo-muscular/{id}`, o que sugere uma causa comum no tratamento de exclusões do backend. A mesma gravação também mostra o cadastro bem-sucedido de um novo grupo e duas edições desse grupo, tratadas em caso próprio (CT-RF58).
+
+O consolidado em 15/11/2026, antes da inclusão de CT-RF58, era de 55 casos documentados (CT-RF01–CT-RF35, CT-RF38–CT-RF56 e CT-RF57): 17 aprovados, 28 reprovados e 10 a validar; 24 defeitos registrados (10 abertos e 14 em triagem) e 28 casos com reteste corretivo pendente. CT-RF09/10 compartilham BUG-005 e CT-RF53 a CT-RF56 compartilham BUG-023, de modo que 28 casos reprovados correspondem a 24 defeitos. Sem nova execução.
+
+---
+
+## Inclusão de 15/11/2026 — CT-RF58
+
+| Caso | Situação | Encaminhamento |
+| --- | --- | --- |
+| [CT-RF58](Cenario_Teste/CT-RF58_Edicao_Grupo.md) | Reprovado nas evidências | Investigar a rotina de edição do grupo (`/api/edita/grupo/{id}`) quanto ao tratamento do campo status; corrigir e retestar a edição de cada campo isoladamente, incluindo a reativação. |
+
+O defeito [BUG-025](Relatorio-de-Bugs.md#bug-025) está em triagem. Na mesma gravação do CT-RF57, a alteração do campo Status do grupo "Treino sla" (código 11) de "Ativo" para "Inativo" retorna sucesso (`verifica_erro: false`), mas a consulta imediatamente seguinte mostra o registro ainda com o status anterior. Na mesma sessão e no mesmo registro, a alteração do campo Descrição é persistida corretamente, o que isola a falha ao campo `status` e descarta causa geral de sessão, rede ou salvamento. Foi observado também um descompasso de cerca de 4 horas entre o cabeçalho HTTP `data` e o campo `updated_at` da resposta, sem causa determinada e sem relação confirmada com o defeito.
+
+O consolidado em 15/11/2026, antes da inclusão de CT-RF59, era de 56 casos documentados (CT-RF01–CT-RF35, CT-RF38–CT-RF56, CT-RF57 e CT-RF58): 17 aprovados, 29 reprovados e 10 a validar; 25 defeitos registrados (10 abertos e 15 em triagem) e 29 casos com reteste corretivo pendente. CT-RF09/10 compartilham BUG-005 e CT-RF53 a CT-RF56 compartilham BUG-023, de modo que 29 casos reprovados correspondem a 25 defeitos. Sem nova execução.
+
+---
+
+## Inclusão de 15/11/2026 — CT-RF59
+
+| Caso | Situação | Encaminhamento |
+| --- | --- | --- |
+| [CT-RF59](Cenario_Teste/CT-RF59_Cadastro_Anamnese.md) | Reprovado nas evidências | Investigar as rotinas de servidor de `/api/anamnese/aplicar/{id}` e `/api/anamnese/rascunho/{id}` com acesso a logs, em conjunto com o BUG-016 e o BUG-024 (mesma mensagem genérica); corrigir e retestar o cadastro completo de uma anamnese. |
+
+O defeito [BUG-032](Relatorio-de-Bugs.md#bug-032) está em triagem. Na gravação, sete tentativas de cadastrar uma anamnese para o aluno "Jorge" — quatro pela rota de aplicar e três pela de salvar rascunho, com dois modelos de anamnese (`modelo_id` 3 e 5) e três respostas diferentes — retornam todas HTTP 500 com o mesmo corpo `{"verifica_erro": true, "mensagem": "Erro interno inesperado."}`, coincidindo com o padrão já registrado nos BUG-016 e BUG-024. Nenhuma anamnese é cadastrada com sucesso ao longo da gravação, e o trecho final (1:17 a 1:28), de retorno à listagem, busca e filtros, não produz novos erros.
+
+O consolidado em 15/11/2026, antes da inclusão de CT-RF65 a CT-RF70, era de 57 casos documentados (CT-RF01–CT-RF35, CT-RF38–CT-RF56, CT-RF57, CT-RF58 e CT-RF59): 17 aprovados, 30 reprovados e 10 a validar; 26 defeitos registrados (10 abertos e 16 em triagem) e 30 casos com reteste corretivo pendente. CT-RF09/10 compartilham BUG-005 e CT-RF53 a CT-RF56 compartilham BUG-023, de modo que 30 casos reprovados correspondem a 26 defeitos. Sem nova execução.
+
+---
+
+## Resultado de CT-RF65 a CT-RF70 — Colaboradores
+
+| Caso | Resultado observado | Situação | Defeito |
+| --- | --- | --- | --- |
+| [CT-RF65](Cenario_Teste/CT-RF65_Data_Nascimento_Futura_Colaborador.md) | Data `18/05/2222`; atualização HTTP 200. | Reprovado | [BUG-026](Relatorio-de-Bugs.md#bug-026) |
+| [CT-RF66](Cenario_Teste/CT-RF66_Data_Nascimento_Obrigatoria_Colaborador.md) | Data obrigatória vazia; atualização HTTP 200. | Reprovado | [BUG-027](Relatorio-de-Bugs.md#bug-027) |
+| [CT-RF67](Cenario_Teste/CT-RF67_CREF_Formato_Colaborador.md) | CREF `TESTEE`; atualização HTTP 200. | Reprovado, com formato a confirmar | [BUG-028](Relatorio-de-Bugs.md#bug-028) |
+| [CT-RF68](Cenario_Teste/CT-RF68_Edicao_Colaborador_Campo_Obrigatorio_Vazio.md) | Campo obrigatório vazio; atualização HTTP 200. | Reprovado | [BUG-029](Relatorio-de-Bugs.md#bug-029) |
+| [CT-RF69](Cenario_Teste/CT-RF69_Funcao_Duplicada_Colaborador.md) | Consulta passa de uma para três funções idênticas. | Reprovado | [BUG-030](Relatorio-de-Bugs.md#bug-030) |
+| [CT-RF70](Cenario_Teste/CT-RF70_Exclusao_Colaborador_Erro_500.md) | Exclusão retorna HTTP 500 e erro interno. | Reprovado | [BUG-031](Relatorio-de-Bugs.md#bug-031) |
+
+RF65–RF68 precisam de reteste com corpo do POST e reabertura do cadastro para comprovar a persistência. RF69 possui evidência direta da duplicidade. RF70 confirma o erro interno, mas não sua causa.
+
+O consolidado atual é de 63 casos documentados (CT-RF01–CT-RF35, CT-RF38–CT-RF59 e CT-RF65–CT-RF70): 17 aprovados, 36 reprovados e 10 a validar; 32 defeitos registrados (10 abertos e 22 em triagem) e 36 casos com reteste corretivo pendente. CT-RF09/10 compartilham BUG-005 e CT-RF53 a CT-RF56 compartilham BUG-023, de modo que 36 casos reprovados correspondem a 32 defeitos. Sem nova execução.
+
+---
+
+## Inclusão de 16/11/2026 — CT-RF74 a CT-RF84
+
+Integração documental dos arquivos RESUMO.txt fornecidos em `C:\Users\Leonardo\Desktop\evidencias`, com data de gravação e análise informada de 16/11/2026. Os Jams não foram reabertos nesta integração; eventos de rede, horários e quadros abaixo são transcritos dos resumos, sem verificação independente. Não houve nova execução do SIFIT, reteste, consulta ao banco, logs ou código.
+
+CT-RF74–CT-RF84 acrescentam oito aprovações e três reprovações conforme os resumos fornecidos, com BUG-035–BUG-037 em triagem. CT-RF83 mantém a classificação do relato, condicionada à confirmação da regra de obrigatoriedade. Os dez casos anteriores a validar permanecem inalterados.
+
+| Caso | Resultado | Defeito | Fontes |
+| --- | --- | --- | --- |
+| [CT-RF74](Cenario_Teste/CT-RF74_Temas_Prospeccao.md) | Aprovado conforme o resumo da gravação | — | [Evidências](Evidencias/CT-RF74_Temas_Prospeccao/README.md) · [Jam](https://jam.dev/c/5dc9fc15-8e13-4f90-b21f-a49aedc6731e) |
+| [CT-RF75](Cenario_Teste/CT-RF75_Detalhes_Lead_Cancelamento.md) | Aprovado conforme o resumo da gravação | — | [Evidências](Evidencias/CT-RF75_Detalhes_Lead_Cancelamento/README.md) · [Jam](https://jam.dev/c/7ef0ee0b-497e-48b8-a57d-cd914558d303) |
+| [CT-RF76](Cenario_Teste/CT-RF76_Exclusao_Leads_Confirmacao.md) | Aprovado conforme o resumo da gravação | — | [Evidências](Evidencias/CT-RF76_Exclusao_Leads_Confirmacao/README.md) · [Jam](https://jam.dev/c/2ac5e5ed-b10f-4cc9-9f97-7ba65ca560f8) |
+| [CT-RF77](Cenario_Teste/CT-RF77_Cadastro_Lead_Novo_Contato.md) | Aprovado conforme o resumo da gravação | — | [Evidências](Evidencias/CT-RF77_Cadastro_Lead_Novo_Contato/README.md) · [Jam](https://jam.dev/c/29447c6a-90f5-48b2-ac5d-d43cad44a782) |
+| [CT-RF78](Cenario_Teste/CT-RF78_Cadastro_Lead_Interessado.md) | Aprovado conforme o resumo da gravação | — | [Evidências](Evidencias/CT-RF78_Cadastro_Lead_Interessado/README.md) · [Jam](https://jam.dev/c/f8735cbf-4043-4467-b43f-3cad7eff0da8) |
+| [CT-RF79](Cenario_Teste/CT-RF79_Cadastro_Lead_Aula_Experimental.md) | Aprovado conforme o resumo da gravação | — | [Evidências](Evidencias/CT-RF79_Cadastro_Lead_Aula_Experimental/README.md) · [Jam](https://jam.dev/c/bef3d877-056b-4274-87c3-da37869c54fd) |
+| [CT-RF80](Cenario_Teste/CT-RF80_Cadastro_Lead_Proposta.md) | Aprovado conforme o resumo da gravação | — | [Evidências](Evidencias/CT-RF80_Cadastro_Lead_Proposta/README.md) · [Jam](https://jam.dev/c/84f94285-ae5f-4f95-b640-a9b107565aa6) |
+| [CT-RF81](Cenario_Teste/CT-RF81_Cadastro_Bandeira_Parcela_Listagem.md) | Reprovado nas evidências resumidas | [BUG-035](Relatorio-de-Bugs.md#bug-035) | [Evidências](Evidencias/CT-RF81_Cadastro_Bandeira_Parcela_Listagem/README.md) · [Jam](https://jam.dev/c/2f0280fb-6b7f-4cf0-a45c-02f8c16b6c5e) |
+| [CT-RF82](Cenario_Teste/CT-RF82_Tema_Escuro_Bandeiras.md) | Reprovado nas evidências resumidas | [BUG-036](Relatorio-de-Bugs.md#bug-036) | [Evidências](Evidencias/CT-RF82_Tema_Escuro_Bandeiras/README.md) · [Jam](https://jam.dev/c/ae4dc198-8a42-4451-898a-fb376596c744) |
+| [CT-RF83](Cenario_Teste/CT-RF83_Cadastro_Lead_Apenas_Nome.md) | Reprovado conforme o relato; regra de obrigatoriedade a confirmar | [BUG-037](Relatorio-de-Bugs.md#bug-037) | [Evidências](Evidencias/CT-RF83_Cadastro_Lead_Apenas_Nome/README.md) · [Jam](https://jam.dev/c/ef3df03c-16ce-4cb6-b0c7-d04514cab4f6) |
+| [CT-RF84](Cenario_Teste/CT-RF84_Cadastro_Lead_Fechado.md) | Aprovado conforme o resumo da gravação | — | [Evidências](Evidencias/CT-RF84_Cadastro_Lead_Fechado/README.md) · [Jam](https://jam.dev/c/775b9003-fdf7-4ad5-8882-15ba606b6674) |
+
+**Consolidado após a inclusão:** 77 casos documentados: 26 aprovados, 41 reprovados e 10 a validar; 37 defeitos registrados (10 abertos e 27 em triagem) e 41 casos com reteste corretivo pendente. CT-RF09/10 compartilham BUG-005 e CT-RF53–CT-RF56 compartilham BUG-023. O total anterior era de 66 casos: 18 aprovados, 38 reprovados e 10 a validar; 34 defeitos.
+
+**Limites e encaminhamento:** as aprovações se restringem ao que os resumos descrevem. CT-RF74 não comprova persistência do tema; CT-RF75 não comprova o telefone após reabertura; CT-RF76 não cobre cancelamento da exclusão. Os cadastros de estágio não comprovam fluxos comerciais posteriores ou reabertura de todos os campos. CT-RF81 não determina a causa da divergência nem a persistência no banco; CT-RF82 não constitui auditoria formal de acessibilidade; CT-RF83 aguarda regra de produto; CT-RF84 não possui corpo da resposta de salvamento disponível no resumo. Retestes e verificações adicionais seguem no plano e nos casos, sem resultado de execução atribuído nesta integração.
 
 ## Inclusão de 15/11/2026 — CT-RF85 a CT-RF90
 
