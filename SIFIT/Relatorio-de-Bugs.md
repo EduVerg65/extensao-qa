@@ -1,16 +1,18 @@
 # 🐞 Relatório de Bugs — SIFIT
 
-**Escopo:** defeitos de 60 casos documentados (CT-RF01–CT-RF35, CT-RF38–CT-RF56 e CT-RF58–CT-RF63): recuperação, Perfil, Clientes, financeiro, página inicial e dashboard, tema, modalidades, categorias, avaliações, exercícios, grupos musculares, objetivos de treino, SifitBox – Turmas, Pagar.me, configurações, despesas fixas, relatórios e prospecção de leads.
+**Escopo:** defeitos de 73 casos documentados (CT-RF01–CT-RF35, CT-RF38–CT-RF56 e CT-RF58–CT-RF76): recuperação, Perfil, Clientes, financeiro, página inicial e dashboard, tema, modalidades, categorias, avaliações, exercícios, grupos musculares, objetivos de treino, SifitBox – Turmas, Pagar.me, configurações, despesas fixas, relatórios, prospecção de leads, contas a pagar, modelos de contrato e planos.
 
 **Ambientes:** CT-RF01 em https://sifitalfa.centrion.com.br/login; CT-RF02_ERRO em https://sifit.centrion.com.br/profile. CT-RF03: URL do frontend não confirmada; backend informado em `https://backendsifit.centrion.com.br/api/clientesPorNome/1`.
 
 **Datas das gravações do Jam:** CT-RF01 em 23/10/2026; CT-RF02_ERRO em 22/10/2026 às 21:45 BRT; CT-RF03 não confirmada.
 
-**Atualização documental:** 15/11/2026 — 24 defeitos registrados: 10 abertos (BUG-001 a BUG-010) e 14 em triagem (BUG-011 a BUG-024). BUG-019 registra o HTTP 500 no cadastro de objetivo de treino e BUG-020 a ausência de retorno visível no cadastro de turma sem modalidade, ambos sem causa técnica confirmada. As análises anteriores foram preservadas.
+**Atualização documental:** 15/11/2026 — 25 defeitos registrados: 10 abertos (BUG-001 a BUG-010) e 15 em triagem (BUG-011 a BUG-025). BUG-019 registra o HTTP 500 no cadastro de objetivo de treino e BUG-020 a ausência de retorno visível no cadastro de turma sem modalidade, ambos sem causa técnica confirmada. As análises anteriores foram preservadas.
 
 **Padronização documental:** 13/11/2026, sem alteração do status dos defeitos.
 
 **Caso aprovado incluído em 13/11/2026:** [CT-RF04_loginComSucesso](Cenario_Teste/CT-RF04_loginComSucesso.md), vinculado ao RF04, não gerou defeito para o fluxo avaliado. O [Jam de login](https://jam.dev/c/5e4a28be-4e80-43d3-9587-1b113723cc38) mostra acesso ao dashboard após autenticação. Essa aprovação não altera os três bugs existentes; resultados e limites constam no [relatório dos testes](Relatorio%20dos%20testes.md).
+
+**Gravação de CT-RF64–CT-RF68:** 15/11/2026, Contas a Pagar, 21:58 BRT, Chrome 157.0.8103.78 / Windows 11; uma única gravação; evidência e limites no BUG-025.
 
 **Gravação de CT-RF58–CT-RF63:** 15/11/2026, Prospecção, 21:52 BRT, Chrome 157.0.8103.78 / Windows 11; uma única gravação; evidência e limites no BUG-024.
 
@@ -54,8 +56,9 @@
 | [BUG-022](#bug-022) | Relatório de Contas a Receber exibe "----" em Valor a Receber | Alta / Alta, propostas | Em triagem — origem do valor e comparação com o módulo não confirmadas | [CT-RF51](Cenario_Teste/CT-RF51_Relatorio_Contas_Receber.md) |
 | [BUG-023](#bug-023) | Relatórios de Avaliações, Clientes, Colaboradores e Caixas geram arquivo PDF vazio (0 bytes) | Alta / Alta, propostas | Em triagem — correspondência dos arquivos inferida; causa não determinada | [CT-RF53](Cenario_Teste/CT-RF53_Relatorio_Avaliacoes_Vazio.md), [CT-RF54](Cenario_Teste/CT-RF54_Relatorio_Clientes_Vazio.md), [CT-RF55](Cenario_Teste/CT-RF55_Relatorio_Colaboradores_Vazio.md) e [CT-RF56](Cenario_Teste/CT-RF56_Relatorio_Caixas_Vazio.md) |
 | [BUG-024](#bug-024) | Telefone do lead aceita 30 dígitos sem máscara nem validação | Média / Média, propostas | Em triagem — regra do campo e validação no servidor não confirmadas | [CT-RF62](Cenario_Teste/CT-RF62_Telefone_Lead_Sem_Validacao.md) |
+| [BUG-025](#bug-025) | Conta a pagar a colaborador é cadastrada sem colaborador informado | Alta / Alta, propostas | Em triagem — regra de obrigatoriedade e validação no servidor não confirmadas | [CT-RF65](Cenario_Teste/CT-RF65_Cadastro_Conta_Colaborador_Sem_Colaborador.md) |
 
-BUG-001–BUG-010 aguardam correção e reteste. BUG-011–BUG-024 aguardam confirmação das premissas e triagem antes do encaminhamento de correção. As causas técnicas permanecem não confirmadas; o BUG-003 se apoia no relato e nas capturas fornecidos, com os limites registrados no caso.
+BUG-001–BUG-010 aguardam correção e reteste. BUG-011–BUG-025 aguardam confirmação das premissas e triagem antes do encaminhamento de correção. As causas técnicas permanecem não confirmadas; o BUG-003 se apoia no relato e nas capturas fornecidos, com os limites registrados no caso.
 
 ---
 
@@ -1148,6 +1151,53 @@ O valor gravado com 30 dígitos é compatível com ausência de validação de t
 
 ---
 
+<a id="bug-025"></a>
+
+## BUG-025 — Conta a pagar a colaborador é cadastrada sem colaborador informado
+
+| Campo | Descrição |
+| --- | --- |
+| Status | Em triagem — causa não determinada; reteste pendente após correção. |
+| Severidade / prioridade | Alta / Alta, propostas para triagem. |
+| Módulo | Financeiro / Contas a Pagar / Cadastro |
+| Requisitos | [RF65](Analise%20de%20requisitos.md#rf65) |
+| Casos | [CT-RF65](Cenario_Teste/CT-RF65_Cadastro_Conta_Colaborador_Sem_Colaborador.md) |
+| Data da evidência / revisão | 15/11/2026, 21:58 BRT; sem nova execução. |
+| Página | https://sifit.centrion.com.br/contas-pagar |
+| Ambiente | Chrome 157.0.8103.78 / Windows (x86) 11, janela 1920 × 911; versão e zoom não confirmados. |
+| Frequência conhecida | Um registro do Jam; recorrência não determinada. |
+
+### Pré-condições e reprodução
+
+**[CT-RF65](Cenario_Teste/CT-RF65_Cadastro_Conta_Colaborador_Sem_Colaborador.md):** Sessão autenticada com acesso a Contas a Pagar e regra de obrigatoriedade do colaborador definida com o produto.
+
+1. Acessar Contas a Pagar e acionar Nova Conta.
+2. Selecionar o tipo Pagto. Colaborador e preencher título, documento, categoria e valor sem informar o colaborador (Código e Colaborador vazios).
+3. Acionar Salvar e observar a mensagem de validação e a rede.
+4. Conferir a listagem e a coluna Fornecedor / Colaborador da conta criada.
+5. Repetir informando o colaborador e comparar.
+
+### Esperado e obtido
+
+| Esperado | Obtido |
+| --- | --- |
+| Uma conta do tipo Pagto. Colaborador exige o colaborador favorecido e a gravação é impedida, com mensagem clara, enquanto o campo estiver vazio. | A conta foi gravada (HTTP 201, `verifica_erro` false) com `colaborador_recebedor_id` e `colaborador_nome` vazios e aparece na listagem (código 29) com "-" em Fornecedor / Colaborador, sem mensagem de validação. |
+
+**Impacto:** Pagamentos a colaboradores podem ser lançados sem favorecido, o que compromete a conciliação financeira e a rastreabilidade do pagamento.
+
+### Evidências técnicas
+
+- [Jam — Contas a Pagar](https://jam.dev/c/5d0afaf4-5abd-4e85-923f-27448304a9ef): quadro de 0:41 (formulário preenchido sem colaborador), `POST /api/cadastrar-conta-pagar/1` (HTTP 201) com `"tipo_conta": "PAG_COLABORADOR"` e `"colaborador_recebedor_id": ""`, e quadro de 0:50 com a conta 29 listada com "-" no colaborador.
+- [Formulário em 0:41](Evidencias/CT-RF65_Cadastro_Conta_Colaborador_Sem_Colaborador/formulario_preenchido_00-41.png), [listagem em 0:50](Evidencias/CT-RF65_Cadastro_Conta_Colaborador_Sem_Colaborador/lista_apos_cadastro_00-50.png), [corpo da requisição](Evidencias/CT-RF65_Cadastro_Conta_Colaborador_Sem_Colaborador/requisicao_cadastrar.png) e [Evidências](Evidencias/CT-RF65_Cadastro_Conta_Colaborador_Sem_Colaborador/README.md).
+
+### Análise, limites e encaminhamento
+
+A gravação sem colaborador é compatível com ausência de validação no cliente e no servidor; o quadro consultado não indica obrigatoriedade no campo e a regra de negócio não foi informada. A causa técnica não foi confirmada no código.
+
+**Reteste:** Confirmar a regra com o produto, reproduzir com a validação visível e testar também o tipo fornecedor sem fornecedor; retestar envio válido e inválido e a persistência. Manter em triagem até nova evidência em versão identificada.
+
+---
+
 ## Pontos a validar — sem defeito confirmado
 
 | Caso | Questão pendente | Evidência |
@@ -1163,8 +1213,10 @@ O valor gravado com 30 dígitos é compatível com ausência de validação de t
 | [CT-RF47](Cenario_Teste/CT-RF47_Cadastro_Despesa_Fixa.md) | Confirmar se o segundo POST de criação (HTTP 201) gerou registro adicional ou foi descartado; registrar defeito apenas se houver duplicidade confirmada. | [Jam](https://jam.dev/c/a4bac99d-e436-4792-831e-8c3a875272bb) e [Evidências](Evidencias/CT-RF47_Cadastro_Despesa_Fixa/README.md) |
 | [CT-RF52](Cenario_Teste/CT-RF52_Relatorio_Contas_Pagar_Pagas.md) | Conferir se existem contas pagas no período; PDF sem linhas e com totalizadores R$ 0,00 é compatível com período sem pagamentos. | [Jam](https://jam.dev/c/3b4777a4-e1b0-4038-9b06-26c73669d7d1) e [Evidências](Evidencias/CT-RF52_Relatorio_Contas_Pagar_Pagas/README.md) |
 | [CT-RF61](Cenario_Teste/CT-RF61_Cadastro_Lead_Prospeccao.md) | Cadastro de lead com duas requisições de criação | Confirmar se o segundo POST de criação gerou registro adicional ou foi descartado; registrar defeito apenas se houver duplicidade confirmada. | [Jam](https://jam.dev/c/308607ff-8abc-40af-8c7c-429ce506ed64) e [Evidências](Evidencias/CT-RF61_Cadastro_Lead_Prospeccao/README.md) |
+| [CT-RF64](Cenario_Teste/CT-RF64_Filtros_Contas_Pagar.md) | Filtros da tela Contas a Pagar por nome, data e status | Reexecutar com contas de controle e conferir cada critério isolado e combinado; o resultado vazio da combinação gravada não pôde ser conferido contra a base. | [Jam](https://jam.dev/c/5d0afaf4-5abd-4e85-923f-27448304a9ef) e [Evidências](Evidencias/CT-RF64_Filtros_Contas_Pagar/README.md) |
+| [CT-RF66](Cenario_Teste/CT-RF66_Busca_Colaborador_Conta_Pagar.md) | Busca de colaborador no cadastro de conta a pagar | Reexecutar com um nome existente para conferir listagem e seleção e confirmar a mensagem esperada de resultado vazio. | [Jam](https://jam.dev/c/5d0afaf4-5abd-4e85-923f-27448304a9ef) e [Evidências](Evidencias/CT-RF66_Busca_Colaborador_Conta_Pagar/README.md) |
 
-Esses onze pontos não entram na contagem de 24 defeitos registrados. BUG-011–BUG-024 são contabilizados separadamente como registros em triagem, com premissas, persistência ou validações técnicas ainda pendentes. O relato de numeração de personais não demonstrou diferença entre total e linhas; a inativação de modalidades pode ser exclusão lógica; encargos e métricas exigem regras explícitas.
+Esses treze pontos não entram na contagem de 25 defeitos registrados. BUG-011–BUG-025 são contabilizados separadamente como registros em triagem, com premissas, persistência ou validações técnicas ainda pendentes. O relato de numeração de personais não demonstrou diferença entre total e linhas; a inativação de modalidades pode ser exclusão lógica; encargos e métricas exigem regras explícitas.
 
 
 **Exclusão de exercício:** CT-RF23 está aprovado no trecho consultado, com remoção e total 11 para 10; não gerou defeito adicional. Persistência e efeitos sobre vínculos permanecem como verificações complementares.
