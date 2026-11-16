@@ -2,11 +2,11 @@
 
 **Módulos:** Autenticação, Perfil, Clientes / Filtros, Financeiro, Página inicial / Personais, SifitBox / Modalidades e Turmas, Categorias Crossfit, Avaliações, Exercícios, Grupos Musculares, Dashboard e Objetivos de Treino.
 
-**Atualização:** 15/11/2026 — RF01 a RF35, RF38 a RF56 e RF58 a RF76 consolidados, com inclusão de Categorias Crossfit (CT-RF38), SifitBox – Turmas (CT-RF39 a CT-RF41), Pagar.me, Configurações, Despesas Fixas e Relatórios (CT-RF42 a CT-RF56), Prospecção (CT-RF58 a CT-RF63) e, a partir de CT-RF64, Contas a Pagar, Modelos de Contrato e Planos; BUG-011–BUG-027 em triagem.
+**Atualização:** 15/11/2026 — RF01 a RF35, RF38 a RF56 e RF85 a RF103 consolidados, com inclusão de Categorias Crossfit (CT-RF38), SifitBox – Turmas (CT-RF39 a CT-RF41), Pagar.me, Configurações, Despesas Fixas e Relatórios (CT-RF42 a CT-RF56), Prospecção (CT-RF85 a CT-RF90) e, a partir de CT-RF91, Contas a Pagar, Modelos de Contrato e Planos; BUG-011–BUG-041 em triagem.
 
 **Padronização documental:** 13/11/2026, sem alteração dos resultados registrados.
 
-Esta análise documenta 73 requisitos de QA para os cenários relacionados abaixo, com base nos relatos e nas evidências fornecidas. RF01–RF04 e suas análises históricas foram preservados; RF05–RF20 ampliam a cobertura em 14/11/2026; RF21 acrescenta Avaliações; RF22–RF28 acrescentam Exercícios; RF29–RF33 acrescentam Grupos Musculares; RF34 acrescenta o carregamento do dashboard RF35 acrescenta o cadastro de objetivos de treino e RF38 acrescenta o cadastro de categorias com código automático em 15/11/2026. RF39 acrescenta o cadastro de modalidade em SifitBox – Turmas. RF40 acrescenta a exclusão de turmas e modalidades. RF41 acrescenta o cadastro de turma. RF42 a RF56 acrescentam Pagar.me, Configurações, Despesas Fixas e Relatórios em 15/11/2026. RF58 a RF63 acrescentam Prospecção (leads) em 15/11/2026. RF64 a RF76 acrescentam Contas a Pagar, Modelos de Contrato e Planos em 15/11/2026. Os critérios abaixo constituem a referência de QA para esses fluxos; não representam validação de uma especificação formal pelo responsável pelo produto.
+Esta análise documenta 73 requisitos de QA para os cenários relacionados abaixo, com base nos relatos e nas evidências fornecidas. RF01–RF04 e suas análises históricas foram preservados; RF05–RF20 ampliam a cobertura em 14/11/2026; RF21 acrescenta Avaliações; RF22–RF28 acrescentam Exercícios; RF29–RF33 acrescentam Grupos Musculares; RF34 acrescenta o carregamento do dashboard RF35 acrescenta o cadastro de objetivos de treino e RF38 acrescenta o cadastro de categorias com código automático em 15/11/2026. RF39 acrescenta o cadastro de modalidade em SifitBox – Turmas. RF40 acrescenta a exclusão de turmas e modalidades. RF41 acrescenta o cadastro de turma. RF42 a RF56 acrescentam Pagar.me, Configurações, Despesas Fixas e Relatórios em 15/11/2026. RF85 a RF90 acrescentam Prospecção (leads) em 15/11/2026. RF91 a RF103 acrescentam Contas a Pagar, Modelos de Contrato e Planos em 15/11/2026. Os critérios abaixo constituem a referência de QA para esses fluxos; não representam validação de uma especificação formal pelo responsável pelo produto.
 
 ## 📋 Visão geral dos requisitos
 
@@ -66,25 +66,25 @@ Esta análise documenta 73 requisitos de QA para os cenários relacionados abaix
 | [RF54](#rf54) | Gerar o relatório de Clientes em PDF | Alta, proposta | [CT-RF54](Cenario_Teste/CT-RF54_Relatorio_Clientes_Vazio.md) |
 | [RF55](#rf55) | Gerar o relatório de Colaboradores em PDF | Alta, proposta | [CT-RF55](Cenario_Teste/CT-RF55_Relatorio_Colaboradores_Vazio.md) |
 | [RF56](#rf56) | Gerar o relatório de Caixas em PDF | Alta, proposta | [CT-RF56](Cenario_Teste/CT-RF56_Relatorio_Caixas_Vazio.md) |
-| [RF58](#rf58) | Alternar o tema e consultar as notificações no cabeçalho | Baixa, proposta | [CT-RF58](Cenario_Teste/CT-RF58_Tema_Notificacoes_Prospeccao.md) |
-| [RF59](#rf59) | Buscar leads por texto na listagem de Prospecção | Média, proposta | [CT-RF59](Cenario_Teste/CT-RF59_Busca_Leads_Prospeccao.md) |
-| [RF60](#rf60) | Filtrar leads por estágio e restaurar a listagem | Média, proposta | [CT-RF60](Cenario_Teste/CT-RF60_Filtro_Estagio_Leads.md) |
-| [RF61](#rf61) | Cadastrar um lead com uma única gravação | Média, proposta | [CT-RF61](Cenario_Teste/CT-RF61_Cadastro_Lead_Prospeccao.md) |
-| [RF62](#rf62) | Validar o telefone do lead | Média, proposta | [CT-RF62](Cenario_Teste/CT-RF62_Telefone_Lead_Sem_Validacao.md) |
-| [RF63](#rf63) | Visualizar e editar um lead | Média, proposta | [CT-RF63](Cenario_Teste/CT-RF63_Edicao_Lead_Prospeccao.md) |
-| [RF64](#rf64) | Filtrar contas a pagar por nome, data e status | Média, proposta | [CT-RF64](Cenario_Teste/CT-RF64_Filtros_Contas_Pagar.md) |
-| [RF65](#rf65) | Exigir o colaborador no cadastro de conta a pagar a colaborador | Alta, proposta | [CT-RF65](Cenario_Teste/CT-RF65_Cadastro_Conta_Colaborador_Sem_Colaborador.md) |
-| [RF66](#rf66) | Buscar e selecionar colaborador no cadastro de conta | Média, proposta | [CT-RF66](Cenario_Teste/CT-RF66_Busca_Colaborador_Conta_Pagar.md) |
-| [RF67](#rf67) | Visualizar os dados de uma conta a pagar | Baixa, proposta | [CT-RF67](Cenario_Teste/CT-RF67_Visualizacao_Conta_Pagar.md) |
-| [RF68](#rf68) | Excluir uma conta a pagar com confirmação | Média, proposta | [CT-RF68](Cenario_Teste/CT-RF68_Exclusao_Conta_Pagar.md) |
-| [RF69](#rf69) | Inserir variáveis e pré-visualizar o contrato | Média, proposta | [CT-RF69](Cenario_Teste/CT-RF69_Variaveis_Preview_Modelo_Contrato.md) |
-| [RF70](#rf70) | Cadastrar um modelo de contrato | Média, proposta | [CT-RF70](Cenario_Teste/CT-RF70_Cadastro_Modelo_Contrato.md) |
-| [RF71](#rf71) | Apresentar na listagem os modelos de contrato retornados pelo servidor | Alta, proposta | [CT-RF71](Cenario_Teste/CT-RF71_Listagem_Modelos_Contrato_Vazia.md) |
-| [RF72](#rf72) | Filtrar planos por código e por nome | Média, proposta | [CT-RF72](Cenario_Teste/CT-RF72_Filtros_Planos.md) |
-| [RF73](#rf73) | Alternar o tema e consultar as notificações na tela Planos | Baixa, proposta | [CT-RF73](Cenario_Teste/CT-RF73_Tema_Notificacoes_Planos.md) |
-| [RF74](#rf74) | Cadastrar um plano | Alta, proposta | [CT-RF74](Cenario_Teste/CT-RF74_Cadastro_Plano.md) |
-| [RF75](#rf75) | Manter o cartão Ativos coerente com o status dos planos | Média, proposta | [CT-RF75](Cenario_Teste/CT-RF75_Contador_Ativos_Planos.md) |
-| [RF76](#rf76) | Editar um plano | Média, proposta | [CT-RF76](Cenario_Teste/CT-RF76_Edicao_Plano.md) |
+| [RF85](#rf85) | Alternar o tema e consultar as notificações no cabeçalho | Baixa, proposta | [CT-RF85](Cenario_Teste/CT-RF85_Tema_Notificacoes_Prospeccao.md) |
+| [RF86](#rf86) | Buscar leads por texto na listagem de Prospecção | Média, proposta | [CT-RF86](Cenario_Teste/CT-RF86_Busca_Leads_Prospeccao.md) |
+| [RF87](#rf87) | Filtrar leads por estágio e restaurar a listagem | Média, proposta | [CT-RF87](Cenario_Teste/CT-RF87_Filtro_Estagio_Leads.md) |
+| [RF88](#rf88) | Cadastrar um lead com uma única gravação | Média, proposta | [CT-RF88](Cenario_Teste/CT-RF88_Cadastro_Lead_Prospeccao.md) |
+| [RF89](#rf89) | Validar o telefone do lead | Média, proposta | [CT-RF89](Cenario_Teste/CT-RF89_Telefone_Lead_Sem_Validacao.md) |
+| [RF90](#rf90) | Visualizar e editar um lead | Média, proposta | [CT-RF90](Cenario_Teste/CT-RF90_Edicao_Lead_Prospeccao.md) |
+| [RF91](#rf91) | Filtrar contas a pagar por nome, data e status | Média, proposta | [CT-RF91](Cenario_Teste/CT-RF91_Filtros_Contas_Pagar.md) |
+| [RF92](#rf92) | Exigir o colaborador no cadastro de conta a pagar a colaborador | Alta, proposta | [CT-RF92](Cenario_Teste/CT-RF92_Cadastro_Conta_Colaborador_Sem_Colaborador.md) |
+| [RF93](#rf93) | Buscar e selecionar colaborador no cadastro de conta | Média, proposta | [CT-RF93](Cenario_Teste/CT-RF93_Busca_Colaborador_Conta_Pagar.md) |
+| [RF94](#rf94) | Visualizar os dados de uma conta a pagar | Baixa, proposta | [CT-RF94](Cenario_Teste/CT-RF94_Visualizacao_Conta_Pagar.md) |
+| [RF95](#rf95) | Excluir uma conta a pagar com confirmação | Média, proposta | [CT-RF95](Cenario_Teste/CT-RF95_Exclusao_Conta_Pagar.md) |
+| [RF96](#rf96) | Inserir variáveis e pré-visualizar o contrato | Média, proposta | [CT-RF96](Cenario_Teste/CT-RF96_Variaveis_Preview_Modelo_Contrato.md) |
+| [RF97](#rf97) | Cadastrar um modelo de contrato | Média, proposta | [CT-RF97](Cenario_Teste/CT-RF97_Cadastro_Modelo_Contrato.md) |
+| [RF98](#rf98) | Apresentar na listagem os modelos de contrato retornados pelo servidor | Alta, proposta | [CT-RF98](Cenario_Teste/CT-RF98_Listagem_Modelos_Contrato_Vazia.md) |
+| [RF99](#rf99) | Filtrar planos por código e por nome | Média, proposta | [CT-RF99](Cenario_Teste/CT-RF99_Filtros_Planos.md) |
+| [RF100](#rf100) | Alternar o tema e consultar as notificações na tela Planos | Baixa, proposta | [CT-RF100](Cenario_Teste/CT-RF100_Tema_Notificacoes_Planos.md) |
+| [RF101](#rf101) | Cadastrar um plano | Alta, proposta | [CT-RF101](Cenario_Teste/CT-RF101_Cadastro_Plano.md) |
+| [RF102](#rf102) | Manter o cartão Ativos coerente com o status dos planos | Média, proposta | [CT-RF102](Cenario_Teste/CT-RF102_Contador_Ativos_Planos.md) |
+| [RF103](#rf103) | Editar um plano | Média, proposta | [CT-RF103](Cenario_Teste/CT-RF103_Edicao_Plano.md) |
 
 ---
 
@@ -1606,9 +1606,9 @@ O conteúdo das respostas e a causa não foram capturados. A correspondência en
 
 ---
 
-<a id="rf58"></a>
+<a id="rf85"></a>
 
-## RF58 — Alternar o tema e consultar as notificações no cabeçalho
+## RF85 — Alternar o tema e consultar as notificações no cabeçalho
 
 | Campo | Descrição |
 | --- | --- |
@@ -1616,12 +1616,12 @@ O conteúdo das respostas e a causa não foram capturados. A correspondência en
 | Ator | Usuário autenticado com acesso a Prospecção. |
 | Pré-condições | Sessão autenticada; tema inicial e notificações conhecidos. |
 | Gatilho | Acionar o alternador de tema e o sino do cabeçalho. |
-| Caso | [CT-RF58](Cenario_Teste/CT-RF58_Tema_Notificacoes_Prospeccao.md) |
+| Caso | [CT-RF85](Cenario_Teste/CT-RF85_Tema_Notificacoes_Prospeccao.md) |
 | Situação observada | Aprovado conforme a gravação. O tema escuro é aplicado e o claro restaurado, com POST usuario/tema (HTTP 200) a cada troca; o painel de Notificações abre sem pendências. |
 | Defeito | Nenhum no fluxo avaliado |
-| Evidências | [Jam](https://jam.dev/c/308607ff-8abc-40af-8c7c-429ce506ed64) e [Evidências](Evidencias/CT-RF58_Tema_Notificacoes_Prospeccao/README.md). |
+| Evidências | [Jam](https://jam.dev/c/308607ff-8abc-40af-8c7c-429ce506ed64) e [Evidências](Evidencias/CT-RF85_Tema_Notificacoes_Prospeccao/README.md). |
 
-### Critérios de aceitação do RF58
+### Critérios de aceitação do RF85
 
 1. Cada acionamento do alternador troca o tema da interface sem perda de legibilidade.
 2. Cada troca de tema é gravada no servidor e permanece após recarregar a página.
@@ -1629,15 +1629,15 @@ O conteúdo das respostas e a causa não foram capturados. A correspondência en
 4. Sem pendências, o painel apresenta mensagem explícita de estado vazio.
 5. Com pendências, o painel lista os itens e permite marcá-los como lidos.
 
-### Pontos a confirmar e limites do RF58
+### Pontos a confirmar e limites do RF85
 
 A persistência do tema após recarga, as notificações pendentes e a ação Marcar como lidas não foram exercitadas; o contraste do tema escuro é tratado no [RF14](#rf14).
 
 ---
 
-<a id="rf59"></a>
+<a id="rf86"></a>
 
-## RF59 — Buscar leads por texto na listagem de Prospecção
+## RF86 — Buscar leads por texto na listagem de Prospecção
 
 | Campo | Descrição |
 | --- | --- |
@@ -1645,12 +1645,12 @@ A persistência do tema após recarga, as notificações pendentes e a ação Ma
 | Ator | Usuário autenticado com acesso a Prospecção. |
 | Pré-condições | Base de leads conhecida, com nomes, contatos e códigos registrados. |
 | Gatilho | Digitar um termo no campo Buscar lead e, depois, apagá-lo. |
-| Caso | [CT-RF59](Cenario_Teste/CT-RF59_Busca_Leads_Prospeccao.md) |
+| Caso | [CT-RF86](Cenario_Teste/CT-RF86_Busca_Leads_Prospeccao.md) |
 | Situação observada | Aprovado conforme a gravação. A busca retorna os leads de códigos 3 e 7 em 0:12 e os leads 4 e 10 para "tes" em 0:44; o campo vazio restaura a listagem completa. |
 | Defeito | Nenhum no fluxo avaliado |
-| Evidências | [Jam](https://jam.dev/c/308607ff-8abc-40af-8c7c-429ce506ed64) e [Evidências](Evidencias/CT-RF59_Busca_Leads_Prospeccao/README.md). |
+| Evidências | [Jam](https://jam.dev/c/308607ff-8abc-40af-8c7c-429ce506ed64) e [Evidências](Evidencias/CT-RF86_Busca_Leads_Prospeccao/README.md). |
 
-### Critérios de aceitação do RF59
+### Critérios de aceitação do RF86
 
 1. O campo Buscar lead filtra por nome, e-mail, telefone e código conforme o rótulo do campo.
 2. A busca não diferencia maiúsculas de minúsculas.
@@ -1658,15 +1658,15 @@ A persistência do tema após recarga, as notificações pendentes e a ação Ma
 4. Ao apagar o termo, a listagem completa é restaurada.
 5. Um termo sem correspondência apresenta mensagem explícita de resultado vazio.
 
-### Pontos a confirmar e limites do RF59
+### Pontos a confirmar e limites do RF86
 
 O termo vigente em 0:12 não foi identificado com certeza; a regra de correspondência, a busca por e-mail, telefone e código e o resultado vazio não foram exercitados. A busca não gera requisição de rede, compatível com filtragem local, sem confirmação. O contrato dos cartões não foi fornecido, como no [RF11](#rf11).
 
 ---
 
-<a id="rf60"></a>
+<a id="rf87"></a>
 
-## RF60 — Filtrar leads por estágio e restaurar a listagem
+## RF87 — Filtrar leads por estágio e restaurar a listagem
 
 | Campo | Descrição |
 | --- | --- |
@@ -1674,12 +1674,12 @@ O termo vigente em 0:12 não foi identificado com certeza; a regra de correspond
 | Ator | Usuário autenticado com acesso a Prospecção. |
 | Pré-condições | Base de leads conhecida, com estágios registrados. |
 | Gatilho | Selecionar um estágio e, depois, acionar Limpar. |
-| Caso | [CT-RF60](Cenario_Teste/CT-RF60_Filtro_Estagio_Leads.md) |
+| Caso | [CT-RF87](Cenario_Teste/CT-RF87_Filtro_Estagio_Leads.md) |
 | Situação observada | Aprovado conforme a gravação. "Novo Contato" apresenta os leads 7 e 8 e "Proposta" o lead 4; Limpar restaura a listagem completa. |
 | Defeito | Nenhum no fluxo avaliado |
-| Evidências | [Jam](https://jam.dev/c/308607ff-8abc-40af-8c7c-429ce506ed64) e [Evidências](Evidencias/CT-RF60_Filtro_Estagio_Leads/README.md). |
+| Evidências | [Jam](https://jam.dev/c/308607ff-8abc-40af-8c7c-429ce506ed64) e [Evidências](Evidencias/CT-RF87_Filtro_Estagio_Leads/README.md). |
 
-### Critérios de aceitação do RF60
+### Critérios de aceitação do RF87
 
 1. Cada estágio apresenta apenas os leads desse estágio.
 2. O número de linhas de um estágio coincide com o indicador correspondente, quando existir.
@@ -1687,15 +1687,15 @@ O termo vigente em 0:12 não foi identificado com certeza; a regra de correspond
 4. Um estágio sem leads apresenta mensagem explícita de resultado vazio.
 5. O filtro combina corretamente com a busca por texto.
 
-### Pontos a confirmar e limites do RF60
+### Pontos a confirmar e limites do RF87
 
 Os demais estágios, a combinação com a busca por texto, o estágio sem leads e a lista completa de estágios do seletor não foram exercitados. O filtro não gera requisição de rede, compatível com filtragem local, sem confirmação.
 
 ---
 
-<a id="rf61"></a>
+<a id="rf88"></a>
 
-## RF61 — Cadastrar um lead com uma única gravação
+## RF88 — Cadastrar um lead com uma única gravação
 
 | Campo | Descrição |
 | --- | --- |
@@ -1703,12 +1703,12 @@ Os demais estágios, a combinação com a busca por texto, o estágio sem leads 
 | Ator | Usuário autenticado com acesso a Prospecção. |
 | Pré-condições | Base de leads conhecida; dados de teste descartáveis. |
 | Gatilho | Preencher o formulário Adicionar Lead e acionar Salvar Lead. |
-| Caso | [CT-RF61](Cenario_Teste/CT-RF61_Cadastro_Lead_Prospeccao.md) |
+| Caso | [CT-RF88](Cenario_Teste/CT-RF88_Cadastro_Lead_Prospeccao.md) |
 | Situação observada | A validar — regra ou contexto pendente. O lead de código 10 é criado e listado (Leads 7 → 8), mas um clique gera dois POST salvar-lead/1 com HTTP 200. |
 | Defeito | Sem defeito confirmado |
-| Evidências | [Jam](https://jam.dev/c/308607ff-8abc-40af-8c7c-429ce506ed64) e [Evidências](Evidencias/CT-RF61_Cadastro_Lead_Prospeccao/README.md). |
+| Evidências | [Jam](https://jam.dev/c/308607ff-8abc-40af-8c7c-429ce506ed64) e [Evidências](Evidencias/CT-RF88_Cadastro_Lead_Prospeccao/README.md). |
 
-### Critérios de aceitação do RF61
+### Critérios de aceitação do RF88
 
 1. Um clique em Salvar Lead gera uma única requisição de criação.
 2. O lead é gravado uma única vez e aparece na listagem com o estágio informado.
@@ -1716,15 +1716,15 @@ Os demais estágios, a combinação com a busca por texto, o estágio sem leads 
 4. O botão é protegido contra segundo envio enquanto a requisição está em andamento.
 5. Após recarga, a listagem contém um único lead com os dados informados.
 
-### Pontos a confirmar e limites do RF61
+### Pontos a confirmar e limites do RF88
 
 O corpo e a resposta da segunda requisição, a persistência após recarga, os campos obrigatórios e as validações de formato não foram verificados. O mesmo padrão ocorre no [RF47](#rf47); a duplicidade não está confirmada.
 
 ---
 
-<a id="rf62"></a>
+<a id="rf89"></a>
 
-## RF62 — Validar o telefone do lead
+## RF89 — Validar o telefone do lead
 
 | Campo | Descrição |
 | --- | --- |
@@ -1732,12 +1732,12 @@ O corpo e a resposta da segunda requisição, a persistência após recarga, os 
 | Ator | Usuário autenticado com acesso a Prospecção. |
 | Pré-condições | Formulário Adicionar Lead aberto; regra do campo definida com o produto. |
 | Gatilho | Informar um telefone com 30 dígitos e acionar Salvar Lead. |
-| Caso | [CT-RF62](Cenario_Teste/CT-RF62_Telefone_Lead_Sem_Validacao.md) |
+| Caso | [CT-RF89](Cenario_Teste/CT-RF89_Telefone_Lead_Sem_Validacao.md) |
 | Situação observada | Reprovado nas evidências. O telefone de 30 dígitos é aceito, gravado (lead 10) e devolvido na consulta, sem máscara nem mensagem de validação. |
-| Defeito | [BUG-024](Relatorio-de-Bugs.md#bug-024), em triagem |
-| Evidências | [Jam](https://jam.dev/c/308607ff-8abc-40af-8c7c-429ce506ed64) e [Evidências](Evidencias/CT-RF62_Telefone_Lead_Sem_Validacao/README.md). |
+| Defeito | [BUG-038](Relatorio-de-Bugs.md#bug-038), em triagem |
+| Evidências | [Jam](https://jam.dev/c/308607ff-8abc-40af-8c7c-429ce506ed64) e [Evidências](Evidencias/CT-RF89_Telefone_Lead_Sem_Validacao/README.md). |
 
-### Critérios de aceitação do RF62
+### Critérios de aceitação do RF89
 
 1. O campo Telefone limita o tamanho e os caracteres ao formato definido pelo produto.
 2. Um telefone com tamanho ou caracteres inválidos é rejeitado antes da gravação, com mensagem clara.
@@ -1745,15 +1745,15 @@ O corpo e a resposta da segunda requisição, a persistência após recarga, os 
 4. O servidor valida o telefone independentemente da interface.
 5. O telefone válido é gravado e exibido no formato definido.
 
-### Pontos a confirmar e limites do RF62
+### Pontos a confirmar e limites do RF89
 
 A regra do campo e a validação no servidor não foram informadas ou verificadas; se o campo for livre, o placeholder "(00) 00000-0000" deve ser revisto. Telefones de outros tamanhos e valores com letras não foram exercitados.
 
 ---
 
-<a id="rf63"></a>
+<a id="rf90"></a>
 
-## RF63 — Visualizar e editar um lead
+## RF90 — Visualizar e editar um lead
 
 | Campo | Descrição |
 | --- | --- |
@@ -1761,12 +1761,12 @@ A regra do campo e a validação no servidor não foram informadas ou verificada
 | Ator | Usuário autenticado com acesso a Prospecção. |
 | Pré-condições | Lead descartável cadastrado e visível na listagem. |
 | Gatilho | Acionar a lupa do lead, alterar o nome e acionar Salvar Lead. |
-| Caso | [CT-RF63](Cenario_Teste/CT-RF63_Edicao_Lead_Prospeccao.md) |
+| Caso | [CT-RF90](Cenario_Teste/CT-RF90_Edicao_Lead_Prospeccao.md) |
 | Situação observada | Aprovado conforme a gravação. O modal abre com os dados do lead 10, o nome é atualizado para "testetete" com HTTP 200 e a listagem apresenta o novo nome. |
 | Defeito | Nenhum no fluxo avaliado |
-| Evidências | [Jam](https://jam.dev/c/308607ff-8abc-40af-8c7c-429ce506ed64) e [Evidências](Evidencias/CT-RF63_Edicao_Lead_Prospeccao/README.md). |
+| Evidências | [Jam](https://jam.dev/c/308607ff-8abc-40af-8c7c-429ce506ed64) e [Evidências](Evidencias/CT-RF90_Edicao_Lead_Prospeccao/README.md). |
 
-### Critérios de aceitação do RF63
+### Critérios de aceitação do RF90
 
 1. A lupa abre o modal com os dados do lead selecionado.
 2. A alteração de qualquer campo é enviada ao servidor e gravada sem erro.
@@ -1774,15 +1774,15 @@ A regra do campo e a validação no servidor não foram informadas ou verificada
 4. O valor permanece após recarregar a página.
 5. O título do modal corresponde à ação disponível (visualizar ou editar).
 
-### Pontos a confirmar e limites do RF63
+### Pontos a confirmar e limites do RF90
 
 A edição dos demais campos, a persistência após recarga, os campos obrigatórios e a revisão do título "Visualizar Lead" em um modal editável não foram exercitadas.
 
 ---
 
-<a id="rf64"></a>
+<a id="rf91"></a>
 
-## RF64 — Filtrar contas a pagar por nome, data e status
+## RF91 — Filtrar contas a pagar por nome, data e status
 
 | Campo | Descrição |
 | --- | --- |
@@ -1790,12 +1790,12 @@ A edição dos demais campos, a persistência após recarga, os campos obrigató
 | Ator | Usuário autenticado com acesso ao módulo. |
 | Pré-condições | Base de contas conhecida, com nomes, datas e status registrados. |
 | Gatilho | Informar critérios e acionar Buscar. |
-| Caso | [CT-RF64](Cenario_Teste/CT-RF64_Filtros_Contas_Pagar.md) |
+| Caso | [CT-RF91](Cenario_Teste/CT-RF91_Filtros_Contas_Pagar.md) |
 | Situação observada | A validar — regra ou contexto pendente. A combinação Nome "teste", Pagamento, 06/11/2026 e Pago deixa a listagem vazia, compatível com os critérios, sem dado de controle. |
 | Defeito | Sem defeito confirmado |
-| Evidências | [Jam](https://jam.dev/c/5d0afaf4-5abd-4e85-923f-27448304a9ef) e [Evidências](Evidencias/CT-RF64_Filtros_Contas_Pagar/README.md). |
+| Evidências | [Jam](https://jam.dev/c/5d0afaf4-5abd-4e85-923f-27448304a9ef) e [Evidências](Evidencias/CT-RF91_Filtros_Contas_Pagar/README.md). |
 
-### Critérios de aceitação do RF64
+### Critérios de aceitação do RF91
 
 1. Cada critério isolado (nome, tipo de data, período e status) filtra corretamente a listagem.
 2. A combinação de critérios aplica todos eles simultaneamente.
@@ -1803,15 +1803,15 @@ A edição dos demais campos, a persistência após recarga, os campos obrigató
 4. O resultado vazio apresenta mensagem explícita.
 5. Limpar os critérios restaura a listagem do período.
 
-### Pontos a confirmar e limites do RF64
+### Pontos a confirmar e limites do RF91
 
 Cada critério isolado, a troca de Tipo de Data e o resultado vazio contra a base não foram verificados; o corpo da busca principal não foi capturado.
 
 ---
 
-<a id="rf65"></a>
+<a id="rf92"></a>
 
-## RF65 — Exigir o colaborador no cadastro de conta a pagar a colaborador
+## RF92 — Exigir o colaborador no cadastro de conta a pagar a colaborador
 
 | Campo | Descrição |
 | --- | --- |
@@ -1819,12 +1819,12 @@ Cada critério isolado, a troca de Tipo de Data e o resultado vazio contra a bas
 | Ator | Usuário autenticado com acesso ao módulo. |
 | Pré-condições | Formulário aberto com o tipo Pagto. Colaborador; regra de obrigatoriedade definida com o produto. |
 | Gatilho | Preencher o formulário sem colaborador e acionar Salvar. |
-| Caso | [CT-RF65](Cenario_Teste/CT-RF65_Cadastro_Conta_Colaborador_Sem_Colaborador.md) |
+| Caso | [CT-RF92](Cenario_Teste/CT-RF92_Cadastro_Conta_Colaborador_Sem_Colaborador.md) |
 | Situação observada | Reprovado nas evidências. A conta é gravada (HTTP 201) com colaborador vazio e listada com "-" no colaborador, sem mensagem de validação. |
-| Defeito | [BUG-025](Relatorio-de-Bugs.md#bug-025), em triagem |
-| Evidências | [Jam](https://jam.dev/c/5d0afaf4-5abd-4e85-923f-27448304a9ef) e [Evidências](Evidencias/CT-RF65_Cadastro_Conta_Colaborador_Sem_Colaborador/README.md). |
+| Defeito | [BUG-039](Relatorio-de-Bugs.md#bug-039), em triagem |
+| Evidências | [Jam](https://jam.dev/c/5d0afaf4-5abd-4e85-923f-27448304a9ef) e [Evidências](Evidencias/CT-RF92_Cadastro_Conta_Colaborador_Sem_Colaborador/README.md). |
 
-### Critérios de aceitação do RF65
+### Critérios de aceitação do RF92
 
 1. Conta do tipo Pagto. Colaborador exige o colaborador antes da gravação.
 2. A ausência do colaborador gera mensagem de validação junto ao campo.
@@ -1832,15 +1832,15 @@ Cada critério isolado, a troca de Tipo de Data e o resultado vazio contra a bas
 4. A listagem apresenta o colaborador na coluna Fornecedor / Colaborador.
 5. Conta com colaborador informado é gravada e listada corretamente.
 
-### Pontos a confirmar e limites do RF65
+### Pontos a confirmar e limites do RF92
 
 A regra de obrigatoriedade e a validação no servidor não foram verificadas; o tipo fornecedor sem fornecedor não foi exercitado.
 
 ---
 
-<a id="rf66"></a>
+<a id="rf93"></a>
 
-## RF66 — Buscar e selecionar colaborador no cadastro de conta
+## RF93 — Buscar e selecionar colaborador no cadastro de conta
 
 | Campo | Descrição |
 | --- | --- |
@@ -1848,12 +1848,12 @@ A regra de obrigatoriedade e a validação no servidor não foram verificadas; o
 | Ator | Usuário autenticado com acesso ao módulo. |
 | Pré-condições | Colaboradores cadastrados; modal aberto a partir do tipo Pagto. Colaborador. |
 | Gatilho | Informar um nome no modal e acionar Pesquisar. |
-| Caso | [CT-RF66](Cenario_Teste/CT-RF66_Busca_Colaborador_Conta_Pagar.md) |
+| Caso | [CT-RF93](Cenario_Teste/CT-RF93_Busca_Colaborador_Conta_Pagar.md) |
 | Situação observada | A validar — regra ou contexto pendente. O termo "sds" devolve lista vazia, sem mensagem visível; a busca com resultado e a seleção não foram exercitadas. |
 | Defeito | Sem defeito confirmado |
-| Evidências | [Jam](https://jam.dev/c/5d0afaf4-5abd-4e85-923f-27448304a9ef) e [Evidências](Evidencias/CT-RF66_Busca_Colaborador_Conta_Pagar/README.md). |
+| Evidências | [Jam](https://jam.dev/c/5d0afaf4-5abd-4e85-923f-27448304a9ef) e [Evidências](Evidencias/CT-RF93_Busca_Colaborador_Conta_Pagar/README.md). |
 
-### Critérios de aceitação do RF66
+### Critérios de aceitação do RF93
 
 1. A busca lista os colaboradores cujo nome contenha o termo.
 2. A seleção preenche Código e Colaborador no formulário.
@@ -1861,15 +1861,15 @@ A regra de obrigatoriedade e a validação no servidor não foram verificadas; o
 4. O modal pode ser fechado sem alterar o formulário.
 5. O colaborador selecionado é gravado na conta.
 
-### Pontos a confirmar e limites do RF66
+### Pontos a confirmar e limites do RF93
 
 A busca com resultado, a seleção e a mensagem de resultado vazio esperada não foram verificadas.
 
 ---
 
-<a id="rf67"></a>
+<a id="rf94"></a>
 
-## RF67 — Visualizar os dados de uma conta a pagar
+## RF94 — Visualizar os dados de uma conta a pagar
 
 | Campo | Descrição |
 | --- | --- |
@@ -1877,12 +1877,12 @@ A busca com resultado, a seleção e a mensagem de resultado vazio esperada não
 | Ator | Usuário autenticado com acesso ao módulo. |
 | Pré-condições | Conta a pagar cadastrada e visível na listagem. |
 | Gatilho | Acionar a lupa da linha da conta. |
-| Caso | [CT-RF67](Cenario_Teste/CT-RF67_Visualizacao_Conta_Pagar.md) |
+| Caso | [CT-RF94](Cenario_Teste/CT-RF94_Visualizacao_Conta_Pagar.md) |
 | Situação observada | Aprovado conforme a gravação. O modal apresenta os dados da conta 29 e fecha corretamente; o tipo aparece como "PAG_COLABORADOR". |
 | Defeito | Nenhum no fluxo avaliado |
-| Evidências | [Jam](https://jam.dev/c/5d0afaf4-5abd-4e85-923f-27448304a9ef) e [Evidências](Evidencias/CT-RF67_Visualizacao_Conta_Pagar/README.md). |
+| Evidências | [Jam](https://jam.dev/c/5d0afaf4-5abd-4e85-923f-27448304a9ef) e [Evidências](Evidencias/CT-RF94_Visualizacao_Conta_Pagar/README.md). |
 
-### Critérios de aceitação do RF67
+### Critérios de aceitação do RF94
 
 1. O modal apresenta os dados da conta selecionada conforme gravados.
 2. Os rótulos exibidos ao usuário são legíveis (sem códigos internos).
@@ -1890,15 +1890,15 @@ A busca com resultado, a seleção e a mensagem de resultado vazio esperada não
 4. O botão Fechar retorna à listagem sem alterações.
 5. A consulta não altera a conta.
 
-### Pontos a confirmar e limites do RF67
+### Pontos a confirmar e limites do RF94
 
 Contas de fornecedor, pagas e atrasadas e o rótulo esperado do tipo não foram exercitados.
 
 ---
 
-<a id="rf68"></a>
+<a id="rf95"></a>
 
-## RF68 — Excluir uma conta a pagar com confirmação
+## RF95 — Excluir uma conta a pagar com confirmação
 
 | Campo | Descrição |
 | --- | --- |
@@ -1906,12 +1906,12 @@ Contas de fornecedor, pagas e atrasadas e o rótulo esperado do tipo não foram 
 | Ator | Usuário autenticado com acesso ao módulo. |
 | Pré-condições | Conta a pagar descartável cadastrada. |
 | Gatilho | Acionar a lixeira da conta e confirmar o diálogo. |
-| Caso | [CT-RF68](Cenario_Teste/CT-RF68_Exclusao_Conta_Pagar.md) |
+| Caso | [CT-RF95](Cenario_Teste/CT-RF95_Exclusao_Conta_Pagar.md) |
 | Situação observada | Aprovado conforme a gravação. O diálogo pede confirmação e `deletar-conta-pagar` retorna HTTP 200 sem erro; a conta 29 deixa a listagem. |
 | Defeito | Nenhum no fluxo avaliado |
-| Evidências | [Jam](https://jam.dev/c/5d0afaf4-5abd-4e85-923f-27448304a9ef) e [Evidências](Evidencias/CT-RF68_Exclusao_Conta_Pagar/README.md). |
+| Evidências | [Jam](https://jam.dev/c/5d0afaf4-5abd-4e85-923f-27448304a9ef) e [Evidências](Evidencias/CT-RF95_Exclusao_Conta_Pagar/README.md). |
 
-### Critérios de aceitação do RF68
+### Critérios de aceitação do RF95
 
 1. A exclusão exige confirmação do usuário.
 2. Cancelar preserva a conta.
@@ -1919,15 +1919,15 @@ Contas de fornecedor, pagas e atrasadas e o rótulo esperado do tipo não foram 
 4. A conta excluída não reaparece após recarga.
 5. Contas vinculadas a pagamentos ou ao caixa têm tratamento explícito.
 
-### Pontos a confirmar e limites do RF68
+### Pontos a confirmar e limites do RF95
 
 Cancelar, recarga após a exclusão e contas pagas ou vinculadas não foram exercitados.
 
 ---
 
-<a id="rf69"></a>
+<a id="rf96"></a>
 
-## RF69 — Inserir variáveis e pré-visualizar o contrato
+## RF96 — Inserir variáveis e pré-visualizar o contrato
 
 | Campo | Descrição |
 | --- | --- |
@@ -1935,12 +1935,12 @@ Cancelar, recarga após a exclusão e contas pagas ou vinculadas não foram exer
 | Ator | Usuário autenticado com acesso ao módulo. |
 | Pré-condições | Editor de modelo de contrato aberto; variáveis disponíveis. |
 | Gatilho | Clicar em variáveis e acionar Atualizar preview. |
-| Caso | [CT-RF69](Cenario_Teste/CT-RF69_Variaveis_Preview_Modelo_Contrato.md) |
+| Caso | [CT-RF96](Cenario_Teste/CT-RF96_Variaveis_Preview_Modelo_Contrato.md) |
 | Situação observada | Aprovado conforme a gravação. As variáveis {numero_contrato}, {nome_aluno} e {cpf_aluno} são inseridas e a pré-visualização apresenta "2024/001 João da Silva 123.456.789-00". |
 | Defeito | Nenhum no fluxo avaliado |
-| Evidências | [Jam](https://jam.dev/c/44dbbd39-6915-45d6-8dd1-5f30c1432ca0) e [Evidências](Evidencias/CT-RF69_Variaveis_Preview_Modelo_Contrato/README.md). |
+| Evidências | [Jam](https://jam.dev/c/44dbbd39-6915-45d6-8dd1-5f30c1432ca0) e [Evidências](Evidencias/CT-RF96_Variaveis_Preview_Modelo_Contrato/README.md). |
 
-### Critérios de aceitação do RF69
+### Critérios de aceitação do RF96
 
 1. Cada variável clicada é inserida no ponto do cursor do editor.
 2. A pré-visualização substitui as variáveis por dados de exemplo coerentes.
@@ -1948,15 +1948,15 @@ Cancelar, recarga após a exclusão e contas pagas ou vinculadas não foram exer
 4. Todas as variáveis dos quatro grupos funcionam.
 5. As variáveis permanecem no texto após salvar.
 
-### Pontos a confirmar e limites do RF69
+### Pontos a confirmar e limites do RF96
 
 As demais variáveis, a formatação complexa e o texto gravado não foram exercitados.
 
 ---
 
-<a id="rf70"></a>
+<a id="rf97"></a>
 
-## RF70 — Cadastrar um modelo de contrato
+## RF97 — Cadastrar um modelo de contrato
 
 | Campo | Descrição |
 | --- | --- |
@@ -1964,12 +1964,12 @@ As demais variáveis, a formatação complexa e o texto gravado não foram exerc
 | Ator | Usuário autenticado com acesso ao módulo. |
 | Pré-condições | Formulário preenchido; modelos existentes conhecidos. |
 | Gatilho | Preencher título, status e texto e acionar Salvar modelo. |
-| Caso | [CT-RF70](Cenario_Teste/CT-RF70_Cadastro_Modelo_Contrato.md) |
+| Caso | [CT-RF97](Cenario_Teste/CT-RF97_Cadastro_Modelo_Contrato.md) |
 | Situação observada | Aprovado conforme a gravação. `modelo-contrato/salvar` retorna HTTP 201 e o servidor passa a listar o modelo de id 15 ("teste eduardo", Ativo). |
 | Defeito | Nenhum no fluxo avaliado |
-| Evidências | [Jam](https://jam.dev/c/44dbbd39-6915-45d6-8dd1-5f30c1432ca0) e [Evidências](Evidencias/CT-RF70_Cadastro_Modelo_Contrato/README.md). |
+| Evidências | [Jam](https://jam.dev/c/44dbbd39-6915-45d6-8dd1-5f30c1432ca0) e [Evidências](Evidencias/CT-RF97_Cadastro_Modelo_Contrato/README.md). |
 
-### Critérios de aceitação do RF70
+### Critérios de aceitação do RF97
 
 1. Salvar com dados válidos cria o modelo e retorna sucesso.
 2. O modelo criado é devolvido pelo servidor na lista de modelos.
@@ -1977,15 +1977,15 @@ As demais variáveis, a formatação complexa e o texto gravado não foram exerc
 4. Título e texto obrigatórios são validados antes da gravação.
 5. O texto e as variáveis são gravados sem perda.
 
-### Pontos a confirmar e limites do RF70
+### Pontos a confirmar e limites do RF97
 
 O corpo da criação, o texto gravado, os campos obrigatórios e a apresentação na listagem não foram verificados.
 
 ---
 
-<a id="rf71"></a>
+<a id="rf98"></a>
 
-## RF71 — Apresentar na listagem os modelos de contrato retornados pelo servidor
+## RF98 — Apresentar na listagem os modelos de contrato retornados pelo servidor
 
 | Campo | Descrição |
 | --- | --- |
@@ -1993,12 +1993,12 @@ O corpo da criação, o texto gravado, os campos obrigatórios e a apresentaçã
 | Ator | Usuário autenticado com acesso ao módulo. |
 | Pré-condições | Modelos de contrato existentes no servidor. |
 | Gatilho | Acessar Modelos Contrato e, depois, criar um modelo. |
-| Caso | [CT-RF71](Cenario_Teste/CT-RF71_Listagem_Modelos_Contrato_Vazia.md) |
+| Caso | [CT-RF98](Cenario_Teste/CT-RF98_Listagem_Modelos_Contrato_Vazia.md) |
 | Situação observada | Reprovado nas evidências. O servidor devolve 15 modelos, mas a tabela permanece com apenas o cabeçalho, sem linhas e sem mensagem. |
-| Defeito | [BUG-026](Relatorio-de-Bugs.md#bug-026), em triagem |
-| Evidências | [Jam](https://jam.dev/c/44dbbd39-6915-45d6-8dd1-5f30c1432ca0) e [Evidências](Evidencias/CT-RF71_Listagem_Modelos_Contrato_Vazia/README.md). |
+| Defeito | [BUG-040](Relatorio-de-Bugs.md#bug-040), em triagem |
+| Evidências | [Jam](https://jam.dev/c/44dbbd39-6915-45d6-8dd1-5f30c1432ca0) e [Evidências](Evidencias/CT-RF98_Listagem_Modelos_Contrato_Vazia/README.md). |
 
-### Critérios de aceitação do RF71
+### Critérios de aceitação do RF98
 
 1. A tabela apresenta uma linha para cada modelo retornado pelo servidor.
 2. O modelo recém-criado aparece na listagem sem recarregar manualmente.
@@ -2006,15 +2006,15 @@ O corpo da criação, o texto gravado, os campos obrigatórios e a apresentaçã
 4. Sem modelos, a tela apresenta mensagem explícita de estado vazio.
 5. A listagem permanece correta após recarregar a página.
 
-### Pontos a confirmar e limites do RF71
+### Pontos a confirmar e limites do RF98
 
 A causa e o comportamento após recarga não foram confirmados; a lista completa foi lida por texto.
 
 ---
 
-<a id="rf72"></a>
+<a id="rf99"></a>
 
-## RF72 — Filtrar planos por código e por nome
+## RF99 — Filtrar planos por código e por nome
 
 | Campo | Descrição |
 | --- | --- |
@@ -2022,12 +2022,12 @@ A causa e o comportamento após recarga não foram confirmados; a lista completa
 | Ator | Usuário autenticado com acesso ao módulo. |
 | Pré-condições | Base de planos conhecida, com códigos, nomes e status registrados. |
 | Gatilho | Informar código ou nome e, depois, limpar os campos. |
-| Caso | [CT-RF72](Cenario_Teste/CT-RF72_Filtros_Planos.md) |
+| Caso | [CT-RF99](Cenario_Teste/CT-RF99_Filtros_Planos.md) |
 | Situação observada | Aprovado conforme a gravação. O código "7" lista os planos 37, 7 e 67 e o nome "a" lista planos de nomes aba e Aba; Buscar recarrega a listagem. |
 | Defeito | Nenhum no fluxo avaliado |
-| Evidências | [Jam](https://jam.dev/c/233c5d21-e108-4a55-b6f6-8738cb3fc6a6) e [Evidências](Evidencias/CT-RF72_Filtros_Planos/README.md). |
+| Evidências | [Jam](https://jam.dev/c/233c5d21-e108-4a55-b6f6-8738cb3fc6a6) e [Evidências](Evidencias/CT-RF99_Filtros_Planos/README.md). |
 
-### Critérios de aceitação do RF72
+### Critérios de aceitação do RF99
 
 1. O filtro por código retorna os planos cujo código contenha o critério.
 2. O filtro por nome retorna os planos cujo nome contenha o critério, sem diferenciar maiúsculas.
@@ -2035,15 +2035,15 @@ A causa e o comportamento após recarga não foram confirmados; a lista completa
 4. Limpar os campos restaura a listagem completa.
 5. Critérios sem correspondência apresentam mensagem explícita.
 
-### Pontos a confirmar e limites do RF72
+### Pontos a confirmar e limites do RF99
 
 O filtro por Status, a combinação de critérios, o resultado vazio e o contrato dos cartões não foram exercitados.
 
 ---
 
-<a id="rf73"></a>
+<a id="rf100"></a>
 
-## RF73 — Alternar o tema e consultar as notificações na tela Planos
+## RF100 — Alternar o tema e consultar as notificações na tela Planos
 
 | Campo | Descrição |
 | --- | --- |
@@ -2051,12 +2051,12 @@ O filtro por Status, a combinação de critérios, o resultado vazio e o contrat
 | Ator | Usuário autenticado com acesso ao módulo. |
 | Pré-condições | Sessão autenticada; tema inicial e notificações conhecidos. |
 | Gatilho | Acionar o alternador de tema e o sino. |
-| Caso | [CT-RF73](Cenario_Teste/CT-RF73_Tema_Notificacoes_Planos.md) |
+| Caso | [CT-RF100](Cenario_Teste/CT-RF100_Tema_Notificacoes_Planos.md) |
 | Situação observada | Aprovado conforme a gravação. O tema escuro é aplicado e o claro restaurado, com POST usuario/tema (HTTP 200) a cada troca; o painel de Notificações abre sem pendências. |
 | Defeito | Nenhum no fluxo avaliado |
-| Evidências | [Jam](https://jam.dev/c/233c5d21-e108-4a55-b6f6-8738cb3fc6a6) e [Evidências](Evidencias/CT-RF73_Tema_Notificacoes_Planos/README.md). |
+| Evidências | [Jam](https://jam.dev/c/233c5d21-e108-4a55-b6f6-8738cb3fc6a6) e [Evidências](Evidencias/CT-RF100_Tema_Notificacoes_Planos/README.md). |
 
-### Critérios de aceitação do RF73
+### Critérios de aceitação do RF100
 
 1. Cada acionamento troca o tema sem perda de legibilidade.
 2. Cada troca é gravada no servidor e permanece após recarregar.
@@ -2064,15 +2064,15 @@ O filtro por Status, a combinação de critérios, o resultado vazio e o contrat
 4. Sem pendências, o painel apresenta mensagem explícita.
 5. Com pendências, o painel lista os itens.
 
-### Pontos a confirmar e limites do RF73
+### Pontos a confirmar e limites do RF100
 
 A persistência após recarga e as notificações pendentes não foram exercitadas.
 
 ---
 
-<a id="rf74"></a>
+<a id="rf101"></a>
 
-## RF74 — Cadastrar um plano
+## RF101 — Cadastrar um plano
 
 | Campo | Descrição |
 | --- | --- |
@@ -2080,12 +2080,12 @@ A persistência após recarga e as notificações pendentes não foram exercitad
 | Ator | Usuário autenticado com acesso ao módulo. |
 | Pré-condições | Modal Novo Plano preenchido; base de planos conhecida. |
 | Gatilho | Preencher o modal e acionar Salvar Plano. |
-| Caso | [CT-RF74](Cenario_Teste/CT-RF74_Cadastro_Plano.md) |
+| Caso | [CT-RF101](Cenario_Teste/CT-RF101_Cadastro_Plano.md) |
 | Situação observada | Aprovado conforme a gravação. `plano/salvar` retorna HTTP 200 com o id 66 e o cartão Planos passa de 40 para 41. |
 | Defeito | Nenhum no fluxo avaliado |
-| Evidências | [Jam](https://jam.dev/c/233c5d21-e108-4a55-b6f6-8738cb3fc6a6) e [Evidências](Evidencias/CT-RF74_Cadastro_Plano/README.md). |
+| Evidências | [Jam](https://jam.dev/c/233c5d21-e108-4a55-b6f6-8738cb3fc6a6) e [Evidências](Evidencias/CT-RF101_Cadastro_Plano/README.md). |
 
-### Critérios de aceitação do RF74
+### Critérios de aceitação do RF101
 
 1. Salvar com dados válidos cria o plano e retorna o identificador.
 2. O contador de planos acompanha o cadastro.
@@ -2093,15 +2093,15 @@ A persistência após recarga e as notificações pendentes não foram exercitad
 4. Campos obrigatórios em branco são validados antes da gravação.
 5. Os benefícios informados são gravados com o plano.
 
-### Pontos a confirmar e limites do RF74
+### Pontos a confirmar e limites do RF101
 
-A linha do plano na listagem, os campos obrigatórios e os benefícios não foram verificados; o cartão Ativos é tratado no RF75.
+A linha do plano na listagem, os campos obrigatórios e os benefícios não foram verificados; o cartão Ativos é tratado no RF102.
 
 ---
 
-<a id="rf75"></a>
+<a id="rf102"></a>
 
-## RF75 — Manter o cartão Ativos coerente com o status dos planos
+## RF102 — Manter o cartão Ativos coerente com o status dos planos
 
 | Campo | Descrição |
 | --- | --- |
@@ -2109,12 +2109,12 @@ A linha do plano na listagem, os campos obrigatórios e os benefícios não fora
 | Ator | Usuário autenticado com acesso ao módulo. |
 | Pré-condições | Base de planos conhecida, com a regra do cartão definida com o produto. |
 | Gatilho | Cadastrar um plano inativo e editar um plano inativo. |
-| Caso | [CT-RF75](Cenario_Teste/CT-RF75_Contador_Ativos_Planos.md) |
+| Caso | [CT-RF102](Cenario_Teste/CT-RF102_Contador_Ativos_Planos.md) |
 | Situação observada | Reprovado nas evidências. O cartão Ativos sobe de 29 para 31 após cadastrar e editar planos inativos. |
-| Defeito | [BUG-027](Relatorio-de-Bugs.md#bug-027), em triagem |
-| Evidências | [Jam](https://jam.dev/c/233c5d21-e108-4a55-b6f6-8738cb3fc6a6) e [Evidências](Evidencias/CT-RF75_Contador_Ativos_Planos/README.md). |
+| Defeito | [BUG-041](Relatorio-de-Bugs.md#bug-041), em triagem |
+| Evidências | [Jam](https://jam.dev/c/233c5d21-e108-4a55-b6f6-8738cb3fc6a6) e [Evidências](Evidencias/CT-RF102_Contador_Ativos_Planos/README.md). |
 
-### Critérios de aceitação do RF75
+### Critérios de aceitação do RF102
 
 1. O cartão Ativos conta apenas planos com status ativo.
 2. Cadastrar um plano inativo não altera o cartão Ativos.
@@ -2122,15 +2122,15 @@ A linha do plano na listagem, os campos obrigatórios e os benefícios não fora
 4. O cartão Planos acompanha o total de registros.
 5. O cartão é recalculado de forma consistente após recarregar a página.
 
-### Pontos a confirmar e limites do RF75
+### Pontos a confirmar e limites do RF102
 
 A regra de cálculo do cartão e a contagem da listagem não foram verificadas.
 
 ---
 
-<a id="rf76"></a>
+<a id="rf103"></a>
 
-## RF76 — Editar um plano
+## RF103 — Editar um plano
 
 | Campo | Descrição |
 | --- | --- |
@@ -2138,20 +2138,20 @@ A regra de cálculo do cartão e a contagem da listagem não foram verificadas.
 | Ator | Usuário autenticado com acesso ao módulo. |
 | Pré-condições | Plano descartável cadastrado e visível na listagem. |
 | Gatilho | Acionar o botão de ação do plano, alterar os benefícios e acionar Salvar Plano. |
-| Caso | [CT-RF76](Cenario_Teste/CT-RF76_Edicao_Plano.md) |
+| Caso | [CT-RF103](Cenario_Teste/CT-RF103_Edicao_Plano.md) |
 | Situação observada | Aprovado conforme a gravação. O modal abre com os dados do plano 41 e plano/update retorna HTTP 200 sem erro. |
 | Defeito | Nenhum no fluxo avaliado |
-| Evidências | [Jam](https://jam.dev/c/233c5d21-e108-4a55-b6f6-8738cb3fc6a6) e [Evidências](Evidencias/CT-RF76_Edicao_Plano/README.md). |
+| Evidências | [Jam](https://jam.dev/c/233c5d21-e108-4a55-b6f6-8738cb3fc6a6) e [Evidências](Evidencias/CT-RF103_Edicao_Plano/README.md). |
 
-### Critérios de aceitação do RF76
+### Critérios de aceitação do RF103
 
 1. O botão de ação abre o plano com os dados atuais.
 2. A alteração de qualquer campo é enviada e gravada sem erro.
 3. A listagem reflete a alteração.
 4. A alteração permanece após recarregar.
-5. O cartão Ativos não é alterado por edição sem mudança de status (CT-RF75).
+5. O cartão Ativos não é alterado por edição sem mudança de status (CT-RF102).
 
-### Pontos a confirmar e limites do RF76
+### Pontos a confirmar e limites do RF103
 
 A persistência após recarga, a edição dos demais campos e o efeito no cartão Ativos não foram exercitados.
 
@@ -2215,25 +2215,25 @@ A persistência após recarga, a edição dos demais campos e o efeito no cartã
 | RF54 | [CT-RF54](Cenario_Teste/CT-RF54_Relatorio_Clientes_Vazio.md) | [BUG-023](Relatorio-de-Bugs.md#bug-023), em triagem | Reprovado nas evidências; reteste pendente. | [Evidências](Evidencias/CT-RF54_Relatorio_Clientes_Vazio/README.md) e [Jam](https://jam.dev/c/3b4777a4-e1b0-4038-9b06-26c73669d7d1) |
 | RF55 | [CT-RF55](Cenario_Teste/CT-RF55_Relatorio_Colaboradores_Vazio.md) | [BUG-023](Relatorio-de-Bugs.md#bug-023), em triagem | Reprovado nas evidências; reteste pendente. | [Evidências](Evidencias/CT-RF55_Relatorio_Colaboradores_Vazio/README.md) e [Jam](https://jam.dev/c/3b4777a4-e1b0-4038-9b06-26c73669d7d1) |
 | RF56 | [CT-RF56](Cenario_Teste/CT-RF56_Relatorio_Caixas_Vazio.md) | [BUG-023](Relatorio-de-Bugs.md#bug-023), em triagem | Reprovado nas evidências; reteste pendente. | [Evidências](Evidencias/CT-RF56_Relatorio_Caixas_Vazio/README.md) e [Jam](https://jam.dev/c/3b4777a4-e1b0-4038-9b06-26c73669d7d1) |
-| RF58 | [CT-RF58](Cenario_Teste/CT-RF58_Tema_Notificacoes_Prospeccao.md) | Nenhum no fluxo avaliado | Aprovado conforme a gravação | [Evidências](Evidencias/CT-RF58_Tema_Notificacoes_Prospeccao/README.md) e [Jam](https://jam.dev/c/308607ff-8abc-40af-8c7c-429ce506ed64) |
-| RF59 | [CT-RF59](Cenario_Teste/CT-RF59_Busca_Leads_Prospeccao.md) | Nenhum no fluxo avaliado | Aprovado conforme a gravação | [Evidências](Evidencias/CT-RF59_Busca_Leads_Prospeccao/README.md) e [Jam](https://jam.dev/c/308607ff-8abc-40af-8c7c-429ce506ed64) |
-| RF60 | [CT-RF60](Cenario_Teste/CT-RF60_Filtro_Estagio_Leads.md) | Nenhum no fluxo avaliado | Aprovado conforme a gravação | [Evidências](Evidencias/CT-RF60_Filtro_Estagio_Leads/README.md) e [Jam](https://jam.dev/c/308607ff-8abc-40af-8c7c-429ce506ed64) |
-| RF61 | [CT-RF61](Cenario_Teste/CT-RF61_Cadastro_Lead_Prospeccao.md) | Sem defeito confirmado | A validar — regra ou contexto pendente | [Evidências](Evidencias/CT-RF61_Cadastro_Lead_Prospeccao/README.md) e [Jam](https://jam.dev/c/308607ff-8abc-40af-8c7c-429ce506ed64) |
-| RF62 | [CT-RF62](Cenario_Teste/CT-RF62_Telefone_Lead_Sem_Validacao.md) | [BUG-024](Relatorio-de-Bugs.md#bug-024), em triagem | Reprovado nas evidências; reteste pendente. | [Evidências](Evidencias/CT-RF62_Telefone_Lead_Sem_Validacao/README.md) e [Jam](https://jam.dev/c/308607ff-8abc-40af-8c7c-429ce506ed64) |
-| RF63 | [CT-RF63](Cenario_Teste/CT-RF63_Edicao_Lead_Prospeccao.md) | Nenhum no fluxo avaliado | Aprovado conforme a gravação | [Evidências](Evidencias/CT-RF63_Edicao_Lead_Prospeccao/README.md) e [Jam](https://jam.dev/c/308607ff-8abc-40af-8c7c-429ce506ed64) |
-| RF64 | [CT-RF64](Cenario_Teste/CT-RF64_Filtros_Contas_Pagar.md) | Sem defeito confirmado | A validar — regra ou contexto pendente | [Evidências](Evidencias/CT-RF64_Filtros_Contas_Pagar/README.md) e [Jam](https://jam.dev/c/5d0afaf4-5abd-4e85-923f-27448304a9ef) |
-| RF65 | [CT-RF65](Cenario_Teste/CT-RF65_Cadastro_Conta_Colaborador_Sem_Colaborador.md) | [BUG-025](Relatorio-de-Bugs.md#bug-025), em triagem | Reprovado nas evidências; reteste pendente. | [Evidências](Evidencias/CT-RF65_Cadastro_Conta_Colaborador_Sem_Colaborador/README.md) e [Jam](https://jam.dev/c/5d0afaf4-5abd-4e85-923f-27448304a9ef) |
-| RF66 | [CT-RF66](Cenario_Teste/CT-RF66_Busca_Colaborador_Conta_Pagar.md) | Sem defeito confirmado | A validar — regra ou contexto pendente | [Evidências](Evidencias/CT-RF66_Busca_Colaborador_Conta_Pagar/README.md) e [Jam](https://jam.dev/c/5d0afaf4-5abd-4e85-923f-27448304a9ef) |
-| RF67 | [CT-RF67](Cenario_Teste/CT-RF67_Visualizacao_Conta_Pagar.md) | Nenhum no fluxo avaliado | Aprovado conforme a gravação | [Evidências](Evidencias/CT-RF67_Visualizacao_Conta_Pagar/README.md) e [Jam](https://jam.dev/c/5d0afaf4-5abd-4e85-923f-27448304a9ef) |
-| RF68 | [CT-RF68](Cenario_Teste/CT-RF68_Exclusao_Conta_Pagar.md) | Nenhum no fluxo avaliado | Aprovado conforme a gravação | [Evidências](Evidencias/CT-RF68_Exclusao_Conta_Pagar/README.md) e [Jam](https://jam.dev/c/5d0afaf4-5abd-4e85-923f-27448304a9ef) |
-| RF69 | [CT-RF69](Cenario_Teste/CT-RF69_Variaveis_Preview_Modelo_Contrato.md) | Nenhum no fluxo avaliado | Aprovado conforme a gravação | [Evidências](Evidencias/CT-RF69_Variaveis_Preview_Modelo_Contrato/README.md) e [Jam](https://jam.dev/c/44dbbd39-6915-45d6-8dd1-5f30c1432ca0) |
-| RF70 | [CT-RF70](Cenario_Teste/CT-RF70_Cadastro_Modelo_Contrato.md) | Nenhum no fluxo avaliado | Aprovado conforme a gravação | [Evidências](Evidencias/CT-RF70_Cadastro_Modelo_Contrato/README.md) e [Jam](https://jam.dev/c/44dbbd39-6915-45d6-8dd1-5f30c1432ca0) |
-| RF71 | [CT-RF71](Cenario_Teste/CT-RF71_Listagem_Modelos_Contrato_Vazia.md) | [BUG-026](Relatorio-de-Bugs.md#bug-026), em triagem | Reprovado nas evidências; reteste pendente. | [Evidências](Evidencias/CT-RF71_Listagem_Modelos_Contrato_Vazia/README.md) e [Jam](https://jam.dev/c/44dbbd39-6915-45d6-8dd1-5f30c1432ca0) |
-| RF72 | [CT-RF72](Cenario_Teste/CT-RF72_Filtros_Planos.md) | Nenhum no fluxo avaliado | Aprovado conforme a gravação | [Evidências](Evidencias/CT-RF72_Filtros_Planos/README.md) e [Jam](https://jam.dev/c/233c5d21-e108-4a55-b6f6-8738cb3fc6a6) |
-| RF73 | [CT-RF73](Cenario_Teste/CT-RF73_Tema_Notificacoes_Planos.md) | Nenhum no fluxo avaliado | Aprovado conforme a gravação | [Evidências](Evidencias/CT-RF73_Tema_Notificacoes_Planos/README.md) e [Jam](https://jam.dev/c/233c5d21-e108-4a55-b6f6-8738cb3fc6a6) |
-| RF74 | [CT-RF74](Cenario_Teste/CT-RF74_Cadastro_Plano.md) | Nenhum no fluxo avaliado | Aprovado conforme a gravação | [Evidências](Evidencias/CT-RF74_Cadastro_Plano/README.md) e [Jam](https://jam.dev/c/233c5d21-e108-4a55-b6f6-8738cb3fc6a6) |
-| RF75 | [CT-RF75](Cenario_Teste/CT-RF75_Contador_Ativos_Planos.md) | [BUG-027](Relatorio-de-Bugs.md#bug-027), em triagem | Reprovado nas evidências; reteste pendente. | [Evidências](Evidencias/CT-RF75_Contador_Ativos_Planos/README.md) e [Jam](https://jam.dev/c/233c5d21-e108-4a55-b6f6-8738cb3fc6a6) |
-| RF76 | [CT-RF76](Cenario_Teste/CT-RF76_Edicao_Plano.md) | Nenhum no fluxo avaliado | Aprovado conforme a gravação | [Evidências](Evidencias/CT-RF76_Edicao_Plano/README.md) e [Jam](https://jam.dev/c/233c5d21-e108-4a55-b6f6-8738cb3fc6a6) |
+| RF85 | [CT-RF85](Cenario_Teste/CT-RF85_Tema_Notificacoes_Prospeccao.md) | Nenhum no fluxo avaliado | Aprovado conforme a gravação | [Evidências](Evidencias/CT-RF85_Tema_Notificacoes_Prospeccao/README.md) e [Jam](https://jam.dev/c/308607ff-8abc-40af-8c7c-429ce506ed64) |
+| RF86 | [CT-RF86](Cenario_Teste/CT-RF86_Busca_Leads_Prospeccao.md) | Nenhum no fluxo avaliado | Aprovado conforme a gravação | [Evidências](Evidencias/CT-RF86_Busca_Leads_Prospeccao/README.md) e [Jam](https://jam.dev/c/308607ff-8abc-40af-8c7c-429ce506ed64) |
+| RF87 | [CT-RF87](Cenario_Teste/CT-RF87_Filtro_Estagio_Leads.md) | Nenhum no fluxo avaliado | Aprovado conforme a gravação | [Evidências](Evidencias/CT-RF87_Filtro_Estagio_Leads/README.md) e [Jam](https://jam.dev/c/308607ff-8abc-40af-8c7c-429ce506ed64) |
+| RF88 | [CT-RF88](Cenario_Teste/CT-RF88_Cadastro_Lead_Prospeccao.md) | Sem defeito confirmado | A validar — regra ou contexto pendente | [Evidências](Evidencias/CT-RF88_Cadastro_Lead_Prospeccao/README.md) e [Jam](https://jam.dev/c/308607ff-8abc-40af-8c7c-429ce506ed64) |
+| RF89 | [CT-RF89](Cenario_Teste/CT-RF89_Telefone_Lead_Sem_Validacao.md) | [BUG-038](Relatorio-de-Bugs.md#bug-038), em triagem | Reprovado nas evidências; reteste pendente. | [Evidências](Evidencias/CT-RF89_Telefone_Lead_Sem_Validacao/README.md) e [Jam](https://jam.dev/c/308607ff-8abc-40af-8c7c-429ce506ed64) |
+| RF90 | [CT-RF90](Cenario_Teste/CT-RF90_Edicao_Lead_Prospeccao.md) | Nenhum no fluxo avaliado | Aprovado conforme a gravação | [Evidências](Evidencias/CT-RF90_Edicao_Lead_Prospeccao/README.md) e [Jam](https://jam.dev/c/308607ff-8abc-40af-8c7c-429ce506ed64) |
+| RF91 | [CT-RF91](Cenario_Teste/CT-RF91_Filtros_Contas_Pagar.md) | Sem defeito confirmado | A validar — regra ou contexto pendente | [Evidências](Evidencias/CT-RF91_Filtros_Contas_Pagar/README.md) e [Jam](https://jam.dev/c/5d0afaf4-5abd-4e85-923f-27448304a9ef) |
+| RF92 | [CT-RF92](Cenario_Teste/CT-RF92_Cadastro_Conta_Colaborador_Sem_Colaborador.md) | [BUG-039](Relatorio-de-Bugs.md#bug-039), em triagem | Reprovado nas evidências; reteste pendente. | [Evidências](Evidencias/CT-RF92_Cadastro_Conta_Colaborador_Sem_Colaborador/README.md) e [Jam](https://jam.dev/c/5d0afaf4-5abd-4e85-923f-27448304a9ef) |
+| RF93 | [CT-RF93](Cenario_Teste/CT-RF93_Busca_Colaborador_Conta_Pagar.md) | Sem defeito confirmado | A validar — regra ou contexto pendente | [Evidências](Evidencias/CT-RF93_Busca_Colaborador_Conta_Pagar/README.md) e [Jam](https://jam.dev/c/5d0afaf4-5abd-4e85-923f-27448304a9ef) |
+| RF94 | [CT-RF94](Cenario_Teste/CT-RF94_Visualizacao_Conta_Pagar.md) | Nenhum no fluxo avaliado | Aprovado conforme a gravação | [Evidências](Evidencias/CT-RF94_Visualizacao_Conta_Pagar/README.md) e [Jam](https://jam.dev/c/5d0afaf4-5abd-4e85-923f-27448304a9ef) |
+| RF95 | [CT-RF95](Cenario_Teste/CT-RF95_Exclusao_Conta_Pagar.md) | Nenhum no fluxo avaliado | Aprovado conforme a gravação | [Evidências](Evidencias/CT-RF95_Exclusao_Conta_Pagar/README.md) e [Jam](https://jam.dev/c/5d0afaf4-5abd-4e85-923f-27448304a9ef) |
+| RF96 | [CT-RF96](Cenario_Teste/CT-RF96_Variaveis_Preview_Modelo_Contrato.md) | Nenhum no fluxo avaliado | Aprovado conforme a gravação | [Evidências](Evidencias/CT-RF96_Variaveis_Preview_Modelo_Contrato/README.md) e [Jam](https://jam.dev/c/44dbbd39-6915-45d6-8dd1-5f30c1432ca0) |
+| RF97 | [CT-RF97](Cenario_Teste/CT-RF97_Cadastro_Modelo_Contrato.md) | Nenhum no fluxo avaliado | Aprovado conforme a gravação | [Evidências](Evidencias/CT-RF97_Cadastro_Modelo_Contrato/README.md) e [Jam](https://jam.dev/c/44dbbd39-6915-45d6-8dd1-5f30c1432ca0) |
+| RF98 | [CT-RF98](Cenario_Teste/CT-RF98_Listagem_Modelos_Contrato_Vazia.md) | [BUG-040](Relatorio-de-Bugs.md#bug-040), em triagem | Reprovado nas evidências; reteste pendente. | [Evidências](Evidencias/CT-RF98_Listagem_Modelos_Contrato_Vazia/README.md) e [Jam](https://jam.dev/c/44dbbd39-6915-45d6-8dd1-5f30c1432ca0) |
+| RF99 | [CT-RF99](Cenario_Teste/CT-RF99_Filtros_Planos.md) | Nenhum no fluxo avaliado | Aprovado conforme a gravação | [Evidências](Evidencias/CT-RF99_Filtros_Planos/README.md) e [Jam](https://jam.dev/c/233c5d21-e108-4a55-b6f6-8738cb3fc6a6) |
+| RF100 | [CT-RF100](Cenario_Teste/CT-RF100_Tema_Notificacoes_Planos.md) | Nenhum no fluxo avaliado | Aprovado conforme a gravação | [Evidências](Evidencias/CT-RF100_Tema_Notificacoes_Planos/README.md) e [Jam](https://jam.dev/c/233c5d21-e108-4a55-b6f6-8738cb3fc6a6) |
+| RF101 | [CT-RF101](Cenario_Teste/CT-RF101_Cadastro_Plano.md) | Nenhum no fluxo avaliado | Aprovado conforme a gravação | [Evidências](Evidencias/CT-RF101_Cadastro_Plano/README.md) e [Jam](https://jam.dev/c/233c5d21-e108-4a55-b6f6-8738cb3fc6a6) |
+| RF102 | [CT-RF102](Cenario_Teste/CT-RF102_Contador_Ativos_Planos.md) | [BUG-041](Relatorio-de-Bugs.md#bug-041), em triagem | Reprovado nas evidências; reteste pendente. | [Evidências](Evidencias/CT-RF102_Contador_Ativos_Planos/README.md) e [Jam](https://jam.dev/c/233c5d21-e108-4a55-b6f6-8738cb3fc6a6) |
+| RF103 | [CT-RF103](Cenario_Teste/CT-RF103_Edicao_Plano.md) | Nenhum no fluxo avaliado | Aprovado conforme a gravação | [Evidências](Evidencias/CT-RF103_Edicao_Plano/README.md) e [Jam](https://jam.dev/c/233c5d21-e108-4a55-b6f6-8738cb3fc6a6) |
 
 ---
 
@@ -2430,119 +2430,119 @@ RF56 utiliza os painéis Info, Console e Network do Jam "Relatórios", os quadro
 
 Com RF56, a análise passa a cobrir 54 requisitos documentados. O CT-RF56 acrescenta uma reprovação, vinculada ao BUG-023, em triagem.
 
-### Base da análise do RF58 — revisão de 15/11/2026
+### Base da análise do RF85 — revisão de 15/11/2026
 
-RF58 utiliza os painéis Info, Console, Network e Actions do Jam "Prospecção" e os quadros de 0:01 e 0:03. Foram registrados a troca de tema, os POST usuario/tema e o painel de Notificações. Não houve nova execução, acesso ao código ou ao banco, nem reteste.
+RF85 utiliza os painéis Info, Console, Network e Actions do Jam "Prospecção" e os quadros de 0:01 e 0:03. Foram registrados a troca de tema, os POST usuario/tema e o painel de Notificações. Não houve nova execução, acesso ao código ou ao banco, nem reteste.
 
-Com RF58, a análise passa a cobrir 55 requisitos documentados. O CT-RF58 acrescenta uma aprovação limitada ao exemplo gravado.
+Com RF85, a análise passa a cobrir 55 requisitos documentados. O CT-RF85 acrescenta uma aprovação limitada ao exemplo gravado.
 
-### Base da análise do RF59 — revisão de 15/11/2026
+### Base da análise do RF86 — revisão de 15/11/2026
 
-RF59 utiliza os painéis Info, Console, Network e Actions do Jam "Prospecção" e os quadros de 0:12, 0:13 e 0:44. Foram registrados a busca por texto, os cartões e a ausência de requisição na busca. Não houve nova execução, acesso ao código ou ao banco, nem reteste.
+RF86 utiliza os painéis Info, Console, Network e Actions do Jam "Prospecção" e os quadros de 0:12, 0:13 e 0:44. Foram registrados a busca por texto, os cartões e a ausência de requisição na busca. Não houve nova execução, acesso ao código ou ao banco, nem reteste.
 
-Com RF59, a análise passa a cobrir 56 requisitos documentados. O CT-RF59 acrescenta uma aprovação limitada ao exemplo gravado.
+Com RF86, a análise passa a cobrir 56 requisitos documentados. O CT-RF86 acrescenta uma aprovação limitada ao exemplo gravado.
 
-### Base da análise do RF60 — revisão de 15/11/2026
+### Base da análise do RF87 — revisão de 15/11/2026
 
-RF60 utiliza os painéis Info, Console, Network e Actions do Jam "Prospecção" e os quadros de 0:16, 0:19 e 0:21. Foram registrados o filtro por estágio, o indicador Novos Contatos, o botão Limpar e a ausência de requisição. Não houve nova execução, acesso ao código ou ao banco, nem reteste.
+RF87 utiliza os painéis Info, Console, Network e Actions do Jam "Prospecção" e os quadros de 0:16, 0:19 e 0:21. Foram registrados o filtro por estágio, o indicador Novos Contatos, o botão Limpar e a ausência de requisição. Não houve nova execução, acesso ao código ou ao banco, nem reteste.
 
-Com RF60, a análise passa a cobrir 57 requisitos documentados. O CT-RF60 acrescenta uma aprovação limitada ao exemplo gravado.
+Com RF87, a análise passa a cobrir 57 requisitos documentados. O CT-RF87 acrescenta uma aprovação limitada ao exemplo gravado.
 
-### Base da análise do RF61 — revisão de 15/11/2026
+### Base da análise do RF88 — revisão de 15/11/2026
 
-RF61 utiliza os painéis Info, Console, Network e Actions do Jam "Prospecção", os corpos da primeira requisição e os quadros de 0:24 e 0:39. Foram registrados o cadastro, os dois POST de criação e a atualização dos cartões. Não houve nova execução, acesso ao código ou ao banco, nem reteste.
+RF88 utiliza os painéis Info, Console, Network e Actions do Jam "Prospecção", os corpos da primeira requisição e os quadros de 0:24 e 0:39. Foram registrados o cadastro, os dois POST de criação e a atualização dos cartões. Não houve nova execução, acesso ao código ou ao banco, nem reteste.
 
-Com RF61, a análise passa a cobrir 58 requisitos documentados. O CT-RF61 acrescenta um ponto a validar, sem defeito confirmado.
+Com RF88, a análise passa a cobrir 58 requisitos documentados. O CT-RF88 acrescenta um ponto a validar, sem defeito confirmado.
 
-### Base da análise do RF62 — revisão de 15/11/2026
+### Base da análise do RF89 — revisão de 15/11/2026
 
-RF62 utiliza os painéis Info, Console, Network e Actions do Jam "Prospecção", o corpo do salvar-lead, a resposta do buscar-lead e os quadros de 0:47. Foram registrados o telefone de 30 dígitos, a ausência de validação e a gravação do valor. Não houve nova execução, acesso ao código ou ao banco, nem reteste.
+RF89 utiliza os painéis Info, Console, Network e Actions do Jam "Prospecção", o corpo do salvar-lead, a resposta do buscar-lead e os quadros de 0:47. Foram registrados o telefone de 30 dígitos, a ausência de validação e a gravação do valor. Não houve nova execução, acesso ao código ou ao banco, nem reteste.
 
-Com RF62, a análise passa a cobrir 59 requisitos documentados. O CT-RF62 acrescenta uma reprovação, vinculada ao BUG-024, em triagem.
+Com RF89, a análise passa a cobrir 59 requisitos documentados. O CT-RF89 acrescenta uma reprovação, vinculada ao BUG-038, em triagem.
 
-### Base da análise do RF63 — revisão de 15/11/2026
+### Base da análise do RF90 — revisão de 15/11/2026
 
-RF63 utiliza os painéis Info, Console, Network e Actions do Jam "Prospecção", os corpos de buscar-lead e atualizar-lead e os quadros de 0:47, 0:57 e 1:01. Foram registrados a abertura do lead, a atualização do nome e a listagem atualizada. Não houve nova execução, acesso ao código ou ao banco, nem reteste.
+RF90 utiliza os painéis Info, Console, Network e Actions do Jam "Prospecção", os corpos de buscar-lead e atualizar-lead e os quadros de 0:47, 0:57 e 1:01. Foram registrados a abertura do lead, a atualização do nome e a listagem atualizada. Não houve nova execução, acesso ao código ou ao banco, nem reteste.
 
-Com RF63, a análise passa a cobrir 60 requisitos documentados. O CT-RF63 acrescenta uma aprovação limitada ao exemplo gravado.
+Com RF90, a análise passa a cobrir 60 requisitos documentados. O CT-RF90 acrescenta uma aprovação limitada ao exemplo gravado.
 
-### Base da análise do RF64 — revisão de 15/11/2026
+### Base da análise do RF91 — revisão de 15/11/2026
 
-RF64 utiliza os painéis Info, Console, Network e Actions do Jam "Contas a Pagar" e os quadros de 0:03 e 0:12. Foram registrados os filtros por nome, tipo de data, período e status e o resultado vazio. Não houve nova execução, acesso ao código ou ao banco, nem reteste.
+RF91 utiliza os painéis Info, Console, Network e Actions do Jam "Contas a Pagar" e os quadros de 0:03 e 0:12. Foram registrados os filtros por nome, tipo de data, período e status e o resultado vazio. Não houve nova execução, acesso ao código ou ao banco, nem reteste.
 
-Com RF64, a análise passa a cobrir 61 requisitos documentados. O CT-RF64 acrescenta um ponto a validar, sem defeito confirmado.
+Com RF91, a análise passa a cobrir 61 requisitos documentados. O CT-RF91 acrescenta um ponto a validar, sem defeito confirmado.
 
-### Base da análise do RF65 — revisão de 15/11/2026
+### Base da análise do RF92 — revisão de 15/11/2026
 
-RF65 utiliza os painéis Info, Console, Network e Actions do Jam "Contas a Pagar", o corpo e a resposta da criação e os quadros de 0:15, 0:41 e 0:50. Foram registrados o cadastro sem colaborador, o HTTP 201 e a listagem com "-". Não houve nova execução, acesso ao código ou ao banco, nem reteste.
+RF92 utiliza os painéis Info, Console, Network e Actions do Jam "Contas a Pagar", o corpo e a resposta da criação e os quadros de 0:15, 0:41 e 0:50. Foram registrados o cadastro sem colaborador, o HTTP 201 e a listagem com "-". Não houve nova execução, acesso ao código ou ao banco, nem reteste.
 
-Com RF65, a análise passa a cobrir 62 requisitos documentados. O CT-RF65 acrescenta uma reprovação, vinculada ao BUG-025, em triagem.
+Com RF92, a análise passa a cobrir 62 requisitos documentados. O CT-RF92 acrescenta uma reprovação, vinculada ao BUG-039, em triagem.
 
-### Base da análise do RF66 — revisão de 15/11/2026
+### Base da análise do RF93 — revisão de 15/11/2026
 
-RF66 utiliza os painéis Info, Console, Network e Actions do Jam "Contas a Pagar" e o quadro de 0:26. Foram registrados a abertura do modal, a busca sem resultado e a resposta de 2 B. Não houve nova execução, acesso ao código ou ao banco, nem reteste.
+RF93 utiliza os painéis Info, Console, Network e Actions do Jam "Contas a Pagar" e o quadro de 0:26. Foram registrados a abertura do modal, a busca sem resultado e a resposta de 2 B. Não houve nova execução, acesso ao código ou ao banco, nem reteste.
 
-Com RF66, a análise passa a cobrir 63 requisitos documentados. O CT-RF66 acrescenta um ponto a validar, sem defeito confirmado.
+Com RF93, a análise passa a cobrir 63 requisitos documentados. O CT-RF93 acrescenta um ponto a validar, sem defeito confirmado.
 
-### Base da análise do RF67 — revisão de 15/11/2026
+### Base da análise do RF94 — revisão de 15/11/2026
 
-RF67 utiliza os painéis Info, Console, Network e Actions do Jam "Contas a Pagar" e o quadro de 0:52. Foram registrados a abertura do modal e os dados apresentados. Não houve nova execução, acesso ao código ou ao banco, nem reteste.
+RF94 utiliza os painéis Info, Console, Network e Actions do Jam "Contas a Pagar" e o quadro de 0:52. Foram registrados a abertura do modal e os dados apresentados. Não houve nova execução, acesso ao código ou ao banco, nem reteste.
 
-Com RF67, a análise passa a cobrir 64 requisitos documentados. O CT-RF67 acrescenta uma aprovação limitada ao exemplo gravado.
+Com RF94, a análise passa a cobrir 64 requisitos documentados. O CT-RF94 acrescenta uma aprovação limitada ao exemplo gravado.
 
-### Base da análise do RF68 — revisão de 15/11/2026
+### Base da análise do RF95 — revisão de 15/11/2026
 
-RF68 utiliza os painéis Info, Console, Network e Actions do Jam "Contas a Pagar", o corpo e a resposta da exclusão e os quadros de 0:54 e 0:59. Foram registrados o diálogo, a exclusão e a listagem. Não houve nova execução, acesso ao código ou ao banco, nem reteste.
+RF95 utiliza os painéis Info, Console, Network e Actions do Jam "Contas a Pagar", o corpo e a resposta da exclusão e os quadros de 0:54 e 0:59. Foram registrados o diálogo, a exclusão e a listagem. Não houve nova execução, acesso ao código ou ao banco, nem reteste.
 
-Com RF68, a análise passa a cobrir 65 requisitos documentados. O CT-RF68 acrescenta uma aprovação limitada ao exemplo gravado.
+Com RF95, a análise passa a cobrir 65 requisitos documentados. O CT-RF95 acrescenta uma aprovação limitada ao exemplo gravado.
 
-### Base da análise do RF69 — revisão de 15/11/2026
+### Base da análise do RF96 — revisão de 15/11/2026
 
-RF69 utiliza os painéis Info, Console, Network e Actions do Jam "Modelos de Contrato" e os quadros de 0:09, 0:21, 0:33 e 0:36. Foram registrados a inserção das variáveis e a pré-visualização. Não houve nova execução, acesso ao código ou ao banco, nem reteste.
+RF96 utiliza os painéis Info, Console, Network e Actions do Jam "Modelos de Contrato" e os quadros de 0:09, 0:21, 0:33 e 0:36. Foram registrados a inserção das variáveis e a pré-visualização. Não houve nova execução, acesso ao código ou ao banco, nem reteste.
 
-Com RF69, a análise passa a cobrir 66 requisitos documentados. O CT-RF69 acrescenta uma aprovação limitada ao exemplo gravado.
+Com RF96, a análise passa a cobrir 66 requisitos documentados. O CT-RF96 acrescenta uma aprovação limitada ao exemplo gravado.
 
-### Base da análise do RF70 — revisão de 15/11/2026
+### Base da análise do RF97 — revisão de 15/11/2026
 
-RF70 utiliza os painéis Info, Console, Network e Actions do Jam "Modelos de Contrato" e a resposta da lista de modelos. Foram registrados a criação (HTTP 201) e o modelo de id 15 na lista do servidor. Não houve nova execução, acesso ao código ou ao banco, nem reteste.
+RF97 utiliza os painéis Info, Console, Network e Actions do Jam "Modelos de Contrato" e a resposta da lista de modelos. Foram registrados a criação (HTTP 201) e o modelo de id 15 na lista do servidor. Não houve nova execução, acesso ao código ou ao banco, nem reteste.
 
-Com RF70, a análise passa a cobrir 67 requisitos documentados. O CT-RF70 acrescenta uma aprovação limitada ao exemplo gravado.
+Com RF97, a análise passa a cobrir 67 requisitos documentados. O CT-RF97 acrescenta uma aprovação limitada ao exemplo gravado.
 
-### Base da análise do RF71 — revisão de 15/11/2026
+### Base da análise do RF98 — revisão de 15/11/2026
 
-RF71 utiliza os painéis Info, Console, Network e Actions do Jam "Modelos de Contrato", a resposta de modelos-contrato e os quadros de 0:00, 0:39, 0:45 e 0:49. Foram registrados a lista de 15 modelos e a tabela sem linhas. Não houve nova execução, acesso ao código ou ao banco, nem reteste.
+RF98 utiliza os painéis Info, Console, Network e Actions do Jam "Modelos de Contrato", a resposta de modelos-contrato e os quadros de 0:00, 0:39, 0:45 e 0:49. Foram registrados a lista de 15 modelos e a tabela sem linhas. Não houve nova execução, acesso ao código ou ao banco, nem reteste.
 
-Com RF71, a análise passa a cobrir 68 requisitos documentados. O CT-RF71 acrescenta uma reprovação, vinculada ao BUG-026, em triagem.
+Com RF98, a análise passa a cobrir 68 requisitos documentados. O CT-RF98 acrescenta uma reprovação, vinculada ao BUG-040, em triagem.
 
-### Base da análise do RF72 — revisão de 15/11/2026
+### Base da análise do RF99 — revisão de 15/11/2026
 
-RF72 utiliza os painéis Info, Console, Network e Actions do Jam "Planos" e os quadros de 0:03, 0:06 e 0:13. Foram registrados os filtros por código e nome e o botão Buscar. Não houve nova execução, acesso ao código ou ao banco, nem reteste.
+RF99 utiliza os painéis Info, Console, Network e Actions do Jam "Planos" e os quadros de 0:03, 0:06 e 0:13. Foram registrados os filtros por código e nome e o botão Buscar. Não houve nova execução, acesso ao código ou ao banco, nem reteste.
 
-Com RF72, a análise passa a cobrir 69 requisitos documentados. O CT-RF72 acrescenta uma aprovação limitada ao exemplo gravado.
+Com RF99, a análise passa a cobrir 69 requisitos documentados. O CT-RF99 acrescenta uma aprovação limitada ao exemplo gravado.
 
-### Base da análise do RF73 — revisão de 15/11/2026
+### Base da análise do RF100 — revisão de 15/11/2026
 
-RF73 utiliza os painéis Info, Console, Network e Actions do Jam "Planos" e os quadros de 0:16 e 0:19. Foram registrados a troca de tema, os POST usuario/tema e o painel de Notificações. Não houve nova execução, acesso ao código ou ao banco, nem reteste.
+RF100 utiliza os painéis Info, Console, Network e Actions do Jam "Planos" e os quadros de 0:16 e 0:19. Foram registrados a troca de tema, os POST usuario/tema e o painel de Notificações. Não houve nova execução, acesso ao código ou ao banco, nem reteste.
 
-Com RF73, a análise passa a cobrir 70 requisitos documentados. O CT-RF73 acrescenta uma aprovação limitada ao exemplo gravado.
+Com RF100, a análise passa a cobrir 70 requisitos documentados. O CT-RF100 acrescenta uma aprovação limitada ao exemplo gravado.
 
-### Base da análise do RF74 — revisão de 15/11/2026
+### Base da análise do RF101 — revisão de 15/11/2026
 
-RF74 utiliza os painéis Info, Console, Network e Actions do Jam "Planos", o corpo e a resposta da criação e os quadros de 0:24, 0:46 e 0:53. Foram registrados o cadastro e o contador de planos. Não houve nova execução, acesso ao código ou ao banco, nem reteste.
+RF101 utiliza os painéis Info, Console, Network e Actions do Jam "Planos", o corpo e a resposta da criação e os quadros de 0:24, 0:46 e 0:53. Foram registrados o cadastro e o contador de planos. Não houve nova execução, acesso ao código ou ao banco, nem reteste.
 
-Com RF74, a análise passa a cobrir 71 requisitos documentados. O CT-RF74 acrescenta uma aprovação limitada ao exemplo gravado.
+Com RF101, a análise passa a cobrir 71 requisitos documentados. O CT-RF101 acrescenta uma aprovação limitada ao exemplo gravado.
 
-### Base da análise do RF75 — revisão de 15/11/2026
+### Base da análise do RF102 — revisão de 15/11/2026
 
-RF75 utiliza os painéis Info, Console, Network e Actions do Jam "Planos", os corpos das requisições de criação e atualização e os quadros de 0:03, 0:53 e 1:08. Foram registrados os cartões Planos e Ativos e o status dos planos nas requisições. Não houve nova execução, acesso ao código ou ao banco, nem reteste.
+RF102 utiliza os painéis Info, Console, Network e Actions do Jam "Planos", os corpos das requisições de criação e atualização e os quadros de 0:03, 0:53 e 1:08. Foram registrados os cartões Planos e Ativos e o status dos planos nas requisições. Não houve nova execução, acesso ao código ou ao banco, nem reteste.
 
-Com RF75, a análise passa a cobrir 72 requisitos documentados. O CT-RF75 acrescenta uma reprovação, vinculada ao BUG-027, em triagem.
+Com RF102, a análise passa a cobrir 72 requisitos documentados. O CT-RF102 acrescenta uma reprovação, vinculada ao BUG-041, em triagem.
 
-### Base da análise do RF76 — revisão de 15/11/2026
+### Base da análise do RF103 — revisão de 15/11/2026
 
-RF76 utiliza os painéis Info, Console, Network e Actions do Jam "Planos", os corpos das requisições e respostas de seleção e atualização e o quadro de 1:02. Foram registrados a abertura do plano e a atualização. Não houve nova execução, acesso ao código ou ao banco, nem reteste.
+RF103 utiliza os painéis Info, Console, Network e Actions do Jam "Planos", os corpos das requisições e respostas de seleção e atualização e o quadro de 1:02. Foram registrados a abertura do plano e a atualização. Não houve nova execução, acesso ao código ou ao banco, nem reteste.
 
-Com RF76, a análise passa a cobrir 73 requisitos documentados. O CT-RF76 acrescenta uma aprovação limitada ao exemplo gravado.
+Com RF103, a análise passa a cobrir 73 requisitos documentados. O CT-RF103 acrescenta uma aprovação limitada ao exemplo gravado.
 
 ---
 

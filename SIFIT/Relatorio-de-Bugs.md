@@ -1,24 +1,24 @@
 # 🐞 Relatório de Bugs — SIFIT
 
-**Escopo:** defeitos de 73 casos documentados (CT-RF01–CT-RF35, CT-RF38–CT-RF56 e CT-RF58–CT-RF76): recuperação, Perfil, Clientes, financeiro, página inicial e dashboard, tema, modalidades, categorias, avaliações, exercícios, grupos musculares, objetivos de treino, SifitBox – Turmas, Pagar.me, configurações, despesas fixas, relatórios, prospecção de leads, contas a pagar, modelos de contrato e planos.
+**Escopo:** defeitos de 73 casos documentados (CT-RF01–CT-RF35, CT-RF38–CT-RF56 e CT-RF85–CT-RF103): recuperação, Perfil, Clientes, financeiro, página inicial e dashboard, tema, modalidades, categorias, avaliações, exercícios, grupos musculares, objetivos de treino, SifitBox – Turmas, Pagar.me, configurações, despesas fixas, relatórios, prospecção de leads, contas a pagar, modelos de contrato e planos.
 
 **Ambientes:** CT-RF01 em https://sifitalfa.centrion.com.br/login; CT-RF02_ERRO em https://sifit.centrion.com.br/profile. CT-RF03: URL do frontend não confirmada; backend informado em `https://backendsifit.centrion.com.br/api/clientesPorNome/1`.
 
 **Datas das gravações do Jam:** CT-RF01 em 23/10/2026; CT-RF02_ERRO em 22/10/2026 às 21:45 BRT; CT-RF03 não confirmada.
 
-**Atualização documental:** 15/11/2026 — 27 defeitos registrados: 10 abertos (BUG-001 a BUG-010) e 17 em triagem (BUG-011 a BUG-027). BUG-019 registra o HTTP 500 no cadastro de objetivo de treino e BUG-020 a ausência de retorno visível no cadastro de turma sem modalidade, ambos sem causa técnica confirmada. As análises anteriores foram preservadas.
+**Atualização documental:** 15/11/2026 — 27 defeitos registrados: 10 abertos (BUG-001 a BUG-010) e 17 em triagem (BUG-011 a BUG-041). BUG-019 registra o HTTP 500 no cadastro de objetivo de treino e BUG-020 a ausência de retorno visível no cadastro de turma sem modalidade, ambos sem causa técnica confirmada. As análises anteriores foram preservadas.
 
 **Padronização documental:** 13/11/2026, sem alteração do status dos defeitos.
 
 **Caso aprovado incluído em 13/11/2026:** [CT-RF04_loginComSucesso](Cenario_Teste/CT-RF04_loginComSucesso.md), vinculado ao RF04, não gerou defeito para o fluxo avaliado. O [Jam de login](https://jam.dev/c/5e4a28be-4e80-43d3-9587-1b113723cc38) mostra acesso ao dashboard após autenticação. Essa aprovação não altera os três bugs existentes; resultados e limites constam no [relatório dos testes](Relatorio%20dos%20testes.md).
 
-**Gravação de CT-RF72–CT-RF76:** 15/11/2026, Planos, 21:54 BRT, Chrome 157.0.8103.78 / Windows 11; uma única gravação; evidência e limites no BUG-027.
+**Gravação de CT-RF99–CT-RF103:** 15/11/2026, Planos, 21:54 BRT, Chrome 157.0.8103.78 / Windows 11; uma única gravação; evidência e limites no BUG-041.
 
-**Gravação de CT-RF69–CT-RF71:** 15/11/2026, Modelos de Contrato, 21:55 BRT, Chrome 157.0.8103.78 / Windows 11; uma única gravação; evidência e limites no BUG-026.
+**Gravação de CT-RF96–CT-RF98:** 15/11/2026, Modelos de Contrato, 21:55 BRT, Chrome 157.0.8103.78 / Windows 11; uma única gravação; evidência e limites no BUG-040.
 
-**Gravação de CT-RF64–CT-RF68:** 15/11/2026, Contas a Pagar, 21:58 BRT, Chrome 157.0.8103.78 / Windows 11; uma única gravação; evidência e limites no BUG-025.
+**Gravação de CT-RF91–CT-RF95:** 15/11/2026, Contas a Pagar, 21:58 BRT, Chrome 157.0.8103.78 / Windows 11; uma única gravação; evidência e limites no BUG-039.
 
-**Gravação de CT-RF58–CT-RF63:** 15/11/2026, Prospecção, 21:52 BRT, Chrome 157.0.8103.78 / Windows 11; uma única gravação; evidência e limites no BUG-024.
+**Gravação de CT-RF85–CT-RF90:** 15/11/2026, Prospecção, 21:52 BRT, Chrome 157.0.8103.78 / Windows 11; uma única gravação; evidência e limites no BUG-038.
 
 **Gravação de CT-RF42–CT-RF45:** 15/11/2026, Pagar.me e Configurações, 19:06 BRT, Chrome 157.0.8103.78 / Windows 11; uma única gravação; evidência e limites no BUG-021.
 
@@ -59,12 +59,12 @@
 | [BUG-021](#bug-021) | Painel Pagar.me mantém Recebimentos e gráfico ao trocar o período | Média / Média, propostas | Em triagem — dados reais ou de demonstração não confirmados | [CT-RF45](Cenario_Teste/CT-RF45_Painel_PagarMe_Periodo.md) |
 | [BUG-022](#bug-022) | Relatório de Contas a Receber exibe "----" em Valor a Receber | Alta / Alta, propostas | Em triagem — origem do valor e comparação com o módulo não confirmadas | [CT-RF51](Cenario_Teste/CT-RF51_Relatorio_Contas_Receber.md) |
 | [BUG-023](#bug-023) | Relatórios de Avaliações, Clientes, Colaboradores e Caixas geram arquivo PDF vazio (0 bytes) | Alta / Alta, propostas | Em triagem — correspondência dos arquivos inferida; causa não determinada | [CT-RF53](Cenario_Teste/CT-RF53_Relatorio_Avaliacoes_Vazio.md), [CT-RF54](Cenario_Teste/CT-RF54_Relatorio_Clientes_Vazio.md), [CT-RF55](Cenario_Teste/CT-RF55_Relatorio_Colaboradores_Vazio.md) e [CT-RF56](Cenario_Teste/CT-RF56_Relatorio_Caixas_Vazio.md) |
-| [BUG-024](#bug-024) | Telefone do lead aceita 30 dígitos sem máscara nem validação | Média / Média, propostas | Em triagem — regra do campo e validação no servidor não confirmadas | [CT-RF62](Cenario_Teste/CT-RF62_Telefone_Lead_Sem_Validacao.md) |
-| [BUG-025](#bug-025) | Conta a pagar a colaborador é cadastrada sem colaborador informado | Alta / Alta, propostas | Em triagem — regra de obrigatoriedade e validação no servidor não confirmadas | [CT-RF65](Cenario_Teste/CT-RF65_Cadastro_Conta_Colaborador_Sem_Colaborador.md) |
-| [BUG-026](#bug-026) | Listagem de modelos de contrato aparece vazia com 15 modelos retornados | Alta / Alta, propostas | Em triagem — causa de renderização não confirmada | [CT-RF71](Cenario_Teste/CT-RF71_Listagem_Modelos_Contrato_Vazia.md) |
-| [BUG-027](#bug-027) | Cartão Ativos de Planos aumenta ao cadastrar e editar planos inativos | Média / Média, propostas | Em triagem — regra de cálculo do cartão não confirmada | [CT-RF75](Cenario_Teste/CT-RF75_Contador_Ativos_Planos.md) |
+| [BUG-038](#bug-038) | Telefone do lead aceita 30 dígitos sem máscara nem validação | Média / Média, propostas | Em triagem — regra do campo e validação no servidor não confirmadas | [CT-RF89](Cenario_Teste/CT-RF89_Telefone_Lead_Sem_Validacao.md) |
+| [BUG-039](#bug-039) | Conta a pagar a colaborador é cadastrada sem colaborador informado | Alta / Alta, propostas | Em triagem — regra de obrigatoriedade e validação no servidor não confirmadas | [CT-RF92](Cenario_Teste/CT-RF92_Cadastro_Conta_Colaborador_Sem_Colaborador.md) |
+| [BUG-040](#bug-040) | Listagem de modelos de contrato aparece vazia com 15 modelos retornados | Alta / Alta, propostas | Em triagem — causa de renderização não confirmada | [CT-RF98](Cenario_Teste/CT-RF98_Listagem_Modelos_Contrato_Vazia.md) |
+| [BUG-041](#bug-041) | Cartão Ativos de Planos aumenta ao cadastrar e editar planos inativos | Média / Média, propostas | Em triagem — regra de cálculo do cartão não confirmada | [CT-RF102](Cenario_Teste/CT-RF102_Contador_Ativos_Planos.md) |
 
-BUG-001–BUG-010 aguardam correção e reteste. BUG-011–BUG-027 aguardam confirmação das premissas e triagem antes do encaminhamento de correção. As causas técnicas permanecem não confirmadas; o BUG-003 se apoia no relato e nas capturas fornecidos, com os limites registrados no caso.
+BUG-001–BUG-010 aguardam correção e reteste. BUG-011–BUG-041 aguardam confirmação das premissas e triagem antes do encaminhamento de correção. As causas técnicas permanecem não confirmadas; o BUG-003 se apoia no relato e nas capturas fornecidos, com os limites registrados no caso.
 
 ---
 
@@ -1110,17 +1110,17 @@ A geração com HTTP 200 e arquivo de 0 bytes é compatível com falha silencios
 
 ---
 
-<a id="bug-024"></a>
+<a id="bug-038"></a>
 
-## BUG-024 — Telefone do lead aceita 30 dígitos sem máscara nem validação
+## BUG-038 — Telefone do lead aceita 30 dígitos sem máscara nem validação
 
 | Campo | Descrição |
 | --- | --- |
 | Status | Em triagem — causa não determinada; reteste pendente após correção. |
 | Severidade / prioridade | Média / Média, propostas para triagem. |
 | Módulo | Prospecção / Leads / Validação do telefone |
-| Requisitos | [RF62](Analise%20de%20requisitos.md#rf62) |
-| Casos | [CT-RF62](Cenario_Teste/CT-RF62_Telefone_Lead_Sem_Validacao.md) |
+| Requisitos | [RF89](Analise%20de%20requisitos.md#rf89) |
+| Casos | [CT-RF89](Cenario_Teste/CT-RF89_Telefone_Lead_Sem_Validacao.md) |
 | Data da evidência / revisão | 15/11/2026, 21:52 BRT; sem nova execução. |
 | Página | https://sifit.centrion.com.br/prospeccao |
 | Ambiente | Chrome 157.0.8103.78 / Windows (x86) 11, janela 1920 × 911; versão e zoom não confirmados. |
@@ -1128,7 +1128,7 @@ A geração com HTTP 200 e arquivo de 0 bytes é compatível com falha silencios
 
 ### Pré-condições e reprodução
 
-**[CT-RF62](Cenario_Teste/CT-RF62_Telefone_Lead_Sem_Validacao.md):** Sessão autenticada com acesso a Prospecção e regra do campo Telefone definida com o produto.
+**[CT-RF89](Cenario_Teste/CT-RF89_Telefone_Lead_Sem_Validacao.md):** Sessão autenticada com acesso a Prospecção e regra do campo Telefone definida com o produto.
 
 1. Acessar Prospecção e acionar Adicionar Lead.
 2. Preencher o nome e o estágio e informar no campo Telefone (placeholder "(00) 00000-0000") um valor de 30 dígitos, como 44999999999 seguido de 5757534534534534534.
@@ -1147,7 +1147,7 @@ A geração com HTTP 200 e arquivo de 0 bytes é compatível com falha silencios
 ### Evidências técnicas
 
 - [Jam — Prospecção](https://jam.dev/c/308607ff-8abc-40af-8c7c-429ce506ed64): quadro de 0:47 com o campo Telefone de valor longo e sem máscara; `POST /api/salvar-lead/1` (HTTP 200) com `"telefone"` de 30 dígitos e resposta `{"verifica_erro": false, "id": 10}`; `POST /api/buscar-lead/1` (HTTP 200) devolvendo o mesmo telefone.
-- [Telefone em 0:47](Evidencias/CT-RF62_Telefone_Lead_Sem_Validacao/telefone_30_digitos_00-47.png), [corpo do salvar-lead](Evidencias/CT-RF62_Telefone_Lead_Sem_Validacao/requisicao_salvar.png), [resposta do buscar-lead](Evidencias/CT-RF62_Telefone_Lead_Sem_Validacao/resposta_buscar.png) e [Evidências](Evidencias/CT-RF62_Telefone_Lead_Sem_Validacao/README.md).
+- [Telefone em 0:47](Evidencias/CT-RF89_Telefone_Lead_Sem_Validacao/telefone_30_digitos_00-47.png), [corpo do salvar-lead](Evidencias/CT-RF89_Telefone_Lead_Sem_Validacao/requisicao_salvar.png), [resposta do buscar-lead](Evidencias/CT-RF89_Telefone_Lead_Sem_Validacao/resposta_buscar.png) e [Evidências](Evidencias/CT-RF89_Telefone_Lead_Sem_Validacao/README.md).
 
 ### Análise, limites e encaminhamento
 
@@ -1157,17 +1157,17 @@ O valor gravado com 30 dígitos é compatível com ausência de validação de t
 
 ---
 
-<a id="bug-025"></a>
+<a id="bug-039"></a>
 
-## BUG-025 — Conta a pagar a colaborador é cadastrada sem colaborador informado
+## BUG-039 — Conta a pagar a colaborador é cadastrada sem colaborador informado
 
 | Campo | Descrição |
 | --- | --- |
 | Status | Em triagem — causa não determinada; reteste pendente após correção. |
 | Severidade / prioridade | Alta / Alta, propostas para triagem. |
 | Módulo | Financeiro / Contas a Pagar / Cadastro |
-| Requisitos | [RF65](Analise%20de%20requisitos.md#rf65) |
-| Casos | [CT-RF65](Cenario_Teste/CT-RF65_Cadastro_Conta_Colaborador_Sem_Colaborador.md) |
+| Requisitos | [RF92](Analise%20de%20requisitos.md#rf92) |
+| Casos | [CT-RF92](Cenario_Teste/CT-RF92_Cadastro_Conta_Colaborador_Sem_Colaborador.md) |
 | Data da evidência / revisão | 15/11/2026, 21:58 BRT; sem nova execução. |
 | Página | https://sifit.centrion.com.br/contas-pagar |
 | Ambiente | Chrome 157.0.8103.78 / Windows (x86) 11, janela 1920 × 911; versão e zoom não confirmados. |
@@ -1175,7 +1175,7 @@ O valor gravado com 30 dígitos é compatível com ausência de validação de t
 
 ### Pré-condições e reprodução
 
-**[CT-RF65](Cenario_Teste/CT-RF65_Cadastro_Conta_Colaborador_Sem_Colaborador.md):** Sessão autenticada com acesso a Contas a Pagar e regra de obrigatoriedade do colaborador definida com o produto.
+**[CT-RF92](Cenario_Teste/CT-RF92_Cadastro_Conta_Colaborador_Sem_Colaborador.md):** Sessão autenticada com acesso a Contas a Pagar e regra de obrigatoriedade do colaborador definida com o produto.
 
 1. Acessar Contas a Pagar e acionar Nova Conta.
 2. Selecionar o tipo Pagto. Colaborador e preencher título, documento, categoria e valor sem informar o colaborador (Código e Colaborador vazios).
@@ -1194,7 +1194,7 @@ O valor gravado com 30 dígitos é compatível com ausência de validação de t
 ### Evidências técnicas
 
 - [Jam — Contas a Pagar](https://jam.dev/c/5d0afaf4-5abd-4e85-923f-27448304a9ef): quadro de 0:41 (formulário preenchido sem colaborador), `POST /api/cadastrar-conta-pagar/1` (HTTP 201) com `"tipo_conta": "PAG_COLABORADOR"` e `"colaborador_recebedor_id": ""`, e quadro de 0:50 com a conta 29 listada com "-" no colaborador.
-- [Formulário em 0:41](Evidencias/CT-RF65_Cadastro_Conta_Colaborador_Sem_Colaborador/formulario_preenchido_00-41.png), [listagem em 0:50](Evidencias/CT-RF65_Cadastro_Conta_Colaborador_Sem_Colaborador/lista_apos_cadastro_00-50.png), [corpo da requisição](Evidencias/CT-RF65_Cadastro_Conta_Colaborador_Sem_Colaborador/requisicao_cadastrar.png) e [Evidências](Evidencias/CT-RF65_Cadastro_Conta_Colaborador_Sem_Colaborador/README.md).
+- [Formulário em 0:41](Evidencias/CT-RF92_Cadastro_Conta_Colaborador_Sem_Colaborador/formulario_preenchido_00-41.png), [listagem em 0:50](Evidencias/CT-RF92_Cadastro_Conta_Colaborador_Sem_Colaborador/lista_apos_cadastro_00-50.png), [corpo da requisição](Evidencias/CT-RF92_Cadastro_Conta_Colaborador_Sem_Colaborador/requisicao_cadastrar.png) e [Evidências](Evidencias/CT-RF92_Cadastro_Conta_Colaborador_Sem_Colaborador/README.md).
 
 ### Análise, limites e encaminhamento
 
@@ -1204,17 +1204,17 @@ A gravação sem colaborador é compatível com ausência de validação no clie
 
 ---
 
-<a id="bug-026"></a>
+<a id="bug-040"></a>
 
-## BUG-026 — Listagem de modelos de contrato aparece vazia com 15 modelos retornados
+## BUG-040 — Listagem de modelos de contrato aparece vazia com 15 modelos retornados
 
 | Campo | Descrição |
 | --- | --- |
 | Status | Em triagem — causa não determinada; reteste pendente após correção. |
 | Severidade / prioridade | Alta / Alta, propostas para triagem. |
 | Módulo | Modelos de Contrato / Listagem |
-| Requisitos | [RF71](Analise%20de%20requisitos.md#rf71) |
-| Casos | [CT-RF71](Cenario_Teste/CT-RF71_Listagem_Modelos_Contrato_Vazia.md) |
+| Requisitos | [RF98](Analise%20de%20requisitos.md#rf98) |
+| Casos | [CT-RF98](Cenario_Teste/CT-RF98_Listagem_Modelos_Contrato_Vazia.md) |
 | Data da evidência / revisão | 15/11/2026, 21:55 BRT; sem nova execução. |
 | Página | https://sifit.centrion.com.br/modelos-contrato |
 | Ambiente | Chrome 157.0.8103.78 / Windows (x86) 11, janela 1920 × 855; versão e zoom não confirmados. |
@@ -1222,7 +1222,7 @@ A gravação sem colaborador é compatível com ausência de validação no clie
 
 ### Pré-condições e reprodução
 
-**[CT-RF71](Cenario_Teste/CT-RF71_Listagem_Modelos_Contrato_Vazia.md):** Sessão autenticada com acesso a Modelos de Contrato e modelos existentes no servidor.
+**[CT-RF98](Cenario_Teste/CT-RF98_Listagem_Modelos_Contrato_Vazia.md):** Sessão autenticada com acesso a Modelos de Contrato e modelos existentes no servidor.
 
 1. Acessar Modelos Contrato com o painel de rede aberto e registrar a resposta de `modelos-contrato`.
 2. Conferir a tabela da tela com a resposta do servidor.
@@ -1240,7 +1240,7 @@ A gravação sem colaborador é compatível com ausência de validação no clie
 ### Evidências técnicas
 
 - [Jam — Modelos de Contrato](https://jam.dev/c/44dbbd39-6915-45d6-8dd1-5f30c1432ca0): `GET /api/modelos-contrato/1` (HTTP 200, 1,0 KiB) com 15 modelos (ids 1 a 15, incluindo "teste eduardo") e quadros de 0:00, 0:39, 0:45 e 0:49 com a tabela sem linhas.
-- [Tabela em 0:39](Evidencias/CT-RF71_Listagem_Modelos_Contrato_Vazia/lista_vazia_00-39.png), [tabela em 0:49](Evidencias/CT-RF71_Listagem_Modelos_Contrato_Vazia/lista_vazia_00-49.png), [resposta do servidor](Evidencias/CT-RF71_Listagem_Modelos_Contrato_Vazia/lista_servidor_resposta.png) e [Evidências](Evidencias/CT-RF71_Listagem_Modelos_Contrato_Vazia/README.md).
+- [Tabela em 0:39](Evidencias/CT-RF98_Listagem_Modelos_Contrato_Vazia/lista_vazia_00-39.png), [tabela em 0:49](Evidencias/CT-RF98_Listagem_Modelos_Contrato_Vazia/lista_vazia_00-49.png), [resposta do servidor](Evidencias/CT-RF98_Listagem_Modelos_Contrato_Vazia/lista_servidor_resposta.png) e [Evidências](Evidencias/CT-RF98_Listagem_Modelos_Contrato_Vazia/README.md).
 
 ### Análise, limites e encaminhamento
 
@@ -1250,17 +1250,17 @@ A divergência entre a resposta e a tabela é compatível com falha na renderiza
 
 ---
 
-<a id="bug-027"></a>
+<a id="bug-041"></a>
 
-## BUG-027 — Cartão Ativos de Planos aumenta ao cadastrar e editar planos inativos
+## BUG-041 — Cartão Ativos de Planos aumenta ao cadastrar e editar planos inativos
 
 | Campo | Descrição |
 | --- | --- |
 | Status | Em triagem — causa não determinada; reteste pendente após correção. |
 | Severidade / prioridade | Média / Média, propostas para triagem. |
 | Módulo | Planos / Cartões de resumo |
-| Requisitos | [RF75](Analise%20de%20requisitos.md#rf75) |
-| Casos | [CT-RF75](Cenario_Teste/CT-RF75_Contador_Ativos_Planos.md) |
+| Requisitos | [RF102](Analise%20de%20requisitos.md#rf102) |
+| Casos | [CT-RF102](Cenario_Teste/CT-RF102_Contador_Ativos_Planos.md) |
 | Data da evidência / revisão | 15/11/2026, 21:54 BRT; sem nova execução. |
 | Página | https://sifit.centrion.com.br/planos |
 | Ambiente | Chrome 157.0.8103.78 / Windows (x86) 11, janela 1920 × 855; versão e zoom não confirmados. |
@@ -1268,7 +1268,7 @@ A divergência entre a resposta e a tabela é compatível com falha na renderiza
 
 ### Pré-condições e reprodução
 
-**[CT-RF75](Cenario_Teste/CT-RF75_Contador_Ativos_Planos.md):** Sessão autenticada com acesso a Planos e base de planos com a regra do cartão Ativos definida com o produto.
+**[CT-RF102](Cenario_Teste/CT-RF102_Contador_Ativos_Planos.md):** Sessão autenticada com acesso a Planos e base de planos com a regra do cartão Ativos definida com o produto.
 
 1. Acessar Planos e registrar os cartões Planos e Ativos.
 2. Cadastrar um plano com status Inativo e conferir os cartões.
@@ -1286,7 +1286,7 @@ A divergência entre a resposta e a tabela é compatível com falha na renderiza
 ### Evidências técnicas
 
 - [Jam — Planos](https://jam.dev/c/233c5d21-e108-4a55-b6f6-8738cb3fc6a6): quadros de 0:03 (Planos 40, Ativos 29), 0:53 (Planos 41, Ativos 30) e 1:08 (Planos 41, Ativos 31); `POST /api/plano/salvar/1` com `"status": "inativo"` e `POST /api/plano/update/1` com `"status": "inativo"`.
-- [Cartões em 0:03](Evidencias/CT-RF75_Contador_Ativos_Planos/cartoes_antes_00-03.png), [em 0:53](Evidencias/CT-RF75_Contador_Ativos_Planos/cartoes_apos_cadastro_00-53.png), [em 1:08](Evidencias/CT-RF75_Contador_Ativos_Planos/cartoes_apos_edicao_01-08.png) e [Evidências](Evidencias/CT-RF75_Contador_Ativos_Planos/README.md).
+- [Cartões em 0:03](Evidencias/CT-RF102_Contador_Ativos_Planos/cartoes_antes_00-03.png), [em 0:53](Evidencias/CT-RF102_Contador_Ativos_Planos/cartoes_apos_cadastro_00-53.png), [em 1:08](Evidencias/CT-RF102_Contador_Ativos_Planos/cartoes_apos_edicao_01-08.png) e [Evidências](Evidencias/CT-RF102_Contador_Ativos_Planos/README.md).
 
 ### Análise, limites e encaminhamento
 
@@ -1310,11 +1310,11 @@ O aumento do cartão Ativos a cada operação com planos inativos é compatível
 | [CT-RF44](Cenario_Teste/CT-RF44_Configuracoes_Home_Salvamento.md) | Confirmar a faixa do campo "Dias para contar cliente como ausente" (valor inicial -120 e valor informado 1100) e a mensagem de salvamento esperada. | [Jam](https://jam.dev/c/e6e551ef-9196-4c79-b6a2-89747b1e8b33) e [Evidências](Evidencias/CT-RF44_Configuracoes_Home_Salvamento/README.md) |
 | [CT-RF47](Cenario_Teste/CT-RF47_Cadastro_Despesa_Fixa.md) | Confirmar se o segundo POST de criação (HTTP 201) gerou registro adicional ou foi descartado; registrar defeito apenas se houver duplicidade confirmada. | [Jam](https://jam.dev/c/a4bac99d-e436-4792-831e-8c3a875272bb) e [Evidências](Evidencias/CT-RF47_Cadastro_Despesa_Fixa/README.md) |
 | [CT-RF52](Cenario_Teste/CT-RF52_Relatorio_Contas_Pagar_Pagas.md) | Conferir se existem contas pagas no período; PDF sem linhas e com totalizadores R$ 0,00 é compatível com período sem pagamentos. | [Jam](https://jam.dev/c/3b4777a4-e1b0-4038-9b06-26c73669d7d1) e [Evidências](Evidencias/CT-RF52_Relatorio_Contas_Pagar_Pagas/README.md) |
-| [CT-RF61](Cenario_Teste/CT-RF61_Cadastro_Lead_Prospeccao.md) | Cadastro de lead com duas requisições de criação | Confirmar se o segundo POST de criação gerou registro adicional ou foi descartado; registrar defeito apenas se houver duplicidade confirmada. | [Jam](https://jam.dev/c/308607ff-8abc-40af-8c7c-429ce506ed64) e [Evidências](Evidencias/CT-RF61_Cadastro_Lead_Prospeccao/README.md) |
-| [CT-RF64](Cenario_Teste/CT-RF64_Filtros_Contas_Pagar.md) | Filtros da tela Contas a Pagar por nome, data e status | Reexecutar com contas de controle e conferir cada critério isolado e combinado; o resultado vazio da combinação gravada não pôde ser conferido contra a base. | [Jam](https://jam.dev/c/5d0afaf4-5abd-4e85-923f-27448304a9ef) e [Evidências](Evidencias/CT-RF64_Filtros_Contas_Pagar/README.md) |
-| [CT-RF66](Cenario_Teste/CT-RF66_Busca_Colaborador_Conta_Pagar.md) | Busca de colaborador no cadastro de conta a pagar | Reexecutar com um nome existente para conferir listagem e seleção e confirmar a mensagem esperada de resultado vazio. | [Jam](https://jam.dev/c/5d0afaf4-5abd-4e85-923f-27448304a9ef) e [Evidências](Evidencias/CT-RF66_Busca_Colaborador_Conta_Pagar/README.md) |
+| [CT-RF88](Cenario_Teste/CT-RF88_Cadastro_Lead_Prospeccao.md) | Cadastro de lead com duas requisições de criação | Confirmar se o segundo POST de criação gerou registro adicional ou foi descartado; registrar defeito apenas se houver duplicidade confirmada. | [Jam](https://jam.dev/c/308607ff-8abc-40af-8c7c-429ce506ed64) e [Evidências](Evidencias/CT-RF88_Cadastro_Lead_Prospeccao/README.md) |
+| [CT-RF91](Cenario_Teste/CT-RF91_Filtros_Contas_Pagar.md) | Filtros da tela Contas a Pagar por nome, data e status | Reexecutar com contas de controle e conferir cada critério isolado e combinado; o resultado vazio da combinação gravada não pôde ser conferido contra a base. | [Jam](https://jam.dev/c/5d0afaf4-5abd-4e85-923f-27448304a9ef) e [Evidências](Evidencias/CT-RF91_Filtros_Contas_Pagar/README.md) |
+| [CT-RF93](Cenario_Teste/CT-RF93_Busca_Colaborador_Conta_Pagar.md) | Busca de colaborador no cadastro de conta a pagar | Reexecutar com um nome existente para conferir listagem e seleção e confirmar a mensagem esperada de resultado vazio. | [Jam](https://jam.dev/c/5d0afaf4-5abd-4e85-923f-27448304a9ef) e [Evidências](Evidencias/CT-RF93_Busca_Colaborador_Conta_Pagar/README.md) |
 
-Esses treze pontos não entram na contagem de 27 defeitos registrados. BUG-011–BUG-027 são contabilizados separadamente como registros em triagem, com premissas, persistência ou validações técnicas ainda pendentes. O relato de numeração de personais não demonstrou diferença entre total e linhas; a inativação de modalidades pode ser exclusão lógica; encargos e métricas exigem regras explícitas.
+Esses treze pontos não entram na contagem de 27 defeitos registrados. BUG-011–BUG-041 são contabilizados separadamente como registros em triagem, com premissas, persistência ou validações técnicas ainda pendentes. O relato de numeração de personais não demonstrou diferença entre total e linhas; a inativação de modalidades pode ser exclusão lógica; encargos e métricas exigem regras explícitas.
 
 
 **Exclusão de exercício:** CT-RF23 está aprovado no trecho consultado, com remoção e total 11 para 10; não gerou defeito adicional. Persistência e efeitos sobre vínculos permanecem como verificações complementares.

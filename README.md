@@ -2,7 +2,7 @@
 
 Repositório de documentação de QA manual do **SIFIT**, sistema de gestão de academias. Reúne requisitos, plano, cenários BDD, resultados, defeitos e evidências com links do Jam.
 
-**Atualização documental:** 15/11/2026. Integrados CT-RF64 a CT-RF76 e RF64 a RF76 (Contas a Pagar, Modelos de Contrato e Planos, com BUG-025 a BUG-027 em triagem) e, anteriormente, CT-RF58 a CT-RF63 e RF58 a RF63 (Prospecção, com BUG-024 em triagem) e, anteriormente, CT-RF42 a CT-RF56 e RF42 a RF56 (Pagar.me, Configurações, Despesas Fixas e Relatórios, com BUG-021 a BUG-023 em triagem) e, anteriormente, CT-RF39 a CT-RF41 e RF39 a RF41 (SifitBox – Turmas: cadastro de modalidade aprovado, exclusão a validar e cadastro de turma sem retorno visível, com BUG-020 em triagem) e, anteriormente, CT-RF38 e RF38 (cadastro de categoria com código automático) e CT-RF35, RF35 e BUG-019 em triagem (cadastro de objetivo de treino com HTTP 500). CT-RF22–CT-RF33 e os resultados anteriores foram preservados.
+**Atualização documental:** 15/11/2026. Integrados CT-RF91 a CT-RF103 e RF91 a RF103 (Contas a Pagar, Modelos de Contrato e Planos, com BUG-039 a BUG-041 em triagem) e, anteriormente, CT-RF85 a CT-RF90 e RF85 a RF90 (Prospecção, com BUG-038 em triagem) e, anteriormente, CT-RF42 a CT-RF56 e RF42 a RF56 (Pagar.me, Configurações, Despesas Fixas e Relatórios, com BUG-021 a BUG-023 em triagem) e, anteriormente, CT-RF39 a CT-RF41 e RF39 a RF41 (SifitBox – Turmas: cadastro de modalidade aprovado, exclusão a validar e cadastro de turma sem retorno visível, com BUG-020 em triagem) e, anteriormente, CT-RF38 e RF38 (cadastro de categoria com código automático) e CT-RF35, RF35 e BUG-019 em triagem (cadastro de objetivo de treino com HTTP 500). CT-RF22–CT-RF33 e os resultados anteriores foram preservados.
 
 ## 📊 Situação consolidada
 
@@ -16,7 +16,7 @@ As classificações se baseiam nas fontes indicadas em cada cenário. CT-RF03 ma
 
 | Documento | Conteúdo |
 | --- | --- |
-| [Análise de requisitos](SIFIT/Analise%20de%20requisitos.md) | RF01–RF33, RF35, RF38–RF56 e RF58–RF76, critérios de aceitação, dúvidas de regra e rastreabilidade. |
+| [Análise de requisitos](SIFIT/Analise%20de%20requisitos.md) | RF01–RF33, RF35, RF38–RF56 e RF85–RF103, critérios de aceitação, dúvidas de regra e rastreabilidade. |
 | [Plano de testes](SIFIT/Plano%20de%20testes.md) | Escopo, ambientes, preparação, critérios, regressão e retestes. |
 | [Índice dos cenários](SIFIT/Cenario_Teste/README.md) | 73 cenários com pré-condições, BDD, passos, esperado, obtido e encaminhamento. |
 | [Relatório de bugs](SIFIT/Relatorio-de-Bugs.md) | BUG-001–BUG-019: reprodução, impacto, evidências, severidade/prioridade propostas e reteste. |
@@ -40,8 +40,8 @@ extensao-qa/
     │   ├── CT-RF38_Cadastro_Categoria_Codigo_Automatico.md
     │   ├── CT-RF39 a CT-RF41 (SifitBox – Turmas)
     │   ├── CT-RF42 a CT-RF56 (Pagar.me, Despesas Fixas e Relatórios)
-    │   ├── CT-RF58 a CT-RF63 (Prospecção)
-    │   └── CT-RF64 a CT-RF76 (Contas a Pagar, Modelos de Contrato e Planos)
+    │   ├── CT-RF85 a CT-RF90 (Prospecção)
+    │   └── CT-RF91 a CT-RF103 (Contas a Pagar, Modelos de Contrato e Planos)
     └── Evidencias/
         ├── README.md
         ├── CT-RF23_Exclusao_Exercicio/ ... CT-RF25_Envio_Exercicio_Imagem/
@@ -49,8 +49,8 @@ extensao-qa/
         ├── CT-RF38_Cadastro_Categoria_Codigo_Automatico/
         ├── CT-RF39 a CT-RF41 (uma pasta por caso)
         ├── CT-RF42 a CT-RF56 (uma pasta por caso, com os PDFs de CT-RF50 a CT-RF56)
-        ├── CT-RF58 a CT-RF63 (uma pasta por caso)
-        └── CT-RF64 a CT-RF76 (uma pasta por caso)
+        ├── CT-RF85 a CT-RF90 (uma pasta por caso)
+        └── CT-RF91 a CT-RF103 (uma pasta por caso)
 ```
 
 ## 📋 Cenários e resultados
@@ -110,25 +110,25 @@ extensao-qa/
 | [CT-RF54](SIFIT/Cenario_Teste/CT-RF54_Relatorio_Clientes_Vazio.md) | Relatório de Clientes gera arquivo vazio | Reprovado nas evidências | [BUG-023](SIFIT/Relatorio-de-Bugs.md#bug-023), em triagem | [Jam](https://jam.dev/c/3b4777a4-e1b0-4038-9b06-26c73669d7d1) |
 | [CT-RF55](SIFIT/Cenario_Teste/CT-RF55_Relatorio_Colaboradores_Vazio.md) | Relatório de Colaboradores gera arquivo vazio | Reprovado nas evidências | [BUG-023](SIFIT/Relatorio-de-Bugs.md#bug-023), em triagem | [Jam](https://jam.dev/c/3b4777a4-e1b0-4038-9b06-26c73669d7d1) |
 | [CT-RF56](SIFIT/Cenario_Teste/CT-RF56_Relatorio_Caixas_Vazio.md) | Relatório de Caixas gera arquivo vazio | Reprovado nas evidências | [BUG-023](SIFIT/Relatorio-de-Bugs.md#bug-023), em triagem | [Jam](https://jam.dev/c/3b4777a4-e1b0-4038-9b06-26c73669d7d1) |
-| [CT-RF58](SIFIT/Cenario_Teste/CT-RF58_Tema_Notificacoes_Prospeccao.md) | Alternância de tema e painel de notificações em Prospecção | Aprovado conforme a gravação | — | [Jam](https://jam.dev/c/308607ff-8abc-40af-8c7c-429ce506ed64) |
-| [CT-RF59](SIFIT/Cenario_Teste/CT-RF59_Busca_Leads_Prospeccao.md) | Busca de leads por texto na tela Prospecção | Aprovado conforme a gravação | — | [Jam](https://jam.dev/c/308607ff-8abc-40af-8c7c-429ce506ed64) |
-| [CT-RF60](SIFIT/Cenario_Teste/CT-RF60_Filtro_Estagio_Leads.md) | Filtro de leads por estágio e limpeza dos filtros | Aprovado conforme a gravação | — | [Jam](https://jam.dev/c/308607ff-8abc-40af-8c7c-429ce506ed64) |
-| [CT-RF61](SIFIT/Cenario_Teste/CT-RF61_Cadastro_Lead_Prospeccao.md) | Cadastro de lead com duas requisições de criação | A validar — regra ou contexto pendente | — | [Jam](https://jam.dev/c/308607ff-8abc-40af-8c7c-429ce506ed64) |
-| [CT-RF62](SIFIT/Cenario_Teste/CT-RF62_Telefone_Lead_Sem_Validacao.md) | Telefone do lead aceita 30 dígitos sem validação | Reprovado nas evidências | [BUG-024](SIFIT/Relatorio-de-Bugs.md#bug-024), em triagem | [Jam](https://jam.dev/c/308607ff-8abc-40af-8c7c-429ce506ed64) |
-| [CT-RF63](SIFIT/Cenario_Teste/CT-RF63_Edicao_Lead_Prospeccao.md) | Visualização e edição de lead na tela Prospecção | Aprovado conforme a gravação | — | [Jam](https://jam.dev/c/308607ff-8abc-40af-8c7c-429ce506ed64) |
-| [CT-RF64](SIFIT/Cenario_Teste/CT-RF64_Filtros_Contas_Pagar.md) | Filtros da tela Contas a Pagar por nome, data e status | A validar — regra ou contexto pendente | — | [Jam](https://jam.dev/c/5d0afaf4-5abd-4e85-923f-27448304a9ef) |
-| [CT-RF65](SIFIT/Cenario_Teste/CT-RF65_Cadastro_Conta_Colaborador_Sem_Colaborador.md) | Conta a pagar a colaborador é cadastrada sem colaborador informado | Reprovado nas evidências | [BUG-025](SIFIT/Relatorio-de-Bugs.md#bug-025), em triagem | [Jam](https://jam.dev/c/5d0afaf4-5abd-4e85-923f-27448304a9ef) |
-| [CT-RF66](SIFIT/Cenario_Teste/CT-RF66_Busca_Colaborador_Conta_Pagar.md) | Busca de colaborador no cadastro de conta a pagar | A validar — regra ou contexto pendente | — | [Jam](https://jam.dev/c/5d0afaf4-5abd-4e85-923f-27448304a9ef) |
-| [CT-RF67](SIFIT/Cenario_Teste/CT-RF67_Visualizacao_Conta_Pagar.md) | Visualização dos dados de uma conta a pagar | Aprovado conforme a gravação | — | [Jam](https://jam.dev/c/5d0afaf4-5abd-4e85-923f-27448304a9ef) |
-| [CT-RF68](SIFIT/Cenario_Teste/CT-RF68_Exclusao_Conta_Pagar.md) | Exclusão de conta a pagar com confirmação | Aprovado conforme a gravação | — | [Jam](https://jam.dev/c/5d0afaf4-5abd-4e85-923f-27448304a9ef) |
-| [CT-RF69](SIFIT/Cenario_Teste/CT-RF69_Variaveis_Preview_Modelo_Contrato.md) | Variáveis e pré-visualização do texto do modelo de contrato | Aprovado conforme a gravação | — | [Jam](https://jam.dev/c/44dbbd39-6915-45d6-8dd1-5f30c1432ca0) |
-| [CT-RF70](SIFIT/Cenario_Teste/CT-RF70_Cadastro_Modelo_Contrato.md) | Cadastro de modelo de contrato | Aprovado conforme a gravação | — | [Jam](https://jam.dev/c/44dbbd39-6915-45d6-8dd1-5f30c1432ca0) |
-| [CT-RF71](SIFIT/Cenario_Teste/CT-RF71_Listagem_Modelos_Contrato_Vazia.md) | Listagem de modelos de contrato aparece vazia com 15 modelos retornados | Reprovado nas evidências | [BUG-026](SIFIT/Relatorio-de-Bugs.md#bug-026), em triagem | [Jam](https://jam.dev/c/44dbbd39-6915-45d6-8dd1-5f30c1432ca0) |
-| [CT-RF72](SIFIT/Cenario_Teste/CT-RF72_Filtros_Planos.md) | Filtros da tela Planos por código e nome | Aprovado conforme a gravação | — | [Jam](https://jam.dev/c/233c5d21-e108-4a55-b6f6-8738cb3fc6a6) |
-| [CT-RF73](SIFIT/Cenario_Teste/CT-RF73_Tema_Notificacoes_Planos.md) | Alternância de tema e painel de notificações em Planos | Aprovado conforme a gravação | — | [Jam](https://jam.dev/c/233c5d21-e108-4a55-b6f6-8738cb3fc6a6) |
-| [CT-RF74](SIFIT/Cenario_Teste/CT-RF74_Cadastro_Plano.md) | Cadastro de plano pelo modal Novo Plano | Aprovado conforme a gravação | — | [Jam](https://jam.dev/c/233c5d21-e108-4a55-b6f6-8738cb3fc6a6) |
-| [CT-RF75](SIFIT/Cenario_Teste/CT-RF75_Contador_Ativos_Planos.md) | Cartão Ativos de Planos aumenta ao cadastrar e editar planos inativos | Reprovado nas evidências | [BUG-027](SIFIT/Relatorio-de-Bugs.md#bug-027), em triagem | [Jam](https://jam.dev/c/233c5d21-e108-4a55-b6f6-8738cb3fc6a6) |
-| [CT-RF76](SIFIT/Cenario_Teste/CT-RF76_Edicao_Plano.md) | Edição de plano pelo modal Editar Plano | Aprovado conforme a gravação | — | [Jam](https://jam.dev/c/233c5d21-e108-4a55-b6f6-8738cb3fc6a6) |
+| [CT-RF85](SIFIT/Cenario_Teste/CT-RF85_Tema_Notificacoes_Prospeccao.md) | Alternância de tema e painel de notificações em Prospecção | Aprovado conforme a gravação | — | [Jam](https://jam.dev/c/308607ff-8abc-40af-8c7c-429ce506ed64) |
+| [CT-RF86](SIFIT/Cenario_Teste/CT-RF86_Busca_Leads_Prospeccao.md) | Busca de leads por texto na tela Prospecção | Aprovado conforme a gravação | — | [Jam](https://jam.dev/c/308607ff-8abc-40af-8c7c-429ce506ed64) |
+| [CT-RF87](SIFIT/Cenario_Teste/CT-RF87_Filtro_Estagio_Leads.md) | Filtro de leads por estágio e limpeza dos filtros | Aprovado conforme a gravação | — | [Jam](https://jam.dev/c/308607ff-8abc-40af-8c7c-429ce506ed64) |
+| [CT-RF88](SIFIT/Cenario_Teste/CT-RF88_Cadastro_Lead_Prospeccao.md) | Cadastro de lead com duas requisições de criação | A validar — regra ou contexto pendente | — | [Jam](https://jam.dev/c/308607ff-8abc-40af-8c7c-429ce506ed64) |
+| [CT-RF89](SIFIT/Cenario_Teste/CT-RF89_Telefone_Lead_Sem_Validacao.md) | Telefone do lead aceita 30 dígitos sem validação | Reprovado nas evidências | [BUG-038](SIFIT/Relatorio-de-Bugs.md#bug-038), em triagem | [Jam](https://jam.dev/c/308607ff-8abc-40af-8c7c-429ce506ed64) |
+| [CT-RF90](SIFIT/Cenario_Teste/CT-RF90_Edicao_Lead_Prospeccao.md) | Visualização e edição de lead na tela Prospecção | Aprovado conforme a gravação | — | [Jam](https://jam.dev/c/308607ff-8abc-40af-8c7c-429ce506ed64) |
+| [CT-RF91](SIFIT/Cenario_Teste/CT-RF91_Filtros_Contas_Pagar.md) | Filtros da tela Contas a Pagar por nome, data e status | A validar — regra ou contexto pendente | — | [Jam](https://jam.dev/c/5d0afaf4-5abd-4e85-923f-27448304a9ef) |
+| [CT-RF92](SIFIT/Cenario_Teste/CT-RF92_Cadastro_Conta_Colaborador_Sem_Colaborador.md) | Conta a pagar a colaborador é cadastrada sem colaborador informado | Reprovado nas evidências | [BUG-039](SIFIT/Relatorio-de-Bugs.md#bug-039), em triagem | [Jam](https://jam.dev/c/5d0afaf4-5abd-4e85-923f-27448304a9ef) |
+| [CT-RF93](SIFIT/Cenario_Teste/CT-RF93_Busca_Colaborador_Conta_Pagar.md) | Busca de colaborador no cadastro de conta a pagar | A validar — regra ou contexto pendente | — | [Jam](https://jam.dev/c/5d0afaf4-5abd-4e85-923f-27448304a9ef) |
+| [CT-RF94](SIFIT/Cenario_Teste/CT-RF94_Visualizacao_Conta_Pagar.md) | Visualização dos dados de uma conta a pagar | Aprovado conforme a gravação | — | [Jam](https://jam.dev/c/5d0afaf4-5abd-4e85-923f-27448304a9ef) |
+| [CT-RF95](SIFIT/Cenario_Teste/CT-RF95_Exclusao_Conta_Pagar.md) | Exclusão de conta a pagar com confirmação | Aprovado conforme a gravação | — | [Jam](https://jam.dev/c/5d0afaf4-5abd-4e85-923f-27448304a9ef) |
+| [CT-RF96](SIFIT/Cenario_Teste/CT-RF96_Variaveis_Preview_Modelo_Contrato.md) | Variáveis e pré-visualização do texto do modelo de contrato | Aprovado conforme a gravação | — | [Jam](https://jam.dev/c/44dbbd39-6915-45d6-8dd1-5f30c1432ca0) |
+| [CT-RF97](SIFIT/Cenario_Teste/CT-RF97_Cadastro_Modelo_Contrato.md) | Cadastro de modelo de contrato | Aprovado conforme a gravação | — | [Jam](https://jam.dev/c/44dbbd39-6915-45d6-8dd1-5f30c1432ca0) |
+| [CT-RF98](SIFIT/Cenario_Teste/CT-RF98_Listagem_Modelos_Contrato_Vazia.md) | Listagem de modelos de contrato aparece vazia com 15 modelos retornados | Reprovado nas evidências | [BUG-040](SIFIT/Relatorio-de-Bugs.md#bug-040), em triagem | [Jam](https://jam.dev/c/44dbbd39-6915-45d6-8dd1-5f30c1432ca0) |
+| [CT-RF99](SIFIT/Cenario_Teste/CT-RF99_Filtros_Planos.md) | Filtros da tela Planos por código e nome | Aprovado conforme a gravação | — | [Jam](https://jam.dev/c/233c5d21-e108-4a55-b6f6-8738cb3fc6a6) |
+| [CT-RF100](SIFIT/Cenario_Teste/CT-RF100_Tema_Notificacoes_Planos.md) | Alternância de tema e painel de notificações em Planos | Aprovado conforme a gravação | — | [Jam](https://jam.dev/c/233c5d21-e108-4a55-b6f6-8738cb3fc6a6) |
+| [CT-RF101](SIFIT/Cenario_Teste/CT-RF101_Cadastro_Plano.md) | Cadastro de plano pelo modal Novo Plano | Aprovado conforme a gravação | — | [Jam](https://jam.dev/c/233c5d21-e108-4a55-b6f6-8738cb3fc6a6) |
+| [CT-RF102](SIFIT/Cenario_Teste/CT-RF102_Contador_Ativos_Planos.md) | Cartão Ativos de Planos aumenta ao cadastrar e editar planos inativos | Reprovado nas evidências | [BUG-041](SIFIT/Relatorio-de-Bugs.md#bug-041), em triagem | [Jam](https://jam.dev/c/233c5d21-e108-4a55-b6f6-8738cb3fc6a6) |
+| [CT-RF103](SIFIT/Cenario_Teste/CT-RF103_Edicao_Plano.md) | Edição de plano pelo modal Editar Plano | Aprovado conforme a gravação | — | [Jam](https://jam.dev/c/233c5d21-e108-4a55-b6f6-8738cb3fc6a6) |
 
 ## 🔬 Como este projeto funciona
 
