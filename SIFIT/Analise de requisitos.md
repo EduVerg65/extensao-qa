@@ -79,6 +79,7 @@ Esta análise documenta 73 requisitos de QA para os cenários relacionados abaix
 | [RF68](#rf68) | Excluir uma conta a pagar com confirmação | Média, proposta | [CT-RF68](Cenario_Teste/CT-RF68_Exclusao_Conta_Pagar.md) |
 | [RF69](#rf69) | Inserir variáveis e pré-visualizar o contrato | Média, proposta | [CT-RF69](Cenario_Teste/CT-RF69_Variaveis_Preview_Modelo_Contrato.md) |
 | [RF70](#rf70) | Cadastrar um modelo de contrato | Média, proposta | [CT-RF70](Cenario_Teste/CT-RF70_Cadastro_Modelo_Contrato.md) |
+| [RF71](#rf71) | Apresentar na listagem os modelos de contrato retornados pelo servidor | Alta, proposta | [CT-RF71](Cenario_Teste/CT-RF71_Listagem_Modelos_Contrato_Vazia.md) |
 
 ---
 
@@ -1977,6 +1978,35 @@ O corpo da criação, o texto gravado, os campos obrigatórios e a apresentaçã
 
 ---
 
+<a id="rf71"></a>
+
+## RF71 — Apresentar na listagem os modelos de contrato retornados pelo servidor
+
+| Campo | Descrição |
+| --- | --- |
+| Requisito de QA | A tela Modelos Contrato deve apresentar uma linha com código, nome e status para cada modelo retornado pelo servidor, inclusive o recém-criado, ou uma mensagem explícita quando não houver modelos. |
+| Ator | Usuário autenticado com acesso ao módulo. |
+| Pré-condições | Modelos de contrato existentes no servidor. |
+| Gatilho | Acessar Modelos Contrato e, depois, criar um modelo. |
+| Caso | [CT-RF71](Cenario_Teste/CT-RF71_Listagem_Modelos_Contrato_Vazia.md) |
+| Situação observada | Reprovado nas evidências. O servidor devolve 15 modelos, mas a tabela permanece com apenas o cabeçalho, sem linhas e sem mensagem. |
+| Defeito | [BUG-026](Relatorio-de-Bugs.md#bug-026), em triagem |
+| Evidências | [Jam](https://jam.dev/c/44dbbd39-6915-45d6-8dd1-5f30c1432ca0) e [Evidências](Evidencias/CT-RF71_Listagem_Modelos_Contrato_Vazia/README.md). |
+
+### Critérios de aceitação do RF71
+
+1. A tabela apresenta uma linha para cada modelo retornado pelo servidor.
+2. O modelo recém-criado aparece na listagem sem recarregar manualmente.
+3. Código, nome e status são exibidos corretamente.
+4. Sem modelos, a tela apresenta mensagem explícita de estado vazio.
+5. A listagem permanece correta após recarregar a página.
+
+### Pontos a confirmar e limites do RF71
+
+A causa e o comportamento após recarga não foram confirmados; a lista completa foi lida por texto.
+
+---
+
 ## 🔗 Rastreabilidade
 
 | Requisito | Cenário / caso | Defeito | Resultado | Evidências |
@@ -2048,6 +2078,7 @@ O corpo da criação, o texto gravado, os campos obrigatórios e a apresentaçã
 | RF68 | [CT-RF68](Cenario_Teste/CT-RF68_Exclusao_Conta_Pagar.md) | Nenhum no fluxo avaliado | Aprovado conforme a gravação | [Evidências](Evidencias/CT-RF68_Exclusao_Conta_Pagar/README.md) e [Jam](https://jam.dev/c/5d0afaf4-5abd-4e85-923f-27448304a9ef) |
 | RF69 | [CT-RF69](Cenario_Teste/CT-RF69_Variaveis_Preview_Modelo_Contrato.md) | Nenhum no fluxo avaliado | Aprovado conforme a gravação | [Evidências](Evidencias/CT-RF69_Variaveis_Preview_Modelo_Contrato/README.md) e [Jam](https://jam.dev/c/44dbbd39-6915-45d6-8dd1-5f30c1432ca0) |
 | RF70 | [CT-RF70](Cenario_Teste/CT-RF70_Cadastro_Modelo_Contrato.md) | Nenhum no fluxo avaliado | Aprovado conforme a gravação | [Evidências](Evidencias/CT-RF70_Cadastro_Modelo_Contrato/README.md) e [Jam](https://jam.dev/c/44dbbd39-6915-45d6-8dd1-5f30c1432ca0) |
+| RF71 | [CT-RF71](Cenario_Teste/CT-RF71_Listagem_Modelos_Contrato_Vazia.md) | [BUG-026](Relatorio-de-Bugs.md#bug-026), em triagem | Reprovado nas evidências; reteste pendente. | [Evidências](Evidencias/CT-RF71_Listagem_Modelos_Contrato_Vazia/README.md) e [Jam](https://jam.dev/c/44dbbd39-6915-45d6-8dd1-5f30c1432ca0) |
 
 ---
 
@@ -2321,6 +2352,12 @@ Com RF69, a análise passa a cobrir 66 requisitos documentados. O CT-RF69 acresc
 RF70 utiliza os painéis Info, Console, Network e Actions do Jam "Modelos de Contrato" e a resposta da lista de modelos. Foram registrados a criação (HTTP 201) e o modelo de id 15 na lista do servidor. Não houve nova execução, acesso ao código ou ao banco, nem reteste.
 
 Com RF70, a análise passa a cobrir 67 requisitos documentados. O CT-RF70 acrescenta uma aprovação limitada ao exemplo gravado.
+
+### Base da análise do RF71 — revisão de 15/11/2026
+
+RF71 utiliza os painéis Info, Console, Network e Actions do Jam "Modelos de Contrato", a resposta de modelos-contrato e os quadros de 0:00, 0:39, 0:45 e 0:49. Foram registrados a lista de 15 modelos e a tabela sem linhas. Não houve nova execução, acesso ao código ou ao banco, nem reteste.
+
+Com RF71, a análise passa a cobrir 68 requisitos documentados. O CT-RF71 acrescenta uma reprovação, vinculada ao BUG-026, em triagem.
 
 ---
 
