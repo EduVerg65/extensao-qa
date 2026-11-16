@@ -69,6 +69,7 @@ Esta análise documenta 60 requisitos de QA para os cenários relacionados abaix
 | [RF58](#rf58) | Alternar o tema e consultar as notificações no cabeçalho | Baixa, proposta | [CT-RF58](Cenario_Teste/CT-RF58_Tema_Notificacoes_Prospeccao.md) |
 | [RF59](#rf59) | Buscar leads por texto na listagem de Prospecção | Média, proposta | [CT-RF59](Cenario_Teste/CT-RF59_Busca_Leads_Prospeccao.md) |
 | [RF60](#rf60) | Filtrar leads por estágio e restaurar a listagem | Média, proposta | [CT-RF60](Cenario_Teste/CT-RF60_Filtro_Estagio_Leads.md) |
+| [RF61](#rf61) | Cadastrar um lead com uma única gravação | Média, proposta | [CT-RF61](Cenario_Teste/CT-RF61_Cadastro_Lead_Prospeccao.md) |
 
 ---
 
@@ -1677,6 +1678,35 @@ Os demais estágios, a combinação com a busca por texto, o estágio sem leads 
 
 ---
 
+<a id="rf61"></a>
+
+## RF61 — Cadastrar um lead com uma única gravação
+
+| Campo | Descrição |
+| --- | --- |
+| Requisito de QA | O formulário Adicionar Lead deve criar o lead informado uma única vez, apresentá-lo na listagem com o estágio escolhido e atualizar os cartões de resumo. |
+| Ator | Usuário autenticado com acesso a Prospecção. |
+| Pré-condições | Base de leads conhecida; dados de teste descartáveis. |
+| Gatilho | Preencher o formulário Adicionar Lead e acionar Salvar Lead. |
+| Caso | [CT-RF61](Cenario_Teste/CT-RF61_Cadastro_Lead_Prospeccao.md) |
+| Situação observada | A validar — regra ou contexto pendente. O lead de código 10 é criado e listado (Leads 7 → 8), mas um clique gera dois POST salvar-lead/1 com HTTP 200. |
+| Defeito | Sem defeito confirmado |
+| Evidências | [Jam](https://jam.dev/c/308607ff-8abc-40af-8c7c-429ce506ed64) e [Evidências](Evidencias/CT-RF61_Cadastro_Lead_Prospeccao/README.md). |
+
+### Critérios de aceitação do RF61
+
+1. Um clique em Salvar Lead gera uma única requisição de criação.
+2. O lead é gravado uma única vez e aparece na listagem com o estágio informado.
+3. Os cartões Leads e do estágio acompanham o novo registro.
+4. O botão é protegido contra segundo envio enquanto a requisição está em andamento.
+5. Após recarga, a listagem contém um único lead com os dados informados.
+
+### Pontos a confirmar e limites do RF61
+
+O corpo e a resposta da segunda requisição, a persistência após recarga, os campos obrigatórios e as validações de formato não foram verificados. O mesmo padrão ocorre no [RF47](#rf47); a duplicidade não está confirmada.
+
+---
+
 ## 🔗 Rastreabilidade
 
 | Requisito | Cenário / caso | Defeito | Resultado | Evidências |
@@ -1738,6 +1768,7 @@ Os demais estágios, a combinação com a busca por texto, o estágio sem leads 
 | RF58 | [CT-RF58](Cenario_Teste/CT-RF58_Tema_Notificacoes_Prospeccao.md) | Nenhum no fluxo avaliado | Aprovado conforme a gravação | [Evidências](Evidencias/CT-RF58_Tema_Notificacoes_Prospeccao/README.md) e [Jam](https://jam.dev/c/308607ff-8abc-40af-8c7c-429ce506ed64) |
 | RF59 | [CT-RF59](Cenario_Teste/CT-RF59_Busca_Leads_Prospeccao.md) | Nenhum no fluxo avaliado | Aprovado conforme a gravação | [Evidências](Evidencias/CT-RF59_Busca_Leads_Prospeccao/README.md) e [Jam](https://jam.dev/c/308607ff-8abc-40af-8c7c-429ce506ed64) |
 | RF60 | [CT-RF60](Cenario_Teste/CT-RF60_Filtro_Estagio_Leads.md) | Nenhum no fluxo avaliado | Aprovado conforme a gravação | [Evidências](Evidencias/CT-RF60_Filtro_Estagio_Leads/README.md) e [Jam](https://jam.dev/c/308607ff-8abc-40af-8c7c-429ce506ed64) |
+| RF61 | [CT-RF61](Cenario_Teste/CT-RF61_Cadastro_Lead_Prospeccao.md) | Sem defeito confirmado | A validar — regra ou contexto pendente | [Evidências](Evidencias/CT-RF61_Cadastro_Lead_Prospeccao/README.md) e [Jam](https://jam.dev/c/308607ff-8abc-40af-8c7c-429ce506ed64) |
 
 ---
 
@@ -1951,6 +1982,12 @@ Com RF59, a análise passa a cobrir 56 requisitos documentados. O CT-RF59 acresc
 RF60 utiliza os painéis Info, Console, Network e Actions do Jam "Prospecção" e os quadros de 0:16, 0:19 e 0:21. Foram registrados o filtro por estágio, o indicador Novos Contatos, o botão Limpar e a ausência de requisição. Não houve nova execução, acesso ao código ou ao banco, nem reteste.
 
 Com RF60, a análise passa a cobrir 57 requisitos documentados. O CT-RF60 acrescenta uma aprovação limitada ao exemplo gravado.
+
+### Base da análise do RF61 — revisão de 15/11/2026
+
+RF61 utiliza os painéis Info, Console, Network e Actions do Jam "Prospecção", os corpos da primeira requisição e os quadros de 0:24 e 0:39. Foram registrados o cadastro, os dois POST de criação e a atualização dos cartões. Não houve nova execução, acesso ao código ou ao banco, nem reteste.
+
+Com RF61, a análise passa a cobrir 58 requisitos documentados. O CT-RF61 acrescenta um ponto a validar, sem defeito confirmado.
 
 ---
 
