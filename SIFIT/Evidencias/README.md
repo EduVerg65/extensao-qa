@@ -67,3 +67,24 @@ Uma única gravação do Jam ([SifitBox – Turmas](https://jam.dev/c/ee9a133b-d
 | [CT-RF56](../Cenario_Teste/CT-RF56_Relatorio_Caixas_Vazio.md) | [Relatório de Caixas gera arquivo vazio](CT-RF56_Relatorio_Caixas_Vazio/README.md) | Reprovado nas evidências; BUG-023 em triagem |
 
 Três gravações do Jam ([Pagar.me e Configurações](https://jam.dev/c/e6e551ef-9196-4c79-b6a2-89747b1e8b33), [Despesas Fixas](https://jam.dev/c/a4bac99d-e436-4792-831e-8c3a875272bb) e [Relatórios](https://jam.dev/c/3b4777a4-e1b0-4038-9b06-26c73669d7d1)) são a fonte dos quinze casos; cada pasta contém resumo, cronologia, origem, capturas extraídas da reprodução do Jam e seus hashes SHA-256, e as pastas de CT-RF50 a CT-RF56 incluem os PDFs baixados (os arquivos vazios têm 0 bytes). Os vídeos permanecem no Jam.
+
+
+## Inclusão de 16/11/2026 — CT-RF74 a CT-RF84
+
+Integração documental dos arquivos RESUMO.txt fornecidos em `C:\Users\Leonardo\Desktop\evidencias`, com data de gravação e análise informada de 16/11/2026. Os Jams não foram reabertos nesta integração; eventos de rede, horários e quadros abaixo são transcritos dos resumos, sem verificação independente. Não houve nova execução do SIFIT, reteste, consulta ao banco, logs ou código.
+
+| Caso | Evidência local | Resultado | Defeito | Jam |
+| --- | --- | --- | --- | --- |
+| [CT-RF74](../Cenario_Teste/CT-RF74_Temas_Prospeccao.md) | [Evidências](CT-RF74_Temas_Prospeccao/README.md) | Aprovado conforme o resumo da gravação | — | [Jam](https://jam.dev/c/5dc9fc15-8e13-4f90-b21f-a49aedc6731e) |
+| [CT-RF75](../Cenario_Teste/CT-RF75_Detalhes_Lead_Cancelamento.md) | [Evidências](CT-RF75_Detalhes_Lead_Cancelamento/README.md) | Aprovado conforme o resumo da gravação | — | [Jam](https://jam.dev/c/7ef0ee0b-497e-48b8-a57d-cd914558d303) |
+| [CT-RF76](../Cenario_Teste/CT-RF76_Exclusao_Leads_Confirmacao.md) | [Evidências](CT-RF76_Exclusao_Leads_Confirmacao/README.md) | Aprovado conforme o resumo da gravação | — | [Jam](https://jam.dev/c/2ac5e5ed-b10f-4cc9-9f97-7ba65ca560f8) |
+| [CT-RF77](../Cenario_Teste/CT-RF77_Cadastro_Lead_Novo_Contato.md) | [Evidências](CT-RF77_Cadastro_Lead_Novo_Contato/README.md) | Aprovado conforme o resumo da gravação | — | [Jam](https://jam.dev/c/29447c6a-90f5-48b2-ac5d-d43cad44a782) |
+| [CT-RF78](../Cenario_Teste/CT-RF78_Cadastro_Lead_Interessado.md) | [Evidências](CT-RF78_Cadastro_Lead_Interessado/README.md) | Aprovado conforme o resumo da gravação | — | [Jam](https://jam.dev/c/f8735cbf-4043-4467-b43f-3cad7eff0da8) |
+| [CT-RF79](../Cenario_Teste/CT-RF79_Cadastro_Lead_Aula_Experimental.md) | [Evidências](CT-RF79_Cadastro_Lead_Aula_Experimental/README.md) | Aprovado conforme o resumo da gravação | — | [Jam](https://jam.dev/c/bef3d877-056b-4274-87c3-da37869c54fd) |
+| [CT-RF80](../Cenario_Teste/CT-RF80_Cadastro_Lead_Proposta.md) | [Evidências](CT-RF80_Cadastro_Lead_Proposta/README.md) | Aprovado conforme o resumo da gravação | — | [Jam](https://jam.dev/c/84f94285-ae5f-4f95-b640-a9b107565aa6) |
+| [CT-RF81](../Cenario_Teste/CT-RF81_Cadastro_Bandeira_Parcela_Listagem.md) | [Evidências](CT-RF81_Cadastro_Bandeira_Parcela_Listagem/README.md) | Reprovado nas evidências resumidas | [BUG-035](../Relatorio-de-Bugs.md#bug-035) | [Jam](https://jam.dev/c/2f0280fb-6b7f-4cf0-a45c-02f8c16b6c5e) |
+| [CT-RF82](../Cenario_Teste/CT-RF82_Tema_Escuro_Bandeiras.md) | [Evidências](CT-RF82_Tema_Escuro_Bandeiras/README.md) | Reprovado nas evidências resumidas | [BUG-036](../Relatorio-de-Bugs.md#bug-036) | [Jam](https://jam.dev/c/ae4dc198-8a42-4451-898a-fb376596c744) |
+| [CT-RF83](../Cenario_Teste/CT-RF83_Cadastro_Lead_Apenas_Nome.md) | [Evidências](CT-RF83_Cadastro_Lead_Apenas_Nome/README.md) | Reprovado conforme o relato; regra de obrigatoriedade a confirmar | [BUG-037](../Relatorio-de-Bugs.md#bug-037) | [Jam](https://jam.dev/c/ef3df03c-16ce-4cb6-b0c7-d04514cab4f6) |
+| [CT-RF84](../Cenario_Teste/CT-RF84_Cadastro_Lead_Fechado.md) | [Evidências](CT-RF84_Cadastro_Lead_Fechado/README.md) | Aprovado conforme o resumo da gravação | — | [Jam](https://jam.dev/c/775b9003-fdf7-4ad5-8882-15ba606b6674) |
+
+As onze pastas contêm uma cópia integral de RESUMO.txt e um README.md no padrão do projeto, com cronologia e hash SHA-256 do texto original. Não foram fornecidos vídeos ou capturas locais neste lote. CT-RF74–CT-RF84 acrescentam oito aprovações e três reprovações conforme os resumos fornecidos, com BUG-035–BUG-037 em triagem. CT-RF83 mantém a classificação do relato, condicionada à confirmação da regra de obrigatoriedade. Os dez casos anteriores a validar permanecem inalterados.
