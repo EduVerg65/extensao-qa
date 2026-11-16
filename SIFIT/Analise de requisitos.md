@@ -2,11 +2,11 @@
 
 **Módulos:** Autenticação, Perfil, Clientes / Filtros, Financeiro, Página inicial / Personais, SifitBox / Modalidades e Turmas, Categorias Crossfit, Avaliações, Exercícios, Grupos Musculares, Dashboard e Objetivos de Treino.
 
-**Atualização:** 15/11/2026 — RF01 a RF35, RF38 a RF58 e RF65 a RF70 consolidados; BUG-011–BUG-031 em triagem.
+**Atualização:** 15/11/2026 — RF01 a RF35, RF38 a RF58 e RF65 a RF73 consolidados; BUG-011–BUG-033 em triagem.
 
 **Padronização documental:** 13/11/2026, sem alteração dos resultados registrados.
 
-Esta análise documenta 56 requisitos de QA para os cenários relacionados abaixo, com base nos relatos e nas evidências fornecidas. RF01–RF04 e suas análises históricas foram preservados; RF05–RF20 ampliam a cobertura em 14/11/2026; RF21 acrescenta Avaliações; RF22–RF28 acrescentam Exercícios; RF29–RF33 acrescentam Grupos Musculares; RF34 acrescenta o carregamento do dashboard RF35 acrescenta o cadastro de objetivos de treino e RF38 acrescenta o cadastro de categorias com código automático em 15/11/2026. RF39 acrescenta o cadastro de modalidade em SifitBox – Turmas. RF40 acrescenta a exclusão de turmas e modalidades. RF41 acrescenta o cadastro de turma. RF42 a RF56 acrescentam Pagar.me, Configurações, Despesas Fixas e Relatórios em 15/11/2026. RF57 acrescenta a exclusão de grupo (treino) e RF58 acrescenta a edição de grupo (treino), ambos também em 15/11/2026. Os critérios abaixo constituem a referência de QA para esses fluxos; não representam validação de uma especificação formal pelo responsável pelo produto.
+Esta análise documenta 65 requisitos de QA para os cenários relacionados abaixo, com base nos relatos e nas evidências fornecidas. RF01–RF04 e suas análises históricas foram preservados; RF05–RF20 ampliam a cobertura em 14/11/2026; RF21 acrescenta Avaliações; RF22–RF28 acrescentam Exercícios; RF29–RF33 acrescentam Grupos Musculares; RF34 acrescenta o carregamento do dashboard; RF35 acrescenta o cadastro de objetivos de treino; RF38–RF58 ampliam a cobertura de Categorias Crossfit, SifitBox, Pagar.me, Configurações, Despesas Fixas, Relatórios e Grupos; RF65–RF73 cobrem validações, operações e buscas de Colaboradores. Os critérios abaixo constituem a referência de QA para esses fluxos; não representam validação de uma especificação formal pelo responsável pelo produto.
 
 ## 📋 Visão geral dos requisitos
 
@@ -68,6 +68,15 @@ Esta análise documenta 56 requisitos de QA para os cenários relacionados abaix
 | [RF56](#rf56) | Gerar o relatório de Caixas em PDF | Alta, proposta | [CT-RF56](Cenario_Teste/CT-RF56_Relatorio_Caixas_Vazio.md) |
 | [RF57](#rf57) | Excluir grupo ou explicar o impedimento | Alta, proposta | [CT-RF57](Cenario_Teste/CT-RF57_Exclusao_Grupo.md) |
 | [RF58](#rf58) | Persistir todos os campos editados de um grupo | Alta, proposta | [CT-RF58](Cenario_Teste/CT-RF58_Edicao_Grupo.md) |
+| [RF65](#rf65) | Recusar data de nascimento futura | Alta, proposta | [CT-RF65](Cenario_Teste/CT-RF65_Data_Nascimento_Futura_Colaborador.md) |
+| [RF66](#rf66) | Exigir data de nascimento obrigatória | Alta, proposta | [CT-RF66](Cenario_Teste/CT-RF66_Data_Nascimento_Obrigatoria_Colaborador.md) |
+| [RF67](#rf67) | Validar o formato do CREF | Média, proposta | [CT-RF67](Cenario_Teste/CT-RF67_CREF_Formato_Colaborador.md) |
+| [RF68](#rf68) | Bloquear edição com campo obrigatório vazio | Alta, proposta | [CT-RF68](Cenario_Teste/CT-RF68_Edicao_Colaborador_Campo_Obrigatorio_Vazio.md) |
+| [RF69](#rf69) | Impedir função duplicada para o colaborador | Alta, proposta | [CT-RF69](Cenario_Teste/CT-RF69_Funcao_Duplicada_Colaborador.md) |
+| [RF70](#rf70) | Tratar a exclusão de colaborador sem erro interno | Alta, proposta | [CT-RF70](Cenario_Teste/CT-RF70_Exclusao_Colaborador_Erro_500.md) |
+| [RF71](#rf71) | Manter o filtro por nome durante a paginação | Alta, proposta | [CT-RF71](Cenario_Teste/CT-RF71_Busca_Nome_Colaborador_Paginacao.md) |
+| [RF72](#rf72) | Buscar colaborador por código existente | Média, proposta | [CT-RF72](Cenario_Teste/CT-RF72_Busca_Codigo_Existente_Colaborador.md) |
+| [RF73](#rf73) | Exibir estado vazio para código inexistente | Alta, proposta | [CT-RF73](Cenario_Teste/CT-RF73_Busca_Codigo_Inexistente_Colaborador.md) |
 
 ---
 
@@ -1913,7 +1922,7 @@ Com RF58, a análise passa a cobrir 56 requisitos documentados. O CT-RF58 acresc
 
 ---
 
-## RF65 a RF70 — Validações e operações de Colaboradores
+## RF65 a RF73 — Validações, operações e buscas de Colaboradores
 
 | Requisito | Comportamento esperado | Caso | Defeito | Resultado observado |
 | --- | --- | --- | --- | --- |
@@ -1923,6 +1932,9 @@ Com RF58, a análise passa a cobrir 56 requisitos documentados. O CT-RF58 acresc
 | <a id="rf68"></a>RF68 | Bloquear edição com qualquer campo obrigatório vazio. | [CT-RF68](Cenario_Teste/CT-RF68_Edicao_Colaborador_Campo_Obrigatorio_Vazio.md) | [BUG-029](Relatorio-de-Bugs.md#bug-029) | Edição aceita sem validação visível; HTTP 200. |
 | <a id="rf69"></a>RF69 | Manter uma única associação por colaborador e função. | [CT-RF69](Cenario_Teste/CT-RF69_Funcao_Duplicada_Colaborador.md) | [BUG-030](Relatorio-de-Bugs.md#bug-030) | Mesma função associada três vezes; dois POST HTTP 201. |
 | <a id="rf70"></a>RF70 | Excluir colaborador permitido ou explicar o vínculo impeditivo sem HTTP 500. | [CT-RF70](Cenario_Teste/CT-RF70_Exclusao_Colaborador_Erro_500.md) | [BUG-031](Relatorio-de-Bugs.md#bug-031) | Exclusão retorna HTTP 500 e erro interno genérico. |
+| <a id="rf71"></a>RF71 | Manter o filtro por nome aplicado em todas as páginas do resultado. | [CT-RF71](Cenario_Teste/CT-RF71_Busca_Nome_Colaborador_Paginacao.md) | [BUG-032](Relatorio-de-Bugs.md#bug-032) | A página seguinte exibe nomes fora do filtro. |
+| <a id="rf72"></a>RF72 | Retornar somente o colaborador associado a um código existente. | [CT-RF72](Cenario_Teste/CT-RF72_Busca_Codigo_Existente_Colaborador.md) | — | Usuário correto retornado no exemplo gravado. |
+| <a id="rf73"></a>RF73 | Exibir estado vazio para código inexistente, sem linha residual. | [CT-RF73](Cenario_Teste/CT-RF73_Busca_Codigo_Inexistente_Colaborador.md) | [BUG-033](Relatorio-de-Bugs.md#bug-033) | A tabela apresenta uma linha vazia. |
 
 ### Critérios gerais de aceitação
 
@@ -1931,10 +1943,12 @@ Com RF58, a análise passa a cobrir 56 requisitos documentados. O CT-RF58 acresc
 3. A associação colaborador/função deve ser única e resistente a repetição ou concorrência.
 4. Impedimentos de exclusão devem ser tratados como regra de negócio, com mensagem específica.
 5. Todos os fluxos devem preservar os dados anteriores após falha e permitir correção.
+6. Filtros devem permanecer ativos durante a paginação e representar o mesmo conjunto nos totais.
+7. Consultas sem correspondência devem apresentar estado vazio sem linhas ou ações residuais.
 
 ### Base da análise — revisão de 15/11/2026
 
-Os seis Jams foram lidos por metadados, eventos de interação e registros de rede. RF65–RF68 possuem POST de atualização HTTP 200 sem corpo capturado; por isso a aceitação do endpoint está comprovada, mas a persistência final deve ser reconfirmada. RF69 registra payloads, HTTP 201 e respostas subsequentes com três associações iguais. RF70 registra payload, HTTP 500 e `Erro interno inesperado`. Não houve nova execução, acesso ao banco, logs ou código. A análise passa a cobrir 62 requisitos documentados; RF36–RF37 e RF59–RF64 permanecem fora do conjunto fornecido.
+Os seis Jams de RF65–RF70 foram lidos por metadados, eventos de interação e registros de rede. RF65–RF68 possuem POST de atualização HTTP 200 sem corpo capturado; por isso a aceitação do endpoint está comprovada, mas a persistência final deve ser reconfirmada. RF69 registra payloads, HTTP 201 e respostas subsequentes com três associações iguais. RF70 registra payload, HTTP 500 e `Erro interno inesperado`. RF71–RF73 foram analisados visualmente em três Jams curtos: busca por nome com falha na paginação, busca válida por código e busca inexistente com linha vazia. Não houve nova execução, acesso ao banco, logs ou código. A análise passa a cobrir 65 requisitos documentados; RF36–RF37 e RF59–RF64 permanecem fora do conjunto fornecido.
 
 ---
 

@@ -1,10 +1,10 @@
 # 📊 Relatório de Testes — SIFIT
 
-**Escopo:** 62 casos documentados (CT-RF01–CT-RF35, CT-RF38–CT-RF58 e CT-RF65–CT-RF70), incluindo Grupos (treino) e validações, funções e exclusão de Colaboradores.
+**Escopo:** 65 casos documentados (CT-RF01–CT-RF35, CT-RF38–CT-RF58 e CT-RF65–CT-RF73), incluindo Grupos (treino) e validações, funções, exclusão e buscas de Colaboradores.
 
 **Datas das gravações do Jam:** CT-RF01 em 23/10/2026; CT-RF02_ERRO em 22/10/2026 às 21:45 BRT; CT-RF03 não confirmada; CT-RF04_loginComSucesso em 13/11/2026; CT-RF05–CT-RF20 em 14/11/2026; CT-RF21 em 15/11/2026 às 15:07:51,265 BRT; CT-RF22–28 em 15/11/2026 às 15:25, 15:40, 15:38, 15:35, 16:11, 16:08 e 16:07 BRT; CT-RF29–33 em 15/11/2026 às 15h56 BRT (uma única gravação); CT-RF34 em 15/11/2026 às 17:23 BRT; CT-RF35 em 15/11/2026 às 18:13 BRT; CT-RF38 em 15/11/2026 às 18:41 BRT; CT-RF39–41 em 15/11/2026 às 18:51 BRT (uma única gravação); CT-RF42–45 às 19:06, CT-RF46–49 às 19:07 e CT-RF50–56 às 19:09 BRT (uma gravação por grupo); CT-RF57 e CT-RF58 em 15/11/2026 às 21h03 BRT (mesma gravação).
 
-**Data da revisão documental:** 15/11/2026, com integração de CT-RF22–CT-RF58 e CT-RF65–CT-RF70; BUG-011–BUG-031 em triagem. Resultados anteriores preservados.
+**Data da revisão documental:** 15/11/2026, com integração de CT-RF22–CT-RF58 e CT-RF65–CT-RF73; BUG-011–BUG-033 em triagem. Resultados anteriores preservados.
 
 **Origem do resultado:** análise de evidências fornecidas; sem nova execução no sistema nesta revisão.
 
@@ -30,7 +30,7 @@ CT-RF30 acrescenta uma reprovação e o BUG-017 (imagens dos grupos musculares c
 
 | Casos documentados | Aprovados | Reprovados | A validar | Defeitos registrados | Casos com reteste corretivo pendente |
 | :---: | :---: | :---: | :---: | :---: | :---: |
-| 62 | 17 | 35 | 10 | 31 (10 abertos + 21 em triagem) | 35 |
+| 65 | 18 | 37 | 10 | 33 (10 abertos + 23 em triagem) | 37 |
 
 Os 29 retestes incluem CT-RF22/24/26/27/28/29/30/35/41/45/51/53/54/55/56/57/58, sujeitos à confirmação funcional e técnica. As contagens representam os casos documentados com base nas fontes indicadas, sem novas execuções nesta revisão. As nove variações planejadas para o reteste do CT-RF03 não foram executadas e não são contabilizadas como testes adicionais realizados.
 
@@ -527,7 +527,7 @@ O consolidado atual é de 39 casos documentados (CT-RF01–CT-RF35 e CT-RF38–C
 
 Os defeitos [BUG-021](Relatorio-de-Bugs.md#bug-021), [BUG-022](Relatorio-de-Bugs.md#bug-022) e [BUG-023](Relatorio-de-Bugs.md#bug-023) estão em triagem. O BUG-023 é compartilhado por CT-RF53 a CT-RF56 (arquivos de 0 bytes) e, por isso, seis casos reprovados deste grupo correspondem a três defeitos. Os pontos a validar (CT-RF42, CT-RF44, CT-RF47 e CT-RF52) não geram defeito antes da confirmação da regra ou da duplicidade.
 
-O consolidado atual é de 62 casos documentados: 17 aprovados, 35 reprovados e 10 a validar; 31 defeitos registrados (10 abertos e 21 em triagem) e 35 casos com reteste corretivo pendente. CT-RF09/10 compartilham BUG-005 e CT-RF53 a CT-RF56 compartilham BUG-023. Sem nova execução.
+O consolidado atual é de 65 casos documentados: 18 aprovados, 37 reprovados e 10 a validar; 33 defeitos registrados (10 abertos e 23 em triagem) e 37 casos com reteste corretivo pendente. CT-RF09/10 compartilham BUG-005 e CT-RF53 a CT-RF56 compartilham BUG-023. Sem nova execução.
 
 ---
 
@@ -543,6 +543,16 @@ O consolidado atual é de 62 casos documentados: 17 aprovados, 35 reprovados e 1
 | [CT-RF70](Cenario_Teste/CT-RF70_Exclusao_Colaborador_Erro_500.md) | Exclusão retorna HTTP 500 e erro interno. | Reprovado | [BUG-031](Relatorio-de-Bugs.md#bug-031) |
 
 RF65–RF68 precisam de reteste com corpo do POST e reabertura do cadastro para comprovar a persistência. RF69 possui evidência direta da duplicidade. RF70 confirma o erro interno, mas não sua causa.
+
+## Resultado de CT-RF71 a CT-RF73 — Buscas de Colaboradores
+
+| Caso | Resultado observado | Situação | Defeito |
+| --- | --- | --- | --- |
+| [CT-RF71](Cenario_Teste/CT-RF71_Busca_Nome_Colaborador_Paginacao.md) | A busca por nome retorna correspondências, mas a próxima página inclui nomes fora do filtro. | Reprovado | [BUG-032](Relatorio-de-Bugs.md#bug-032) |
+| [CT-RF72](Cenario_Teste/CT-RF72_Busca_Codigo_Existente_Colaborador.md) | A busca por código existente retorna o usuário correto no exemplo gravado. | Aprovado conforme a gravação | — |
+| [CT-RF73](Cenario_Teste/CT-RF73_Busca_Codigo_Inexistente_Colaborador.md) | A busca por código inexistente renderiza uma linha vazia. | Reprovado | [BUG-033](Relatorio-de-Bugs.md#bug-033) |
+
+As três gravações foram realizadas em 15/11/2026, entre 21:58 e 22:01 BRT, na página de Colaboradores. A análise foi visual e documental; não houve nova execução nem inspeção das respostas de rede. CT-RF71 e CT-RF73 aguardam correção e reteste, enquanto a aprovação de CT-RF72 se limita ao código existente demonstrado.
 
 O consolidado em 15/11/2026, antes da inclusão de CT-RF57, era de 54 casos documentados (CT-RF01–CT-RF35 e CT-RF38–CT-RF56): 17 aprovados, 27 reprovados e 10 a validar; 23 defeitos registrados (10 abertos e 13 em triagem) e 27 casos com reteste corretivo pendente. CT-RF09/10 compartilham BUG-005 e CT-RF53 a CT-RF56 compartilham BUG-023, de modo que 27 casos reprovados correspondem a 23 defeitos. Sem nova execução.
 

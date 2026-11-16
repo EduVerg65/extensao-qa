@@ -1,6 +1,6 @@
 # 🧪 Índice dos cenários de teste — SIFIT
 
-**Atualização:** 15/11/2026. 62 casos (CT-RF01–CT-RF35, CT-RF38–CT-RF58 e CT-RF65–CT-RF70): 17 aprovados, 35 reprovados e 10 a validar; 31 defeitos registrados (10 abertos e 21 em triagem).
+**Atualização:** 15/11/2026. 65 casos (CT-RF01–CT-RF35, CT-RF38–CT-RF58 e CT-RF65–CT-RF73): 18 aprovados, 37 reprovados e 10 a validar; 33 defeitos registrados (10 abertos e 23 em triagem).
 
 | Caso | Funcionalidade | Resultado | Defeito | Jam |
 | --- | --- | --- | --- | --- |
@@ -139,6 +139,9 @@ Cada grupo tem como fonte uma única gravação. Os resultados são documentais;
 | [CT-RF68](CT-RF68_Edicao_Colaborador_Campo_Obrigatorio_Vazio.md) | Edição com campo obrigatório vazio | Reprovado — atualização aceita com HTTP 200 | [BUG-029](../Relatorio-de-Bugs.md#bug-029) | [Jam](https://jam.dev/c/4219c1b3-085e-4218-b181-5cf448d64cea) |
 | [CT-RF69](CT-RF69_Funcao_Duplicada_Colaborador.md) | Função duplicada para o colaborador | Reprovado — três associações iguais | [BUG-030](../Relatorio-de-Bugs.md#bug-030) | [Jam](https://jam.dev/c/ba2400f9-dbb0-45bc-a509-187249dbe9da) |
 | [CT-RF70](CT-RF70_Exclusao_Colaborador_Erro_500.md) | Exclusão de colaborador | Reprovado — HTTP 500 e erro interno | [BUG-031](../Relatorio-de-Bugs.md#bug-031) | [Jam](https://jam.dev/c/05be297b-22d9-4d26-beff-937526bcd816) |
+| [CT-RF71](CT-RF71_Busca_Nome_Colaborador_Paginacao.md) | Busca por nome durante a paginação | Reprovado — próxima página exibe nomes fora do filtro | [BUG-032](../Relatorio-de-Bugs.md#bug-032) | [Jam](https://jam.dev/c/b35516e3-c571-47ea-b233-28f00d1fca4c) |
+| [CT-RF72](CT-RF72_Busca_Codigo_Existente_Colaborador.md) | Busca por código existente | Aprovado conforme a gravação | — | [Jam](https://jam.dev/c/415a6ea3-273b-40f7-b3e4-f2b767dc7dfd) |
+| [CT-RF73](CT-RF73_Busca_Codigo_Inexistente_Colaborador.md) | Busca por código inexistente | Reprovado — retorna uma linha vazia | [BUG-033](../Relatorio-de-Bugs.md#bug-033) | [Jam](https://jam.dev/c/cdbb3d76-3d6a-4d36-adf9-edd935b5a449) |
 
 ## Inclusão de 15/11/2026 — Grupos (treino)
 

@@ -1,12 +1,12 @@
 # 🐞 Relatório de Bugs — SIFIT
 
-**Escopo:** defeitos de 62 casos documentados (CT-RF01–CT-RF35, CT-RF38–CT-RF58 e CT-RF65–CT-RF70), incluindo Grupos (treino) e Colaboradores.
+**Escopo:** defeitos de 65 casos documentados (CT-RF01–CT-RF35, CT-RF38–CT-RF58 e CT-RF65–CT-RF73), incluindo Grupos (treino) e Colaboradores.
 
 **Ambientes:** CT-RF01 em https://sifitalfa.centrion.com.br/login; CT-RF02_ERRO em https://sifit.centrion.com.br/profile. CT-RF03: URL do frontend não confirmada; backend informado em `https://backendsifit.centrion.com.br/api/clientesPorNome/1`.
 
 **Datas das gravações do Jam:** CT-RF01 em 23/10/2026; CT-RF02_ERRO em 22/10/2026 às 21:45 BRT; CT-RF03 não confirmada.
 
-**Atualização documental:** 15/11/2026 — 31 defeitos registrados: 10 abertos (BUG-001 a BUG-010) e 21 em triagem (BUG-011 a BUG-031). BUG-024 e BUG-025 cobrem Grupos (treino); BUG-026–BUG-031 cobrem Colaboradores. As análises anteriores foram preservadas.
+**Atualização documental:** 15/11/2026 — 33 defeitos registrados: 10 abertos (BUG-001 a BUG-010) e 23 em triagem (BUG-011 a BUG-033). BUG-024 e BUG-025 cobrem Grupos (treino); BUG-026–BUG-033 cobrem Colaboradores. As análises anteriores foram preservadas.
 
 **Gravação de CT-RF57 e CT-RF58:** 15/11/2026, Grupos, 21h03 BRT, Chrome 157.0.8103.78 / Windows 11; mesma gravação, evidências e limites no BUG-024 e no BUG-025.
 
@@ -61,8 +61,10 @@
 | [BUG-029](#bug-029) | Edição aceita campo obrigatório vazio | Alta / Alta, propostas | Em triagem | [CT-RF68](Cenario_Teste/CT-RF68_Edicao_Colaborador_Campo_Obrigatorio_Vazio.md) |
 | [BUG-030](#bug-030) | Mesma função pode ser associada repetidamente | Média / Alta, propostas | Em triagem | [CT-RF69](Cenario_Teste/CT-RF69_Funcao_Duplicada_Colaborador.md) |
 | [BUG-031](#bug-031) | Exclusão de colaborador retorna HTTP 500 | Alta / Alta, propostas | Em triagem — causa não determinada | [CT-RF70](Cenario_Teste/CT-RF70_Exclusao_Colaborador_Erro_500.md) |
+| [BUG-032](#bug-032) | Busca por nome perde o filtro ao avançar a página | Média / Alta, propostas | Em triagem — causa não determinada | [CT-RF71](Cenario_Teste/CT-RF71_Busca_Nome_Colaborador_Paginacao.md) |
+| [BUG-033](#bug-033) | Busca por código inexistente renderiza linha vazia | Média / Alta, propostas | Em triagem — causa não determinada | [CT-RF73](Cenario_Teste/CT-RF73_Busca_Codigo_Inexistente_Colaborador.md) |
 
-BUG-001–BUG-010 aguardam correção e reteste. BUG-011–BUG-031 aguardam confirmação das premissas e triagem antes do encaminhamento de correção. As causas técnicas permanecem não confirmadas; o BUG-003 se apoia no relato e nas capturas fornecidos, com os limites registrados no caso.
+BUG-001–BUG-010 aguardam correção e reteste. BUG-011–BUG-033 aguardam confirmação das premissas e triagem antes do encaminhamento de correção. As causas técnicas permanecem não confirmadas; o BUG-003 se apoia no relato e nas capturas fornecidos, com os limites registrados no caso.
 
 ---
 
@@ -1120,6 +1122,15 @@ A geração com HTTP 200 e arquivo de 0 bytes é compatível com falha silencios
 | <a id="bug-031"></a>BUG-031 | Confirmar exclusão do colaborador id 3. | Excluir ou explicar vínculo impeditivo. | HTTP 500 e `Erro interno inesperado`. | Consultar logs/vínculos e retestar permitido/impedido. |
 
 **Status comum:** Em triagem; severidades e prioridades propostas. As gravações ocorreram entre 22:06 e 22:13 BRT de 15/11/2026. Não houve nova execução, consulta ao banco ou inspeção do código.
+
+## BUG-032 e BUG-033 — Buscas de Colaboradores
+
+| ID | Reprodução resumida | Esperado | Obtido / evidência | Encaminhamento |
+| --- | --- | --- | --- | --- |
+| <a id="bug-032"></a>BUG-032 | Buscar colaborador por nome e avançar para a próxima página. | Manter o filtro e exibir somente nomes correspondentes em todas as páginas. | A página seguinte inclui nomes fora do filtro; [Jam](https://jam.dev/c/b35516e3-c571-47ea-b233-28f00d1fca4c). | Verificar parâmetros da paginação, total filtrado e estado do formulário; retestar avançar e voltar. |
+| <a id="bug-033"></a>BUG-033 | Buscar um código sem colaborador associado. | Exibir mensagem de nenhum resultado, sem linhas ou ações. | A tabela renderiza uma linha vazia; [Jam](https://jam.dev/c/cdbb3d76-3d6a-4d36-adf9-edd935b5a449). | Validar resposta vazia, normalização dos dados e renderização condicional da tabela. |
+
+**Status comum:** Em triagem; severidade Média e prioridade Alta propostas. Gravações em 15/11/2026, na página `/colaboradores`, Edge 157.0.8103.80 / Windows 11. A análise foi visual; requisições e respostas não foram inspecionadas, não houve nova execução e a causa técnica não foi confirmada.
 <a id="bug-024"></a>
 
 ## BUG-024 — Exclusão de grupo retorna HTTP 500 e mensagem genérica
@@ -1226,7 +1237,7 @@ Investigar a rotina de edição do grupo (`/api/edita/grupo/{id}`), com foco no 
 | [CT-RF47](Cenario_Teste/CT-RF47_Cadastro_Despesa_Fixa.md) | Confirmar se o segundo POST de criação (HTTP 201) gerou registro adicional ou foi descartado; registrar defeito apenas se houver duplicidade confirmada. | [Jam](https://jam.dev/c/a4bac99d-e436-4792-831e-8c3a875272bb) e [Evidências](Evidencias/CT-RF47_Cadastro_Despesa_Fixa/README.md) |
 | [CT-RF52](Cenario_Teste/CT-RF52_Relatorio_Contas_Pagar_Pagas.md) | Conferir se existem contas pagas no período; PDF sem linhas e com totalizadores R$ 0,00 é compatível com período sem pagamentos. | [Jam](https://jam.dev/c/3b4777a4-e1b0-4038-9b06-26c73669d7d1) e [Evidências](Evidencias/CT-RF52_Relatorio_Contas_Pagar_Pagas/README.md) |
 
-Esses dez pontos não entram na contagem de 31 defeitos registrados. BUG-011–BUG-031 são contabilizados separadamente como registros em triagem, com premissas, persistência ou validações técnicas ainda pendentes. O relato de numeração de personais não demonstrou diferença entre total e linhas; a inativação de modalidades pode ser exclusão lógica; encargos e métricas exigem regras explícitas.
+Esses dez pontos não entram na contagem de 33 defeitos registrados. BUG-011–BUG-033 são contabilizados separadamente como registros em triagem, com premissas, persistência ou validações técnicas ainda pendentes. O relato de numeração de personais não demonstrou diferença entre total e linhas; a inativação de modalidades pode ser exclusão lógica; encargos e métricas exigem regras explícitas.
 
 
 **Exclusão de exercício:** CT-RF23 está aprovado no trecho consultado, com remoção e total 11 para 10; não gerou defeito adicional. Persistência e efeitos sobre vínculos permanecem como verificações complementares.
