@@ -82,6 +82,7 @@ Esta análise documenta 73 requisitos de QA para os cenários relacionados abaix
 | [RF71](#rf71) | Apresentar na listagem os modelos de contrato retornados pelo servidor | Alta, proposta | [CT-RF71](Cenario_Teste/CT-RF71_Listagem_Modelos_Contrato_Vazia.md) |
 | [RF72](#rf72) | Filtrar planos por código e por nome | Média, proposta | [CT-RF72](Cenario_Teste/CT-RF72_Filtros_Planos.md) |
 | [RF73](#rf73) | Alternar o tema e consultar as notificações na tela Planos | Baixa, proposta | [CT-RF73](Cenario_Teste/CT-RF73_Tema_Notificacoes_Planos.md) |
+| [RF74](#rf74) | Cadastrar um plano | Alta, proposta | [CT-RF74](Cenario_Teste/CT-RF74_Cadastro_Plano.md) |
 
 ---
 
@@ -2067,6 +2068,35 @@ A persistência após recarga e as notificações pendentes não foram exercitad
 
 ---
 
+<a id="rf74"></a>
+
+## RF74 — Cadastrar um plano
+
+| Campo | Descrição |
+| --- | --- |
+| Requisito de QA | O modal Novo Plano deve criar o plano com os dados informados, devolver o identificador e atualizar o contador de planos e a listagem. |
+| Ator | Usuário autenticado com acesso ao módulo. |
+| Pré-condições | Modal Novo Plano preenchido; base de planos conhecida. |
+| Gatilho | Preencher o modal e acionar Salvar Plano. |
+| Caso | [CT-RF74](Cenario_Teste/CT-RF74_Cadastro_Plano.md) |
+| Situação observada | Aprovado conforme a gravação. `plano/salvar` retorna HTTP 200 com o id 66 e o cartão Planos passa de 40 para 41. |
+| Defeito | Nenhum no fluxo avaliado |
+| Evidências | [Jam](https://jam.dev/c/233c5d21-e108-4a55-b6f6-8738cb3fc6a6) e [Evidências](Evidencias/CT-RF74_Cadastro_Plano/README.md). |
+
+### Critérios de aceitação do RF74
+
+1. Salvar com dados válidos cria o plano e retorna o identificador.
+2. O contador de planos acompanha o cadastro.
+3. A listagem apresenta o plano criado com os dados informados.
+4. Campos obrigatórios em branco são validados antes da gravação.
+5. Os benefícios informados são gravados com o plano.
+
+### Pontos a confirmar e limites do RF74
+
+A linha do plano na listagem, os campos obrigatórios e os benefícios não foram verificados; o cartão Ativos é tratado no RF75.
+
+---
+
 ## 🔗 Rastreabilidade
 
 | Requisito | Cenário / caso | Defeito | Resultado | Evidências |
@@ -2141,6 +2171,7 @@ A persistência após recarga e as notificações pendentes não foram exercitad
 | RF71 | [CT-RF71](Cenario_Teste/CT-RF71_Listagem_Modelos_Contrato_Vazia.md) | [BUG-026](Relatorio-de-Bugs.md#bug-026), em triagem | Reprovado nas evidências; reteste pendente. | [Evidências](Evidencias/CT-RF71_Listagem_Modelos_Contrato_Vazia/README.md) e [Jam](https://jam.dev/c/44dbbd39-6915-45d6-8dd1-5f30c1432ca0) |
 | RF72 | [CT-RF72](Cenario_Teste/CT-RF72_Filtros_Planos.md) | Nenhum no fluxo avaliado | Aprovado conforme a gravação | [Evidências](Evidencias/CT-RF72_Filtros_Planos/README.md) e [Jam](https://jam.dev/c/233c5d21-e108-4a55-b6f6-8738cb3fc6a6) |
 | RF73 | [CT-RF73](Cenario_Teste/CT-RF73_Tema_Notificacoes_Planos.md) | Nenhum no fluxo avaliado | Aprovado conforme a gravação | [Evidências](Evidencias/CT-RF73_Tema_Notificacoes_Planos/README.md) e [Jam](https://jam.dev/c/233c5d21-e108-4a55-b6f6-8738cb3fc6a6) |
+| RF74 | [CT-RF74](Cenario_Teste/CT-RF74_Cadastro_Plano.md) | Nenhum no fluxo avaliado | Aprovado conforme a gravação | [Evidências](Evidencias/CT-RF74_Cadastro_Plano/README.md) e [Jam](https://jam.dev/c/233c5d21-e108-4a55-b6f6-8738cb3fc6a6) |
 
 ---
 
@@ -2432,6 +2463,12 @@ Com RF72, a análise passa a cobrir 69 requisitos documentados. O CT-RF72 acresc
 RF73 utiliza os painéis Info, Console, Network e Actions do Jam "Planos" e os quadros de 0:16 e 0:19. Foram registrados a troca de tema, os POST usuario/tema e o painel de Notificações. Não houve nova execução, acesso ao código ou ao banco, nem reteste.
 
 Com RF73, a análise passa a cobrir 70 requisitos documentados. O CT-RF73 acrescenta uma aprovação limitada ao exemplo gravado.
+
+### Base da análise do RF74 — revisão de 15/11/2026
+
+RF74 utiliza os painéis Info, Console, Network e Actions do Jam "Planos", o corpo e a resposta da criação e os quadros de 0:24, 0:46 e 0:53. Foram registrados o cadastro e o contador de planos. Não houve nova execução, acesso ao código ou ao banco, nem reteste.
+
+Com RF74, a análise passa a cobrir 71 requisitos documentados. O CT-RF74 acrescenta uma aprovação limitada ao exemplo gravado.
 
 ---
 
