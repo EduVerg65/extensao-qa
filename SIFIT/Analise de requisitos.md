@@ -2,11 +2,11 @@
 
 **Módulos:** Autenticação, Perfil, Clientes / Filtros, Financeiro, Página inicial / Personais, SifitBox / Modalidades e Turmas, Categorias Crossfit, Avaliações, Exercícios, Grupos Musculares, Dashboard e Objetivos de Treino.
 
-**Atualização:** 15/11/2026 — RF01 a RF35 e RF38 a RF56 consolidados, com inclusão de Categorias Crossfit (CT-RF38), SifitBox – Turmas (CT-RF39 a CT-RF41) e, a partir de CT-RF42, Pagar.me, Configurações, Despesas Fixas e Relatórios; BUG-011–BUG-023 em triagem.
+**Atualização:** 15/11/2026 — RF01 a RF35, RF38 a RF56 e RF58 a RF63 consolidados, com inclusão de Categorias Crossfit (CT-RF38), SifitBox – Turmas (CT-RF39 a CT-RF41), Pagar.me, Configurações, Despesas Fixas e Relatórios (CT-RF42 a CT-RF56) e, a partir de CT-RF58, Prospecção (leads); BUG-011–BUG-024 em triagem.
 
 **Padronização documental:** 13/11/2026, sem alteração dos resultados registrados.
 
-Esta análise documenta 54 requisitos de QA para os cenários relacionados abaixo, com base nos relatos e nas evidências fornecidas. RF01–RF04 e suas análises históricas foram preservados; RF05–RF20 ampliam a cobertura em 14/11/2026; RF21 acrescenta Avaliações; RF22–RF28 acrescentam Exercícios; RF29–RF33 acrescentam Grupos Musculares; RF34 acrescenta o carregamento do dashboard RF35 acrescenta o cadastro de objetivos de treino e RF38 acrescenta o cadastro de categorias com código automático em 15/11/2026. RF39 acrescenta o cadastro de modalidade em SifitBox – Turmas. RF40 acrescenta a exclusão de turmas e modalidades. RF41 acrescenta o cadastro de turma. RF42 a RF56 acrescentam Pagar.me, Configurações, Despesas Fixas e Relatórios em 15/11/2026. Os critérios abaixo constituem a referência de QA para esses fluxos; não representam validação de uma especificação formal pelo responsável pelo produto.
+Esta análise documenta 60 requisitos de QA para os cenários relacionados abaixo, com base nos relatos e nas evidências fornecidas. RF01–RF04 e suas análises históricas foram preservados; RF05–RF20 ampliam a cobertura em 14/11/2026; RF21 acrescenta Avaliações; RF22–RF28 acrescentam Exercícios; RF29–RF33 acrescentam Grupos Musculares; RF34 acrescenta o carregamento do dashboard RF35 acrescenta o cadastro de objetivos de treino e RF38 acrescenta o cadastro de categorias com código automático em 15/11/2026. RF39 acrescenta o cadastro de modalidade em SifitBox – Turmas. RF40 acrescenta a exclusão de turmas e modalidades. RF41 acrescenta o cadastro de turma. RF42 a RF56 acrescentam Pagar.me, Configurações, Despesas Fixas e Relatórios em 15/11/2026. RF58 a RF63 acrescentam Prospecção (leads) em 15/11/2026. Os critérios abaixo constituem a referência de QA para esses fluxos; não representam validação de uma especificação formal pelo responsável pelo produto.
 
 ## 📋 Visão geral dos requisitos
 
@@ -66,6 +66,7 @@ Esta análise documenta 54 requisitos de QA para os cenários relacionados abaix
 | [RF54](#rf54) | Gerar o relatório de Clientes em PDF | Alta, proposta | [CT-RF54](Cenario_Teste/CT-RF54_Relatorio_Clientes_Vazio.md) |
 | [RF55](#rf55) | Gerar o relatório de Colaboradores em PDF | Alta, proposta | [CT-RF55](Cenario_Teste/CT-RF55_Relatorio_Colaboradores_Vazio.md) |
 | [RF56](#rf56) | Gerar o relatório de Caixas em PDF | Alta, proposta | [CT-RF56](Cenario_Teste/CT-RF56_Relatorio_Caixas_Vazio.md) |
+| [RF58](#rf58) | Alternar o tema e consultar as notificações no cabeçalho | Baixa, proposta | [CT-RF58](Cenario_Teste/CT-RF58_Tema_Notificacoes_Prospeccao.md) |
 
 ---
 
@@ -1587,6 +1588,35 @@ O conteúdo das respostas e a causa não foram capturados. A correspondência en
 
 ---
 
+<a id="rf58"></a>
+
+## RF58 — Alternar o tema e consultar as notificações no cabeçalho
+
+| Campo | Descrição |
+| --- | --- |
+| Requisito de QA | O cabeçalho da tela Prospecção deve permitir alternar o tema claro e escuro, gravando a escolha do usuário, e abrir o painel de notificações com o estado correspondente às pendências. |
+| Ator | Usuário autenticado com acesso a Prospecção. |
+| Pré-condições | Sessão autenticada; tema inicial e notificações conhecidos. |
+| Gatilho | Acionar o alternador de tema e o sino do cabeçalho. |
+| Caso | [CT-RF58](Cenario_Teste/CT-RF58_Tema_Notificacoes_Prospeccao.md) |
+| Situação observada | Aprovado conforme a gravação. O tema escuro é aplicado e o claro restaurado, com POST usuario/tema (HTTP 200) a cada troca; o painel de Notificações abre sem pendências. |
+| Defeito | Nenhum no fluxo avaliado |
+| Evidências | [Jam](https://jam.dev/c/308607ff-8abc-40af-8c7c-429ce506ed64) e [Evidências](Evidencias/CT-RF58_Tema_Notificacoes_Prospeccao/README.md). |
+
+### Critérios de aceitação do RF58
+
+1. Cada acionamento do alternador troca o tema da interface sem perda de legibilidade.
+2. Cada troca de tema é gravada no servidor e permanece após recarregar a página.
+3. O sino abre o painel de Notificações com as abas Tudo e Não lidas.
+4. Sem pendências, o painel apresenta mensagem explícita de estado vazio.
+5. Com pendências, o painel lista os itens e permite marcá-los como lidos.
+
+### Pontos a confirmar e limites do RF58
+
+A persistência do tema após recarga, as notificações pendentes e a ação Marcar como lidas não foram exercitadas; o contraste do tema escuro é tratado no [RF14](#rf14).
+
+---
+
 ## 🔗 Rastreabilidade
 
 | Requisito | Cenário / caso | Defeito | Resultado | Evidências |
@@ -1645,6 +1675,7 @@ O conteúdo das respostas e a causa não foram capturados. A correspondência en
 | RF54 | [CT-RF54](Cenario_Teste/CT-RF54_Relatorio_Clientes_Vazio.md) | [BUG-023](Relatorio-de-Bugs.md#bug-023), em triagem | Reprovado nas evidências; reteste pendente. | [Evidências](Evidencias/CT-RF54_Relatorio_Clientes_Vazio/README.md) e [Jam](https://jam.dev/c/3b4777a4-e1b0-4038-9b06-26c73669d7d1) |
 | RF55 | [CT-RF55](Cenario_Teste/CT-RF55_Relatorio_Colaboradores_Vazio.md) | [BUG-023](Relatorio-de-Bugs.md#bug-023), em triagem | Reprovado nas evidências; reteste pendente. | [Evidências](Evidencias/CT-RF55_Relatorio_Colaboradores_Vazio/README.md) e [Jam](https://jam.dev/c/3b4777a4-e1b0-4038-9b06-26c73669d7d1) |
 | RF56 | [CT-RF56](Cenario_Teste/CT-RF56_Relatorio_Caixas_Vazio.md) | [BUG-023](Relatorio-de-Bugs.md#bug-023), em triagem | Reprovado nas evidências; reteste pendente. | [Evidências](Evidencias/CT-RF56_Relatorio_Caixas_Vazio/README.md) e [Jam](https://jam.dev/c/3b4777a4-e1b0-4038-9b06-26c73669d7d1) |
+| RF58 | [CT-RF58](Cenario_Teste/CT-RF58_Tema_Notificacoes_Prospeccao.md) | Nenhum no fluxo avaliado | Aprovado conforme a gravação | [Evidências](Evidencias/CT-RF58_Tema_Notificacoes_Prospeccao/README.md) e [Jam](https://jam.dev/c/308607ff-8abc-40af-8c7c-429ce506ed64) |
 
 ---
 
@@ -1840,6 +1871,12 @@ Com RF55, a análise passa a cobrir 53 requisitos documentados. O CT-RF55 acresc
 RF56 utiliza os painéis Info, Console e Network do Jam "Relatórios", os quadros do vídeo e os arquivos baixados (tamanho zero e carimbos de hora). A atividade do usuário não foi registrada no Console do Jam. A correspondência do arquivo com o tipo é inferida. Não houve nova execução, acesso ao código ou ao banco, nem reteste. BUG-023 está em triagem.
 
 Com RF56, a análise passa a cobrir 54 requisitos documentados. O CT-RF56 acrescenta uma reprovação, vinculada ao BUG-023, em triagem.
+
+### Base da análise do RF58 — revisão de 15/11/2026
+
+RF58 utiliza os painéis Info, Console, Network e Actions do Jam "Prospecção" e os quadros de 0:01 e 0:03. Foram registrados a troca de tema, os POST usuario/tema e o painel de Notificações. Não houve nova execução, acesso ao código ou ao banco, nem reteste.
+
+Com RF58, a análise passa a cobrir 55 requisitos documentados. O CT-RF58 acrescenta uma aprovação limitada ao exemplo gravado.
 
 ---
 
