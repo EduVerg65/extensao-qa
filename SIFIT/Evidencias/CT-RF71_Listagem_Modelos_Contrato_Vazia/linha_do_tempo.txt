@@ -1,0 +1,36 @@
+CT-RF71 — Listagem de modelos de contrato aparece vazia com 15 modelos retornados
+Fonte: https://jam.dev/c/44dbbd39-6915-45d6-8dd1-5f30c1432ca0
+Gravação: 15/11/2026, 21:55 BRT; duração: 50 s.
+Revisão documental: 15/11/2026.
+Página: https://sifit.centrion.com.br/modelos-contrato
+Foco deste caso: listagem de modelos de contrato (0:00 e 0:38 a 0:49).
+
+Cronologia (painel Console do Jam, atividade do usuário; seletores abreviados pelo Jam):
+0:06  Clique em Adicionar Modelo Contrato (btn_new_product); navegação para /adicionar-modelo-contrato
+0:08  Clique no campo Título do modelo; 0:11 digitado: teste ed; 0:14 digitado: uardo (título "teste eduardo")
+0:16-0:17  Cliques nos seletores (Status) e no editor de texto
+0:18-0:20  Digitado no editor: asdasda, asdasda (em negrito) e sdasd
+0:22  Clique na área de pré-visualização e em Atualizar preview
+0:25-0:30  Cliques nos chips de variáveis (mc-chip) e em Atualizar preview
+0:31-0:35  Clique em "Ver todas as variáveis" e nos grupos de variáveis (Dados do aluno, do plano, da academia e do contrato)
+0:37  Clique em Salvar modelo (mc-btn-salvar) -> POST modelo-contrato/salvar/1 (HTTP 201); navegação para /modelos-contrato
+0:42-0:43  Cliques na tabela da listagem
+0:50  Video stopped
+
+Rede do conjunto gravado (28 entradas no painel; domínio backendsifit.centrion.com.br):
+1-8    Documento adicionar-modelo-contrato, analytics e scripts/estilos (fontes bloqueadas por terceiros).
+15-16  GET /api/posts/tela-web/1 e GET /api/denuncias/tela-web/1 (HTTP 200): listas auxiliares da tela.
+21-22  OPTIONS (204) e POST /api/modelo-contrato/salvar/1 (HTTP 201); corpo e resposta indisponíveis no Jam ("body unavailable").
+24-25  GET de listas auxiliares (21 B e 25 B).
+26     GET /api/modelos-contrato/1 (HTTP 200, 1,0 KiB): lista com 15 modelos, incluindo {"id": 15, "nome": "teste eduardo", "status": "ATIVO"}.
+Autenticação omitida (o token aparece mascarado pelo Jam).
+
+Quadros consultados (reprodução do Jam):
+0:00  Tabela sem linhas.
+0:39  Tabela sem linhas após o cadastro.
+0:49  Tabela sem linhas, sem mensagem.
+
+Observações e verificações futuras:
+- A causa (renderização, formato dos dados ou filtro) não foi determinada.
+- O comportamento após recarregar a página não foi exercitado.
+- A lista completa foi lida por texto (15 modelos); a imagem mostra o início da lista.
