@@ -67,6 +67,7 @@ Esta análise documenta 60 requisitos de QA para os cenários relacionados abaix
 | [RF55](#rf55) | Gerar o relatório de Colaboradores em PDF | Alta, proposta | [CT-RF55](Cenario_Teste/CT-RF55_Relatorio_Colaboradores_Vazio.md) |
 | [RF56](#rf56) | Gerar o relatório de Caixas em PDF | Alta, proposta | [CT-RF56](Cenario_Teste/CT-RF56_Relatorio_Caixas_Vazio.md) |
 | [RF58](#rf58) | Alternar o tema e consultar as notificações no cabeçalho | Baixa, proposta | [CT-RF58](Cenario_Teste/CT-RF58_Tema_Notificacoes_Prospeccao.md) |
+| [RF59](#rf59) | Buscar leads por texto na listagem de Prospecção | Média, proposta | [CT-RF59](Cenario_Teste/CT-RF59_Busca_Leads_Prospeccao.md) |
 
 ---
 
@@ -1617,6 +1618,35 @@ A persistência do tema após recarga, as notificações pendentes e a ação Ma
 
 ---
 
+<a id="rf59"></a>
+
+## RF59 — Buscar leads por texto na listagem de Prospecção
+
+| Campo | Descrição |
+| --- | --- |
+| Requisito de QA | O campo Buscar lead deve filtrar a listagem por nome, e-mail, telefone ou código, apresentando apenas os leads correspondentes e restaurando a listagem completa ao limpar o termo. |
+| Ator | Usuário autenticado com acesso a Prospecção. |
+| Pré-condições | Base de leads conhecida, com nomes, contatos e códigos registrados. |
+| Gatilho | Digitar um termo no campo Buscar lead e, depois, apagá-lo. |
+| Caso | [CT-RF59](Cenario_Teste/CT-RF59_Busca_Leads_Prospeccao.md) |
+| Situação observada | Aprovado conforme a gravação. A busca retorna os leads de códigos 3 e 7 em 0:12 e os leads 4 e 10 para "tes" em 0:44; o campo vazio restaura a listagem completa. |
+| Defeito | Nenhum no fluxo avaliado |
+| Evidências | [Jam](https://jam.dev/c/308607ff-8abc-40af-8c7c-429ce506ed64) e [Evidências](Evidencias/CT-RF59_Busca_Leads_Prospeccao/README.md). |
+
+### Critérios de aceitação do RF59
+
+1. O campo Buscar lead filtra por nome, e-mail, telefone e código conforme o rótulo do campo.
+2. A busca não diferencia maiúsculas de minúsculas.
+3. Os cartões acompanham ou não o filtro de acordo com o contrato definido.
+4. Ao apagar o termo, a listagem completa é restaurada.
+5. Um termo sem correspondência apresenta mensagem explícita de resultado vazio.
+
+### Pontos a confirmar e limites do RF59
+
+O termo vigente em 0:12 não foi identificado com certeza; a regra de correspondência, a busca por e-mail, telefone e código e o resultado vazio não foram exercitados. A busca não gera requisição de rede, compatível com filtragem local, sem confirmação. O contrato dos cartões não foi fornecido, como no [RF11](#rf11).
+
+---
+
 ## 🔗 Rastreabilidade
 
 | Requisito | Cenário / caso | Defeito | Resultado | Evidências |
@@ -1676,6 +1706,7 @@ A persistência do tema após recarga, as notificações pendentes e a ação Ma
 | RF55 | [CT-RF55](Cenario_Teste/CT-RF55_Relatorio_Colaboradores_Vazio.md) | [BUG-023](Relatorio-de-Bugs.md#bug-023), em triagem | Reprovado nas evidências; reteste pendente. | [Evidências](Evidencias/CT-RF55_Relatorio_Colaboradores_Vazio/README.md) e [Jam](https://jam.dev/c/3b4777a4-e1b0-4038-9b06-26c73669d7d1) |
 | RF56 | [CT-RF56](Cenario_Teste/CT-RF56_Relatorio_Caixas_Vazio.md) | [BUG-023](Relatorio-de-Bugs.md#bug-023), em triagem | Reprovado nas evidências; reteste pendente. | [Evidências](Evidencias/CT-RF56_Relatorio_Caixas_Vazio/README.md) e [Jam](https://jam.dev/c/3b4777a4-e1b0-4038-9b06-26c73669d7d1) |
 | RF58 | [CT-RF58](Cenario_Teste/CT-RF58_Tema_Notificacoes_Prospeccao.md) | Nenhum no fluxo avaliado | Aprovado conforme a gravação | [Evidências](Evidencias/CT-RF58_Tema_Notificacoes_Prospeccao/README.md) e [Jam](https://jam.dev/c/308607ff-8abc-40af-8c7c-429ce506ed64) |
+| RF59 | [CT-RF59](Cenario_Teste/CT-RF59_Busca_Leads_Prospeccao.md) | Nenhum no fluxo avaliado | Aprovado conforme a gravação | [Evidências](Evidencias/CT-RF59_Busca_Leads_Prospeccao/README.md) e [Jam](https://jam.dev/c/308607ff-8abc-40af-8c7c-429ce506ed64) |
 
 ---
 
@@ -1877,6 +1908,12 @@ Com RF56, a análise passa a cobrir 54 requisitos documentados. O CT-RF56 acresc
 RF58 utiliza os painéis Info, Console, Network e Actions do Jam "Prospecção" e os quadros de 0:01 e 0:03. Foram registrados a troca de tema, os POST usuario/tema e o painel de Notificações. Não houve nova execução, acesso ao código ou ao banco, nem reteste.
 
 Com RF58, a análise passa a cobrir 55 requisitos documentados. O CT-RF58 acrescenta uma aprovação limitada ao exemplo gravado.
+
+### Base da análise do RF59 — revisão de 15/11/2026
+
+RF59 utiliza os painéis Info, Console, Network e Actions do Jam "Prospecção" e os quadros de 0:12, 0:13 e 0:44. Foram registrados a busca por texto, os cartões e a ausência de requisição na busca. Não houve nova execução, acesso ao código ou ao banco, nem reteste.
+
+Com RF59, a análise passa a cobrir 56 requisitos documentados. O CT-RF59 acrescenta uma aprovação limitada ao exemplo gravado.
 
 ---
 
