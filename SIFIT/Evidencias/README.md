@@ -88,3 +88,47 @@ Integração documental dos arquivos RESUMO.txt fornecidos em `C:\Users\Leonardo
 | [CT-RF84](../Cenario_Teste/CT-RF84_Cadastro_Lead_Fechado.md) | [Evidências](CT-RF84_Cadastro_Lead_Fechado/README.md) | Aprovado conforme o resumo da gravação | — | [Jam](https://jam.dev/c/775b9003-fdf7-4ad5-8882-15ba606b6674) |
 
 As onze pastas contêm uma cópia integral de RESUMO.txt e um README.md no padrão do projeto, com cronologia e hash SHA-256 do texto original. Não foram fornecidos vídeos ou capturas locais neste lote. CT-RF74–CT-RF84 acrescentam oito aprovações e três reprovações conforme os resumos fornecidos, com BUG-035–BUG-037 em triagem. CT-RF83 mantém a classificação do relato, condicionada à confirmação da regra de obrigatoriedade. Os dez casos anteriores a validar permanecem inalterados.
+## Inclusão de 15/11/2026 — CT-RF85 a CT-RF90
+
+| Caso | Evidência | Resultado |
+| --- | --- | --- |
+| [CT-RF85](../Cenario_Teste/CT-RF85_Tema_Notificacoes_Prospeccao.md) | [Alternância de tema e painel de notificações em Prospecção](CT-RF85_Tema_Notificacoes_Prospeccao/README.md) | Aprovado conforme a gravação |
+| [CT-RF86](../Cenario_Teste/CT-RF86_Busca_Leads_Prospeccao.md) | [Busca de leads por texto na tela Prospecção](CT-RF86_Busca_Leads_Prospeccao/README.md) | Aprovado conforme a gravação |
+| [CT-RF87](../Cenario_Teste/CT-RF87_Filtro_Estagio_Leads.md) | [Filtro de leads por estágio e limpeza dos filtros](CT-RF87_Filtro_Estagio_Leads/README.md) | Aprovado conforme a gravação |
+| [CT-RF88](../Cenario_Teste/CT-RF88_Cadastro_Lead_Prospeccao.md) | [Cadastro de lead com duas requisições de criação](CT-RF88_Cadastro_Lead_Prospeccao/README.md) | A validar — regra ou contexto pendente |
+| [CT-RF89](../Cenario_Teste/CT-RF89_Telefone_Lead_Sem_Validacao.md) | [Telefone do lead aceita 30 dígitos sem validação](CT-RF89_Telefone_Lead_Sem_Validacao/README.md) | Reprovado nas evidências; BUG-038 em triagem |
+| [CT-RF90](../Cenario_Teste/CT-RF90_Edicao_Lead_Prospeccao.md) | [Visualização e edição de lead na tela Prospecção](CT-RF90_Edicao_Lead_Prospeccao/README.md) | Aprovado conforme a gravação |
+
+Uma gravação do Jam ([Prospecção](https://jam.dev/c/308607ff-8abc-40af-8c7c-429ce506ed64)) é a fonte dos seis casos; cada pasta contém resumo, cronologia, origem, capturas extraídas da reprodução do Jam e seus hashes SHA-256. Quadros que mostravam o e-mail digitado no formulário não foram incluídos; onde o modal de lead é mostrado, o recorte omite e-mail e telefone. O vídeo permanece no Jam.
+
+## Inclusão de 15/11/2026 — CT-RF91 a CT-RF103
+
+| Caso | Evidência | Resultado |
+| --- | --- | --- |
+| [CT-RF91](../Cenario_Teste/CT-RF91_Filtros_Contas_Pagar.md) | [Filtros da tela Contas a Pagar por nome, data e status](CT-RF91_Filtros_Contas_Pagar/README.md) | A validar — regra ou contexto pendente |
+| [CT-RF92](../Cenario_Teste/CT-RF92_Cadastro_Conta_Colaborador_Sem_Colaborador.md) | [Conta a pagar a colaborador é cadastrada sem colaborador informado](CT-RF92_Cadastro_Conta_Colaborador_Sem_Colaborador/README.md) | Reprovado nas evidências; BUG-039 em triagem |
+| [CT-RF93](../Cenario_Teste/CT-RF93_Busca_Colaborador_Conta_Pagar.md) | [Busca de colaborador no cadastro de conta a pagar](CT-RF93_Busca_Colaborador_Conta_Pagar/README.md) | A validar — regra ou contexto pendente |
+| [CT-RF94](../Cenario_Teste/CT-RF94_Visualizacao_Conta_Pagar.md) | [Visualização dos dados de uma conta a pagar](CT-RF94_Visualizacao_Conta_Pagar/README.md) | Aprovado conforme a gravação |
+| [CT-RF95](../Cenario_Teste/CT-RF95_Exclusao_Conta_Pagar.md) | [Exclusão de conta a pagar com confirmação](CT-RF95_Exclusao_Conta_Pagar/README.md) | Aprovado conforme a gravação |
+| [CT-RF96](../Cenario_Teste/CT-RF96_Variaveis_Preview_Modelo_Contrato.md) | [Variáveis e pré-visualização do texto do modelo de contrato](CT-RF96_Variaveis_Preview_Modelo_Contrato/README.md) | Aprovado conforme a gravação |
+| [CT-RF97](../Cenario_Teste/CT-RF97_Cadastro_Modelo_Contrato.md) | [Cadastro de modelo de contrato](CT-RF97_Cadastro_Modelo_Contrato/README.md) | Aprovado conforme a gravação |
+| [CT-RF98](../Cenario_Teste/CT-RF98_Listagem_Modelos_Contrato_Vazia.md) | [Listagem de modelos de contrato aparece vazia com 15 modelos retornados](CT-RF98_Listagem_Modelos_Contrato_Vazia/README.md) | Reprovado nas evidências; BUG-040 em triagem |
+| [CT-RF99](../Cenario_Teste/CT-RF99_Filtros_Planos.md) | [Filtros da tela Planos por código e nome](CT-RF99_Filtros_Planos/README.md) | Aprovado conforme a gravação |
+| [CT-RF100](../Cenario_Teste/CT-RF100_Tema_Notificacoes_Planos.md) | [Alternância de tema e painel de notificações em Planos](CT-RF100_Tema_Notificacoes_Planos/README.md) | Aprovado conforme a gravação |
+| [CT-RF101](../Cenario_Teste/CT-RF101_Cadastro_Plano.md) | [Cadastro de plano pelo modal Novo Plano](CT-RF101_Cadastro_Plano/README.md) | Aprovado conforme a gravação |
+| [CT-RF102](../Cenario_Teste/CT-RF102_Contador_Ativos_Planos.md) | [Cartão Ativos de Planos aumenta ao cadastrar e editar planos inativos](CT-RF102_Contador_Ativos_Planos/README.md) | Reprovado nas evidências; BUG-041 em triagem |
+| [CT-RF103](../Cenario_Teste/CT-RF103_Edicao_Plano.md) | [Edição de plano pelo modal Editar Plano](CT-RF103_Edicao_Plano/README.md) | Aprovado conforme a gravação |
+
+Três gravações do Jam ([Contas a Pagar](https://jam.dev/c/5d0afaf4-5abd-4e85-923f-27448304a9ef), [Modelos de Contrato](https://jam.dev/c/44dbbd39-6915-45d6-8dd1-5f30c1432ca0) e [Planos](https://jam.dev/c/233c5d21-e108-4a55-b6f6-8738cb3fc6a6)) são a fonte dos treze casos; cada pasta contém resumo, cronologia, origem, capturas extraídas da reprodução do Jam e seus hashes SHA-256. Os vídeos permanecem no Jam.
+
+## Inclusão de 16/11/2026 — CT-RF104 a CT-RF108
+
+| Caso | Evidência | Resultado |
+| --- | --- | --- |
+| [CT-RF104](../Cenario_Teste/CT-RF104_Filtros_Tipos_Pagamento.md) | [Filtros de busca da tela Tipos de Pagamento](CT-RF104_Filtros_Tipos_Pagamento/README.md) | A validar — regra ou contexto pendente |
+| [CT-RF105](../Cenario_Teste/CT-RF105_Cadastro_Tipo_Pagamento_Status.md) | [Cadastro de tipo de pagamento com status Ativo não é refletido](CT-RF105_Cadastro_Tipo_Pagamento_Status/README.md) | Reprovado nas evidências; BUG-042 em triagem |
+| [CT-RF106](../Cenario_Teste/CT-RF106_Edicao_Tipo_Pagamento.md) | [Edição de tipo de pagamento pela lupa da listagem](CT-RF106_Edicao_Tipo_Pagamento/README.md) | Aprovado conforme a gravação |
+| [CT-RF107](../Cenario_Teste/CT-RF107_Exclusao_Tipo_Pagamento_Em_Uso.md) | [Exclusão de tipo de pagamento em uso retorna HTTP 404 com erro SQL](CT-RF107_Exclusao_Tipo_Pagamento_Em_Uso/README.md) | Reprovado nas evidências; BUG-043 em triagem |
+| [CT-RF108](../Cenario_Teste/CT-RF108_Tema_Notificacoes_Tipos_Pagamento.md) | [Tema Claro/Escuro e notificações na tela Tipos de Pagamento](CT-RF108_Tema_Notificacoes_Tipos_Pagamento/README.md) | Aprovado conforme a gravação |
+
+Uma gravação do Jam ([Tipos de Pagamento](https://jam.dev/c/e8734e3d-3f8e-458b-8c7d-e85eea882e50)) é a fonte dos cinco casos; cada pasta contém resumo, cronologia, origem, capturas extraídas da reprodução do Jam e seus hashes SHA-256. O vídeo permanece no Jam.

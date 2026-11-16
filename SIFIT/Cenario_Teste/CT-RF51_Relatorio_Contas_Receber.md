@@ -99,7 +99,7 @@ A coluna de vencimento é rotulada "D Vencimento" e a primeira conta aparece com
 
 - [Jam original — Relatórios](https://jam.dev/c/3b4777a4-e1b0-4038-9b06-26c73669d7d1).
 - [Arquivos, origem e limites](../Evidencias/CT-RF51_Relatorio_Contas_Receber/README.md).
-- [Relatório de Contas a Receber](../Evidencias/CT-RF51_Relatorio_Contas_Receber/relatorio_6_contas_receber.pdf), [Formulário em 0:43](../Evidencias/CT-RF51_Relatorio_Contas_Receber/formulario_contas_receber_00-43.png), [Lista de rede](../Evidencias/CT-RF51_Relatorio_Contas_Receber/rede_lista.png).
+- [Relatório de Contas a Receber](../Evidencias/CT-RF51_Relatorio_Contas_Receber/relatorio_6_contas_receber.pdf), [primeira página do PDF](../Evidencias/CT-RF51_Relatorio_Contas_Receber/relatorio_6_contas_receber_pagina1.png), [Formulário em 0:43](../Evidencias/CT-RF51_Relatorio_Contas_Receber/formulario_contas_receber_00-43.png), [Lista de rede](../Evidencias/CT-RF51_Relatorio_Contas_Receber/rede_lista.png).
 - [Linha do tempo](../Evidencias/CT-RF51_Relatorio_Contas_Receber/linha_do_tempo.txt).
 
 Foram consultados os painéis Info, Console e Network do Jam, o quadro do vídeo e o conteúdo do PDF baixado. A atividade do usuário não foi registrada no Console do Jam e a correspondência do arquivo com o tipo foi identificada pelo conteúdo. O conteúdo não foi comparado com o módulo Contas a Receber. Não houve nova execução, inspeção do código, acesso ao banco ou correção da aplicação. O vídeo permanece no Jam.

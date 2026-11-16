@@ -1,6 +1,6 @@
 # 🧪 Índice dos cenários de teste — SIFIT
 
-**Atualização:** 16/11/2026. 77 casos documentados: 26 aprovados, 41 reprovados e 10 a validar; 37 defeitos registrados (10 abertos e 27 em triagem) e 41 casos com reteste corretivo pendente (CT-RF01–CT-RF35, CT-RF38–CT-RF59 e CT-RF65–CT-RF84).
+**Atualização:** 16/11/2026. 101 casos documentados: 40 aprovados, 47 reprovados e 14 a validar; 43 defeitos registrados (10 abertos e 33 em triagem) e 47 casos com reteste corretivo pendente (CT-RF01–CT-RF35, CT-RF38–CT-RF59, CT-RF65–CT-RF84, CT-RF85–CT-RF103 e CT-RF104–CT-RF108).
 
 | Caso | Funcionalidade | Resultado | Defeito | Jam |
 | --- | --- | --- | --- | --- |
@@ -183,5 +183,63 @@ CT-RF74–CT-RF84 acrescentam oito aprovações e três reprovações conforme o
 Os resumos originais estão no [índice das evidências](../Evidencias/README.md).
 
 ---
+## Inclusão de 15/11/2026 — Prospecção
+
+| Caso | Funcionalidade | Resultado | Defeito | Jam |
+| --- | --- | --- | --- | --- |
+| [CT-RF85](CT-RF85_Tema_Notificacoes_Prospeccao.md) | Alternância de tema e painel de notificações em Prospecção | Aprovado conforme a gravação | — | [Jam](https://jam.dev/c/308607ff-8abc-40af-8c7c-429ce506ed64) |
+| [CT-RF86](CT-RF86_Busca_Leads_Prospeccao.md) | Busca de leads por texto na tela Prospecção | Aprovado conforme a gravação | — | [Jam](https://jam.dev/c/308607ff-8abc-40af-8c7c-429ce506ed64) |
+| [CT-RF87](CT-RF87_Filtro_Estagio_Leads.md) | Filtro de leads por estágio e limpeza dos filtros | Aprovado conforme a gravação | — | [Jam](https://jam.dev/c/308607ff-8abc-40af-8c7c-429ce506ed64) |
+| [CT-RF88](CT-RF88_Cadastro_Lead_Prospeccao.md) | Cadastro de lead com duas requisições de criação | A validar — regra ou contexto pendente | — | [Jam](https://jam.dev/c/308607ff-8abc-40af-8c7c-429ce506ed64) |
+| [CT-RF89](CT-RF89_Telefone_Lead_Sem_Validacao.md) | Telefone do lead aceita 30 dígitos sem validação | Reprovado nas evidências | [BUG-038](../Relatorio-de-Bugs.md#bug-038), em triagem | [Jam](https://jam.dev/c/308607ff-8abc-40af-8c7c-429ce506ed64) |
+| [CT-RF90](CT-RF90_Edicao_Lead_Prospeccao.md) | Visualização e edição de lead na tela Prospecção | Aprovado conforme a gravação | — | [Jam](https://jam.dev/c/308607ff-8abc-40af-8c7c-429ce506ed64) |
+
+O grupo tem como fonte uma única gravação. Os resultados são documentais; nenhuma nova execução ou reteste foi realizada.
+
+## Inclusão de 15/11/2026 — Contas a Pagar
+
+| Caso | Funcionalidade | Resultado | Defeito | Jam |
+| --- | --- | --- | --- | --- |
+| [CT-RF91](CT-RF91_Filtros_Contas_Pagar.md) | Filtros da tela Contas a Pagar por nome, data e status | A validar — regra ou contexto pendente | — | [Jam](https://jam.dev/c/5d0afaf4-5abd-4e85-923f-27448304a9ef) |
+| [CT-RF92](CT-RF92_Cadastro_Conta_Colaborador_Sem_Colaborador.md) | Conta a pagar a colaborador é cadastrada sem colaborador informado | Reprovado nas evidências | [BUG-039](../Relatorio-de-Bugs.md#bug-039), em triagem | [Jam](https://jam.dev/c/5d0afaf4-5abd-4e85-923f-27448304a9ef) |
+| [CT-RF93](CT-RF93_Busca_Colaborador_Conta_Pagar.md) | Busca de colaborador no cadastro de conta a pagar | A validar — regra ou contexto pendente | — | [Jam](https://jam.dev/c/5d0afaf4-5abd-4e85-923f-27448304a9ef) |
+| [CT-RF94](CT-RF94_Visualizacao_Conta_Pagar.md) | Visualização dos dados de uma conta a pagar | Aprovado conforme a gravação | — | [Jam](https://jam.dev/c/5d0afaf4-5abd-4e85-923f-27448304a9ef) |
+| [CT-RF95](CT-RF95_Exclusao_Conta_Pagar.md) | Exclusão de conta a pagar com confirmação | Aprovado conforme a gravação | — | [Jam](https://jam.dev/c/5d0afaf4-5abd-4e85-923f-27448304a9ef) |
+
+Cada grupo tem como fonte uma única gravação. Os resultados são documentais; nenhuma nova execução ou reteste foi realizada.
+
+## Inclusão de 15/11/2026 — Modelos de Contrato
+
+| Caso | Funcionalidade | Resultado | Defeito | Jam |
+| --- | --- | --- | --- | --- |
+| [CT-RF96](CT-RF96_Variaveis_Preview_Modelo_Contrato.md) | Variáveis e pré-visualização do texto do modelo de contrato | Aprovado conforme a gravação | — | [Jam](https://jam.dev/c/44dbbd39-6915-45d6-8dd1-5f30c1432ca0) |
+| [CT-RF97](CT-RF97_Cadastro_Modelo_Contrato.md) | Cadastro de modelo de contrato | Aprovado conforme a gravação | — | [Jam](https://jam.dev/c/44dbbd39-6915-45d6-8dd1-5f30c1432ca0) |
+| [CT-RF98](CT-RF98_Listagem_Modelos_Contrato_Vazia.md) | Listagem de modelos de contrato aparece vazia com 15 modelos retornados | Reprovado nas evidências | [BUG-040](../Relatorio-de-Bugs.md#bug-040), em triagem | [Jam](https://jam.dev/c/44dbbd39-6915-45d6-8dd1-5f30c1432ca0) |
+
+Cada grupo tem como fonte uma única gravação. Os resultados são documentais; nenhuma nova execução ou reteste foi realizada.
+
+## Inclusão de 15/11/2026 — Planos
+
+| Caso | Funcionalidade | Resultado | Defeito | Jam |
+| --- | --- | --- | --- | --- |
+| [CT-RF99](CT-RF99_Filtros_Planos.md) | Filtros da tela Planos por código e nome | Aprovado conforme a gravação | — | [Jam](https://jam.dev/c/233c5d21-e108-4a55-b6f6-8738cb3fc6a6) |
+| [CT-RF100](CT-RF100_Tema_Notificacoes_Planos.md) | Alternância de tema e painel de notificações em Planos | Aprovado conforme a gravação | — | [Jam](https://jam.dev/c/233c5d21-e108-4a55-b6f6-8738cb3fc6a6) |
+| [CT-RF101](CT-RF101_Cadastro_Plano.md) | Cadastro de plano pelo modal Novo Plano | Aprovado conforme a gravação | — | [Jam](https://jam.dev/c/233c5d21-e108-4a55-b6f6-8738cb3fc6a6) |
+| [CT-RF102](CT-RF102_Contador_Ativos_Planos.md) | Cartão Ativos de Planos aumenta ao cadastrar e editar planos inativos | Reprovado nas evidências | [BUG-041](../Relatorio-de-Bugs.md#bug-041), em triagem | [Jam](https://jam.dev/c/233c5d21-e108-4a55-b6f6-8738cb3fc6a6) |
+| [CT-RF103](CT-RF103_Edicao_Plano.md) | Edição de plano pelo modal Editar Plano | Aprovado conforme a gravação | — | [Jam](https://jam.dev/c/233c5d21-e108-4a55-b6f6-8738cb3fc6a6) |
+
+Cada grupo tem como fonte uma única gravação. Os resultados são documentais; nenhuma nova execução ou reteste foi realizada.
+
+## Inclusão de 16/11/2026 — Tipos de Pagamento
+
+| Caso | Funcionalidade | Resultado | Defeito | Jam |
+| --- | --- | --- | --- | --- |
+| [CT-RF104](CT-RF104_Filtros_Tipos_Pagamento.md) | Filtros de busca da tela Tipos de Pagamento | A validar — regra ou contexto pendente | — | [Jam](https://jam.dev/c/e8734e3d-3f8e-458b-8c7d-e85eea882e50) |
+| [CT-RF105](CT-RF105_Cadastro_Tipo_Pagamento_Status.md) | Cadastro de tipo de pagamento com status Ativo não é refletido | Reprovado nas evidências | [BUG-042](../Relatorio-de-Bugs.md#bug-042), em triagem | [Jam](https://jam.dev/c/e8734e3d-3f8e-458b-8c7d-e85eea882e50) |
+| [CT-RF106](CT-RF106_Edicao_Tipo_Pagamento.md) | Edição de tipo de pagamento pela lupa da listagem | Aprovado conforme a gravação | — | [Jam](https://jam.dev/c/e8734e3d-3f8e-458b-8c7d-e85eea882e50) |
+| [CT-RF107](CT-RF107_Exclusao_Tipo_Pagamento_Em_Uso.md) | Exclusão de tipo de pagamento em uso retorna HTTP 404 com erro SQL | Reprovado nas evidências | [BUG-043](../Relatorio-de-Bugs.md#bug-043), em triagem | [Jam](https://jam.dev/c/e8734e3d-3f8e-458b-8c7d-e85eea882e50) |
+| [CT-RF108](CT-RF108_Tema_Notificacoes_Tipos_Pagamento.md) | Tema Claro/Escuro e notificações na tela Tipos de Pagamento | Aprovado conforme a gravação | — | [Jam](https://jam.dev/c/e8734e3d-3f8e-458b-8c7d-e85eea882e50) |
+
+Os cinco casos têm como fonte uma única gravação. Os resultados são documentais; nenhuma nova execução ou reteste foi realizada.
 
 [← Início](../../README.md) · [Requisitos](../Analise%20de%20requisitos.md) · [Plano](../Plano%20de%20testes.md) · [Evidências](../Evidencias/README.md)

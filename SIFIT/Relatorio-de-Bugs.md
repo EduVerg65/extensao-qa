@@ -1,12 +1,22 @@
 # 🐞 Relatório de Bugs — SIFIT
 
-**Escopo:** defeitos de 77 casos documentados (CT-RF01–CT-RF35, CT-RF38–CT-RF59 e CT-RF65–CT-RF84), incluindo Prospecção e Bandeiras de Cartão.
+**Escopo:** defeitos de 101 casos documentados (CT-RF01–CT-RF35, CT-RF38–CT-RF59, CT-RF65–CT-RF84, CT-RF85–CT-RF103 e CT-RF104–CT-RF108), incluindo Prospecção, Bandeiras de Cartão, Contas a Pagar, Modelos de Contrato, Planos e Tipos de Pagamento.
 
 **Ambientes:** CT-RF01 em https://sifitalfa.centrion.com.br/login; CT-RF02_ERRO em https://sifit.centrion.com.br/profile. CT-RF03: URL do frontend não confirmada; backend informado em `https://backendsifit.centrion.com.br/api/clientesPorNome/1`.
 
 **Datas das gravações do Jam:** CT-RF01 em 23/10/2026; CT-RF02_ERRO em 22/10/2026 às 21:45 BRT; CT-RF03 não confirmada.
 
-**Atualização documental:** 16/11/2026 — 37 defeitos registrados: 10 abertos (BUG-001 a BUG-010) e 27 em triagem (BUG-011 a BUG-037). BUG-035 e BUG-036 cobrem Bandeiras; BUG-037 registra o relato de cadastro de lead apenas com nome, com regra a confirmar. As análises anteriores foram preservadas.
+**Atualização documental:** 16/11/2026 — 43 defeitos registrados: 10 abertos (BUG-001 a BUG-010) e 33 em triagem (BUG-011 a BUG-043). BUG-038 a BUG-041 cobrem Prospecção (telefone), Contas a Pagar, Modelos de Contrato e Planos; BUG-042 e BUG-043 cobrem Tipos de Pagamento (status e exclusão); BUG-035 e BUG-036 cobrem Bandeiras; BUG-037 registra o relato de cadastro de lead apenas com nome, com regra a confirmar. As análises anteriores foram preservadas.
+
+**Gravação de CT-RF104–CT-RF108:** 15/11/2026, Tipos de Pagamento, 22:03 BRT, Chrome 157.0.8103.78 / Windows 11; uma única gravação; evidência e limites no BUG-042 e no BUG-043.
+
+**Gravação de CT-RF99–CT-RF103:** 15/11/2026, Planos, 21:54 BRT, Chrome 157.0.8103.78 / Windows 11; uma única gravação; evidência e limites no BUG-041.
+
+**Gravação de CT-RF96–CT-RF98:** 15/11/2026, Modelos de Contrato, 21:55 BRT, Chrome 157.0.8103.78 / Windows 11; uma única gravação; evidência e limites no BUG-040.
+
+**Gravação de CT-RF91–CT-RF95:** 15/11/2026, Contas a Pagar, 21:58 BRT, Chrome 157.0.8103.78 / Windows 11; uma única gravação; evidência e limites no BUG-039.
+
+**Gravação de CT-RF85–CT-RF90:** 15/11/2026, Prospecção, 21:52 BRT, Chrome 157.0.8103.78 / Windows 11; uma única gravação; evidência e limites no BUG-038.
 
 **Gravação de CT-RF57 e CT-RF58:** 15/11/2026, Grupos, 21h03 BRT, Chrome 157.0.8103.78 / Windows 11; mesma gravação, evidências e limites no BUG-024 e no BUG-025. **Gravação de CT-RF59:** 15/11/2026, Fichas de Anamnese, 22h07 BRT, Chrome 157.0.8103.78 / Windows 11; evidências e limites no BUG-032. **Gravações de CT-RF65–CT-RF70:** 15/11/2026, Colaboradores, entre 22:06 e 22:13 BRT, Chrome 157.0.8103.78 / Windows 11; evidências e limites no BUG-026 a BUG-031.
 
@@ -67,8 +77,14 @@
 | [BUG-035](#bug-035) | Bandeira criada com parcela não aparece na listagem | Média / Alta, propostas | Em triagem — causa não determinada | [CT-RF81](Cenario_Teste/CT-RF81_Cadastro_Bandeira_Parcela_Listagem.md) |
 | [BUG-036](#bug-036) | Tema escuro aplicado de forma incompleta em Bandeiras | Média / Média, propostas | Em triagem — causa não determinada | [CT-RF82](Cenario_Teste/CT-RF82_Tema_Escuro_Bandeiras.md) |
 | [BUG-037](#bug-037) | Cadastro de lead aceito apenas com nome, com obrigatoriedade a confirmar | Média / Alta, propostas | Em triagem — obrigatoriedade a confirmar | [CT-RF83](Cenario_Teste/CT-RF83_Cadastro_Lead_Apenas_Nome.md) |
+| [BUG-038](#bug-038) | Telefone do lead aceita 30 dígitos sem máscara nem validação | Média / Média, propostas | Em triagem — regra do campo e validação no servidor não confirmadas | [CT-RF89](Cenario_Teste/CT-RF89_Telefone_Lead_Sem_Validacao.md) |
+| [BUG-039](#bug-039) | Conta a pagar a colaborador é cadastrada sem colaborador informado | Alta / Alta, propostas | Em triagem — regra de obrigatoriedade e validação no servidor não confirmadas | [CT-RF92](Cenario_Teste/CT-RF92_Cadastro_Conta_Colaborador_Sem_Colaborador.md) |
+| [BUG-040](#bug-040) | Listagem de modelos de contrato aparece vazia com 15 modelos retornados | Alta / Alta, propostas | Em triagem — causa de renderização não confirmada | [CT-RF98](Cenario_Teste/CT-RF98_Listagem_Modelos_Contrato_Vazia.md) |
+| [BUG-041](#bug-041) | Cartão Ativos de Planos aumenta ao cadastrar e editar planos inativos | Média / Média, propostas | Em triagem — regra de cálculo do cartão não confirmada | [CT-RF102](Cenario_Teste/CT-RF102_Contador_Ativos_Planos.md) |
+| [BUG-042](#bug-042) | Status do tipo de pagamento não é enviado nem refletido: todos aparecem Inativo | Média / Média, propostas | Em triagem — regra do status do tipo de pagamento não confirmada | [CT-RF105](Cenario_Teste/CT-RF105_Cadastro_Tipo_Pagamento_Status.md) |
+| [BUG-043](#bug-043) | Exclusão de tipo de pagamento em uso retorna HTTP 404 com erro SQL e mensagem genérica | Média / Média, propostas | Em triagem — regra de exclusão e tratamento do erro não confirmados | [CT-RF107](Cenario_Teste/CT-RF107_Exclusao_Tipo_Pagamento_Em_Uso.md) |
 
-BUG-001–BUG-010 aguardam correção e reteste. BUG-011–BUG-034 aguardam confirmação das premissas e triagem antes do encaminhamento de correção. As causas técnicas permanecem não confirmadas; o BUG-003 se apoia no relato e nas capturas fornecidos, com os limites registrados no caso.
+BUG-001–BUG-010 aguardam correção e reteste. BUG-011–BUG-043 aguardam confirmação das premissas e triagem antes do encaminhamento de correção. As causas técnicas permanecem não confirmadas; o BUG-003 se apoia no relato e nas capturas fornecidos, com os limites registrados no caso.
 
 ---
 
@@ -1465,6 +1481,286 @@ Integração documental dos arquivos RESUMO.txt fornecidos em `C:\Users\Leonardo
 
 ---
 
+<a id="bug-038"></a>
+
+## BUG-038 — Telefone do lead aceita 30 dígitos sem máscara nem validação
+
+| Campo | Descrição |
+| --- | --- |
+| Status | Em triagem — causa não determinada; reteste pendente após correção. |
+| Severidade / prioridade | Média / Média, propostas para triagem. |
+| Módulo | Prospecção / Leads / Validação do telefone |
+| Requisitos | [RF89](Analise%20de%20requisitos.md#rf89) |
+| Casos | [CT-RF89](Cenario_Teste/CT-RF89_Telefone_Lead_Sem_Validacao.md) |
+| Data da evidência / revisão | 15/11/2026, 21:52 BRT; sem nova execução. |
+| Página | https://sifit.centrion.com.br/prospeccao |
+| Ambiente | Chrome 157.0.8103.78 / Windows (x86) 11, janela 1920 × 911; versão e zoom não confirmados. |
+| Frequência conhecida | Um registro do Jam; recorrência não determinada. |
+
+### Pré-condições e reprodução
+
+**[CT-RF89](Cenario_Teste/CT-RF89_Telefone_Lead_Sem_Validacao.md):** Sessão autenticada com acesso a Prospecção e regra do campo Telefone definida com o produto.
+
+1. Acessar Prospecção e acionar Adicionar Lead.
+2. Preencher o nome e o estágio e informar no campo Telefone (placeholder "(00) 00000-0000") um valor de 30 dígitos, como 44999999999 seguido de 5757534534534534534.
+3. Acionar Salvar Lead e observar a mensagem de validação e a rede.
+4. Abrir o lead criado pela lupa e conferir o telefone gravado.
+5. Repetir com telefones de 8, 10 e 11 dígitos e com letras para confirmar o formato aceito.
+
+### Esperado e obtido
+
+| Esperado | Obtido |
+| --- | --- |
+| O campo limita o tamanho e os caracteres ao formato exibido e rejeita um telefone com 30 dígitos, com mensagem clara. | O campo aceitou 30 dígitos sem máscara, o lead foi criado (código 10) e o valor retornou na consulta do lead, sem mensagem de validação. |
+
+**Impacto:** O cadastro aceita telefones inválidos, o que compromete o contato com o lead e a qualidade da base de prospecção; o placeholder induz o usuário a esperar um formato que não é aplicado.
+
+### Evidências técnicas
+
+- [Jam — Prospecção](https://jam.dev/c/308607ff-8abc-40af-8c7c-429ce506ed64): quadro de 0:47 com o campo Telefone de valor longo e sem máscara; `POST /api/salvar-lead/1` (HTTP 200) com `"telefone"` de 30 dígitos e resposta `{"verifica_erro": false, "id": 10}`; `POST /api/buscar-lead/1` (HTTP 200) devolvendo o mesmo telefone.
+- [Telefone em 0:47](Evidencias/CT-RF89_Telefone_Lead_Sem_Validacao/telefone_30_digitos_00-47.png), [corpo do salvar-lead](Evidencias/CT-RF89_Telefone_Lead_Sem_Validacao/requisicao_salvar.png), [resposta do buscar-lead](Evidencias/CT-RF89_Telefone_Lead_Sem_Validacao/resposta_buscar.png) e [Evidências](Evidencias/CT-RF89_Telefone_Lead_Sem_Validacao/README.md).
+
+### Análise, limites e encaminhamento
+
+O valor gravado com 30 dígitos é compatível com ausência de validação de tamanho e de máscara no cliente e no servidor; não foi possível distinguir se a regra do campo permite texto livre, caso em que o ponto passa a ser a adequação do placeholder. A leitura assume que os dois trechos digitados em 0:33 e 0:37 pertencem ao mesmo campo, o que o quadro de 0:47 e o corpo da requisição sustentam, sem prova independente. A causa técnica não foi confirmada no código.
+
+**Reteste:** Reproduzir com telefones de 8, 10, 11 e 30 dígitos e com letras, capturando mensagem, corpo e resposta; confirmar a regra com o produto e a validação no servidor. Manter em triagem até nova evidência em versão identificada.
+
+---
+
+<a id="bug-039"></a>
+
+## BUG-039 — Conta a pagar a colaborador é cadastrada sem colaborador informado
+
+| Campo | Descrição |
+| --- | --- |
+| Status | Em triagem — causa não determinada; reteste pendente após correção. |
+| Severidade / prioridade | Alta / Alta, propostas para triagem. |
+| Módulo | Financeiro / Contas a Pagar / Cadastro |
+| Requisitos | [RF92](Analise%20de%20requisitos.md#rf92) |
+| Casos | [CT-RF92](Cenario_Teste/CT-RF92_Cadastro_Conta_Colaborador_Sem_Colaborador.md) |
+| Data da evidência / revisão | 15/11/2026, 21:58 BRT; sem nova execução. |
+| Página | https://sifit.centrion.com.br/contas-pagar |
+| Ambiente | Chrome 157.0.8103.78 / Windows (x86) 11, janela 1920 × 911; versão e zoom não confirmados. |
+| Frequência conhecida | Um registro do Jam; recorrência não determinada. |
+
+### Pré-condições e reprodução
+
+**[CT-RF92](Cenario_Teste/CT-RF92_Cadastro_Conta_Colaborador_Sem_Colaborador.md):** Sessão autenticada com acesso a Contas a Pagar e regra de obrigatoriedade do colaborador definida com o produto.
+
+1. Acessar Contas a Pagar e acionar Nova Conta.
+2. Selecionar o tipo Pagto. Colaborador e preencher título, documento, categoria e valor sem informar o colaborador (Código e Colaborador vazios).
+3. Acionar Salvar e observar a mensagem de validação e a rede.
+4. Conferir a listagem e a coluna Fornecedor / Colaborador da conta criada.
+5. Repetir informando o colaborador e comparar.
+
+### Esperado e obtido
+
+| Esperado | Obtido |
+| --- | --- |
+| Uma conta do tipo Pagto. Colaborador exige o colaborador favorecido e a gravação é impedida, com mensagem clara, enquanto o campo estiver vazio. | A conta foi gravada (HTTP 201, `verifica_erro` false) com `colaborador_recebedor_id` e `colaborador_nome` vazios e aparece na listagem (código 29) com "-" em Fornecedor / Colaborador, sem mensagem de validação. |
+
+**Impacto:** Pagamentos a colaboradores podem ser lançados sem favorecido, o que compromete a conciliação financeira e a rastreabilidade do pagamento.
+
+### Evidências técnicas
+
+- [Jam — Contas a Pagar](https://jam.dev/c/5d0afaf4-5abd-4e85-923f-27448304a9ef): quadro de 0:41 (formulário preenchido sem colaborador), `POST /api/cadastrar-conta-pagar/1` (HTTP 201) com `"tipo_conta": "PAG_COLABORADOR"` e `"colaborador_recebedor_id": ""`, e quadro de 0:50 com a conta 29 listada com "-" no colaborador.
+- [Formulário em 0:41](Evidencias/CT-RF92_Cadastro_Conta_Colaborador_Sem_Colaborador/formulario_preenchido_00-41.png), [listagem em 0:50](Evidencias/CT-RF92_Cadastro_Conta_Colaborador_Sem_Colaborador/lista_apos_cadastro_00-50.png), [corpo da requisição](Evidencias/CT-RF92_Cadastro_Conta_Colaborador_Sem_Colaborador/requisicao_cadastrar.png) e [Evidências](Evidencias/CT-RF92_Cadastro_Conta_Colaborador_Sem_Colaborador/README.md).
+
+### Análise, limites e encaminhamento
+
+A gravação sem colaborador é compatível com ausência de validação no cliente e no servidor; o quadro consultado não indica obrigatoriedade no campo e a regra de negócio não foi informada. A causa técnica não foi confirmada no código.
+
+**Reteste:** Confirmar a regra com o produto, reproduzir com a validação visível e testar também o tipo fornecedor sem fornecedor; retestar envio válido e inválido e a persistência. Manter em triagem até nova evidência em versão identificada.
+
+---
+
+<a id="bug-040"></a>
+
+## BUG-040 — Listagem de modelos de contrato aparece vazia com 15 modelos retornados
+
+| Campo | Descrição |
+| --- | --- |
+| Status | Em triagem — causa não determinada; reteste pendente após correção. |
+| Severidade / prioridade | Alta / Alta, propostas para triagem. |
+| Módulo | Modelos de Contrato / Listagem |
+| Requisitos | [RF98](Analise%20de%20requisitos.md#rf98) |
+| Casos | [CT-RF98](Cenario_Teste/CT-RF98_Listagem_Modelos_Contrato_Vazia.md) |
+| Data da evidência / revisão | 15/11/2026, 21:55 BRT; sem nova execução. |
+| Página | https://sifit.centrion.com.br/modelos-contrato |
+| Ambiente | Chrome 157.0.8103.78 / Windows (x86) 11, janela 1920 × 855; versão e zoom não confirmados. |
+| Frequência conhecida | Observado durante toda a gravação; recorrência não determinada. |
+
+### Pré-condições e reprodução
+
+**[CT-RF98](Cenario_Teste/CT-RF98_Listagem_Modelos_Contrato_Vazia.md):** Sessão autenticada com acesso a Modelos de Contrato e modelos existentes no servidor.
+
+1. Acessar Modelos Contrato com o painel de rede aberto e registrar a resposta de `modelos-contrato`.
+2. Conferir a tabela da tela com a resposta do servidor.
+3. Cadastrar um modelo e voltar à listagem.
+4. Recarregar a página e conferir novamente.
+
+### Esperado e obtido
+
+| Esperado | Obtido |
+| --- | --- |
+| A tabela apresenta uma linha com código, nome e status para cada modelo retornado pelo servidor, inclusive o recém-criado, ou mensagem explícita quando não houver modelos. | O servidor devolveu 15 modelos em `GET modelos-contrato/1`, mas a tabela apresentou apenas o cabeçalho (Código, Nome e Status), sem linhas e sem mensagem, antes e depois do cadastro. |
+
+**Impacto:** O usuário não consegue consultar, editar ou excluir modelos de contrato pela tela e não sabe se o cadastro funcionou, podendo criar modelos duplicados.
+
+### Evidências técnicas
+
+- [Jam — Modelos de Contrato](https://jam.dev/c/44dbbd39-6915-45d6-8dd1-5f30c1432ca0): `GET /api/modelos-contrato/1` (HTTP 200, 1,0 KiB) com 15 modelos (ids 1 a 15, incluindo "teste eduardo") e quadros de 0:00, 0:39, 0:45 e 0:49 com a tabela sem linhas.
+- [Tabela em 0:39](Evidencias/CT-RF98_Listagem_Modelos_Contrato_Vazia/lista_vazia_00-39.png), [tabela em 0:49](Evidencias/CT-RF98_Listagem_Modelos_Contrato_Vazia/lista_vazia_00-49.png), [resposta do servidor](Evidencias/CT-RF98_Listagem_Modelos_Contrato_Vazia/lista_servidor_resposta.png) e [Evidências](Evidencias/CT-RF98_Listagem_Modelos_Contrato_Vazia/README.md).
+
+### Análise, limites e encaminhamento
+
+A divergência entre a resposta e a tabela é compatível com falha na renderização, divergência no formato dos campos esperados pela tela ou filtro implícito; não foi possível distinguir. A causa técnica não foi confirmada no código.
+
+**Reteste:** Reproduzir comparando a resposta de `modelos-contrato` com a tabela, investigar a renderização e o formato dos dados e retestar com e sem modelos. Manter em triagem até nova evidência em versão identificada.
+
+---
+
+<a id="bug-041"></a>
+
+## BUG-041 — Cartão Ativos de Planos aumenta ao cadastrar e editar planos inativos
+
+| Campo | Descrição |
+| --- | --- |
+| Status | Em triagem — causa não determinada; reteste pendente após correção. |
+| Severidade / prioridade | Média / Média, propostas para triagem. |
+| Módulo | Planos / Cartões de resumo |
+| Requisitos | [RF102](Analise%20de%20requisitos.md#rf102) |
+| Casos | [CT-RF102](Cenario_Teste/CT-RF102_Contador_Ativos_Planos.md) |
+| Data da evidência / revisão | 15/11/2026, 21:54 BRT; sem nova execução. |
+| Página | https://sifit.centrion.com.br/planos |
+| Ambiente | Chrome 157.0.8103.78 / Windows (x86) 11, janela 1920 × 855; versão e zoom não confirmados. |
+| Frequência conhecida | Duas operações consecutivas na mesma gravação; recorrência não determinada. |
+
+### Pré-condições e reprodução
+
+**[CT-RF102](Cenario_Teste/CT-RF102_Contador_Ativos_Planos.md):** Sessão autenticada com acesso a Planos e base de planos com a regra do cartão Ativos definida com o produto.
+
+1. Acessar Planos e registrar os cartões Planos e Ativos.
+2. Cadastrar um plano com status Inativo e conferir os cartões.
+3. Editar o plano inativo sem alterar o status e conferir os cartões.
+4. Comparar o cartão Ativos com a contagem de planos ativos da listagem.
+
+### Esperado e obtido
+
+| Esperado | Obtido |
+| --- | --- |
+| O cartão Ativos conta apenas planos com status ativo; cadastrar ou editar um plano inativo não o altera. | Cadastrar um plano com `status` "inativo" elevou Planos de 40 para 41 e Ativos de 29 para 30; editar o plano 41, que continuou "inativo", elevou Ativos para 31. |
+
+**Impacto:** O indicador de planos ativos fica superestimado, o que distorce a leitura da carteira de planos e as decisões comerciais baseadas nele.
+
+### Evidências técnicas
+
+- [Jam — Planos](https://jam.dev/c/233c5d21-e108-4a55-b6f6-8738cb3fc6a6): quadros de 0:03 (Planos 40, Ativos 29), 0:53 (Planos 41, Ativos 30) e 1:08 (Planos 41, Ativos 31); `POST /api/plano/salvar/1` com `"status": "inativo"` e `POST /api/plano/update/1` com `"status": "inativo"`.
+- [Cartões em 0:03](Evidencias/CT-RF102_Contador_Ativos_Planos/cartoes_antes_00-03.png), [em 0:53](Evidencias/CT-RF102_Contador_Ativos_Planos/cartoes_apos_cadastro_00-53.png), [em 1:08](Evidencias/CT-RF102_Contador_Ativos_Planos/cartoes_apos_edicao_01-08.png) e [Evidências](Evidencias/CT-RF102_Contador_Ativos_Planos/README.md).
+
+### Análise, limites e encaminhamento
+
+O aumento do cartão Ativos a cada operação com planos inativos é compatível com contagem que não considera o status ou com cálculo baseado em outro critério (por exemplo, planos com matrículas); a regra do cartão não foi informada e a contagem da listagem por status não foi conferida. A causa técnica não foi confirmada no código.
+
+**Reteste:** Reproduzir com a base e o contrato do cartão conhecidos, comparando o cartão com a contagem por status da listagem, após cadastro, edição e alteração de status. Manter em triagem até nova evidência em versão identificada.
+
+---
+
+<a id="bug-042"></a>
+
+## BUG-042 — Status do tipo de pagamento não é enviado nem refletido: todos aparecem Inativo
+
+| Campo | Descrição |
+| --- | --- |
+| Status | Em triagem — causa não determinada; reteste pendente após correção. |
+| Severidade / prioridade | Média / Média, propostas para triagem. |
+| Módulo | Financeiro / Tipos de Pagamento / Cadastro e listagem |
+| Requisitos | [RF105](Analise%20de%20requisitos.md#rf105) |
+| Casos | [CT-RF105](Cenario_Teste/CT-RF105_Cadastro_Tipo_Pagamento_Status.md) |
+| Data da evidência / revisão | 15/11/2026, 22:03 BRT; sem nova execução. |
+| Página | https://sifit.centrion.com.br/tipos-pagamento |
+| Ambiente | Chrome 157.0.8103.78 / Windows (x86) 11, janela 1920 × 855; versão e zoom não confirmados. |
+| Frequência conhecida | Observado em todos os tipos listados, no cadastro e na edição da mesma gravação; recorrência não determinada. |
+
+### Pré-condições e reprodução
+
+**[CT-RF105](Cenario_Teste/CT-RF105_Cadastro_Tipo_Pagamento_Status.md):** Sessão autenticada com acesso a Tipos de Pagamento e regra do status do tipo definida com o produto.
+
+1. Acessar Tipos de Pagamento e registrar a coluna Status e os cartões Total, Ativos e Inativos.
+2. Acionar Novo, informar o nome, manter o Status Ativo e escolher Tipo, Escolher Bandeira e Pagamento Pelo Sistema.
+3. Acionar Salvar e capturar o corpo e a resposta da criação e a resposta da lista.
+4. Conferir a coluna Status do novo tipo e os cartões Ativos e Inativos.
+5. Abrir um tipo existente pela lupa e comparar o Status do modal com o da listagem.
+
+### Esperado e obtido
+
+| Esperado | Obtido |
+| --- | --- |
+| O status escolhido no modal é enviado e gravado; a listagem exibe o status real de cada tipo e os cartões Ativos e Inativos acompanham o cadastro. | A criação retornou HTTP 201, mas o corpo enviado não traz status e os registros devolvidos pela API não têm esse campo; os cartões foram de Total 16 / Inativos 16 para Total 17 / Inativos 17, com Ativos em 0, e todos os tipos aparecem como Inativo. O modal de edição do tipo Dinheiro exibiu Status "Ativo" enquanto a listagem o exibia como Inativo. |
+
+**Impacto:** O usuário não consegue ativar ou desativar tipos de pagamento nem confiar nos cartões e no filtro de status, e o seletor de Status do modal induz a erro por parecer gravar um valor que não é enviado.
+
+### Evidências técnicas
+
+- [Jam — Tipos de Pagamento](https://jam.dev/c/e8734e3d-3f8e-458b-8c7d-e85eea882e50): `POST /api/cria/tipo-pagamento/1` (HTTP 201) com `nome`, `tipo`, `via_gateway` e `escolher_bandeira`, sem status; `GET /api/tipo-pagamento/1` com registros sem campo de status; quadros de 0:00 (Total 16, Ativos 0, Inativos 16), 0:19 (Status Ativo no modal) e 0:27 (Total 17, Ativos 0, Inativos 17).
+- [Cartões em 0:00](Evidencias/CT-RF105_Cadastro_Tipo_Pagamento_Status/cartoes_antes_00-00.jpg), [modal em 0:19](Evidencias/CT-RF105_Cadastro_Tipo_Pagamento_Status/modal_cadastro_00-19.jpg), [listagem em 0:27](Evidencias/CT-RF105_Cadastro_Tipo_Pagamento_Status/lista_apos_cadastro_00-27.jpg) e [Evidências](Evidencias/CT-RF105_Cadastro_Tipo_Pagamento_Status/README.md).
+
+### Análise, limites e encaminhamento
+
+O padrão é compatível com um campo de status que existe apenas na interface, sem coluna ou envio correspondente; também é compatível com uma regra em que o status é calculado de outra forma. A regra não foi informada, o novo tipo não está visível nos quadros e a causa técnica não foi confirmada no código.
+
+**Reteste:** Confirmar com o produto se o tipo de pagamento tem status, reproduzir conferindo corpo, resposta e coluna Status e retestar cadastro e edição com Ativo e Inativo, o filtro de Status e os cartões. Manter em triagem até nova evidência em versão identificada.
+
+---
+
+<a id="bug-043"></a>
+
+## BUG-043 — Exclusão de tipo de pagamento em uso retorna HTTP 404 com erro SQL e mensagem genérica
+
+| Campo | Descrição |
+| --- | --- |
+| Status | Em triagem — causa não determinada; reteste pendente após correção. |
+| Severidade / prioridade | Média / Média, propostas para triagem. |
+| Módulo | Financeiro / Tipos de Pagamento / Exclusão |
+| Requisitos | [RF107](Analise%20de%20requisitos.md#rf107) |
+| Casos | [CT-RF107](Cenario_Teste/CT-RF107_Exclusao_Tipo_Pagamento_Em_Uso.md) |
+| Data da evidência / revisão | 15/11/2026, 22:03 BRT; sem nova execução. |
+| Página | https://sifit.centrion.com.br/tipos-pagamento |
+| Ambiente | Chrome 157.0.8103.78 / Windows (x86) 11, janela 1920 × 855; versão e zoom não confirmados. |
+| Frequência conhecida | Duas ocorrências consecutivas na mesma gravação (códigos 1 e 3); recorrência não determinada. |
+
+### Pré-condições e reprodução
+
+**[CT-RF107](Cenario_Teste/CT-RF107_Exclusao_Tipo_Pagamento_Em_Uso.md):** Sessão autenticada com acesso a Tipos de Pagamento e tipos de pagamento referenciados por contas a receber.
+
+1. Acessar Tipos de Pagamento com o painel de rede aberto.
+2. Acionar o ícone de exclusão da linha do tipo Dinheiro (código 1) e confirmar o diálogo.
+3. Registrar o código HTTP, a resposta e a mensagem da tela.
+4. Repetir com o tipo Cheque (código 3).
+5. Repetir com um tipo sem uso e comparar.
+
+### Esperado e obtido
+
+| Esperado | Obtido |
+| --- | --- |
+| A exclusão de um tipo em uso é impedida com mensagem clara ao usuário, código HTTP compatível e resposta sem detalhes internos do banco. | Os dois `POST deleta/tipo-pagamento/1` (ids 1 e 3) retornaram HTTP 404 com `verifica_erro` true e o erro SQL completo (violação de chave estrangeira com `contas_receber`, nome do esquema e da restrição). A tela mostrou apenas "Erro / Erro ao deletar tipo de pagamento" e a listagem permaneceu com 17 tipos. |
+
+**Impacto:** O usuário não sabe que o tipo está em uso e não recebe orientação para a ação seguinte; a resposta expõe nomes internos do banco a qualquer cliente que consulte a API, o que facilita o reconhecimento da estrutura; o código 404 induz a tratamento incorreto de erro.
+
+### Evidências técnicas
+
+- [Jam — Tipos de Pagamento](https://jam.dev/c/e8734e3d-3f8e-458b-8c7d-e85eea882e50): `POST /api/deleta/tipo-pagamento/1` (HTTP 404, 359 B) com `{"id": 1}` e `{"id": 3}`, resposta com `verifica_erro` true e texto de erro SQLSTATE 23000 / 1451 (violação de chave estrangeira com `contas_receber`); quadros de 0:37, 0:40 e 0:43.
+- [Confirmação em 0:37](Evidencias/CT-RF107_Exclusao_Tipo_Pagamento_Em_Uso/dialogo_confirmar_00-37.jpg), [erro em 0:40](Evidencias/CT-RF107_Exclusao_Tipo_Pagamento_Em_Uso/erro_exclusao_00-40.jpg), [lista de rede](Evidencias/CT-RF107_Exclusao_Tipo_Pagamento_Em_Uso/rede_lista.jpg) e [Evidências](Evidencias/CT-RF107_Exclusao_Tipo_Pagamento_Em_Uso/README.md).
+
+### Análise, limites e encaminhamento
+
+O impedimento de excluir um tipo referenciado é compatível com a integridade referencial do banco; o defeito apontado é o tratamento do erro (código HTTP, mensagem ao usuário e conteúdo da resposta), e não o bloqueio em si. O comportamento para um tipo sem uso não foi exercitado e a causa técnica não foi confirmada no código.
+
+**Reteste:** Reproduzir com tipo em uso e sem uso, conferindo código HTTP, corpo da resposta e mensagem da tela; verificar também se outras rotas de exclusão expõem erros SQL. Manter em triagem até nova evidência em versão identificada.
+
+---
+
 ## Pontos a validar — sem defeito confirmado
 
 | Caso | Questão pendente | Evidência |
@@ -1479,8 +1775,12 @@ Integração documental dos arquivos RESUMO.txt fornecidos em `C:\Users\Leonardo
 | [CT-RF44](Cenario_Teste/CT-RF44_Configuracoes_Home_Salvamento.md) | Confirmar a faixa do campo "Dias para contar cliente como ausente" (valor inicial -120 e valor informado 1100) e a mensagem de salvamento esperada. | [Jam](https://jam.dev/c/e6e551ef-9196-4c79-b6a2-89747b1e8b33) e [Evidências](Evidencias/CT-RF44_Configuracoes_Home_Salvamento/README.md) |
 | [CT-RF47](Cenario_Teste/CT-RF47_Cadastro_Despesa_Fixa.md) | Confirmar se o segundo POST de criação (HTTP 201) gerou registro adicional ou foi descartado; registrar defeito apenas se houver duplicidade confirmada. | [Jam](https://jam.dev/c/a4bac99d-e436-4792-831e-8c3a875272bb) e [Evidências](Evidencias/CT-RF47_Cadastro_Despesa_Fixa/README.md) |
 | [CT-RF52](Cenario_Teste/CT-RF52_Relatorio_Contas_Pagar_Pagas.md) | Conferir se existem contas pagas no período; PDF sem linhas e com totalizadores R$ 0,00 é compatível com período sem pagamentos. | [Jam](https://jam.dev/c/3b4777a4-e1b0-4038-9b06-26c73669d7d1) e [Evidências](Evidencias/CT-RF52_Relatorio_Contas_Pagar_Pagas/README.md) |
+| [CT-RF88](Cenario_Teste/CT-RF88_Cadastro_Lead_Prospeccao.md) | Cadastro de lead com duas requisições de criação | Confirmar se o segundo POST de criação gerou registro adicional ou foi descartado; registrar defeito apenas se houver duplicidade confirmada. | [Jam](https://jam.dev/c/308607ff-8abc-40af-8c7c-429ce506ed64) e [Evidências](Evidencias/CT-RF88_Cadastro_Lead_Prospeccao/README.md) |
+| [CT-RF91](Cenario_Teste/CT-RF91_Filtros_Contas_Pagar.md) | Filtros da tela Contas a Pagar por nome, data e status | Reexecutar com contas de controle e conferir cada critério isolado e combinado; o resultado vazio da combinação gravada não pôde ser conferido contra a base. | [Jam](https://jam.dev/c/5d0afaf4-5abd-4e85-923f-27448304a9ef) e [Evidências](Evidencias/CT-RF91_Filtros_Contas_Pagar/README.md) |
+| [CT-RF93](Cenario_Teste/CT-RF93_Busca_Colaborador_Conta_Pagar.md) | Busca de colaborador no cadastro de conta a pagar | Reexecutar com um nome existente para conferir listagem e seleção e confirmar a mensagem esperada de resultado vazio. | [Jam](https://jam.dev/c/5d0afaf4-5abd-4e85-923f-27448304a9ef) e [Evidências](Evidencias/CT-RF93_Busca_Colaborador_Conta_Pagar/README.md) |
+| [CT-RF104](Cenario_Teste/CT-RF104_Filtros_Tipos_Pagamento.md) | Filtros de busca da tela Tipos de Pagamento | Reexecutar com critérios conhecidos, registrando o valor escolhido em cada seletor, a listagem e a rede, e confirmar se a filtragem é local ou no servidor; Buscar não emitiu requisição de listagem. | [Jam](https://jam.dev/c/e8734e3d-3f8e-458b-8c7d-e85eea882e50) e [Evidências](Evidencias/CT-RF104_Filtros_Tipos_Pagamento/README.md) |
 
-Esses dez pontos não entram na contagem de 37 defeitos registrados. BUG-011–BUG-037 são contabilizados separadamente como registros em triagem, com premissas, persistência ou validações técnicas ainda pendentes. O relato de numeração de personais não demonstrou diferença entre total e linhas; a inativação de modalidades pode ser exclusão lógica; encargos e métricas exigem regras explícitas.
+Esses quatorze pontos não entram na contagem de 43 defeitos registrados. BUG-011–BUG-043 são contabilizados separadamente como registros em triagem, com premissas, persistência ou validações técnicas ainda pendentes. O relato de numeração de personais não demonstrou diferença entre total e linhas; a inativação de modalidades pode ser exclusão lógica; encargos e métricas exigem regras explícitas.
 
 
 **Exclusão de exercício:** CT-RF23 está aprovado no trecho consultado, com remoção e total 11 para 10; não gerou defeito adicional. Persistência e efeitos sobre vínculos permanecem como verificações complementares.
