@@ -1,0 +1,24 @@
+CT-RF159 — Criar uma notificação e conferir a prévia e a listagem
+Fonte: Jam 3 — Criação de notificação com prévia. Gravação restrita por conter dados de integração ou dados de alunos.
+Gravação: 16/11/2026, 22:41:22 BRT. Duração: 32,86 s.
+Revisão documental: 18/11/2026.
+Página: https://sifit.centrion.com.br/aplicativo
+Foco deste caso: Comparar a mensagem digitada com a prévia e verificar que a criação retorna sucesso e inclui o aviso na lista.
+
+Cronologia (ações e eventos capturados no Jam):
+0:02,21  Abre Criar Notificação.
+0:06–0:18  Preenche o texto e confere a prévia.
+0:23,39–0:23,86  Aciona Enviar aviso e a criação é confirmada.
+0:25–0:31  Confere o novo aviso no topo da lista.
+
+Rede do conjunto gravado (eventos relevantes ao caso):
+0:23,86  POST /api/notificacoes/criar/1 (HTTP 201, verifica_erro: false).
+0:23,86  GET /api/notificacoes/listar/1 (HTTP 200), com a nova mensagem de teste.
+
+Quadros consultados (reprodução do Jam):
+- Mensagem de teste no formulário e na prévia para celular.
+- Novo aviso de teste no início da listagem.
+
+Observações e verificações futuras:
+- O resultado cobre a criação, a prévia e a listagem. A entrega efetiva no aplicativo dos alunos não foi verificada.
+- Usar como regressão da criação e validar o recebimento em um dispositivo de teste em uma execução dedicada.

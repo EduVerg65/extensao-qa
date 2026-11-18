@@ -2,13 +2,13 @@
 
 Repositório de documentação de QA manual do **SIFIT**, sistema de gestão de academias. Reúne requisitos, plano, cenários BDD, resultados, defeitos e evidências com links do Jam.
 
-**Atualização documental:** 18/11/2026. Integrados CT-RF157–CT-RF158 e RF157–RF158 para Aplicativo. A revisão utiliza gravações e eventos do Jam.
+**Atualização documental:** 18/11/2026. Integrados CT-RF157–CT-RF159 e RF157–RF159 para Aplicativo. A revisão utiliza gravações e eventos do Jam.
 
 ## 📊 Situação consolidada
 
 | Cenários documentados | Aprovados | Reprovados | A validar | Defeitos registrados | Casos com reteste corretivo pendente |
 | :---: | :---: | :---: | :---: | :---: | :---: |
-| 154 | 76 | 57 | 21 | 52 (10 abertos + 42 em triagem) | 57 |
+| 155 | 77 | 57 | 21 | 52 (10 abertos + 42 em triagem) | 57 |
 
 As classificações se baseiam nas fontes indicadas em cada cenário. CT-RF09/10 compartilham BUG-005 e CT-RF53–CT-RF56 compartilham BUG-023. CT-RF135 e CT-RF136 compartilham o BUG-049. As 57 reprovações correspondem a 52 defeitos registrados. BUG-011–BUG-052 aguardam triagem.
 
@@ -16,9 +16,9 @@ As classificações se baseiam nas fontes indicadas em cada cenário. CT-RF09/10
 
 | Documento | Conteúdo |
 | --- | --- |
-| [Análise de requisitos](SIFIT/Analise%20de%20requisitos.md) | RF01–RF35, RF38–RF62 e RF65–RF158, critérios de aceitação, dúvidas de regra e rastreabilidade. |
+| [Análise de requisitos](SIFIT/Analise%20de%20requisitos.md) | RF01–RF35, RF38–RF62 e RF65–RF159, critérios de aceitação, dúvidas de regra e rastreabilidade. |
 | [Plano de testes](SIFIT/Plano%20de%20testes.md) | Escopo, ambientes, preparação, critérios, regressão e retestes. |
-| [Índice dos cenários](SIFIT/Cenario_Teste/README.md) | 154 cenários com pré-condições, BDD, passos, esperado, obtido e encaminhamento. |
+| [Índice dos cenários](SIFIT/Cenario_Teste/README.md) | 155 cenários com pré-condições, BDD, passos, esperado, obtido e encaminhamento. |
 | [Relatório de bugs](SIFIT/Relatorio-de-Bugs.md) | BUG-001–BUG-052: reprodução, impacto, evidências, severidade/prioridade propostas e reteste. |
 | [Relatório dos testes](SIFIT/Relatorio%20dos%20testes.md) | Resultados consolidados, cobertura, limites e pendências. |
 | [Índice das evidências](SIFIT/Evidencias/README.md) | Jam por cenário e arquivos locais dos novos casos. |
@@ -187,6 +187,7 @@ extensao-qa/
 | [CT-RF156](SIFIT/Cenario_Teste/CT-RF156_Configuracoes_Aniversario_Inserir_Variaveis_WhatsApp.md) | Inserir variáveis na mensagem de aniversário do WhatsApp | Aprovado conforme a gravação | — | Jam 6 — Inserção de variáveis na mensagem de WhatsApp (gravação restrita por conter dados de integração) |
 | [CT-RF157](SIFIT/Cenario_Teste/CT-RF157_Aplicativo_Consultar_Notificacao.md) | Consultar os detalhes de uma notificação | Aprovado conforme a gravação | — | Jam 1 — Consulta de notificação existente (gravação restrita por conter dados de integração ou dados de alunos) |
 | [CT-RF158](SIFIT/Cenario_Teste/CT-RF158_Aplicativo_Bloquear_Notificacao_Vazia.md) | Impedir o envio de uma notificação sem mensagem | Aprovado conforme a gravação | — | Jam 2 — Validação de mensagem obrigatória (gravação restrita por conter dados de integração ou dados de alunos) |
+| [CT-RF159](SIFIT/Cenario_Teste/CT-RF159_Aplicativo_Criar_Notificacao_Preview.md) | Criar uma notificação e conferir a prévia e a listagem | Aprovado conforme a gravação | — | Jam 3 — Criação de notificação com prévia (gravação restrita por conter dados de integração ou dados de alunos) |
 
 ## 🔬 Como este projeto funciona
 

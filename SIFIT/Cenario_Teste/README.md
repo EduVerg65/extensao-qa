@@ -1,6 +1,6 @@
 # 🧪 Índice dos cenários de teste — SIFIT
 
-**Atualização:** 18/11/2026. 154 casos documentados: 76 aprovados, 57 reprovados e 21 a validar. 52 defeitos registrados (10 abertos e 42 em triagem) e 57 casos com reteste corretivo pendente. Escopo: CT-RF01–CT-RF35, CT-RF38–CT-RF62 e CT-RF65–CT-RF158.
+**Atualização:** 18/11/2026. 155 casos documentados: 77 aprovados, 57 reprovados e 21 a validar. 52 defeitos registrados (10 abertos e 42 em triagem) e 57 casos com reteste corretivo pendente. Escopo: CT-RF01–CT-RF35, CT-RF38–CT-RF62 e CT-RF65–CT-RF159.
 
 | Caso | Funcionalidade | Resultado | Defeito | Jam |
 | --- | --- | --- | --- | --- |
@@ -376,13 +376,14 @@ CT-RF145–CT-RF150 cobrem funcionalidades de Configurações com gravações de
 
 CT-RF151–CT-RF156 cobrem as abas Avaliação e Aniversário com gravações de 16/11/2026 entre 23:10:04 e 23:20:07 BRT. A revisão é documental.
 
-## Inclusão de 18/11/2026 — Aplicativo (CT-RF157–CT-RF158)
+## Inclusão de 18/11/2026 — Aplicativo (CT-RF157–CT-RF159)
 
 | Caso | Funcionalidade | Resultado | Defeito | Jam |
 | --- | --- | --- | --- | --- |
 | [CT-RF157](CT-RF157_Aplicativo_Consultar_Notificacao.md) | Consultar os detalhes de uma notificação | Aprovado conforme a gravação | — | Jam 1 — Consulta de notificação existente (gravação restrita por conter dados de integração ou dados de alunos) |
 | [CT-RF158](CT-RF158_Aplicativo_Bloquear_Notificacao_Vazia.md) | Impedir o envio de uma notificação sem mensagem | Aprovado conforme a gravação | — | Jam 2 — Validação de mensagem obrigatória (gravação restrita por conter dados de integração ou dados de alunos) |
+| [CT-RF159](CT-RF159_Aplicativo_Criar_Notificacao_Preview.md) | Criar uma notificação e conferir a prévia e a listagem | Aprovado conforme a gravação | — | Jam 3 — Criação de notificação com prévia (gravação restrita por conter dados de integração ou dados de alunos) |
 
-CT-RF157–CT-RF158 cobrem a aba Aplicativo com gravações de 16/11/2026 entre 22:39:05 e 22:40:04 BRT. A revisão é documental.
+CT-RF157–CT-RF159 cobrem a aba Aplicativo com gravações de 16/11/2026 entre 22:39:05 e 22:41:22 BRT. A revisão é documental.
 
 [← Início](../../README.md) · [Requisitos](../Analise%20de%20requisitos.md) · [Plano](../Plano%20de%20testes.md) · [Evidências](../Evidencias/README.md)
