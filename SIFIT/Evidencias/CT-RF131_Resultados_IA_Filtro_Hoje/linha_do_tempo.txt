@@ -1,0 +1,23 @@
+CT-RF131 — Filtrar Resultados da Inteligência por Hoje
+Fonte: https://jam.dev/c/a83c4c74-0b8e-4242-9612-0202c9063d56
+Gravação: 16/11/2026, 21:47:54 BRT; duração: 11,96 s.
+Revisão documental: 17/11/2026.
+Página: https://sifit.centrion.com.br/inteligencia/resultados
+Foco deste caso: Selecionar Hoje e refletir o recorte de um dia nos resultados e nos indicadores apresentados.
+
+Cronologia (ações e eventos capturados no Jam):
+0:02–0:03  A página carrega Últimos 7 dias com dois aniversariantes.
+0:04–0:05  Seleciona Hoje e recebe os resultados do recorte.
+0:06–0:10  O cartão Aniversariantes mostra zero. A linha do tempo continua com três itens.
+
+Rede do conjunto gravado (eventos relevantes ao caso):
+0:02,05  GET /api/inteligencia/resultados/1?periodo=7 (HTTP 200), com dias: 7 e dois aniversariantes.
+0:04,62  GET com periodo=hoje (HTTP 200), com dias: 1, zero aniversariantes e três itens na linha do tempo.
+
+Quadros consultados (reprodução do Jam):
+- Últimos 7 dias com dois aniversariantes.
+- Hoje selecionado e zero aniversariantes.
+
+Observações e verificações futuras:
+- A troca do filtro e o retorno da API foram confirmados. O limite de horário do dia e o fuso usado pelo sistema não foram validados com dados controlados.
+- Usar como regressão e conferir o recorte com eventos antes e depois da virada do dia.

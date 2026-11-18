@@ -2,11 +2,11 @@
 
 **Módulos:** Autenticação, Perfil, Clientes / Filtros, Financeiro, Página inicial / Personais, SifitBox / Modalidades e Turmas, Categorias Crossfit, Avaliações, Exercícios, Grupos Musculares, Dashboard, Objetivos de Treino, Fichas de Anamnese, Colaboradores, Prospecção e Bandeiras de Cartão.
 
-**Atualização:** 17/11/2026 — RF01 a RF35, RF38 a RF62 e RF65 a RF130 consolidados, com inclusão de Categorias Crossfit (CT-RF38), SifitBox – Turmas (CT-RF39 a CT-RF41), Pagar.me, Configurações, Despesas Fixas e Relatórios (CT-RF42 a CT-RF56), Grupos (treino) (CT-RF57 e CT-RF58), Fichas de Anamnese (CT-RF59), Modelos de Anamnese (CT-RF60), Categorias de Anamnese (CT-RF61), Perguntas Anamnese (CT-RF62), Colaboradores (CT-RF65 a CT-RF73), Prospecção e Bandeiras de Cartão (CT-RF74 a CT-RF90), Contas a Pagar / Modelos de Contrato / Planos (CT-RF91 a CT-RF103) Tipos de Pagamento (CT-RF104 a CT-RF108) e Modelos de Ficha (CT-RF109–CT-RF115) e Configurações e Modelos de Ficha (CT-RF116–CT-RF121) e Inteligência e Configurações (CT-RF122–CT-RF127) e Inteligência e Automação (CT-RF128–CT-RF130). BUG-011–BUG-048 em triagem.
+**Atualização:** 17/11/2026 — RF01 a RF35, RF38 a RF62 e RF65 a RF131 consolidados, com inclusão de Categorias Crossfit (CT-RF38), SifitBox – Turmas (CT-RF39 a CT-RF41), Pagar.me, Configurações, Despesas Fixas e Relatórios (CT-RF42 a CT-RF56), Grupos (treino) (CT-RF57 e CT-RF58), Fichas de Anamnese (CT-RF59), Modelos de Anamnese (CT-RF60), Categorias de Anamnese (CT-RF61), Perguntas Anamnese (CT-RF62), Colaboradores (CT-RF65 a CT-RF73), Prospecção e Bandeiras de Cartão (CT-RF74 a CT-RF90), Contas a Pagar / Modelos de Contrato / Planos (CT-RF91 a CT-RF103) Tipos de Pagamento (CT-RF104 a CT-RF108) e Modelos de Ficha (CT-RF109–CT-RF115) e Configurações e Modelos de Ficha (CT-RF116–CT-RF121) e Inteligência e Configurações (CT-RF122–CT-RF127) e Inteligência e Automação (CT-RF128–CT-RF131). BUG-011–BUG-048 em triagem.
 
 **Padronização documental:** 13/11/2026, sem alteração dos resultados registrados.
 
-Esta análise documenta 126 requisitos de QA para os cenários relacionados abaixo, com base nos relatos e nas evidências fornecidas. RF01–RF04 e suas análises históricas foram preservados; RF05–RF20 ampliam a cobertura em 14/11/2026; RF21 acrescenta Avaliações; RF22–RF28 acrescentam Exercícios; RF29–RF33 acrescentam Grupos Musculares; RF34 acrescenta o carregamento do dashboard RF35 acrescenta o cadastro de objetivos de treino e RF38 acrescenta o cadastro de categorias com código automático em 15/11/2026. RF39 acrescenta o cadastro de modalidade em SifitBox – Turmas. RF40 acrescenta a exclusão de turmas e modalidades. RF41 acrescenta o cadastro de turma. RF42 a RF56 acrescentam Pagar.me, Configurações, Despesas Fixas e Relatórios em 15/11/2026. RF57 acrescenta a exclusão de grupo (treino) e RF58 acrescenta a edição de grupo (treino), ambos também em 15/11/2026. RF59 acrescenta o cadastro de anamnese, também em 15/11/2026. RF60 acrescenta a gestão de modelos de anamnese (busca, cadastro, edição e exclusão), em 16/11/2026. RF61 acrescenta a gestão de categorias de anamnese (filtro, busca, cadastro, edição, cancelamento de edição e exclusão), também em 16/11/2026. RF62 acrescenta a edição de pergunta de anamnese, reprovada por HTTP 500, também em 16/11/2026. RF65–RF73 cobrem validações, operações e buscas de Colaboradores, também em 15/11/2026. RF74–RF84 acrescentam Prospecção e Bandeiras de Cartão a partir de resumos fornecidos, em 16/11/2026. RF85 a RF90 acrescentam Prospecção (leads) em 15/11/2026. RF91 a RF103 acrescentam Contas a Pagar, Modelos de Contrato e Planos em 15/11/2026. RF104 a RF108 acrescentam Tipos de Pagamento em 15/11/2026. RF109–RF115 cobre Modelos de Ficha com evidências gravadas em 16/11/2026. Os critérios abaixo constituem a referência de QA para esses fluxos; não representam validação de uma especificação formal pelo responsável pelo produto.
+Esta análise documenta 127 requisitos de QA para os cenários relacionados abaixo, com base nos relatos e nas evidências fornecidas. RF01–RF04 e suas análises históricas foram preservados; RF05–RF20 ampliam a cobertura em 14/11/2026; RF21 acrescenta Avaliações; RF22–RF28 acrescentam Exercícios; RF29–RF33 acrescentam Grupos Musculares; RF34 acrescenta o carregamento do dashboard RF35 acrescenta o cadastro de objetivos de treino e RF38 acrescenta o cadastro de categorias com código automático em 15/11/2026. RF39 acrescenta o cadastro de modalidade em SifitBox – Turmas. RF40 acrescenta a exclusão de turmas e modalidades. RF41 acrescenta o cadastro de turma. RF42 a RF56 acrescentam Pagar.me, Configurações, Despesas Fixas e Relatórios em 15/11/2026. RF57 acrescenta a exclusão de grupo (treino) e RF58 acrescenta a edição de grupo (treino), ambos também em 15/11/2026. RF59 acrescenta o cadastro de anamnese, também em 15/11/2026. RF60 acrescenta a gestão de modelos de anamnese (busca, cadastro, edição e exclusão), em 16/11/2026. RF61 acrescenta a gestão de categorias de anamnese (filtro, busca, cadastro, edição, cancelamento de edição e exclusão), também em 16/11/2026. RF62 acrescenta a edição de pergunta de anamnese, reprovada por HTTP 500, também em 16/11/2026. RF65–RF73 cobrem validações, operações e buscas de Colaboradores, também em 15/11/2026. RF74–RF84 acrescentam Prospecção e Bandeiras de Cartão a partir de resumos fornecidos, em 16/11/2026. RF85 a RF90 acrescentam Prospecção (leads) em 15/11/2026. RF91 a RF103 acrescentam Contas a Pagar, Modelos de Contrato e Planos em 15/11/2026. RF104 a RF108 acrescentam Tipos de Pagamento em 15/11/2026. RF109–RF115 cobre Modelos de Ficha com evidências gravadas em 16/11/2026. Os critérios abaixo constituem a referência de QA para esses fluxos; não representam validação de uma especificação formal pelo responsável pelo produto.
 
 ## 📋 Visão geral dos requisitos
 
@@ -138,6 +138,7 @@ Esta análise documenta 126 requisitos de QA para os cenários relacionados abai
 | [RF128](#rf128) | Abrir e fechar a configuração de Risco de Evasão | Média, proposta | [CT-RF128](Cenario_Teste/CT-RF128_Central_Configuracao_Risco_Evasao_Cancelar.md) |
 | [RF129](#rf129) | Abrir Aniversariantes e conferir a prévia da automação | Média, proposta | [CT-RF129](Cenario_Teste/CT-RF129_Central_Aniversariantes_Previa_Risco.md) |
 | [RF130](#rf130) | Verificar recursos marcados como Em desenvolvimento | Média, proposta | [CT-RF130](Cenario_Teste/CT-RF130_Central_Recursos_Em_Desenvolvimento.md) |
+| [RF131](#rf131) | Filtrar Resultados da Inteligência por Hoje | Média, proposta | [CT-RF131](Cenario_Teste/CT-RF131_Resultados_IA_Filtro_Hoje.md) |
 
 ---
 
@@ -2981,6 +2982,31 @@ A divergência foi observada na prévia do painel. O envio real, o conteúdo rec
 
 A gravação cobre interações com mouse nos cartões nessa versão. A navegação por teclado e o comportamento após a futura liberação dos recursos não foram verificados.
 
+<a id="rf131"></a>
+
+## RF131 — Filtrar Resultados da Inteligência por Hoje
+
+| Campo | Descrição |
+| --- | --- |
+| Requisito de QA | Selecionar Hoje e refletir o recorte de um dia nos resultados e nos indicadores apresentados. |
+| Ator | Usuário autenticado com permissão para a operação. |
+| Pré-condições | Sessão autenticada com acesso a Resultados IA e valores de referência para Hoje e Últimos 7 dias. |
+| Gatilho | Selecionar Hoje com Últimos 7 dias ativo. |
+| Caso | [CT-RF131](Cenario_Teste/CT-RF131_Resultados_IA_Filtro_Hoje.md) |
+| Situação observada | Aprovado conforme a gravação. Hoje consultou um dia e o total de aniversariantes passou de 2 para 0, como na resposta. |
+| Defeito | Nenhum no fluxo avaliado |
+| Evidências | [Jam — PED-09 — Hoje](https://jam.dev/c/a83c4c74-0b8e-4242-9612-0202c9063d56) e [Evidências](Evidencias/CT-RF131_Resultados_IA_Filtro_Hoje/README.md). |
+
+### Critérios de aceitação do RF131
+
+1. Hoje fica destacado após a consulta.
+2. A API identifica o período de um dia.
+3. Os indicadores exibidos correspondem à resposta desse período.
+
+### Pontos a confirmar e limites do RF131
+
+A troca do filtro e o retorno da API foram confirmados. O limite de horário do dia e o fuso usado pelo sistema não foram validados com dados controlados.
+
 ---
 
 ## 🔗 Rastreabilidade
@@ -3110,6 +3136,7 @@ A gravação cobre interações com mouse nos cartões nessa versão. A navegaç
 | RF128 | [CT-RF128](Cenario_Teste/CT-RF128_Central_Configuracao_Risco_Evasao_Cancelar.md) | Nenhum no fluxo avaliado | Aprovado conforme a gravação | [Evidências](Evidencias/CT-RF128_Central_Configuracao_Risco_Evasao_Cancelar/README.md) e [Jam — PED-06 — Configuração de Risco de Evasão](https://jam.dev/c/d49b8ffc-a6e2-4e37-a618-c280b5e807db) |
 | RF129 | [CT-RF129](Cenario_Teste/CT-RF129_Central_Aniversariantes_Previa_Risco.md) | [BUG-048](Relatorio-de-Bugs.md#bug-048), em triagem | Reprovado nas evidências | [Evidências](Evidencias/CT-RF129_Central_Aniversariantes_Previa_Risco/README.md) e [Jam — PED-07 — Configuração de Aniversariantes](https://jam.dev/c/c66d4d01-aee2-4037-a8fd-858da21a0a14) |
 | RF130 | [CT-RF130](Cenario_Teste/CT-RF130_Central_Recursos_Em_Desenvolvimento.md) | Nenhum no fluxo avaliado | Aprovado conforme a gravação | [Evidências](Evidencias/CT-RF130_Central_Recursos_Em_Desenvolvimento/README.md) e [Jam — PED-08 — Recursos em desenvolvimento](https://jam.dev/c/0a7ae8fb-980d-4df2-8ef8-de78d6b11b8f) |
+| RF131 | [CT-RF131](Cenario_Teste/CT-RF131_Resultados_IA_Filtro_Hoje.md) | Nenhum no fluxo avaliado | Aprovado conforme a gravação | [Evidências](Evidencias/CT-RF131_Resultados_IA_Filtro_Hoje/README.md) e [Jam — PED-09 — Hoje](https://jam.dev/c/a83c4c74-0b8e-4242-9612-0202c9063d56) |
 
 ---
 
@@ -3952,11 +3979,12 @@ CT-RF122–CT-RF127 cobre Inteligência e Configurações com gravações de 16/
 
 ### Base da análise de Inteligência e Automação — revisão de 17/11/2026
 
-CT-RF128–CT-RF130 cobre Inteligência e Automação com gravações de 16/11/2026 entre 21:40:31 e 21:45:30 BRT.
+CT-RF128–CT-RF131 cobre Inteligência e Automação com gravações de 16/11/2026 entre 21:40:31 e 21:47:54 BRT.
 
 - RF128: Configurar abriu Risco de Evasão e Cancelar fechou o painel. O cartão continuou ativo. [Jam — PED-06 — Configuração de Risco de Evasão](https://jam.dev/c/d49b8ffc-a6e2-4e37-a618-c280b5e807db).
 - RF129: O painel Aniversariantes abriu corretamente, mas a prévia exibiu dados de risco de evasão. [Jam — PED-07 — Configuração de Aniversariantes](https://jam.dev/c/c66d4d01-aee2-4037-a8fd-858da21a0a14).
 - RF130: Os quatro recursos exibiram Em desenvolvimento. Os cliques não iniciaram navegação, configuração ou execução. [Jam — PED-08 — Recursos em desenvolvimento](https://jam.dev/c/0a7ae8fb-980d-4df2-8ef8-de78d6b11b8f).
+- RF131: Hoje consultou um dia e o total de aniversariantes passou de 2 para 0, como na resposta. [Jam — PED-09 — Hoje](https://jam.dev/c/a83c4c74-0b8e-4242-9612-0202c9063d56).
 
 ---
 
