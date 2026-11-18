@@ -1,6 +1,6 @@
 # 🧪 Índice dos cenários de teste — SIFIT
 
-**Atualização:** 17/11/2026. 124 casos documentados: 53 aprovados, 51 reprovados e 20 a validar. 47 defeitos registrados (10 abertos e 37 em triagem) e 51 casos com reteste corretivo pendente. Escopo: CT-RF01–CT-RF35, CT-RF38–CT-RF62 e CT-RF65–CT-RF128.
+**Atualização:** 17/11/2026. 125 casos documentados: 53 aprovados, 52 reprovados e 20 a validar. 48 defeitos registrados (10 abertos e 38 em triagem) e 52 casos com reteste corretivo pendente. Escopo: CT-RF01–CT-RF35, CT-RF38–CT-RF62 e CT-RF65–CT-RF129.
 
 | Caso | Funcionalidade | Resultado | Defeito | Jam |
 | --- | --- | --- | --- | --- |
@@ -312,12 +312,13 @@ CT-RF116–CT-RF121 amplia a cobertura de Configurações e Modelos de Ficha com
 
 CT-RF122–CT-RF127 cobre Inteligência e Configurações com gravações de 16/11/2026 entre 21:50:51 e 22:02:16 BRT. A revisão é documental.
 
-## Inclusão de 17/11/2026 — Inteligência e Automação (CT-RF128)
+## Inclusão de 17/11/2026 — Inteligência e Automação (CT-RF128–CT-RF129)
 
 | Caso | Funcionalidade | Resultado | Defeito | Jam |
 | --- | --- | --- | --- | --- |
 | [CT-RF128](CT-RF128_Central_Configuracao_Risco_Evasao_Cancelar.md) | Abrir e fechar a configuração de Risco de Evasão | Aprovado conforme a gravação | — | [Jam — PED-06 — Configuração de Risco de Evasão](https://jam.dev/c/d49b8ffc-a6e2-4e37-a618-c280b5e807db) |
+| [CT-RF129](CT-RF129_Central_Aniversariantes_Previa_Risco.md) | Abrir Aniversariantes e conferir a prévia da automação | Reprovado nas evidências | [BUG-048](../Relatorio-de-Bugs.md#bug-048), em triagem | [Jam — PED-07 — Configuração de Aniversariantes](https://jam.dev/c/c66d4d01-aee2-4037-a8fd-858da21a0a14) |
 
-CT-RF128 cobre Inteligência e Automação com gravações de 16/11/2026 às 21:40:31 BRT. A revisão é documental.
+CT-RF128–CT-RF129 cobre Inteligência e Automação com gravações de 16/11/2026 entre 21:40:31 e 21:41:32 BRT. A revisão é documental.
 
 [← Início](../../README.md) · [Requisitos](../Analise%20de%20requisitos.md) · [Plano](../Plano%20de%20testes.md) · [Evidências](../Evidencias/README.md)

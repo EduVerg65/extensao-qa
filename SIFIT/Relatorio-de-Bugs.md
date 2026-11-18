@@ -1,12 +1,12 @@
 # 🐞 Relatório de Bugs — SIFIT
 
-**Escopo:** defeitos de 124 casos documentados (CT-RF01–CT-RF35, CT-RF38–CT-RF62 e CT-RF65–CT-RF128): recuperação, Perfil, Clientes, financeiro, página inicial e dashboard, tema, modalidades, categorias, avaliações, exercícios, grupos musculares, objetivos de treino, SifitBox – Turmas, Pagar.me, configurações, despesas fixas, relatórios, grupos (treino), fichas de anamnese, colaboradores, modelos de anamnese, categorias de anamnese, perguntas de anamnese, Prospecção, Bandeiras de Cartão, Contas a Pagar, Modelos de Contrato, Planos, Tipos de Pagamento e Modelos de Ficha. CT-RF60 (Modelos de Anamnese) e CT-RF61 (Categorias de Anamnese) são aprovados conforme a gravação, sem defeito identificado. CT-RF62 (Perguntas Anamnese) é reprovado nas evidências e acrescenta o BUG-044 (44 defeitos registrados).
+**Escopo:** defeitos de 125 casos documentados (CT-RF01–CT-RF35, CT-RF38–CT-RF62 e CT-RF65–CT-RF129): recuperação, Perfil, Clientes, financeiro, página inicial e dashboard, tema, modalidades, categorias, avaliações, exercícios, grupos musculares, objetivos de treino, SifitBox – Turmas, Pagar.me, configurações, despesas fixas, relatórios, grupos (treino), fichas de anamnese, colaboradores, modelos de anamnese, categorias de anamnese, perguntas de anamnese, Prospecção, Bandeiras de Cartão, Contas a Pagar, Modelos de Contrato, Planos, Tipos de Pagamento e Modelos de Ficha. CT-RF60 (Modelos de Anamnese) e CT-RF61 (Categorias de Anamnese) são aprovados conforme a gravação, sem defeito identificado. CT-RF62 (Perguntas Anamnese) é reprovado nas evidências e acrescenta o BUG-044 (44 defeitos registrados).
 
 **Ambientes:** CT-RF01 em https://sifitalfa.centrion.com.br/login; CT-RF02_ERRO em https://sifit.centrion.com.br/profile. CT-RF03: URL do frontend não confirmada; backend informado em `https://backendsifit.centrion.com.br/api/clientesPorNome/1`.
 
 **Datas das gravações do Jam:** CT-RF01 em 23/10/2026; CT-RF02_ERRO em 22/10/2026 às 21:45 BRT; CT-RF03 não confirmada.
 
-**Atualização documental:** 17/11/2026 — 47 defeitos registrados: 10 abertos (BUG-001 a BUG-010) e 37 em triagem (BUG-011 a BUG-047). BUG-019 registra o HTTP 500 no cadastro de objetivo de treino, BUG-020 a ausência de retorno visível no cadastro de turma sem modalidade, BUG-024 e BUG-025 cobrem Grupos (treino), BUG-026–BUG-031 cobrem Colaboradores e BUG-032 o HTTP 500 no cadastro de anamnese (aplicar e rascunho), todos sem causa técnica confirmada. CT-RF60 (Modelos de Anamnese) e CT-RF61 (Categorias de Anamnese), incluídos em 16/11/2026, são aprovados conforme a gravação e não geram novo defeito. BUG-038 a BUG-041 cobrem Prospecção (telefone), Contas a Pagar, Modelos de Contrato e Planos; BUG-042 e BUG-043 cobrem Tipos de Pagamento (status e exclusão); BUG-044, também em 16/11/2026, registra o HTTP 500 na edição do tipo de resposta de pergunta de anamnese (CT-RF62); BUG-035 e BUG-036 cobrem Bandeiras; BUG-037 registra o relato de cadastro de lead apenas com nome, com regra a confirmar. As análises anteriores foram preservadas.
+**Atualização documental:** 17/11/2026 — 48 defeitos registrados: 10 abertos (BUG-001 a BUG-010) e 38 em triagem (BUG-011 a BUG-048). BUG-019 registra o HTTP 500 no cadastro de objetivo de treino, BUG-020 a ausência de retorno visível no cadastro de turma sem modalidade, BUG-024 e BUG-025 cobrem Grupos (treino), BUG-026–BUG-031 cobrem Colaboradores e BUG-032 o HTTP 500 no cadastro de anamnese (aplicar e rascunho), todos sem causa técnica confirmada. CT-RF60 (Modelos de Anamnese) e CT-RF61 (Categorias de Anamnese), incluídos em 16/11/2026, são aprovados conforme a gravação e não geram novo defeito. BUG-038 a BUG-041 cobrem Prospecção (telefone), Contas a Pagar, Modelos de Contrato e Planos; BUG-042 e BUG-043 cobrem Tipos de Pagamento (status e exclusão); BUG-044, também em 16/11/2026, registra o HTTP 500 na edição do tipo de resposta de pergunta de anamnese (CT-RF62); BUG-035 e BUG-036 cobrem Bandeiras; BUG-037 registra o relato de cadastro de lead apenas com nome, com regra a confirmar. As análises anteriores foram preservadas.
 
 **Gravação de CT-RF104–CT-RF108:** 15/11/2026, Tipos de Pagamento, 22:03 BRT, Chrome 157.0.8103.78 / Windows 11; uma única gravação; evidência e limites no BUG-042 e no BUG-043.
 
@@ -87,8 +87,9 @@
 | [BUG-045](#bug-045) | Cadastro de modelo de ficha com nome e personal retorna HTTP 500 | Alta / Alta, propostas | Em triagem. Causa a confirmar. | [CT-RF121](Cenario_Teste/CT-RF121_Cadastro_Modelo_Ficha_Erro_500.md) |
 | [BUG-046](#bug-046) | Configurações de Biometria exibem senha sem mascaramento | Alta / Alta, propostas | Em triagem. Reteste após correção. | [CT-RF124](Cenario_Teste/CT-RF124_Configuracoes_Abas_Biometria_Senha.md) |
 | [BUG-047](#bug-047) | Configurações aceitam e persistem dias de ausência negativos | Média / Média, propostas | Em triagem. Reteste após correção. | [CT-RF126](Cenario_Teste/CT-RF126_Configuracoes_Dias_Ausencia_Negativo.md) |
+| [BUG-048](#bug-048) | Configuração de Aniversariantes exibe prévia de risco de evasão | Média / Média, propostas | Em triagem. Reteste após correção. | [CT-RF129](Cenario_Teste/CT-RF129_Central_Aniversariantes_Previa_Risco.md) |
 
-BUG-001–BUG-010 aguardam correção e reteste. BUG-011–BUG-047 aguardam confirmação das premissas e triagem antes do encaminhamento de correção. As causas técnicas permanecem não confirmadas; o BUG-003 se apoia no relato e nas capturas fornecidos, com os limites registrados no caso.
+BUG-001–BUG-010 aguardam correção e reteste. BUG-011–BUG-048 aguardam confirmação das premissas e triagem antes do encaminhamento de correção. As causas técnicas permanecem não confirmadas; o BUG-003 se apoia no relato e nas capturas fornecidos, com os limites registrados no caso.
 
 ---
 
@@ -1945,6 +1946,49 @@ Aplicar validação na gravação da configuração e retestar com -1, um inteir
 
 ---
 
+<a id="bug-048"></a>
+
+## BUG-048 — Configuração de Aniversariantes exibe prévia de risco de evasão
+
+| Campo | Descrição |
+| --- | --- |
+| Status | Em triagem. Causa técnica a confirmar e reteste após correção. |
+| Severidade / prioridade | Média / Média, propostas para triagem. |
+| Módulo | Inteligência e Automação / Central / Aniversariantes |
+| Requisitos | [RF129](Analise%20de%20requisitos.md#rf129) |
+| Casos | [CT-RF129](Cenario_Teste/CT-RF129_Central_Aniversariantes_Previa_Risco.md) |
+| Data da evidência / revisão | 16/11/2026, 21:41:32 BRT / 17/11/2026. |
+| Página | https://sifit.centrion.com.br/inteligencia-automacao |
+| Ambiente | Chrome 157.0.8103.79 / Windows 10 (x86). Versão da aplicação e zoom a confirmar. |
+| Frequência conhecida | Uma ocorrência registrada. Recorrência a verificar. |
+
+### Pré-condições e reprodução
+
+- Sessão autenticada com acesso à Central de Automações e cartão Aniversariantes disponível.
+
+1. Na Central, localizar Aniversariantes e acionar Configurar.
+2. Conferir o título, frequência, horário e canais exibidos.
+3. Rolar até Preview do relatório e comparar o conteúdo com a automação selecionada.
+
+### Esperado e obtido
+
+**Esperado:** O painel de Aniversariantes abre e a prévia apresenta conteúdo de aniversários, coerente com a automação selecionada.
+
+**Obtido:** O painel abriu com o título Aniversariantes, frequência diária e horário 08:00. A prévia exibiu um relatório com 24 alunos em risco, redução de frequência, pagamentos atrasados e falta de presença recente. Cancelar fechou o painel e o cartão continuou inativo.
+
+### Evidências técnicas
+
+- O Jam registrou Configurar às 0:03,41 e Cancelar às 0:18,18. Não houve requisições capturadas.
+- [Jam — PED-07 — Configuração de Aniversariantes](https://jam.dev/c/c66d4d01-aee2-4037-a8fd-858da21a0a14) e [Evidências](Evidencias/CT-RF129_Central_Aniversariantes_Previa_Risco/README.md).
+
+### Análise, limites e encaminhamento
+
+A divergência foi observada na prévia do painel. O envio real, o conteúdo recebido e a persistência de alterações não foram exercitados.
+
+Corrigir o conteúdo da prévia e retestar separadamente Aniversariantes e Risco de Evasão.
+
+---
+
 ## Modelos de Ficha — revisão de 17/11/2026
 
 A revisão de Modelos de Ficha inclui CT-RF109–CT-RF115 com base em 6 gravações do Jam de 16/11/2026. A revisão documental foi feita em 17/11/2026. A triagem documental de [CT-RF109](Cenario_Teste/CT-RF109_Modelo_Ficha_Sem_Nome.md), [CT-RF110](Cenario_Teste/CT-RF110_Cancelar_Cadastro_Modelo_Ficha.md), [CT-RF111](Cenario_Teste/CT-RF111_Busca_Modelo_Ficha_Codigo_Inexistente.md), [CT-RF112](Cenario_Teste/CT-RF112_Busca_Modelo_Ficha_Titulo_Inexistente.md), [CT-RF113](Cenario_Teste/CT-RF113_Busca_Modelo_Ficha_Filtros_Combinados.md), [CT-RF114](Cenario_Teste/CT-RF114_Limpeza_Filtros_Modelos_Ficha.md), [CT-RF115](Cenario_Teste/CT-RF115_Nova_Busca_Modelos_Ficha_Sem_Filtros.md) registrou 4 caso(s) de Modelos de Ficha a validar e zero novos defeitos confirmados.
@@ -1957,9 +2001,9 @@ CT-RF116–CT-RF121 amplia a cobertura de Configurações e Modelos de Ficha com
 
 CT-RF122–CT-RF127 cobre Inteligência e Configurações com gravações de 16/11/2026 entre 21:50:51 e 22:02:16 BRT. Casos aprovados: 3. Reprovados: 2. A validar: 1. Defeitos do lote: [BUG-046](#bug-046) e [BUG-047](#bug-047).
 
-## Inteligência e Automação — revisão de 17/11/2026 (CT-RF128)
+## Inteligência e Automação — revisão de 17/11/2026 (CT-RF128–CT-RF129)
 
-CT-RF128 cobre Inteligência e Automação com gravações de 16/11/2026 às 21:40:31 BRT. Casos aprovados: 1. Reprovados: 0. A validar: 0.
+CT-RF128–CT-RF129 cobre Inteligência e Automação com gravações de 16/11/2026 entre 21:40:31 e 21:41:32 BRT. Casos aprovados: 1. Reprovados: 1. A validar: 0. Defeitos do lote: [BUG-048](#bug-048).
 
 ## Pontos a validar — sem defeito confirmado
 
@@ -1986,7 +2030,7 @@ CT-RF128 cobre Inteligência e Automação com gravações de 16/11/2026 às 21:
 | [CT-RF116](Cenario_Teste/CT-RF116_Configuracoes_Dias_Ausencia_Vazio.md) | Confirmar com o produto a regra para vazio e zero. Repetir com vazio, zero explícito e os limites da faixa. A conversão de vazio para zero e a persistência estão confirmadas. A obrigatoriedade do campo, o significado de zero e o efeito sobre a contagem de clientes ausentes dependem da regra de produto. O CT-RF44 já registra a necessidade de confirmar a faixa. | [Jam — PED-20 — Dias de ausência vazio](https://jam.dev/c/4e96d4fa-65b5-459b-a795-854496e5753c) e [Evidências](Evidencias/CT-RF116_Configuracoes_Dias_Ausencia_Vazio/README.md) |
 | [CT-RF127](Cenario_Teste/CT-RF127_Configuracoes_Dias_Ausencia_Texto.md) | Confirmar a regra de vazio com o produto e repetir a digitação e a colagem de texto, conferindo também a recarga. A rejeição da digitação de letras foi observada. A regra para o campo vazio permanece pendente no CT-RF116. A persistência de zero nesta gravação não foi verificada após recarga. | [Jam — PED-18 — Dias de ausência com texto](https://jam.dev/c/c578ed7a-c11c-4cef-8a6c-84d0244f21a5) e [Evidências](Evidencias/CT-RF127_Configuracoes_Dias_Ausencia_Texto/README.md) |
 
-A contagem de 47 defeitos registrados considera os itens do resumo de bugs. BUG-011–BUG-047 estão em triagem. Os pontos desta tabela aguardam confirmação antes de receber um registro de defeito.
+A contagem de 48 defeitos registrados considera os itens do resumo de bugs. BUG-011–BUG-048 estão em triagem. Os pontos desta tabela aguardam confirmação antes de receber um registro de defeito.
 
 
 **Exclusão de exercício:** CT-RF23 está aprovado no trecho consultado, com remoção e total 11 para 10; não gerou defeito adicional. Persistência e efeitos sobre vínculos permanecem como verificações complementares.

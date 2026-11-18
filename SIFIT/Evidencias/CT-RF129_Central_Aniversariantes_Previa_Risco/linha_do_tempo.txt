@@ -1,0 +1,22 @@
+CT-RF129 — Abrir Aniversariantes e conferir a prévia da automação
+Fonte: https://jam.dev/c/c66d4d01-aee2-4037-a8fd-858da21a0a14
+Gravação: 16/11/2026, 21:41:32 BRT; duração: 20,88 s.
+Revisão documental: 17/11/2026.
+Página: https://sifit.centrion.com.br/inteligencia-automacao
+Foco deste caso: Abrir a configuração de Aniversariantes e apresentar uma prévia coerente com a automação selecionada.
+
+Cronologia (ações e eventos capturados no Jam):
+0:00–0:04  Abre Configurar no cartão Aniversariantes e confere o título.
+0:06–0:13  Rola até critérios e prévia. O relatório de exemplo apresenta indicadores de risco de evasão.
+0:18–0:20  Cancela e volta à Central. O cartão segue inativo.
+
+Rede do conjunto gravado (eventos relevantes ao caso):
+O Jam registrou Configurar às 0:03,41 e Cancelar às 0:18,18. Não houve requisições capturadas.
+
+Quadros consultados (reprodução do Jam):
+- Painel aberto com o título Aniversariantes.
+- Prévia de risco exibida no painel Aniversariantes.
+
+Observações e verificações futuras:
+- A divergência foi observada na prévia do painel. O envio real, o conteúdo recebido e a persistência de alterações não foram exercitados.
+- Corrigir o conteúdo da prévia e retestar separadamente Aniversariantes e Risco de Evasão.

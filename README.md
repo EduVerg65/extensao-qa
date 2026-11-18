@@ -2,24 +2,24 @@
 
 Repositório de documentação de QA manual do **SIFIT**, sistema de gestão de academias. Reúne requisitos, plano, cenários BDD, resultados, defeitos e evidências com links do Jam.
 
-**Atualização documental:** 17/11/2026. Integrados CT-RF128 e RF128 para Inteligência e Automação. A revisão utiliza gravações e eventos do Jam.
+**Atualização documental:** 17/11/2026. Integrados CT-RF128–CT-RF129 e RF128–RF129 para Inteligência e Automação. A revisão utiliza gravações e eventos do Jam.
 
 ## 📊 Situação consolidada
 
 | Cenários documentados | Aprovados | Reprovados | A validar | Defeitos registrados | Casos com reteste corretivo pendente |
 | :---: | :---: | :---: | :---: | :---: | :---: |
-| 124 | 53 | 51 | 20 | 47 (10 abertos + 37 em triagem) | 51 |
+| 125 | 53 | 52 | 20 | 48 (10 abertos + 38 em triagem) | 52 |
 
-As classificações se baseiam nas fontes indicadas em cada cenário. CT-RF09/10 compartilham BUG-005 e CT-RF53–CT-RF56 compartilham BUG-023. As 51 reprovações correspondem a 47 defeitos registrados. BUG-011–BUG-047 aguardam triagem.
+As classificações se baseiam nas fontes indicadas em cada cenário. CT-RF09/10 compartilham BUG-005 e CT-RF53–CT-RF56 compartilham BUG-023. As 52 reprovações correspondem a 48 defeitos registrados. BUG-011–BUG-048 aguardam triagem.
 
 ## 📚 Documentos do projeto
 
 | Documento | Conteúdo |
 | --- | --- |
-| [Análise de requisitos](SIFIT/Analise%20de%20requisitos.md) | RF01–RF35, RF38–RF62 e RF65–RF128, critérios de aceitação, dúvidas de regra e rastreabilidade. |
+| [Análise de requisitos](SIFIT/Analise%20de%20requisitos.md) | RF01–RF35, RF38–RF62 e RF65–RF129, critérios de aceitação, dúvidas de regra e rastreabilidade. |
 | [Plano de testes](SIFIT/Plano%20de%20testes.md) | Escopo, ambientes, preparação, critérios, regressão e retestes. |
-| [Índice dos cenários](SIFIT/Cenario_Teste/README.md) | 124 cenários com pré-condições, BDD, passos, esperado, obtido e encaminhamento. |
-| [Relatório de bugs](SIFIT/Relatorio-de-Bugs.md) | BUG-001–BUG-047: reprodução, impacto, evidências, severidade/prioridade propostas e reteste. |
+| [Índice dos cenários](SIFIT/Cenario_Teste/README.md) | 125 cenários com pré-condições, BDD, passos, esperado, obtido e encaminhamento. |
+| [Relatório de bugs](SIFIT/Relatorio-de-Bugs.md) | BUG-001–BUG-048: reprodução, impacto, evidências, severidade/prioridade propostas e reteste. |
 | [Relatório dos testes](SIFIT/Relatorio%20dos%20testes.md) | Resultados consolidados, cobertura, limites e pendências. |
 | [Índice das evidências](SIFIT/Evidencias/README.md) | Jam por cenário e arquivos locais dos novos casos. |
 
@@ -157,6 +157,7 @@ extensao-qa/
 | [CT-RF126](SIFIT/Cenario_Teste/CT-RF126_Configuracoes_Dias_Ausencia_Negativo.md) | Bloquear número negativo no campo de dias de ausência | Reprovado nas evidências | [BUG-047](SIFIT/Relatorio-de-Bugs.md#bug-047), em triagem | [Jam — PED-17 — Dias de ausência negativos](https://jam.dev/c/d5786f67-6e5f-44f5-bbba-fbd763a88740) |
 | [CT-RF127](SIFIT/Cenario_Teste/CT-RF127_Configuracoes_Dias_Ausencia_Texto.md) | Validar letras no campo de dias de ausência | A validar — regra ou contexto pendente | — | [Jam — PED-18 — Dias de ausência com texto](https://jam.dev/c/c578ed7a-c11c-4cef-8a6c-84d0244f21a5) |
 | [CT-RF128](SIFIT/Cenario_Teste/CT-RF128_Central_Configuracao_Risco_Evasao_Cancelar.md) | Abrir e fechar a configuração de Risco de Evasão | Aprovado conforme a gravação | — | [Jam — PED-06 — Configuração de Risco de Evasão](https://jam.dev/c/d49b8ffc-a6e2-4e37-a618-c280b5e807db) |
+| [CT-RF129](SIFIT/Cenario_Teste/CT-RF129_Central_Aniversariantes_Previa_Risco.md) | Abrir Aniversariantes e conferir a prévia da automação | Reprovado nas evidências | [BUG-048](SIFIT/Relatorio-de-Bugs.md#bug-048), em triagem | [Jam — PED-07 — Configuração de Aniversariantes](https://jam.dev/c/c66d4d01-aee2-4037-a8fd-858da21a0a14) |
 
 ## 🔬 Como este projeto funciona
 
