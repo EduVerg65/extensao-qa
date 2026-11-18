@@ -1,0 +1,23 @@
+CT-RF130 — Verificar recursos marcados como Em desenvolvimento
+Fonte: https://jam.dev/c/0a7ae8fb-980d-4df2-8ef8-de78d6b11b8f
+Gravação: 16/11/2026, 21:45:30 BRT; duração: 30,42 s.
+Revisão documental: 17/11/2026.
+Página: https://sifit.centrion.com.br/inteligencia-automacao
+Foco deste caso: Identificar visualmente os recursos em desenvolvimento e impedir que os cartões iniciem um fluxo ainda indisponível.
+
+Cronologia (ações e eventos capturados no Jam):
+0:04–0:10  Confere e clica em Avaliações vencendo.
+0:11–0:16  Interage com Frequência em queda.
+0:19–0:22  Interage com Financeiro diário.
+0:25–0:29  Interage com Cobranças automáticas. Os cartões permanecem na mesma tela.
+
+Rede do conjunto gravado (eventos relevantes ao caso):
+Não houve requisição de rede capturada durante os cliques nos quatro cartões.
+
+Quadros consultados (reprodução do Jam):
+- Quatro cartões identificados como Em desenvolvimento.
+- Cartões permanecem sem painel aberto após os cliques.
+
+Observações e verificações futuras:
+- A gravação cobre interações com mouse nos cartões nessa versão. A navegação por teclado e o comportamento após a futura liberação dos recursos não foram verificados.
+- Usar como regressão do estado indisponível e conferir a navegação por teclado em execução complementar.

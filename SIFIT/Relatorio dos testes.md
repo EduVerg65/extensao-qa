@@ -1,10 +1,10 @@
 # 📊 Relatório de Testes — SIFIT
 
-**Escopo:** 125 casos documentados (CT-RF01–CT-RF35, CT-RF38–CT-RF62 e CT-RF65–CT-RF129) — autenticação, recuperação, perfil, Clientes, financeiro, página inicial e dashboard, modalidades / tema de SifitBox, Categorias Crossfit, Avaliações, Exercícios, Grupos Musculares, Objetivos de Treino cadastro de categorias com código automático, SifitBox – Turmas, Pagar.me, Configurações, Despesas Fixas, Relatórios, Grupos (treino), Fichas de Anamnese, gestão de Modelos de Anamnese, gestão de Categorias de Anamnese, edição de Perguntas Anamnese, validações/funções/exclusão/busca de Colaboradores, Prospecção, Bandeiras de Cartão, Contas a Pagar, Modelos de Contrato, Planos, Tipos de Pagamento e Modelos de Ficha.
+**Escopo:** 126 casos documentados (CT-RF01–CT-RF35, CT-RF38–CT-RF62 e CT-RF65–CT-RF130) — autenticação, recuperação, perfil, Clientes, financeiro, página inicial e dashboard, modalidades / tema de SifitBox, Categorias Crossfit, Avaliações, Exercícios, Grupos Musculares, Objetivos de Treino cadastro de categorias com código automático, SifitBox – Turmas, Pagar.me, Configurações, Despesas Fixas, Relatórios, Grupos (treino), Fichas de Anamnese, gestão de Modelos de Anamnese, gestão de Categorias de Anamnese, edição de Perguntas Anamnese, validações/funções/exclusão/busca de Colaboradores, Prospecção, Bandeiras de Cartão, Contas a Pagar, Modelos de Contrato, Planos, Tipos de Pagamento e Modelos de Ficha.
 
-**Datas das gravações do Jam:** CT-RF01 em 23/10/2026; CT-RF02_ERRO em 22/10/2026 às 21:45 BRT; CT-RF03 não confirmada; CT-RF04_loginComSucesso em 13/11/2026; CT-RF05–CT-RF20 em 14/11/2026; CT-RF21 em 15/11/2026 às 15:07:51,265 BRT; CT-RF22–28 em 15/11/2026 às 15:25, 15:40, 15:38, 15:35, 16:11, 16:08 e 16:07 BRT; CT-RF29–33 em 15/11/2026 às 15h56 BRT (uma única gravação); CT-RF34 em 15/11/2026 às 17:23 BRT; CT-RF35 em 15/11/2026 às 18:13 BRT; CT-RF38 em 15/11/2026 às 18:41 BRT; CT-RF39–41 em 15/11/2026 às 18:51 BRT (uma única gravação); CT-RF42–45 às 19:06, CT-RF46–49 às 19:07 e CT-RF50–56 às 19:09 BRT (uma gravação por grupo); CT-RF57 e CT-RF58 em 15/11/2026 às 21h03 BRT (mesma gravação); CT-RF59 em 15/11/2026 às 22h07 BRT; CT-RF60 em 15/11/2026 às 23h34 BRT; CT-RF61 em 16/11/2026 às 15h24 BRT; CT-RF62 em 16/11/2026 às 15h57 BRT. CT-RF74–CT-RF84: 16/11/2026 conforme os resumos, sem horário informado. CT-RF85–90 às 21:52, CT-RF91–95 às 21:58, CT-RF96–98 às 21:55 e CT-RF99–103 às 21:54 e CT-RF104–108 às 22:03 BRT em 15/11/2026 (uma gravação por grupo). CT-RF109–CT-RF115 em 16/11/2026 entre 22:19:51 e 22:29:07 BRT. CT-RF116–CT-RF121 amplia a cobertura de Configurações e Modelos de Ficha com gravações de 16/11/2026 entre 22:03:53 e 22:18:52 BRT. CT-RF122–CT-RF127 cobre Inteligência e Configurações com gravações de 16/11/2026 entre 21:50:51 e 22:02:16 BRT. CT-RF128–CT-RF129 cobre Inteligência e Automação com gravações de 16/11/2026 entre 21:40:31 e 21:41:32 BRT.
+**Datas das gravações do Jam:** CT-RF01 em 23/10/2026; CT-RF02_ERRO em 22/10/2026 às 21:45 BRT; CT-RF03 não confirmada; CT-RF04_loginComSucesso em 13/11/2026; CT-RF05–CT-RF20 em 14/11/2026; CT-RF21 em 15/11/2026 às 15:07:51,265 BRT; CT-RF22–28 em 15/11/2026 às 15:25, 15:40, 15:38, 15:35, 16:11, 16:08 e 16:07 BRT; CT-RF29–33 em 15/11/2026 às 15h56 BRT (uma única gravação); CT-RF34 em 15/11/2026 às 17:23 BRT; CT-RF35 em 15/11/2026 às 18:13 BRT; CT-RF38 em 15/11/2026 às 18:41 BRT; CT-RF39–41 em 15/11/2026 às 18:51 BRT (uma única gravação); CT-RF42–45 às 19:06, CT-RF46–49 às 19:07 e CT-RF50–56 às 19:09 BRT (uma gravação por grupo); CT-RF57 e CT-RF58 em 15/11/2026 às 21h03 BRT (mesma gravação); CT-RF59 em 15/11/2026 às 22h07 BRT; CT-RF60 em 15/11/2026 às 23h34 BRT; CT-RF61 em 16/11/2026 às 15h24 BRT; CT-RF62 em 16/11/2026 às 15h57 BRT. CT-RF74–CT-RF84: 16/11/2026 conforme os resumos, sem horário informado. CT-RF85–90 às 21:52, CT-RF91–95 às 21:58, CT-RF96–98 às 21:55 e CT-RF99–103 às 21:54 e CT-RF104–108 às 22:03 BRT em 15/11/2026 (uma gravação por grupo). CT-RF109–CT-RF115 em 16/11/2026 entre 22:19:51 e 22:29:07 BRT. CT-RF116–CT-RF121 amplia a cobertura de Configurações e Modelos de Ficha com gravações de 16/11/2026 entre 22:03:53 e 22:18:52 BRT. CT-RF122–CT-RF127 cobre Inteligência e Configurações com gravações de 16/11/2026 entre 21:50:51 e 22:02:16 BRT. CT-RF128–CT-RF130 cobre Inteligência e Automação com gravações de 16/11/2026 entre 21:40:31 e 21:45:30 BRT.
 
-**Data da revisão documental:** 17/11/2026, com integração de CT-RF128–CT-RF129 (Inteligência e Automação).
+**Data da revisão documental:** 17/11/2026, com integração de CT-RF128–CT-RF130 (Inteligência e Automação).
 
 **Origem do resultado:** análise de evidências fornecidas; sem nova execução no sistema nesta revisão.
 
@@ -36,11 +36,11 @@ CT-RF116–CT-RF121 amplia a cobertura de Configurações e Modelos de Ficha com
 
 CT-RF122–CT-RF127 cobre Inteligência e Configurações com gravações de 16/11/2026 entre 21:50:51 e 22:02:16 BRT. Casos aprovados: 3. Reprovados: 2. A validar: 1.
 
-CT-RF128–CT-RF129 cobre Inteligência e Automação com gravações de 16/11/2026 entre 21:40:31 e 21:41:32 BRT. Casos aprovados: 1. Reprovados: 1. A validar: 0.
+CT-RF128–CT-RF130 cobre Inteligência e Automação com gravações de 16/11/2026 entre 21:40:31 e 21:45:30 BRT. Casos aprovados: 2. Reprovados: 1. A validar: 0.
 
 | Casos documentados | Aprovados | Reprovados | A validar | Defeitos registrados | Casos com reteste corretivo pendente |
 | :---: | :---: | :---: | :---: | :---: | :---: |
-| 125 | 53 | 52 | 20 | 48 (10 abertos + 38 em triagem) | 52 |
+| 126 | 54 | 52 | 20 | 48 (10 abertos + 38 em triagem) | 52 |
 
 Os 48 retestes incluem CT-RF22/24/26/27/28/29/30/35/41/45/51/53/54/55/56/57/58/59/62/65/66/67/68/69/70/71/73/81/82/83/89/92/98/102/105/107, sujeitos à confirmação funcional e técnica. As contagens representam os casos documentados com base nas fontes indicadas, sem novas execuções nesta revisão. As nove variações planejadas para o reteste do CT-RF03 não foram executadas e não são contabilizadas como testes adicionais realizados.
 
@@ -172,6 +172,7 @@ Os 48 retestes incluem CT-RF22/24/26/27/28/29/30/35/41/45/51/53/54/55/56/57/58/5
 | [CT-RF127](Cenario_Teste/CT-RF127_Configuracoes_Dias_Ausencia_Texto.md) | [RF127](Analise%20de%20requisitos.md#rf127) | O campo permanece numérico. Se ficar vazio, aplica a regra de obrigatoriedade ou o padrão explícito aprovado pelo produto. | Letras não apareceram no campo. O salvamento com campo vazio enviou 0 e retornou HTTP 200. | A validar — regra ou contexto pendente | Sem defeito confirmado |
 | [CT-RF128](Cenario_Teste/CT-RF128_Central_Configuracao_Risco_Evasao_Cancelar.md) | [RF128](Analise%20de%20requisitos.md#rf128) | Configurar abre o painel correto. Cancelar fecha a configuração e preserva o estado da automação. | Configurar abriu Risco de Evasão e Cancelar fechou o painel. O cartão continuou ativo. | Aprovado conforme a gravação | Nenhum no fluxo avaliado |
 | [CT-RF129](Cenario_Teste/CT-RF129_Central_Aniversariantes_Previa_Risco.md) | [RF129](Analise%20de%20requisitos.md#rf129) | O painel de Aniversariantes abre e a prévia apresenta conteúdo de aniversários, coerente com a automação selecionada. | O painel Aniversariantes abriu corretamente, mas a prévia exibiu dados de risco de evasão. | Reprovado nas evidências | [BUG-048](Relatorio-de-Bugs.md#bug-048), em triagem |
+| [CT-RF130](Cenario_Teste/CT-RF130_Central_Recursos_Em_Desenvolvimento.md) | [RF130](Analise%20de%20requisitos.md#rf130) | Cada recurso apresenta Em desenvolvimento e permanece indisponível para configurar ou executar. | Os quatro recursos exibiram Em desenvolvimento. Os cliques não iniciaram navegação, configuração ou execução. | Aprovado conforme a gravação | Nenhum no fluxo avaliado |
 
 ---
 
@@ -543,14 +544,14 @@ O domínio do CT-RF02_ERRO é diferente do domínio `sifitalfa.centrion.com.br` 
 | Dados e permissões | Conta com permissão para as operações. Preparar resultados em períodos distintos e automação de teste autorizada. Em Configurações, usar credenciais fictícias e registrar o valor inicial dos campos. |
 | Preparação | Registrar o estado inicial, os controles usados e as respostas relevantes. Excluir dados de integração e de autenticação dos recortes e da documentação. |
 
-### Inteligência e Automação (CT-RF128–CT-RF129)
+### Inteligência e Automação (CT-RF128–CT-RF130)
 
 | Item | Definição |
 | --- | --- |
 | Páginas | https://sifit.centrion.com.br/inteligencia-automacao |
 | Backend de referência | https://backendsifit.centrion.com.br |
 | Navegador / sistema / vídeo | Chrome 157.0.8103.79 / Windows 10 (x86) / 1918 × 998. |
-| Gravações | 16/11/2026 entre 21:40:31 e 21:41:32 BRT. |
+| Gravações | 16/11/2026 entre 21:40:31 e 21:45:30 BRT. |
 | Dados e permissões | Conta com acesso à Central e a Resultados IA. Usar automações de teste, estados iniciais conhecidos e resultados em períodos distintos. |
 | Preparação | Registrar o estado inicial, os controles usados e as respostas relevantes. Excluir dados de integração e de autenticação dos recortes e da documentação. |
 
@@ -634,6 +635,7 @@ O domínio do CT-RF02_ERRO é diferente do domínio `sifitalfa.centrion.com.br` 
 | [Jam — PED-18 — Dias de ausência com texto](https://jam.dev/c/c578ed7a-c11c-4cef-8a6c-84d0244f21a5) e [Evidências](Evidencias/CT-RF127_Configuracoes_Dias_Ausencia_Texto/README.md) | CT-RF127: Letras não apareceram no campo. O salvamento com campo vazio enviou 0 e retornou HTTP 200. |
 | [Jam — PED-06 — Configuração de Risco de Evasão](https://jam.dev/c/d49b8ffc-a6e2-4e37-a618-c280b5e807db) e [Evidências](Evidencias/CT-RF128_Central_Configuracao_Risco_Evasao_Cancelar/README.md) | CT-RF128: Configurar abriu Risco de Evasão e Cancelar fechou o painel. O cartão continuou ativo. |
 | [Jam — PED-07 — Configuração de Aniversariantes](https://jam.dev/c/c66d4d01-aee2-4037-a8fd-858da21a0a14) e [Evidências](Evidencias/CT-RF129_Central_Aniversariantes_Previa_Risco/README.md) | CT-RF129: O painel Aniversariantes abriu corretamente, mas a prévia exibiu dados de risco de evasão. |
+| [Jam — PED-08 — Recursos em desenvolvimento](https://jam.dev/c/0a7ae8fb-980d-4df2-8ef8-de78d6b11b8f) e [Evidências](Evidencias/CT-RF130_Central_Recursos_Em_Desenvolvimento/README.md) | CT-RF130: Os quatro recursos exibiram Em desenvolvimento. Os cliques não iniciaram navegação, configuração ou execução. |
 
 A mensagem de credenciais incorretas já aparece no início do vídeo do Jam; não foi considerada uma resposta ao clique em "Esqueci minha senha". A ausência de requisição, isoladamente, não caracteriza defeito se a interface abrir um formulário local. Aqui, o resultado reprovado decorre de o fluxo não abrir.
 
@@ -1019,14 +1021,15 @@ Na inclusão dos CT-RF116 a CT-RF121, o consolidado era de 117 casos documentado
 
 Na inclusão dos CT-RF122 a CT-RF127, o consolidado era de 123 casos documentados: 52 aprovados, 51 reprovados e 20 a validar. 47 defeitos registrados (10 abertos e 37 em triagem) e 51 casos com reteste corretivo pendente.
 
-## Inclusão de 17/11/2026 — Inteligência e Automação (CT-RF128–CT-RF129)
+## Inclusão de 17/11/2026 — Inteligência e Automação (CT-RF128–CT-RF130)
 
 | Caso | Situação | Encaminhamento |
 | --- | --- | --- |
 | [CT-RF128](Cenario_Teste/CT-RF128_Central_Configuracao_Risco_Evasao_Cancelar.md) | Aprovado conforme a gravação | Usar como regressão de abertura e fechamento. Em um caso complementar, alterar uma opção de teste e conferir o descarte após cancelar. |
 | [CT-RF129](Cenario_Teste/CT-RF129_Central_Aniversariantes_Previa_Risco.md) | Reprovado nas evidências | Corrigir o conteúdo da prévia e retestar separadamente Aniversariantes e Risco de Evasão. |
+| [CT-RF130](Cenario_Teste/CT-RF130_Central_Recursos_Em_Desenvolvimento.md) | Aprovado conforme a gravação | Usar como regressão do estado indisponível e conferir a navegação por teclado em execução complementar. |
 
-125 casos documentados: 53 aprovados, 52 reprovados e 20 a validar. 48 defeitos registrados (10 abertos e 38 em triagem) e 52 casos com reteste corretivo pendente.
+126 casos documentados: 54 aprovados, 52 reprovados e 20 a validar. 48 defeitos registrados (10 abertos e 38 em triagem) e 52 casos com reteste corretivo pendente.
 
 ---
 

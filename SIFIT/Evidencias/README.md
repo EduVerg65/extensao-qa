@@ -173,11 +173,12 @@ CT-RF116–CT-RF121 amplia a cobertura de Configurações e Modelos de Ficha com
 
 CT-RF122–CT-RF127 cobre Inteligência e Configurações com gravações de 16/11/2026 entre 21:50:51 e 22:02:16 BRT. As pastas reúnem origem, cronologia e recortes identificados com SHA-256.
 
-## Inclusão de 17/11/2026 — Inteligência e Automação (CT-RF128–CT-RF129)
+## Inclusão de 17/11/2026 — Inteligência e Automação (CT-RF128–CT-RF130)
 
 | Caso | Evidência | Resultado |
 | --- | --- | --- |
 | [CT-RF128](../Cenario_Teste/CT-RF128_Central_Configuracao_Risco_Evasao_Cancelar.md) | [Abrir e fechar a configuração de Risco de Evasão](CT-RF128_Central_Configuracao_Risco_Evasao_Cancelar/README.md) | Aprovado conforme a gravação |
 | [CT-RF129](../Cenario_Teste/CT-RF129_Central_Aniversariantes_Previa_Risco.md) | [Abrir Aniversariantes e conferir a prévia da automação](CT-RF129_Central_Aniversariantes_Previa_Risco/README.md) | Reprovado nas evidências |
+| [CT-RF130](../Cenario_Teste/CT-RF130_Central_Recursos_Em_Desenvolvimento.md) | [Verificar recursos marcados como Em desenvolvimento](CT-RF130_Central_Recursos_Em_Desenvolvimento/README.md) | Aprovado conforme a gravação |
 
-CT-RF128–CT-RF129 cobre Inteligência e Automação com gravações de 16/11/2026 entre 21:40:31 e 21:41:32 BRT. As pastas reúnem origem, cronologia e recortes identificados com SHA-256.
+CT-RF128–CT-RF130 cobre Inteligência e Automação com gravações de 16/11/2026 entre 21:40:31 e 21:45:30 BRT. As pastas reúnem origem, cronologia e recortes identificados com SHA-256.
