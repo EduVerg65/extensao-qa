@@ -1,0 +1,24 @@
+CT-RF114 — Limpar os filtros de Modelos de Ficha
+Fonte: https://jam.dev/c/297eec2b-7be4-498b-a0e6-e962ed93cc00
+Gravação: 16/11/2026, 22:29:07 BRT; duração: 14,95 s.
+Revisão documental: 17/11/2026.
+Página: https://sifit.centrion.com.br/fichas-treino-modelo
+Foco deste caso: remoção manual dos valores dos três filtros (0:00 a 0:11).
+
+Cronologia (ações e eventos capturados no Jam):
+0:00–0:04  Código contém 989898. Título e Criador contêm PEDRO-01.
+0:05–0:09  Apaga o conteúdo de Criador e Título.
+0:10–0:11  Apaga o Código e confere os três campos vazios.
+
+Rede do conjunto gravado (2 entradas capturadas no domínio backendsifit.centrion.com.br):
+Nenhuma requisição foi capturada durante a limpeza dos campos.
+0:11 e 0:13  Os dois cliques em Buscar após a limpeza geraram GET /api/fichas-modelo/1 (HTTP 200, 2 B cada), ambos com resposta [].
+
+Quadros consultados (reprodução do Jam):
+0:00–0:04  A tela mostra Código 989898, Título PEDRO-01 e Criador PEDRO-01.
+0:05–0:09  O usuário limpa Criador e Título.
+0:10–0:11  Código também é apagado. Os três campos exibem suas indicações antes da nova busca.
+
+Observações e verificações futuras:
+- Este cenário cobre a limpeza dos campos. A recuperação dos resultados em uma base populada faz parte do cenário de nova busca.
+- Usar como regressão de interface e conferir o uso dos campos com teclado e mouse.

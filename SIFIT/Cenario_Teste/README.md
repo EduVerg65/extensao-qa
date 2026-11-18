@@ -1,6 +1,6 @@
 # 🧪 Índice dos cenários de teste — SIFIT
 
-**Atualização:** 17/11/2026. 109 casos documentados: 44 aprovados, 48 reprovados e 17 a validar; 44 defeitos registrados (10 abertos e 34 em triagem) e 48 casos com reteste corretivo pendente. Escopo: CT-RF01–CT-RF35, CT-RF38–CT-RF62 e CT-RF65–CT-RF113.
+**Atualização:** 17/11/2026. 110 casos documentados: 45 aprovados, 48 reprovados e 17 a validar; 44 defeitos registrados (10 abertos e 34 em triagem) e 48 casos com reteste corretivo pendente. Escopo: CT-RF01–CT-RF35, CT-RF38–CT-RF62 e CT-RF65–CT-RF114.
 
 | Caso | Funcionalidade | Resultado | Defeito | Jam |
 | --- | --- | --- | --- | --- |
@@ -281,7 +281,8 @@ Os cinco casos têm como fonte uma única gravação. Os resultados são documen
 | [CT-RF111](CT-RF111_Busca_Modelo_Ficha_Codigo_Inexistente.md) | Buscar modelo de ficha por código inexistente | A validar — regra ou contexto pendente | — | [Jam — PED-27](https://jam.dev/c/c1aecaa8-39c7-49b0-89af-9de47a68ba40) |
 | [CT-RF112](CT-RF112_Busca_Modelo_Ficha_Titulo_Inexistente.md) | Buscar modelo de ficha por título inexistente | A validar — regra ou contexto pendente | — | [Jam — PED-28](https://jam.dev/c/0c385452-2aeb-427f-8159-79549fe7371d) |
 | [CT-RF113](CT-RF113_Busca_Modelo_Ficha_Filtros_Combinados.md) | Buscar modelos de ficha com filtros combinados | A validar — regra ou contexto pendente | — | [Jam — PED-29](https://jam.dev/c/006f9722-e643-4b65-904a-25471a7b90ed) |
+| [CT-RF114](CT-RF114_Limpeza_Filtros_Modelos_Ficha.md) | Limpar os filtros de Modelos de Ficha | Aprovado conforme a gravação | — | [Jam — PED-30](https://jam.dev/c/297eec2b-7be4-498b-a0e6-e962ed93cc00) |
 
-A revisão de Modelos de Ficha inclui CT-RF109–CT-RF113 com base em 5 gravações do Jam de 16/11/2026. A revisão documental foi feita em 17/11/2026.
+A revisão de Modelos de Ficha inclui CT-RF109–CT-RF114 com base em 6 gravações do Jam de 16/11/2026. A revisão documental foi feita em 17/11/2026.
 
 [← Início](../../README.md) · [Requisitos](../Analise%20de%20requisitos.md) · [Plano](../Plano%20de%20testes.md) · [Evidências](../Evidencias/README.md)
