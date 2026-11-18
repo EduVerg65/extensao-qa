@@ -1,0 +1,23 @@
+CT-RF147 — Salvar uma Cor Principal hexadecimal válida
+Fonte: Jam 3 — Persistência da Cor Principal. Gravação restrita por conter dados de integração.
+Gravação: 16/11/2026, 23:25:27 BRT. Duração: 25,55 s.
+Revisão documental: 17/11/2026.
+Página: https://sifit.centrion.com.br/configuracoes
+Foco deste caso: Confirmar que uma Cor Principal em formato hexadecimal válido é persistida e apresentada ao reabrir Design.
+
+Cronologia (ações e eventos capturados no Jam):
+0:00–0:16  Edita Cor Principal de #FFCE00 para #663399.
+0:16,99  Aciona Salvar Configurações.
+0:20–0:25  Recarrega e volta a Design. O novo código e a amostra roxa aparecem.
+
+Rede do conjunto gravado (eventos relevantes ao caso):
+0:17,00  POST /api/configuracoes/alterar/1 com cor_principal: #663399 (HTTP 200, verifica_erro: false).
+0:20,69  GET /api/configuracoes/1 (HTTP 200), com cor_principal: #663399 e cor_secundaria: #000.
+
+Quadros consultados (reprodução do Jam):
+- Cor Principal original antes da edição.
+- Cor Principal atualizada após reabrir a aba Design.
+
+Observações e verificações futuras:
+- O resultado cobre a Cor Principal e a amostra da aba Design. A aplicação da cor nos ambientes online não foi verificada.
+- Usar como regressão para códigos válidos e verificar a aplicação da cor nas telas que consomem o tema.
