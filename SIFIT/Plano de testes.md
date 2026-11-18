@@ -1,10 +1,10 @@
 # 🧪 Plano de Testes — SIFIT
 
-**Atualização:** 17/11/2026 — 145 cenários documentados (CT-RF01–CT-RF35, CT-RF38–CT-RF62 e CT-RF65–CT-RF149), com inclusão de CT-RF42 a CT-RF56 / Pagar.me, Configurações, Despesas Fixas e Relatórios, CT-RF57 e CT-RF58 / Grupos (treino), CT-RF59 / Fichas de Anamnese, CT-RF60 / Modelos de Anamnese, CT-RF61 / Categorias de Anamnese, CT-RF62 / Perguntas Anamnese, CT-RF65 a CT-RF73 / Colaboradores e CT-RF74 a CT-RF108 / Prospecção, Bandeiras de Cartão, Contas a Pagar, Modelos de Contrato, Planos e Tipos de Pagamento, além de Modelos de Ficha (CT-RF109–CT-RF115) e Configurações e Modelos de Ficha (CT-RF116–CT-RF121) e Inteligência e Configurações (CT-RF122–CT-RF127) e Inteligência e Automação (CT-RF128–CT-RF133) e ampliação da cobertura da Central de Automações (CT-RF134–CT-RF138) e integração de WhatsApp (CT-RF139–CT-RF144) e novos cenários de Configurações (CT-RF145–CT-RF149). BUG-011–BUG-052 em triagem.
+**Atualização:** 17/11/2026 — 146 cenários documentados (CT-RF01–CT-RF35, CT-RF38–CT-RF62 e CT-RF65–CT-RF150), com inclusão de CT-RF42 a CT-RF56 / Pagar.me, Configurações, Despesas Fixas e Relatórios, CT-RF57 e CT-RF58 / Grupos (treino), CT-RF59 / Fichas de Anamnese, CT-RF60 / Modelos de Anamnese, CT-RF61 / Categorias de Anamnese, CT-RF62 / Perguntas Anamnese, CT-RF65 a CT-RF73 / Colaboradores e CT-RF74 a CT-RF108 / Prospecção, Bandeiras de Cartão, Contas a Pagar, Modelos de Contrato, Planos e Tipos de Pagamento, além de Modelos de Ficha (CT-RF109–CT-RF115) e Configurações e Modelos de Ficha (CT-RF116–CT-RF121) e Inteligência e Configurações (CT-RF122–CT-RF127) e Inteligência e Automação (CT-RF128–CT-RF133) e ampliação da cobertura da Central de Automações (CT-RF134–CT-RF138) e integração de WhatsApp (CT-RF139–CT-RF144) e novos cenários de Configurações (CT-RF145–CT-RF150). BUG-011–BUG-052 em triagem.
 
 **Padronização documental:** 13/11/2026, com resultados e pendências preservados.
 
-**Escopo:** 145 casos (CT-RF01–CT-RF35, CT-RF38–CT-RF62 e CT-RF65–CT-RF149) — autenticação, recuperação de senha, perfil, Clientes, financeiro, página inicial e dashboard, modalidades / tema de SifitBox, Categorias Crossfit, Avaliações, Exercícios, Grupos Musculares, Objetivos de Treino, Grupos (treino), Fichas de Anamnese, gestão de Modelos de Anamnese, gestão de Categorias de Anamnese, edição de Perguntas Anamnese, validações/funções/exclusão/busca de Colaboradores, Prospecção, Bandeiras de Cartão, Contas a Pagar, Modelos de Contrato, Planos, Tipos de Pagamento, Modelos de Ficha, Central de Automações, Integrações de WhatsApp e Configurações de Aniversário, Pagamento e Design.
+**Escopo:** 146 casos (CT-RF01–CT-RF35, CT-RF38–CT-RF62 e CT-RF65–CT-RF150) — autenticação, recuperação de senha, perfil, Clientes, financeiro, página inicial e dashboard, modalidades / tema de SifitBox, Categorias Crossfit, Avaliações, Exercícios, Grupos Musculares, Objetivos de Treino, Grupos (treino), Fichas de Anamnese, gestão de Modelos de Anamnese, gestão de Categorias de Anamnese, edição de Perguntas Anamnese, validações/funções/exclusão/busca de Colaboradores, Prospecção, Bandeiras de Cartão, Contas a Pagar, Modelos de Contrato, Planos, Tipos de Pagamento, Modelos de Ficha, Central de Automações, Integrações de WhatsApp e Configurações de Aniversário, Pagamento e Design.
 
 ## 📌 1. Identificação
 
@@ -14,13 +14,13 @@
 | Tipo de teste | Funcional manual, com análise exploratória e de evidências. |
 | Versão avaliada | Não confirmada; registrar por caso no reteste. |
 | Funcionalidades | Autenticação positiva e negativa, recuperação, Perfil, filtros de Clientes, financeiro, período, personais, modalidades / tema, Categorias Crossfit, Avaliações e Exercícios. |
-| Situação | 145 casos documentados: 67 aprovados, 57 reprovados e 21 a validar. 52 defeitos registrados (10 abertos e 42 em triagem) e 57 casos com reteste corretivo pendente. |
+| Situação | 146 casos documentados: 68 aprovados, 57 reprovados e 21 a validar. 52 defeitos registrados (10 abertos e 42 em triagem) e 57 casos com reteste corretivo pendente. |
 
 ---
 
 ## 🎯 2. Objetivo
 
-Verificar os fluxos dos 145 cenários documentados, comparando os critérios de aceitação com as evidências de autenticação, recuperação, perfil, Clientes, financeiro, página inicial, SifitBox, Categorias Crossfit, Avaliações, Exercícios, Grupos Musculares, Fichas de Anamnese, Colaboradores, Prospecção, Bandeiras de Cartão, Contas a Pagar, Modelos de Contrato, Planos, Tipos de Pagamento, Modelos de Ficha, Central de Automações, Integrações de WhatsApp e Configurações de Aniversário, Pagamento e Design. Manter rastreabilidade entre requisitos, casos, Jam, vídeos, resultados e defeitos, distinguindo revisões documentais de novas execuções.
+Verificar os fluxos dos 146 cenários documentados, comparando os critérios de aceitação com as evidências de autenticação, recuperação, perfil, Clientes, financeiro, página inicial, SifitBox, Categorias Crossfit, Avaliações, Exercícios, Grupos Musculares, Fichas de Anamnese, Colaboradores, Prospecção, Bandeiras de Cartão, Contas a Pagar, Modelos de Contrato, Planos, Tipos de Pagamento, Modelos de Ficha, Central de Automações, Integrações de WhatsApp e Configurações de Aniversário, Pagamento e Design. Manter rastreabilidade entre requisitos, casos, Jam, vídeos, resultados e defeitos, distinguindo revisões documentais de novas execuções.
 
 ---
 
@@ -99,7 +99,7 @@ Integração documental dos arquivos RESUMO.txt fornecidos em `C:\Users\Leonardo
 
 **Configurações / Integrações / WhatsApp — CT-RF139–CT-RF144:** mascarar a API Key no formulário de WhatsApp, validar uma URL da API sem formato de endereço, bloquear o salvamento com Nome da Instância vazio, persistir a opção Ativo da integração de WhatsApp, tratar falha ao conectar WhatsApp via Evolution API, consultar novamente o status da integração de WhatsApp.
 
-**Configurações — CT-RF145–CT-RF149:** salvar mensagens de aniversário para WhatsApp e SMS, persistir a desativação do Pagamento Online, salvar uma Cor Principal hexadecimal válida, rejeitar código hexadecimal inválido na Cor Secundária, informar o limite de tamanho ao rejeitar o logo.
+**Configurações — CT-RF145–CT-RF150:** salvar mensagens de aniversário para WhatsApp e SMS, persistir a desativação do Pagamento Online, salvar uma Cor Principal hexadecimal válida, rejeitar código hexadecimal inválido na Cor Secundária, informar o limite de tamanho ao rejeitar o logo, atualizar a verificação do WhatsApp enquanto aguarda QR Code.
 
 **Limites da cobertura atual:**
 
@@ -505,14 +505,14 @@ Para o reteste, preparar aluno existente selecionável pela busca, personal habi
 | Dados e permissões | Conta autorizada a acessar Configurações e provedor de teste. Preparar dados de integração de teste, estado inicial conhecido e falha controlada para reteste. |
 | Preparação | Registrar os estados do formulário e os retornos relevantes. Manter valores de credenciais e dados de integração fora dos recortes. |
 
-### Configurações — ambiente e preparação (CT-RF145–CT-RF149)
+### Configurações — ambiente e preparação (CT-RF145–CT-RF150)
 
 | Item | Definição |
 | --- | --- |
 | Páginas | https://sifit.centrion.com.br/configuracoes |
 | Backend de referência | https://backendsifit.centrion.com.br |
 | Navegador / sistema / vídeo | Chrome 157.0.8103.79 / Windows 10 (x86) / 1918 × 998. |
-| Gravações | 16/11/2026 entre 23:21:59 e 23:27:58 BRT. |
+| Gravações | 16/11/2026 entre 23:21:59 e 23:36:13 BRT. |
 | Dados e permissões | Conta autorizada a acessar Configurações. Preparar mensagens de teste, valores de referência para Pagamento e Design, imagens de tamanho conhecido e um provedor autorizado para a consulta de status. |
 | Preparação | Registrar valores iniciais e comparar a interface com a consulta posterior. Usar evidências que preservem credenciais e outros dados de integração. |
 
@@ -654,6 +654,7 @@ Para o reteste, preparar aluno existente selecionável pela busca, personal habi
 | [RF147](Analise%20de%20requisitos.md#rf147) | [CT-RF147](Cenario_Teste/CT-RF147_Configuracoes_Design_Salvar_Cor_Principal.md) | Funcional manual / persistência | Aprovado conforme a gravação | Nenhum no fluxo avaliado | Usar como regressão para códigos válidos e verificar a aplicação da cor nas telas que consomem o tema. |
 | [RF148](Analise%20de%20requisitos.md#rf148) | [CT-RF148](Cenario_Teste/CT-RF148_Configuracoes_Design_Validar_Cor_Secundaria.md) | Funcional manual / validação | Reprovado nas evidências | [BUG-051](Relatorio-de-Bugs.md#bug-051), em triagem | Retestar com códigos hexadecimais válidos e inválidos e conferir, após cada tentativa, a cor devolvida pela consulta. |
 | [RF149](Analise%20de%20requisitos.md#rf149) | [CT-RF149](Cenario_Teste/CT-RF149_Configuracoes_Design_Logo_Limite_Tamanho.md) | Funcional manual / validação e feedback | Reprovado nas evidências | [BUG-052](Relatorio-de-Bugs.md#bug-052), em triagem | Retestar com arquivos de tamanho conhecido no entorno do limite e confirmar a mensagem de validação e a preservação do logo salvo na recusa. |
+| [RF150](Analise%20de%20requisitos.md#rf150) | [CT-RF150](Cenario_Teste/CT-RF150_Integracoes_WhatsApp_Atualizar_Status_Aguardando_QR.md) | Funcional manual / consulta e interface | Aprovado conforme a gravação | Nenhum no fluxo avaliado | Usar como regressão da atualização visual e cobrir, com provedor de teste, a mudança de aguardando QR Code para conectado. |
 
 ---
 
@@ -935,13 +936,14 @@ Todas essas variações permanecem planejadas e não são contadas como execuç�
 5. CT-RF143: Retestar com falha controlada e configuração válida de controle, conferindo o contrato da resposta e o estado final apresentado.
 6. CT-RF144: Usar como regressão de consulta e retestar a transição de estado e a atualização visual do resumo com um provedor de teste.
 
-### Configurações — próximos testes (CT-RF145–CT-RF149)
+### Configurações — próximos testes (CT-RF145–CT-RF150)
 
 1. CT-RF145: Usar como regressão da configuração e retestar o disparo em um ambiente de teste com destinatários autorizados.
 2. CT-RF146: Usar como regressão para desativação e confirmar a reativação com nova leitura em reteste.
 3. CT-RF147: Usar como regressão para códigos válidos e verificar a aplicação da cor nas telas que consomem o tema.
 4. CT-RF148: Retestar com códigos hexadecimais válidos e inválidos e conferir, após cada tentativa, a cor devolvida pela consulta.
 5. CT-RF149: Retestar com arquivos de tamanho conhecido no entorno do limite e confirmar a mensagem de validação e a preservação do logo salvo na recusa.
+6. CT-RF150: Usar como regressão da atualização visual e cobrir, com provedor de teste, a mudança de aguardando QR Code para conectado.
 
 ---
 
@@ -1022,6 +1024,7 @@ Todas essas variações permanecem planejadas e não são contadas como execuç�
 | Integração de CT-RF147 / RF147 | Realizada | 17/11/2026, revisão documental. |
 | Integração de CT-RF148 / RF148 | Realizada | 17/11/2026, revisão documental. |
 | Integração de CT-RF149 / RF149 | Realizada | 17/11/2026, revisão documental. |
+| Integração de CT-RF150 / RF150 | Realizada | 17/11/2026, revisão documental. |
 | Confirmação da regra do status e da exclusão de tipos de pagamento em uso, e da filtragem da listagem | Pendente | RF104, RF105 e RF107; depende do responsável pelo produto. |
 | Confirmação da obrigatoriedade do colaborador, dos filtros de contas e da regra do cartão Ativos | Pendente | RF91, RF92, RF93 e RF102; depende do responsável pelo produto. |
 | Confirmação da regra do telefone e da duplicidade de criação de leads | Pendente | RF88 e RF89; depende do responsável pelo produto. |
@@ -1064,7 +1067,7 @@ Há dez defeitos abertos (BUG-001 a BUG-010) e trinta e três em triagem (BUG-01
 
 ## 📁 13. Entregáveis e documentos associados
 
-Os entregáveis são a análise RF01–RF35, RF38–RF62 e RF65–RF149, este plano, os 145 cenários BDD, as evidências disponíveis e os relatórios atualizados. CT-RF21 possui relato original, link do Jam, quadros, cronologia, requisição/resposta sem autenticação e metadados locais; o vídeo permanece no Jam. Os vídeos e demais evidências anteriores citados nos documentos de 14/11/2026 não estavam nesta cópia do repositório em 15/11/2026; consultar o índice de evidências para a disponibilidade. 67 casos estão aprovados no alcance das evidências. 57 reprovados aguardam reteste, incluindo CT-RF22/24/26/27/28/29/30/35/41/45/51/53/54/55/56/57/58/59/65/66/67/68/69/70/71/73/81/82/83/89/92/98/102/105/107 em triagem, e 21 a validar dependem de regra/contexto ou persistência. CT-RF23–25, CT-RF35, CT-RF38–CT-RF56 e CT-RF85–CT-RF108 possuem pasta local com resumo, cronologia e origem (CT-RF35, CT-RF38–CT-RF56 e CT-RF85–CT-RF108 incluem também capturas extraídas do Jam e hashes; CT-RF50–CT-RF56 incluem os PDFs baixados); os vídeos permanecem no Jam. CT-RF29–CT-RF33, CT-RF57, CT-RF58 e CT-RF59 têm como fonte gravações únicas, cujos painéis foram lidos diretamente; as pastas locais de evidências desses casos ainda não foram criadas.
+Os entregáveis são a análise RF01–RF35, RF38–RF62 e RF65–RF150, este plano, os 146 cenários BDD, as evidências disponíveis e os relatórios atualizados. CT-RF21 possui relato original, link do Jam, quadros, cronologia, requisição/resposta sem autenticação e metadados locais; o vídeo permanece no Jam. Os vídeos e demais evidências anteriores citados nos documentos de 14/11/2026 não estavam nesta cópia do repositório em 15/11/2026; consultar o índice de evidências para a disponibilidade. 68 casos estão aprovados no alcance das evidências. 57 reprovados aguardam reteste, incluindo CT-RF22/24/26/27/28/29/30/35/41/45/51/53/54/55/56/57/58/59/65/66/67/68/69/70/71/73/81/82/83/89/92/98/102/105/107 em triagem, e 21 a validar dependem de regra/contexto ou persistência. CT-RF23–25, CT-RF35, CT-RF38–CT-RF56 e CT-RF85–CT-RF108 possuem pasta local com resumo, cronologia e origem (CT-RF35, CT-RF38–CT-RF56 e CT-RF85–CT-RF108 incluem também capturas extraídas do Jam e hashes; CT-RF50–CT-RF56 incluem os PDFs baixados); os vídeos permanecem no Jam. CT-RF29–CT-RF33, CT-RF57, CT-RF58 e CT-RF59 têm como fonte gravações únicas, cujos painéis foram lidos diretamente; as pastas locais de evidências desses casos ainda não foram criadas.
 
 - [Análise de requisitos](Analise%20de%20requisitos.md)
 - [Caso CT-RF01](Cenario_Teste/CT-RF01_Esqueci-senha.md)
@@ -1175,7 +1178,8 @@ Os entregáveis são a análise RF01–RF35, RF38–RF62 e RF65–RF149, este pl
 - [CT-RF147](Cenario_Teste/CT-RF147_Configuracoes_Design_Salvar_Cor_Principal.md) e [Evidências](Evidencias/CT-RF147_Configuracoes_Design_Salvar_Cor_Principal/README.md)
 - [CT-RF148](Cenario_Teste/CT-RF148_Configuracoes_Design_Validar_Cor_Secundaria.md) e [Evidências](Evidencias/CT-RF148_Configuracoes_Design_Validar_Cor_Secundaria/README.md)
 - [CT-RF149](Cenario_Teste/CT-RF149_Configuracoes_Design_Logo_Limite_Tamanho.md) e [Evidências](Evidencias/CT-RF149_Configuracoes_Design_Logo_Limite_Tamanho/README.md)
-- [Índice dos 145 cenários](Cenario_Teste/README.md)
+- [CT-RF150](Cenario_Teste/CT-RF150_Integracoes_WhatsApp_Atualizar_Status_Aguardando_QR.md) e [Evidências](Evidencias/CT-RF150_Integracoes_WhatsApp_Atualizar_Status_Aguardando_QR/README.md)
+- [Índice dos 146 cenários](Cenario_Teste/README.md)
 - [Índice das evidências e dos Jams](Evidencias/README.md)
 - [Manifesto de integridade dos novos arquivos](Evidencias/manifesto_sha256.json)
 
