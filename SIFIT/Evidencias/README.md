@@ -210,3 +210,11 @@ CT-RF134–CT-RF138 cobrem a Central de Automações com gravações de 16/11/20
 | [CT-RF144](../Cenario_Teste/CT-RF144_Integracoes_WhatsApp_Atualizar_Status.md) | [Consultar novamente o status da integração de WhatsApp](CT-RF144_Integracoes_WhatsApp_Atualizar_Status/README.md) | Aprovado conforme a gravação |
 
 CT-RF139–CT-RF144 cobrem a integração do WhatsApp com gravações de 16/11/2026 entre 23:37:22 e 23:45:52 BRT. As pastas reúnem origem, cronologia e recortes identificados com SHA-256.
+
+## Inclusão de 17/11/2026 — Configurações (CT-RF145)
+
+| Caso | Evidência | Resultado |
+| --- | --- | --- |
+| [CT-RF145](../Cenario_Teste/CT-RF145_Configuracoes_Aniversario_Salvar_WhatsApp_SMS.md) | [Salvar mensagens de aniversário para WhatsApp e SMS](CT-RF145_Configuracoes_Aniversario_Salvar_WhatsApp_SMS/README.md) | Aprovado conforme a gravação |
+
+CT-RF145 cobre funcionalidades de Configurações com gravações de 16/11/2026 às 23:21:59 BRT. As pastas reúnem origem, cronologia e recortes identificados com SHA-256.

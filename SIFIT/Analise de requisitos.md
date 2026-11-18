@@ -2,11 +2,11 @@
 
 **Módulos:** Autenticação, Perfil, Clientes / Filtros, Financeiro, Página inicial / Personais, SifitBox / Modalidades e Turmas, Categorias Crossfit, Avaliações, Exercícios, Grupos Musculares, Dashboard, Objetivos de Treino, Fichas de Anamnese, Colaboradores, Prospecção e Bandeiras de Cartão.
 
-**Atualização:** 17/11/2026 — RF01 a RF35, RF38 a RF62 e RF65 a RF144 consolidados, com inclusão de Categorias Crossfit (CT-RF38), SifitBox – Turmas (CT-RF39 a CT-RF41), Pagar.me, Configurações, Despesas Fixas e Relatórios (CT-RF42 a CT-RF56), Grupos (treino) (CT-RF57 e CT-RF58), Fichas de Anamnese (CT-RF59), Modelos de Anamnese (CT-RF60), Categorias de Anamnese (CT-RF61), Perguntas Anamnese (CT-RF62), Colaboradores (CT-RF65 a CT-RF73), Prospecção e Bandeiras de Cartão (CT-RF74 a CT-RF90), Contas a Pagar / Modelos de Contrato / Planos (CT-RF91 a CT-RF103) Tipos de Pagamento (CT-RF104 a CT-RF108) e Modelos de Ficha (CT-RF109–CT-RF115) e Configurações e Modelos de Ficha (CT-RF116–CT-RF121) e Inteligência e Configurações (CT-RF122–CT-RF127) e Inteligência e Automação (CT-RF128–CT-RF133) e ampliação da cobertura da Central de Automações (CT-RF134–CT-RF138) e integração de WhatsApp (CT-RF139–CT-RF144). BUG-011–BUG-050 em triagem.
+**Atualização:** 17/11/2026 — RF01 a RF35, RF38 a RF62 e RF65 a RF145 consolidados, com inclusão de Categorias Crossfit (CT-RF38), SifitBox – Turmas (CT-RF39 a CT-RF41), Pagar.me, Configurações, Despesas Fixas e Relatórios (CT-RF42 a CT-RF56), Grupos (treino) (CT-RF57 e CT-RF58), Fichas de Anamnese (CT-RF59), Modelos de Anamnese (CT-RF60), Categorias de Anamnese (CT-RF61), Perguntas Anamnese (CT-RF62), Colaboradores (CT-RF65 a CT-RF73), Prospecção e Bandeiras de Cartão (CT-RF74 a CT-RF90), Contas a Pagar / Modelos de Contrato / Planos (CT-RF91 a CT-RF103) Tipos de Pagamento (CT-RF104 a CT-RF108) e Modelos de Ficha (CT-RF109–CT-RF115) e Configurações e Modelos de Ficha (CT-RF116–CT-RF121) e Inteligência e Configurações (CT-RF122–CT-RF127) e Inteligência e Automação (CT-RF128–CT-RF133) e ampliação da cobertura da Central de Automações (CT-RF134–CT-RF138) e integração de WhatsApp (CT-RF139–CT-RF144) e novos cenários de Configurações (CT-RF145). BUG-011–BUG-050 em triagem.
 
 **Padronização documental:** 13/11/2026, sem alteração dos resultados registrados.
 
-Esta análise documenta 140 requisitos de QA para os cenários relacionados abaixo, com base nos relatos e nas evidências fornecidas. RF01–RF04 e suas análises históricas foram preservados; RF05–RF20 ampliam a cobertura em 14/11/2026; RF21 acrescenta Avaliações; RF22–RF28 acrescentam Exercícios; RF29–RF33 acrescentam Grupos Musculares; RF34 acrescenta o carregamento do dashboard RF35 acrescenta o cadastro de objetivos de treino e RF38 acrescenta o cadastro de categorias com código automático em 15/11/2026. RF39 acrescenta o cadastro de modalidade em SifitBox – Turmas. RF40 acrescenta a exclusão de turmas e modalidades. RF41 acrescenta o cadastro de turma. RF42 a RF56 acrescentam Pagar.me, Configurações, Despesas Fixas e Relatórios em 15/11/2026. RF57 acrescenta a exclusão de grupo (treino) e RF58 acrescenta a edição de grupo (treino), ambos também em 15/11/2026. RF59 acrescenta o cadastro de anamnese, também em 15/11/2026. RF60 acrescenta a gestão de modelos de anamnese (busca, cadastro, edição e exclusão), em 16/11/2026. RF61 acrescenta a gestão de categorias de anamnese (filtro, busca, cadastro, edição, cancelamento de edição e exclusão), também em 16/11/2026. RF62 acrescenta a edição de pergunta de anamnese, reprovada por HTTP 500, também em 16/11/2026. RF65–RF73 cobrem validações, operações e buscas de Colaboradores, também em 15/11/2026. RF74–RF84 acrescentam Prospecção e Bandeiras de Cartão a partir de resumos fornecidos, em 16/11/2026. RF85 a RF90 acrescentam Prospecção (leads) em 15/11/2026. RF91 a RF103 acrescentam Contas a Pagar, Modelos de Contrato e Planos em 15/11/2026. RF104 a RF108 acrescentam Tipos de Pagamento em 15/11/2026. RF109–RF115 cobre Modelos de Ficha com evidências gravadas em 16/11/2026. Os critérios abaixo constituem a referência de QA para esses fluxos; não representam validação de uma especificação formal pelo responsável pelo produto.
+Esta análise documenta 141 requisitos de QA para os cenários relacionados abaixo, com base nos relatos e nas evidências fornecidas. RF01–RF04 e suas análises históricas foram preservados; RF05–RF20 ampliam a cobertura em 14/11/2026; RF21 acrescenta Avaliações; RF22–RF28 acrescentam Exercícios; RF29–RF33 acrescentam Grupos Musculares; RF34 acrescenta o carregamento do dashboard RF35 acrescenta o cadastro de objetivos de treino e RF38 acrescenta o cadastro de categorias com código automático em 15/11/2026. RF39 acrescenta o cadastro de modalidade em SifitBox – Turmas. RF40 acrescenta a exclusão de turmas e modalidades. RF41 acrescenta o cadastro de turma. RF42 a RF56 acrescentam Pagar.me, Configurações, Despesas Fixas e Relatórios em 15/11/2026. RF57 acrescenta a exclusão de grupo (treino) e RF58 acrescenta a edição de grupo (treino), ambos também em 15/11/2026. RF59 acrescenta o cadastro de anamnese, também em 15/11/2026. RF60 acrescenta a gestão de modelos de anamnese (busca, cadastro, edição e exclusão), em 16/11/2026. RF61 acrescenta a gestão de categorias de anamnese (filtro, busca, cadastro, edição, cancelamento de edição e exclusão), também em 16/11/2026. RF62 acrescenta a edição de pergunta de anamnese, reprovada por HTTP 500, também em 16/11/2026. RF65–RF73 cobrem validações, operações e buscas de Colaboradores, também em 15/11/2026. RF74–RF84 acrescentam Prospecção e Bandeiras de Cartão a partir de resumos fornecidos, em 16/11/2026. RF85 a RF90 acrescentam Prospecção (leads) em 15/11/2026. RF91 a RF103 acrescentam Contas a Pagar, Modelos de Contrato e Planos em 15/11/2026. RF104 a RF108 acrescentam Tipos de Pagamento em 15/11/2026. RF109–RF115 cobre Modelos de Ficha com evidências gravadas em 16/11/2026. Os critérios abaixo constituem a referência de QA para esses fluxos; não representam validação de uma especificação formal pelo responsável pelo produto.
 
 ## 📋 Visão geral dos requisitos
 
@@ -152,6 +152,7 @@ Esta análise documenta 140 requisitos de QA para os cenários relacionados abai
 | [RF142](#rf142) | Persistir a opção Ativo da integração de WhatsApp | Média, proposta | [CT-RF142](Cenario_Teste/CT-RF142_Integracoes_WhatsApp_Persistir_Ativo.md) |
 | [RF143](#rf143) | Tratar falha ao conectar WhatsApp via Evolution API | Média, proposta | [CT-RF143](Cenario_Teste/CT-RF143_Integracoes_WhatsApp_Conectar_Evolution.md) |
 | [RF144](#rf144) | Consultar novamente o status da integração de WhatsApp | Média, proposta | [CT-RF144](Cenario_Teste/CT-RF144_Integracoes_WhatsApp_Atualizar_Status.md) |
+| [RF145](#rf145) | Salvar mensagens de aniversário para WhatsApp e SMS | Média, proposta | [CT-RF145](Cenario_Teste/CT-RF145_Configuracoes_Aniversario_Salvar_WhatsApp_SMS.md) |
 
 ---
 
@@ -3345,6 +3346,31 @@ Os parâmetros do provedor não foram validados. A causa da falha de conexão e 
 
 A aprovação cobre o comando de consulta e a resposta em estado desconectado. A gravação não mostra a atualização visual do cartão de resumo após os cliques. A conexão posterior tem evidência vinculada ao BUG-050.
 
+<a id="rf145"></a>
+
+## RF145 — Salvar mensagens de aniversário para WhatsApp e SMS
+
+| Campo | Descrição |
+| --- | --- |
+| Requisito de QA | Confirmar que os canais WhatsApp e SMS e suas mensagens de aniversário persistem após salvar e reabrir a aba. |
+| Ator | Usuário autenticado com permissão para a operação. |
+| Pré-condições | Sessão autenticada com acesso à aba Aniversário e permissão para alterar as configurações de teste. |
+| Gatilho | Marcar WhatsApp e SMS, editar os textos e clicar em Salvar Configurações. |
+| Caso | [CT-RF145](Cenario_Teste/CT-RF145_Configuracoes_Aniversario_Salvar_WhatsApp_SMS.md) |
+| Situação observada | Aprovado conforme a gravação. WhatsApp e SMS e os dois textos de teste reapareceram após recarregar e reabrir Aniversário. |
+| Defeito | Nenhum no fluxo avaliado |
+| Evidências | Jam 1 — Mensagens de aniversário por WhatsApp e SMS (gravação restrita por conter dados de integração) e [Evidências](Evidencias/CT-RF145_Configuracoes_Aniversario_Salvar_WhatsApp_SMS/README.md). |
+
+### Critérios de aceitação do RF145
+
+1. O salvamento aceita os dois canais e suas mensagens.
+2. A nova leitura confirma as opções habilitadas e as mensagens editadas.
+3. A interface mostra os valores salvos ao reabrir a aba.
+
+### Pontos a confirmar e limites do RF145
+
+A gravação verifica a configuração. O disparo automático, a entrega e a substituição das variáveis das mensagens estão fora da evidência.
+
 ---
 
 ## 🔗 Rastreabilidade
@@ -3488,6 +3514,7 @@ A aprovação cobre o comando de consulta e a resposta em estado desconectado. A
 | RF142 | [CT-RF142](Cenario_Teste/CT-RF142_Integracoes_WhatsApp_Persistir_Ativo.md) | Nenhum no fluxo avaliado | Aprovado conforme a gravação | [Evidências](Evidencias/CT-RF142_Integracoes_WhatsApp_Persistir_Ativo/README.md) e Jam 4 — Persistência da opção Ativo (gravação restrita por conter dados de integração) |
 | RF143 | [CT-RF143](Cenario_Teste/CT-RF143_Integracoes_WhatsApp_Conectar_Evolution.md) | [BUG-050](Relatorio-de-Bugs.md#bug-050), em triagem | Reprovado nas evidências | [Evidências](Evidencias/CT-RF143_Integracoes_WhatsApp_Conectar_Evolution/README.md) e Jam 5 — Tentativas de conexão pela Evolution API (gravação restrita por conter dados de integração) |
 | RF144 | [CT-RF144](Cenario_Teste/CT-RF144_Integracoes_WhatsApp_Atualizar_Status.md) | [BUG-050](Relatorio-de-Bugs.md#bug-050) na tentativa posterior de conexão | Aprovado conforme a gravação | [Evidências](Evidencias/CT-RF144_Integracoes_WhatsApp_Atualizar_Status/README.md) e Jam 6 — Atualização manual de status (gravação restrita por conter dados de integração) |
+| RF145 | [CT-RF145](Cenario_Teste/CT-RF145_Configuracoes_Aniversario_Salvar_WhatsApp_SMS.md) | Nenhum no fluxo avaliado | Aprovado conforme a gravação | [Evidências](Evidencias/CT-RF145_Configuracoes_Aniversario_Salvar_WhatsApp_SMS/README.md) e Jam 1 — Mensagens de aniversário por WhatsApp e SMS (gravação restrita por conter dados de integração) |
 
 ---
 
@@ -4359,6 +4386,12 @@ CT-RF139–CT-RF144 cobrem a integração do WhatsApp com gravações de 16/11/2
 - RF142: Os dois estados de Ativo foram salvos e confirmados por GET, com a conexão permanecendo desconectada. Jam 4 — Persistência da opção Ativo (gravação restrita por conter dados de integração).
 - RF143: As duas tentativas exibiram falha. A resposta trouxe a mesma falha, mas devolveu `verifica_erro: false`. Jam 5 — Tentativas de conexão pela Evolution API (gravação restrita por conter dados de integração).
 - RF144: Sete consultas retornaram HTTP 200 com o estado desconectado e o horário de verificação atualizado. Jam 6 — Atualização manual de status (gravação restrita por conter dados de integração).
+
+### Base da análise de Configurações — revisão de 17/11/2026
+
+CT-RF145 cobre funcionalidades de Configurações com gravações de 16/11/2026 às 23:21:59 BRT.
+
+- RF145: WhatsApp e SMS e os dois textos de teste reapareceram após recarregar e reabrir Aniversário. Jam 1 — Mensagens de aniversário por WhatsApp e SMS (gravação restrita por conter dados de integração).
 
 ---
 
