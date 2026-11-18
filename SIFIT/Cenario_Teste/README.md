@@ -1,6 +1,6 @@
 # 🧪 Índice dos cenários de teste — SIFIT
 
-**Atualização:** 18/11/2026. 151 casos documentados: 73 aprovados, 57 reprovados e 21 a validar. 52 defeitos registrados (10 abertos e 42 em triagem) e 57 casos com reteste corretivo pendente. Escopo: CT-RF01–CT-RF35, CT-RF38–CT-RF62 e CT-RF65–CT-RF155.
+**Atualização:** 18/11/2026. 152 casos documentados: 74 aprovados, 57 reprovados e 21 a validar. 52 defeitos registrados (10 abertos e 42 em triagem) e 57 casos com reteste corretivo pendente. Escopo: CT-RF01–CT-RF35, CT-RF38–CT-RF62 e CT-RF65–CT-RF156.
 
 | Caso | Funcionalidade | Resultado | Defeito | Jam |
 | --- | --- | --- | --- | --- |
@@ -363,7 +363,7 @@ CT-RF139–CT-RF144 cobrem a integração do WhatsApp com gravações de 16/11/2
 
 CT-RF145–CT-RF150 cobrem funcionalidades de Configurações com gravações de 16/11/2026 entre 23:21:59 e 23:36:13 BRT. A revisão é documental.
 
-## Inclusão de 18/11/2026 — Configurações / Avaliação e Aniversário (CT-RF151–CT-RF155)
+## Inclusão de 18/11/2026 — Configurações / Avaliação e Aniversário (CT-RF151–CT-RF156)
 
 | Caso | Funcionalidade | Resultado | Defeito | Jam |
 | --- | --- | --- | --- | --- |
@@ -372,7 +372,8 @@ CT-RF145–CT-RF150 cobrem funcionalidades de Configurações com gravações de
 | [CT-RF153](CT-RF153_Configuracoes_Avaliacao_Habilitar_Teste_Fisico.md) | Habilitar Teste Físico nas configurações de avaliação | Aprovado conforme a gravação | — | Jam 3 — Habilitação de Teste Físico (gravação restrita por conter dados de integração) |
 | [CT-RF154](CT-RF154_Configuracoes_Aniversario_Desabilitar_Envio_Automatico.md) | Desabilitar o envio automático de aniversário | Aprovado conforme a gravação | — | Jam 4 — Desativação do envio automático de aniversário (gravação restrita por conter dados de integração) |
 | [CT-RF155](CT-RF155_Configuracoes_Aniversario_Cancelar_Mensagem_WhatsApp.md) | Cancelar a edição da mensagem de aniversário do WhatsApp | Aprovado conforme a gravação | — | Jam 5 — Cancelamento da edição da mensagem de WhatsApp (gravação restrita por conter dados de integração) |
+| [CT-RF156](CT-RF156_Configuracoes_Aniversario_Inserir_Variaveis_WhatsApp.md) | Inserir variáveis na mensagem de aniversário do WhatsApp | Aprovado conforme a gravação | — | Jam 6 — Inserção de variáveis na mensagem de WhatsApp (gravação restrita por conter dados de integração) |
 
-CT-RF151–CT-RF155 cobrem as abas Avaliação e Aniversário com gravações de 16/11/2026 entre 23:10:04 e 23:17:29 BRT. A revisão é documental.
+CT-RF151–CT-RF156 cobrem as abas Avaliação e Aniversário com gravações de 16/11/2026 entre 23:10:04 e 23:20:07 BRT. A revisão é documental.
 
 [← Início](../../README.md) · [Requisitos](../Analise%20de%20requisitos.md) · [Plano](../Plano%20de%20testes.md) · [Evidências](../Evidencias/README.md)
