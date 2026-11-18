@@ -1,0 +1,25 @@
+CT-RF126 — Bloquear número negativo no campo de dias de ausência
+Fonte: https://jam.dev/c/d5786f67-6e5f-44f5-bbba-fbd763a88740
+Gravação: 16/11/2026, 22:00:22 BRT; duração: 25,75 s.
+Revisão documental: 17/11/2026.
+Página: https://sifit.centrion.com.br/configuracoes
+Foco deste caso: Impedir o salvamento de valor negativo para dias de ausência e preservar a configuração anterior, conforme o critério do RF44.
+
+Cronologia (ações e eventos capturados no Jam):
+0:00–0:06  Substitui 1100 por -1.
+0:06–0:07  Salva a configuração. O retorno indica sucesso.
+0:09–0:13  Recarrega. O campo permanece em -1.
+0:20–0:24  Volta a informar 1100 e salva novamente.
+
+Rede do conjunto gravado (eventos relevantes ao caso):
+0:06,91  POST /api/configuracoes/alterar/1 (HTTP 200), com dias_ausente=-1 e verifica_erro: false.
+0:10,44  GET /api/configuracoes/1 (HTTP 200), com dias_ausente: -1.
+0:23,65  POST (HTTP 200), com dias_ausente=1100. O vídeo termina antes de nova consulta para confirmar a restauração.
+
+Quadros consultados (reprodução do Jam):
+- Valor -1 antes de salvar.
+- Valor -1 após recarregar.
+
+Observações e verificações futuras:
+- A evidência confirma a persistência de -1. O efeito sobre a classificação de clientes ausentes e a abrangência para outros negativos não foram exercitados.
+- Aplicar validação na gravação da configuração e retestar com -1, um inteiro válido e o limite mínimo definido pelo produto.

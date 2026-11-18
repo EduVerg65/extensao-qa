@@ -1,6 +1,6 @@
 # 🧪 Índice dos cenários de teste — SIFIT
 
-**Atualização:** 17/11/2026. 121 casos documentados: 52 aprovados, 50 reprovados e 19 a validar. 46 defeitos registrados (10 abertos e 36 em triagem) e 50 casos com reteste corretivo pendente. Escopo: CT-RF01–CT-RF35, CT-RF38–CT-RF62 e CT-RF65–CT-RF125.
+**Atualização:** 17/11/2026. 122 casos documentados: 52 aprovados, 51 reprovados e 19 a validar. 47 defeitos registrados (10 abertos e 37 em triagem) e 51 casos com reteste corretivo pendente. Escopo: CT-RF01–CT-RF35, CT-RF38–CT-RF62 e CT-RF65–CT-RF126.
 
 | Caso | Funcionalidade | Resultado | Defeito | Jam |
 | --- | --- | --- | --- | --- |
@@ -299,7 +299,7 @@ A revisão de Modelos de Ficha inclui CT-RF109–CT-RF115 com base em 6 gravaç�
 
 CT-RF116–CT-RF121 amplia a cobertura de Configurações e Modelos de Ficha com gravações de 16/11/2026 entre 22:03:53 e 22:18:52 BRT. A revisão é documental.
 
-## Inclusão de 17/11/2026 — Inteligência e Configurações (CT-RF122–CT-RF125)
+## Inclusão de 17/11/2026 — Inteligência e Configurações (CT-RF122–CT-RF126)
 
 | Caso | Funcionalidade | Resultado | Defeito | Jam |
 | --- | --- | --- | --- | --- |
@@ -307,7 +307,8 @@ CT-RF116–CT-RF121 amplia a cobertura de Configurações e Modelos de Ficha com
 | [CT-RF123](CT-RF123_Central_Resultados_IA_Execucao_Evasao.md) | Conferir a execução de Risco de Evasão na Central e em Resultados IA | Aprovado conforme a gravação | — | [Jam — PED-14 — Execução de Risco de Evasão](https://jam.dev/c/efe26a44-458a-4802-bd48-8e23c5ac5fd9) |
 | [CT-RF124](CT-RF124_Configuracoes_Abas_Biometria_Senha.md) | Navegar pelas abas de Configurações com a senha da biometria protegida | Reprovado nas evidências | [BUG-046](../Relatorio-de-Bugs.md#bug-046), em triagem | Jam — PED-15 (gravação restrita por conter dados de integração) |
 | [CT-RF125](CT-RF125_Configuracoes_Salvar_Dias_Ausencia_Valido.md) | Salvar um valor válido de dias de ausência | Aprovado conforme a gravação | — | [Jam — PED-16 — Salvar dias de ausência](https://jam.dev/c/12d6bba7-a67e-4882-86a5-4dd08d194af2) |
+| [CT-RF126](CT-RF126_Configuracoes_Dias_Ausencia_Negativo.md) | Bloquear número negativo no campo de dias de ausência | Reprovado nas evidências | [BUG-047](../Relatorio-de-Bugs.md#bug-047), em triagem | [Jam — PED-17 — Dias de ausência negativos](https://jam.dev/c/d5786f67-6e5f-44f5-bbba-fbd763a88740) |
 
-CT-RF122–CT-RF125 cobre Inteligência e Configurações com gravações de 16/11/2026 entre 21:50:51 e 21:59:22 BRT. A revisão é documental.
+CT-RF122–CT-RF126 cobre Inteligência e Configurações com gravações de 16/11/2026 entre 21:50:51 e 22:00:22 BRT. A revisão é documental.
 
 [← Início](../../README.md) · [Requisitos](../Analise%20de%20requisitos.md) · [Plano](../Plano%20de%20testes.md) · [Evidências](../Evidencias/README.md)

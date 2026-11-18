@@ -1,10 +1,10 @@
 # 📊 Relatório de Testes — SIFIT
 
-**Escopo:** 121 casos documentados (CT-RF01–CT-RF35, CT-RF38–CT-RF62 e CT-RF65–CT-RF125) — autenticação, recuperação, perfil, Clientes, financeiro, página inicial e dashboard, modalidades / tema de SifitBox, Categorias Crossfit, Avaliações, Exercícios, Grupos Musculares, Objetivos de Treino cadastro de categorias com código automático, SifitBox – Turmas, Pagar.me, Configurações, Despesas Fixas, Relatórios, Grupos (treino), Fichas de Anamnese, gestão de Modelos de Anamnese, gestão de Categorias de Anamnese, edição de Perguntas Anamnese, validações/funções/exclusão/busca de Colaboradores, Prospecção, Bandeiras de Cartão, Contas a Pagar, Modelos de Contrato, Planos, Tipos de Pagamento e Modelos de Ficha.
+**Escopo:** 122 casos documentados (CT-RF01–CT-RF35, CT-RF38–CT-RF62 e CT-RF65–CT-RF126) — autenticação, recuperação, perfil, Clientes, financeiro, página inicial e dashboard, modalidades / tema de SifitBox, Categorias Crossfit, Avaliações, Exercícios, Grupos Musculares, Objetivos de Treino cadastro de categorias com código automático, SifitBox – Turmas, Pagar.me, Configurações, Despesas Fixas, Relatórios, Grupos (treino), Fichas de Anamnese, gestão de Modelos de Anamnese, gestão de Categorias de Anamnese, edição de Perguntas Anamnese, validações/funções/exclusão/busca de Colaboradores, Prospecção, Bandeiras de Cartão, Contas a Pagar, Modelos de Contrato, Planos, Tipos de Pagamento e Modelos de Ficha.
 
-**Datas das gravações do Jam:** CT-RF01 em 23/10/2026; CT-RF02_ERRO em 22/10/2026 às 21:45 BRT; CT-RF03 não confirmada; CT-RF04_loginComSucesso em 13/11/2026; CT-RF05–CT-RF20 em 14/11/2026; CT-RF21 em 15/11/2026 às 15:07:51,265 BRT; CT-RF22–28 em 15/11/2026 às 15:25, 15:40, 15:38, 15:35, 16:11, 16:08 e 16:07 BRT; CT-RF29–33 em 15/11/2026 às 15h56 BRT (uma única gravação); CT-RF34 em 15/11/2026 às 17:23 BRT; CT-RF35 em 15/11/2026 às 18:13 BRT; CT-RF38 em 15/11/2026 às 18:41 BRT; CT-RF39–41 em 15/11/2026 às 18:51 BRT (uma única gravação); CT-RF42–45 às 19:06, CT-RF46–49 às 19:07 e CT-RF50–56 às 19:09 BRT (uma gravação por grupo); CT-RF57 e CT-RF58 em 15/11/2026 às 21h03 BRT (mesma gravação); CT-RF59 em 15/11/2026 às 22h07 BRT; CT-RF60 em 15/11/2026 às 23h34 BRT; CT-RF61 em 16/11/2026 às 15h24 BRT; CT-RF62 em 16/11/2026 às 15h57 BRT. CT-RF74–CT-RF84: 16/11/2026 conforme os resumos, sem horário informado. CT-RF85–90 às 21:52, CT-RF91–95 às 21:58, CT-RF96–98 às 21:55 e CT-RF99–103 às 21:54 e CT-RF104–108 às 22:03 BRT em 15/11/2026 (uma gravação por grupo). CT-RF109–CT-RF115 em 16/11/2026 entre 22:19:51 e 22:29:07 BRT. CT-RF116–CT-RF121 amplia a cobertura de Configurações e Modelos de Ficha com gravações de 16/11/2026 entre 22:03:53 e 22:18:52 BRT. CT-RF122–CT-RF125 cobre Inteligência e Configurações com gravações de 16/11/2026 entre 21:50:51 e 21:59:22 BRT.
+**Datas das gravações do Jam:** CT-RF01 em 23/10/2026; CT-RF02_ERRO em 22/10/2026 às 21:45 BRT; CT-RF03 não confirmada; CT-RF04_loginComSucesso em 13/11/2026; CT-RF05–CT-RF20 em 14/11/2026; CT-RF21 em 15/11/2026 às 15:07:51,265 BRT; CT-RF22–28 em 15/11/2026 às 15:25, 15:40, 15:38, 15:35, 16:11, 16:08 e 16:07 BRT; CT-RF29–33 em 15/11/2026 às 15h56 BRT (uma única gravação); CT-RF34 em 15/11/2026 às 17:23 BRT; CT-RF35 em 15/11/2026 às 18:13 BRT; CT-RF38 em 15/11/2026 às 18:41 BRT; CT-RF39–41 em 15/11/2026 às 18:51 BRT (uma única gravação); CT-RF42–45 às 19:06, CT-RF46–49 às 19:07 e CT-RF50–56 às 19:09 BRT (uma gravação por grupo); CT-RF57 e CT-RF58 em 15/11/2026 às 21h03 BRT (mesma gravação); CT-RF59 em 15/11/2026 às 22h07 BRT; CT-RF60 em 15/11/2026 às 23h34 BRT; CT-RF61 em 16/11/2026 às 15h24 BRT; CT-RF62 em 16/11/2026 às 15h57 BRT. CT-RF74–CT-RF84: 16/11/2026 conforme os resumos, sem horário informado. CT-RF85–90 às 21:52, CT-RF91–95 às 21:58, CT-RF96–98 às 21:55 e CT-RF99–103 às 21:54 e CT-RF104–108 às 22:03 BRT em 15/11/2026 (uma gravação por grupo). CT-RF109–CT-RF115 em 16/11/2026 entre 22:19:51 e 22:29:07 BRT. CT-RF116–CT-RF121 amplia a cobertura de Configurações e Modelos de Ficha com gravações de 16/11/2026 entre 22:03:53 e 22:18:52 BRT. CT-RF122–CT-RF126 cobre Inteligência e Configurações com gravações de 16/11/2026 entre 21:50:51 e 22:00:22 BRT.
 
-**Data da revisão documental:** 17/11/2026, com integração de CT-RF122–CT-RF125 (Inteligência e Configurações).
+**Data da revisão documental:** 17/11/2026, com integração de CT-RF122–CT-RF126 (Inteligência e Configurações).
 
 **Origem do resultado:** análise de evidências fornecidas; sem nova execução no sistema nesta revisão.
 
@@ -34,11 +34,11 @@ A revisão de Modelos de Ficha inclui CT-RF109–CT-RF115 com base em 6 gravaç�
 
 CT-RF116–CT-RF121 amplia a cobertura de Configurações e Modelos de Ficha com gravações de 16/11/2026 entre 22:03:53 e 22:18:52 BRT. Casos aprovados: 4. Reprovados: 1. A validar: 1.
 
-CT-RF122–CT-RF125 cobre Inteligência e Configurações com gravações de 16/11/2026 entre 21:50:51 e 21:59:22 BRT. Casos aprovados: 3. Reprovados: 1. A validar: 0.
+CT-RF122–CT-RF126 cobre Inteligência e Configurações com gravações de 16/11/2026 entre 21:50:51 e 22:00:22 BRT. Casos aprovados: 3. Reprovados: 2. A validar: 0.
 
 | Casos documentados | Aprovados | Reprovados | A validar | Defeitos registrados | Casos com reteste corretivo pendente |
 | :---: | :---: | :---: | :---: | :---: | :---: |
-| 121 | 52 | 50 | 19 | 46 (10 abertos + 36 em triagem) | 50 |
+| 122 | 52 | 51 | 19 | 47 (10 abertos + 37 em triagem) | 51 |
 
 Os 48 retestes incluem CT-RF22/24/26/27/28/29/30/35/41/45/51/53/54/55/56/57/58/59/62/65/66/67/68/69/70/71/73/81/82/83/89/92/98/102/105/107, sujeitos à confirmação funcional e técnica. As contagens representam os casos documentados com base nas fontes indicadas, sem novas execuções nesta revisão. As nove variações planejadas para o reteste do CT-RF03 não foram executadas e não são contabilizadas como testes adicionais realizados.
 
@@ -166,6 +166,7 @@ Os 48 retestes incluem CT-RF22/24/26/27/28/29/30/35/41/45/51/53/54/55/56/57/58/5
 | [CT-RF123](Cenario_Teste/CT-RF123_Central_Resultados_IA_Execucao_Evasao.md) | [RF123](Analise%20de%20requisitos.md#rf123) | A Central é atualizada após a execução e o mesmo registro aparece em Resultados IA no filtro que inclui a data da execução. | A Central passou a mostrar 00:55. A linha do tempo de Hoje e o resumo de Resultados IA incluíram essa execução. | Aprovado conforme a gravação | Nenhum no fluxo avaliado |
 | [CT-RF124](Cenario_Teste/CT-RF124_Configuracoes_Abas_Biometria_Senha.md) | [RF124](Analise%20de%20requisitos.md#rf124) | Todas as abas carregam o painel selecionado. O valor da senha configurada vem mascarado ao abrir Biometria. | A navegação funcionou. A aba Biometria exibiu o valor do campo Senha sem mascaramento. | Reprovado nas evidências | [BUG-046](Relatorio-de-Bugs.md#bug-046), em triagem |
 | [CT-RF125](Cenario_Teste/CT-RF125_Configuracoes_Salvar_Dias_Ausencia_Valido.md) | [RF125](Analise%20de%20requisitos.md#rf125) | O valor 15 é salvo e exibido após recarregar. Ao restaurar o valor inicial, a próxima leitura apresenta o valor restaurado. | 15 foi salvo e confirmado após recarga. A segunda recarga confirmou a restauração de 1100. | Aprovado conforme a gravação | Nenhum no fluxo avaliado |
+| [CT-RF126](Cenario_Teste/CT-RF126_Configuracoes_Dias_Ausencia_Negativo.md) | [RF126](Analise%20de%20requisitos.md#rf126) | O sistema rejeita valores negativos, orienta a correção do campo e preserva o valor anterior após recarga. | -1 foi aceito com HTTP 200 e confirmado na interface e no GET após recarga. | Reprovado nas evidências | [BUG-047](Relatorio-de-Bugs.md#bug-047), em triagem |
 
 ---
 
@@ -217,6 +218,7 @@ Os 48 retestes incluem CT-RF22/24/26/27/28/29/30/35/41/45/51/53/54/55/56/57/58/5
 | [BUG-044](Relatorio-de-Bugs.md#bug-044) | Edição do tipo de resposta de pergunta de anamnese retorna HTTP 500 | Alta, proposta | Alta, proposta | Em triagem. Reteste após correção. |
 | [BUG-045](Relatorio-de-Bugs.md#bug-045) | Cadastro de modelo de ficha com nome e personal retorna HTTP 500 | Alta, proposta | Alta, proposta | Em triagem. Reteste após correção. |
 | [BUG-046](Relatorio-de-Bugs.md#bug-046) | Configurações de Biometria exibem senha sem mascaramento | Alta, proposta | Alta, proposta | Em triagem. Reteste após correção. |
+| [BUG-047](Relatorio-de-Bugs.md#bug-047) | Configurações aceitam e persistem dias de ausência negativos | Média, proposta | Média, proposta | Em triagem. Reteste após correção. |
 
 As classificações propostas dependem de triagem. O BUG-003 mantém o resultado atribuído ao relato fornecido.
 
@@ -524,14 +526,14 @@ O domínio do CT-RF02_ERRO é diferente do domínio `sifitalfa.centrion.com.br` 
 | Dados e permissões | Conta com permissão para as operações. Registrar os valores iniciais das Configurações e restaurá-los após os testes. Para o cadastro, usar um modelo descartável e um personal de teste. |
 | Preparação | Registrar estado inicial, ações e respostas da API. Usar recortes da interface e omitir dados de autenticação. |
 
-### Inteligência e Configurações (CT-RF122–CT-RF125)
+### Inteligência e Configurações (CT-RF122–CT-RF126)
 
 | Item | Definição |
 | --- | --- |
 | Páginas | https://sifit.centrion.com.br/inteligencia/resultados, https://sifit.centrion.com.br/inteligencia-automacao, https://sifit.centrion.com.br/configuracoes |
 | Backend de referência | https://backendsifit.centrion.com.br |
 | Navegador / sistema / vídeo | Chrome 157.0.8103.79 / Windows 10 (x86) / 1918 × 998. |
-| Gravações | 16/11/2026 entre 21:50:51 e 21:59:22 BRT. |
+| Gravações | 16/11/2026 entre 21:50:51 e 22:00:22 BRT. |
 | Dados e permissões | Conta com permissão para as operações. Preparar resultados em períodos distintos e automação de teste autorizada. Em Configurações, usar credenciais fictícias e registrar o valor inicial dos campos. |
 | Preparação | Registrar o estado inicial, os controles usados e as respostas relevantes. Excluir dados de integração e de autenticação dos recortes e da documentação. |
 
@@ -611,6 +613,7 @@ O domínio do CT-RF02_ERRO é diferente do domínio `sifitalfa.centrion.com.br` 
 | [Jam — PED-14 — Execução de Risco de Evasão](https://jam.dev/c/efe26a44-458a-4802-bd48-8e23c5ac5fd9) e [Evidências](Evidencias/CT-RF123_Central_Resultados_IA_Execucao_Evasao/README.md) | CT-RF123: A Central passou a mostrar 00:55. A linha do tempo de Hoje e o resumo de Resultados IA incluíram essa execução. |
 | Jam — PED-15 (gravação restrita por conter dados de integração) e [Evidências](Evidencias/CT-RF124_Configuracoes_Abas_Biometria_Senha/README.md) | CT-RF124: A navegação funcionou. A aba Biometria exibiu o valor do campo Senha sem mascaramento. |
 | [Jam — PED-16 — Salvar dias de ausência](https://jam.dev/c/12d6bba7-a67e-4882-86a5-4dd08d194af2) e [Evidências](Evidencias/CT-RF125_Configuracoes_Salvar_Dias_Ausencia_Valido/README.md) | CT-RF125: 15 foi salvo e confirmado após recarga. A segunda recarga confirmou a restauração de 1100. |
+| [Jam — PED-17 — Dias de ausência negativos](https://jam.dev/c/d5786f67-6e5f-44f5-bbba-fbd763a88740) e [Evidências](Evidencias/CT-RF126_Configuracoes_Dias_Ausencia_Negativo/README.md) | CT-RF126: -1 foi aceito com HTTP 200 e confirmado na interface e no GET após recarga. |
 
 A mensagem de credenciais incorretas já aparece no início do vídeo do Jam; não foi considerada uma resposta ao clique em "Esqueci minha senha". A ausência de requisição, isoladamente, não caracteriza defeito se a interface abrir um formulário local. Aqui, o resultado reprovado decorre de o fluxo não abrir.
 
@@ -983,7 +986,7 @@ O consolidado na inclusão dos CT-RF109 a CT-RF115 era de 111 casos documentados
 
 Na inclusão dos CT-RF116 a CT-RF121, o consolidado era de 117 casos documentados: 49 aprovados, 49 reprovados e 19 a validar. 45 defeitos registrados (10 abertos e 35 em triagem) e 49 casos com reteste corretivo pendente.
 
-## Inclusão de 17/11/2026 — Inteligência e Configurações (CT-RF122–CT-RF125)
+## Inclusão de 17/11/2026 — Inteligência e Configurações (CT-RF122–CT-RF126)
 
 | Caso | Situação | Encaminhamento |
 | --- | --- | --- |
@@ -991,8 +994,9 @@ Na inclusão dos CT-RF116 a CT-RF121, o consolidado era de 117 casos documentado
 | [CT-RF123](Cenario_Teste/CT-RF123_Central_Resultados_IA_Execucao_Evasao.md) | Aprovado conforme a gravação | Usar como regressão da integração entre telas. Verificar entrega pelo canal em um caso dedicado, com destinatários de teste. |
 | [CT-RF124](Cenario_Teste/CT-RF124_Configuracoes_Abas_Biometria_Senha.md) | Reprovado nas evidências | Corrigir o mascaramento por padrão e retestar com credenciais fictícias, incluindo a troca de abas e a recarga. |
 | [CT-RF125](Cenario_Teste/CT-RF125_Configuracoes_Salvar_Dias_Ausencia_Valido.md) | Aprovado conforme a gravação | Usar como regressão de salvamento. Verificar os limites do campo e o impacto na listagem de clientes ausentes. |
+| [CT-RF126](Cenario_Teste/CT-RF126_Configuracoes_Dias_Ausencia_Negativo.md) | Reprovado nas evidências | Aplicar validação na gravação da configuração e retestar com -1, um inteiro válido e o limite mínimo definido pelo produto. |
 
-121 casos documentados: 52 aprovados, 50 reprovados e 19 a validar. 46 defeitos registrados (10 abertos e 36 em triagem) e 50 casos com reteste corretivo pendente.
+122 casos documentados: 52 aprovados, 51 reprovados e 19 a validar. 47 defeitos registrados (10 abertos e 37 em triagem) e 51 casos com reteste corretivo pendente.
 
 ---
 
