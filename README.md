@@ -2,13 +2,13 @@
 
 Repositório de documentação de QA manual do **SIFIT**, sistema de gestão de academias. Reúne requisitos, plano, cenários BDD, resultados, defeitos e evidências com links do Jam.
 
-**Atualização documental:** 17/11/2026. Integrados CT-RF122–CT-RF124 e RF122–RF124 para Inteligência e Configurações. A revisão utiliza gravações e eventos do Jam.
+**Atualização documental:** 17/11/2026. Integrados CT-RF122–CT-RF125 e RF122–RF125 para Inteligência e Configurações. A revisão utiliza gravações e eventos do Jam.
 
 ## 📊 Situação consolidada
 
 | Cenários documentados | Aprovados | Reprovados | A validar | Defeitos registrados | Casos com reteste corretivo pendente |
 | :---: | :---: | :---: | :---: | :---: | :---: |
-| 120 | 51 | 50 | 19 | 46 (10 abertos + 36 em triagem) | 50 |
+| 121 | 52 | 50 | 19 | 46 (10 abertos + 36 em triagem) | 50 |
 
 As classificações se baseiam nas fontes indicadas em cada cenário. CT-RF09/10 compartilham BUG-005 e CT-RF53–CT-RF56 compartilham BUG-023. As 50 reprovações correspondem a 46 defeitos registrados. BUG-011–BUG-046 aguardam triagem.
 
@@ -16,9 +16,9 @@ As classificações se baseiam nas fontes indicadas em cada cenário. CT-RF09/10
 
 | Documento | Conteúdo |
 | --- | --- |
-| [Análise de requisitos](SIFIT/Analise%20de%20requisitos.md) | RF01–RF35, RF38–RF62 e RF65–RF124, critérios de aceitação, dúvidas de regra e rastreabilidade. |
+| [Análise de requisitos](SIFIT/Analise%20de%20requisitos.md) | RF01–RF35, RF38–RF62 e RF65–RF125, critérios de aceitação, dúvidas de regra e rastreabilidade. |
 | [Plano de testes](SIFIT/Plano%20de%20testes.md) | Escopo, ambientes, preparação, critérios, regressão e retestes. |
-| [Índice dos cenários](SIFIT/Cenario_Teste/README.md) | 120 cenários com pré-condições, BDD, passos, esperado, obtido e encaminhamento. |
+| [Índice dos cenários](SIFIT/Cenario_Teste/README.md) | 121 cenários com pré-condições, BDD, passos, esperado, obtido e encaminhamento. |
 | [Relatório de bugs](SIFIT/Relatorio-de-Bugs.md) | BUG-001–BUG-046: reprodução, impacto, evidências, severidade/prioridade propostas e reteste. |
 | [Relatório dos testes](SIFIT/Relatorio%20dos%20testes.md) | Resultados consolidados, cobertura, limites e pendências. |
 | [Índice das evidências](SIFIT/Evidencias/README.md) | Jam por cenário e arquivos locais dos novos casos. |
@@ -153,6 +153,7 @@ extensao-qa/
 | [CT-RF122](SIFIT/Cenario_Teste/CT-RF122_Resultados_IA_Filtro_90_Dias.md) | Filtrar Resultados da Inteligência pelos últimos 90 dias | Aprovado conforme a gravação | — | [Jam — PED-12 — Últimos 90 dias](https://jam.dev/c/1728cfc2-1d36-4ea4-ab68-68a84458c359) |
 | [CT-RF123](SIFIT/Cenario_Teste/CT-RF123_Central_Resultados_IA_Execucao_Evasao.md) | Conferir a execução de Risco de Evasão na Central e em Resultados IA | Aprovado conforme a gravação | — | [Jam — PED-14 — Execução de Risco de Evasão](https://jam.dev/c/efe26a44-458a-4802-bd48-8e23c5ac5fd9) |
 | [CT-RF124](SIFIT/Cenario_Teste/CT-RF124_Configuracoes_Abas_Biometria_Senha.md) | Navegar pelas abas de Configurações com a senha da biometria protegida | Reprovado nas evidências | [BUG-046](SIFIT/Relatorio-de-Bugs.md#bug-046), em triagem | Jam — PED-15 (gravação restrita por conter dados de integração) |
+| [CT-RF125](SIFIT/Cenario_Teste/CT-RF125_Configuracoes_Salvar_Dias_Ausencia_Valido.md) | Salvar um valor válido de dias de ausência | Aprovado conforme a gravação | — | [Jam — PED-16 — Salvar dias de ausência](https://jam.dev/c/12d6bba7-a67e-4882-86a5-4dd08d194af2) |
 
 ## 🔬 Como este projeto funciona
 

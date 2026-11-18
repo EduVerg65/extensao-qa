@@ -1,0 +1,26 @@
+CT-RF125 — Salvar um valor válido de dias de ausência
+Fonte: https://jam.dev/c/12d6bba7-a67e-4882-86a5-4dd08d194af2
+Gravação: 16/11/2026, 21:59:22 BRT; duração: 29,34 s.
+Revisão documental: 17/11/2026.
+Página: https://sifit.centrion.com.br/configuracoes
+Foco deste caso: Salvar um valor inteiro positivo de dias de ausência e confirmar a persistência após recarregar Configurações.
+
+Cronologia (ações e eventos capturados no Jam):
+0:00–0:09  Substitui o valor inicial 1100 por 15.
+0:09–0:16  Salva e recarrega. A interface apresenta 15.
+0:18–0:22  Volta a informar 1100 e salva.
+0:24–0:27  Recarrega e confirma o retorno de 1100.
+
+Rede do conjunto gravado (eventos relevantes ao caso):
+0:10,10  POST /api/configuracoes/alterar/1 (HTTP 200), com dias_ausente=15 e verifica_erro: false.
+0:13,46  GET /api/configuracoes/1 (HTTP 200), com dias_ausente: 15.
+0:21,62  POST (HTTP 200), com dias_ausente=1100.
+0:25,01  GET (HTTP 200), com dias_ausente: 1100.
+
+Quadros consultados (reprodução do Jam):
+- Valor 15 após a primeira recarga.
+- Valor original 1100 após a segunda recarga.
+
+Observações e verificações futuras:
+- A evidência confirma persistência para o valor testado e restauração do valor original observado. A faixa completa e o efeito na contagem de clientes ausentes exigem outros casos.
+- Usar como regressão de salvamento. Verificar os limites do campo e o impacto na listagem de clientes ausentes.

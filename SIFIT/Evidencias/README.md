@@ -160,12 +160,13 @@ A revisão de Modelos de Ficha inclui CT-RF109–CT-RF115 com base em 6 gravaç�
 
 CT-RF116–CT-RF121 amplia a cobertura de Configurações e Modelos de Ficha com gravações de 16/11/2026 entre 22:03:53 e 22:18:52 BRT. As pastas seguem o padrão de origem, cronologia e quadros com SHA-256.
 
-## Inclusão de 17/11/2026 — Inteligência e Configurações (CT-RF122–CT-RF124)
+## Inclusão de 17/11/2026 — Inteligência e Configurações (CT-RF122–CT-RF125)
 
 | Caso | Evidência | Resultado |
 | --- | --- | --- |
 | [CT-RF122](../Cenario_Teste/CT-RF122_Resultados_IA_Filtro_90_Dias.md) | [Filtrar Resultados da Inteligência pelos últimos 90 dias](CT-RF122_Resultados_IA_Filtro_90_Dias/README.md) | Aprovado conforme a gravação |
 | [CT-RF123](../Cenario_Teste/CT-RF123_Central_Resultados_IA_Execucao_Evasao.md) | [Conferir a execução de Risco de Evasão na Central e em Resultados IA](CT-RF123_Central_Resultados_IA_Execucao_Evasao/README.md) | Aprovado conforme a gravação |
 | [CT-RF124](../Cenario_Teste/CT-RF124_Configuracoes_Abas_Biometria_Senha.md) | [Navegar pelas abas de Configurações com a senha da biometria protegida](CT-RF124_Configuracoes_Abas_Biometria_Senha/README.md) | Reprovado nas evidências |
+| [CT-RF125](../Cenario_Teste/CT-RF125_Configuracoes_Salvar_Dias_Ausencia_Valido.md) | [Salvar um valor válido de dias de ausência](CT-RF125_Configuracoes_Salvar_Dias_Ausencia_Valido/README.md) | Aprovado conforme a gravação |
 
-CT-RF122–CT-RF124 cobre Inteligência e Configurações com gravações de 16/11/2026 entre 21:50:51 e 21:57:29 BRT. As pastas reúnem origem, cronologia e recortes identificados com SHA-256.
+CT-RF122–CT-RF125 cobre Inteligência e Configurações com gravações de 16/11/2026 entre 21:50:51 e 21:59:22 BRT. As pastas reúnem origem, cronologia e recortes identificados com SHA-256.

@@ -1,6 +1,6 @@
 # 🐞 Relatório de Bugs — SIFIT
 
-**Escopo:** defeitos de 120 casos documentados (CT-RF01–CT-RF35, CT-RF38–CT-RF62 e CT-RF65–CT-RF124): recuperação, Perfil, Clientes, financeiro, página inicial e dashboard, tema, modalidades, categorias, avaliações, exercícios, grupos musculares, objetivos de treino, SifitBox – Turmas, Pagar.me, configurações, despesas fixas, relatórios, grupos (treino), fichas de anamnese, colaboradores, modelos de anamnese, categorias de anamnese, perguntas de anamnese, Prospecção, Bandeiras de Cartão, Contas a Pagar, Modelos de Contrato, Planos, Tipos de Pagamento e Modelos de Ficha. CT-RF60 (Modelos de Anamnese) e CT-RF61 (Categorias de Anamnese) são aprovados conforme a gravação, sem defeito identificado. CT-RF62 (Perguntas Anamnese) é reprovado nas evidências e acrescenta o BUG-044 (44 defeitos registrados).
+**Escopo:** defeitos de 121 casos documentados (CT-RF01–CT-RF35, CT-RF38–CT-RF62 e CT-RF65–CT-RF125): recuperação, Perfil, Clientes, financeiro, página inicial e dashboard, tema, modalidades, categorias, avaliações, exercícios, grupos musculares, objetivos de treino, SifitBox – Turmas, Pagar.me, configurações, despesas fixas, relatórios, grupos (treino), fichas de anamnese, colaboradores, modelos de anamnese, categorias de anamnese, perguntas de anamnese, Prospecção, Bandeiras de Cartão, Contas a Pagar, Modelos de Contrato, Planos, Tipos de Pagamento e Modelos de Ficha. CT-RF60 (Modelos de Anamnese) e CT-RF61 (Categorias de Anamnese) são aprovados conforme a gravação, sem defeito identificado. CT-RF62 (Perguntas Anamnese) é reprovado nas evidências e acrescenta o BUG-044 (44 defeitos registrados).
 
 **Ambientes:** CT-RF01 em https://sifitalfa.centrion.com.br/login; CT-RF02_ERRO em https://sifit.centrion.com.br/profile. CT-RF03: URL do frontend não confirmada; backend informado em `https://backendsifit.centrion.com.br/api/clientesPorNome/1`.
 
@@ -1907,9 +1907,9 @@ A revisão de Modelos de Ficha inclui CT-RF109–CT-RF115 com base em 6 gravaç�
 
 CT-RF116–CT-RF121 amplia a cobertura de Configurações e Modelos de Ficha com gravações de 16/11/2026 entre 22:03:53 e 22:18:52 BRT. Casos aprovados: 4. Reprovados: 1. A validar: 1. A falha de cadastro está em [BUG-045](#bug-045).
 
-## Inteligência e Configurações — revisão de 17/11/2026 (CT-RF122–CT-RF124)
+## Inteligência e Configurações — revisão de 17/11/2026 (CT-RF122–CT-RF125)
 
-CT-RF122–CT-RF124 cobre Inteligência e Configurações com gravações de 16/11/2026 entre 21:50:51 e 21:57:29 BRT. Casos aprovados: 2. Reprovados: 1. A validar: 0. Defeitos do lote: [BUG-046](#bug-046).
+CT-RF122–CT-RF125 cobre Inteligência e Configurações com gravações de 16/11/2026 entre 21:50:51 e 21:59:22 BRT. Casos aprovados: 3. Reprovados: 1. A validar: 0. Defeitos do lote: [BUG-046](#bug-046).
 
 ## Pontos a validar — sem defeito confirmado
 
