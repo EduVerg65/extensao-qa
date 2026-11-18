@@ -1,10 +1,10 @@
 # 🧪 Plano de Testes — SIFIT
 
-**Atualização:** 18/11/2026 — 161 cenários documentados (CT-RF01–CT-RF35, CT-RF38–CT-RF62 e CT-RF65–CT-RF165), com inclusão de CT-RF42 a CT-RF56 / Pagar.me, Configurações, Despesas Fixas e Relatórios, CT-RF57 e CT-RF58 / Grupos (treino), CT-RF59 / Fichas de Anamnese, CT-RF60 / Modelos de Anamnese, CT-RF61 / Categorias de Anamnese, CT-RF62 / Perguntas Anamnese, CT-RF65 a CT-RF73 / Colaboradores e CT-RF74 a CT-RF108 / Prospecção, Bandeiras de Cartão, Contas a Pagar, Modelos de Contrato, Planos e Tipos de Pagamento, além de Modelos de Ficha (CT-RF109–CT-RF115) e Configurações e Modelos de Ficha (CT-RF116–CT-RF121) e Inteligência e Configurações (CT-RF122–CT-RF127) e Inteligência e Automação (CT-RF128–CT-RF133) e ampliação da cobertura da Central de Automações (CT-RF134–CT-RF138) e integração de WhatsApp (CT-RF139–CT-RF144) e novos cenários de Configurações (CT-RF145–CT-RF150) e Configurações de Avaliação e Aniversário (CT-RF151–CT-RF156) e Aplicativo e Configurações / Biometria (CT-RF157–CT-RF165). BUG-011–BUG-054 em triagem.
+**Atualização:** 16/11/2026 — 104 cenários documentados (CT-RF04–CT-RF33, CT-RF40–CT-RF100, CT-RF101, CT-RF102, CT-RF103 e CT-RF91–CT-RF88), com inclusão de CT-RF47 a CT-RF60 / Pagar.me, Configurações, Despesas Fixas e Relatórios, CT-RF34 e CT-RF35 / Grupos (treino), CT-RF100 / Fichas de Anamnese, CT-RF101 / Modelos de Anamnese, CT-RF102 / Categorias de Anamnese, CT-RF103 / Perguntas Anamnese, CT-RF91 a CT-RF99 / Colaboradores e CT-RF61 a CT-RF88 / Prospecção, Bandeiras de Cartão, Contas a Pagar, Modelos de Contrato, Planos e Tipos de Pagamento; BUG-011–BUG-044 em triagem.
 
 **Padronização documental:** 13/11/2026, com resultados e pendências preservados.
 
-**Escopo:** 161 casos (CT-RF01–CT-RF35, CT-RF38–CT-RF62 e CT-RF65–CT-RF165) — autenticação, recuperação de senha, perfil, Clientes, financeiro, página inicial e dashboard, modalidades / tema de SifitBox, Categorias Crossfit, Avaliações, Exercícios, Grupos Musculares, Objetivos de Treino, Grupos (treino), Fichas de Anamnese, gestão de Modelos de Anamnese, gestão de Categorias de Anamnese, edição de Perguntas Anamnese, validações/funções/exclusão/busca de Colaboradores, Prospecção, Bandeiras de Cartão, Contas a Pagar, Modelos de Contrato, Planos, Tipos de Pagamento, Modelos de Ficha, Central de Automações, Integrações de WhatsApp e Configurações de Avaliação, Aniversário, Pagamento, Design e Biometria, além de Aplicativo.
+**Escopo:** 104 casos (CT-RF04–CT-RF33, CT-RF40–CT-RF100, CT-RF101, CT-RF102, CT-RF103 e CT-RF91–CT-RF88) — autenticação, recuperação de senha, perfil, Clientes, financeiro, página inicial e dashboard, modalidades / tema de SifitBox, Categorias Crossfit, Avaliações, Exercícios, Grupos Musculares, Objetivos de Treino, Grupos (treino), Fichas de Anamnese, gestão de Modelos de Anamnese, gestão de Categorias de Anamnese, edição de Perguntas Anamnese, validações/funções/exclusão/busca de Colaboradores, Prospecção, Bandeiras de Cartão, Contas a Pagar, Modelos de Contrato, Planos e Tipos de Pagamento.
 
 ## 📌 1. Identificação
 
@@ -14,13 +14,13 @@
 | Tipo de teste | Funcional manual, com análise exploratória e de evidências. |
 | Versão avaliada | Não confirmada; registrar por caso no reteste. |
 | Funcionalidades | Autenticação positiva e negativa, recuperação, Perfil, filtros de Clientes, financeiro, período, personais, modalidades / tema, Categorias Crossfit, Avaliações e Exercícios. |
-| Situação | 161 casos documentados: 81 aprovados, 59 reprovados e 21 a validar. 54 defeitos registrados (10 abertos e 44 em triagem) e 59 casos com reteste corretivo pendente. |
+| Situação | 101 casos documentados: 40 aprovados, 47 reprovados e 14 a validar; 43 defeitos registrados (10 abertos e 33 em triagem) e 47 casos com reteste corretivo pendente. |
 
 ---
 
 ## 🎯 2. Objetivo
 
-Verificar os fluxos dos 161 cenários documentados, comparando os critérios de aceitação com as evidências de autenticação, recuperação, perfil, Clientes, financeiro, página inicial, SifitBox, Categorias Crossfit, Avaliações, Exercícios, Grupos Musculares, Fichas de Anamnese, Colaboradores, Prospecção, Bandeiras de Cartão, Contas a Pagar, Modelos de Contrato, Planos, Tipos de Pagamento, Modelos de Ficha, Central de Automações, Integrações de WhatsApp e Configurações de Avaliação, Aniversário, Pagamento, Design e Biometria, além de Aplicativo. Manter rastreabilidade entre requisitos, casos, Jam, vídeos, resultados e defeitos, distinguindo revisões documentais de novas execuções.
+Verificar os fluxos dos 101 cenários documentados, comparando os critérios de aceitação com as evidências de autenticação, recuperação, perfil, Clientes, financeiro, página inicial, SifitBox, Categorias Crossfit, Avaliações, Exercícios, Grupos Musculares, Fichas de Anamnese, Colaboradores, Prospecção, Bandeiras de Cartão, Contas a Pagar, Modelos de Contrato, Planos e Tipos de Pagamento. Manter rastreabilidade entre requisitos, casos, Jam, vídeos, resultados e defeitos, distinguindo revisões documentais de novas execuções.
 
 ---
 
@@ -40,80 +40,62 @@ Verificar os fluxos dos 161 cenários documentados, comparando os critérios de 
 
 **Ampliação de escopo em 14/11/2026:**
 
-- CT-RF05–06: recusa de senha incorreta e de usuário declarado inexistente.
-- CT-RF07–11: retorno de exportação, composição da cobrança, contagens, filtro de mensalidades e escopo dos indicadores.
-- CT-RF12–13: validade do período e significado dos códigos de personais.
-- CT-RF14–16: legibilidade no tema escuro, conclusão da edição e regra de remoção de modalidades.
-- CT-RF17–20: pesquisa, atualização, exclusão e criação de Categorias Crossfit.
-- As quatro regras a validar (CT-RF08, CT-RF11, CT-RF13 e CT-RF16) exigem confirmação de produto antes de conclusão definitiva.
+- CT-RF02–06: recusa de senha incorreta e de usuário declarado inexistente.
+- CT-RF11–11: retorno de exportação, composição da cobrança, contagens, filtro de mensalidades e escopo dos indicadores.
+- CT-RF06–13: validade do período e significado dos códigos de personais.
+- CT-RF41–16: legibilidade no tema escuro, conclusão da edição e regra de remoção de modalidades.
+- CT-RF36–20: pesquisa, atualização, exclusão e criação de Categorias Crossfit.
+- As quatro regras a validar (CT-RF14, CT-RF15, CT-RF07 e CT-RF43) exigem confirmação de produto antes de conclusão definitiva.
 
-**Ampliação de escopo em 15/11/2026:** CT-RF21 — envio do cadastro de avaliação, tratamento de erro e critérios para reteste com dados válidos e inválidos; BUG-010 aberto.
+**Ampliação de escopo em 15/11/2026:** CT-RF10 — envio do cadastro de avaliação, tratamento de erro e critérios para reteste com dados válidos e inválidos; BUG-010 aberto.
 
-**Exercícios — CT-RF22–CT-RF28:** código conforme a regra, exclusão e totais, edição preservando identidade, cadastro com imagem, campos obrigatórios e validação cruzada dos tipos de mídia. BUG-011–BUG-015 aguardam triagem; a imagem persistida de CT-RF25 permanece a validar.
+**Exercícios — CT-RF21–CT-RF27:** código conforme a regra, exclusão e totais, edição preservando identidade, cadastro com imagem, campos obrigatórios e validação cruzada dos tipos de mídia. BUG-011–BUG-015 aguardam triagem; a imagem persistida de CT-RF24 permanece a validar.
 
-**Grupos Musculares — CT-RF29–CT-RF33:** exclusão de registro, carregamento das imagens da listagem, cadastro, alteração do tipo de membro e filtros por código e por tipo. BUG-016 e BUG-017 aguardam triagem; a lógica de combinação dos filtros permanece não demonstrada.
+**Grupos Musculares — CT-RF28–CT-RF32:** exclusão de registro, carregamento das imagens da listagem, cadastro, alteração do tipo de membro e filtros por código e por tipo. BUG-016 e BUG-017 aguardam triagem; a lógica de combinação dos filtros permanece não demonstrada.
 
-**Objetivos de Treino — CT-RF35:** cadastro de objetivo pela tela Objetivos Treino, tratamento do erro de gravação, regra do campo Código e critérios para reteste com dados válidos e recusados. BUG-019 aguarda triagem; filtros por código e nome da mesma tela não puderam ser avaliados com a base vazia da gravação. A numeração CT-RF34 permanece reservada.
+**Objetivos de Treino — CT-RF33:** cadastro de objetivo pela tela Objetivos Treino, tratamento do erro de gravação, regra do campo Código e critérios para reteste com dados válidos e recusados. BUG-019 aguarda triagem; filtros por código e nome da mesma tela não puderam ser avaliados com a base vazia da gravação. A numeração CT-RF08 permanece reservada.
 
-**Categorias Crossfit — CT-RF38:** cadastro de categoria informando apenas o nome, código atribuído pelo sistema, atualização da listagem e dos cartões e localização do registro pelos filtros de código e de nome. Sem defeito no fluxo gravado; a regra do campo Código e o contrato dos cartões permanecem a confirmar.
+**Categorias Crossfit — CT-RF40:** cadastro de categoria informando apenas o nome, código atribuído pelo sistema, atualização da listagem e dos cartões e localização do registro pelos filtros de código e de nome. Sem defeito no fluxo gravado; a regra do campo Código e o contrato dos cartões permanecem a confirmar.
 
-**SifitBox – Turmas — CT-RF39–CT-RF41:** cadastro de modalidade, exclusão de turmas e modalidades pela lixeira e cadastro de turma sem modalidade selecionada, a partir de uma única gravação. BUG-020 aguarda triagem; a regra de exclusão (CT-RF40) e a obrigatoriedade da modalidade (CT-RF41) permanecem a confirmar.
+**SifitBox – Turmas — CT-RF44–CT-RF46:** cadastro de modalidade, exclusão de turmas e modalidades pela lixeira e cadastro de turma sem modalidade selecionada, a partir de uma única gravação. BUG-020 aguarda triagem; a regra de exclusão (CT-RF45) e a obrigatoriedade da modalidade (CT-RF46) permanecem a confirmar.
 
-**Pagar.me e Configurações — CT-RF42–CT-RF45:** solicitação de saque, criação de cobrança, salvamento das Configurações (aba Home) e atualização do painel por período, a partir de uma única gravação. BUG-021 aguarda triagem; a regra de saque e a faixa do campo de dias permanecem a confirmar.
+**Pagar.me e Configurações — CT-RF47–CT-RF49:** solicitação de saque, criação de cobrança, salvamento das Configurações (aba Home) e atualização do painel por período, a partir de uma única gravação. BUG-021 aguarda triagem; a regra de saque e a faixa do campo de dias permanecem a confirmar.
 
-**Despesas Fixas — CT-RF46–CT-RF49:** filtros por código e nome, cadastro (com duas requisições de criação), exclusão com confirmação e edição, a partir de uma única gravação. O cadastro permanece a validar quanto à duplicidade.
+**Despesas Fixas — CT-RF50–CT-RF53:** filtros por código e nome, cadastro (com duas requisições de criação), exclusão com confirmação e edição, a partir de uma única gravação. O cadastro permanece a validar quanto à duplicidade.
 
-**Relatórios — CT-RF50–CT-RF56:** geração de PDF de Matrículas, Contas a Receber, Contas a Pagar (Pagas), Avaliações, Clientes, Colaboradores e Caixas, a partir de uma gravação e de oito arquivos baixados (cinco vazios). BUG-022 e BUG-023 aguardam triagem.
+**Relatórios — CT-RF54–CT-RF60:** geração de PDF de Matrículas, Contas a Receber, Contas a Pagar (Pagas), Avaliações, Clientes, Colaboradores e Caixas, a partir de uma gravação e de oito arquivos baixados (cinco vazios). BUG-022 e BUG-023 aguardam triagem.
 
-**Grupos (treino) — CT-RF57 e CT-RF58:** exclusão e edição de grupo pela listagem, a partir de uma única gravação que também mostra o cadastro bem-sucedido de um novo grupo. BUG-024 (exclusão, HTTP 500) e BUG-025 (edição, status não persistido) aguardam triagem; o BUG-024 coincide com o BUG-016 já registrado para grupos musculares.
+**Grupos (treino) — CT-RF34 e CT-RF35:** exclusão e edição de grupo pela listagem, a partir de uma única gravação que também mostra o cadastro bem-sucedido de um novo grupo. BUG-024 (exclusão, HTTP 500) e BUG-025 (edição, status não persistido) aguardam triagem; o BUG-024 coincide com o BUG-016 já registrado para grupos musculares.
 
-**Fichas de Anamnese — CT-RF59:** cadastro de anamnese para um aluno, testado com dois modelos e três respostas diferentes, tanto pela rota de aplicar quanto pela de salvar rascunho. BUG-032 (HTTP 500 em ambas as rotas, mensagem genérica) aguarda triagem; coincide no padrão de resposta com o BUG-016 e o BUG-024.
+**Fichas de Anamnese — CT-RF100:** cadastro de anamnese para um aluno, testado com dois modelos e três respostas diferentes, tanto pela rota de aplicar quanto pela de salvar rascunho. BUG-032 (HTTP 500 em ambas as rotas, mensagem genérica) aguarda triagem; coincide no padrão de resposta com o BUG-016 e o BUG-024.
 
-**Colaboradores — CT-RF65 a CT-RF70:** validações de data de nascimento, formato de CREF e campos obrigatórios na edição, duplicidade de função e exclusão de colaborador, a partir de seis gravações distintas. BUG-026 a BUG-031 aguardam triagem; o BUG-031 (exclusão, HTTP 500) coincide no padrão de resposta com o BUG-016 e o BUG-024.
+**Colaboradores — CT-RF91 a CT-RF96:** validações de data de nascimento, formato de CREF e campos obrigatórios na edição, duplicidade de função e exclusão de colaborador, a partir de seis gravações distintas. BUG-026 a BUG-031 aguardam triagem; o BUG-031 (exclusão, HTTP 500) coincide no padrão de resposta com o BUG-016 e o BUG-024.
 
-**Ampliação de escopo em 16/11/2026:** CT-RF60 — Modelos de Anamnese: busca, filtro, cadastro com três perguntas do banco, duas edições e duas exclusões de modelo, a partir de uma única gravação. Aprovado conforme a gravação; nenhum defeito identificado no fluxo avaliado.
+**Ampliação de escopo em 16/11/2026:** CT-RF101 — Modelos de Anamnese: busca, filtro, cadastro com três perguntas do banco, duas edições e duas exclusões de modelo, a partir de uma única gravação. Aprovado conforme a gravação; nenhum defeito identificado no fluxo avaliado.
 
-**Ampliação de escopo em 16/11/2026 — CT-RF74–CT-RF84:** alternância de tema, consulta/cancelamento, exclusão confirmada e cadastro de leads nos estágios Novo Contato, Interessado, Fez Aula Experimental, Proposta e Fechado; cadastro de bandeira com parcela e aplicação de tema em Bandeiras. CT-RF83 cobre envio apenas com nome, sujeito à definição de obrigatoriedade. BUG-035–BUG-037 em triagem.
+**Ampliação de escopo em 16/11/2026 — CT-RF61–CT-RF70:** alternância de tema, consulta/cancelamento, exclusão confirmada e cadastro de leads nos estágios Novo Contato, Interessado, Fez Aula Experimental, Proposta e Fechado; cadastro de bandeira com parcela e aplicação de tema em Bandeiras. CT-RF69 cobre envio apenas com nome, sujeito à definição de obrigatoriedade. BUG-035–BUG-037 em triagem.
 
 Integração documental dos arquivos RESUMO.txt fornecidos em `C:\Users\Leonardo\Desktop\evidencias`, com data de gravação e análise informada de 16/11/2026. Os Jams não foram reabertos nesta integração; eventos de rede, horários e quadros abaixo são transcritos dos resumos, sem verificação independente. Não houve nova execução do SIFIT, reteste, consulta ao banco, logs ou código.
 
-**Prospecção — CT-RF85–CT-RF90:** alternância de tema e notificações, busca por texto, filtro por estágio, cadastro de lead (com duas requisições de criação), validação do telefone e edição, a partir de uma única gravação. BUG-038 aguarda triagem; o cadastro permanece a validar quanto à duplicidade.
+**Prospecção — CT-RF62–CT-RF75:** alternância de tema e notificações, busca por texto, filtro por estágio, cadastro de lead (com duas requisições de criação), validação do telefone e edição, a partir de uma única gravação. BUG-038 aguarda triagem; o cadastro permanece a validar quanto à duplicidade.
 
-**Contas a Pagar — CT-RF91–CT-RF95:** filtros, cadastro de conta a colaborador sem colaborador, busca de colaborador, visualização e exclusão, a partir de uma única gravação. BUG-039 aguarda triagem; filtros e busca de colaborador permanecem a validar.
+**Contas a Pagar — CT-RF16–CT-RF20:** filtros, cadastro de conta a colaborador sem colaborador, busca de colaborador, visualização e exclusão, a partir de uma única gravação. BUG-039 aguarda triagem; filtros e busca de colaborador permanecem a validar.
 
-**Modelos de Contrato — CT-RF96–CT-RF98:** variáveis e pré-visualização, cadastro e listagem, a partir de uma única gravação. BUG-040 aguarda triagem.
+**Modelos de Contrato — CT-RF82–CT-RF83:** variáveis e pré-visualização, cadastro e listagem, a partir de uma única gravação. BUG-040 aguarda triagem.
 
-**Planos — CT-RF99–CT-RF103:** filtros, tema e notificações, cadastro, cartão Ativos e edição, a partir de uma única gravação. BUG-041 aguarda triagem.
+**Planos — CT-RF77–CT-RF80:** filtros, tema e notificações, cadastro, cartão Ativos e edição, a partir de uma única gravação. BUG-041 aguarda triagem.
 
-**Tipos de Pagamento — CT-RF104–CT-RF108:** filtros, cadastro com status, edição, exclusão de tipo em uso e tema com notificações, a partir de uma única gravação. BUG-042 e BUG-043 aguardam triagem; filtros permanecem a validar.
-
-**Modelos de Ficha — CT-RF109–CT-RF115:** bloquear cadastro de modelo de ficha sem nome, cancelar cadastro de modelo de ficha preenchido, buscar modelo de ficha por código inexistente, buscar modelo de ficha por título inexistente, buscar modelos de ficha com filtros combinados, limpar os filtros de Modelos de Ficha, pesquisar novamente modelos de ficha sem filtros.
-
-**Configurações e Modelos de Ficha — CT-RF116–CT-RF121:** validar o salvamento com o campo de dias de ausência vazio, cancelar uma alteração nas Configurações sem salvar, alterar e persistir a opção Trabalha com turmas, conferir a configuração Academia marcada como Box, conferir a configuração de acesso ao sistema desktop, cadastrar um modelo de ficha com nome e personal.
-
-**Inteligência e Configurações — CT-RF122–CT-RF127:** filtrar Resultados da Inteligência pelos últimos 90 dias, conferir a execução de Risco de Evasão na Central e em Resultados IA, navegar pelas abas de Configurações com a senha da biometria protegida, salvar um valor válido de dias de ausência, bloquear número negativo no campo de dias de ausência, validar letras no campo de dias de ausência.
-
-**Inteligência e Automação — CT-RF128–CT-RF133:** abrir e fechar a configuração de Risco de Evasão, abrir Aniversariantes e conferir a prévia da automação, verificar recursos marcados como Em desenvolvimento, filtrar Resultados da Inteligência por Hoje, filtrar Resultados da Inteligência pelos últimos 7 dias, filtrar Resultados da Inteligência pelos últimos 30 dias.
-
-**Inteligência e Automação / Central de Automações — CT-RF134–CT-RF138:** atualizar a Central de Automações, desativar Risco de Evasão e conferir a persistência e o contador, ativar Aniversariantes e conferir a persistência e o contador, executar Risco de Evasão manualmente pela Central, abrir os resultados de Risco de Evasão pela Central.
-
-**Configurações / Integrações / WhatsApp — CT-RF139–CT-RF144:** mascarar a API Key no formulário de WhatsApp, validar uma URL da API sem formato de endereço, bloquear o salvamento com Nome da Instância vazio, persistir a opção Ativo da integração de WhatsApp, tratar falha ao conectar WhatsApp via Evolution API, consultar novamente o status da integração de WhatsApp.
-
-**Configurações — CT-RF145–CT-RF150:** salvar mensagens de aniversário para WhatsApp e SMS, persistir a desativação do Pagamento Online, salvar uma Cor Principal hexadecimal válida, rejeitar código hexadecimal inválido na Cor Secundária, informar o limite de tamanho ao rejeitar o logo, atualizar a verificação do WhatsApp enquanto aguarda QR Code.
-
-**Configurações / Avaliação e Aniversário — CT-RF151–CT-RF156:** desativar a cobrança da avaliação do cliente, alterar o tipo de avaliação para Bioimpedância, habilitar Teste Físico nas configurações de avaliação, desabilitar o envio automático de aniversário, cancelar a edição da mensagem de aniversário do WhatsApp, inserir variáveis na mensagem de aniversário do WhatsApp.
-
-**Aplicativo e Configurações / Biometria — CT-RF157–CT-RF165:** consultar os detalhes de uma notificação, impedir o envio de uma notificação sem mensagem, criar uma notificação e conferir a prévia e a listagem, alternar o filtro de postagens e abrir a lista completa, alternar o filtro de denúncias com a lista vazia, cancelar a edição da senha de Biometria, rejeitar um valor sem formato de IP em Biometria, persistir a alteração da porta do aparelho de Biometria, validar dias negativos para travar a catraca.
+**Tipos de Pagamento — CT-RF84–CT-RF88:** filtros, cadastro com status, edição, exclusão de tipo em uso e tema com notificações, a partir de uma única gravação. BUG-042 e BUG-043 aguardam triagem; filtros permanecem a validar.
 
 **Limites da cobertura atual:**
 
-O CT-RF04_loginComSucesso foi aprovado conforme a gravação, sem nova execução nesta revisão. Não cobre credenciais inválidas, campos vazios, logout, expiração, persistência de Manter conectado, outros perfis ou exatidão dos dados exibidos no painel.
+O CT-RF01_loginComSucesso foi aprovado conforme a gravação, sem nova execução nesta revisão. Não cobre credenciais inválidas, campos vazios, logout, expiração, persistência de Manter conectado, outros perfis ou exatidão dos dados exibidos no painel.
 
 As etapas de envio da solicitação, entrega de mensagem, uso de token e definição de nova senha dependem da abertura do fluxo e da definição de suas regras. Não estão cobertas pela execução gravada.
 
 A gravação de Perfil não valida o salvamento de alterações, as regras de obrigatoriedade ou todas as permissões. Esses fluxos exigem casos específicos após a definição das regras e a correção da apresentação.
 
-O CT-RF03 foi documentado conforme o relato e as capturas fornecidos. Não houve acesso direto ao conteúdo do Jam, análise do código ou execução da matriz de reteste nesta revisão. A classificação atual não comprova falha específica no backend nem define onde a filtragem deve ocorrer.
+O CT-RF09 foi documentado conforme o relato e as capturas fornecidos. Não houve acesso direto ao conteúdo do Jam, análise do código ou execução da matriz de reteste nesta revisão. A classificação atual não comprova falha específica no backend nem define onde a filtragem deve ocorrer.
 
 ---
 
@@ -125,7 +107,7 @@ O CT-RF03 foi documentado conforme o relato e as capturas fornecidos. Não houve
 | DevTools — Elements | Inspecionar a renderização dos campos e o DOM do perfil. |
 | DevTools — Network e Console | Correlacionar interface, requisições e erros durante execução e reteste. |
 | Jam e capturas | Preservar evidências e contexto dos comportamentos observados. |
-| Google Drive | Referenciar o vídeo complementar do CT-RF01. |
+| Google Drive | Referenciar o vídeo complementar do CT-RF04. |
 | Markdown e GitHub | Documentar requisitos, cenários, resultados e defeitos. |
 
 ## 🔬 5. Técnicas de teste
@@ -141,7 +123,7 @@ As técnicas previstas para o reteste não representam novas execuções realiza
 
 ## 🔐 6. Ambiente e preparação
 
-### CT-RF01 — Recuperação de senha
+### CT-RF04 — Recuperação de senha
 
 | Item | Definição |
 | --- | --- |
@@ -153,12 +135,12 @@ As técnicas previstas para o reteste não representam novas execuções realiza
 | Ferramentas | Navegador, DevTools (Network e Console) e Jam para evidências. |
 | Preparação da rede no reteste | Habilitar captura de todas as requisições, remover filtros, limpar o histórico e preservar registros se houver navegação. |
 
-### CT-RF02_ERRO — Perfil
+### CT-RF05_ERRO — Perfil
 
 | Item | Definição |
 | --- | --- |
 | URL afetada | https://sifit.centrion.com.br/profile, conforme Actions do Jam. Info apresenta `/configuracoes`. |
-| Ambiente | Domínio distinto do CT-RF01; classificação e versão devem ser confirmadas antes do reteste. |
+| Ambiente | Domínio distinto do CT-RF04; classificação e versão devem ser confirmadas antes do reteste. |
 | Navegador / sistema / janela da gravação | Chrome 155.0.8059.85 / Windows 11 (x86) / 1536 × 742. Zoom não confirmado. |
 | Gravação | 22/10/2026 às 21:45 BRT; aproximadamente 15 segundos. |
 | Estado da sessão | Usuário autenticado, com acesso à opção Perfil. |
@@ -167,7 +149,7 @@ As técnicas previstas para o reteste não representam novas execuções realiza
 | Preparação | Registrar resolução e zoom, limpar registros e habilitar captura antes de acessar Perfil. |
 | Variações de layout | Repetir na janela de referência 1536 × 742 e nas resoluções suportadas acordadas com o produto; registrar quais foram efetivamente executadas. |
 
-### CT-RF03 — Filtros da página Clientes
+### CT-RF09 — Filtros da página Clientes
 
 | Item | Definição |
 | --- | --- |
@@ -183,7 +165,7 @@ As técnicas previstas para o reteste não representam novas execuções realiza
 
 ---
 
-### CT-RF04_loginComSucesso — Login
+### CT-RF01_loginComSucesso — Login
 
 | Item | Definição |
 | --- | --- |
@@ -198,40 +180,40 @@ As técnicas previstas para o reteste não representam novas execuções realiza
 
 ---
 
-### CT-RF05 a CT-RF20 — ambiente das novas evidências
+### CT-RF02 a CT-RF39 — ambiente das novas evidências
 
 Gravações de 14/11/2026, entre aproximadamente 00:23 e 00:45 BRT, no frontend `https://sifit.centrion.com.br`. Chrome 157.0.8103.51 / Windows 11 (x86); tela informada 1920 × 957 e vídeos originais 1918 × 956 pixels. Versão, zoom e classificação do ambiente não confirmados. As páginas e os horários individuais estão em cada cenário e nos metadados da evidência.
 
 | Grupo | Preparação para nova execução |
 | --- | --- |
-| CT-RF05–06 | Iniciar sem sessão; usar conta existente/senha incorreta ou identificador comprovadamente inexistente. |
-| CT-RF07–12 | Base financeira conhecida; confirmar encargos, faixas de vencimento, referência dos cartões e aplicação do período. |
-| CT-RF13 | Cadastro de personais conhecido; confirmar se Código é ID ou posição da lista. |
-| CT-RF14–16 | Modalidades e turmas de teste; permissões de edição e regra de remoção confirmadas; conferir ambos os temas. |
-| CT-RF17–20 | Categorias descartáveis, permissões e vínculos conhecidos para testar pesquisa e operações de cadastro. |
+| CT-RF02–06 | Iniciar sem sessão; usar conta existente/senha incorreta ou identificador comprovadamente inexistente. |
+| CT-RF11–12 | Base financeira conhecida; confirmar encargos, faixas de vencimento, referência dos cartões e aplicação do período. |
+| CT-RF07 | Cadastro de personais conhecido; confirmar se Código é ID ou posição da lista. |
+| CT-RF41–16 | Modalidades e turmas de teste; permissões de edição e regra de remoção confirmadas; conferir ambos os temas. |
+| CT-RF36–20 | Categorias descartáveis, permissões e vínculos conhecidos para testar pesquisa e operações de cadastro. |
 
 As ações de edição, criação e exclusão descritas ocorreram nas gravações fornecidas. Nenhuma dessas operações foi reexecutada durante esta atualização documental.
 
 ---
 
-### CT-RF21 — ambiente e preparação
+### CT-RF10 — ambiente e preparação
 
 Gravação de 15/11/2026, início às 15:07:51,265 BRT, na página https://sifit.centrion.com.br/avaliacoes. Chrome 157.0.8103.51 / Windows 11 (x86), captura 1536 × 742. Versão, zoom e classificação do ambiente não identificados.
 
 Para o reteste, preparar aluno existente selecionável pela busca, personal habilitado e data/hora permitidas. Os dados históricos são aluno 3423, funcionário 11, personal 7 e 15/11/2026 às 06:00; existência do aluno e regra de retroatividade precisam ser confirmadas. Conferir persistência antes de repetir envios.
 
-### CT-RF22 a CT-RF28 — ambiente e preparação
+### CT-RF21 a CT-RF27 — ambiente e preparação
 
 | Item | Definição |
 | --- | --- |
 | Página | https://sifit.centrion.com.br/exercicios |
 | Navegador / sistema / janela | Edge 157.0.8103.80 / Windows 11 (x86) / 1912 × 960, conforme Info. |
-| Gravações | 15/11/2026: RF22 às 15:25 (5 s), RF23 às 15:40 (6 s), RF24 às 15:38 (9 s), RF25 às 15:35 (5 s), RF26 às 16:11 (4 s), RF27 às 16:08 (7 s) e RF28 às 16:07 (7 s), durações aproximadas. |
+| Gravações | 15/11/2026: RF21 às 15:25 (5 s), RF22 às 15:40 (6 s), RF23 às 15:38 (9 s), RF24 às 15:35 (5 s), RF25 às 16:11 (4 s), RF26 às 16:08 (7 s) e RF27 às 16:07 (7 s), durações aproximadas. |
 | Dados e permissões | Confirmar regra do código; preparar exercícios descartáveis com IDs e totais conhecidos; imagem e vídeo controlados, com extensão, MIME e tamanho registrados, sem dados pessoais. |
 | Preparação | Registrar versão, zoom e ambiente; capturar foco, ação explícita de edição, IDs antes/depois, totais, mensagens de validação, rede e mídias após reabertura. Omitir credenciais e tokens. |
-| Limites | RF22 baseado no relato e imagem inicial; RF23–25 em quadros e listagem Network; RF26–28 em quadros e Info, sem confirmação de MIME, persistência ou resposta detalhada da API; sem nova execução. |
+| Limites | RF21 baseado no relato e imagem inicial; RF22–25 em quadros e listagem Network; RF25–28 em quadros e Info, sem confirmação de MIME, persistência ou resposta detalhada da API; sem nova execução. |
 
-### CT-RF29 a CT-RF33 — ambiente e preparação
+### CT-RF28 a CT-RF32 — ambiente e preparação
 
 | Item | Definição |
 | --- | --- |
@@ -244,7 +226,7 @@ Para o reteste, preparar aluno existente selecionável pela busca, personal habi
 | Preparação | Registrar versão, zoom e ambiente; capturar listagem, cartões de resumo, rodapé de contagem, diálogos, rede e console antes e depois de cada operação. Omitir credenciais e tokens. |
 | Limites | Análise documental dos painéis do Jam, sem nova execução. Os cabeçalhos de resposta das imagens foram descartados por inconsistência do painel de detalhe. A cronologia não registra requisições de criação e de atualização com código de status. |
 
-### CT-RF35 — ambiente e preparação
+### CT-RF33 — ambiente e preparação
 
 | Item | Definição |
 | --- | --- |
@@ -257,7 +239,7 @@ Para o reteste, preparar aluno existente selecionável pela busca, personal habi
 | Preparação | Registrar versão, zoom e ambiente; capturar listagem, cartões de resumo, formulário, diálogos, rede (incluindo payload e resposta) e console antes e depois do envio. Omitir credenciais e tokens. |
 | Limites | Análise documental dos painéis do Jam, sem nova execução. O Jam não capturou o corpo da requisição nem da resposta; a base estava vazia durante toda a gravação. |
 
-### CT-RF38 — ambiente e preparação
+### CT-RF40 — ambiente e preparação
 
 | Item | Definição |
 | --- | --- |
@@ -270,7 +252,7 @@ Para o reteste, preparar aluno existente selecionável pela busca, personal habi
 | Preparação | Registrar versão, zoom e ambiente; capturar listagem, cartões, formulário, mensagens, rede (incluindo corpo da requisição e da resposta) e console antes e depois do cadastro. Omitir credenciais e tokens. |
 | Limites | Análise documental dos painéis do Jam, sem nova execução. Os filtros não geram requisição de rede; a captura pode não incluir o carregamento inicial. Persistência após recarga não verificada. |
 
-### CT-RF39 a CT-RF41 — ambiente e preparação
+### CT-RF44 a CT-RF46 — ambiente e preparação
 
 | Item | Definição |
 | --- | --- |
@@ -283,7 +265,7 @@ Para o reteste, preparar aluno existente selecionável pela busca, personal habi
 | Preparação | Registrar versão, zoom e ambiente; capturar listagens, formulários, mensagens, filtro de status, rede (incluindo corpos) e console antes e depois de cada operação, e gravar a tela com a validação nativa do navegador visível quando possível. Omitir credenciais e tokens. |
 | Limites | Análise documental dos painéis do Jam, sem nova execução. Corpos das exclusões, filtro "Inativo", envio válido de turma e persistência após recarga não verificados. |
 
-### CT-RF42 a CT-RF45 — ambiente e preparação
+### CT-RF47 a CT-RF49 — ambiente e preparação
 
 | Item | Definição |
 | --- | --- |
@@ -296,7 +278,7 @@ Para o reteste, preparar aluno existente selecionável pela busca, personal habi
 | Preparação | Registrar versão, zoom e ambiente; capturar indicadores, formulários, mensagens, rede (incluindo corpos) e console antes e depois de cada operação. Omitir credenciais e tokens. |
 | Limites | Análise documental dos painéis do Jam, sem nova execução. Corpos de requisição e de resposta indisponíveis; resultado do saque, persistência das configurações e origem dos dados do painel não confirmados. |
 
-### CT-RF46 a CT-RF49 — ambiente e preparação
+### CT-RF50 a CT-RF53 — ambiente e preparação
 
 | Item | Definição |
 | --- | --- |
@@ -309,7 +291,7 @@ Para o reteste, preparar aluno existente selecionável pela busca, personal habi
 | Preparação | Registrar versão, zoom e ambiente; capturar listagem, cartões, formulários, diálogos, rede (incluindo corpos, com atenção ao número de requisições de criação) e console antes e depois de cada operação. Omitir credenciais e tokens. |
 | Limites | Análise documental dos painéis do Jam, sem nova execução. Filtros sem requisição de rede (filtragem local não confirmada); corpo e resposta da segunda criação e persistência após recarga não verificados. |
 
-### CT-RF50 a CT-RF56 — ambiente e preparação
+### CT-RF54 a CT-RF60 — ambiente e preparação
 
 | Item | Definição |
 | --- | --- |
@@ -322,7 +304,7 @@ Para o reteste, preparar aluno existente selecionável pela busca, personal habi
 | Preparação | Registrar versão, zoom e ambiente; gerar um relatório por vez, capturando a requisição, o tamanho e o conteúdo do arquivo e comparando com os dados do módulo de origem. Omitir credenciais e tokens. |
 | Limites | Análise documental do Jam e dos arquivos baixados, sem nova execução. A atividade do usuário não foi registrada no Console do Jam; a correspondência dos arquivos vazios com os tipos é inferida pela ordem dos downloads. |
 
-### CT-RF57 — ambiente e preparação
+### CT-RF34 — ambiente e preparação
 
 | Item | Definição |
 | --- | --- |
@@ -337,14 +319,14 @@ Para o reteste, preparar aluno existente selecionável pela busca, personal habi
 
 ---
 
-### CT-RF58 — ambiente e preparação
+### CT-RF35 — ambiente e preparação
 
 | Item | Definição |
 | --- | --- |
 | Página | https://sifit.centrion.com.br/grupos |
 | Backend de referência | https://backendsifit.centrion.com.br |
 | Navegador / sistema / janela | Chrome 157.0.8103.78 / Windows (x86) 11 / 1920 × 911, conforme Info. |
-| Gravação | Mesma gravação do CT-RF57 — 15/11/2026 às 21h03 BRT, duração de 1 min 38 s; cobre o cadastro, duas edições e a tentativa de exclusão do grupo "Treino sla". |
+| Gravação | Mesma gravação do CT-RF34 — 15/11/2026 às 21h03 BRT, duração de 1 min 38 s; cobre o cadastro, duas edições e a tentativa de exclusão do grupo "Treino sla". |
 | Rede | Classificada como rápida no Jam: mais de 10 Mbps, latência de 50 ms. |
 | Dados e permissões | Grupo de teste conhecido (código 11, "Treino sla", recém-criado na mesma gravação) com todos os campos registrados antes de cada edição. |
 | Preparação | Registrar versão, zoom e ambiente; capturar o formulário de edição, a seleção de cada campo, a rede (corpo e cabeçalhos de cada `POST /api/edita/grupo/{id}` e das consultas seguintes) e o console antes e depois de cada alteração. Omitir credenciais e tokens. |
@@ -352,7 +334,7 @@ Para o reteste, preparar aluno existente selecionável pela busca, personal habi
 
 ---
 
-### CT-RF59 — ambiente e preparação
+### CT-RF100 — ambiente e preparação
 
 | Item | Definição |
 | --- | --- |
@@ -367,17 +349,17 @@ Para o reteste, preparar aluno existente selecionável pela busca, personal habi
 
 ---
 
-### CT-RF74 a CT-RF84 — ambiente e preparação
+### CT-RF61 a CT-RF70 — ambiente e preparação
 
 | Item | Preparação |
 | --- | --- |
 | Evidências recebidas | Onze pastas, cada uma com RESUMO.txt, copiadas para Evidencias com integridade SHA-256 registrada no README do caso. |
 | Ambiente | Telas Prospecção e Bandeiras de Cartão; URL, navegador, sistema, versão, zoom e horário não informados nos resumos. Registrar antes da próxima execução. |
 | Dados | Sessão com permissões adequadas, leads de teste identificáveis, valores anteriores registrados, dois leads descartáveis para exclusão e bandeira com taxas conhecidas. Os códigos gravados são exemplos e podem não existir no reteste. |
-| Regras | Confirmar obrigatoriedade dos campos de lead antes de concluir CT-RF83; registrar o comportamento aprovado pelo produto. |
+| Regras | Confirmar obrigatoriedade dos campos de lead antes de concluir CT-RF69; registrar o comportamento aprovado pelo produto. |
 | Captura | Registrar interface, corpos de criação e consulta, identificadores, totais, temas e reabertura/recarga; proteger dados pessoais. |
 | Limites | Revisão dos resumos fornecidos; sem consulta direta aos Jams ou nova execução. Não há vídeos ou capturas locais deste lote. |
-### CT-RF85 a CT-RF90 — ambiente e preparação
+### CT-RF62 a CT-RF75 — ambiente e preparação
 
 | Item | Definição |
 | --- | --- |
@@ -390,7 +372,7 @@ Para o reteste, preparar aluno existente selecionável pela busca, personal habi
 | Preparação | Registrar versão, zoom e ambiente; capturar listagem, cartões, formulários, rede (incluindo corpos, com atenção ao número de requisições de criação) e console antes e depois de cada operação. Omitir credenciais, tokens e e-mails. |
 | Limites | Análise documental dos painéis do Jam, sem nova execução. Busca e filtro por estágio sem requisição de rede (filtragem local não confirmada); corpo e resposta da segunda criação e persistência após recarga não verificados. |
 
-### CT-RF91 a CT-RF95 — ambiente e preparação
+### CT-RF16 a CT-RF20 — ambiente e preparação
 
 | Item | Definição |
 | --- | --- |
@@ -403,7 +385,7 @@ Para o reteste, preparar aluno existente selecionável pela busca, personal habi
 | Preparação | Registrar versão, zoom e ambiente; capturar listagem, formulários, diálogos, rede (incluindo corpos) e console antes e depois de cada operação. Omitir credenciais, tokens e e-mails. |
 | Limites | Análise documental dos painéis do Jam, sem nova execução. Resultado vazio dos filtros sem dados de controle; busca de colaborador sem resultado e sem seleção; recarga da página após o cadastro. |
 
-### CT-RF96 a CT-RF98 — ambiente e preparação
+### CT-RF82 a CT-RF83 — ambiente e preparação
 
 | Item | Definição |
 | --- | --- |
@@ -416,7 +398,7 @@ Para o reteste, preparar aluno existente selecionável pela busca, personal habi
 | Preparação | Registrar versão, zoom e ambiente; capturar listagem, formulários, diálogos, rede (incluindo corpos) e console antes e depois de cada operação. Omitir credenciais, tokens e e-mails. |
 | Limites | Análise documental dos painéis do Jam, sem nova execução. Corpo e resposta da criação indisponíveis; causa da tabela vazia não determinada; variáveis exercitadas limitadas a três. |
 
-### CT-RF99 a CT-RF103 — ambiente e preparação
+### CT-RF77 a CT-RF80 — ambiente e preparação
 
 | Item | Definição |
 | --- | --- |
@@ -429,7 +411,7 @@ Para o reteste, preparar aluno existente selecionável pela busca, personal habi
 | Preparação | Registrar versão, zoom e ambiente; capturar listagem, formulários, diálogos, rede (incluindo corpos) e console antes e depois de cada operação. Omitir credenciais, tokens e e-mails. |
 | Limites | Análise documental dos painéis do Jam, sem nova execução. Filtros sem requisição de rede (filtragem local não confirmada); regra de cálculo do cartão Ativos não informada; persistência após recarga não verificada. |
 
-### CT-RF104 a CT-RF108 — ambiente e preparação
+### CT-RF84 a CT-RF88 — ambiente e preparação
 
 | Item | Definição |
 | --- | --- |
@@ -442,276 +424,119 @@ Para o reteste, preparar aluno existente selecionável pela busca, personal habi
 | Preparação | Registrar versão, zoom e ambiente; capturar listagem, cartões, formulários, diálogos, rede (incluindo corpos) e console antes e depois de cada operação. Omitir credenciais, tokens e e-mails. |
 | Limites | Análise documental dos painéis do Jam, sem nova execução. Filtros sem requisição de rede e sem valor registrado; status do novo tipo não visível nos quadros; exclusão de tipo sem uso não exercitada. |
 
-### Modelos de Ficha — ambiente e preparação
-
-| Item | Definição |
-| --- | --- |
-| Página | https://sifit.centrion.com.br/fichas-treino-modelo |
-| Backend de referência | https://backendsifit.centrion.com.br |
-| Navegador / sistema / vídeo | Chrome 157.0.8103.79 / Windows (x86) 10 (identificação do Jam) / 1918 × 998 (vídeo). |
-| Gravações | 16/11/2026 entre 22:19:51 e 22:29:07 BRT. |
-| Dados e permissões | Conta de teste com acesso a Modelos de Ficha e personal disponível. Para as buscas, preparar modelos conhecidos com Código, Título e Criador, incluindo um conjunto que permita distinguir os filtros isolados e combinados. |
-| Preparação | Registrar versão e ambiente, estado inicial da listagem, valores de teste, ações, contagem, requisições e respostas. Omitir credenciais e dados de autenticação. |
-| Limites | Revisão das gravações fornecidas. As buscas registradas partem de uma tela com 0 registros. |
-
-### Configurações e Modelos de Ficha — ambiente e preparação (CT-RF116–CT-RF121)
-
-| Item | Definição |
-| --- | --- |
-| Página | https://sifit.centrion.com.br/configuracoes e https://sifit.centrion.com.br/fichas-treino-modelo |
-| Backend de referência | https://backendsifit.centrion.com.br |
-| Navegador / sistema / vídeo | Chrome 157.0.8103.79 / Windows 10 (x86) / 1918 × 998. |
-| Gravações | 16/11/2026 entre 22:03:53 e 22:18:52 BRT. |
-| Dados e permissões | Conta com permissão para as operações. Registrar os valores iniciais das Configurações e restaurá-los após os testes. Para o cadastro, usar um modelo descartável e um personal de teste. |
-| Preparação | Registrar estado inicial, ações e respostas da API. Usar recortes da interface e omitir dados de autenticação. |
-
-### Inteligência e Configurações — ambiente e preparação (CT-RF122–CT-RF127)
-
-| Item | Definição |
-| --- | --- |
-| Páginas | https://sifit.centrion.com.br/inteligencia/resultados, https://sifit.centrion.com.br/inteligencia-automacao, https://sifit.centrion.com.br/configuracoes |
-| Backend de referência | https://backendsifit.centrion.com.br |
-| Navegador / sistema / vídeo | Chrome 157.0.8103.79 / Windows 10 (x86) / 1918 × 998. |
-| Gravações | 16/11/2026 entre 21:50:51 e 22:02:16 BRT. |
-| Dados e permissões | Conta com permissão para as operações. Preparar resultados em períodos distintos e automação de teste autorizada. Em Configurações, usar credenciais fictícias e registrar o valor inicial dos campos. |
-| Preparação | Registrar o estado inicial, os controles usados e as respostas relevantes. Excluir dados de integração e de autenticação dos recortes e da documentação. |
-
-### Inteligência e Automação — ambiente e preparação (CT-RF128–CT-RF133)
-
-| Item | Definição |
-| --- | --- |
-| Páginas | https://sifit.centrion.com.br/inteligencia-automacao, https://sifit.centrion.com.br/inteligencia/resultados |
-| Backend de referência | https://backendsifit.centrion.com.br |
-| Navegador / sistema / vídeo | Chrome 157.0.8103.79 / Windows 10 (x86) / 1918 × 998. |
-| Gravações | 16/11/2026 entre 21:40:31 e 21:49:48 BRT. |
-| Dados e permissões | Conta com acesso à Central e a Resultados IA. Usar automações de teste, estados iniciais conhecidos e resultados em períodos distintos. |
-| Preparação | Registrar o estado inicial, os controles usados e as respostas relevantes. Excluir dados de integração e de autenticação dos recortes e da documentação. |
-
-### Inteligência e Automação / Central de Automações — ambiente e preparação (CT-RF134–CT-RF138)
-
-| Item | Definição |
-| --- | --- |
-| Páginas | https://sifit.centrion.com.br/inteligencia-automacao |
-| Backend de referência | https://backendsifit.centrion.com.br |
-| Navegador / sistema / vídeo | Chrome 157.0.8103.79 / Windows 10 (x86) / 1918 × 998. |
-| Gravações | 16/11/2026 entre 21:25:26 e 21:38:29 BRT. |
-| Dados e permissões | Conta autorizada a acessar a Central. Preparar automações com estados iniciais conhecidos e, para consulta, um relatório de risco existente. |
-| Preparação | Registrar o estado inicial, os controles usados e as respostas relevantes. Usar apenas dados agregados nas evidências de risco. |
-
-### Configurações / Integrações / WhatsApp — ambiente e preparação (CT-RF139–CT-RF144)
-
-| Item | Definição |
-| --- | --- |
-| Páginas | https://sifit.centrion.com.br/configuracoes |
-| Backend de referência | https://backendsifit.centrion.com.br |
-| Navegador / sistema / vídeo | Chrome 157.0.8103.79 / Windows 10 (x86) / 1918 × 998. |
-| Gravações | 16/11/2026 entre 23:37:22 e 23:45:52 BRT. |
-| Dados e permissões | Conta autorizada a acessar Configurações e provedor de teste. Preparar dados de integração de teste, estado inicial conhecido e falha controlada para reteste. |
-| Preparação | Registrar os estados do formulário e os retornos relevantes. Manter valores de credenciais e dados de integração fora dos recortes. |
-
-### Configurações — ambiente e preparação (CT-RF145–CT-RF150)
-
-| Item | Definição |
-| --- | --- |
-| Páginas | https://sifit.centrion.com.br/configuracoes |
-| Backend de referência | https://backendsifit.centrion.com.br |
-| Navegador / sistema / vídeo | Chrome 157.0.8103.79 / Windows 10 (x86) / 1918 × 998. |
-| Gravações | 16/11/2026 entre 23:21:59 e 23:36:13 BRT. |
-| Dados e permissões | Conta autorizada a acessar Configurações. Preparar mensagens de teste, valores de referência para Pagamento e Design, imagens de tamanho conhecido e um provedor autorizado para a consulta de status. |
-| Preparação | Registrar valores iniciais e comparar a interface com a consulta posterior. Usar evidências que preservem credenciais e outros dados de integração. |
-
-### Configurações / Avaliação e Aniversário — ambiente e preparação (CT-RF151–CT-RF156)
-
-| Item | Definição |
-| --- | --- |
-| Páginas | https://sifit.centrion.com.br/configuracoes |
-| Backend de referência | https://backendsifit.centrion.com.br |
-| Navegador / sistema / vídeo | Chrome 157.0.8103.79 / Windows 10 (x86) / 1918 × 998. |
-| Gravações | 16/11/2026 entre 23:10:04 e 23:20:07 BRT. |
-| Dados e permissões | Conta com permissão para editar Configurações. Preparar valores de referência nos seletores de Avaliação e uma mensagem de WhatsApp cadastrada na aba Aniversário. |
-| Preparação | Registrar valores iniciais, conferir a consulta após salvar ou cancelar e usar dados de teste nas mensagens. |
-
-### Aplicativo e Configurações / Biometria — ambiente e preparação (CT-RF157–CT-RF165)
-
-| Item | Definição |
-| --- | --- |
-| Páginas | https://sifit.centrion.com.br/aplicativo, https://sifit.centrion.com.br/configuracoes |
-| Backend de referência | https://backendsifit.centrion.com.br |
-| Navegador / sistema / vídeo | Chrome 157.0.8103.79 / Windows 10 (x86) / 1918 × 998. |
-| Gravações | 16/11/2026 entre 22:39:05 e 23:07:08 BRT. |
-| Dados e permissões | Conta de teste com acesso a Aplicativo e Configurações. Preparar avisos e registros de teste e valores conhecidos para o aparelho de Biometria. |
-| Preparação | Conferir a requisição e a interface quando aplicável. Usar recortes que preservem credenciais, valores de conexão e dados de alunos. |
-
 ---
 
 ## 📋 7. Casos de teste e situação
 
 | Requisito | Caso de teste | Tipo | Resultado nas evidências | Defeito | Próxima ação |
 | --- | --- | --- | --- | --- | --- |
-| [RF01](Analise%20de%20requisitos.md#rf01--iniciar-recuperação-de-senha) | [CT-RF01 — Acionar "Esqueci minha senha"](Cenario_Teste/CT-RF01_Esqueci-senha.md) | Funcional / fluxo positivo, com análise exploratória de rede | Reprovado | [BUG-001](Relatorio-de-Bugs.md#bug-001--link-esqueci-minha-senha-não-executa-nenhuma-ação) | Corrigir e retestar. |
-| [RF02](Analise%20de%20requisitos.md#rf02--exibir-perfil-do-usuário-autenticado) | [CT-RF02_ERRO — Exibir Perfil](Cenario_Teste/CT-RF02_ERRO.md) | Funcional / interface, com análise do DOM e evidências | Reprovado | [BUG-002](Relatorio-de-Bugs.md#bug-002--perfil-com-dados-fictícios-campos-ausentes-e-layout-desconfigurado) | Corrigir e retestar. |
-| [RF03](Analise%20de%20requisitos.md#rf03--pesquisar-clientes-com-filtros-combinados) | [CT-RF03 — Filtrar Clientes](Cenario_Teste/CT-RF03_FILTRO_TelaClientes.md) | Funcional / filtros combinados, com análise de integração e evidências | Reprovado conforme o relato; sem nova execução | [BUG-003](Relatorio-de-Bugs.md#bug-003--filtros-combinados-da-página-clientes-não-restringem-a-listagem) | Investigar a causa, corrigir e executar a matriz de reteste. |
-| [RF04](Analise%20de%20requisitos.md#rf04--autenticar-usuário-com-credenciais-válidas) | [CT-RF04_loginComSucesso](Cenario_Teste/CT-RF04_loginComSucesso.md) | Funcional / fluxo positivo de autenticação | Aprovado conforme a gravação; sem nova execução | Nenhum identificado no fluxo avaliado | Utilizar como regressão em futuras versões. |
-| [RF05](Analise%20de%20requisitos.md#rf05) | [CT-RF05](Cenario_Teste/CT-RF05_Login_SenhaIncorreta.md) | Funcional manual / regressão | Aprovado conforme a gravação | Nenhum no fluxo avaliado | Usar como regressão de autenticação negativa; preparar conta conhecida e repetir após alterações no login. |
-| [RF06](Analise%20de%20requisitos.md#rf06) | [CT-RF06](Cenario_Teste/CT-RF06_Login_UsuarioInexistente.md) | Funcional manual / regressão | Aprovado conforme a gravação | Nenhum no fluxo avaliado | Repetir com identificador de inexistência comprovada; a classificação atual refere-se à recusa visível do cenário declarado pelo autor. |
-| [RF07](Analise%20de%20requisitos.md#rf07) | [CT-RF07](Cenario_Teste/CT-RF07_Exportacao_Financeiro.md) | Funcional / manifestação observada | Reprovado nas evidências | [BUG-004](Relatorio-de-Bugs.md#bug-004) | Investigar o retorno do botão; no reteste capturar o histórico de downloads e abrir o arquivo antes de concluir se a exportação foi gerada. |
-| [RF08](Analise%20de%20requisitos.md#rf08) | [CT-RF08](Cenario_Teste/CT-RF08_Calculo_Cobranca.md) | Exploratório / regra a confirmar | A validar — regra ou contexto pendente | Sem defeito confirmado | Confirmar a origem dos R$ 20,83 além de principal e multa e a regra da mensagem; não registrar cálculo incorreto antes dessa validação. |
-| [RF09](Analise%20de%20requisitos.md#rf09) | [CT-RF09](Cenario_Teste/CT-RF09_Contagem_Mensalidades.md) | Funcional / manifestação observada | Reprovado nas evidências | [BUG-005](Relatorio-de-Bugs.md#bug-005) | Retestar com o CT-RF10; os dois cenários documentam manifestações do BUG-005, sem criar um defeito duplicado. |
-| [RF10](Analise%20de%20requisitos.md#rf10) | [CT-RF10](Cenario_Teste/CT-RF10_Filtro_Mensalidades.md) | Funcional / manifestação observada | Reprovado nas evidências | [BUG-005](Relatorio-de-Bugs.md#bug-005) | Retestar em conjunto com CT-RF09 e conferir o contrato da faixa Até 7 dias antes de preparar a base. |
-| [RF11](Analise%20de%20requisitos.md#rf11) | [CT-RF11](Cenario_Teste/CT-RF11_Metricas_Financeiro.md) | Exploratório / regra a confirmar | A validar — regra ou contexto pendente | Sem defeito confirmado | Confirmar os contratos dos cartões; a constância de totais globais não é suficiente para abrir outro defeito financeiro. |
-| [RF12](Analise%20de%20requisitos.md#rf12) | [CT-RF12](Cenario_Teste/CT-RF12_Periodo_Dashboard.md) | Funcional / manifestação observada | Reprovado nas evidências | [BUG-006](Relatorio-de-Bugs.md#bug-006) | Corrigir e retestar a validação do intervalo; avaliar a atualização dos indicadores em base controlada como verificação complementar. |
-| [RF13](Analise%20de%20requisitos.md#rf13) | [CT-RF13](Cenario_Teste/CT-RF13_Codigos_Personais.md) | Exploratório / regra a confirmar | A validar — regra ou contexto pendente | Sem defeito confirmado | Confirmar a semântica da coluna Código; quatro linhas e total quatro não sustentam um defeito de quantidade. |
-| [RF14](Analise%20de%20requisitos.md#rf14) | [CT-RF14](Cenario_Teste/CT-RF14_Contraste_TemaEscuro.md) | Funcional / manifestação observada | Reprovado nas evidências | [BUG-007](Relatorio-de-Bugs.md#bug-007) | Ajustar as cores e retestar ambos os temas; medir contraste se houver critério formal de acessibilidade definido. |
-| [RF15](Analise%20de%20requisitos.md#rf15) | [CT-RF15](Cenario_Teste/CT-RF15_Edicao_Modalidade.md) | Funcional / manifestação observada | Reprovado nas evidências | [BUG-008](Relatorio-de-Bugs.md#bug-008) | Verificar o fluxo de conclusão da edição e retestar persistência. A evidência reprova a clareza da ação de salvar; não afirma que o ícone de editar inexiste. |
-| [RF16](Analise%20de%20requisitos.md#rf16) | [CT-RF16](Cenario_Teste/CT-RF16_Exclusao_Modalidade.md) | Exploratório / regra a confirmar | A validar — regra ou contexto pendente | Sem defeito confirmado | Confirmar a exclusão lógica e a nomenclatura da ação; registrar defeito apenas se houver divergência com a regra definida. |
-| [RF17](Analise%20de%20requisitos.md#rf17) | [CT-RF17](Cenario_Teste/CT-RF17_Filtros_Categorias.md) | Funcional manual / regressão | Aprovado conforme a gravação | Nenhum no fluxo avaliado | Usar como regressão; combinações, conjunto vazio, caracteres especiais e paginação exigem execuções adicionais. |
-| [RF18](Analise%20de%20requisitos.md#rf18) | [CT-RF18](Cenario_Teste/CT-RF18_Atualizacao_Categoria.md) | Funcional manual / regressão | Aprovado conforme a gravação | Nenhum no fluxo avaliado | Usar como regressão; acrescentar recarga e nova consulta para ampliar a verificação de persistência. |
-| [RF19](Analise%20de%20requisitos.md#rf19) | [CT-RF19](Cenario_Teste/CT-RF19_Exclusao_Categoria.md) | Funcional / manifestação observada | Reprovado nas evidências | [BUG-009](Relatorio-de-Bugs.md#bug-009) | Investigar o HTTP 500 com logs do servidor e vínculos da categoria; corrigir e retestar cenários permitido e impedido. |
-| [RF20](Analise%20de%20requisitos.md#rf20) | [CT-RF20](Cenario_Teste/CT-RF20_Criacao_Categoria.md) | Funcional manual / regressão | Aprovado conforme a gravação | Nenhum no fluxo avaliado | Usar como regressão; campos vazios, nomes duplicados e limites de tamanho permanecem fora do cenário gravado. |
-| [RF21](Analise%20de%20requisitos.md#rf21) | [CT-RF21](Cenario_Teste/CT-RF21_Cadastro_Avaliacao.md) | Funcional manual / tratamento de erro | Reprovado nas evidências | [BUG-010](Relatorio-de-Bugs.md#bug-010) | Investigar o HTTP 500; retestar dados válidos, vínculo inválido, retroatividade e persistência. |
-| [RF22](Analise%20de%20requisitos.md#rf22) | [CT-RF22](Cenario_Teste/CT-RF22_Digitacao_Codigo_Exercicio.md) | Funcional manual / análise documental | Reprovado conforme o relato; reprodução independente pendente. | [BUG-011](Relatorio-de-Bugs.md#bug-011), em triagem | Confirmar a regra, reproduzir o impedimento e retestar o campo após correção. |
-| [RF23](Analise%20de%20requisitos.md#rf23) | [CT-RF23](Cenario_Teste/CT-RF23_Exclusao_Exercicio.md) | Funcional manual / análise documental | Aprovado no trecho consultado. | Sem defeito confirmado | Manter como regressão. Em nova execução, recarregar a página para conferir persistência e testar separadamente as regras para exercícios vinculados. |
-| [RF24](Analise%20de%20requisitos.md#rf24) | [CT-RF24](Cenario_Teste/CT-RF24_Edicao_Exercicio.md) | Funcional manual / análise documental | Reprovado no trecho consultado; confirmar operação e identidade dos registros na reprodução. | [BUG-012](Relatorio-de-Bugs.md#bug-012), em triagem | Reproduzir a partir da ação explícita de edição e comparar os identificadores antes e depois. Investigar eventual envio para criação como hipótese, sem atribuir causa técnica antes de verificar código e contrato da API. |
-| [RF25](Analise%20de%20requisitos.md#rf25) | [CT-RF25](Cenario_Teste/CT-RF25_Envio_Exercicio_Imagem.md) | Funcional manual / análise documental | A validar — criação visível; persistência e associação da imagem não confirmadas. | Sem defeito confirmado | Reabrir o exercício criado e conferir a imagem salva. Testar formatos e tamanhos inválidos em casos separados; essas variações não recebem resultado nesta análise. |
-| [RF26](Analise%20de%20requisitos.md#rf26) | [CT-RF26](Cenario_Teste/CT-RF26_Exercicio_Campos_Vazios.md) | Funcional manual / teste negativo | Reprovado — sem feedback de validação visível. | [BUG-013](Relatorio-de-Bugs.md#bug-013), em triagem | Exibir validação por campo, confirmar bloqueio da persistência e retestar. |
-| [RF27](Analise%20de%20requisitos.md#rf27) | [CT-RF27](Cenario_Teste/CT-RF27_Video_Campo_Imagem.md) | Funcional manual / teste negativo de mídia | Reprovado — arquivo rejeitado sem feedback visível. | [BUG-014](Relatorio-de-Bugs.md#bug-014), em triagem | Informar tipos aceitos e retestar arquivo por extensão e MIME, incluindo persistência. |
-| [RF28](Analise%20de%20requisitos.md#rf28) | [CT-RF28](Cenario_Teste/CT-RF28_Imagem_Campo_Video.md) | Funcional manual / teste negativo de mídia | Reprovado — arquivo rejeitado sem feedback visível. | [BUG-015](Relatorio-de-Bugs.md#bug-015), em triagem | Informar tipos aceitos e retestar arquivo por extensão e MIME, incluindo persistência. |
-| [RF29](Analise%20de%20requisitos.md#rf29) | [CT-RF29](Cenario_Teste/CT-RF29_Exclusao_GrupoMuscular.md) | Funcional manual / análise de evidências | Reprovado nas evidências | [BUG-016](Relatorio-de-Bugs.md#bug-016), em triagem | Investigar o HTTP 500 com logs do servidor e vínculos do registro; corrigir e retestar os cenários permitido e impedido. |
-| [RF30](Analise%20de%20requisitos.md#rf30) | [CT-RF30](Cenario_Teste/CT-RF30_Imagens_GruposMusculares.md) | Funcional manual / análise de evidências | Reprovado nas evidências | [BUG-017](Relatorio-de-Bugs.md#bug-017), em triagem | Verificar a existência dos arquivos, o nome gravado em cada registro e a regra que responde 422; definir o estado neutro para registros sem imagem. |
-| [RF31](Analise%20de%20requisitos.md#rf31) | [CT-RF31](Cenario_Teste/CT-RF31_Cadastro_GrupoMuscular.md) | Funcional manual / regressão | Aprovado conforme a gravação | Nenhum no fluxo avaliado | Usar como regressão; campos em branco, nomes duplicados, limites de tamanho e código informado manualmente exigem execuções adicionais. |
-| [RF32](Analise%20de%20requisitos.md#rf32) | [CT-RF32](Cenario_Teste/CT-RF32_Edicao_TipoMembro.md) | Funcional manual / regressão | Aprovado conforme a gravação | Nenhum no fluxo avaliado | Usar como regressão; conferir persistência após recarga e confirmar se a imagem enviada na edição é salva. |
-| [RF33](Analise%20de%20requisitos.md#rf33) | [CT-RF33](Cenario_Teste/CT-RF33_Filtros_GruposMusculares.md) | Funcional manual / regressão | Aprovado conforme a gravação | Nenhum no fluxo avaliado | Usar como regressão; executar um caso com critérios contraditórios para demonstrar a lógica combinada, além de busca por nome, valores inválidos e paginação. |
-| [RF35](Analise%20de%20requisitos.md#rf35) | [CT-RF35](Cenario_Teste/CT-RF35_Cadastro_Objetivo_Treino.md) | Funcional manual / tratamento de erro | Reprovado nas evidências | [BUG-019](Relatorio-de-Bugs.md#bug-019), em triagem | Investigar o HTTP 500 com logs do servidor; retestar dados válidos, descrição com caracteres especiais, campos vazios, código manual e persistência; conferir que um clique gera uma única gravação. |
-| [RF38](Analise%20de%20requisitos.md#rf38) | [CT-RF38](Cenario_Teste/CT-RF38_Cadastro_Categoria_Codigo_Automatico.md) | Funcional manual / regressão | Aprovado conforme a gravação | Nenhum no fluxo avaliado | Usar como regressão; nome vazio, nome duplicado, limites de tamanho, código inexistente no filtro e persistência após recarga exigem execuções adicionais; confirmar a regra do campo Código. |
-| [RF39](Analise%20de%20requisitos.md#rf39) | [CT-RF39](Cenario_Teste/CT-RF39_Cadastro_Modalidade.md) | Funcional manual / regressão | Aprovado conforme a gravação | Nenhum no fluxo avaliado | Usar como regressão; nome vazio, nome duplicado, limites de tamanho, status Inativo e persistência após recarga exigem execuções adicionais. |
-| [RF40](Analise%20de%20requisitos.md#rf40) | [CT-RF40](Cenario_Teste/CT-RF40_Exclusao_Turmas_Modalidades.md) | Exploratório / regra a confirmar | A validar — regra ou contexto pendente | Sem defeito confirmado | Confirmar a exclusão lógica, a confirmação prévia e a exibição de registros inativos sob o filtro "Ativo"; registrar defeito apenas se houver divergência com a regra definida. |
-| [RF41](Analise%20de%20requisitos.md#rf41) | [CT-RF41](Cenario_Teste/CT-RF41_Cadastro_Turma_Sem_Modalidade.md) | Funcional manual / teste negativo | Reprovado — sem feedback de validação visível | [BUG-020](Relatorio-de-Bugs.md#bug-020), em triagem | Confirmar a obrigatoriedade da modalidade, reproduzir com a validação nativa visível e retestar o envio válido e a persistência. |
-| [RF42](Analise%20de%20requisitos.md#rf42) | [CT-RF42](Cenario_Teste/CT-RF42_Solicitacao_Saque_PagarMe.md) | Exploratório / regra a confirmar | A validar — regra ou contexto pendente | Sem defeito confirmado | Confirmar a regra de saque e reexecutar com saldo conhecido, capturando corpo e resposta; testar valor acima do saldo e valor inválido. |
-| [RF43](Analise%20de%20requisitos.md#rf43) | [CT-RF43](Cenario_Teste/CT-RF43_Criacao_Cobranca_PagarMe.md) | Funcional manual / regressão | Aprovado conforme a gravação | Nenhum no fluxo avaliado | Usar como regressão; outros métodos, dados inválidos, link gerado e presença da cobrança em Transações recentes exigem execuções adicionais. |
-| [RF44](Analise%20de%20requisitos.md#rf44) | [CT-RF44](Cenario_Teste/CT-RF44_Configuracoes_Home_Salvamento.md) | Exploratório / regra a confirmar | A validar — regra ou contexto pendente | Sem defeito confirmado | Confirmar a faixa do campo de dias e a mensagem de salvamento; reexecutar com recarga, Cancelar e valores limite. |
-| [RF45](Analise%20de%20requisitos.md#rf45) | [CT-RF45](Cenario_Teste/CT-RF45_Painel_PagarMe_Periodo.md) | Funcional manual / manifestação observada | Reprovado nas evidências | [BUG-021](Relatorio-de-Bugs.md#bug-021), em triagem | Reproduzir com conta de movimentação conhecida, comparar períodos e capturar corpo e resposta de recebiveis, transacoes e pagarme. |
-| [RF46](Analise%20de%20requisitos.md#rf46) | [CT-RF46](Cenario_Teste/CT-RF46_Filtros_Despesas_Fixas.md) | Funcional manual / regressão | Aprovado conforme a gravação | Nenhum no fluxo avaliado | Usar como regressão; combinação de critérios, resultado vazio, filtros de status e recorrência e a regra de correspondência do código exigem execuções adicionais. |
-| [RF47](Analise%20de%20requisitos.md#rf47) | [CT-RF47](Cenario_Teste/CT-RF47_Cadastro_Despesa_Fixa.md) | Exploratório / regra a confirmar | A validar — regra ou contexto pendente | Sem defeito confirmado | Reproduzir capturando as duas requisições de criação e conferir a quantidade de registros após recarga; confirmar a regra do código. |
-| [RF48](Analise%20de%20requisitos.md#rf48) | [CT-RF48](Cenario_Teste/CT-RF48_Exclusao_Despesa_Fixa.md) | Funcional manual / regressão | Aprovado conforme a gravação | Nenhum no fluxo avaliado | Usar como regressão; Cancelar, despesa com vínculos, natureza da exclusão e persistência após recarga exigem execuções adicionais. |
-| [RF49](Analise%20de%20requisitos.md#rf49) | [CT-RF49](Cenario_Teste/CT-RF49_Edicao_Despesa_Fixa.md) | Funcional manual / regressão | Aprovado conforme a gravação | Nenhum no fluxo avaliado | Usar como regressão; edição de nome, valor e status, Cancelar, pré-preenchimento da recorrência e persistência após recarga exigem execuções adicionais. |
-| [RF50](Analise%20de%20requisitos.md#rf50) | [CT-RF50](Cenario_Teste/CT-RF50_Relatorio_Matriculas.md) | Funcional manual / regressão | Aprovado conforme a gravação | Nenhum no fluxo avaliado | Usar como regressão; conferir com a lista de matrículas e exercitar filtros e período sem registros. |
-| [RF51](Analise%20de%20requisitos.md#rf51) | [CT-RF51](Cenario_Teste/CT-RF51_Relatorio_Contas_Receber.md) | Funcional manual / manifestação observada | Reprovado nas evidências | [BUG-022](Relatorio-de-Bugs.md#bug-022), em triagem | Comparar com o módulo Contas a Receber e reexecutar com valores conhecidos, Detalhado e outros status. |
-| [RF52](Analise%20de%20requisitos.md#rf52) | [CT-RF52](Cenario_Teste/CT-RF52_Relatorio_Contas_Pagar_Pagas.md) | Exploratório / regra a confirmar | A validar — regra ou contexto pendente | Sem defeito confirmado | Conferir as contas pagas do período no módulo e reexecutar com um período que contenha pagamentos. |
-| [RF53](Analise%20de%20requisitos.md#rf53) | [CT-RF53](Cenario_Teste/CT-RF53_Relatorio_Avaliacoes_Vazio.md) | Funcional manual / manifestação observada | Reprovado nas evidências | [BUG-023](Relatorio-de-Bugs.md#bug-023), em triagem | Investigar a geração com logs do servidor e retestar com e sem registros no período, comparando com os relatórios que abrem. |
-| [RF54](Analise%20de%20requisitos.md#rf54) | [CT-RF54](Cenario_Teste/CT-RF54_Relatorio_Clientes_Vazio.md) | Funcional manual / manifestação observada | Reprovado nas evidências | [BUG-023](Relatorio-de-Bugs.md#bug-023), em triagem | Investigar a geração com logs do servidor e retestar com e sem registros no período, comparando com os relatórios que abrem. |
-| [RF55](Analise%20de%20requisitos.md#rf55) | [CT-RF55](Cenario_Teste/CT-RF55_Relatorio_Colaboradores_Vazio.md) | Funcional manual / manifestação observada | Reprovado nas evidências | [BUG-023](Relatorio-de-Bugs.md#bug-023), em triagem | Investigar a geração com logs do servidor e retestar com e sem registros no período, comparando com os relatórios que abrem. |
-| [RF56](Analise%20de%20requisitos.md#rf56) | [CT-RF56](Cenario_Teste/CT-RF56_Relatorio_Caixas_Vazio.md) | Funcional manual / manifestação observada | Reprovado nas evidências | [BUG-023](Relatorio-de-Bugs.md#bug-023), em triagem | Investigar a geração com logs do servidor e retestar com e sem registros no período, comparando com os relatórios que abrem. |
-| [RF57](Analise%20de%20requisitos.md#rf57) | [CT-RF57](Cenario_Teste/CT-RF57_Exclusao_Grupo.md) | Funcional manual / análise de evidências | Reprovado nas evidências | [BUG-024](Relatorio-de-Bugs.md#bug-024), em triagem | Investigar o HTTP 500 com logs do servidor e os vínculos do grupo de código 1, em conjunto com o BUG-016; corrigir e retestar os cenários permitido e impedido. |
-| [RF58](Analise%20de%20requisitos.md#rf58) | [CT-RF58](Cenario_Teste/CT-RF58_Edicao_Grupo.md) | Funcional manual / análise de evidências | Reprovado nas evidências | [BUG-025](Relatorio-de-Bugs.md#bug-025), em triagem | Investigar a rotina de edição quanto ao campo status; corrigir e retestar a edição de cada campo isoladamente. |
-| [RF59](Analise%20de%20requisitos.md#rf59) | [CT-RF59](Cenario_Teste/CT-RF59_Cadastro_Anamnese.md) | Funcional manual / análise de evidências | Reprovado nas evidências | [BUG-032](Relatorio-de-Bugs.md#bug-032), em triagem | Investigar as rotinas de aplicar e rascunho com acesso a logs do servidor; corrigir e retestar o cadastro completo de uma anamnese. |
-| [RF74](Analise%20de%20requisitos.md#rf74) | [CT-RF74](Cenario_Teste/CT-RF74_Temas_Prospeccao.md) | Interface manual / alternância de tema | Aprovado conforme o resumo da gravação | — | Repetir a alternância com listagem conhecida; verificar persistência após recarga em execução complementar. |
-| [RF75](Analise%20de%20requisitos.md#rf75) | [CT-RF75](Cenario_Teste/CT-RF75_Detalhes_Lead_Cancelamento.md) | Funcional manual / consulta e cancelamento | Aprovado conforme o resumo da gravação | — | Reabrir o lead após cancelar e comparar o telefone com o valor original. |
-| [RF76](Analise%20de%20requisitos.md#rf76) | [CT-RF76](Cenario_Teste/CT-RF76_Exclusao_Leads_Confirmacao.md) | Funcional manual / exclusão confirmada | Aprovado conforme o resumo da gravação | — | Repetir com registros descartáveis e testar também o cancelamento da confirmação. |
-| [RF77](Analise%20de%20requisitos.md#rf77) | [CT-RF77](Cenario_Teste/CT-RF77_Cadastro_Lead_Novo_Contato.md) | Funcional manual / cadastro positivo | Aprovado conforme o resumo da gravação | — | Repetir o cadastro e conferir campos e estágio após reabertura. |
-| [RF78](Analise%20de%20requisitos.md#rf78) | [CT-RF78](Cenario_Teste/CT-RF78_Cadastro_Lead_Interessado.md) | Funcional manual / cadastro positivo | Aprovado conforme o resumo da gravação | — | Repetir o cadastro e conferir os dados após reabertura. |
-| [RF79](Analise%20de%20requisitos.md#rf79) | [CT-RF79](Cenario_Teste/CT-RF79_Cadastro_Lead_Aula_Experimental.md) | Funcional manual / cadastro positivo | Aprovado conforme o resumo da gravação | — | Repetir o cadastro e conferir estágio, total e dados após reabertura. |
-| [RF80](Analise%20de%20requisitos.md#rf80) | [CT-RF80](Cenario_Teste/CT-RF80_Cadastro_Lead_Proposta.md) | Funcional manual / cadastro positivo | Aprovado conforme o resumo da gravação | — | Repetir o cadastro e conferir estágio e dados após reabertura. |
-| [RF81](Analise%20de%20requisitos.md#rf81) | [CT-RF81](Cenario_Teste/CT-RF81_Cadastro_Bandeira_Parcela_Listagem.md) | Funcional manual / cadastro e listagem | Reprovado nas evidências resumidas | [BUG-035](Relatorio-de-Bugs.md#bug-035) | Investigar a divergência criação/consulta; retestar listagem, reabertura e recarga com e sem parcela. |
-| [RF82](Analise%20de%20requisitos.md#rf82) | [CT-RF82](Cenario_Teste/CT-RF82_Tema_Escuro_Bandeiras.md) | Interface manual / tema e legibilidade visual | Reprovado nas evidências resumidas | [BUG-036](Relatorio-de-Bugs.md#bug-036) | Revisar os estilos da página e retestar Claro/Escuro com lista vazia e preenchida; medir contraste separadamente. |
-| [RF83](Analise%20de%20requisitos.md#rf83) | [CT-RF83](Cenario_Teste/CT-RF83_Cadastro_Lead_Apenas_Nome.md) | Funcional manual / teste negativo, regra a confirmar | Reprovado conforme o relato; regra de obrigatoriedade a confirmar | [BUG-037](Relatorio-de-Bugs.md#bug-037) | Confirmar obrigatoriedade com produto antes de definir correção; testar campos isolados, envio completo e ausência de criação inválida. |
-| [RF84](Analise%20de%20requisitos.md#rf84) | [CT-RF84](Cenario_Teste/CT-RF84_Cadastro_Lead_Fechado.md) | Funcional manual / cadastro positivo | Aprovado conforme o resumo da gravação | — | Repetir o cadastro e conferir os dados após reabertura; capturar o corpo da resposta de salvamento. |
-| [RF85](Analise%20de%20requisitos.md#rf85) | [CT-RF85](Cenario_Teste/CT-RF85_Tema_Notificacoes_Prospeccao.md) | Funcional manual / regressão | Aprovado conforme a gravação | Nenhum no fluxo avaliado | Usar como regressão; persistência após recarga e notificações pendentes exigem execuções adicionais. |
-| [RF86](Analise%20de%20requisitos.md#rf86) | [CT-RF86](Cenario_Teste/CT-RF86_Busca_Leads_Prospeccao.md) | Funcional manual / regressão | Aprovado conforme a gravação | Nenhum no fluxo avaliado | Usar como regressão; regra de correspondência, busca por e-mail, telefone e código e resultado vazio exigem execuções adicionais. |
-| [RF87](Analise%20de%20requisitos.md#rf87) | [CT-RF87](Cenario_Teste/CT-RF87_Filtro_Estagio_Leads.md) | Funcional manual / regressão | Aprovado conforme a gravação | Nenhum no fluxo avaliado | Usar como regressão; demais estágios, combinação com a busca e estágio sem leads exigem execuções adicionais. |
-| [RF88](Analise%20de%20requisitos.md#rf88) | [CT-RF88](Cenario_Teste/CT-RF88_Cadastro_Lead_Prospeccao.md) | Exploratório / regra a confirmar | A validar — regra ou contexto pendente | Sem defeito confirmado | Confirmar se o segundo POST gerou registro adicional, capturando corpos e respostas, e testar campos obrigatórios; registrar defeito apenas se houver duplicidade confirmada. |
-| [RF89](Analise%20de%20requisitos.md#rf89) | [CT-RF89](Cenario_Teste/CT-RF89_Telefone_Lead_Sem_Validacao.md) | Funcional manual / teste negativo | Reprovado nas evidências | [BUG-038](Relatorio-de-Bugs.md#bug-038), em triagem | Confirmar a regra do campo, reproduzir com a validação visível e retestar telefones válidos e inválidos e a persistência. |
-| [RF90](Analise%20de%20requisitos.md#rf90) | [CT-RF90](Cenario_Teste/CT-RF90_Edicao_Lead_Prospeccao.md) | Funcional manual / regressão | Aprovado conforme a gravação | Nenhum no fluxo avaliado | Usar como regressão; edição dos demais campos, persistência após recarga e campos obrigatórios exigem execuções adicionais. |
-| [RF91](Analise%20de%20requisitos.md#rf91) | [CT-RF91](Cenario_Teste/CT-RF91_Filtros_Contas_Pagar.md) | Exploratório / regra a confirmar | A validar — regra ou contexto pendente | Sem defeito confirmado | Reexecutar com contas de controle e exercitar cada critério isolado e a combinação. |
-| [RF92](Analise%20de%20requisitos.md#rf92) | [CT-RF92](Cenario_Teste/CT-RF92_Cadastro_Conta_Colaborador_Sem_Colaborador.md) | Funcional manual / teste negativo | Reprovado nas evidências | [BUG-039](Relatorio-de-Bugs.md#bug-039), em triagem | Confirmar a regra, reproduzir com a validação visível e retestar envio válido e inválido e a persistência. |
-| [RF93](Analise%20de%20requisitos.md#rf93) | [CT-RF93](Cenario_Teste/CT-RF93_Busca_Colaborador_Conta_Pagar.md) | Exploratório / regra a confirmar | A validar — regra ou contexto pendente | Sem defeito confirmado | Reexecutar com um nome existente e confirmar a mensagem de resultado vazio. |
-| [RF94](Analise%20de%20requisitos.md#rf94) | [CT-RF94](Cenario_Teste/CT-RF94_Visualizacao_Conta_Pagar.md) | Funcional manual / regressão | Aprovado conforme a gravação | Nenhum no fluxo avaliado | Usar como regressão; contas de outros tipos e status e o rótulo do tipo exigem execuções adicionais. |
-| [RF95](Analise%20de%20requisitos.md#rf95) | [CT-RF95](Cenario_Teste/CT-RF95_Exclusao_Conta_Pagar.md) | Funcional manual / regressão | Aprovado conforme a gravação | Nenhum no fluxo avaliado | Usar como regressão; cancelar, recarga e contas vinculadas exigem execuções adicionais. |
-| [RF96](Analise%20de%20requisitos.md#rf96) | [CT-RF96](Cenario_Teste/CT-RF96_Variaveis_Preview_Modelo_Contrato.md) | Funcional manual / regressão | Aprovado conforme a gravação | Nenhum no fluxo avaliado | Usar como regressão; demais variáveis, formatação complexa e texto gravado exigem execuções adicionais. |
-| [RF97](Analise%20de%20requisitos.md#rf97) | [CT-RF97](Cenario_Teste/CT-RF97_Cadastro_Modelo_Contrato.md) | Funcional manual / regressão | Aprovado conforme a gravação | Nenhum no fluxo avaliado | Usar como regressão; campos obrigatórios e conferência do texto gravado exigem execuções adicionais. |
-| [RF98](Analise%20de%20requisitos.md#rf98) | [CT-RF98](Cenario_Teste/CT-RF98_Listagem_Modelos_Contrato_Vazia.md) | Funcional manual / manifestação observada | Reprovado nas evidências | [BUG-040](Relatorio-de-Bugs.md#bug-040), em triagem | Reproduzir comparando resposta e tabela, investigar a renderização e retestar após correção. |
-| [RF99](Analise%20de%20requisitos.md#rf99) | [CT-RF99](Cenario_Teste/CT-RF99_Filtros_Planos.md) | Funcional manual / regressão | Aprovado conforme a gravação | Nenhum no fluxo avaliado | Usar como regressão; filtro por Status, combinação de critérios e resultado vazio exigem execuções adicionais. |
-| [RF100](Analise%20de%20requisitos.md#rf100) | [CT-RF100](Cenario_Teste/CT-RF100_Tema_Notificacoes_Planos.md) | Funcional manual / regressão | Aprovado conforme a gravação | Nenhum no fluxo avaliado | Usar como regressão; persistência após recarga e notificações pendentes exigem execuções adicionais. |
-| [RF101](Analise%20de%20requisitos.md#rf101) | [CT-RF101](Cenario_Teste/CT-RF101_Cadastro_Plano.md) | Funcional manual / regressão | Aprovado conforme a gravação | Nenhum no fluxo avaliado | Usar como regressão; campos obrigatórios, valores extremos e conferência na listagem exigem execuções adicionais. |
-| [RF102](Analise%20de%20requisitos.md#rf102) | [CT-RF102](Cenario_Teste/CT-RF102_Contador_Ativos_Planos.md) | Funcional manual / manifestação observada | Reprovado nas evidências | [BUG-041](Relatorio-de-Bugs.md#bug-041), em triagem | Reproduzir com a base e o contrato do cartão conhecidos e retestar o cartão após cadastro, edição e alteração de status. |
-| [RF103](Analise%20de%20requisitos.md#rf103) | [CT-RF103](Cenario_Teste/CT-RF103_Edicao_Plano.md) | Funcional manual / regressão | Aprovado conforme a gravação | Nenhum no fluxo avaliado | Usar como regressão; persistência após recarga e demais campos exigem execuções adicionais. |
-| [RF104](Analise%20de%20requisitos.md#rf104) | [CT-RF104](Cenario_Teste/CT-RF104_Filtros_Tipos_Pagamento.md) | Exploratório / regra a confirmar | A validar — regra ou contexto pendente | Sem defeito confirmado | Reexecutar com critérios conhecidos e capturar o valor escolhido, a listagem e a rede. |
-| [RF105](Analise%20de%20requisitos.md#rf105) | [CT-RF105](Cenario_Teste/CT-RF105_Cadastro_Tipo_Pagamento_Status.md) | Funcional manual / cadastro e persistência | Reprovado nas evidências | [BUG-042](Relatorio-de-Bugs.md#bug-042), em triagem | Confirmar a regra do status, reproduzir conferindo corpo, resposta e coluna Status e retestar com status Ativo e Inativo. |
-| [RF106](Analise%20de%20requisitos.md#rf106) | [CT-RF106](Cenario_Teste/CT-RF106_Edicao_Tipo_Pagamento.md) | Funcional manual / regressão | Aprovado conforme a gravação | Nenhum no fluxo avaliado | Usar como regressão; persistência após recarga, edição de nome e tipo e a coluna Status exigem execuções adicionais. |
-| [RF107](Analise%20de%20requisitos.md#rf107) | [CT-RF107](Cenario_Teste/CT-RF107_Exclusao_Tipo_Pagamento_Em_Uso.md) | Funcional manual / teste negativo | Reprovado nas evidências | [BUG-043](Relatorio-de-Bugs.md#bug-043), em triagem | Confirmar a regra, reproduzir com tipo em uso e sem uso e retestar código HTTP, resposta e mensagem. |
-| [RF108](Analise%20de%20requisitos.md#rf108) | [CT-RF108](Cenario_Teste/CT-RF108_Tema_Notificacoes_Tipos_Pagamento.md) | Interface manual / tema e notificações | Aprovado conforme a gravação | Nenhum no fluxo avaliado | Usar como regressão visual; conferir diálogos e modais no tema Escuro e a persistência do tema. |
-| [RF109](Analise%20de%20requisitos.md#rf109) | [CT-RF109](Cenario_Teste/CT-RF109_Modelo_Ficha_Sem_Nome.md) | Funcional manual / teste negativo | Aprovado conforme a gravação | Nenhum no fluxo avaliado | Usar como regressão e verificar nome composto apenas por espaços e submissão com todos os campos vazios. |
-| [RF110](Analise%20de%20requisitos.md#rf110) | [CT-RF110](Cenario_Teste/CT-RF110_Cancelar_Cadastro_Modelo_Ficha.md) | Funcional manual / cancelamento | Aprovado conforme a gravação | Nenhum no fluxo avaliado | Usar como regressão e reabrir o formulário após o cancelamento para conferir a limpeza dos campos. |
-| [RF111](Analise%20de%20requisitos.md#rf111) | [CT-RF111](Cenario_Teste/CT-RF111_Busca_Modelo_Ficha_Codigo_Inexistente.md) | Funcional manual / busca negativa | A validar — regra ou contexto pendente | Sem defeito confirmado | Reexecutar com um código existente e um comprovadamente ausente na mesma base. |
-| [RF112](Analise%20de%20requisitos.md#rf112) | [CT-RF112](Cenario_Teste/CT-RF112_Busca_Modelo_Ficha_Titulo_Inexistente.md) | Funcional manual / busca negativa | A validar — regra ou contexto pendente | Sem defeito confirmado | Reexecutar com título existente e inexistente e confirmar o critério de correspondência com o produto. |
-| [RF113](Analise%20de%20requisitos.md#rf113) | [CT-RF113](Cenario_Teste/CT-RF113_Busca_Modelo_Ficha_Filtros_Combinados.md) | Funcional manual / combinação de filtros | A validar — regra ou contexto pendente | Sem defeito confirmado | Reexecutar com registros que correspondam a todos os filtros e a apenas parte deles. Confirmar onde a filtragem é feita. |
-| [RF114](Analise%20de%20requisitos.md#rf114) | [CT-RF114](Cenario_Teste/CT-RF114_Limpeza_Filtros_Modelos_Ficha.md) | Interface manual / limpeza de filtros | Aprovado conforme a gravação | Nenhum no fluxo avaliado | Usar como regressão de interface e conferir o uso dos campos com teclado e mouse. |
-| [RF115](Analise%20de%20requisitos.md#rf115) | [CT-RF115](Cenario_Teste/CT-RF115_Nova_Busca_Modelos_Ficha_Sem_Filtros.md) | Funcional manual / recuperação da listagem | A validar — regra ou contexto pendente | Sem defeito confirmado | Reexecutar com listagem padrão populada, pesquisa restritiva e comparação dos registros após a nova busca. |
-| [RF116](Analise%20de%20requisitos.md#rf116) | [CT-RF116](Cenario_Teste/CT-RF116_Configuracoes_Dias_Ausencia_Vazio.md) | Exploratório / validação de campo | A validar — regra ou contexto pendente | Sem defeito confirmado | Confirmar com o produto a regra para vazio e zero. Repetir com vazio, zero explícito e os limites da faixa. |
-| [RF117](Analise%20de%20requisitos.md#rf117) | [CT-RF117](Cenario_Teste/CT-RF117_Configuracoes_Cancelar_Alteracao.md) | Funcional manual / cancelamento | Aprovado conforme a gravação | Nenhum no fluxo avaliado | Usar como regressão e repetir com múltiplos campos alterados na mesma aba. |
-| [RF118](Analise%20de%20requisitos.md#rf118) | [CT-RF118](Cenario_Teste/CT-RF118_Configuracoes_Trabalha_Com_Turmas.md) | Funcional manual / persistência | Aprovado conforme a gravação | Nenhum no fluxo avaliado | Usar como regressão para persistência de ambos os estados. Verificar separadamente os efeitos sobre o módulo de turmas. |
-| [RF119](Analise%20de%20requisitos.md#rf119) | [CT-RF119](Cenario_Teste/CT-RF119_Configuracoes_Academia_Marcada_Box.md) | Funcional manual / persistência e interface | Aprovado conforme a gravação | Nenhum no fluxo avaliado | Usar como regressão da configuração e da navegação. Conferir as permissões internas em um cenário dedicado. |
-| [RF120](Analise%20de%20requisitos.md#rf120) | [CT-RF120](Cenario_Teste/CT-RF120_Configuracoes_Acesso_Desktop.md) | Funcional manual / persistência e interface | Aprovado conforme a gravação | Nenhum no fluxo avaliado | Usar como regressão da persistência e do cartão. Validar o acesso no aplicativo desktop em um caso próprio. |
-| [RF121](Analise%20de%20requisitos.md#rf121) | [CT-RF121](Cenario_Teste/CT-RF121_Cadastro_Modelo_Ficha_Erro_500.md) | Funcional manual / cadastro | Reprovado nas evidências | [BUG-045](Relatorio-de-Bugs.md#bug-045), em triagem | Reproduzir com dados de teste distintos, investigar a falha do endpoint e conferir a listagem e o vínculo após a correção. |
-| [RF122](Analise%20de%20requisitos.md#rf122) | [CT-RF122](Cenario_Teste/CT-RF122_Resultados_IA_Filtro_90_Dias.md) | Funcional manual / filtragem | Aprovado conforme a gravação | Nenhum no fluxo avaliado | Usar como regressão e criar dados nas datas-limite dos períodos para conferir a inclusão e a exclusão. |
-| [RF123](Analise%20de%20requisitos.md#rf123) | [CT-RF123](Cenario_Teste/CT-RF123_Central_Resultados_IA_Execucao_Evasao.md) | Funcional manual / execução e rastreabilidade | Aprovado conforme a gravação | Nenhum no fluxo avaliado | Usar como regressão da integração entre telas. Verificar entrega pelo canal em um caso dedicado, com destinatários de teste. |
-| [RF124](Analise%20de%20requisitos.md#rf124) | [CT-RF124](Cenario_Teste/CT-RF124_Configuracoes_Abas_Biometria_Senha.md) | Funcional manual / navegação e proteção de credencial | Reprovado nas evidências | [BUG-046](Relatorio-de-Bugs.md#bug-046), em triagem | Corrigir o mascaramento por padrão e retestar com credenciais fictícias, incluindo a troca de abas e a recarga. |
-| [RF125](Analise%20de%20requisitos.md#rf125) | [CT-RF125](Cenario_Teste/CT-RF125_Configuracoes_Salvar_Dias_Ausencia_Valido.md) | Funcional manual / salvamento e persistência | Aprovado conforme a gravação | Nenhum no fluxo avaliado | Usar como regressão de salvamento. Verificar os limites do campo e o impacto na listagem de clientes ausentes. |
-| [RF126](Analise%20de%20requisitos.md#rf126) | [CT-RF126](Cenario_Teste/CT-RF126_Configuracoes_Dias_Ausencia_Negativo.md) | Funcional manual / validação de campo | Reprovado nas evidências | [BUG-047](Relatorio-de-Bugs.md#bug-047), em triagem | Aplicar validação na gravação da configuração e retestar com -1, um inteiro válido e o limite mínimo definido pelo produto. |
-| [RF127](Analise%20de%20requisitos.md#rf127) | [CT-RF127](Cenario_Teste/CT-RF127_Configuracoes_Dias_Ausencia_Texto.md) | Exploratório / entrada não numérica | A validar — regra ou contexto pendente | Sem defeito confirmado | Confirmar a regra de vazio com o produto e repetir a digitação e a colagem de texto, conferindo também a recarga. |
-| [RF128](Analise%20de%20requisitos.md#rf128) | [CT-RF128](Cenario_Teste/CT-RF128_Central_Configuracao_Risco_Evasao_Cancelar.md) | Funcional manual / abertura e cancelamento | Aprovado conforme a gravação | Nenhum no fluxo avaliado | Usar como regressão de abertura e fechamento. Em um caso complementar, alterar uma opção de teste e conferir o descarte após cancelar. |
-| [RF129](Analise%20de%20requisitos.md#rf129) | [CT-RF129](Cenario_Teste/CT-RF129_Central_Aniversariantes_Previa_Risco.md) | Funcional manual / conteúdo da configuração | Reprovado nas evidências | [BUG-048](Relatorio-de-Bugs.md#bug-048), em triagem | Corrigir o conteúdo da prévia e retestar separadamente Aniversariantes e Risco de Evasão. |
-| [RF130](Analise%20de%20requisitos.md#rf130) | [CT-RF130](Cenario_Teste/CT-RF130_Central_Recursos_Em_Desenvolvimento.md) | Interface manual / estado indisponível | Aprovado conforme a gravação | Nenhum no fluxo avaliado | Usar como regressão do estado indisponível e conferir a navegação por teclado em execução complementar. |
-| [RF131](Analise%20de%20requisitos.md#rf131) | [CT-RF131](Cenario_Teste/CT-RF131_Resultados_IA_Filtro_Hoje.md) | Funcional manual / filtragem | Aprovado conforme a gravação | Nenhum no fluxo avaliado | Usar como regressão e conferir o recorte com eventos antes e depois da virada do dia. |
-| [RF132](Analise%20de%20requisitos.md#rf132) | [CT-RF132](Cenario_Teste/CT-RF132_Resultados_IA_Filtro_7_Dias.md) | Funcional manual / filtragem | Aprovado conforme a gravação | Nenhum no fluxo avaliado | Usar como regressão e preparar dados nos dias de fronteira para verificar inclusão e exclusão. |
-| [RF133](Analise%20de%20requisitos.md#rf133) | [CT-RF133](Cenario_Teste/CT-RF133_Resultados_IA_Filtro_30_Dias.md) | Funcional manual / filtragem | Aprovado conforme a gravação | Nenhum no fluxo avaliado | Usar como regressão e retestar com registros preparados no limite de 30 dias. |
-| [RF134](Analise%20de%20requisitos.md#rf134) | [CT-RF134](Cenario_Teste/CT-RF134_Central_Automacoes_Atualizar.md) | Funcional manual / atualização de dados | Aprovado conforme a gravação | Nenhum no fluxo avaliado | Usar como regressão e repetir com uma alteração conhecida na base e com uma resposta de erro controlada. |
-| [RF135](Analise%20de%20requisitos.md#rf135) | [CT-RF135](Cenario_Teste/CT-RF135_Central_Desativar_Risco_Evasao_Contador.md) | Funcional manual / persistência e contador | Reprovado nas evidências | [BUG-049](Relatorio-de-Bugs.md#bug-049), em triagem | Retestar desativação e reativação. Conferir se o contador passa a um após o sucesso do salvamento, antes de Atualizar manualmente. |
-| [RF136](Analise%20de%20requisitos.md#rf136) | [CT-RF136](Cenario_Teste/CT-RF136_Central_Ativar_Aniversariantes_Contador.md) | Funcional manual / persistência e contador | Reprovado nas evidências | [BUG-049](Relatorio-de-Bugs.md#bug-049), em triagem | Retestar a ativação e conferir se o contador passa a dois após o sucesso do salvamento, antes de Atualizar manualmente. |
-| [RF137](Analise%20de%20requisitos.md#rf137) | [CT-RF137](Cenario_Teste/CT-RF137_Central_Risco_Evasao_Executar_Agora.md) | Funcional manual / execução e atualização | Aprovado conforme a gravação | Nenhum no fluxo avaliado | Usar como regressão para execução manual. Validar a entrega pelo canal em um teste dedicado, com destinatários de teste. |
-| [RF138](Analise%20de%20requisitos.md#rf138) | [CT-RF138](Cenario_Teste/CT-RF138_Central_Abrir_Resultados_Risco_Evasao.md) | Funcional manual / consulta de relatório | Aprovado conforme a gravação | Nenhum no fluxo avaliado | Usar como regressão da consulta e retestar cada filtro com uma base de teste com níveis distintos. |
-| [RF139](Analise%20de%20requisitos.md#rf139) | [CT-RF139](Cenario_Teste/CT-RF139_Integracoes_WhatsApp_Mascarar_API_Key.md) | Funcional manual / interface | Aprovado conforme a gravação | Nenhum no fluxo avaliado | Usar como regressão de interface com uma chave de teste e conferir o mascaramento também pelo teclado. |
-| [RF140](Analise%20de%20requisitos.md#rf140) | [CT-RF140](Cenario_Teste/CT-RF140_Integracoes_WhatsApp_Validar_URL_API.md) | Funcional manual / validação | A validar — regra ou contexto pendente | Sem defeito confirmado | Isolar a URL no reteste, mantendo a instância e a chave preenchidas, e confirmar o formato aceito com produto. |
-| [RF141](Analise%20de%20requisitos.md#rf141) | [CT-RF141](Cenario_Teste/CT-RF141_Integracoes_WhatsApp_Instancia_Obrigatoria.md) | Funcional manual / validação | Aprovado conforme a gravação | Nenhum no fluxo avaliado | Usar como regressão e verificar tratamento de espaços em branco e mensagem de campo obrigatório. |
-| [RF142](Analise%20de%20requisitos.md#rf142) | [CT-RF142](Cenario_Teste/CT-RF142_Integracoes_WhatsApp_Persistir_Ativo.md) | Funcional manual / persistência | Aprovado conforme a gravação | Nenhum no fluxo avaliado | Usar como regressão de persistência e validar o efeito de Ativo sobre automações em um teste dedicado. |
-| [RF143](Analise%20de%20requisitos.md#rf143) | [CT-RF143](Cenario_Teste/CT-RF143_Integracoes_WhatsApp_Conectar_Evolution.md) | Funcional manual / tratamento de erro | Reprovado nas evidências | [BUG-050](Relatorio-de-Bugs.md#bug-050), em triagem | Retestar com falha controlada e configuração válida de controle, conferindo o contrato da resposta e o estado final apresentado. |
-| [RF144](Analise%20de%20requisitos.md#rf144) | [CT-RF144](Cenario_Teste/CT-RF144_Integracoes_WhatsApp_Atualizar_Status.md) | Funcional manual / consulta | Aprovado conforme a gravação | [BUG-050](Relatorio-de-Bugs.md#bug-050) na tentativa posterior de conexão | Usar como regressão de consulta e retestar a transição de estado e a atualização visual do resumo com um provedor de teste. |
-| [RF145](Analise%20de%20requisitos.md#rf145) | [CT-RF145](Cenario_Teste/CT-RF145_Configuracoes_Aniversario_Salvar_WhatsApp_SMS.md) | Funcional manual / persistência | Aprovado conforme a gravação | Nenhum no fluxo avaliado | Usar como regressão da configuração e retestar o disparo em um ambiente de teste com destinatários autorizados. |
-| [RF146](Analise%20de%20requisitos.md#rf146) | [CT-RF146](Cenario_Teste/CT-RF146_Configuracoes_Pagamento_Online_Desativar.md) | Funcional manual / persistência | Aprovado conforme a gravação | Nenhum no fluxo avaliado | Usar como regressão para desativação e confirmar a reativação com nova leitura em reteste. |
-| [RF147](Analise%20de%20requisitos.md#rf147) | [CT-RF147](Cenario_Teste/CT-RF147_Configuracoes_Design_Salvar_Cor_Principal.md) | Funcional manual / persistência | Aprovado conforme a gravação | Nenhum no fluxo avaliado | Usar como regressão para códigos válidos e verificar a aplicação da cor nas telas que consomem o tema. |
-| [RF148](Analise%20de%20requisitos.md#rf148) | [CT-RF148](Cenario_Teste/CT-RF148_Configuracoes_Design_Validar_Cor_Secundaria.md) | Funcional manual / validação | Reprovado nas evidências | [BUG-051](Relatorio-de-Bugs.md#bug-051), em triagem | Retestar com códigos hexadecimais válidos e inválidos e conferir, após cada tentativa, a cor devolvida pela consulta. |
-| [RF149](Analise%20de%20requisitos.md#rf149) | [CT-RF149](Cenario_Teste/CT-RF149_Configuracoes_Design_Logo_Limite_Tamanho.md) | Funcional manual / validação e feedback | Reprovado nas evidências | [BUG-052](Relatorio-de-Bugs.md#bug-052), em triagem | Retestar com arquivos de tamanho conhecido no entorno do limite e confirmar a mensagem de validação e a preservação do logo salvo na recusa. |
-| [RF150](Analise%20de%20requisitos.md#rf150) | [CT-RF150](Cenario_Teste/CT-RF150_Integracoes_WhatsApp_Atualizar_Status_Aguardando_QR.md) | Funcional manual / consulta e interface | Aprovado conforme a gravação | Nenhum no fluxo avaliado | Usar como regressão da atualização visual e cobrir, com provedor de teste, a mudança de aguardando QR Code para conectado. |
-| [RF151](Analise%20de%20requisitos.md#rf151) | [CT-RF151](Cenario_Teste/CT-RF151_Configuracoes_Avaliacao_Desativar_Cobranca.md) | Funcional manual / persistência | Aprovado conforme a gravação | Nenhum no fluxo avaliado | Usar como regressão da preferência e confirmar a regra de cobrança em um fluxo de avaliação de teste. |
-| [RF152](Analise%20de%20requisitos.md#rf152) | [CT-RF152](Cenario_Teste/CT-RF152_Configuracoes_Avaliacao_Tipo_Bioimpedancia.md) | Funcional manual / persistência e interface | Aprovado conforme a gravação | Nenhum no fluxo avaliado | Usar como regressão da configuração e validar os campos do cadastro ao escolher cada tipo. |
-| [RF153](Analise%20de%20requisitos.md#rf153) | [CT-RF153](Cenario_Teste/CT-RF153_Configuracoes_Avaliacao_Habilitar_Teste_Fisico.md) | Funcional manual / persistência | Aprovado conforme a gravação | Nenhum no fluxo avaliado | Usar como regressão do salvamento e verificar o comportamento da avaliação nos dois estados do seletor. |
-| [RF154](Analise%20de%20requisitos.md#rf154) | [CT-RF154](Cenario_Teste/CT-RF154_Configuracoes_Aniversario_Desabilitar_Envio_Automatico.md) | Funcional manual / persistência | Aprovado conforme a gravação | Nenhum no fluxo avaliado | Usar como regressão da preferência e conferir o efeito no agendamento com canais e destinatários de teste. |
-| [RF155](Analise%20de%20requisitos.md#rf155) | [CT-RF155](Cenario_Teste/CT-RF155_Configuracoes_Aniversario_Cancelar_Mensagem_WhatsApp.md) | Funcional manual / cancelamento | Aprovado conforme a gravação | Nenhum no fluxo avaliado | Usar como regressão do cancelamento e repetir com os demais canais da aba. |
-| [RF156](Analise%20de%20requisitos.md#rf156) | [CT-RF156](Cenario_Teste/CT-RF156_Configuracoes_Aniversario_Inserir_Variaveis_WhatsApp.md) | Funcional manual / edição e cancelamento | Aprovado conforme a gravação | Nenhum no fluxo avaliado | Usar como regressão do editor e testar a substituição dos marcadores em um envio controlado com dados de teste. |
-| [RF157](Analise%20de%20requisitos.md#rf157) | [CT-RF157](Cenario_Teste/CT-RF157_Aplicativo_Consultar_Notificacao.md) | Funcional manual / consulta | Aprovado conforme a gravação | Nenhum no fluxo avaliado | Usar como regressão da consulta e comparar dois avisos de teste diferentes para conferir o vínculo com a linha selecionada. |
-| [RF158](Analise%20de%20requisitos.md#rf158) | [CT-RF158](Cenario_Teste/CT-RF158_Aplicativo_Bloquear_Notificacao_Vazia.md) | Funcional manual / validação | Aprovado conforme a gravação | Nenhum no fluxo avaliado | Usar como regressão do formulário vazio e repetir com entrada composta apenas de espaços. |
-| [RF159](Analise%20de%20requisitos.md#rf159) | [CT-RF159](Cenario_Teste/CT-RF159_Aplicativo_Criar_Notificacao_Preview.md) | Funcional manual / criação e consulta | Aprovado conforme a gravação | Nenhum no fluxo avaliado | Usar como regressão da criação e validar o recebimento em um dispositivo de teste em uma execução dedicada. |
-| [RF160](Analise%20de%20requisitos.md#rf160) | [CT-RF160](Cenario_Teste/CT-RF160_Aplicativo_Postagens_Filtros_Estados_Vazios.md) | Funcional manual / filtragem de lista vazia | Aprovado conforme a gravação | Nenhum no fluxo avaliado | Repetir com postagens pendentes e aprovadas para conferir a seleção de registros e o total do diálogo. |
-| [RF161](Analise%20de%20requisitos.md#rf161) | [CT-RF161](Cenario_Teste/CT-RF161_Aplicativo_Denuncias_Filtros_Estados_Vazios.md) | Funcional manual / filtragem de lista vazia | Aprovado conforme a gravação | Nenhum no fluxo avaliado | Retestar com denúncias de teste em estados diferentes e conferir os registros exibidos em cada filtro. |
-| [RF162](Analise%20de%20requisitos.md#rf162) | [CT-RF162](Cenario_Teste/CT-RF162_Configuracoes_Biometria_Cancelar_Edicao_Senha.md) | Funcional manual / cancelamento | Aprovado conforme a gravação | Nenhum no fluxo avaliado | Usar como regressão do cancelamento e repetir com outros campos de Biometria em um ambiente de teste. |
-| [RF163](Analise%20de%20requisitos.md#rf163) | [CT-RF163](Cenario_Teste/CT-RF163_Configuracoes_Biometria_Rejeitar_IP_Invalido.md) | Funcional manual / validação | Reprovado nas evidências | [BUG-053](Relatorio-de-Bugs.md#bug-053), em triagem | Confirmar o formato aceito pelo produto e retestar com endereços válidos e entradas inválidas em um equipamento de teste. |
-| [RF164](Analise%20de%20requisitos.md#rf164) | [CT-RF164](Cenario_Teste/CT-RF164_Configuracoes_Biometria_Persistir_Porta.md) | Funcional manual / persistência | Aprovado conforme a gravação | Nenhum no fluxo avaliado | Usar como regressão da configuração e confirmar a conectividade e a restauração em ambiente de teste. |
-| [RF165](Analise%20de%20requisitos.md#rf165) | [CT-RF165](Cenario_Teste/CT-RF165_Configuracoes_Biometria_Validar_Dias_Bloqueio.md) | Funcional manual / validação e feedback | Reprovado nas evidências | [BUG-054](Relatorio-de-Bugs.md#bug-054), em triagem | Confirmar a regra de validação do produto e retestar -1, 0 e um número positivo com conferência da resposta e da mensagem da interface. |
+| [RF04](Analise%20de%20requisitos.md#rf04--iniciar-recuperação-de-senha) | [CT-RF04 — Acionar "Esqueci minha senha"](Cenario_Teste/CT-RF04_Esqueci-senha.md) | Funcional / fluxo positivo, com análise exploratória de rede | Reprovado | [BUG-001](Relatorio-de-Bugs.md#bug-001--link-esqueci-minha-senha-não-executa-nenhuma-ação) | Corrigir e retestar. |
+| [RF05](Analise%20de%20requisitos.md#rf05--exibir-perfil-do-usuário-autenticado) | [CT-RF05_ERRO — Exibir Perfil](Cenario_Teste/CT-RF05_ERRO.md) | Funcional / interface, com análise do DOM e evidências | Reprovado | [BUG-002](Relatorio-de-Bugs.md#bug-002--perfil-com-dados-fictícios-campos-ausentes-e-layout-desconfigurado) | Corrigir e retestar. |
+| [RF09](Analise%20de%20requisitos.md#rf09--pesquisar-clientes-com-filtros-combinados) | [CT-RF09 — Filtrar Clientes](Cenario_Teste/CT-RF09_FILTRO_TelaClientes.md) | Funcional / filtros combinados, com análise de integração e evidências | Reprovado conforme o relato; sem nova execução | [BUG-003](Relatorio-de-Bugs.md#bug-003--filtros-combinados-da-página-clientes-não-restringem-a-listagem) | Investigar a causa, corrigir e executar a matriz de reteste. |
+| [RF01](Analise%20de%20requisitos.md#rf01--autenticar-usuário-com-credenciais-válidas) | [CT-RF01_loginComSucesso](Cenario_Teste/CT-RF01_loginComSucesso.md) | Funcional / fluxo positivo de autenticação | Aprovado conforme a gravação; sem nova execução | Nenhum identificado no fluxo avaliado | Utilizar como regressão em futuras versões. |
+| [RF02](Analise%20de%20requisitos.md#rf02) | [CT-RF02](Cenario_Teste/CT-RF02_Login_SenhaIncorreta.md) | Funcional manual / regressão | Aprovado conforme a gravação | Nenhum no fluxo avaliado | Usar como regressão de autenticação negativa; preparar conta conhecida e repetir após alterações no login. |
+| [RF03](Analise%20de%20requisitos.md#rf03) | [CT-RF03](Cenario_Teste/CT-RF03_Login_UsuarioInexistente.md) | Funcional manual / regressão | Aprovado conforme a gravação | Nenhum no fluxo avaliado | Repetir com identificador de inexistência comprovada; a classificação atual refere-se à recusa visível do cenário declarado pelo autor. |
+| [RF11](Analise%20de%20requisitos.md#rf11) | [CT-RF11](Cenario_Teste/CT-RF11_Exportacao_Financeiro.md) | Funcional / manifestação observada | Reprovado nas evidências | [BUG-004](Relatorio-de-Bugs.md#bug-004) | Investigar o retorno do botão; no reteste capturar o histórico de downloads e abrir o arquivo antes de concluir se a exportação foi gerada. |
+| [RF14](Analise%20de%20requisitos.md#rf14) | [CT-RF14](Cenario_Teste/CT-RF14_Calculo_Cobranca.md) | Exploratório / regra a confirmar | A validar — regra ou contexto pendente | Sem defeito confirmado | Confirmar a origem dos R$ 20,83 além de principal e multa e a regra da mensagem; não registrar cálculo incorreto antes dessa validação. |
+| [RF12](Analise%20de%20requisitos.md#rf12) | [CT-RF12](Cenario_Teste/CT-RF12_Contagem_Mensalidades.md) | Funcional / manifestação observada | Reprovado nas evidências | [BUG-005](Relatorio-de-Bugs.md#bug-005) | Retestar com o CT-RF13; os dois cenários documentam manifestações do BUG-005, sem criar um defeito duplicado. |
+| [RF13](Analise%20de%20requisitos.md#rf13) | [CT-RF13](Cenario_Teste/CT-RF13_Filtro_Mensalidades.md) | Funcional / manifestação observada | Reprovado nas evidências | [BUG-005](Relatorio-de-Bugs.md#bug-005) | Retestar em conjunto com CT-RF12 e conferir o contrato da faixa Até 7 dias antes de preparar a base. |
+| [RF15](Analise%20de%20requisitos.md#rf15) | [CT-RF15](Cenario_Teste/CT-RF15_Metricas_Financeiro.md) | Exploratório / regra a confirmar | A validar — regra ou contexto pendente | Sem defeito confirmado | Confirmar os contratos dos cartões; a constância de totais globais não é suficiente para abrir outro defeito financeiro. |
+| [RF06](Analise%20de%20requisitos.md#rf06) | [CT-RF06](Cenario_Teste/CT-RF06_Periodo_Dashboard.md) | Funcional / manifestação observada | Reprovado nas evidências | [BUG-006](Relatorio-de-Bugs.md#bug-006) | Corrigir e retestar a validação do intervalo; avaliar a atualização dos indicadores em base controlada como verificação complementar. |
+| [RF07](Analise%20de%20requisitos.md#rf07) | [CT-RF07](Cenario_Teste/CT-RF07_Codigos_Personais.md) | Exploratório / regra a confirmar | A validar — regra ou contexto pendente | Sem defeito confirmado | Confirmar a semântica da coluna Código; quatro linhas e total quatro não sustentam um defeito de quantidade. |
+| [RF41](Analise%20de%20requisitos.md#rf41) | [CT-RF41](Cenario_Teste/CT-RF41_Contraste_TemaEscuro.md) | Funcional / manifestação observada | Reprovado nas evidências | [BUG-007](Relatorio-de-Bugs.md#bug-007) | Ajustar as cores e retestar ambos os temas; medir contraste se houver critério formal de acessibilidade definido. |
+| [RF42](Analise%20de%20requisitos.md#rf42) | [CT-RF42](Cenario_Teste/CT-RF42_Edicao_Modalidade.md) | Funcional / manifestação observada | Reprovado nas evidências | [BUG-008](Relatorio-de-Bugs.md#bug-008) | Verificar o fluxo de conclusão da edição e retestar persistência. A evidência reprova a clareza da ação de salvar; não afirma que o ícone de editar inexiste. |
+| [RF43](Analise%20de%20requisitos.md#rf43) | [CT-RF43](Cenario_Teste/CT-RF43_Exclusao_Modalidade.md) | Exploratório / regra a confirmar | A validar — regra ou contexto pendente | Sem defeito confirmado | Confirmar a exclusão lógica e a nomenclatura da ação; registrar defeito apenas se houver divergência com a regra definida. |
+| [RF36](Analise%20de%20requisitos.md#rf36) | [CT-RF36](Cenario_Teste/CT-RF36_Filtros_Categorias.md) | Funcional manual / regressão | Aprovado conforme a gravação | Nenhum no fluxo avaliado | Usar como regressão; combinações, conjunto vazio, caracteres especiais e paginação exigem execuções adicionais. |
+| [RF37](Analise%20de%20requisitos.md#rf37) | [CT-RF37](Cenario_Teste/CT-RF37_Atualizacao_Categoria.md) | Funcional manual / regressão | Aprovado conforme a gravação | Nenhum no fluxo avaliado | Usar como regressão; acrescentar recarga e nova consulta para ampliar a verificação de persistência. |
+| [RF38](Analise%20de%20requisitos.md#rf38) | [CT-RF38](Cenario_Teste/CT-RF38_Exclusao_Categoria.md) | Funcional / manifestação observada | Reprovado nas evidências | [BUG-009](Relatorio-de-Bugs.md#bug-009) | Investigar o HTTP 500 com logs do servidor e vínculos da categoria; corrigir e retestar cenários permitido e impedido. |
+| [RF39](Analise%20de%20requisitos.md#rf39) | [CT-RF39](Cenario_Teste/CT-RF39_Criacao_Categoria.md) | Funcional manual / regressão | Aprovado conforme a gravação | Nenhum no fluxo avaliado | Usar como regressão; campos vazios, nomes duplicados e limites de tamanho permanecem fora do cenário gravado. |
+| [RF10](Analise%20de%20requisitos.md#rf10) | [CT-RF10](Cenario_Teste/CT-RF10_Cadastro_Avaliacao.md) | Funcional manual / tratamento de erro | Reprovado nas evidências | [BUG-010](Relatorio-de-Bugs.md#bug-010) | Investigar o HTTP 500; retestar dados válidos, vínculo inválido, retroatividade e persistência. |
+| [RF21](Analise%20de%20requisitos.md#rf21) | [CT-RF21](Cenario_Teste/CT-RF21_Digitacao_Codigo_Exercicio.md) | Funcional manual / análise documental | Reprovado conforme o relato; reprodução independente pendente. | [BUG-011](Relatorio-de-Bugs.md#bug-011), em triagem | Confirmar a regra, reproduzir o impedimento e retestar o campo após correção. |
+| [RF22](Analise%20de%20requisitos.md#rf22) | [CT-RF22](Cenario_Teste/CT-RF22_Exclusao_Exercicio.md) | Funcional manual / análise documental | Aprovado no trecho consultado. | Sem defeito confirmado | Manter como regressão. Em nova execução, recarregar a página para conferir persistência e testar separadamente as regras para exercícios vinculados. |
+| [RF23](Analise%20de%20requisitos.md#rf23) | [CT-RF23](Cenario_Teste/CT-RF23_Edicao_Exercicio.md) | Funcional manual / análise documental | Reprovado no trecho consultado; confirmar operação e identidade dos registros na reprodução. | [BUG-012](Relatorio-de-Bugs.md#bug-012), em triagem | Reproduzir a partir da ação explícita de edição e comparar os identificadores antes e depois. Investigar eventual envio para criação como hipótese, sem atribuir causa técnica antes de verificar código e contrato da API. |
+| [RF24](Analise%20de%20requisitos.md#rf24) | [CT-RF24](Cenario_Teste/CT-RF24_Envio_Exercicio_Imagem.md) | Funcional manual / análise documental | A validar — criação visível; persistência e associação da imagem não confirmadas. | Sem defeito confirmado | Reabrir o exercício criado e conferir a imagem salva. Testar formatos e tamanhos inválidos em casos separados; essas variações não recebem resultado nesta análise. |
+| [RF25](Analise%20de%20requisitos.md#rf25) | [CT-RF25](Cenario_Teste/CT-RF25_Exercicio_Campos_Vazios.md) | Funcional manual / teste negativo | Reprovado — sem feedback de validação visível. | [BUG-013](Relatorio-de-Bugs.md#bug-013), em triagem | Exibir validação por campo, confirmar bloqueio da persistência e retestar. |
+| [RF26](Analise%20de%20requisitos.md#rf26) | [CT-RF26](Cenario_Teste/CT-RF26_Video_Campo_Imagem.md) | Funcional manual / teste negativo de mídia | Reprovado — arquivo rejeitado sem feedback visível. | [BUG-014](Relatorio-de-Bugs.md#bug-014), em triagem | Informar tipos aceitos e retestar arquivo por extensão e MIME, incluindo persistência. |
+| [RF27](Analise%20de%20requisitos.md#rf27) | [CT-RF27](Cenario_Teste/CT-RF27_Imagem_Campo_Video.md) | Funcional manual / teste negativo de mídia | Reprovado — arquivo rejeitado sem feedback visível. | [BUG-015](Relatorio-de-Bugs.md#bug-015), em triagem | Informar tipos aceitos e retestar arquivo por extensão e MIME, incluindo persistência. |
+| [RF28](Analise%20de%20requisitos.md#rf28) | [CT-RF28](Cenario_Teste/CT-RF28_Exclusao_GrupoMuscular.md) | Funcional manual / análise de evidências | Reprovado nas evidências | [BUG-016](Relatorio-de-Bugs.md#bug-016), em triagem | Investigar o HTTP 500 com logs do servidor e vínculos do registro; corrigir e retestar os cenários permitido e impedido. |
+| [RF29](Analise%20de%20requisitos.md#rf29) | [CT-RF29](Cenario_Teste/CT-RF29_Imagens_GruposMusculares.md) | Funcional manual / análise de evidências | Reprovado nas evidências | [BUG-017](Relatorio-de-Bugs.md#bug-017), em triagem | Verificar a existência dos arquivos, o nome gravado em cada registro e a regra que responde 422; definir o estado neutro para registros sem imagem. |
+| [RF30](Analise%20de%20requisitos.md#rf30) | [CT-RF30](Cenario_Teste/CT-RF30_Cadastro_GrupoMuscular.md) | Funcional manual / regressão | Aprovado conforme a gravação | Nenhum no fluxo avaliado | Usar como regressão; campos em branco, nomes duplicados, limites de tamanho e código informado manualmente exigem execuções adicionais. |
+| [RF31](Analise%20de%20requisitos.md#rf31) | [CT-RF31](Cenario_Teste/CT-RF31_Edicao_TipoMembro.md) | Funcional manual / regressão | Aprovado conforme a gravação | Nenhum no fluxo avaliado | Usar como regressão; conferir persistência após recarga e confirmar se a imagem enviada na edição é salva. |
+| [RF32](Analise%20de%20requisitos.md#rf32) | [CT-RF32](Cenario_Teste/CT-RF32_Filtros_GruposMusculares.md) | Funcional manual / regressão | Aprovado conforme a gravação | Nenhum no fluxo avaliado | Usar como regressão; executar um caso com critérios contraditórios para demonstrar a lógica combinada, além de busca por nome, valores inválidos e paginação. |
+| [RF33](Analise%20de%20requisitos.md#rf33) | [CT-RF33](Cenario_Teste/CT-RF33_Cadastro_Objetivo_Treino.md) | Funcional manual / tratamento de erro | Reprovado nas evidências | [BUG-019](Relatorio-de-Bugs.md#bug-019), em triagem | Investigar o HTTP 500 com logs do servidor; retestar dados válidos, descrição com caracteres especiais, campos vazios, código manual e persistência; conferir que um clique gera uma única gravação. |
+| [RF40](Analise%20de%20requisitos.md#rf40) | [CT-RF40](Cenario_Teste/CT-RF40_Cadastro_Categoria_Codigo_Automatico.md) | Funcional manual / regressão | Aprovado conforme a gravação | Nenhum no fluxo avaliado | Usar como regressão; nome vazio, nome duplicado, limites de tamanho, código inexistente no filtro e persistência após recarga exigem execuções adicionais; confirmar a regra do campo Código. |
+| [RF44](Analise%20de%20requisitos.md#rf44) | [CT-RF44](Cenario_Teste/CT-RF44_Cadastro_Modalidade.md) | Funcional manual / regressão | Aprovado conforme a gravação | Nenhum no fluxo avaliado | Usar como regressão; nome vazio, nome duplicado, limites de tamanho, status Inativo e persistência após recarga exigem execuções adicionais. |
+| [RF45](Analise%20de%20requisitos.md#rf45) | [CT-RF45](Cenario_Teste/CT-RF45_Exclusao_Turmas_Modalidades.md) | Exploratório / regra a confirmar | A validar — regra ou contexto pendente | Sem defeito confirmado | Confirmar a exclusão lógica, a confirmação prévia e a exibição de registros inativos sob o filtro "Ativo"; registrar defeito apenas se houver divergência com a regra definida. |
+| [RF46](Analise%20de%20requisitos.md#rf46) | [CT-RF46](Cenario_Teste/CT-RF46_Cadastro_Turma_Sem_Modalidade.md) | Funcional manual / teste negativo | Reprovado — sem feedback de validação visível | [BUG-020](Relatorio-de-Bugs.md#bug-020), em triagem | Confirmar a obrigatoriedade da modalidade, reproduzir com a validação nativa visível e retestar o envio válido e a persistência. |
+| [RF47](Analise%20de%20requisitos.md#rf47) | [CT-RF47](Cenario_Teste/CT-RF47_Solicitacao_Saque_PagarMe.md) | Exploratório / regra a confirmar | A validar — regra ou contexto pendente | Sem defeito confirmado | Confirmar a regra de saque e reexecutar com saldo conhecido, capturando corpo e resposta; testar valor acima do saldo e valor inválido. |
+| [RF48](Analise%20de%20requisitos.md#rf48) | [CT-RF48](Cenario_Teste/CT-RF48_Criacao_Cobranca_PagarMe.md) | Funcional manual / regressão | Aprovado conforme a gravação | Nenhum no fluxo avaliado | Usar como regressão; outros métodos, dados inválidos, link gerado e presença da cobrança em Transações recentes exigem execuções adicionais. |
+| [RF117](Analise%20de%20requisitos.md#rf117) | [CT-RF117](Cenario_Teste/CT-RF117_Configuracoes_Home_Salvamento.md) | Exploratório / regra a confirmar | A validar — regra ou contexto pendente | Sem defeito confirmado | Confirmar a faixa do campo de dias e a mensagem de salvamento; reexecutar com recarga, Cancelar e valores limite. |
+| [RF49](Analise%20de%20requisitos.md#rf49) | [CT-RF49](Cenario_Teste/CT-RF49_Painel_PagarMe_Periodo.md) | Funcional manual / manifestação observada | Reprovado nas evidências | [BUG-021](Relatorio-de-Bugs.md#bug-021), em triagem | Reproduzir com conta de movimentação conhecida, comparar períodos e capturar corpo e resposta de recebiveis, transacoes e pagarme. |
+| [RF50](Analise%20de%20requisitos.md#rf50) | [CT-RF50](Cenario_Teste/CT-RF50_Filtros_Despesas_Fixas.md) | Funcional manual / regressão | Aprovado conforme a gravação | Nenhum no fluxo avaliado | Usar como regressão; combinação de critérios, resultado vazio, filtros de status e recorrência e a regra de correspondência do código exigem execuções adicionais. |
+| [RF51](Analise%20de%20requisitos.md#rf51) | [CT-RF51](Cenario_Teste/CT-RF51_Cadastro_Despesa_Fixa.md) | Exploratório / regra a confirmar | A validar — regra ou contexto pendente | Sem defeito confirmado | Reproduzir capturando as duas requisições de criação e conferir a quantidade de registros após recarga; confirmar a regra do código. |
+| [RF52](Analise%20de%20requisitos.md#rf52) | [CT-RF52](Cenario_Teste/CT-RF52_Exclusao_Despesa_Fixa.md) | Funcional manual / regressão | Aprovado conforme a gravação | Nenhum no fluxo avaliado | Usar como regressão; Cancelar, despesa com vínculos, natureza da exclusão e persistência após recarga exigem execuções adicionais. |
+| [RF53](Analise%20de%20requisitos.md#rf53) | [CT-RF53](Cenario_Teste/CT-RF53_Edicao_Despesa_Fixa.md) | Funcional manual / regressão | Aprovado conforme a gravação | Nenhum no fluxo avaliado | Usar como regressão; edição de nome, valor e status, Cancelar, pré-preenchimento da recorrência e persistência após recarga exigem execuções adicionais. |
+| [RF54](Analise%20de%20requisitos.md#rf54) | [CT-RF54](Cenario_Teste/CT-RF54_Relatorio_Matriculas.md) | Funcional manual / regressão | Aprovado conforme a gravação | Nenhum no fluxo avaliado | Usar como regressão; conferir com a lista de matrículas e exercitar filtros e período sem registros. |
+| [RF55](Analise%20de%20requisitos.md#rf55) | [CT-RF55](Cenario_Teste/CT-RF55_Relatorio_Contas_Receber.md) | Funcional manual / manifestação observada | Reprovado nas evidências | [BUG-022](Relatorio-de-Bugs.md#bug-022), em triagem | Comparar com o módulo Contas a Receber e reexecutar com valores conhecidos, Detalhado e outros status. |
+| [RF56](Analise%20de%20requisitos.md#rf56) | [CT-RF56](Cenario_Teste/CT-RF56_Relatorio_Contas_Pagar_Pagas.md) | Exploratório / regra a confirmar | A validar — regra ou contexto pendente | Sem defeito confirmado | Conferir as contas pagas do período no módulo e reexecutar com um período que contenha pagamentos. |
+| [RF57](Analise%20de%20requisitos.md#rf57) | [CT-RF57](Cenario_Teste/CT-RF57_Relatorio_Avaliacoes_Vazio.md) | Funcional manual / manifestação observada | Reprovado nas evidências | [BUG-023](Relatorio-de-Bugs.md#bug-023), em triagem | Investigar a geração com logs do servidor e retestar com e sem registros no período, comparando com os relatórios que abrem. |
+| [RF58](Analise%20de%20requisitos.md#rf58) | [CT-RF58](Cenario_Teste/CT-RF58_Relatorio_Clientes_Vazio.md) | Funcional manual / manifestação observada | Reprovado nas evidências | [BUG-023](Relatorio-de-Bugs.md#bug-023), em triagem | Investigar a geração com logs do servidor e retestar com e sem registros no período, comparando com os relatórios que abrem. |
+| [RF59](Analise%20de%20requisitos.md#rf59) | [CT-RF59](Cenario_Teste/CT-RF59_Relatorio_Colaboradores_Vazio.md) | Funcional manual / manifestação observada | Reprovado nas evidências | [BUG-023](Relatorio-de-Bugs.md#bug-023), em triagem | Investigar a geração com logs do servidor e retestar com e sem registros no período, comparando com os relatórios que abrem. |
+| [RF60](Analise%20de%20requisitos.md#rf60) | [CT-RF60](Cenario_Teste/CT-RF60_Relatorio_Caixas_Vazio.md) | Funcional manual / manifestação observada | Reprovado nas evidências | [BUG-023](Relatorio-de-Bugs.md#bug-023), em triagem | Investigar a geração com logs do servidor e retestar com e sem registros no período, comparando com os relatórios que abrem. |
+| [RF34](Analise%20de%20requisitos.md#rf34) | [CT-RF34](Cenario_Teste/CT-RF34_Exclusao_Grupo.md) | Funcional manual / análise de evidências | Reprovado nas evidências | [BUG-024](Relatorio-de-Bugs.md#bug-024), em triagem | Investigar o HTTP 500 com logs do servidor e os vínculos do grupo de código 1, em conjunto com o BUG-016; corrigir e retestar os cenários permitido e impedido. |
+| [RF35](Analise%20de%20requisitos.md#rf35) | [CT-RF35](Cenario_Teste/CT-RF35_Edicao_Grupo.md) | Funcional manual / análise de evidências | Reprovado nas evidências | [BUG-025](Relatorio-de-Bugs.md#bug-025), em triagem | Investigar a rotina de edição quanto ao campo status; corrigir e retestar a edição de cada campo isoladamente. |
+| [RF100](Analise%20de%20requisitos.md#rf100) | [CT-RF100](Cenario_Teste/CT-RF100_Cadastro_Anamnese.md) | Funcional manual / análise de evidências | Reprovado nas evidências | [BUG-032](Relatorio-de-Bugs.md#bug-032), em triagem | Investigar as rotinas de aplicar e rascunho com acesso a logs do servidor; corrigir e retestar o cadastro completo de uma anamnese. |
+| [RF61](Analise%20de%20requisitos.md#rf61) | [CT-RF61](Cenario_Teste/CT-RF61_Temas_Prospeccao.md) | Interface manual / alternância de tema | Aprovado conforme o resumo da gravação | — | Repetir a alternância com listagem conhecida; verificar persistência após recarga em execução complementar. |
+| [RF73](Analise%20de%20requisitos.md#rf73) | [CT-RF73](Cenario_Teste/CT-RF73_Detalhes_Lead_Cancelamento.md) | Funcional manual / consulta e cancelamento | Aprovado conforme o resumo da gravação | — | Reabrir o lead após cancelar e comparar o telefone com o valor original. |
+| [RF74](Analise%20de%20requisitos.md#rf74) | [CT-RF74](Cenario_Teste/CT-RF74_Exclusao_Leads_Confirmacao.md) | Funcional manual / exclusão confirmada | Aprovado conforme o resumo da gravação | — | Repetir com registros descartáveis e testar também o cancelamento da confirmação. |
+| [RF65](Analise%20de%20requisitos.md#rf65) | [CT-RF65](Cenario_Teste/CT-RF65_Cadastro_Lead_Novo_Contato.md) | Funcional manual / cadastro positivo | Aprovado conforme o resumo da gravação | — | Repetir o cadastro e conferir campos e estágio após reabertura. |
+| [RF66](Analise%20de%20requisitos.md#rf66) | [CT-RF66](Cenario_Teste/CT-RF66_Cadastro_Lead_Interessado.md) | Funcional manual / cadastro positivo | Aprovado conforme o resumo da gravação | — | Repetir o cadastro e conferir os dados após reabertura. |
+| [RF67](Analise%20de%20requisitos.md#rf67) | [CT-RF67](Cenario_Teste/CT-RF67_Cadastro_Lead_Aula_Experimental.md) | Funcional manual / cadastro positivo | Aprovado conforme o resumo da gravação | — | Repetir o cadastro e conferir estágio, total e dados após reabertura. |
+| [RF68](Analise%20de%20requisitos.md#rf68) | [CT-RF68](Cenario_Teste/CT-RF68_Cadastro_Lead_Proposta.md) | Funcional manual / cadastro positivo | Aprovado conforme o resumo da gravação | — | Repetir o cadastro e conferir estágio e dados após reabertura. |
+| [RF89](Analise%20de%20requisitos.md#rf89) | [CT-RF89](Cenario_Teste/CT-RF89_Cadastro_Bandeira_Parcela_Listagem.md) | Funcional manual / cadastro e listagem | Reprovado nas evidências resumidas | [BUG-035](Relatorio-de-Bugs.md#bug-035) | Investigar a divergência criação/consulta; retestar listagem, reabertura e recarga com e sem parcela. |
+| [RF90](Analise%20de%20requisitos.md#rf90) | [CT-RF90](Cenario_Teste/CT-RF90_Tema_Escuro_Bandeiras.md) | Interface manual / tema e legibilidade visual | Reprovado nas evidências resumidas | [BUG-036](Relatorio-de-Bugs.md#bug-036) | Revisar os estilos da página e retestar Claro/Escuro com lista vazia e preenchida; medir contraste separadamente. |
+| [RF69](Analise%20de%20requisitos.md#rf69) | [CT-RF69](Cenario_Teste/CT-RF69_Cadastro_Lead_Apenas_Nome.md) | Funcional manual / teste negativo, regra a confirmar | Reprovado conforme o relato; regra de obrigatoriedade a confirmar | [BUG-037](Relatorio-de-Bugs.md#bug-037) | Confirmar obrigatoriedade com produto antes de definir correção; testar campos isolados, envio completo e ausência de criação inválida. |
+| [RF70](Analise%20de%20requisitos.md#rf70) | [CT-RF70](Cenario_Teste/CT-RF70_Cadastro_Lead_Fechado.md) | Funcional manual / cadastro positivo | Aprovado conforme o resumo da gravação | — | Repetir o cadastro e conferir os dados após reabertura; capturar o corpo da resposta de salvamento. |
+| [RF62](Analise%20de%20requisitos.md#rf62) | [CT-RF62](Cenario_Teste/CT-RF62_Tema_Notificacoes_Prospeccao.md) | Funcional manual / regressão | Aprovado conforme a gravação | Nenhum no fluxo avaliado | Usar como regressão; persistência após recarga e notificações pendentes exigem execuções adicionais. |
+| [RF63](Analise%20de%20requisitos.md#rf63) | [CT-RF63](Cenario_Teste/CT-RF63_Busca_Leads_Prospeccao.md) | Funcional manual / regressão | Aprovado conforme a gravação | Nenhum no fluxo avaliado | Usar como regressão; regra de correspondência, busca por e-mail, telefone e código e resultado vazio exigem execuções adicionais. |
+| [RF64](Analise%20de%20requisitos.md#rf64) | [CT-RF64](Cenario_Teste/CT-RF64_Filtro_Estagio_Leads.md) | Funcional manual / regressão | Aprovado conforme a gravação | Nenhum no fluxo avaliado | Usar como regressão; demais estágios, combinação com a busca e estágio sem leads exigem execuções adicionais. |
+| [RF71](Analise%20de%20requisitos.md#rf71) | [CT-RF71](Cenario_Teste/CT-RF71_Cadastro_Lead_Prospeccao.md) | Exploratório / regra a confirmar | A validar — regra ou contexto pendente | Sem defeito confirmado | Confirmar se o segundo POST gerou registro adicional, capturando corpos e respostas, e testar campos obrigatórios; registrar defeito apenas se houver duplicidade confirmada. |
+| [RF72](Analise%20de%20requisitos.md#rf72) | [CT-RF72](Cenario_Teste/CT-RF72_Telefone_Lead_Sem_Validacao.md) | Funcional manual / teste negativo | Reprovado nas evidências | [BUG-038](Relatorio-de-Bugs.md#bug-038), em triagem | Confirmar a regra do campo, reproduzir com a validação visível e retestar telefones válidos e inválidos e a persistência. |
+| [RF75](Analise%20de%20requisitos.md#rf75) | [CT-RF75](Cenario_Teste/CT-RF75_Edicao_Lead_Prospeccao.md) | Funcional manual / regressão | Aprovado conforme a gravação | Nenhum no fluxo avaliado | Usar como regressão; edição dos demais campos, persistência após recarga e campos obrigatórios exigem execuções adicionais. |
+| [RF16](Analise%20de%20requisitos.md#rf16) | [CT-RF16](Cenario_Teste/CT-RF16_Filtros_Contas_Pagar.md) | Exploratório / regra a confirmar | A validar — regra ou contexto pendente | Sem defeito confirmado | Reexecutar com contas de controle e exercitar cada critério isolado e a combinação. |
+| [RF17](Analise%20de%20requisitos.md#rf17) | [CT-RF17](Cenario_Teste/CT-RF17_Cadastro_Conta_Colaborador_Sem_Colaborador.md) | Funcional manual / teste negativo | Reprovado nas evidências | [BUG-039](Relatorio-de-Bugs.md#bug-039), em triagem | Confirmar a regra, reproduzir com a validação visível e retestar envio válido e inválido e a persistência. |
+| [RF18](Analise%20de%20requisitos.md#rf18) | [CT-RF18](Cenario_Teste/CT-RF18_Busca_Colaborador_Conta_Pagar.md) | Exploratório / regra a confirmar | A validar — regra ou contexto pendente | Sem defeito confirmado | Reexecutar com um nome existente e confirmar a mensagem de resultado vazio. |
+| [RF19](Analise%20de%20requisitos.md#rf19) | [CT-RF19](Cenario_Teste/CT-RF19_Visualizacao_Conta_Pagar.md) | Funcional manual / regressão | Aprovado conforme a gravação | Nenhum no fluxo avaliado | Usar como regressão; contas de outros tipos e status e o rótulo do tipo exigem execuções adicionais. |
+| [RF20](Analise%20de%20requisitos.md#rf20) | [CT-RF20](Cenario_Teste/CT-RF20_Exclusao_Conta_Pagar.md) | Funcional manual / regressão | Aprovado conforme a gravação | Nenhum no fluxo avaliado | Usar como regressão; cancelar, recarga e contas vinculadas exigem execuções adicionais. |
+| [RF82](Analise%20de%20requisitos.md#rf82) | [CT-RF82](Cenario_Teste/CT-RF82_Variaveis_Preview_Modelo_Contrato.md) | Funcional manual / regressão | Aprovado conforme a gravação | Nenhum no fluxo avaliado | Usar como regressão; demais variáveis, formatação complexa e texto gravado exigem execuções adicionais. |
+| [RF81](Analise%20de%20requisitos.md#rf81) | [CT-RF81](Cenario_Teste/CT-RF81_Cadastro_Modelo_Contrato.md) | Funcional manual / regressão | Aprovado conforme a gravação | Nenhum no fluxo avaliado | Usar como regressão; campos obrigatórios e conferência do texto gravado exigem execuções adicionais. |
+| [RF83](Analise%20de%20requisitos.md#rf83) | [CT-RF83](Cenario_Teste/CT-RF83_Listagem_Modelos_Contrato_Vazia.md) | Funcional manual / manifestação observada | Reprovado nas evidências | [BUG-040](Relatorio-de-Bugs.md#bug-040), em triagem | Reproduzir comparando resposta e tabela, investigar a renderização e retestar após correção. |
+| [RF77](Analise%20de%20requisitos.md#rf77) | [CT-RF77](Cenario_Teste/CT-RF77_Filtros_Planos.md) | Funcional manual / regressão | Aprovado conforme a gravação | Nenhum no fluxo avaliado | Usar como regressão; filtro por Status, combinação de critérios e resultado vazio exigem execuções adicionais. |
+| [RF76](Analise%20de%20requisitos.md#rf76) | [CT-RF76](Cenario_Teste/CT-RF76_Tema_Notificacoes_Planos.md) | Funcional manual / regressão | Aprovado conforme a gravação | Nenhum no fluxo avaliado | Usar como regressão; persistência após recarga e notificações pendentes exigem execuções adicionais. |
+| [RF78](Analise%20de%20requisitos.md#rf78) | [CT-RF78](Cenario_Teste/CT-RF78_Cadastro_Plano.md) | Funcional manual / regressão | Aprovado conforme a gravação | Nenhum no fluxo avaliado | Usar como regressão; campos obrigatórios, valores extremos e conferência na listagem exigem execuções adicionais. |
+| [RF79](Analise%20de%20requisitos.md#rf79) | [CT-RF79](Cenario_Teste/CT-RF79_Contador_Ativos_Planos.md) | Funcional manual / manifestação observada | Reprovado nas evidências | [BUG-041](Relatorio-de-Bugs.md#bug-041), em triagem | Reproduzir com a base e o contrato do cartão conhecidos e retestar o cartão após cadastro, edição e alteração de status. |
+| [RF80](Analise%20de%20requisitos.md#rf80) | [CT-RF80](Cenario_Teste/CT-RF80_Edicao_Plano.md) | Funcional manual / regressão | Aprovado conforme a gravação | Nenhum no fluxo avaliado | Usar como regressão; persistência após recarga e demais campos exigem execuções adicionais. |
+| [RF84](Analise%20de%20requisitos.md#rf84) | [CT-RF84](Cenario_Teste/CT-RF84_Filtros_Tipos_Pagamento.md) | Exploratório / regra a confirmar | A validar — regra ou contexto pendente | Sem defeito confirmado | Reexecutar com critérios conhecidos e capturar o valor escolhido, a listagem e a rede. |
+| [RF85](Analise%20de%20requisitos.md#rf85) | [CT-RF85](Cenario_Teste/CT-RF85_Cadastro_Tipo_Pagamento_Status.md) | Funcional manual / cadastro e persistência | Reprovado nas evidências | [BUG-042](Relatorio-de-Bugs.md#bug-042), em triagem | Confirmar a regra do status, reproduzir conferindo corpo, resposta e coluna Status e retestar com status Ativo e Inativo. |
+| [RF86](Analise%20de%20requisitos.md#rf86) | [CT-RF86](Cenario_Teste/CT-RF86_Edicao_Tipo_Pagamento.md) | Funcional manual / regressão | Aprovado conforme a gravação | Nenhum no fluxo avaliado | Usar como regressão; persistência após recarga, edição de nome e tipo e a coluna Status exigem execuções adicionais. |
+| [RF87](Analise%20de%20requisitos.md#rf87) | [CT-RF87](Cenario_Teste/CT-RF87_Exclusao_Tipo_Pagamento_Em_Uso.md) | Funcional manual / teste negativo | Reprovado nas evidências | [BUG-043](Relatorio-de-Bugs.md#bug-043), em triagem | Confirmar a regra, reproduzir com tipo em uso e sem uso e retestar código HTTP, resposta e mensagem. |
+| [RF88](Analise%20de%20requisitos.md#rf88) | [CT-RF88](Cenario_Teste/CT-RF88_Tema_Notificacoes_Tipos_Pagamento.md) | Interface manual / tema e notificações | Aprovado conforme a gravação | Nenhum no fluxo avaliado | Usar como regressão visual; conferir diálogos e modais no tema Escuro e a persistência do tema. |
 
 ---
 
 ## 🔄 8. Procedimento de execução e reteste
 
-### CT-RF01
+### CT-RF04
 
 1. Registrar data, URL, versão disponível e navegador da execução.
 2. Acessar a página de login sem autenticação e preparar Network e Console.
-3. Executar o [CT-RF01](Cenario_Teste/CT-RF01_Esqueci-senha.md), observando a interface e os registros após o clique.
-4. Comparar o comportamento com os critérios do RF01 e registrar o resultado obtido.
+3. Executar o [CT-RF04](Cenario_Teste/CT-RF04_Esqueci-senha.md), observando a interface e os registros após o clique.
+4. Comparar o comportamento com os critérios do RF04 e registrar o resultado obtido.
 5. Salvar evidências visuais e de rede, inclusive quando não houver requisições.
 6. Após a correção, repetir o caso e verificar se o fluxo abre e permite prosseguir. Uma abertura local de formulário não exige, por si só, requisição ao servidor.
 7. Atualizar o relatório de testes e o BUG-001 com as novas evidências e o resultado do reteste.
 
-### CT-RF02_ERRO
+### CT-RF05_ERRO
 
 1. Registrar data, URL, versão, navegador, resolução, zoom e permissões da conta de teste.
 2. Autenticar-se e preparar Elements, Network e Console; acessar Perfil pelo menu do usuário.
@@ -719,23 +544,23 @@ Para o reteste, preparar aluno existente selecionável pela busca, personal habi
 4. Conferir os rótulos e campos das seções Usuário, Documentos e Endereço, inclusive interação com campos editáveis.
 5. Conferir português, padrão visual, dimensionamento das imagens e ausência de transbordamento horizontal nas resoluções selecionadas.
 6. Inspecionar se os campos geram os controles esperados no DOM. Correlacionar eventuais falhas de rede ou console com a interface, sem presumir a causa apenas por atributos vazios.
-7. Salvar captura e registros; comparar com os critérios do RF02 e atualizar o resultado do caso e o BUG-002. Não alterar dados da conta para comprovar apenas a renderização.
+7. Salvar captura e registros; comparar com os critérios do RF05 e atualizar o resultado do caso e o BUG-002. Não alterar dados da conta para comprovar apenas a renderização.
 
-### CT-RF03
+### CT-RF09
 
 1. Registrar data, URL, versão, navegador e empresa, confirmando as permissões da conta e os IDs reais das opções.
 2. Preparar a base conhecida e os conjuntos esperados. Incluir clientes que atendam apenas a parte dos critérios para detectar uso indevido de lógica OR ou filtros ignorados.
-3. Preparar Network e Console. Executar a reprodução do [CT-RF03](Cenario_Teste/CT-RF03_FILTRO_TelaClientes.md), com Código e Nome vazios e Ativo + Inadimplente + Plano Hendreu + Marcelo Longo Zandonadi.
+3. Preparar Network e Console. Executar a reprodução do [CT-RF09](Cenario_Teste/CT-RF09_FILTRO_TelaClientes.md), com Código e Nome vazios e Ativo + Inadimplente + Plano Hendreu + Marcelo Longo Zandonadi.
 4. Clicar em Buscar, registrar as seleções e conferir os atributos de cada cliente retornado com a base de referência. Verificar também a ausência de clientes esperados, considerando outras páginas, se houver paginação.
 5. Alternar somente a Situação para Adimplente e repetir a busca e a conferência. Preparar dados que tornem verificável a diferença entre os conjuntos.
 6. Se a busca ocorrer no servidor, conferir os parâmetros conforme o contrato. Se ocorrer localmente, verificar a aplicação de todos os critérios sobre dados suficientes. Não aprovar pela presença de HTTP 200 ou pelo tamanho da resposta.
-7. Executar as nove variações da [matriz de reteste](Cenario_Teste/CT-RF03_FILTRO_TelaClientes.md#matriz-de-reteste-proposta): Ativo + plano; Inativo + Plano Hendreu; Ativo + Inadimplente; Adimplente + personal; quatro filtros combinados; alternância da situação; conjunto vazio; Código/Nome combinados; limpeza das restrições.
+7. Executar as nove variações da [matriz de reteste](Cenario_Teste/CT-RF09_FILTRO_TelaClientes.md#matriz-de-reteste-proposta): Ativo + plano; Inativo + Plano Hendreu; Ativo + Inadimplente; Adimplente + personal; quatro filtros combinados; alternância da situação; conjunto vazio; Código/Nome combinados; limpeza das restrições.
 8. Na busca sem correspondências, conferir a mensagem **"Nenhum cliente encontrado"** e a ausência de linhas anteriores. Ao limpar filtros, conferir a remoção das restrições correspondentes.
 9. Registrar o resultado de cada variação e as evidências de interface e integração sem tokens. Atualizar o relatório dos testes e o BUG-003 somente com os resultados efetivamente obtidos.
 
 ---
 
-### CT-RF04_loginComSucesso
+### CT-RF01_loginComSucesso
 
 1. Registrar data, URL, versão, navegador, resolução e zoom; usar conta de teste autorizada com acesso ao painel.
 2. Acessar `/login` sem sessão autenticada e preparar a captura de rede e navegação.
@@ -746,21 +571,21 @@ Para o reteste, preparar aluno existente selecionável pela busca, personal habi
 
 ---
 
-### CT-RF05 a CT-RF20 — próximos testes
+### CT-RF02 a CT-RF39 — próximos testes
 
 1. Confirmar versão e ambiente; preparar dados conhecidos conforme as pré-condições do cenário.
 2. Executar os passos e o BDD do caso; registrar o resultado efetivo e o Jam da nova execução.
 3. Comparar os critérios com interface, arquivo gerado ou cadastro de referência, conforme o fluxo. HTTP 200 isoladamente não aprova um caso.
-4. Para CT-RF08/11/13/16, registrar primeiro a decisão de produto sobre a regra pendente. Não converter uma dúvida em defeito sem demonstrar a divergência.
-5. Retestar os casos reprovados após correção. CT-RF09 e CT-RF10 compartilham BUG-005 e precisam de conferências próprias para encerrar o mesmo defeito.
-6. Executar CT-RF05/06/17/18/20 como regressão nas próximas versões; ampliações de cobertura permanecem planejadas até terem evidência própria.
+4. Para CT-RF14/11/13/16, registrar primeiro a decisão de produto sobre a regra pendente. Não converter uma dúvida em defeito sem demonstrar a divergência.
+5. Retestar os casos reprovados após correção. CT-RF12 e CT-RF13 compartilham BUG-005 e precisam de conferências próprias para encerrar o mesmo defeito.
+6. Executar CT-RF02/06/17/18/20 como regressão nas próximas versões; ampliações de cobertura permanecem planejadas até terem evidência própria.
 7. Atualizar cenário, requisito, relatório e defeito com a data e evidência da versão testada, preservando os registros históricos.
 
 ---
 
-<a id="ct-rf21"></a>
+<a id="ct-rf10"></a>
 
-### CT-RF21 — reteste após correção
+### CT-RF10 — reteste após correção
 
 1. Identificar a versão disponibilizada e confirmar as regras de vínculo do aluno e data/hora.
 2. Cadastrar avaliação com aluno selecionado pela busca, personal habilitado e horário permitido; conferir sucesso e registro após nova consulta.
@@ -772,240 +597,156 @@ Todas essas variações permanecem planejadas e não são contadas como execuç�
 
 ---
 
-### CT-RF22 a CT-RF28 — próximos testes
+### CT-RF21 a CT-RF27 — próximos testes
 
-1. CT-RF22 / BUG-011: confirmar código manual ou automático; reproduzir foco, digitação, correção e manutenção após Tab.
-2. CT-RF23: excluir registro de teste, conferir totais e preservação dos demais; recarregar para conferir persistência.
-3. CT-RF24 / BUG-012: abrir explicitamente edição, comparar IDs e total antes/depois, salvar o nome e conferir ausência de duplicação. Se era criação, reavaliar o defeito.
-4. CT-RF25: criar com imagem válida, reabrir e recarregar para conferir associação. Formatos e tamanhos inválidos exigem execuções separadas.
-5. CT-RF26 / BUG-013: salvar todos os campos vazios, depois uma combinação por vez; conferir mensagens, foco, ausência de requisição indevida e inexistência de registro vazio.
-6. CT-RF27 / BUG-014: selecionar vídeo controlado no campo Imagem; registrar extensão, MIME, tamanho, feedback, rede e ausência de vínculo.
-7. CT-RF28 / BUG-015: selecionar imagem controlada no campo Vídeo; registrar extensão, MIME, tamanho, feedback, rede e ausência de vínculo.
+1. CT-RF21 / BUG-011: confirmar código manual ou automático; reproduzir foco, digitação, correção e manutenção após Tab.
+2. CT-RF22: excluir registro de teste, conferir totais e preservação dos demais; recarregar para conferir persistência.
+3. CT-RF23 / BUG-012: abrir explicitamente edição, comparar IDs e total antes/depois, salvar o nome e conferir ausência de duplicação. Se era criação, reavaliar o defeito.
+4. CT-RF24: criar com imagem válida, reabrir e recarregar para conferir associação. Formatos e tamanhos inválidos exigem execuções separadas.
+5. CT-RF25 / BUG-013: salvar todos os campos vazios, depois uma combinação por vez; conferir mensagens, foco, ausência de requisição indevida e inexistência de registro vazio.
+6. CT-RF26 / BUG-014: selecionar vídeo controlado no campo Imagem; registrar extensão, MIME, tamanho, feedback, rede e ausência de vínculo.
+7. CT-RF27 / BUG-015: selecionar imagem controlada no campo Vídeo; registrar extensão, MIME, tamanho, feedback, rede e ausência de vínculo.
 8. Registrar versão e evidência; verificações planejadas não recebem resultado de execução.
 
-### CT-RF29 a CT-RF33 — próximos testes
+### CT-RF28 a CT-RF32 — próximos testes
 
-1. CT-RF29 / BUG-016: registrar a listagem e os contadores, acionar a exclusão de um registro permitido, confirmar no diálogo e conferir mensagem, status da chamada e presença do registro. Repetir com um registro de exclusão impedida.
-2. CT-RF30 / BUG-017: conferir a coluna IMAGEM e o status das requisições de arquivo; abrir uma URL de imagem diretamente no navegador e registrar status e corpo; repetir após busca e troca de tema.
-3. CT-RF31: cadastrar com nome e tipo válidos, conferir registro, código atribuído, rodapé e cartões; recarregar para conferir persistência. Testar código informado manualmente em execução separada.
-4. CT-RF32: abrir a edição, alterar o tipo de membro, salvar e conferir listagem e cartões; recarregar para conferir persistência. Anexar imagem e verificar a associação após reabrir.
-5. CT-RF33: filtrar por tipo sem registros, por tipo com registros e por código; executar um caso com código e tipo contraditórios, cujo retorno esperado é o conjunto vazio; limpar os critérios e conferir o retorno da listagem completa.
+1. CT-RF28 / BUG-016: registrar a listagem e os contadores, acionar a exclusão de um registro permitido, confirmar no diálogo e conferir mensagem, status da chamada e presença do registro. Repetir com um registro de exclusão impedida.
+2. CT-RF29 / BUG-017: conferir a coluna IMAGEM e o status das requisições de arquivo; abrir uma URL de imagem diretamente no navegador e registrar status e corpo; repetir após busca e troca de tema.
+3. CT-RF30: cadastrar com nome e tipo válidos, conferir registro, código atribuído, rodapé e cartões; recarregar para conferir persistência. Testar código informado manualmente em execução separada.
+4. CT-RF31: abrir a edição, alterar o tipo de membro, salvar e conferir listagem e cartões; recarregar para conferir persistência. Anexar imagem e verificar a associação após reabrir.
+5. CT-RF32: filtrar por tipo sem registros, por tipo com registros e por código; executar um caso com código e tipo contraditórios, cujo retorno esperado é o conjunto vazio; limpar os critérios e conferir o retorno da listagem completa.
 6. Registrar versão e evidência; verificações planejadas não recebem resultado de execução.
 
-### CT-RF35 — próximos testes
+### CT-RF33 — próximos testes
 
-1. CT-RF35 / BUG-019: registrar a listagem e os cartões; abrir Novo Objetivo, informar nome e descrição simples e salvar; conferir mensagem, status da chamada, registro na listagem, cartões e persistência após recarga.
+1. CT-RF33 / BUG-019: registrar a listagem e os cartões; abrir Novo Objetivo, informar nome e descrição simples e salvar; conferir mensagem, status da chamada, registro na listagem, cartões e persistência após recarga.
 2. Repetir com os dados históricos (descrição com `#@`) para comparar; confirmar no payload e na resposta o que o servidor recusa, com a captura de rede preparada antes do envio.
 3. Salvar com nome e descrição vazios, com nome duplicado e com texto longo; conferir validação por campo e ausência de registro vazio ou parcial.
-4. Tentar informar o Código manualmente e confirmar com o produto se o campo é automático (ver CT-RF22 / BUG-011 e CT-RF31).
+4. Tentar informar o Código manualmente e confirmar com o produto se o campo é automático (ver CT-RF21 / BUG-011 e CT-RF30).
 5. Conferir que um único clique em Salvar gera uma única requisição de gravação.
 6. Com ao menos um objetivo cadastrado, filtrar por código e nome, incluindo um resultado vazio, e conferir a mensagem "Nenhum objetivo encontrado" ou equivalente.
 7. Registrar versão e evidência; verificações planejadas não recebem resultado de execução.
 
-### CT-RF38 — próximos testes
+### CT-RF40 — próximos testes
 
-1. CT-RF38: registrar a listagem, os códigos e os cartões; filtrar por nome e por código existentes e limpar os filtros; abrir Nova Categoria, informar o nome e tentar digitar no campo Código; salvar e conferir mensagem, código atribuído, listagem e cartões; recarregar para conferir persistência.
+1. CT-RF40: registrar a listagem, os códigos e os cartões; filtrar por nome e por código existentes e limpar os filtros; abrir Nova Categoria, informar o nome e tentar digitar no campo Código; salvar e conferir mensagem, código atribuído, listagem e cartões; recarregar para conferir persistência.
 2. Filtrar pelo código atribuído e conferir que apenas a nova categoria é exibida; testar código inexistente, não numérico e a combinação contraditória de código e nome, cujo retorno esperado é o conjunto vazio.
 3. Salvar com nome vazio, nome duplicado e texto longo; conferir validação por campo e ausência de registro vazio ou duplicado.
 4. Confirmar com o produto a regra do campo Código (automático ou bloqueado) e se o filtro deve consultar o servidor.
 5. Registrar versão e evidência; verificações planejadas não recebem resultado de execução.
 
-### CT-RF39 a CT-RF41 — próximos testes
+### CT-RF44 a CT-RF46 — próximos testes
 
-1. CT-RF39: cadastrar modalidade com nome e descrição simples e status Ativo; conferir mensagem, registro e status na listagem; recarregar para conferir persistência; testar nome vazio, duplicado e limites de tamanho.
-2. CT-RF40: acionar a lixeira de uma turma ativa e de uma modalidade com turmas vinculadas; conferir confirmação, mensagem, listagem sob os filtros "Ativo" e "Inativo", efeito sobre as turmas e persistência; confirmar a regra de exclusão com o produto.
-3. CT-RF41 / BUG-020: enviar o formulário de Turma vazio, depois preenchido sem a modalidade, uma combinação por vez; conferir mensagens, foco e rede (nenhuma requisição de criação indevida); testar horário de término igual ou anterior ao de início; enviar a turma válida e conferir criação e persistência.
+1. CT-RF44: cadastrar modalidade com nome e descrição simples e status Ativo; conferir mensagem, registro e status na listagem; recarregar para conferir persistência; testar nome vazio, duplicado e limites de tamanho.
+2. CT-RF45: acionar a lixeira de uma turma ativa e de uma modalidade com turmas vinculadas; conferir confirmação, mensagem, listagem sob os filtros "Ativo" e "Inativo", efeito sobre as turmas e persistência; confirmar a regra de exclusão com o produto.
+3. CT-RF46 / BUG-020: enviar o formulário de Turma vazio, depois preenchido sem a modalidade, uma combinação por vez; conferir mensagens, foco e rede (nenhuma requisição de criação indevida); testar horário de término igual ou anterior ao de início; enviar a turma válida e conferir criação e persistência.
 4. Registrar versão e evidência; verificações planejadas não recebem resultado de execução.
 
-### CT-RF42 a CT-RF45 — próximos testes
+### CT-RF47 a CT-RF49 — próximos testes
 
-1. CT-RF42: Confirmar a regra de saque e reexecutar com saldo conhecido, capturando corpo e resposta; testar valor acima do saldo e valor inválido.
-2. CT-RF43: Usar como regressão; outros métodos, dados inválidos, link gerado e presença da cobrança em Transações recentes exigem execuções adicionais.
-3. CT-RF44: Confirmar a faixa do campo de dias e a mensagem de salvamento; reexecutar com recarga, Cancelar e valores limite.
-4. CT-RF45 / BUG-021: Reproduzir com conta de movimentação conhecida, comparar períodos e capturar corpo e resposta de recebiveis, transacoes e pagarme.
+1. CT-RF47: Confirmar a regra de saque e reexecutar com saldo conhecido, capturando corpo e resposta; testar valor acima do saldo e valor inválido.
+2. CT-RF48: Usar como regressão; outros métodos, dados inválidos, link gerado e presença da cobrança em Transações recentes exigem execuções adicionais.
+3. CT-RF117: Confirmar a faixa do campo de dias e a mensagem de salvamento; reexecutar com recarga, Cancelar e valores limite.
+4. CT-RF49 / BUG-021: Reproduzir com conta de movimentação conhecida, comparar períodos e capturar corpo e resposta de recebiveis, transacoes e pagarme.
 5. Registrar versão e evidência; verificações planejadas não recebem resultado de execução.
 
-### CT-RF46 a CT-RF49 — próximos testes
+### CT-RF50 a CT-RF53 — próximos testes
 
-1. CT-RF46: Usar como regressão; combinação de critérios, resultado vazio, filtros de status e recorrência e a regra de correspondência do código exigem execuções adicionais.
-2. CT-RF47: Reproduzir capturando as duas requisições de criação e conferir a quantidade de registros após recarga; confirmar a regra do código.
-3. CT-RF48: Usar como regressão; Cancelar, despesa com vínculos, natureza da exclusão e persistência após recarga exigem execuções adicionais.
-4. CT-RF49: Usar como regressão; edição de nome, valor e status, Cancelar, pré-preenchimento da recorrência e persistência após recarga exigem execuções adicionais.
+1. CT-RF50: Usar como regressão; combinação de critérios, resultado vazio, filtros de status e recorrência e a regra de correspondência do código exigem execuções adicionais.
+2. CT-RF51: Reproduzir capturando as duas requisições de criação e conferir a quantidade de registros após recarga; confirmar a regra do código.
+3. CT-RF52: Usar como regressão; Cancelar, despesa com vínculos, natureza da exclusão e persistência após recarga exigem execuções adicionais.
+4. CT-RF53: Usar como regressão; edição de nome, valor e status, Cancelar, pré-preenchimento da recorrência e persistência após recarga exigem execuções adicionais.
 5. Registrar versão e evidência; verificações planejadas não recebem resultado de execução.
 
-### CT-RF50 a CT-RF56 — próximos testes
+### CT-RF54 a CT-RF60 — próximos testes
 
-1. CT-RF50: Usar como regressão; conferir com a lista de matrículas e exercitar filtros e período sem registros.
-2. CT-RF51 / BUG-022: Comparar com o módulo Contas a Receber e reexecutar com valores conhecidos, Detalhado e outros status.
-3. CT-RF52: Conferir as contas pagas do período no módulo e reexecutar com um período que contenha pagamentos.
-4. CT-RF53 / BUG-023: Investigar a geração com logs do servidor e retestar com e sem registros no período, comparando com os relatórios que abrem.
-5. CT-RF54 / BUG-023: Investigar a geração com logs do servidor e retestar com e sem registros no período, comparando com os relatórios que abrem.
-6. CT-RF55 / BUG-023: Investigar a geração com logs do servidor e retestar com e sem registros no período, comparando com os relatórios que abrem.
-7. CT-RF56 / BUG-023: Investigar a geração com logs do servidor e retestar com e sem registros no período, comparando com os relatórios que abrem.
+1. CT-RF54: Usar como regressão; conferir com a lista de matrículas e exercitar filtros e período sem registros.
+2. CT-RF55 / BUG-022: Comparar com o módulo Contas a Receber e reexecutar com valores conhecidos, Detalhado e outros status.
+3. CT-RF56: Conferir as contas pagas do período no módulo e reexecutar com um período que contenha pagamentos.
+4. CT-RF57 / BUG-023: Investigar a geração com logs do servidor e retestar com e sem registros no período, comparando com os relatórios que abrem.
+5. CT-RF58 / BUG-023: Investigar a geração com logs do servidor e retestar com e sem registros no período, comparando com os relatórios que abrem.
+6. CT-RF59 / BUG-023: Investigar a geração com logs do servidor e retestar com e sem registros no período, comparando com os relatórios que abrem.
+7. CT-RF60 / BUG-023: Investigar a geração com logs do servidor e retestar com e sem registros no período, comparando com os relatórios que abrem.
 8. Registrar versão e evidência; verificações planejadas não recebem resultado de execução.
 
-### CT-RF57 — próximos testes
+### CT-RF34 — próximos testes
 
-1. CT-RF57 / BUG-024: Investigar o HTTP 500 com logs do servidor e os vínculos do grupo de código 1, em conjunto com o BUG-016 (mesmo endpoint e mensagem para grupos musculares); corrigir e retestar os cenários permitido e impedido.
+1. CT-RF34 / BUG-024: Investigar o HTTP 500 com logs do servidor e os vínculos do grupo de código 1, em conjunto com o BUG-016 (mesmo endpoint e mensagem para grupos musculares); corrigir e retestar os cenários permitido e impedido.
 2. Confirmar o texto do diálogo de erro apresentado após a falha, não capturado visualmente nesta revisão.
 3. Verificar a persistência do registro após recarga da página e documentar o cadastro de grupo observado na mesma gravação em cenário próprio.
 
-### CT-RF58 — próximos testes
+### CT-RF35 — próximos testes
 
-1. CT-RF58 / BUG-025: Investigar a rotina de edição do grupo (`/api/edita/grupo/{id}`) quanto ao tratamento do campo status; corrigir e retestar a edição de cada campo isoladamente, incluindo a reativação (Inativo → Ativo).
+1. CT-RF35 / BUG-025: Investigar a rotina de edição do grupo (`/api/edita/grupo/{id}`) quanto ao tratamento do campo status; corrigir e retestar a edição de cada campo isoladamente, incluindo a reativação (Inativo → Ativo).
 2. Verificar se o mesmo padrão ocorre em outros grupos e na entidade grupo muscular.
 3. Investigar o descompasso observado entre o cabeçalho HTTP `data` e o campo `updated_at` da resposta, sem relação confirmada com o defeito de status.
 
-### CT-RF59 — próximos testes
+### CT-RF100 — próximos testes
 
-1. CT-RF59 / BUG-032: Investigar as rotinas de servidor de `/api/anamnese/aplicar/{id}` e `/api/anamnese/rascunho/{id}` com acesso a logs, em conjunto com o BUG-016 e o BUG-024 (mesma mensagem genérica); corrigir e retestar o cadastro completo de uma anamnese.
+1. CT-RF100 / BUG-032: Investigar as rotinas de servidor de `/api/anamnese/aplicar/{id}` e `/api/anamnese/rascunho/{id}` com acesso a logs, em conjunto com o BUG-016 e o BUG-024 (mesma mensagem genérica); corrigir e retestar o cadastro completo de uma anamnese.
 2. Confirmar se os dois modelos de anamnese exercitados (`modelo_id` 3 e 5) têm alguma particularidade de configuração relevante para o erro.
 3. Verificar se as tentativas de salvar rascunho afetaram o mesmo registro ou criaram registros distintos no backend.
 
 ---
 
-### CT-RF74 a CT-RF84 — próximos testes
+### CT-RF61 a CT-RF70 — próximos testes
 
-1. CT-RF74: Repetir a alternância com listagem conhecida; verificar persistência após recarga em execução complementar.
-2. CT-RF75: Reabrir o lead após cancelar e comparar o telefone com o valor original.
-3. CT-RF76: Repetir com registros descartáveis e testar também o cancelamento da confirmação.
-4. CT-RF77: Repetir o cadastro e conferir campos e estágio após reabertura.
-5. CT-RF78: Repetir o cadastro e conferir os dados após reabertura.
-6. CT-RF79: Repetir o cadastro e conferir estágio, total e dados após reabertura.
-7. CT-RF80: Repetir o cadastro e conferir estágio e dados após reabertura.
-8. CT-RF81 / BUG-035: Investigar a divergência criação/consulta; retestar listagem, reabertura e recarga com e sem parcela.
-9. CT-RF82 / BUG-036: Revisar os estilos da página e retestar Claro/Escuro com lista vazia e preenchida; medir contraste separadamente.
-10. CT-RF83 / BUG-037: Confirmar obrigatoriedade com produto antes de definir correção; testar campos isolados, envio completo e ausência de criação inválida.
-11. CT-RF84: Repetir o cadastro e conferir os dados após reabertura; capturar o corpo da resposta de salvamento.
+1. CT-RF61: Repetir a alternância com listagem conhecida; verificar persistência após recarga em execução complementar.
+2. CT-RF73: Reabrir o lead após cancelar e comparar o telefone com o valor original.
+3. CT-RF74: Repetir com registros descartáveis e testar também o cancelamento da confirmação.
+4. CT-RF65: Repetir o cadastro e conferir campos e estágio após reabertura.
+5. CT-RF66: Repetir o cadastro e conferir os dados após reabertura.
+6. CT-RF67: Repetir o cadastro e conferir estágio, total e dados após reabertura.
+7. CT-RF68: Repetir o cadastro e conferir estágio e dados após reabertura.
+8. CT-RF89 / BUG-035: Investigar a divergência criação/consulta; retestar listagem, reabertura e recarga com e sem parcela.
+9. CT-RF90 / BUG-036: Revisar os estilos da página e retestar Claro/Escuro com lista vazia e preenchida; medir contraste separadamente.
+10. CT-RF69 / BUG-037: Confirmar obrigatoriedade com produto antes de definir correção; testar campos isolados, envio completo e ausência de criação inválida.
+11. CT-RF70: Repetir o cadastro e conferir os dados após reabertura; capturar o corpo da resposta de salvamento.
 
 **Critério de saída do lote:** registrar cada execução em versão identificada, confrontar a criação com a consulta/listagem, validar os temas e a preservação dos dados ao cancelar e aplicar a regra formal de obrigatoriedade. BUG-035 e BUG-036 dependem de correção e reteste; BUG-037 depende primeiro da confirmação de regra, podendo exigir reclassificação.
-### CT-RF85 a CT-RF90 — próximos testes
+### CT-RF62 a CT-RF75 — próximos testes
 
-1. CT-RF85: Usar como regressão; persistência após recarga e notificações pendentes exigem execuções adicionais.
-2. CT-RF86: Usar como regressão; regra de correspondência, busca por e-mail, telefone e código e resultado vazio exigem execuções adicionais.
-3. CT-RF87: Usar como regressão; demais estágios, combinação com a busca e estágio sem leads exigem execuções adicionais.
-4. CT-RF88: Confirmar se o segundo POST gerou registro adicional, capturando corpos e respostas, e testar campos obrigatórios; registrar defeito apenas se houver duplicidade confirmada.
-5. CT-RF89 / BUG-038: Confirmar a regra do campo, reproduzir com a validação visível e retestar telefones válidos e inválidos e a persistência.
-6. CT-RF90: Usar como regressão; edição dos demais campos, persistência após recarga e campos obrigatórios exigem execuções adicionais.
+1. CT-RF62: Usar como regressão; persistência após recarga e notificações pendentes exigem execuções adicionais.
+2. CT-RF63: Usar como regressão; regra de correspondência, busca por e-mail, telefone e código e resultado vazio exigem execuções adicionais.
+3. CT-RF64: Usar como regressão; demais estágios, combinação com a busca e estágio sem leads exigem execuções adicionais.
+4. CT-RF71: Confirmar se o segundo POST gerou registro adicional, capturando corpos e respostas, e testar campos obrigatórios; registrar defeito apenas se houver duplicidade confirmada.
+5. CT-RF72 / BUG-038: Confirmar a regra do campo, reproduzir com a validação visível e retestar telefones válidos e inválidos e a persistência.
+6. CT-RF75: Usar como regressão; edição dos demais campos, persistência após recarga e campos obrigatórios exigem execuções adicionais.
 7. Registrar versão e evidência; verificações planejadas não recebem resultado de execução.
 
-### CT-RF91 a CT-RF95 — próximos testes
+### CT-RF16 a CT-RF20 — próximos testes
 
-1. CT-RF91: Reexecutar com contas de controle e exercitar cada critério isolado e a combinação.
-2. CT-RF92 / BUG-039: Confirmar a regra, reproduzir com a validação visível e retestar envio válido e inválido e a persistência.
-3. CT-RF93: Reexecutar com um nome existente e confirmar a mensagem de resultado vazio.
-4. CT-RF94: Usar como regressão; contas de outros tipos e status e o rótulo do tipo exigem execuções adicionais.
-5. CT-RF95: Usar como regressão; cancelar, recarga e contas vinculadas exigem execuções adicionais.
+1. CT-RF16: Reexecutar com contas de controle e exercitar cada critério isolado e a combinação.
+2. CT-RF17 / BUG-039: Confirmar a regra, reproduzir com a validação visível e retestar envio válido e inválido e a persistência.
+3. CT-RF18: Reexecutar com um nome existente e confirmar a mensagem de resultado vazio.
+4. CT-RF19: Usar como regressão; contas de outros tipos e status e o rótulo do tipo exigem execuções adicionais.
+5. CT-RF20: Usar como regressão; cancelar, recarga e contas vinculadas exigem execuções adicionais.
 6. Registrar versão e evidência; verificações planejadas não recebem resultado de execução.
 
-### CT-RF96 a CT-RF98 — próximos testes
+### CT-RF82 a CT-RF83 — próximos testes
 
-1. CT-RF96: Usar como regressão; demais variáveis, formatação complexa e texto gravado exigem execuções adicionais.
-2. CT-RF97: Usar como regressão; campos obrigatórios e conferência do texto gravado exigem execuções adicionais.
-3. CT-RF98 / BUG-040: Reproduzir comparando resposta e tabela, investigar a renderização e retestar após correção.
+1. CT-RF82: Usar como regressão; demais variáveis, formatação complexa e texto gravado exigem execuções adicionais.
+2. CT-RF81: Usar como regressão; campos obrigatórios e conferência do texto gravado exigem execuções adicionais.
+3. CT-RF83 / BUG-040: Reproduzir comparando resposta e tabela, investigar a renderização e retestar após correção.
 4. Registrar versão e evidência; verificações planejadas não recebem resultado de execução.
 
-### CT-RF99 a CT-RF103 — próximos testes
+### CT-RF77 a CT-RF80 — próximos testes
 
-1. CT-RF99: Usar como regressão; filtro por Status, combinação de critérios e resultado vazio exigem execuções adicionais.
-2. CT-RF100: Usar como regressão; persistência após recarga e notificações pendentes exigem execuções adicionais.
-3. CT-RF101: Usar como regressão; campos obrigatórios, valores extremos e conferência na listagem exigem execuções adicionais.
-4. CT-RF102 / BUG-041: Reproduzir com a base e o contrato do cartão conhecidos e retestar o cartão após cadastro, edição e alteração de status.
-5. CT-RF103: Usar como regressão; persistência após recarga e demais campos exigem execuções adicionais.
+1. CT-RF77: Usar como regressão; filtro por Status, combinação de critérios e resultado vazio exigem execuções adicionais.
+2. CT-RF76: Usar como regressão; persistência após recarga e notificações pendentes exigem execuções adicionais.
+3. CT-RF78: Usar como regressão; campos obrigatórios, valores extremos e conferência na listagem exigem execuções adicionais.
+4. CT-RF79 / BUG-041: Reproduzir com a base e o contrato do cartão conhecidos e retestar o cartão após cadastro, edição e alteração de status.
+5. CT-RF80: Usar como regressão; persistência após recarga e demais campos exigem execuções adicionais.
 6. Registrar versão e evidência; verificações planejadas não recebem resultado de execução.
 
-### CT-RF104 a CT-RF108 — próximos testes
+### CT-RF84 a CT-RF88 — próximos testes
 
-1. CT-RF104: Reexecutar com critérios conhecidos e capturar o valor escolhido, a listagem e a rede.
-2. CT-RF105 / BUG-042: Confirmar a regra do status, reproduzir conferindo corpo, resposta e coluna Status e retestar com status Ativo e Inativo.
-3. CT-RF106: Usar como regressão; persistência após recarga, edição de nome e tipo e a coluna Status exigem execuções adicionais.
-4. CT-RF107 / BUG-043: Confirmar a regra, reproduzir com tipo em uso e sem uso e retestar código HTTP, resposta e mensagem.
-5. CT-RF108: Usar como regressão visual; conferir diálogos e modais no tema Escuro e a persistência do tema.
+1. CT-RF84: Reexecutar com critérios conhecidos e capturar o valor escolhido, a listagem e a rede.
+2. CT-RF85 / BUG-042: Confirmar a regra do status, reproduzir conferindo corpo, resposta e coluna Status e retestar com status Ativo e Inativo.
+3. CT-RF86: Usar como regressão; persistência após recarga, edição de nome e tipo e a coluna Status exigem execuções adicionais.
+4. CT-RF87 / BUG-043: Confirmar a regra, reproduzir com tipo em uso e sem uso e retestar código HTTP, resposta e mensagem.
+5. CT-RF88: Usar como regressão visual; conferir diálogos e modais no tema Escuro e a persistência do tema.
 6. Registrar versão e evidência; verificações planejadas não recebem resultado de execução.
-
-### Modelos de Ficha — próximos testes
-
-1. CT-RF109: Usar como regressão e verificar nome composto apenas por espaços e submissão com todos os campos vazios.
-2. CT-RF110: Usar como regressão e reabrir o formulário após o cancelamento para conferir a limpeza dos campos.
-3. CT-RF111: Reexecutar com um código existente e um comprovadamente ausente na mesma base.
-4. CT-RF112: Reexecutar com título existente e inexistente e confirmar o critério de correspondência com o produto.
-5. CT-RF113: Reexecutar com registros que correspondam a todos os filtros e a apenas parte deles. Confirmar onde a filtragem é feita.
-6. CT-RF114: Usar como regressão de interface e conferir o uso dos campos com teclado e mouse.
-7. CT-RF115: Reexecutar com listagem padrão populada, pesquisa restritiva e comparação dos registros após a nova busca.
-
-### Configurações e Modelos de Ficha — próximos testes (CT-RF116–CT-RF121)
-
-1. CT-RF116: Confirmar com o produto a regra para vazio e zero. Repetir com vazio, zero explícito e os limites da faixa.
-2. CT-RF117: Usar como regressão e repetir com múltiplos campos alterados na mesma aba.
-3. CT-RF118: Usar como regressão para persistência de ambos os estados. Verificar separadamente os efeitos sobre o módulo de turmas.
-4. CT-RF119: Usar como regressão da configuração e da navegação. Conferir as permissões internas em um cenário dedicado.
-5. CT-RF120: Usar como regressão da persistência e do cartão. Validar o acesso no aplicativo desktop em um caso próprio.
-6. CT-RF121: Reproduzir com dados de teste distintos, investigar a falha do endpoint e conferir a listagem e o vínculo após a correção.
-
-### Inteligência e Configurações — próximos testes (CT-RF122–CT-RF127)
-
-1. CT-RF122: Usar como regressão e criar dados nas datas-limite dos períodos para conferir a inclusão e a exclusão.
-2. CT-RF123: Usar como regressão da integração entre telas. Verificar entrega pelo canal em um caso dedicado, com destinatários de teste.
-3. CT-RF124: Corrigir o mascaramento por padrão e retestar com credenciais fictícias, incluindo a troca de abas e a recarga.
-4. CT-RF125: Usar como regressão de salvamento. Verificar os limites do campo e o impacto na listagem de clientes ausentes.
-5. CT-RF126: Aplicar validação na gravação da configuração e retestar com -1, um inteiro válido e o limite mínimo definido pelo produto.
-6. CT-RF127: Confirmar a regra de vazio com o produto e repetir a digitação e a colagem de texto, conferindo também a recarga.
-
-### Inteligência e Automação — próximos testes (CT-RF128–CT-RF133)
-
-1. CT-RF128: Usar como regressão de abertura e fechamento. Em um caso complementar, alterar uma opção de teste e conferir o descarte após cancelar.
-2. CT-RF129: Corrigir o conteúdo da prévia e retestar separadamente Aniversariantes e Risco de Evasão.
-3. CT-RF130: Usar como regressão do estado indisponível e conferir a navegação por teclado em execução complementar.
-4. CT-RF131: Usar como regressão e conferir o recorte com eventos antes e depois da virada do dia.
-5. CT-RF132: Usar como regressão e preparar dados nos dias de fronteira para verificar inclusão e exclusão.
-6. CT-RF133: Usar como regressão e retestar com registros preparados no limite de 30 dias.
-
-### Inteligência e Automação / Central de Automações — próximos testes (CT-RF134–CT-RF138)
-
-1. CT-RF134: Usar como regressão e repetir com uma alteração conhecida na base e com uma resposta de erro controlada.
-2. CT-RF135: Retestar desativação e reativação. Conferir se o contador passa a um após o sucesso do salvamento, antes de Atualizar manualmente.
-3. CT-RF136: Retestar a ativação e conferir se o contador passa a dois após o sucesso do salvamento, antes de Atualizar manualmente.
-4. CT-RF137: Usar como regressão para execução manual. Validar a entrega pelo canal em um teste dedicado, com destinatários de teste.
-5. CT-RF138: Usar como regressão da consulta e retestar cada filtro com uma base de teste com níveis distintos.
-
-### Configurações / Integrações / WhatsApp — próximos testes (CT-RF139–CT-RF144)
-
-1. CT-RF139: Usar como regressão de interface com uma chave de teste e conferir o mascaramento também pelo teclado.
-2. CT-RF140: Isolar a URL no reteste, mantendo a instância e a chave preenchidas, e confirmar o formato aceito com produto.
-3. CT-RF141: Usar como regressão e verificar tratamento de espaços em branco e mensagem de campo obrigatório.
-4. CT-RF142: Usar como regressão de persistência e validar o efeito de Ativo sobre automações em um teste dedicado.
-5. CT-RF143: Retestar com falha controlada e configuração válida de controle, conferindo o contrato da resposta e o estado final apresentado.
-6. CT-RF144: Usar como regressão de consulta e retestar a transição de estado e a atualização visual do resumo com um provedor de teste.
-
-### Configurações — próximos testes (CT-RF145–CT-RF150)
-
-1. CT-RF145: Usar como regressão da configuração e retestar o disparo em um ambiente de teste com destinatários autorizados.
-2. CT-RF146: Usar como regressão para desativação e confirmar a reativação com nova leitura em reteste.
-3. CT-RF147: Usar como regressão para códigos válidos e verificar a aplicação da cor nas telas que consomem o tema.
-4. CT-RF148: Retestar com códigos hexadecimais válidos e inválidos e conferir, após cada tentativa, a cor devolvida pela consulta.
-5. CT-RF149: Retestar com arquivos de tamanho conhecido no entorno do limite e confirmar a mensagem de validação e a preservação do logo salvo na recusa.
-6. CT-RF150: Usar como regressão da atualização visual e cobrir, com provedor de teste, a mudança de aguardando QR Code para conectado.
-
-### Configurações / Avaliação e Aniversário — próximos testes (CT-RF151–CT-RF156)
-
-1. CT-RF151: Usar como regressão da preferência e confirmar a regra de cobrança em um fluxo de avaliação de teste.
-2. CT-RF152: Usar como regressão da configuração e validar os campos do cadastro ao escolher cada tipo.
-3. CT-RF153: Usar como regressão do salvamento e verificar o comportamento da avaliação nos dois estados do seletor.
-4. CT-RF154: Usar como regressão da preferência e conferir o efeito no agendamento com canais e destinatários de teste.
-5. CT-RF155: Usar como regressão do cancelamento e repetir com os demais canais da aba.
-6. CT-RF156: Usar como regressão do editor e testar a substituição dos marcadores em um envio controlado com dados de teste.
-
-### Aplicativo e Configurações / Biometria — próximos testes (CT-RF157–CT-RF165)
-
-1. CT-RF157: Usar como regressão da consulta e comparar dois avisos de teste diferentes para conferir o vínculo com a linha selecionada.
-2. CT-RF158: Usar como regressão do formulário vazio e repetir com entrada composta apenas de espaços.
-3. CT-RF159: Usar como regressão da criação e validar o recebimento em um dispositivo de teste em uma execução dedicada.
-4. CT-RF160: Repetir com postagens pendentes e aprovadas para conferir a seleção de registros e o total do diálogo.
-5. CT-RF161: Retestar com denúncias de teste em estados diferentes e conferir os registros exibidos em cada filtro.
-6. CT-RF162: Usar como regressão do cancelamento e repetir com outros campos de Biometria em um ambiente de teste.
-7. CT-RF163: Confirmar o formato aceito pelo produto e retestar com endereços válidos e entradas inválidas em um equipamento de teste.
-8. CT-RF164: Usar como regressão da configuração e confirmar a conectividade e a restauração em ambiente de teste.
-9. CT-RF165: Confirmar a regra de validação do produto e retestar -1, 0 e um número positivo com conferência da resposta e da mensagem da interface.
 
 ---
 
@@ -1015,9 +756,9 @@ Todas essas variações permanecem planejadas e não são contadas como execuç�
 
 **Saída da execução:** caso executado e resultado documentado com evidências. A execução reprovada pode ser encerrada com o defeito aberto.
 
-**Entrada e aprovação do login:** página acessível, conta de teste com credenciais válidas e acesso ao painel, sem sessão autenticada no início. Aprovar o CT-RF04_loginComSucesso quando o envio autenticar o usuário, navegar para `/dashboard` e exibir o menu e resumo da academia, com senha mascarada no formulário. A aprovação se limita a esse fluxo positivo.
+**Entrada e aprovação do login:** página acessível, conta de teste com credenciais válidas e acesso ao painel, sem sessão autenticada no início. Aprovar o CT-RF01_loginComSucesso quando o envio autenticar o usuário, navegar para `/dashboard` e exibir o menu e resumo da academia, com senha mascarada no formulário. A aprovação se limita a esse fluxo positivo.
 
-**Aceitação da correção:** todos os critérios do respectivo caso atendidos e reteste documentado. BUG-001 a BUG-010 permanecem abertos até a confirmação de suas correções. BUG-011–BUG-043 aguardam triagem e confirmação funcional antes do encaminhamento de correção. A aprovação do CT-RF01 não comprova a recuperação completa da senha; a do CT-RF02_ERRO não comprova persistência de alterações no perfil. Para CT-RF03 e CT-RF71, cada combinação deve incluir todos os registros esperados e excluir os incompatíveis em todas as páginas, com a matriz executada e o estado vazio validado.
+**Aceitação da correção:** todos os critérios do respectivo caso atendidos e reteste documentado. BUG-001 a BUG-010 permanecem abertos até a confirmação de suas correções. BUG-011–BUG-043 aguardam triagem e confirmação funcional antes do encaminhamento de correção. A aprovação do CT-RF04 não comprova a recuperação completa da senha; a do CT-RF05_ERRO não comprova persistência de alterações no perfil. Para CT-RF09 e CT-RF97, cada combinação deve incluir todos os registros esperados e excluir os incompatíveis em todas as páginas, com a matriz executada e o estado vazio validado.
 
 ---
 
@@ -1025,101 +766,44 @@ Todas essas variações permanecem planejadas e não são contadas como execuç�
 
 | Atividade | Situação | Data ou condição |
 | --- | --- | --- |
-| Análise documental do CT-RF01 | Registrada | 10/11/2026. |
+| Análise documental do CT-RF04 | Registrada | 10/11/2026. |
 | Análise documental de Perfil e Clientes | Registrada | 12/11/2026. |
 | Padronização dos documentos | Realizada | 13/11/2026. |
-| Análise do Jam e inclusão do CT-RF04_loginComSucesso | Realizada; aprovado conforme a gravação | 13/11/2026, sem nova execução no sistema. |
-| Inclusão documental de CT-RF05–CT-RF20 e cópia dos 16 vídeos | Realizada | 14/11/2026; revisão das evidências já consultadas, sem nova execução. |
-| Inclusão documental de CT-RF21 / RF21 / BUG-010 | Realizada | 15/11/2026; relato original, quadros e diagnósticos do Jam, sem nova execução. |
-| Integração de CT-RF22–CT-RF25 / RF22–RF25 | Realizada | 15/11/2026; sem nova execução; BUG-011/012 em triagem. |
-| Integração de CT-RF26–CT-RF28 / RF26–RF28 | Realizada | 15/11/2026; sem nova execução; BUG-013–BUG-015 em triagem. |
-| Integração de CT-RF29–CT-RF33 / RF29–RF33 | Realizada | 15/11/2026; sem nova execução; BUG-016 e BUG-017 em triagem. |
-| Integração de CT-RF35 / RF35 | Realizada | 15/11/2026; sem nova execução; BUG-019 em triagem. |
-| Integração de CT-RF38 / RF38 | Realizada | 15/11/2026; sem nova execução; sem defeito no fluxo gravado. |
-| Integração de CT-RF39–CT-RF41 / RF39–RF41 | Realizada | 15/11/2026; sem nova execução; BUG-020 em triagem. |
-| Integração de CT-RF42–CT-RF56 / RF42–RF56 | Realizada | 15/11/2026; sem nova execução; BUG-021 a BUG-023 em triagem. |
-| Integração de CT-RF57 / RF57 | Realizada | 15/11/2026; sem nova execução; BUG-024 em triagem. |
-| Integração de CT-RF58 / RF58 | Realizada | 15/11/2026; sem nova execução; BUG-025 em triagem. |
-| Integração de CT-RF59 / RF59 | Realizada | 15/11/2026; sem nova execução; BUG-032 em triagem. |
-| Integração de CT-RF71–CT-RF73 / RF71–RF73 | Realizada | 15/11/2026; sem nova execução; BUG-033 e BUG-034 em triagem. |
-| Integração de CT-RF85–CT-RF90 / RF85–RF90 | Realizada | 15/11/2026; sem nova execução; BUG-038 em triagem. |
-| Integração de CT-RF91–CT-RF103 / RF91–RF103 | Realizada | 15/11/2026; sem nova execução; BUG-039 a BUG-041 em triagem. |
-| Integração de CT-RF104–CT-RF108 / RF104–RF108 | Realizada | 16/11/2026; sem nova execução; BUG-042 e BUG-043 em triagem. |
-| Integração de CT-RF109 / RF109 | Realizada | 17/11/2026, revisão documental. |
-| Integração de CT-RF110 / RF110 | Realizada | 17/11/2026, revisão documental. |
-| Integração de CT-RF111 / RF111 | Realizada | 17/11/2026, revisão documental. |
-| Integração de CT-RF112 / RF112 | Realizada | 17/11/2026, revisão documental. |
-| Integração de CT-RF113 / RF113 | Realizada | 17/11/2026, revisão documental. |
-| Integração de CT-RF114 / RF114 | Realizada | 17/11/2026, revisão documental. |
-| Integração de CT-RF115 / RF115 | Realizada | 17/11/2026, revisão documental. |
-| Integração de CT-RF116 / RF116 | Realizada | 17/11/2026, revisão documental. |
-| Integração de CT-RF117 / RF117 | Realizada | 17/11/2026, revisão documental. |
-| Integração de CT-RF118 / RF118 | Realizada | 17/11/2026, revisão documental. |
-| Integração de CT-RF119 / RF119 | Realizada | 17/11/2026, revisão documental. |
-| Integração de CT-RF120 / RF120 | Realizada | 17/11/2026, revisão documental. |
-| Integração de CT-RF121 / RF121 | Realizada | 17/11/2026, revisão documental. |
-| Integração de CT-RF122 / RF122 | Realizada | 17/11/2026, revisão documental. |
-| Integração de CT-RF123 / RF123 | Realizada | 17/11/2026, revisão documental. |
-| Integração de CT-RF124 / RF124 | Realizada | 17/11/2026, revisão documental. |
-| Integração de CT-RF125 / RF125 | Realizada | 17/11/2026, revisão documental. |
-| Integração de CT-RF126 / RF126 | Realizada | 17/11/2026, revisão documental. |
-| Integração de CT-RF127 / RF127 | Realizada | 17/11/2026, revisão documental. |
-| Integração de CT-RF128 / RF128 | Realizada | 17/11/2026, revisão documental. |
-| Integração de CT-RF129 / RF129 | Realizada | 17/11/2026, revisão documental. |
-| Integração de CT-RF130 / RF130 | Realizada | 17/11/2026, revisão documental. |
-| Integração de CT-RF131 / RF131 | Realizada | 17/11/2026, revisão documental. |
-| Integração de CT-RF132 / RF132 | Realizada | 17/11/2026, revisão documental. |
-| Integração de CT-RF133 / RF133 | Realizada | 17/11/2026, revisão documental. |
-| Integração de CT-RF134 / RF134 | Realizada | 17/11/2026, revisão documental. |
-| Integração de CT-RF135 / RF135 | Realizada | 17/11/2026, revisão documental. |
-| Integração de CT-RF136 / RF136 | Realizada | 17/11/2026, revisão documental. |
-| Integração de CT-RF137 / RF137 | Realizada | 17/11/2026, revisão documental. |
-| Integração de CT-RF138 / RF138 | Realizada | 17/11/2026, revisão documental. |
-| Integração de CT-RF139 / RF139 | Realizada | 17/11/2026, revisão documental. |
-| Integração de CT-RF140 / RF140 | Realizada | 17/11/2026, revisão documental. |
-| Integração de CT-RF141 / RF141 | Realizada | 17/11/2026, revisão documental. |
-| Integração de CT-RF142 / RF142 | Realizada | 17/11/2026, revisão documental. |
-| Integração de CT-RF143 / RF143 | Realizada | 17/11/2026, revisão documental. |
-| Integração de CT-RF144 / RF144 | Realizada | 17/11/2026, revisão documental. |
-| Integração de CT-RF145 / RF145 | Realizada | 17/11/2026, revisão documental. |
-| Integração de CT-RF146 / RF146 | Realizada | 17/11/2026, revisão documental. |
-| Integração de CT-RF147 / RF147 | Realizada | 17/11/2026, revisão documental. |
-| Integração de CT-RF148 / RF148 | Realizada | 17/11/2026, revisão documental. |
-| Integração de CT-RF149 / RF149 | Realizada | 17/11/2026, revisão documental. |
-| Integração de CT-RF150 / RF150 | Realizada | 17/11/2026, revisão documental. |
-| Integração de CT-RF151 / RF151 | Realizada | 18/11/2026, revisão documental. |
-| Integração de CT-RF152 / RF152 | Realizada | 18/11/2026, revisão documental. |
-| Integração de CT-RF153 / RF153 | Realizada | 18/11/2026, revisão documental. |
-| Integração de CT-RF154 / RF154 | Realizada | 18/11/2026, revisão documental. |
-| Integração de CT-RF155 / RF155 | Realizada | 18/11/2026, revisão documental. |
-| Integração de CT-RF156 / RF156 | Realizada | 18/11/2026, revisão documental. |
-| Integração de CT-RF157 / RF157 | Realizada | 18/11/2026, revisão documental. |
-| Integração de CT-RF158 / RF158 | Realizada | 18/11/2026, revisão documental. |
-| Integração de CT-RF159 / RF159 | Realizada | 18/11/2026, revisão documental. |
-| Integração de CT-RF160 / RF160 | Realizada | 18/11/2026, revisão documental. |
-| Integração de CT-RF161 / RF161 | Realizada | 18/11/2026, revisão documental. |
-| Integração de CT-RF162 / RF162 | Realizada | 18/11/2026, revisão documental. |
-| Integração de CT-RF163 / RF163 | Realizada | 18/11/2026, revisão documental. |
-| Integração de CT-RF164 / RF164 | Realizada | 18/11/2026, revisão documental. |
-| Integração de CT-RF165 / RF165 | Realizada | 18/11/2026, revisão documental. |
-| Confirmação da regra do status e da exclusão de tipos de pagamento em uso, e da filtragem da listagem | Pendente | RF104, RF105 e RF107; depende do responsável pelo produto. |
-| Confirmação da obrigatoriedade do colaborador, dos filtros de contas e da regra do cartão Ativos | Pendente | RF91, RF92, RF93 e RF102; depende do responsável pelo produto. |
-| Confirmação da regra do telefone e da duplicidade de criação de leads | Pendente | RF88 e RF89; depende do responsável pelo produto. |
-| Confirmação da regra de saque, da faixa do campo de dias, da duplicidade de criação e dos relatórios sem dados | Pendente | RF42, RF44, RF47 e RF52; depende do responsável pelo produto. |
-| Confirmação da regra de exclusão e da obrigatoriedade da modalidade | Pendente | RF40 e RF41; depende do responsável pelo produto. |
-| Confirmação de código, operação de edição e imagem persistida | Pendente | RF22, RF24 e RF25; depende de regra e nova evidência. |
-| Demonstração da lógica combinada de filtros e do estado neutro de imagem | Pendente | RF33 e RF30; depende de caso com critérios contraditórios e de definição do produto. |
-| Confirmação das regras de CT-RF08/11/13/16 | Pendente | Responsável pelo produto; sem data definida. |
+| Análise do Jam e inclusão do CT-RF01_loginComSucesso | Realizada; aprovado conforme a gravação | 13/11/2026, sem nova execução no sistema. |
+| Inclusão documental de CT-RF02–CT-RF39 e cópia dos 16 vídeos | Realizada | 14/11/2026; revisão das evidências já consultadas, sem nova execução. |
+| Inclusão documental de CT-RF10 / RF10 / BUG-010 | Realizada | 15/11/2026; relato original, quadros e diagnósticos do Jam, sem nova execução. |
+| Integração de CT-RF21–CT-RF24 / RF21–RF24 | Realizada | 15/11/2026; sem nova execução; BUG-011/012 em triagem. |
+| Integração de CT-RF25–CT-RF27 / RF25–RF27 | Realizada | 15/11/2026; sem nova execução; BUG-013–BUG-015 em triagem. |
+| Integração de CT-RF28–CT-RF32 / RF28–RF32 | Realizada | 15/11/2026; sem nova execução; BUG-016 e BUG-017 em triagem. |
+| Integração de CT-RF33 / RF33 | Realizada | 15/11/2026; sem nova execução; BUG-019 em triagem. |
+| Integração de CT-RF40 / RF40 | Realizada | 15/11/2026; sem nova execução; sem defeito no fluxo gravado. |
+| Integração de CT-RF44–CT-RF46 / RF44–RF46 | Realizada | 15/11/2026; sem nova execução; BUG-020 em triagem. |
+| Integração de CT-RF47–CT-RF60 / RF47–RF60 | Realizada | 15/11/2026; sem nova execução; BUG-021 a BUG-023 em triagem. |
+| Integração de CT-RF34 / RF34 | Realizada | 15/11/2026; sem nova execução; BUG-024 em triagem. |
+| Integração de CT-RF35 / RF35 | Realizada | 15/11/2026; sem nova execução; BUG-025 em triagem. |
+| Integração de CT-RF100 / RF100 | Realizada | 15/11/2026; sem nova execução; BUG-032 em triagem. |
+| Integração de CT-RF97–CT-RF99 / RF97–RF99 | Realizada | 15/11/2026; sem nova execução; BUG-033 e BUG-034 em triagem. |
+| Integração de CT-RF62–CT-RF75 / RF62–RF75 | Realizada | 15/11/2026; sem nova execução; BUG-038 em triagem. |
+| Integração de CT-RF16–CT-RF80 / RF16–RF80 | Realizada | 15/11/2026; sem nova execução; BUG-039 a BUG-041 em triagem. |
+| Integração de CT-RF84–CT-RF88 / RF84–RF88 | Realizada | 16/11/2026; sem nova execução; BUG-042 e BUG-043 em triagem. |
+| Confirmação da regra do status e da exclusão de tipos de pagamento em uso, e da filtragem da listagem | Pendente | RF84, RF85 e RF87; depende do responsável pelo produto. |
+| Confirmação da obrigatoriedade do colaborador, dos filtros de contas e da regra do cartão Ativos | Pendente | RF16, RF17, RF18 e RF79; depende do responsável pelo produto. |
+| Confirmação da regra do telefone e da duplicidade de criação de leads | Pendente | RF71 e RF72; depende do responsável pelo produto. |
+| Confirmação da regra de saque, da faixa do campo de dias, da duplicidade de criação e dos relatórios sem dados | Pendente | RF47, RF117, RF51 e RF56; depende do responsável pelo produto. |
+| Confirmação da regra de exclusão e da obrigatoriedade da modalidade | Pendente | RF45 e RF46; depende do responsável pelo produto. |
+| Confirmação de código, operação de edição e imagem persistida | Pendente | RF21, RF23 e RF24; depende de regra e nova evidência. |
+| Demonstração da lógica combinada de filtros e do estado neutro de imagem | Pendente | RF32 e RF29; depende de caso com critérios contraditórios e de definição do produto. |
+| Confirmação das regras de CT-RF14/11/13/16 | Pendente | Responsável pelo produto; sem data definida. |
 | Investigação e correção dos defeitos | Pendente | Depende da equipe responsável pela aplicação; sem data definida. |
 | Execução dos retestes | Pendente | Após correção em versão identificável e preparação dos dados. |
 | Atualização dos resultados e encerramento | Pendente | Após reteste e atendimento aos critérios de aceitação. |
-| Integração documental de CT-RF74–CT-RF84 / RF74–RF84 | Realizada | 16/11/2026; resumos locais fornecidos, sem nova execução; BUG-035–BUG-037 em triagem. |
+| Integração documental de CT-RF61–CT-RF70 / RF61–RF70 | Realizada | 16/11/2026; resumos locais fornecidos, sem nova execução; BUG-035–BUG-037 em triagem. |
 
 ## 🐞 11. Gestão de defeitos
 
 Os defeitos são registrados no [relatório de bugs](Relatorio-de-Bugs.md), com identificação, severidade, prioridade, pré-condições, reprodução, resultado esperado e obtido, impacto e evidências. Hipóteses técnicas permanecem identificadas até a confirmação no código.
 
-Há dez defeitos abertos (BUG-001 a BUG-010) e trinta e três em triagem (BUG-011 a BUG-043). Quarenta e sete casos reprovados correspondem a quarenta e três defeitos porque CT-RF09/10 compartilham BUG-005 e CT-RF53–56 compartilham BUG-023. BUG-032 cobre o cadastro de anamnese; BUG-033 e BUG-034 cobrem as buscas de Colaboradores. CT-RF08, CT-RF11, CT-RF13, CT-RF16, CT-RF25, CT-RF40, CT-RF42, CT-RF44, CT-RF47, CT-RF52, CT-RF88, CT-RF91, CT-RF93 e CT-RF104 permanecem a validar. Após a correção, atualizar casos, relatório e defeitos com as evidências da versão retestada.
+Há dez defeitos abertos (BUG-001 a BUG-010) e trinta e três em triagem (BUG-011 a BUG-043). Quarenta e sete casos reprovados correspondem a quarenta e três defeitos porque CT-RF12/10 compartilham BUG-005 e CT-RF57–56 compartilham BUG-023. BUG-032 cobre o cadastro de anamnese; BUG-033 e BUG-034 cobrem as buscas de Colaboradores. CT-RF14, CT-RF15, CT-RF07, CT-RF43, CT-RF24, CT-RF45, CT-RF47, CT-RF117, CT-RF51, CT-RF56, CT-RF71, CT-RF16, CT-RF18 e CT-RF84 permanecem a validar. Após a correção, atualizar casos, relatório e defeitos com as evidências da versão retestada.
 
 ---
 
@@ -1136,169 +820,112 @@ Há dez defeitos abertos (BUG-001 a BUG-010) e trinta e três em triagem (BUG-01
 | R07 | Atributos e vínculos dos clientes desconhecidos | Impede comprovar a compatibilidade de cada resultado com os filtros | Preparar base de referência e conferir todos os critérios por cliente |
 | R08 | Contrato, valores ou IDs dos filtros não confirmados | Pode gerar teste com parâmetros inválidos e diagnóstico incorreto | Validar contrato, regras e correspondência entre rótulos e IDs antes do reteste |
 | R09 | Filtragem local sobre dados parciais | Pode omitir clientes válidos de outras páginas | Confirmar a arquitetura e conferir completude considerando eventual paginação |
-| R10 | Jam indisponível e rede descrita apenas no relato | Limita a conferência independente do payload e da cronologia do CT-RF03 | Preservar a origem informada e coletar nova evidência de rede sem autenticação no reteste |
-| R11 | Regras de encargos, indicadores ou remoção não definidas | Pode gerar falso defeito ou falsa aprovação | Confirmar decisões de produto para CT-RF08/11/13/16 antes de conclusão definitiva |
+| R10 | Jam indisponível e rede descrita apenas no relato | Limita a conferência independente do payload e da cronologia do CT-RF09 | Preservar a origem informada e coletar nova evidência de rede sem autenticação no reteste |
+| R11 | Regras de encargos, indicadores ou remoção não definidas | Pode gerar falso defeito ou falsa aprovação | Confirmar decisões de produto para CT-RF14/11/13/16 antes de conclusão definitiva |
 | R12 | Tratar revisão de vídeo como nova execução | Superestima a cobertura e pode fechar defeitos sem reteste | Manter a origem e os limites por cenário; exigir nova evidência para reteste |
 
 ---
 
 ## 📁 13. Entregáveis e documentos associados
 
-Os entregáveis são a análise RF01–RF35, RF38–RF62 e RF65–RF165, este plano, os 161 cenários BDD, as evidências disponíveis e os relatórios atualizados. CT-RF21 possui relato original, link do Jam, quadros, cronologia, requisição/resposta sem autenticação e metadados locais; o vídeo permanece no Jam. Os vídeos e demais evidências anteriores citados nos documentos de 14/11/2026 não estavam nesta cópia do repositório em 15/11/2026; consultar o índice de evidências para a disponibilidade. 81 casos estão aprovados no alcance das evidências. 59 reprovados aguardam reteste, incluindo CT-RF22/24/26/27/28/29/30/35/41/45/51/53/54/55/56/57/58/59/65/66/67/68/69/70/71/73/81/82/83/89/92/98/102/105/107 em triagem, e 21 a validar dependem de regra/contexto ou persistência. CT-RF23–25, CT-RF35, CT-RF38–CT-RF56 e CT-RF85–CT-RF108 possuem pasta local com resumo, cronologia e origem (CT-RF35, CT-RF38–CT-RF56 e CT-RF85–CT-RF108 incluem também capturas extraídas do Jam e hashes; CT-RF50–CT-RF56 incluem os PDFs baixados); os vídeos permanecem no Jam. CT-RF29–CT-RF33, CT-RF57, CT-RF58 e CT-RF59 têm como fonte gravações únicas, cujos painéis foram lidos diretamente; as pastas locais de evidências desses casos ainda não foram criadas.
+Os entregáveis são a análise RF04–RF33, RF40–RF100, RF91–RF70, RF62–RF80 e RF84–RF88, este plano, os 101 cenários BDD, as evidências disponíveis e os relatórios atualizados. CT-RF10 possui relato original, link do Jam, quadros, cronologia, requisição/resposta sem autenticação e metadados locais; o vídeo permanece no Jam. Os vídeos e demais evidências anteriores citados nos documentos de 14/11/2026 não estavam nesta cópia do repositório em 15/11/2026; consultar o índice de evidências para a disponibilidade. Quarenta casos estão aprovados no alcance das evidências; quarenta e sete reprovados aguardam reteste, incluindo CT-RF21/24/26/27/28/29/30/35/41/45/51/53/54/55/56/57/58/59/65/66/67/68/69/70/71/73/81/82/83/89/92/98/102/105/107 em triagem, e quatorze a validar dependem de regra/contexto ou persistência. CT-RF22–25, CT-RF33, CT-RF40–CT-RF60 e CT-RF62–CT-RF88 possuem pasta local com resumo, cronologia e origem (CT-RF33, CT-RF40–CT-RF60 e CT-RF62–CT-RF88 incluem também capturas extraídas do Jam e hashes; CT-RF54–CT-RF60 incluem os PDFs baixados); os vídeos permanecem no Jam. CT-RF28–CT-RF32, CT-RF34, CT-RF35 e CT-RF100 têm como fonte gravações únicas, cujos painéis foram lidos diretamente; as pastas locais de evidências desses casos ainda não foram criadas.
 
 - [Análise de requisitos](Analise%20de%20requisitos.md)
-- [Caso CT-RF01](Cenario_Teste/CT-RF01_Esqueci-senha.md)
-- [Caso CT-RF02_ERRO](Cenario_Teste/CT-RF02_ERRO.md)
-- [Caso CT-RF03](Cenario_Teste/CT-RF03_FILTRO_TelaClientes.md)
-- [Caso CT-RF04_loginComSucesso](Cenario_Teste/CT-RF04_loginComSucesso.md)
+- [Caso CT-RF04](Cenario_Teste/CT-RF04_Esqueci-senha.md)
+- [Caso CT-RF05_ERRO](Cenario_Teste/CT-RF05_ERRO.md)
+- [Caso CT-RF09](Cenario_Teste/CT-RF09_FILTRO_TelaClientes.md)
+- [Caso CT-RF01_loginComSucesso](Cenario_Teste/CT-RF01_loginComSucesso.md)
 - [Evidências do login com sucesso](Evidencias/CT-RF04_loginComSucesso/README.md)
-- [Evidências e limites do CT-RF03](Evidencias/CT-RF03_Filtros_Clientes/README.md)
+- [Evidências e limites do CT-RF09](Evidencias/CT-RF03_Filtros_Clientes/README.md)
 - [Relatório dos testes](Relatorio%20dos%20testes.md)
 - [Relatório de bugs](Relatorio-de-Bugs.md)
 
-- [Caso CT-RF35](Cenario_Teste/CT-RF35_Cadastro_Objetivo_Treino.md)
-- [Evidências do CT-RF35](Evidencias/CT-RF35_Cadastro_Objetivo_Treino/README.md)
-- [Caso CT-RF38](Cenario_Teste/CT-RF38_Cadastro_Categoria_Codigo_Automatico.md)
-- [Evidências do CT-RF38](Evidencias/CT-RF38_Cadastro_Categoria_Codigo_Automatico/README.md)
-- [Caso CT-RF39](Cenario_Teste/CT-RF39_Cadastro_Modalidade.md) e [evidências](Evidencias/CT-RF39_Cadastro_Modalidade/README.md)
-- [Caso CT-RF40](Cenario_Teste/CT-RF40_Exclusao_Turmas_Modalidades.md) e [evidências](Evidencias/CT-RF40_Exclusao_Turmas_Modalidades/README.md)
-- [Caso CT-RF41](Cenario_Teste/CT-RF41_Cadastro_Turma_Sem_Modalidade.md) e [evidências](Evidencias/CT-RF41_Cadastro_Turma_Sem_Modalidade/README.md)
-- [Caso CT-RF42](Cenario_Teste/CT-RF42_Solicitacao_Saque_PagarMe.md) e [evidências](Evidencias/CT-RF42_Solicitacao_Saque_PagarMe/README.md)
-- [Caso CT-RF43](Cenario_Teste/CT-RF43_Criacao_Cobranca_PagarMe.md) e [evidências](Evidencias/CT-RF43_Criacao_Cobranca_PagarMe/README.md)
-- [Caso CT-RF44](Cenario_Teste/CT-RF44_Configuracoes_Home_Salvamento.md) e [evidências](Evidencias/CT-RF44_Configuracoes_Home_Salvamento/README.md)
-- [Caso CT-RF45](Cenario_Teste/CT-RF45_Painel_PagarMe_Periodo.md) e [evidências](Evidencias/CT-RF45_Painel_PagarMe_Periodo/README.md)
-- [Caso CT-RF46](Cenario_Teste/CT-RF46_Filtros_Despesas_Fixas.md) e [evidências](Evidencias/CT-RF46_Filtros_Despesas_Fixas/README.md)
-- [Caso CT-RF47](Cenario_Teste/CT-RF47_Cadastro_Despesa_Fixa.md) e [evidências](Evidencias/CT-RF47_Cadastro_Despesa_Fixa/README.md)
-- [Caso CT-RF48](Cenario_Teste/CT-RF48_Exclusao_Despesa_Fixa.md) e [evidências](Evidencias/CT-RF48_Exclusao_Despesa_Fixa/README.md)
-- [Caso CT-RF49](Cenario_Teste/CT-RF49_Edicao_Despesa_Fixa.md) e [evidências](Evidencias/CT-RF49_Edicao_Despesa_Fixa/README.md)
-- [Caso CT-RF50](Cenario_Teste/CT-RF50_Relatorio_Matriculas.md) e [evidências](Evidencias/CT-RF50_Relatorio_Matriculas/README.md)
-- [Caso CT-RF51](Cenario_Teste/CT-RF51_Relatorio_Contas_Receber.md) e [evidências](Evidencias/CT-RF51_Relatorio_Contas_Receber/README.md)
-- [Caso CT-RF52](Cenario_Teste/CT-RF52_Relatorio_Contas_Pagar_Pagas.md) e [evidências](Evidencias/CT-RF52_Relatorio_Contas_Pagar_Pagas/README.md)
-- [Caso CT-RF53](Cenario_Teste/CT-RF53_Relatorio_Avaliacoes_Vazio.md) e [evidências](Evidencias/CT-RF53_Relatorio_Avaliacoes_Vazio/README.md)
-- [Caso CT-RF54](Cenario_Teste/CT-RF54_Relatorio_Clientes_Vazio.md) e [evidências](Evidencias/CT-RF54_Relatorio_Clientes_Vazio/README.md)
-- [Caso CT-RF55](Cenario_Teste/CT-RF55_Relatorio_Colaboradores_Vazio.md) e [evidências](Evidencias/CT-RF55_Relatorio_Colaboradores_Vazio/README.md)
-- [Caso CT-RF56](Cenario_Teste/CT-RF56_Relatorio_Caixas_Vazio.md) e [evidências](Evidencias/CT-RF56_Relatorio_Caixas_Vazio/README.md)
-- [Caso CT-RF57](Cenario_Teste/CT-RF57_Exclusao_Grupo.md)
-- [Caso CT-RF58](Cenario_Teste/CT-RF58_Edicao_Grupo.md)
-- [Caso CT-RF59](Cenario_Teste/CT-RF59_Cadastro_Anamnese.md)
-- [Caso CT-RF60](Cenario_Teste/CT-RF60_Gestao_Modelos_Anamnese.md)
-- [Caso CT-RF61](Cenario_Teste/CT-RF61_Gestao_Categorias_Anamnese.md)
-- [Caso CT-RF62](Cenario_Teste/CT-RF62_Edicao_Pergunta_Anamnese.md)
-- [Caso CT-RF65](Cenario_Teste/CT-RF65_Data_Nascimento_Futura_Colaborador.md)
-- [Caso CT-RF66](Cenario_Teste/CT-RF66_Data_Nascimento_Obrigatoria_Colaborador.md)
-- [Caso CT-RF67](Cenario_Teste/CT-RF67_CREF_Formato_Colaborador.md)
-- [Caso CT-RF68](Cenario_Teste/CT-RF68_Edicao_Colaborador_Campo_Obrigatorio_Vazio.md)
-- [Caso CT-RF69](Cenario_Teste/CT-RF69_Funcao_Duplicada_Colaborador.md)
-- [Caso CT-RF70](Cenario_Teste/CT-RF70_Exclusao_Colaborador_Erro_500.md)
-- [Caso CT-RF85](Cenario_Teste/CT-RF85_Tema_Notificacoes_Prospeccao.md) e [evidências](Evidencias/CT-RF85_Tema_Notificacoes_Prospeccao/README.md)
-- [Caso CT-RF86](Cenario_Teste/CT-RF86_Busca_Leads_Prospeccao.md) e [evidências](Evidencias/CT-RF86_Busca_Leads_Prospeccao/README.md)
-- [Caso CT-RF87](Cenario_Teste/CT-RF87_Filtro_Estagio_Leads.md) e [evidências](Evidencias/CT-RF87_Filtro_Estagio_Leads/README.md)
-- [Caso CT-RF88](Cenario_Teste/CT-RF88_Cadastro_Lead_Prospeccao.md) e [evidências](Evidencias/CT-RF88_Cadastro_Lead_Prospeccao/README.md)
-- [Caso CT-RF89](Cenario_Teste/CT-RF89_Telefone_Lead_Sem_Validacao.md) e [evidências](Evidencias/CT-RF89_Telefone_Lead_Sem_Validacao/README.md)
-- [Caso CT-RF90](Cenario_Teste/CT-RF90_Edicao_Lead_Prospeccao.md) e [evidências](Evidencias/CT-RF90_Edicao_Lead_Prospeccao/README.md)
-- [Caso CT-RF91](Cenario_Teste/CT-RF91_Filtros_Contas_Pagar.md) e [evidências](Evidencias/CT-RF91_Filtros_Contas_Pagar/README.md)
-- [Caso CT-RF92](Cenario_Teste/CT-RF92_Cadastro_Conta_Colaborador_Sem_Colaborador.md) e [evidências](Evidencias/CT-RF92_Cadastro_Conta_Colaborador_Sem_Colaborador/README.md)
-- [Caso CT-RF93](Cenario_Teste/CT-RF93_Busca_Colaborador_Conta_Pagar.md) e [evidências](Evidencias/CT-RF93_Busca_Colaborador_Conta_Pagar/README.md)
-- [Caso CT-RF94](Cenario_Teste/CT-RF94_Visualizacao_Conta_Pagar.md) e [evidências](Evidencias/CT-RF94_Visualizacao_Conta_Pagar/README.md)
-- [Caso CT-RF95](Cenario_Teste/CT-RF95_Exclusao_Conta_Pagar.md) e [evidências](Evidencias/CT-RF95_Exclusao_Conta_Pagar/README.md)
-- [Caso CT-RF96](Cenario_Teste/CT-RF96_Variaveis_Preview_Modelo_Contrato.md) e [evidências](Evidencias/CT-RF96_Variaveis_Preview_Modelo_Contrato/README.md)
-- [Caso CT-RF97](Cenario_Teste/CT-RF97_Cadastro_Modelo_Contrato.md) e [evidências](Evidencias/CT-RF97_Cadastro_Modelo_Contrato/README.md)
-- [Caso CT-RF98](Cenario_Teste/CT-RF98_Listagem_Modelos_Contrato_Vazia.md) e [evidências](Evidencias/CT-RF98_Listagem_Modelos_Contrato_Vazia/README.md)
-- [Caso CT-RF99](Cenario_Teste/CT-RF99_Filtros_Planos.md) e [evidências](Evidencias/CT-RF99_Filtros_Planos/README.md)
-- [Caso CT-RF100](Cenario_Teste/CT-RF100_Tema_Notificacoes_Planos.md) e [evidências](Evidencias/CT-RF100_Tema_Notificacoes_Planos/README.md)
-- [Caso CT-RF101](Cenario_Teste/CT-RF101_Cadastro_Plano.md) e [evidências](Evidencias/CT-RF101_Cadastro_Plano/README.md)
-- [Caso CT-RF102](Cenario_Teste/CT-RF102_Contador_Ativos_Planos.md) e [evidências](Evidencias/CT-RF102_Contador_Ativos_Planos/README.md)
-- [Caso CT-RF103](Cenario_Teste/CT-RF103_Edicao_Plano.md) e [evidências](Evidencias/CT-RF103_Edicao_Plano/README.md)
-- [Caso CT-RF104](Cenario_Teste/CT-RF104_Filtros_Tipos_Pagamento.md) e [evidências](Evidencias/CT-RF104_Filtros_Tipos_Pagamento/README.md)
-- [Caso CT-RF105](Cenario_Teste/CT-RF105_Cadastro_Tipo_Pagamento_Status.md) e [evidências](Evidencias/CT-RF105_Cadastro_Tipo_Pagamento_Status/README.md)
-- [Caso CT-RF106](Cenario_Teste/CT-RF106_Edicao_Tipo_Pagamento.md) e [evidências](Evidencias/CT-RF106_Edicao_Tipo_Pagamento/README.md)
-- [Caso CT-RF107](Cenario_Teste/CT-RF107_Exclusao_Tipo_Pagamento_Em_Uso.md) e [evidências](Evidencias/CT-RF107_Exclusao_Tipo_Pagamento_Em_Uso/README.md)
-- [Caso CT-RF108](Cenario_Teste/CT-RF108_Tema_Notificacoes_Tipos_Pagamento.md) e [evidências](Evidencias/CT-RF108_Tema_Notificacoes_Tipos_Pagamento/README.md)
-- [CT-RF109](Cenario_Teste/CT-RF109_Modelo_Ficha_Sem_Nome.md) e [Evidências](Evidencias/CT-RF109_Modelo_Ficha_Sem_Nome/README.md)
-- [CT-RF110](Cenario_Teste/CT-RF110_Cancelar_Cadastro_Modelo_Ficha.md) e [Evidências](Evidencias/CT-RF110_Cancelar_Cadastro_Modelo_Ficha/README.md)
-- [CT-RF111](Cenario_Teste/CT-RF111_Busca_Modelo_Ficha_Codigo_Inexistente.md) e [Evidências](Evidencias/CT-RF111_Busca_Modelo_Ficha_Codigo_Inexistente/README.md)
-- [CT-RF112](Cenario_Teste/CT-RF112_Busca_Modelo_Ficha_Titulo_Inexistente.md) e [Evidências](Evidencias/CT-RF112_Busca_Modelo_Ficha_Titulo_Inexistente/README.md)
-- [CT-RF113](Cenario_Teste/CT-RF113_Busca_Modelo_Ficha_Filtros_Combinados.md) e [Evidências](Evidencias/CT-RF113_Busca_Modelo_Ficha_Filtros_Combinados/README.md)
-- [CT-RF114](Cenario_Teste/CT-RF114_Limpeza_Filtros_Modelos_Ficha.md) e [Evidências](Evidencias/CT-RF114_Limpeza_Filtros_Modelos_Ficha/README.md)
-- [CT-RF115](Cenario_Teste/CT-RF115_Nova_Busca_Modelos_Ficha_Sem_Filtros.md) e [Evidências](Evidencias/CT-RF115_Nova_Busca_Modelos_Ficha_Sem_Filtros/README.md)
-- [CT-RF116](Cenario_Teste/CT-RF116_Configuracoes_Dias_Ausencia_Vazio.md) e [Evidências](Evidencias/CT-RF116_Configuracoes_Dias_Ausencia_Vazio/README.md)
-- [CT-RF117](Cenario_Teste/CT-RF117_Configuracoes_Cancelar_Alteracao.md) e [Evidências](Evidencias/CT-RF117_Configuracoes_Cancelar_Alteracao/README.md)
-- [CT-RF118](Cenario_Teste/CT-RF118_Configuracoes_Trabalha_Com_Turmas.md) e [Evidências](Evidencias/CT-RF118_Configuracoes_Trabalha_Com_Turmas/README.md)
-- [CT-RF119](Cenario_Teste/CT-RF119_Configuracoes_Academia_Marcada_Box.md) e [Evidências](Evidencias/CT-RF119_Configuracoes_Academia_Marcada_Box/README.md)
-- [CT-RF120](Cenario_Teste/CT-RF120_Configuracoes_Acesso_Desktop.md) e [Evidências](Evidencias/CT-RF120_Configuracoes_Acesso_Desktop/README.md)
-- [CT-RF121](Cenario_Teste/CT-RF121_Cadastro_Modelo_Ficha_Erro_500.md) e [Evidências](Evidencias/CT-RF121_Cadastro_Modelo_Ficha_Erro_500/README.md)
-- [CT-RF122](Cenario_Teste/CT-RF122_Resultados_IA_Filtro_90_Dias.md) e [Evidências](Evidencias/CT-RF122_Resultados_IA_Filtro_90_Dias/README.md)
-- [CT-RF123](Cenario_Teste/CT-RF123_Central_Resultados_IA_Execucao_Evasao.md) e [Evidências](Evidencias/CT-RF123_Central_Resultados_IA_Execucao_Evasao/README.md)
-- [CT-RF124](Cenario_Teste/CT-RF124_Configuracoes_Abas_Biometria_Senha.md) e [Evidências](Evidencias/CT-RF124_Configuracoes_Abas_Biometria_Senha/README.md)
-- [CT-RF125](Cenario_Teste/CT-RF125_Configuracoes_Salvar_Dias_Ausencia_Valido.md) e [Evidências](Evidencias/CT-RF125_Configuracoes_Salvar_Dias_Ausencia_Valido/README.md)
-- [CT-RF126](Cenario_Teste/CT-RF126_Configuracoes_Dias_Ausencia_Negativo.md) e [Evidências](Evidencias/CT-RF126_Configuracoes_Dias_Ausencia_Negativo/README.md)
-- [CT-RF127](Cenario_Teste/CT-RF127_Configuracoes_Dias_Ausencia_Texto.md) e [Evidências](Evidencias/CT-RF127_Configuracoes_Dias_Ausencia_Texto/README.md)
-- [CT-RF128](Cenario_Teste/CT-RF128_Central_Configuracao_Risco_Evasao_Cancelar.md) e [Evidências](Evidencias/CT-RF128_Central_Configuracao_Risco_Evasao_Cancelar/README.md)
-- [CT-RF129](Cenario_Teste/CT-RF129_Central_Aniversariantes_Previa_Risco.md) e [Evidências](Evidencias/CT-RF129_Central_Aniversariantes_Previa_Risco/README.md)
-- [CT-RF130](Cenario_Teste/CT-RF130_Central_Recursos_Em_Desenvolvimento.md) e [Evidências](Evidencias/CT-RF130_Central_Recursos_Em_Desenvolvimento/README.md)
-- [CT-RF131](Cenario_Teste/CT-RF131_Resultados_IA_Filtro_Hoje.md) e [Evidências](Evidencias/CT-RF131_Resultados_IA_Filtro_Hoje/README.md)
-- [CT-RF132](Cenario_Teste/CT-RF132_Resultados_IA_Filtro_7_Dias.md) e [Evidências](Evidencias/CT-RF132_Resultados_IA_Filtro_7_Dias/README.md)
-- [CT-RF133](Cenario_Teste/CT-RF133_Resultados_IA_Filtro_30_Dias.md) e [Evidências](Evidencias/CT-RF133_Resultados_IA_Filtro_30_Dias/README.md)
-- [CT-RF134](Cenario_Teste/CT-RF134_Central_Automacoes_Atualizar.md) e [Evidências](Evidencias/CT-RF134_Central_Automacoes_Atualizar/README.md)
-- [CT-RF135](Cenario_Teste/CT-RF135_Central_Desativar_Risco_Evasao_Contador.md) e [Evidências](Evidencias/CT-RF135_Central_Desativar_Risco_Evasao_Contador/README.md)
-- [CT-RF136](Cenario_Teste/CT-RF136_Central_Ativar_Aniversariantes_Contador.md) e [Evidências](Evidencias/CT-RF136_Central_Ativar_Aniversariantes_Contador/README.md)
-- [CT-RF137](Cenario_Teste/CT-RF137_Central_Risco_Evasao_Executar_Agora.md) e [Evidências](Evidencias/CT-RF137_Central_Risco_Evasao_Executar_Agora/README.md)
-- [CT-RF138](Cenario_Teste/CT-RF138_Central_Abrir_Resultados_Risco_Evasao.md) e [Evidências](Evidencias/CT-RF138_Central_Abrir_Resultados_Risco_Evasao/README.md)
-- [CT-RF139](Cenario_Teste/CT-RF139_Integracoes_WhatsApp_Mascarar_API_Key.md) e [Evidências](Evidencias/CT-RF139_Integracoes_WhatsApp_Mascarar_API_Key/README.md)
-- [CT-RF140](Cenario_Teste/CT-RF140_Integracoes_WhatsApp_Validar_URL_API.md) e [Evidências](Evidencias/CT-RF140_Integracoes_WhatsApp_Validar_URL_API/README.md)
-- [CT-RF141](Cenario_Teste/CT-RF141_Integracoes_WhatsApp_Instancia_Obrigatoria.md) e [Evidências](Evidencias/CT-RF141_Integracoes_WhatsApp_Instancia_Obrigatoria/README.md)
-- [CT-RF142](Cenario_Teste/CT-RF142_Integracoes_WhatsApp_Persistir_Ativo.md) e [Evidências](Evidencias/CT-RF142_Integracoes_WhatsApp_Persistir_Ativo/README.md)
-- [CT-RF143](Cenario_Teste/CT-RF143_Integracoes_WhatsApp_Conectar_Evolution.md) e [Evidências](Evidencias/CT-RF143_Integracoes_WhatsApp_Conectar_Evolution/README.md)
-- [CT-RF144](Cenario_Teste/CT-RF144_Integracoes_WhatsApp_Atualizar_Status.md) e [Evidências](Evidencias/CT-RF144_Integracoes_WhatsApp_Atualizar_Status/README.md)
-- [CT-RF145](Cenario_Teste/CT-RF145_Configuracoes_Aniversario_Salvar_WhatsApp_SMS.md) e [Evidências](Evidencias/CT-RF145_Configuracoes_Aniversario_Salvar_WhatsApp_SMS/README.md)
-- [CT-RF146](Cenario_Teste/CT-RF146_Configuracoes_Pagamento_Online_Desativar.md) e [Evidências](Evidencias/CT-RF146_Configuracoes_Pagamento_Online_Desativar/README.md)
-- [CT-RF147](Cenario_Teste/CT-RF147_Configuracoes_Design_Salvar_Cor_Principal.md) e [Evidências](Evidencias/CT-RF147_Configuracoes_Design_Salvar_Cor_Principal/README.md)
-- [CT-RF148](Cenario_Teste/CT-RF148_Configuracoes_Design_Validar_Cor_Secundaria.md) e [Evidências](Evidencias/CT-RF148_Configuracoes_Design_Validar_Cor_Secundaria/README.md)
-- [CT-RF149](Cenario_Teste/CT-RF149_Configuracoes_Design_Logo_Limite_Tamanho.md) e [Evidências](Evidencias/CT-RF149_Configuracoes_Design_Logo_Limite_Tamanho/README.md)
-- [CT-RF150](Cenario_Teste/CT-RF150_Integracoes_WhatsApp_Atualizar_Status_Aguardando_QR.md) e [Evidências](Evidencias/CT-RF150_Integracoes_WhatsApp_Atualizar_Status_Aguardando_QR/README.md)
-- [CT-RF151](Cenario_Teste/CT-RF151_Configuracoes_Avaliacao_Desativar_Cobranca.md) e [Evidências](Evidencias/CT-RF151_Configuracoes_Avaliacao_Desativar_Cobranca/README.md)
-- [CT-RF152](Cenario_Teste/CT-RF152_Configuracoes_Avaliacao_Tipo_Bioimpedancia.md) e [Evidências](Evidencias/CT-RF152_Configuracoes_Avaliacao_Tipo_Bioimpedancia/README.md)
-- [CT-RF153](Cenario_Teste/CT-RF153_Configuracoes_Avaliacao_Habilitar_Teste_Fisico.md) e [Evidências](Evidencias/CT-RF153_Configuracoes_Avaliacao_Habilitar_Teste_Fisico/README.md)
-- [CT-RF154](Cenario_Teste/CT-RF154_Configuracoes_Aniversario_Desabilitar_Envio_Automatico.md) e [Evidências](Evidencias/CT-RF154_Configuracoes_Aniversario_Desabilitar_Envio_Automatico/README.md)
-- [CT-RF155](Cenario_Teste/CT-RF155_Configuracoes_Aniversario_Cancelar_Mensagem_WhatsApp.md) e [Evidências](Evidencias/CT-RF155_Configuracoes_Aniversario_Cancelar_Mensagem_WhatsApp/README.md)
-- [CT-RF156](Cenario_Teste/CT-RF156_Configuracoes_Aniversario_Inserir_Variaveis_WhatsApp.md) e [Evidências](Evidencias/CT-RF156_Configuracoes_Aniversario_Inserir_Variaveis_WhatsApp/README.md)
-- [CT-RF157](Cenario_Teste/CT-RF157_Aplicativo_Consultar_Notificacao.md) e [Evidências](Evidencias/CT-RF157_Aplicativo_Consultar_Notificacao/README.md)
-- [CT-RF158](Cenario_Teste/CT-RF158_Aplicativo_Bloquear_Notificacao_Vazia.md) e [Evidências](Evidencias/CT-RF158_Aplicativo_Bloquear_Notificacao_Vazia/README.md)
-- [CT-RF159](Cenario_Teste/CT-RF159_Aplicativo_Criar_Notificacao_Preview.md) e [Evidências](Evidencias/CT-RF159_Aplicativo_Criar_Notificacao_Preview/README.md)
-- [CT-RF160](Cenario_Teste/CT-RF160_Aplicativo_Postagens_Filtros_Estados_Vazios.md) e [Evidências](Evidencias/CT-RF160_Aplicativo_Postagens_Filtros_Estados_Vazios/README.md)
-- [CT-RF161](Cenario_Teste/CT-RF161_Aplicativo_Denuncias_Filtros_Estados_Vazios.md) e [Evidências](Evidencias/CT-RF161_Aplicativo_Denuncias_Filtros_Estados_Vazios/README.md)
-- [CT-RF162](Cenario_Teste/CT-RF162_Configuracoes_Biometria_Cancelar_Edicao_Senha.md) e [Evidências](Evidencias/CT-RF162_Configuracoes_Biometria_Cancelar_Edicao_Senha/README.md)
-- [CT-RF163](Cenario_Teste/CT-RF163_Configuracoes_Biometria_Rejeitar_IP_Invalido.md) e [Evidências](Evidencias/CT-RF163_Configuracoes_Biometria_Rejeitar_IP_Invalido/README.md)
-- [CT-RF164](Cenario_Teste/CT-RF164_Configuracoes_Biometria_Persistir_Porta.md) e [Evidências](Evidencias/CT-RF164_Configuracoes_Biometria_Persistir_Porta/README.md)
-- [CT-RF165](Cenario_Teste/CT-RF165_Configuracoes_Biometria_Validar_Dias_Bloqueio.md) e [Evidências](Evidencias/CT-RF165_Configuracoes_Biometria_Validar_Dias_Bloqueio/README.md)
-- [Índice dos 161 cenários](Cenario_Teste/README.md)
+- [Caso CT-RF33](Cenario_Teste/CT-RF33_Cadastro_Objetivo_Treino.md)
+- [Evidências do CT-RF33](Evidencias/CT-RF35_Cadastro_Objetivo_Treino/README.md)
+- [Caso CT-RF40](Cenario_Teste/CT-RF40_Cadastro_Categoria_Codigo_Automatico.md)
+- [Evidências do CT-RF40](Evidencias/CT-RF38_Cadastro_Categoria_Codigo_Automatico/README.md)
+- [Caso CT-RF44](Cenario_Teste/CT-RF44_Cadastro_Modalidade.md) e [evidências](Evidencias/CT-RF39_Cadastro_Modalidade/README.md)
+- [Caso CT-RF45](Cenario_Teste/CT-RF45_Exclusao_Turmas_Modalidades.md) e [evidências](Evidencias/CT-RF40_Exclusao_Turmas_Modalidades/README.md)
+- [Caso CT-RF46](Cenario_Teste/CT-RF46_Cadastro_Turma_Sem_Modalidade.md) e [evidências](Evidencias/CT-RF41_Cadastro_Turma_Sem_Modalidade/README.md)
+- [Caso CT-RF47](Cenario_Teste/CT-RF47_Solicitacao_Saque_PagarMe.md) e [evidências](Evidencias/CT-RF42_Solicitacao_Saque_PagarMe/README.md)
+- [Caso CT-RF48](Cenario_Teste/CT-RF48_Criacao_Cobranca_PagarMe.md) e [evidências](Evidencias/CT-RF43_Criacao_Cobranca_PagarMe/README.md)
+- [Caso CT-RF117](Cenario_Teste/CT-RF117_Configuracoes_Home_Salvamento.md) e [evidências](Evidencias/CT-RF44_Configuracoes_Home_Salvamento/README.md)
+- [Caso CT-RF49](Cenario_Teste/CT-RF49_Painel_PagarMe_Periodo.md) e [evidências](Evidencias/CT-RF45_Painel_PagarMe_Periodo/README.md)
+- [Caso CT-RF50](Cenario_Teste/CT-RF50_Filtros_Despesas_Fixas.md) e [evidências](Evidencias/CT-RF46_Filtros_Despesas_Fixas/README.md)
+- [Caso CT-RF51](Cenario_Teste/CT-RF51_Cadastro_Despesa_Fixa.md) e [evidências](Evidencias/CT-RF47_Cadastro_Despesa_Fixa/README.md)
+- [Caso CT-RF52](Cenario_Teste/CT-RF52_Exclusao_Despesa_Fixa.md) e [evidências](Evidencias/CT-RF48_Exclusao_Despesa_Fixa/README.md)
+- [Caso CT-RF53](Cenario_Teste/CT-RF53_Edicao_Despesa_Fixa.md) e [evidências](Evidencias/CT-RF49_Edicao_Despesa_Fixa/README.md)
+- [Caso CT-RF54](Cenario_Teste/CT-RF54_Relatorio_Matriculas.md) e [evidências](Evidencias/CT-RF50_Relatorio_Matriculas/README.md)
+- [Caso CT-RF55](Cenario_Teste/CT-RF55_Relatorio_Contas_Receber.md) e [evidências](Evidencias/CT-RF51_Relatorio_Contas_Receber/README.md)
+- [Caso CT-RF56](Cenario_Teste/CT-RF56_Relatorio_Contas_Pagar_Pagas.md) e [evidências](Evidencias/CT-RF52_Relatorio_Contas_Pagar_Pagas/README.md)
+- [Caso CT-RF57](Cenario_Teste/CT-RF57_Relatorio_Avaliacoes_Vazio.md) e [evidências](Evidencias/CT-RF53_Relatorio_Avaliacoes_Vazio/README.md)
+- [Caso CT-RF58](Cenario_Teste/CT-RF58_Relatorio_Clientes_Vazio.md) e [evidências](Evidencias/CT-RF54_Relatorio_Clientes_Vazio/README.md)
+- [Caso CT-RF59](Cenario_Teste/CT-RF59_Relatorio_Colaboradores_Vazio.md) e [evidências](Evidencias/CT-RF55_Relatorio_Colaboradores_Vazio/README.md)
+- [Caso CT-RF60](Cenario_Teste/CT-RF60_Relatorio_Caixas_Vazio.md) e [evidências](Evidencias/CT-RF56_Relatorio_Caixas_Vazio/README.md)
+- [Caso CT-RF34](Cenario_Teste/CT-RF34_Exclusao_Grupo.md)
+- [Caso CT-RF35](Cenario_Teste/CT-RF35_Edicao_Grupo.md)
+- [Caso CT-RF100](Cenario_Teste/CT-RF100_Cadastro_Anamnese.md)
+- [Caso CT-RF101](Cenario_Teste/CT-RF101_Gestao_Modelos_Anamnese.md)
+- [Caso CT-RF102](Cenario_Teste/CT-RF102_Gestao_Categorias_Anamnese.md)
+- [Caso CT-RF103](Cenario_Teste/CT-RF103_Edicao_Pergunta_Anamnese.md)
+- [Caso CT-RF91](Cenario_Teste/CT-RF91_Data_Nascimento_Futura_Colaborador.md)
+- [Caso CT-RF92](Cenario_Teste/CT-RF92_Data_Nascimento_Obrigatoria_Colaborador.md)
+- [Caso CT-RF93](Cenario_Teste/CT-RF93_CREF_Formato_Colaborador.md)
+- [Caso CT-RF94](Cenario_Teste/CT-RF94_Edicao_Colaborador_Campo_Obrigatorio_Vazio.md)
+- [Caso CT-RF95](Cenario_Teste/CT-RF95_Funcao_Duplicada_Colaborador.md)
+- [Caso CT-RF96](Cenario_Teste/CT-RF96_Exclusao_Colaborador_Erro_500.md)
+- [Caso CT-RF62](Cenario_Teste/CT-RF62_Tema_Notificacoes_Prospeccao.md) e [evidências](Evidencias/CT-RF85_Tema_Notificacoes_Prospeccao/README.md)
+- [Caso CT-RF63](Cenario_Teste/CT-RF63_Busca_Leads_Prospeccao.md) e [evidências](Evidencias/CT-RF86_Busca_Leads_Prospeccao/README.md)
+- [Caso CT-RF64](Cenario_Teste/CT-RF64_Filtro_Estagio_Leads.md) e [evidências](Evidencias/CT-RF87_Filtro_Estagio_Leads/README.md)
+- [Caso CT-RF71](Cenario_Teste/CT-RF71_Cadastro_Lead_Prospeccao.md) e [evidências](Evidencias/CT-RF88_Cadastro_Lead_Prospeccao/README.md)
+- [Caso CT-RF72](Cenario_Teste/CT-RF72_Telefone_Lead_Sem_Validacao.md) e [evidências](Evidencias/CT-RF89_Telefone_Lead_Sem_Validacao/README.md)
+- [Caso CT-RF75](Cenario_Teste/CT-RF75_Edicao_Lead_Prospeccao.md) e [evidências](Evidencias/CT-RF90_Edicao_Lead_Prospeccao/README.md)
+- [Caso CT-RF16](Cenario_Teste/CT-RF16_Filtros_Contas_Pagar.md) e [evidências](Evidencias/CT-RF91_Filtros_Contas_Pagar/README.md)
+- [Caso CT-RF17](Cenario_Teste/CT-RF17_Cadastro_Conta_Colaborador_Sem_Colaborador.md) e [evidências](Evidencias/CT-RF92_Cadastro_Conta_Colaborador_Sem_Colaborador/README.md)
+- [Caso CT-RF18](Cenario_Teste/CT-RF18_Busca_Colaborador_Conta_Pagar.md) e [evidências](Evidencias/CT-RF93_Busca_Colaborador_Conta_Pagar/README.md)
+- [Caso CT-RF19](Cenario_Teste/CT-RF19_Visualizacao_Conta_Pagar.md) e [evidências](Evidencias/CT-RF94_Visualizacao_Conta_Pagar/README.md)
+- [Caso CT-RF20](Cenario_Teste/CT-RF20_Exclusao_Conta_Pagar.md) e [evidências](Evidencias/CT-RF95_Exclusao_Conta_Pagar/README.md)
+- [Caso CT-RF82](Cenario_Teste/CT-RF82_Variaveis_Preview_Modelo_Contrato.md) e [evidências](Evidencias/CT-RF96_Variaveis_Preview_Modelo_Contrato/README.md)
+- [Caso CT-RF81](Cenario_Teste/CT-RF81_Cadastro_Modelo_Contrato.md) e [evidências](Evidencias/CT-RF97_Cadastro_Modelo_Contrato/README.md)
+- [Caso CT-RF83](Cenario_Teste/CT-RF83_Listagem_Modelos_Contrato_Vazia.md) e [evidências](Evidencias/CT-RF98_Listagem_Modelos_Contrato_Vazia/README.md)
+- [Caso CT-RF77](Cenario_Teste/CT-RF77_Filtros_Planos.md) e [evidências](Evidencias/CT-RF99_Filtros_Planos/README.md)
+- [Caso CT-RF76](Cenario_Teste/CT-RF76_Tema_Notificacoes_Planos.md) e [evidências](Evidencias/CT-RF100_Tema_Notificacoes_Planos/README.md)
+- [Caso CT-RF78](Cenario_Teste/CT-RF78_Cadastro_Plano.md) e [evidências](Evidencias/CT-RF101_Cadastro_Plano/README.md)
+- [Caso CT-RF79](Cenario_Teste/CT-RF79_Contador_Ativos_Planos.md) e [evidências](Evidencias/CT-RF102_Contador_Ativos_Planos/README.md)
+- [Caso CT-RF80](Cenario_Teste/CT-RF80_Edicao_Plano.md) e [evidências](Evidencias/CT-RF103_Edicao_Plano/README.md)
+- [Caso CT-RF84](Cenario_Teste/CT-RF84_Filtros_Tipos_Pagamento.md) e [evidências](Evidencias/CT-RF104_Filtros_Tipos_Pagamento/README.md)
+- [Caso CT-RF85](Cenario_Teste/CT-RF85_Cadastro_Tipo_Pagamento_Status.md) e [evidências](Evidencias/CT-RF105_Cadastro_Tipo_Pagamento_Status/README.md)
+- [Caso CT-RF86](Cenario_Teste/CT-RF86_Edicao_Tipo_Pagamento.md) e [evidências](Evidencias/CT-RF106_Edicao_Tipo_Pagamento/README.md)
+- [Caso CT-RF87](Cenario_Teste/CT-RF87_Exclusao_Tipo_Pagamento_Em_Uso.md) e [evidências](Evidencias/CT-RF107_Exclusao_Tipo_Pagamento_Em_Uso/README.md)
+- [Caso CT-RF88](Cenario_Teste/CT-RF88_Tema_Notificacoes_Tipos_Pagamento.md) e [evidências](Evidencias/CT-RF108_Tema_Notificacoes_Tipos_Pagamento/README.md)
+- [Índice dos 104 cenários](Cenario_Teste/README.md)
 - [Índice das evidências e dos Jams](Evidencias/README.md)
 - [Manifesto de integridade dos novos arquivos](Evidencias/manifesto_sha256.json)
 
 ---
 
-## Inclusão CT-RF65 a CT-RF70 — Colaboradores
+## Inclusão CT-RF91 a CT-RF96 — Colaboradores
 
 | Caso | Técnica | Resultado | Reteste mínimo |
 | --- | --- | --- | --- |
-| [CT-RF65](Cenario_Teste/CT-RF65_Data_Nascimento_Futura_Colaborador.md) | Valor limite / data futura | Reprovado — BUG-026 | Data passada, atual e futura; confirmar persistência. |
-| [CT-RF66](Cenario_Teste/CT-RF66_Data_Nascimento_Obrigatoria_Colaborador.md) | Campo obrigatório | Reprovado — BUG-027 | Vazio, apagado, espaços e valor válido. |
-| [CT-RF67](Cenario_Teste/CT-RF67_CREF_Formato_Colaborador.md) | Partição de equivalência / formato | Reprovado — BUG-028 | Exemplos válidos e inválidos após confirmar a regra do CREF. |
-| [CT-RF68](Cenario_Teste/CT-RF68_Edicao_Colaborador_Campo_Obrigatorio_Vazio.md) | Obrigatoriedade campo a campo | Reprovado — BUG-029 | Cada obrigatório vazio isoladamente e em conjunto. |
-| [CT-RF69](Cenario_Teste/CT-RF69_Funcao_Duplicada_Colaborador.md) | Duplicidade / repetição | Reprovado — BUG-030 | Clique duplo, repetição sequencial e concorrência. |
-| [CT-RF70](Cenario_Teste/CT-RF70_Exclusao_Colaborador_Erro_500.md) | Exclusão permitida e impedida | Reprovado — BUG-031 | Registro sem vínculos e com cada vínculo conhecido. |
+| [CT-RF91](Cenario_Teste/CT-RF91_Data_Nascimento_Futura_Colaborador.md) | Valor limite / data futura | Reprovado — BUG-026 | Data passada, atual e futura; confirmar persistência. |
+| [CT-RF92](Cenario_Teste/CT-RF92_Data_Nascimento_Obrigatoria_Colaborador.md) | Campo obrigatório | Reprovado — BUG-027 | Vazio, apagado, espaços e valor válido. |
+| [CT-RF93](Cenario_Teste/CT-RF93_CREF_Formato_Colaborador.md) | Partição de equivalência / formato | Reprovado — BUG-028 | Exemplos válidos e inválidos após confirmar a regra do CREF. |
+| [CT-RF94](Cenario_Teste/CT-RF94_Edicao_Colaborador_Campo_Obrigatorio_Vazio.md) | Obrigatoriedade campo a campo | Reprovado — BUG-029 | Cada obrigatório vazio isoladamente e em conjunto. |
+| [CT-RF95](Cenario_Teste/CT-RF95_Funcao_Duplicada_Colaborador.md) | Duplicidade / repetição | Reprovado — BUG-030 | Clique duplo, repetição sequencial e concorrência. |
+| [CT-RF96](Cenario_Teste/CT-RF96_Exclusao_Colaborador_Erro_500.md) | Exclusão permitida e impedida | Reprovado — BUG-031 | Registro sem vínculos e com cada vínculo conhecido. |
 
 **Ambiente gravado:** `sifit.centrion.com.br`, backend `backendsifit.centrion.com.br`, Edge/Chromium 157 em Windows 11 conforme cabeçalhos; versão da aplicação e zoom não confirmados. As gravações ocorreram entre 22:06 e 22:13 BRT de 15/11/2026.
 
 **Critério de saída:** seis casos retestados em versão identificada, sem persistência inválida ou duplicada e sem HTTP 500.
 
-## Inclusão CT-RF71 a CT-RF73 — Buscas de Colaboradores
+## Inclusão CT-RF97 a CT-RF99 — Buscas de Colaboradores
 
 | Caso | Técnica | Resultado | Reteste mínimo |
 | --- | --- | --- | --- |
-| [CT-RF71](Cenario_Teste/CT-RF71_Busca_Nome_Colaborador_Paginacao.md) | Filtro e paginação | Reprovado — BUG-033 | Nome com uma e várias páginas; avançar, voltar, alterar e limpar o filtro. |
-| [CT-RF72](Cenario_Teste/CT-RF72_Busca_Codigo_Existente_Colaborador.md) | Partição válida / correspondência exata | Aprovado conforme a gravação | Códigos existentes no início, meio e fim da base; conferir registro único. |
-| [CT-RF73](Cenario_Teste/CT-RF73_Busca_Codigo_Inexistente_Colaborador.md) | Partição inválida / estado vazio | Reprovado — BUG-034 | Código inexistente, limites e nova busca válida após o estado vazio. |
+| [CT-RF97](Cenario_Teste/CT-RF97_Busca_Nome_Colaborador_Paginacao.md) | Filtro e paginação | Reprovado — BUG-033 | Nome com uma e várias páginas; avançar, voltar, alterar e limpar o filtro. |
+| [CT-RF98](Cenario_Teste/CT-RF98_Busca_Codigo_Existente_Colaborador.md) | Partição válida / correspondência exata | Aprovado conforme a gravação | Códigos existentes no início, meio e fim da base; conferir registro único. |
+| [CT-RF99](Cenario_Teste/CT-RF99_Busca_Codigo_Inexistente_Colaborador.md) | Partição inválida / estado vazio | Reprovado — BUG-034 | Código inexistente, limites e nova busca válida após o estado vazio. |
 
 **Ambiente gravado:** `sifit.centrion.com.br/colaboradores`, Edge 157.0.8103.80 em Windows 11. As gravações ocorreram entre 21:58 e 22:01 BRT de 15/11/2026.
 
@@ -1306,33 +933,33 @@ Os entregáveis são a análise RF01–RF35, RF38–RF62 e RF65–RF165, este pl
 
 ---
 
-## Inclusão de 16/11/2026 — CT-RF74 a CT-RF84
+## Inclusão de 16/11/2026 — CT-RF61 a CT-RF70
 
-CT-RF74–CT-RF84 acrescentam oito aprovações e três reprovações conforme os resumos fornecidos, com BUG-035–BUG-037 em triagem. CT-RF83 mantém a classificação do relato, condicionada à confirmação da regra de obrigatoriedade. Os dez casos anteriores a validar permanecem inalterados.
+CT-RF61–CT-RF70 acrescentam oito aprovações e três reprovações conforme os resumos fornecidos, com BUG-035–BUG-037 em triagem. CT-RF69 mantém a classificação do relato, condicionada à confirmação da regra de obrigatoriedade. Os dez casos anteriores a validar permanecem inalterados.
 
 77 casos documentados: 26 aprovados, 41 reprovados e 10 a validar; 37 defeitos registrados (10 abertos e 27 em triagem) e 41 casos com reteste corretivo pendente.
 
 | Caso | Evidência local | Próxima ação |
 | --- | --- | --- |
-| [CT-RF74](Cenario_Teste/CT-RF74_Temas_Prospeccao.md) | [Evidências](Evidencias/CT-RF74_Temas_Prospeccao/README.md) | Repetir a alternância com listagem conhecida; verificar persistência após recarga em execução complementar. |
-| [CT-RF75](Cenario_Teste/CT-RF75_Detalhes_Lead_Cancelamento.md) | [Evidências](Evidencias/CT-RF75_Detalhes_Lead_Cancelamento/README.md) | Reabrir o lead após cancelar e comparar o telefone com o valor original. |
-| [CT-RF76](Cenario_Teste/CT-RF76_Exclusao_Leads_Confirmacao.md) | [Evidências](Evidencias/CT-RF76_Exclusao_Leads_Confirmacao/README.md) | Repetir com registros descartáveis e testar também o cancelamento da confirmação. |
-| [CT-RF77](Cenario_Teste/CT-RF77_Cadastro_Lead_Novo_Contato.md) | [Evidências](Evidencias/CT-RF77_Cadastro_Lead_Novo_Contato/README.md) | Repetir o cadastro e conferir campos e estágio após reabertura. |
-| [CT-RF78](Cenario_Teste/CT-RF78_Cadastro_Lead_Interessado.md) | [Evidências](Evidencias/CT-RF78_Cadastro_Lead_Interessado/README.md) | Repetir o cadastro e conferir os dados após reabertura. |
-| [CT-RF79](Cenario_Teste/CT-RF79_Cadastro_Lead_Aula_Experimental.md) | [Evidências](Evidencias/CT-RF79_Cadastro_Lead_Aula_Experimental/README.md) | Repetir o cadastro e conferir estágio, total e dados após reabertura. |
-| [CT-RF80](Cenario_Teste/CT-RF80_Cadastro_Lead_Proposta.md) | [Evidências](Evidencias/CT-RF80_Cadastro_Lead_Proposta/README.md) | Repetir o cadastro e conferir estágio e dados após reabertura. |
-| [CT-RF81](Cenario_Teste/CT-RF81_Cadastro_Bandeira_Parcela_Listagem.md) | [Evidências](Evidencias/CT-RF81_Cadastro_Bandeira_Parcela_Listagem/README.md) | Investigar a divergência criação/consulta; retestar listagem, reabertura e recarga com e sem parcela. |
-| [CT-RF82](Cenario_Teste/CT-RF82_Tema_Escuro_Bandeiras.md) | [Evidências](Evidencias/CT-RF82_Tema_Escuro_Bandeiras/README.md) | Revisar os estilos da página e retestar Claro/Escuro com lista vazia e preenchida; medir contraste separadamente. |
-| [CT-RF83](Cenario_Teste/CT-RF83_Cadastro_Lead_Apenas_Nome.md) | [Evidências](Evidencias/CT-RF83_Cadastro_Lead_Apenas_Nome/README.md) | Confirmar obrigatoriedade com produto antes de definir correção; testar campos isolados, envio completo e ausência de criação inválida. |
-| [CT-RF84](Cenario_Teste/CT-RF84_Cadastro_Lead_Fechado.md) | [Evidências](Evidencias/CT-RF84_Cadastro_Lead_Fechado/README.md) | Repetir o cadastro e conferir os dados após reabertura; capturar o corpo da resposta de salvamento. |
+| [CT-RF61](Cenario_Teste/CT-RF61_Temas_Prospeccao.md) | [Evidências](Evidencias/CT-RF74_Temas_Prospeccao/README.md) | Repetir a alternância com listagem conhecida; verificar persistência após recarga em execução complementar. |
+| [CT-RF73](Cenario_Teste/CT-RF73_Detalhes_Lead_Cancelamento.md) | [Evidências](Evidencias/CT-RF75_Detalhes_Lead_Cancelamento/README.md) | Reabrir o lead após cancelar e comparar o telefone com o valor original. |
+| [CT-RF74](Cenario_Teste/CT-RF74_Exclusao_Leads_Confirmacao.md) | [Evidências](Evidencias/CT-RF76_Exclusao_Leads_Confirmacao/README.md) | Repetir com registros descartáveis e testar também o cancelamento da confirmação. |
+| [CT-RF65](Cenario_Teste/CT-RF65_Cadastro_Lead_Novo_Contato.md) | [Evidências](Evidencias/CT-RF77_Cadastro_Lead_Novo_Contato/README.md) | Repetir o cadastro e conferir campos e estágio após reabertura. |
+| [CT-RF66](Cenario_Teste/CT-RF66_Cadastro_Lead_Interessado.md) | [Evidências](Evidencias/CT-RF78_Cadastro_Lead_Interessado/README.md) | Repetir o cadastro e conferir os dados após reabertura. |
+| [CT-RF67](Cenario_Teste/CT-RF67_Cadastro_Lead_Aula_Experimental.md) | [Evidências](Evidencias/CT-RF79_Cadastro_Lead_Aula_Experimental/README.md) | Repetir o cadastro e conferir estágio, total e dados após reabertura. |
+| [CT-RF68](Cenario_Teste/CT-RF68_Cadastro_Lead_Proposta.md) | [Evidências](Evidencias/CT-RF80_Cadastro_Lead_Proposta/README.md) | Repetir o cadastro e conferir estágio e dados após reabertura. |
+| [CT-RF89](Cenario_Teste/CT-RF89_Cadastro_Bandeira_Parcela_Listagem.md) | [Evidências](Evidencias/CT-RF81_Cadastro_Bandeira_Parcela_Listagem/README.md) | Investigar a divergência criação/consulta; retestar listagem, reabertura e recarga com e sem parcela. |
+| [CT-RF90](Cenario_Teste/CT-RF90_Tema_Escuro_Bandeiras.md) | [Evidências](Evidencias/CT-RF82_Tema_Escuro_Bandeiras/README.md) | Revisar os estilos da página e retestar Claro/Escuro com lista vazia e preenchida; medir contraste separadamente. |
+| [CT-RF69](Cenario_Teste/CT-RF69_Cadastro_Lead_Apenas_Nome.md) | [Evidências](Evidencias/CT-RF83_Cadastro_Lead_Apenas_Nome/README.md) | Confirmar obrigatoriedade com produto antes de definir correção; testar campos isolados, envio completo e ausência de criação inválida. |
+| [CT-RF70](Cenario_Teste/CT-RF70_Cadastro_Lead_Fechado.md) | [Evidências](Evidencias/CT-RF84_Cadastro_Lead_Fechado/README.md) | Repetir o cadastro e conferir os dados após reabertura; capturar o corpo da resposta de salvamento. |
 
 ---
 
-## Inclusão CT-RF60 — Modelos de Anamnese
+## Inclusão CT-RF101 — Modelos de Anamnese
 
 | Caso | Técnica | Resultado | Reteste mínimo |
 | --- | --- | --- | --- |
-| [CT-RF60](Cenario_Teste/CT-RF60_Gestao_Modelos_Anamnese.md) | Fluxo exploratório / CRUD completo | Aprovado conforme a gravação | Repetir busca, filtro, cadastro com perguntas do banco, edição e exclusão em versão identificada, confirmando os corpos de requisição e resposta. |
+| [CT-RF101](Cenario_Teste/CT-RF101_Gestao_Modelos_Anamnese.md) | Fluxo exploratório / CRUD completo | Aprovado conforme a gravação | Repetir busca, filtro, cadastro com perguntas do banco, edição e exclusão em versão identificada, confirmando os corpos de requisição e resposta. |
 
 **Ambiente gravado:** `sifit.centrion.com.br`, backend `backendsifit.centrion.com.br`, Chrome 157 em Windows 11 conforme cabeçalhos; versão da aplicação e zoom não confirmados. A gravação ocorreu às 23h34 BRT de 15/11/2026.
 
@@ -1340,11 +967,11 @@ CT-RF74–CT-RF84 acrescentam oito aprovações e três reprovações conforme o
 
 ---
 
-## Inclusão CT-RF61 — Categorias de Anamnese
+## Inclusão CT-RF102 — Categorias de Anamnese
 
 | Caso | Técnica | Resultado | Reteste mínimo |
 | --- | --- | --- | --- |
-| [CT-RF61](Cenario_Teste/CT-RF61_Gestao_Categorias_Anamnese.md) | Fluxo exploratório / CRUD completo, incluindo cancelamento de edição | Aprovado conforme a gravação | Repetir filtro por status, busca, cadastro, edição (ícone, nome e status), cancelamento de edição e exclusão em versão identificada, confirmando os corpos de requisição e resposta ainda não capturados. |
+| [CT-RF102](Cenario_Teste/CT-RF102_Gestao_Categorias_Anamnese.md) | Fluxo exploratório / CRUD completo, incluindo cancelamento de edição | Aprovado conforme a gravação | Repetir filtro por status, busca, cadastro, edição (ícone, nome e status), cancelamento de edição e exclusão em versão identificada, confirmando os corpos de requisição e resposta ainda não capturados. |
 
 **Ambiente gravado:** `sifit.centrion.com.br`, backend `backendsifit.centrion.com.br`, Chrome 157 em Windows 11 conforme cabeçalhos; versão da aplicação e zoom não confirmados. A gravação ocorreu às 15h24 BRT de 16/11/2026.
 
@@ -1352,11 +979,11 @@ CT-RF74–CT-RF84 acrescentam oito aprovações e três reprovações conforme o
 
 ---
 
-## Inclusão CT-RF62 — Perguntas Anamnese
+## Inclusão CT-RF103 — Perguntas Anamnese
 
 | Caso | Técnica | Resultado | Reteste mínimo |
 | --- | --- | --- | --- |
-| [CT-RF62](Cenario_Teste/CT-RF62_Edicao_Pergunta_Anamnese.md) | Fluxo exploratório / cadastro e edição | Reprovado nas evidências — [BUG-044](Relatorio-de-Bugs.md#bug-044) | Investigar a rotina de `alterar` com acesso a logs e ao código; repetir a edição do tipo de resposta e do status em versão corrigida, confirmando a persistência. |
+| [CT-RF103](Cenario_Teste/CT-RF103_Edicao_Pergunta_Anamnese.md) | Fluxo exploratório / cadastro e edição | Reprovado nas evidências — [BUG-044](Relatorio-de-Bugs.md#bug-044) | Investigar a rotina de `alterar` com acesso a logs e ao código; repetir a edição do tipo de resposta e do status em versão corrigida, confirmando a persistência. |
 
 **Ambiente gravado:** `sifit.centrion.com.br`, backend `backendsifit.centrion.com.br`, Chrome 157 em Windows 11 conforme cabeçalhos; versão da aplicação e zoom não confirmados. A gravação ocorreu às 15h57 BRT de 16/11/2026.
 

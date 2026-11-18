@@ -1,99 +1,99 @@
 # 🐞 Relatório de Bugs — SIFIT
 
-**Escopo:** defeitos de 161 casos documentados (CT-RF01–CT-RF35, CT-RF38–CT-RF62 e CT-RF65–CT-RF165): recuperação, Perfil, Clientes, financeiro, página inicial e dashboard, tema, modalidades, categorias, avaliações, exercícios, grupos musculares, objetivos de treino, SifitBox – Turmas, Pagar.me, configurações, despesas fixas, relatórios, grupos (treino), fichas de anamnese, colaboradores, modelos de anamnese, categorias de anamnese, perguntas de anamnese, Prospecção, Bandeiras de Cartão, Contas a Pagar, Modelos de Contrato, Planos, Tipos de Pagamento, Modelos de Ficha, Central de Automações, Integrações de WhatsApp e Configurações de Avaliação, Aniversário, Pagamento, Design e Biometria, além de Aplicativo. CT-RF60 (Modelos de Anamnese) e CT-RF61 (Categorias de Anamnese) são aprovados conforme a gravação, sem defeito identificado. CT-RF62 (Perguntas Anamnese) é reprovado nas evidências e acrescenta o BUG-044 (44 defeitos registrados).
+**Escopo:** defeitos de 161 casos documentados (CT-RF04–CT-RF33, CT-RF40–CT-RF103 e CT-RF91–CT-RF148): recuperação, Perfil, Clientes, financeiro, página inicial e dashboard, tema, modalidades, categorias, avaliações, exercícios, grupos musculares, objetivos de treino, SifitBox – Turmas, Pagar.me, configurações, despesas fixas, relatórios, grupos (treino), fichas de anamnese, colaboradores, modelos de anamnese, categorias de anamnese, perguntas de anamnese, Prospecção, Bandeiras de Cartão, Contas a Pagar, Modelos de Contrato, Planos, Tipos de Pagamento, Modelos de Ficha, Central de Automações, Integrações de WhatsApp e Configurações de Avaliação, Aniversário, Pagamento, Design e Biometria, além de Aplicativo. CT-RF101 (Modelos de Anamnese) e CT-RF102 (Categorias de Anamnese) são aprovados conforme a gravação, sem defeito identificado. CT-RF103 (Perguntas Anamnese) é reprovado nas evidências e acrescenta o BUG-044 (44 defeitos registrados).
 
-**Ambientes:** CT-RF01 em https://sifitalfa.centrion.com.br/login; CT-RF02_ERRO em https://sifit.centrion.com.br/profile. CT-RF03: URL do frontend não confirmada; backend informado em `https://backendsifit.centrion.com.br/api/clientesPorNome/1`.
+**Ambientes:** CT-RF04 em https://sifitalfa.centrion.com.br/login; CT-RF05_ERRO em https://sifit.centrion.com.br/profile. CT-RF09: URL do frontend não confirmada; backend informado em `https://backendsifit.centrion.com.br/api/clientesPorNome/1`.
 
-**Datas das gravações do Jam:** CT-RF01 em 23/10/2026; CT-RF02_ERRO em 22/10/2026 às 21:45 BRT; CT-RF03 não confirmada.
+**Datas das gravações do Jam:** CT-RF04 em 23/10/2026; CT-RF05_ERRO em 22/10/2026 às 21:45 BRT; CT-RF09 não confirmada.
 
-**Atualização documental:** 18/11/2026 — 54 defeitos registrados: 10 abertos (BUG-001 a BUG-010) e 44 em triagem (BUG-011 a BUG-054). BUG-019 registra o HTTP 500 no cadastro de objetivo de treino, BUG-020 a ausência de retorno visível no cadastro de turma sem modalidade, BUG-024 e BUG-025 cobrem Grupos (treino), BUG-026–BUG-031 cobrem Colaboradores e BUG-032 o HTTP 500 no cadastro de anamnese (aplicar e rascunho), todos sem causa técnica confirmada. CT-RF60 (Modelos de Anamnese) e CT-RF61 (Categorias de Anamnese), incluídos em 16/11/2026, são aprovados conforme a gravação e não geram novo defeito. BUG-038 a BUG-041 cobrem Prospecção (telefone), Contas a Pagar, Modelos de Contrato e Planos; BUG-042 e BUG-043 cobrem Tipos de Pagamento (status e exclusão); BUG-044, também em 16/11/2026, registra o HTTP 500 na edição do tipo de resposta de pergunta de anamnese (CT-RF62); BUG-035 e BUG-036 cobrem Bandeiras; BUG-037 registra o relato de cadastro de lead apenas com nome, com regra a confirmar. As análises anteriores foram preservadas.
+**Atualização documental:** 18/11/2026 — 54 defeitos registrados: 10 abertos (BUG-001 a BUG-010) e 44 em triagem (BUG-011 a BUG-054). BUG-019 registra o HTTP 500 no cadastro de objetivo de treino, BUG-020 a ausência de retorno visível no cadastro de turma sem modalidade, BUG-024 e BUG-025 cobrem Grupos (treino), BUG-026–BUG-031 cobrem Colaboradores e BUG-032 o HTTP 500 no cadastro de anamnese (aplicar e rascunho), todos sem causa técnica confirmada. CT-RF101 (Modelos de Anamnese) e CT-RF102 (Categorias de Anamnese), incluídos em 16/11/2026, são aprovados conforme a gravação e não geram novo defeito. BUG-038 a BUG-041 cobrem Prospecção (telefone), Contas a Pagar, Modelos de Contrato e Planos; BUG-042 e BUG-043 cobrem Tipos de Pagamento (status e exclusão); BUG-044, também em 16/11/2026, registra o HTTP 500 na edição do tipo de resposta de pergunta de anamnese (CT-RF103); BUG-035 e BUG-036 cobrem Bandeiras; BUG-037 registra o relato de cadastro de lead apenas com nome, com regra a confirmar. As análises anteriores foram preservadas.
 
-**Gravação de CT-RF104–CT-RF108:** 15/11/2026, Tipos de Pagamento, 22:03 BRT, Chrome 157.0.8103.78 / Windows 11; uma única gravação; evidência e limites no BUG-042 e no BUG-043.
+**Gravação de CT-RF84–CT-RF88:** 15/11/2026, Tipos de Pagamento, 22:03 BRT, Chrome 157.0.8103.78 / Windows 11; uma única gravação; evidência e limites no BUG-042 e no BUG-043.
 
-**Gravação de CT-RF99–CT-RF103:** 15/11/2026, Planos, 21:54 BRT, Chrome 157.0.8103.78 / Windows 11; uma única gravação; evidência e limites no BUG-041.
+**Gravação de CT-RF77–CT-RF80:** 15/11/2026, Planos, 21:54 BRT, Chrome 157.0.8103.78 / Windows 11; uma única gravação; evidência e limites no BUG-041.
 
-**Gravação de CT-RF96–CT-RF98:** 15/11/2026, Modelos de Contrato, 21:55 BRT, Chrome 157.0.8103.78 / Windows 11; uma única gravação; evidência e limites no BUG-040.
+**Gravação de CT-RF82–CT-RF83:** 15/11/2026, Modelos de Contrato, 21:55 BRT, Chrome 157.0.8103.78 / Windows 11; uma única gravação; evidência e limites no BUG-040.
 
-**Gravação de CT-RF91–CT-RF95:** 15/11/2026, Contas a Pagar, 21:58 BRT, Chrome 157.0.8103.78 / Windows 11; uma única gravação; evidência e limites no BUG-039.
+**Gravação de CT-RF16–CT-RF20:** 15/11/2026, Contas a Pagar, 21:58 BRT, Chrome 157.0.8103.78 / Windows 11; uma única gravação; evidência e limites no BUG-039.
 
-**Gravação de CT-RF85–CT-RF90:** 15/11/2026, Prospecção, 21:52 BRT, Chrome 157.0.8103.78 / Windows 11; uma única gravação; evidência e limites no BUG-038.
+**Gravação de CT-RF62–CT-RF75:** 15/11/2026, Prospecção, 21:52 BRT, Chrome 157.0.8103.78 / Windows 11; uma única gravação; evidência e limites no BUG-038.
 
-**Gravação de CT-RF57 e CT-RF58:** 15/11/2026, Grupos, 21h03 BRT, Chrome 157.0.8103.78 / Windows 11; mesma gravação, evidências e limites no BUG-024 e no BUG-025. **Gravação de CT-RF59:** 15/11/2026, Fichas de Anamnese, 22h07 BRT, Chrome 157.0.8103.78 / Windows 11; evidências e limites no BUG-032. **Gravações de CT-RF65–CT-RF70:** 15/11/2026, Colaboradores, entre 22:06 e 22:13 BRT, Chrome 157.0.8103.78 / Windows 11; evidências e limites no BUG-026 a BUG-031. **Gravação de CT-RF60:** 15/11/2026, Modelos de Anamnese, 23h34 BRT, Chrome 157.0.8103.78 / Windows 11; aprovada conforme a gravação, sem defeito — ver [CT-RF60](Cenario_Teste/CT-RF60_Gestao_Modelos_Anamnese.md). **Gravação de CT-RF61:** 16/11/2026, Categorias de Anamnese, 15h24 BRT, Chrome 157.0.8103.78 / Windows 11; aprovada conforme a gravação, sem defeito — ver [CT-RF61](Cenario_Teste/CT-RF61_Gestao_Categorias_Anamnese.md). **Gravação de CT-RF62:** 16/11/2026, Perguntas Anamnese, 15h57 BRT, Chrome 157.0.8103.78 / Windows 11; reprovada nas evidências, com o BUG-044 — ver [CT-RF62](Cenario_Teste/CT-RF62_Edicao_Pergunta_Anamnese.md).
+**Gravação de CT-RF34 e CT-RF35:** 15/11/2026, Grupos, 21h03 BRT, Chrome 157.0.8103.78 / Windows 11; mesma gravação, evidências e limites no BUG-024 e no BUG-025. **Gravação de CT-RF100:** 15/11/2026, Fichas de Anamnese, 22h07 BRT, Chrome 157.0.8103.78 / Windows 11; evidências e limites no BUG-032. **Gravações de CT-RF91–CT-RF96:** 15/11/2026, Colaboradores, entre 22:06 e 22:13 BRT, Chrome 157.0.8103.78 / Windows 11; evidências e limites no BUG-026 a BUG-031. **Gravação de CT-RF101:** 15/11/2026, Modelos de Anamnese, 23h34 BRT, Chrome 157.0.8103.78 / Windows 11; aprovada conforme a gravação, sem defeito — ver [CT-RF101](Cenario_Teste/CT-RF101_Gestao_Modelos_Anamnese.md). **Gravação de CT-RF102:** 16/11/2026, Categorias de Anamnese, 15h24 BRT, Chrome 157.0.8103.78 / Windows 11; aprovada conforme a gravação, sem defeito — ver [CT-RF102](Cenario_Teste/CT-RF102_Gestao_Categorias_Anamnese.md). **Gravação de CT-RF103:** 16/11/2026, Perguntas Anamnese, 15h57 BRT, Chrome 157.0.8103.78 / Windows 11; reprovada nas evidências, com o BUG-044 — ver [CT-RF103](Cenario_Teste/CT-RF103_Edicao_Pergunta_Anamnese.md).
 
 **Padronização documental:** 13/11/2026, sem alteração do status dos defeitos.
 
-**Caso aprovado incluído em 13/11/2026:** [CT-RF04_loginComSucesso](Cenario_Teste/CT-RF04_loginComSucesso.md), vinculado ao RF04, não gerou defeito para o fluxo avaliado. O [Jam de login](https://jam.dev/c/5e4a28be-4e80-43d3-9587-1b113723cc38) mostra acesso ao dashboard após autenticação. Essa aprovação não altera os três bugs existentes; resultados e limites constam no [relatório dos testes](Relatorio%20dos%20testes.md).
+**Caso aprovado incluído em 13/11/2026:** [CT-RF01_loginComSucesso](Cenario_Teste/CT-RF01_loginComSucesso.md), vinculado ao RF01, não gerou defeito para o fluxo avaliado. O [Jam de login](https://jam.dev/c/5e4a28be-4e80-43d3-9587-1b113723cc38) mostra acesso ao dashboard após autenticação. Essa aprovação não altera os três bugs existentes; resultados e limites constam no [relatório dos testes](Relatorio%20dos%20testes.md).
 
-**Gravação de CT-RF42–CT-RF45:** 15/11/2026, Pagar.me e Configurações, 19:06 BRT, Chrome 157.0.8103.78 / Windows 11; uma única gravação; evidência e limites no BUG-021.
+**Gravação de CT-RF47–CT-RF49:** 15/11/2026, Pagar.me e Configurações, 19:06 BRT, Chrome 157.0.8103.78 / Windows 11; uma única gravação; evidência e limites no BUG-021.
 
-**Gravação de CT-RF50–CT-RF56:** 15/11/2026, Relatórios, 19:09 BRT, Chrome 157.0.8103.78 / Windows 11; uma única gravação e oito arquivos PDF baixados; evidência e limites no BUG-022 e no BUG-023.
+**Gravação de CT-RF54–CT-RF60:** 15/11/2026, Relatórios, 19:09 BRT, Chrome 157.0.8103.78 / Windows 11; uma única gravação e oito arquivos PDF baixados; evidência e limites no BUG-022 e no BUG-023.
 
-**Gravação de CT-RF39–CT-RF41:** 15/11/2026, SifitBox – Turmas, 18:51 BRT, Chrome 157.0.8103.78 / Windows 11; uma única gravação; evidência e limites no BUG-020.
+**Gravação de CT-RF44–CT-RF46:** 15/11/2026, SifitBox – Turmas, 18:51 BRT, Chrome 157.0.8103.78 / Windows 11; uma única gravação; evidência e limites no BUG-020.
 
-**Gravação de CT-RF35:** 15/11/2026, Objetivos Treino, 18:13 BRT, Chrome 157.0.8103.78 / Windows 11; evidência e limites no BUG-019.
+**Gravação de CT-RF33:** 15/11/2026, Objetivos Treino, 18:13 BRT, Chrome 157.0.8103.78 / Windows 11; evidência e limites no BUG-019.
 
-**Gravação de CT-RF21:** 15/11/2026, Avaliações, início às 15:07:51,265 BRT; evidência e limites no BUG-010.
+**Gravação de CT-RF10:** 15/11/2026, Avaliações, início às 15:07:51,265 BRT; evidência e limites no BUG-010.
 
-**Novas gravações de CT-RF05–CT-RF20:** 14/11/2026, Chrome 157.0.8103.51 / Windows 11, no domínio `sifit.centrion.com.br`. Cada cenário registra página, horário e limites. A inclusão é documental, sem nova execução ou reteste.
+**Novas gravações de CT-RF02–CT-RF39:** 14/11/2026, Chrome 157.0.8103.51 / Windows 11, no domínio `sifit.centrion.com.br`. Cada cenário registra página, horário e limites. A inclusão é documental, sem nova execução ou reteste.
 
 ## 📋 Resumo dos defeitos
 
 | ID | Funcionalidade afetada | Severidade / prioridade | Status | Caso relacionado |
 | --- | --- | --- | --- | --- |
-| [BUG-001](#bug-001--link-esqueci-minha-senha-não-executa-nenhuma-ação) | Recuperação de senha | Alta / Alta | Aberto | [CT-RF01](Cenario_Teste/CT-RF01_Esqueci-senha.md) |
-| [BUG-002](#bug-002--perfil-com-dados-fictícios-campos-ausentes-e-layout-desconfigurado) | Perfil do usuário | Alta / Alta, propostas | Aberto | [CT-RF02_ERRO](Cenario_Teste/CT-RF02_ERRO.md) |
-| [BUG-003](#bug-003--filtros-combinados-da-página-clientes-não-restringem-a-listagem) | Filtros de Clientes | Alta / Alta, propostas | Aberto | [CT-RF03](Cenario_Teste/CT-RF03_FILTRO_TelaClientes.md) |
-| [BUG-004](#bug-004) | Exportar não oferece retorno visível no financeiro | Média / Média, propostas | Aberto | [CT-RF07](Cenario_Teste/CT-RF07_Exportacao_Financeiro.md) |
-| [BUG-005](#bug-005) | Contadores financeiros divergem das mensalidades acessíveis | Alta / Alta, propostas | Aberto | [CT-RF09](Cenario_Teste/CT-RF09_Contagem_Mensalidades.md) e [CT-RF10](Cenario_Teste/CT-RF10_Filtro_Mensalidades.md) |
-| [BUG-006](#bug-006) | Seletor de período permite intervalo com datas invertidas | Média / Média, propostas | Aberto | [CT-RF12](Cenario_Teste/CT-RF12_Periodo_Dashboard.md) |
-| [BUG-007](#bug-007) | Tema escuro reduz a legibilidade das tabelas de Box – Turmas | Média / Média, propostas | Aberto | [CT-RF14](Cenario_Teste/CT-RF14_Contraste_TemaEscuro.md) |
-| [BUG-008](#bug-008) | Edição de modalidade não apresenta ação clara para salvar | Média / Média, propostas | Aberto | [CT-RF15](Cenario_Teste/CT-RF15_Edicao_Modalidade.md) |
-| [BUG-009](#bug-009) | Exclusão de categoria retorna HTTP 500 e mensagem genérica | Média / Alta, propostas | Aberto | [CT-RF19](Cenario_Teste/CT-RF19_Exclusao_Categoria.md) |
-| [BUG-010](#bug-010) | Cadastro de avaliação retorna HTTP 500 | Alta / Alta, propostas | Aberto | [CT-RF21](Cenario_Teste/CT-RF21_Cadastro_Avaliacao.md) |
-| [BUG-011](#bug-011) | Campo Código do exercício não aceita digitação conforme o relato | Média / Média, propostas | Em triagem — confirmação pendente | [CT-RF22](Cenario_Teste/CT-RF22_Digitacao_Codigo_Exercicio.md) |
-| [BUG-012](#bug-012) | Edição de exercício aumenta o total e mantém duas entradas | Média / Média, propostas | Em triagem — confirmação pendente | [CT-RF24](Cenario_Teste/CT-RF24_Edicao_Exercicio.md) |
-| [BUG-013](#bug-013) | Campos obrigatórios vazios sem feedback de validação | Média / Alta, propostas | Em triagem — persistência não confirmada | [CT-RF26](Cenario_Teste/CT-RF26_Exercicio_Campos_Vazios.md) |
-| [BUG-014](#bug-014) | Vídeo rejeitado no campo Imagem sem feedback | Baixa / Média, propostas | Em triagem — MIME não confirmado | [CT-RF27](Cenario_Teste/CT-RF27_Video_Campo_Imagem.md) |
-| [BUG-015](#bug-015) | Imagem rejeitada no campo Vídeo sem feedback | Baixa / Média, propostas | Em triagem — MIME não confirmado | [CT-RF28](Cenario_Teste/CT-RF28_Imagem_Campo_Video.md) |
-| [BUG-016](#bug-016) | Exclusão de grupo muscular retorna HTTP 500 e mensagem genérica | Média / Alta, propostas | Em triagem — causa não determinada | [CT-RF29](Cenario_Teste/CT-RF29_Exclusao_GrupoMuscular.md) |
-| [BUG-017](#bug-017) | Imagens dos grupos musculares não são exibidas e retornam HTTP 422 | Média / Média, propostas | Em triagem — causa não determinada | [CT-RF30](Cenario_Teste/CT-RF30_Imagens_GruposMusculares.md) |
-| [BUG-018](#bug-018) | Dashboard apresenta múltiplos HTTP 500 durante o carregamento | Alta / Alta, propostas | Em triagem — causa não determinada | [CT-RF34](Cenario_Teste/CT-RF34_Erro_Servidor_Excesso_Requisicoes.md) |
-| [BUG-019](#bug-019) | Cadastro de objetivo de treino retorna HTTP 500 | Alta / Alta, propostas | Em triagem — causa não determinada | [CT-RF35](Cenario_Teste/CT-RF35_Cadastro_Objetivo_Treino.md) |
-| [BUG-020](#bug-020) | Cadastro de turma sem modalidade não apresenta retorno visível | Média / Alta, propostas | Em triagem — validação nativa não confirmada | [CT-RF41](Cenario_Teste/CT-RF41_Cadastro_Turma_Sem_Modalidade.md) |
-| [BUG-021](#bug-021) | Painel Pagar.me mantém Recebimentos e gráfico ao trocar o período | Média / Média, propostas | Em triagem — dados reais ou de demonstração não confirmados | [CT-RF45](Cenario_Teste/CT-RF45_Painel_PagarMe_Periodo.md) |
-| [BUG-022](#bug-022) | Relatório de Contas a Receber exibe "----" em Valor a Receber | Alta / Alta, propostas | Em triagem — origem do valor e comparação com o módulo não confirmadas | [CT-RF51](Cenario_Teste/CT-RF51_Relatorio_Contas_Receber.md) |
-| [BUG-023](#bug-023) | Relatórios de Avaliações, Clientes, Colaboradores e Caixas geram arquivo PDF vazio (0 bytes) | Alta / Alta, propostas | Em triagem — correspondência dos arquivos inferida; causa não determinada | [CT-RF53](Cenario_Teste/CT-RF53_Relatorio_Avaliacoes_Vazio.md), [CT-RF54](Cenario_Teste/CT-RF54_Relatorio_Clientes_Vazio.md), [CT-RF55](Cenario_Teste/CT-RF55_Relatorio_Colaboradores_Vazio.md) e [CT-RF56](Cenario_Teste/CT-RF56_Relatorio_Caixas_Vazio.md) |
-| [BUG-024](#bug-024) | Exclusão de grupo retorna HTTP 500 e mensagem genérica | Média / Alta, propostas | Em triagem — causa não determinada | [CT-RF57](Cenario_Teste/CT-RF57_Exclusao_Grupo.md) |
-| [BUG-025](#bug-025) | Edição de grupo não persiste o campo status apesar de retorno de sucesso | Média / Alta, propostas | Em triagem — causa não determinada | [CT-RF58](Cenario_Teste/CT-RF58_Edicao_Grupo.md) |
-| [BUG-026](#bug-026) | Data de nascimento futura aceita na edição | Alta / Alta, propostas | Em triagem | [CT-RF65](Cenario_Teste/CT-RF65_Data_Nascimento_Futura_Colaborador.md) |
-| [BUG-027](#bug-027) | Data de nascimento obrigatória vazia aceita | Alta / Alta, propostas | Em triagem | [CT-RF66](Cenario_Teste/CT-RF66_Data_Nascimento_Obrigatoria_Colaborador.md) |
-| [BUG-028](#bug-028) | CREF aceita texto fora do formato esperado | Média / Média, propostas | Em triagem — formato a confirmar | [CT-RF67](Cenario_Teste/CT-RF67_CREF_Formato_Colaborador.md) |
-| [BUG-029](#bug-029) | Edição aceita campo obrigatório vazio | Alta / Alta, propostas | Em triagem | [CT-RF68](Cenario_Teste/CT-RF68_Edicao_Colaborador_Campo_Obrigatorio_Vazio.md) |
-| [BUG-030](#bug-030) | Mesma função pode ser associada repetidamente | Média / Alta, propostas | Em triagem | [CT-RF69](Cenario_Teste/CT-RF69_Funcao_Duplicada_Colaborador.md) |
-| [BUG-031](#bug-031) | Exclusão de colaborador retorna HTTP 500 | Alta / Alta, propostas | Em triagem — causa não determinada | [CT-RF70](Cenario_Teste/CT-RF70_Exclusao_Colaborador_Erro_500.md) |
-| [BUG-032](#bug-032) | Cadastro de anamnese retorna HTTP 500 ao salvar ou aplicar | Média / Alta, propostas | Em triagem — causa não determinada | [CT-RF59](Cenario_Teste/CT-RF59_Cadastro_Anamnese.md) |
-| [BUG-033](#bug-033) | Busca por nome perde o filtro ao avançar a página | Média / Alta, propostas | Em triagem — causa não determinada | [CT-RF71](Cenario_Teste/CT-RF71_Busca_Nome_Colaborador_Paginacao.md) |
-| [BUG-034](#bug-034) | Busca por código inexistente renderiza linha vazia | Média / Alta, propostas | Em triagem — causa não determinada | [CT-RF73](Cenario_Teste/CT-RF73_Busca_Codigo_Inexistente_Colaborador.md) |
-| [BUG-035](#bug-035) | Bandeira criada com parcela não aparece na listagem | Média / Alta, propostas | Em triagem — causa não determinada | [CT-RF81](Cenario_Teste/CT-RF81_Cadastro_Bandeira_Parcela_Listagem.md) |
-| [BUG-036](#bug-036) | Tema escuro aplicado de forma incompleta em Bandeiras | Média / Média, propostas | Em triagem — causa não determinada | [CT-RF82](Cenario_Teste/CT-RF82_Tema_Escuro_Bandeiras.md) |
-| [BUG-037](#bug-037) | Cadastro de lead aceito apenas com nome, com obrigatoriedade a confirmar | Média / Alta, propostas | Em triagem — obrigatoriedade a confirmar | [CT-RF83](Cenario_Teste/CT-RF83_Cadastro_Lead_Apenas_Nome.md) |
-| [BUG-038](#bug-038) | Telefone do lead aceita 30 dígitos sem máscara nem validação | Média / Média, propostas | Em triagem — regra do campo e validação no servidor não confirmadas | [CT-RF89](Cenario_Teste/CT-RF89_Telefone_Lead_Sem_Validacao.md) |
-| [BUG-039](#bug-039) | Conta a pagar a colaborador é cadastrada sem colaborador informado | Alta / Alta, propostas | Em triagem — regra de obrigatoriedade e validação no servidor não confirmadas | [CT-RF92](Cenario_Teste/CT-RF92_Cadastro_Conta_Colaborador_Sem_Colaborador.md) |
-| [BUG-040](#bug-040) | Listagem de modelos de contrato aparece vazia com 15 modelos retornados | Alta / Alta, propostas | Em triagem — causa de renderização não confirmada | [CT-RF98](Cenario_Teste/CT-RF98_Listagem_Modelos_Contrato_Vazia.md) |
-| [BUG-041](#bug-041) | Cartão Ativos de Planos aumenta ao cadastrar e editar planos inativos | Média / Média, propostas | Em triagem — regra de cálculo do cartão não confirmada | [CT-RF102](Cenario_Teste/CT-RF102_Contador_Ativos_Planos.md) |
-| [BUG-042](#bug-042) | Status do tipo de pagamento não é enviado nem refletido: todos aparecem Inativo | Média / Média, propostas | Em triagem — regra do status do tipo de pagamento não confirmada | [CT-RF105](Cenario_Teste/CT-RF105_Cadastro_Tipo_Pagamento_Status.md) |
-| [BUG-043](#bug-043) | Exclusão de tipo de pagamento em uso retorna HTTP 404 com erro SQL e mensagem genérica | Média / Média, propostas | Em triagem — regra de exclusão e tratamento do erro não confirmados | [CT-RF107](Cenario_Teste/CT-RF107_Exclusao_Tipo_Pagamento_Em_Uso.md) |
-| [BUG-044](#bug-044) | Edição do tipo de resposta de pergunta de anamnese retorna HTTP 500 | Alta / Alta, propostas | Em triagem — causa não determinada | [CT-RF62](Cenario_Teste/CT-RF62_Edicao_Pergunta_Anamnese.md) |
-| [BUG-045](#bug-045) | Cadastro de modelo de ficha com nome e personal retorna HTTP 500 | Alta / Alta, propostas | Em triagem. Causa a confirmar. | [CT-RF121](Cenario_Teste/CT-RF121_Cadastro_Modelo_Ficha_Erro_500.md) |
-| [BUG-046](#bug-046) | Configurações de Biometria exibem senha sem mascaramento | Alta / Alta, propostas | Em triagem. Reteste após correção. | [CT-RF124](Cenario_Teste/CT-RF124_Configuracoes_Abas_Biometria_Senha.md) |
-| [BUG-047](#bug-047) | Configurações aceitam e persistem dias de ausência negativos | Média / Média, propostas | Em triagem. Reteste após correção. | [CT-RF126](Cenario_Teste/CT-RF126_Configuracoes_Dias_Ausencia_Negativo.md) |
-| [BUG-048](#bug-048) | Configuração de Aniversariantes exibe prévia de risco de evasão | Média / Média, propostas | Em triagem. Reteste após correção. | [CT-RF129](Cenario_Teste/CT-RF129_Central_Aniversariantes_Previa_Risco.md) |
-| [BUG-049](#bug-049) | Contador de automações ativas mantém total anterior após ativar automação | Média / Média, propostas | Em triagem. Reteste após correção. | [CT-RF135](Cenario_Teste/CT-RF135_Central_Desativar_Risco_Evasao_Contador.md) e [CT-RF136](Cenario_Teste/CT-RF136_Central_Ativar_Aniversariantes_Contador.md) |
-| [BUG-050](#bug-050) | API de conexão do WhatsApp indica sucesso quando a tentativa falha | Média / Média, propostas | Em triagem. Reteste após correção. | [CT-RF143](Cenario_Teste/CT-RF143_Integracoes_WhatsApp_Conectar_Evolution.md) |
-| [BUG-051](#bug-051) | Configurações persiste código inválido na Cor Secundária | Média / Média, propostas | Em triagem. Reteste após correção. | [CT-RF148](Cenario_Teste/CT-RF148_Configuracoes_Design_Validar_Cor_Secundaria.md) |
-| [BUG-052](#bug-052) | Design omite o limite de 6 MB ao rejeitar o salvamento do logo | Baixa / Baixa, propostas | Em triagem. Reteste após correção. | [CT-RF149](Cenario_Teste/CT-RF149_Configuracoes_Design_Logo_Limite_Tamanho.md) |
-| [BUG-053](#bug-053) | Biometria persiste valor sem formato de IP no campo do aparelho | Média / Média, propostas | Em triagem. Reteste após correção. | [CT-RF163](Cenario_Teste/CT-RF163_Configuracoes_Biometria_Rejeitar_IP_Invalido.md) |
-| [BUG-054](#bug-054) | Biometria confirma salvamento de dias de bloqueio negativos sem informar a correção | Baixa / Baixa, propostas | Em triagem. Reteste após correção. | [CT-RF165](Cenario_Teste/CT-RF165_Configuracoes_Biometria_Validar_Dias_Bloqueio.md) |
+| [BUG-001](#bug-001--link-esqueci-minha-senha-não-executa-nenhuma-ação) | Recuperação de senha | Alta / Alta | Aberto | [CT-RF04](Cenario_Teste/CT-RF04_Esqueci-senha.md) |
+| [BUG-002](#bug-002--perfil-com-dados-fictícios-campos-ausentes-e-layout-desconfigurado) | Perfil do usuário | Alta / Alta, propostas | Aberto | [CT-RF05_ERRO](Cenario_Teste/CT-RF05_ERRO.md) |
+| [BUG-003](#bug-003--filtros-combinados-da-página-clientes-não-restringem-a-listagem) | Filtros de Clientes | Alta / Alta, propostas | Aberto | [CT-RF09](Cenario_Teste/CT-RF09_FILTRO_TelaClientes.md) |
+| [BUG-004](#bug-004) | Exportar não oferece retorno visível no financeiro | Média / Média, propostas | Aberto | [CT-RF11](Cenario_Teste/CT-RF11_Exportacao_Financeiro.md) |
+| [BUG-005](#bug-005) | Contadores financeiros divergem das mensalidades acessíveis | Alta / Alta, propostas | Aberto | [CT-RF12](Cenario_Teste/CT-RF12_Contagem_Mensalidades.md) e [CT-RF13](Cenario_Teste/CT-RF13_Filtro_Mensalidades.md) |
+| [BUG-006](#bug-006) | Seletor de período permite intervalo com datas invertidas | Média / Média, propostas | Aberto | [CT-RF06](Cenario_Teste/CT-RF06_Periodo_Dashboard.md) |
+| [BUG-007](#bug-007) | Tema escuro reduz a legibilidade das tabelas de Box – Turmas | Média / Média, propostas | Aberto | [CT-RF41](Cenario_Teste/CT-RF41_Contraste_TemaEscuro.md) |
+| [BUG-008](#bug-008) | Edição de modalidade não apresenta ação clara para salvar | Média / Média, propostas | Aberto | [CT-RF42](Cenario_Teste/CT-RF42_Edicao_Modalidade.md) |
+| [BUG-009](#bug-009) | Exclusão de categoria retorna HTTP 500 e mensagem genérica | Média / Alta, propostas | Aberto | [CT-RF38](Cenario_Teste/CT-RF38_Exclusao_Categoria.md) |
+| [BUG-010](#bug-010) | Cadastro de avaliação retorna HTTP 500 | Alta / Alta, propostas | Aberto | [CT-RF10](Cenario_Teste/CT-RF10_Cadastro_Avaliacao.md) |
+| [BUG-011](#bug-011) | Campo Código do exercício não aceita digitação conforme o relato | Média / Média, propostas | Em triagem — confirmação pendente | [CT-RF21](Cenario_Teste/CT-RF21_Digitacao_Codigo_Exercicio.md) |
+| [BUG-012](#bug-012) | Edição de exercício aumenta o total e mantém duas entradas | Média / Média, propostas | Em triagem — confirmação pendente | [CT-RF23](Cenario_Teste/CT-RF23_Edicao_Exercicio.md) |
+| [BUG-013](#bug-013) | Campos obrigatórios vazios sem feedback de validação | Média / Alta, propostas | Em triagem — persistência não confirmada | [CT-RF25](Cenario_Teste/CT-RF25_Exercicio_Campos_Vazios.md) |
+| [BUG-014](#bug-014) | Vídeo rejeitado no campo Imagem sem feedback | Baixa / Média, propostas | Em triagem — MIME não confirmado | [CT-RF26](Cenario_Teste/CT-RF26_Video_Campo_Imagem.md) |
+| [BUG-015](#bug-015) | Imagem rejeitada no campo Vídeo sem feedback | Baixa / Média, propostas | Em triagem — MIME não confirmado | [CT-RF27](Cenario_Teste/CT-RF27_Imagem_Campo_Video.md) |
+| [BUG-016](#bug-016) | Exclusão de grupo muscular retorna HTTP 500 e mensagem genérica | Média / Alta, propostas | Em triagem — causa não determinada | [CT-RF28](Cenario_Teste/CT-RF28_Exclusao_GrupoMuscular.md) |
+| [BUG-017](#bug-017) | Imagens dos grupos musculares não são exibidas e retornam HTTP 422 | Média / Média, propostas | Em triagem — causa não determinada | [CT-RF29](Cenario_Teste/CT-RF29_Imagens_GruposMusculares.md) |
+| [BUG-018](#bug-018) | Dashboard apresenta múltiplos HTTP 500 durante o carregamento | Alta / Alta, propostas | Em triagem — causa não determinada | [CT-RF08](Cenario_Teste/CT-RF08_Erro_Servidor_Excesso_Requisicoes.md) |
+| [BUG-019](#bug-019) | Cadastro de objetivo de treino retorna HTTP 500 | Alta / Alta, propostas | Em triagem — causa não determinada | [CT-RF33](Cenario_Teste/CT-RF33_Cadastro_Objetivo_Treino.md) |
+| [BUG-020](#bug-020) | Cadastro de turma sem modalidade não apresenta retorno visível | Média / Alta, propostas | Em triagem — validação nativa não confirmada | [CT-RF46](Cenario_Teste/CT-RF46_Cadastro_Turma_Sem_Modalidade.md) |
+| [BUG-021](#bug-021) | Painel Pagar.me mantém Recebimentos e gráfico ao trocar o período | Média / Média, propostas | Em triagem — dados reais ou de demonstração não confirmados | [CT-RF49](Cenario_Teste/CT-RF49_Painel_PagarMe_Periodo.md) |
+| [BUG-022](#bug-022) | Relatório de Contas a Receber exibe "----" em Valor a Receber | Alta / Alta, propostas | Em triagem — origem do valor e comparação com o módulo não confirmadas | [CT-RF55](Cenario_Teste/CT-RF55_Relatorio_Contas_Receber.md) |
+| [BUG-023](#bug-023) | Relatórios de Avaliações, Clientes, Colaboradores e Caixas geram arquivo PDF vazio (0 bytes) | Alta / Alta, propostas | Em triagem — correspondência dos arquivos inferida; causa não determinada | [CT-RF57](Cenario_Teste/CT-RF57_Relatorio_Avaliacoes_Vazio.md), [CT-RF58](Cenario_Teste/CT-RF58_Relatorio_Clientes_Vazio.md), [CT-RF59](Cenario_Teste/CT-RF59_Relatorio_Colaboradores_Vazio.md) e [CT-RF60](Cenario_Teste/CT-RF60_Relatorio_Caixas_Vazio.md) |
+| [BUG-024](#bug-024) | Exclusão de grupo retorna HTTP 500 e mensagem genérica | Média / Alta, propostas | Em triagem — causa não determinada | [CT-RF34](Cenario_Teste/CT-RF34_Exclusao_Grupo.md) |
+| [BUG-025](#bug-025) | Edição de grupo não persiste o campo status apesar de retorno de sucesso | Média / Alta, propostas | Em triagem — causa não determinada | [CT-RF35](Cenario_Teste/CT-RF35_Edicao_Grupo.md) |
+| [BUG-026](#bug-026) | Data de nascimento futura aceita na edição | Alta / Alta, propostas | Em triagem | [CT-RF91](Cenario_Teste/CT-RF91_Data_Nascimento_Futura_Colaborador.md) |
+| [BUG-027](#bug-027) | Data de nascimento obrigatória vazia aceita | Alta / Alta, propostas | Em triagem | [CT-RF92](Cenario_Teste/CT-RF92_Data_Nascimento_Obrigatoria_Colaborador.md) |
+| [BUG-028](#bug-028) | CREF aceita texto fora do formato esperado | Média / Média, propostas | Em triagem — formato a confirmar | [CT-RF93](Cenario_Teste/CT-RF93_CREF_Formato_Colaborador.md) |
+| [BUG-029](#bug-029) | Edição aceita campo obrigatório vazio | Alta / Alta, propostas | Em triagem | [CT-RF94](Cenario_Teste/CT-RF94_Edicao_Colaborador_Campo_Obrigatorio_Vazio.md) |
+| [BUG-030](#bug-030) | Mesma função pode ser associada repetidamente | Média / Alta, propostas | Em triagem | [CT-RF95](Cenario_Teste/CT-RF95_Funcao_Duplicada_Colaborador.md) |
+| [BUG-031](#bug-031) | Exclusão de colaborador retorna HTTP 500 | Alta / Alta, propostas | Em triagem — causa não determinada | [CT-RF96](Cenario_Teste/CT-RF96_Exclusao_Colaborador_Erro_500.md) |
+| [BUG-032](#bug-032) | Cadastro de anamnese retorna HTTP 500 ao salvar ou aplicar | Média / Alta, propostas | Em triagem — causa não determinada | [CT-RF100](Cenario_Teste/CT-RF100_Cadastro_Anamnese.md) |
+| [BUG-033](#bug-033) | Busca por nome perde o filtro ao avançar a página | Média / Alta, propostas | Em triagem — causa não determinada | [CT-RF97](Cenario_Teste/CT-RF97_Busca_Nome_Colaborador_Paginacao.md) |
+| [BUG-034](#bug-034) | Busca por código inexistente renderiza linha vazia | Média / Alta, propostas | Em triagem — causa não determinada | [CT-RF99](Cenario_Teste/CT-RF99_Busca_Codigo_Inexistente_Colaborador.md) |
+| [BUG-035](#bug-035) | Bandeira criada com parcela não aparece na listagem | Média / Alta, propostas | Em triagem — causa não determinada | [CT-RF89](Cenario_Teste/CT-RF89_Cadastro_Bandeira_Parcela_Listagem.md) |
+| [BUG-036](#bug-036) | Tema escuro aplicado de forma incompleta em Bandeiras | Média / Média, propostas | Em triagem — causa não determinada | [CT-RF90](Cenario_Teste/CT-RF90_Tema_Escuro_Bandeiras.md) |
+| [BUG-037](#bug-037) | Cadastro de lead aceito apenas com nome, com obrigatoriedade a confirmar | Média / Alta, propostas | Em triagem — obrigatoriedade a confirmar | [CT-RF69](Cenario_Teste/CT-RF69_Cadastro_Lead_Apenas_Nome.md) |
+| [BUG-038](#bug-038) | Telefone do lead aceita 30 dígitos sem máscara nem validação | Média / Média, propostas | Em triagem — regra do campo e validação no servidor não confirmadas | [CT-RF72](Cenario_Teste/CT-RF72_Telefone_Lead_Sem_Validacao.md) |
+| [BUG-039](#bug-039) | Conta a pagar a colaborador é cadastrada sem colaborador informado | Alta / Alta, propostas | Em triagem — regra de obrigatoriedade e validação no servidor não confirmadas | [CT-RF17](Cenario_Teste/CT-RF17_Cadastro_Conta_Colaborador_Sem_Colaborador.md) |
+| [BUG-040](#bug-040) | Listagem de modelos de contrato aparece vazia com 15 modelos retornados | Alta / Alta, propostas | Em triagem — causa de renderização não confirmada | [CT-RF83](Cenario_Teste/CT-RF83_Listagem_Modelos_Contrato_Vazia.md) |
+| [BUG-041](#bug-041) | Cartão Ativos de Planos aumenta ao cadastrar e editar planos inativos | Média / Média, propostas | Em triagem — regra de cálculo do cartão não confirmada | [CT-RF79](Cenario_Teste/CT-RF79_Contador_Ativos_Planos.md) |
+| [BUG-042](#bug-042) | Status do tipo de pagamento não é enviado nem refletido: todos aparecem Inativo | Média / Média, propostas | Em triagem — regra do status do tipo de pagamento não confirmada | [CT-RF85](Cenario_Teste/CT-RF85_Cadastro_Tipo_Pagamento_Status.md) |
+| [BUG-043](#bug-043) | Exclusão de tipo de pagamento em uso retorna HTTP 404 com erro SQL e mensagem genérica | Média / Média, propostas | Em triagem — regra de exclusão e tratamento do erro não confirmados | [CT-RF87](Cenario_Teste/CT-RF87_Exclusao_Tipo_Pagamento_Em_Uso.md) |
+| [BUG-044](#bug-044) | Edição do tipo de resposta de pergunta de anamnese retorna HTTP 500 | Alta / Alta, propostas | Em triagem — causa não determinada | [CT-RF103](Cenario_Teste/CT-RF103_Edicao_Pergunta_Anamnese.md) |
+| [BUG-045](#bug-045) | Cadastro de modelo de ficha com nome e personal retorna HTTP 500 | Alta / Alta, propostas | Em triagem. Causa a confirmar. | [CT-RF156](Cenario_Teste/CT-RF156_Cadastro_Modelo_Ficha_Erro_500.md) |
+| [BUG-046](#bug-046) | Configurações de Biometria exibem senha sem mascaramento | Alta / Alta, propostas | Em triagem. Reteste após correção. | [CT-RF126](Cenario_Teste/CT-RF126_Configuracoes_Abas_Biometria_Senha.md) |
+| [BUG-047](#bug-047) | Configurações aceitam e persistem dias de ausência negativos | Média / Média, propostas | Em triagem. Reteste após correção. | [CT-RF120](Cenario_Teste/CT-RF120_Configuracoes_Dias_Ausencia_Negativo.md) |
+| [BUG-048](#bug-048) | Configuração de Aniversariantes exibe prévia de risco de evasão | Média / Média, propostas | Em triagem. Reteste após correção. | [CT-RF109](Cenario_Teste/CT-RF109_Central_Aniversariantes_Previa_Risco.md) |
+| [BUG-049](#bug-049) | Contador de automações ativas mantém total anterior após ativar automação | Média / Média, propostas | Em triagem. Reteste após correção. | [CT-RF107](Cenario_Teste/CT-RF107_Central_Desativar_Risco_Evasao_Contador.md) e [CT-RF110](Cenario_Teste/CT-RF110_Central_Ativar_Aniversariantes_Contador.md) |
+| [BUG-050](#bug-050) | API de conexão do WhatsApp indica sucesso quando a tentativa falha | Média / Média, propostas | Em triagem. Reteste após correção. | [CT-RF131](Cenario_Teste/CT-RF131_Integracoes_WhatsApp_Conectar_Evolution.md) |
+| [BUG-051](#bug-051) | Configurações persiste código inválido na Cor Secundária | Média / Média, propostas | Em triagem. Reteste após correção. | [CT-RF140](Cenario_Teste/CT-RF140_Configuracoes_Design_Validar_Cor_Secundaria.md) |
+| [BUG-052](#bug-052) | Design omite o limite de 6 MB ao rejeitar o salvamento do logo | Baixa / Baixa, propostas | Em triagem. Reteste após correção. | [CT-RF141](Cenario_Teste/CT-RF141_Configuracoes_Design_Logo_Limite_Tamanho.md) |
+| [BUG-053](#bug-053) | Biometria persiste valor sem formato de IP no campo do aparelho | Média / Média, propostas | Em triagem. Reteste após correção. | [CT-RF146](Cenario_Teste/CT-RF146_Configuracoes_Biometria_Rejeitar_IP_Invalido.md) |
+| [BUG-054](#bug-054) | Biometria confirma salvamento de dias de bloqueio negativos sem informar a correção | Baixa / Baixa, propostas | Em triagem. Reteste após correção. | [CT-RF148](Cenario_Teste/CT-RF148_Configuracoes_Biometria_Validar_Dias_Bloqueio.md) |
 
 BUG-001–BUG-010 aguardam correção e reteste. BUG-011–BUG-054 aguardam confirmação das premissas e triagem antes do encaminhamento de correção. As causas técnicas permanecem não confirmadas; o BUG-003 se apoia no relato e nas capturas fornecidos, com os limites registrados no caso.
 
@@ -107,8 +107,8 @@ BUG-001–BUG-010 aguardam correção e reteste. BUG-011–BUG-054 aguardam conf
 | **Módulo** | Autenticação / Recuperação de senha. |
 | **Severidade** | Alta — impede o início da recuperação autônoma de acesso. |
 | **Prioridade** | Alta. |
-| **Requisito** | [RF01 — Iniciar recuperação de senha](Analise%20de%20requisitos.md#rf01--iniciar-recuperação-de-senha). |
-| **Caso de teste** | [CT-RF01](Cenario_Teste/CT-RF01_Esqueci-senha.md). |
+| **Requisito** | [RF04 — Iniciar recuperação de senha](Analise%20de%20requisitos.md#rf04--iniciar-recuperação-de-senha). |
+| **Caso de teste** | [CT-RF04](Cenario_Teste/CT-RF04_Esqueci-senha.md). |
 
 **Pré-condições:** Acessar a tela de login sem estar autenticado, com a opção "Esqueci minha senha" visível. Não é necessário informar credenciais para iniciar esse fluxo.
 
@@ -127,11 +127,11 @@ BUG-001–BUG-010 aguardam correção e reteste. BUG-011–BUG-054 aguardam conf
 
 **Análise técnica:** A causa ainda não foi confirmada no código. As evidências mostram a falha de abertura do fluxo e a ausência de requisições registradas. A ausência de requisição isoladamente não caracteriza defeito quando o formulário é aberto localmente; neste caso, o fluxo não abre.
 
-**Encaminhamento:** Inspecionar o tratamento do clique e o destino do fluxo, corrigir a abertura e executar o reteste CT-RF01 conforme o [plano de testes](Plano%20de%20testes.md). Não houve alteração nem validação do código da aplicação nesta revisão documental.
+**Encaminhamento:** Inspecionar o tratamento do clique e o destino do fluxo, corrigir a abertura e executar o reteste CT-RF04 conforme o [plano de testes](Plano%20de%20testes.md). Não houve alteração nem validação do código da aplicação nesta revisão documental.
 
 **Evidências:**
 
-- [Vídeo no Google Drive — CT-RF01_Esqueci-senha](https://drive.google.com/file/d/1f6AqYunchDH4R9Yw1JpbyX9x28UQGcbo/view?usp=sharing) — evidência complementar fornecida; metadados consultados, conteúdo não inspecionado nesta revisão.
+- [Vídeo no Google Drive — CT-RF04_Esqueci-senha](https://drive.google.com/file/d/1f6AqYunchDH4R9Yw1JpbyX9x28UQGcbo/view?usp=sharing) — evidência complementar fornecida; metadados consultados, conteúdo não inspecionado nesta revisão.
 - [Jam — Erro no esqueci a senhas](https://jam.dev/c/0273b203-b999-493d-9919-2d143bc13301) — eventos, quadros do vídeo, rede e erros de console consultados.
 
 ---
@@ -144,8 +144,8 @@ BUG-001–BUG-010 aguardam correção e reteste. BUG-011–BUG-054 aguardam conf
 | **Módulo** | Perfil do usuário. |
 | **Severidade** | Alta — compromete a visualização e a edição das informações do perfil. |
 | **Prioridade** | Alta, proposta para triagem. |
-| **Requisito** | [RF02 — Exibir perfil do usuário autenticado](Analise%20de%20requisitos.md#rf02--exibir-perfil-do-usuário-autenticado). |
-| **Caso de teste** | [CT-RF02_ERRO](Cenario_Teste/CT-RF02_ERRO.md). |
+| **Requisito** | [RF05 — Exibir perfil do usuário autenticado](Analise%20de%20requisitos.md#rf05--exibir-perfil-do-usuário-autenticado). |
+| **Caso de teste** | [CT-RF05_ERRO](Cenario_Teste/CT-RF05_ERRO.md). |
 | **URL afetada** | https://sifit.centrion.com.br/profile, conforme Actions do Jam. A aba Info registra `/configuracoes`. |
 | **Ambiente da gravação** | Chrome 155.0.8059.85 / Windows 11 (x86) / janela 1536 × 742; versão da aplicação e zoom não confirmados. |
 | **Data da gravação** | 22/10/2026 às 21:45 BRT, aproximadamente 15 segundos. |
@@ -170,7 +170,7 @@ BUG-001–BUG-010 aguardam correção e reteste. BUG-011–BUG-054 aguardam conf
 
 **Análise técnica do HTML:** O conteúdo fornecido mantém `<base-input>`, `<base-header>`, `<base-button>` e `<card>` no DOM. Os campos de cadastro aparecem como `<base-input ... modelvalue=""></base-input>`, sem controles `<input>` internos; o `<textarea>` nativo de About me é exibido com texto de demonstração. Isso sugere componentes não resolvidos ou tratados como elementos personalizados, mas não confirma a causa. Investigar registro/importação de componentes, configuração do compilador, vínculo com a conta autenticada e estilos de imagens/contêineres. Não há evidência suficiente para atribuir o defeito à API ou confirmar um erro específico no console.
 
-**Encaminhamento:** Corrigir o carregamento e a apresentação do perfil no código da aplicação e executar o reteste do [CT-RF02_ERRO](Cenario_Teste/CT-RF02_ERRO.md), conforme o [plano](Plano%20de%20testes.md). O repositório atual contém documentação de QA; esta revisão não corrige o sistema nem fecha o defeito.
+**Encaminhamento:** Corrigir o carregamento e a apresentação do perfil no código da aplicação e executar o reteste do [CT-RF05_ERRO](Cenario_Teste/CT-RF05_ERRO.md), conforme o [plano](Plano%20de%20testes.md). O repositório atual contém documentação de QA; esta revisão não corrige o sistema nem fecha o defeito.
 
 **Evidências:**
 
@@ -188,8 +188,8 @@ BUG-001–BUG-010 aguardam correção e reteste. BUG-011–BUG-054 aguardam conf
 | **Módulo** | Clientes / Pesquisa com filtros. |
 | **Severidade** | Alta, proposta pelo impacto na confiabilidade da consulta de clientes. |
 | **Prioridade** | Alta, proposta para triagem. |
-| **Caso de teste** | [CT-RF03 — Filtros da página Clientes](Cenario_Teste/CT-RF03_FILTRO_TelaClientes.md). |
-| **Requisito** | [RF03 — Pesquisar clientes com filtros combinados](Analise%20de%20requisitos.md#rf03--pesquisar-clientes-com-filtros-combinados). |
+| **Caso de teste** | [CT-RF09 — Filtros da página Clientes](Cenario_Teste/CT-RF09_FILTRO_TelaClientes.md). |
+| **Requisito** | [RF09 — Pesquisar clientes com filtros combinados](Analise%20de%20requisitos.md#rf09--pesquisar-clientes-com-filtros-combinados). |
 | **Comportamento requerido** | Retornar exclusivamente clientes que atendam simultaneamente a todos os filtros selecionados, com lógica AND. |
 | **Endpoint informado** | `POST https://backendsifit.centrion.com.br/api/clientesPorNome/1`. |
 | **Ambiente** | Página Clientes; URL do frontend, versão, navegador, resolução e zoom não confirmados. Empresa informada no payload: `1`. |
@@ -233,7 +233,7 @@ Status, Situação Financeira, Plano e Personal não aparecem nesse corpo. HTTP 
 - Validar Ativo + plano específico; Inativo + Plano Hendreu; Ativo + Inadimplente; Adimplente + personal específico; todos os filtros combinados; alternância da situação financeira; e combinação sem correspondências.
 - Verificar Código e Nome em conjunto com os demais filtros e a remoção de restrições ao limpar campos.
 - Em pesquisa vazia, apresentar **"Nenhum cliente encontrado"**, sem resultados anteriores.
-- Conferir a integração conforme a arquitetura efetiva e registrar evidências sem tokens. A [matriz detalhada do CT-RF03](Cenario_Teste/CT-RF03_FILTRO_TelaClientes.md#matriz-de-reteste-proposta) está pendente de execução.
+- Conferir a integração conforme a arquitetura efetiva e registrar evidências sem tokens. A [matriz detalhada do CT-RF09](Cenario_Teste/CT-RF09_FILTRO_TelaClientes.md#matriz-de-reteste-proposta) está pendente de execução.
 
 **Evidências:**
 
@@ -242,7 +242,7 @@ Status, Situação Financeira, Plano e Personal não aparecem nesse corpo. HTTP 
 - [Captura 2 — filtros e listagem semelhante](Evidencias/CT-RF03_Filtros_Clientes/filtros-clientes-02.png).
 - [Índice de evidências, origem e limites](Evidencias/CT-RF03_Filtros_Clientes/README.md).
 
-**Encaminhamento:** Investigar e corrigir no repositório da aplicação; executar o CT-RF03 após disponibilização da correção. Esta entrega altera somente a documentação de QA e organiza as capturas fornecidas. Não houve alteração de código-fonte, nova execução ou confirmação de correção.
+**Encaminhamento:** Investigar e corrigir no repositório da aplicação; executar o CT-RF09 após disponibilização da correção. Esta entrega altera somente a documentação de QA e organiza as capturas fornecidas. Não houve alteração de código-fonte, nova execução ou confirmação de correção.
 
 
 ---
@@ -256,15 +256,15 @@ Status, Situação Financeira, Plano e Personal não aparecem nesse corpo. HTTP 
 | Status | Aberto — reteste pendente após correção. |
 | Severidade / prioridade | Média / Média, propostas para triagem. |
 | Módulo | Financeiro / Financeiro em Aberto |
-| Requisitos | [RF07](Analise%20de%20requisitos.md#rf07) |
-| Casos | [CT-RF07](Cenario_Teste/CT-RF07_Exportacao_Financeiro.md) |
+| Requisitos | [RF11](Analise%20de%20requisitos.md#rf11) |
+| Casos | [CT-RF11](Cenario_Teste/CT-RF11_Exportacao_Financeiro.md) |
 | Data da evidência / revisão | 14/11/2026; sem nova execução. |
 | Página | https://sifit.centrion.com.br/dashboard |
 | Ambiente | Chrome 157.0.8103.51 / Windows 11 (x86); versão e zoom não confirmados. |
 
 ### Pré-condições e reprodução
 
-**[CT-RF07](Cenario_Teste/CT-RF07_Exportacao_Financeiro.md):** Sessão autenticada com permissão para consultar e exportar o financeiro. Modal Financeiro em Aberto aberto e registros disponíveis.
+**[CT-RF11](Cenario_Teste/CT-RF11_Exportacao_Financeiro.md):** Sessão autenticada com permissão para consultar e exportar o financeiro. Modal Financeiro em Aberto aberto e registros disponíveis.
 
 1. Abrir Financeiro em Aberto a partir da página inicial.
 2. Clicar uma vez em Exportar e aguardar a conclusão.
@@ -274,13 +274,13 @@ Status, Situação Financeira, Plano e Personal não aparecem nesse corpo. HTTP 
 
 | Caso | Esperado | Obtido |
 | --- | --- | --- |
-| CT-RF07 | Iniciar a exportação e apresentar um retorno claro ao usuário. | Vários cliques em Exportar não produzem mudança ou confirmação visível durante a gravação. |
+| CT-RF11 | Iniciar a exportação e apresentar um retorno claro ao usuário. | Vários cliques em Exportar não produzem mudança ou confirmação visível durante a gravação. |
 
 **Impacto:** A ausência de retorno impede distinguir conclusão, falha e ausência de processamento da exportação.
 
 ### Evidências
 
-- [CT-RF07](Cenario_Teste/CT-RF07_Exportacao_Financeiro.md): [Jam — botão de exporta sem função](https://jam.dev/c/1084cb18-cb3d-4b85-9c2f-ee431b59a06b), [vídeo original](Evidencias/CT-RF07_Exportacao_Financeiro/video.webm) e [Evidências](Evidencias/CT-RF07_Exportacao_Financeiro/README.md). 0:02–0:03: cinco cliques em Exportar. Nenhuma requisição de rede ou mensagem de console foi capturada nesse Jam.
+- [CT-RF11](Cenario_Teste/CT-RF11_Exportacao_Financeiro.md): [Jam — botão de exporta sem função](https://jam.dev/c/1084cb18-cb3d-4b85-9c2f-ee431b59a06b), [vídeo original](Evidencias/CT-RF07_Exportacao_Financeiro/video.webm) e [Evidências](Evidencias/CT-RF07_Exportacao_Financeiro/README.md). 0:02–0:03: cinco cliques em Exportar. Nenhuma requisição de rede ou mensagem de console foi capturada nesse Jam.
 
 ### Análise, limites e encaminhamento
 
@@ -299,21 +299,21 @@ Investigar o retorno do botão; no reteste capturar o histórico de downloads e 
 | Status | Aberto — reteste pendente após correção. |
 | Severidade / prioridade | Alta / Alta, propostas para triagem. |
 | Módulo | Financeiro / Financeiro em Aberto |
-| Requisitos | [RF09](Analise%20de%20requisitos.md#rf09) e [RF10](Analise%20de%20requisitos.md#rf10) |
-| Casos | [CT-RF09](Cenario_Teste/CT-RF09_Contagem_Mensalidades.md) e [CT-RF10](Cenario_Teste/CT-RF10_Filtro_Mensalidades.md) |
+| Requisitos | [RF12](Analise%20de%20requisitos.md#rf12) e [RF13](Analise%20de%20requisitos.md#rf13) |
+| Casos | [CT-RF12](Cenario_Teste/CT-RF12_Contagem_Mensalidades.md) e [CT-RF13](Cenario_Teste/CT-RF13_Filtro_Mensalidades.md) |
 | Data da evidência / revisão | 14/11/2026; sem nova execução. |
 | Página | https://sifit.centrion.com.br/dashboard |
 | Ambiente | Chrome 157.0.8103.51 / Windows 11 (x86); versão e zoom não confirmados. |
 
 ### Pré-condições e reprodução
 
-**[CT-RF09](Cenario_Teste/CT-RF09_Contagem_Mensalidades.md):** Sessão autenticada com acesso ao financeiro. Base de referência com mensalidades conhecidas e distribuídas entre as faixas de vencimento.
+**[CT-RF12](Cenario_Teste/CT-RF12_Contagem_Mensalidades.md):** Sessão autenticada com acesso ao financeiro. Base de referência com mensalidades conhecidas e distribuídas entre as faixas de vencimento.
 
 1. Abrir Financeiro em Aberto e selecionar Todos.
 2. Comparar o contador com as linhas e o total do rodapé; percorrer páginas quando disponíveis.
 3. Selecionar +30 dias e repetir a conferência da quantidade e dos registros acessíveis.
 
-**[CT-RF10](Cenario_Teste/CT-RF10_Filtro_Mensalidades.md):** Sessão autenticada e modal Financeiro em Aberto disponível. Mensalidade conhecida que pertença à faixa Até 7 dias conforme a regra do produto.
+**[CT-RF13](Cenario_Teste/CT-RF13_Filtro_Mensalidades.md):** Sessão autenticada e modal Financeiro em Aberto disponível. Mensalidade conhecida que pertença à faixa Até 7 dias conforme a regra do produto.
 
 1. Selecionar Até 7 dias no modal financeiro.
 2. Aguardar o carregamento e comparar contador, linhas e estado vazio.
@@ -323,21 +323,21 @@ Investigar o retorno do botão; no reteste capturar o histórico de downloads e 
 
 | Caso | Esperado | Obtido |
 | --- | --- | --- |
-| CT-RF09 | Manter a contagem, a listagem e a paginação coerentes e permitir consultar todos os registros contabilizados. | Todos informa três mensalidades, mas aparece uma linha. No filtro +30 dias, o contador indica dois registros e apenas uma linha permanece disponível. |
-| CT-RF10 | O contador do filtro e os registros exibidos devem representar o mesmo conjunto. | O filtro mantém o contador 1, enquanto a lista informa “Nenhuma mensalidade encontrada para o filtro atual”. |
+| CT-RF12 | Manter a contagem, a listagem e a paginação coerentes e permitir consultar todos os registros contabilizados. | Todos informa três mensalidades, mas aparece uma linha. No filtro +30 dias, o contador indica dois registros e apenas uma linha permanece disponível. |
+| CT-RF13 | O contador do filtro e os registros exibidos devem representar o mesmo conjunto. | O filtro mantém o contador 1, enquanto a lista informa “Nenhuma mensalidade encontrada para o filtro atual”. |
 
 **Impacto:** Mensalidades contabilizadas não podem ser conferidas pela lista correspondente, prejudicando a consulta financeira.
 
 ### Evidências
 
-- [CT-RF09](Cenario_Teste/CT-RF09_Contagem_Mensalidades.md): [Jam — Informa que tem 3 mensalidades e tem apenas 1.](https://jam.dev/c/1874d0b3-5c7c-4f28-85be-91750e20cbe1), [vídeo original](Evidencias/CT-RF09_Contagem_Mensalidades/video.webm) e [Evidências](Evidencias/CT-RF09_Contagem_Mensalidades/README.md). 0:01–0:05: Todos 3 com uma linha e rodapé 1–1 de 3. 0:10–0:19: +30 dias 2 com uma linha.
-- [CT-RF10](Cenario_Teste/CT-RF10_Filtro_Mensalidades.md): [Jam — Erro no filtro de mensalidade](https://jam.dev/c/3f78cf16-2c3b-48bc-8622-23b829debbec), [vídeo original](Evidencias/CT-RF10_Filtro_Mensalidades/video.webm) e [Evidências](Evidencias/CT-RF10_Filtro_Mensalidades/README.md). 0:00: clique em Até 7 dias 1 e POST /api/contas-receber/vencidas/1 com HTTP 200. 0:02–0:09: estado vazio.
+- [CT-RF12](Cenario_Teste/CT-RF12_Contagem_Mensalidades.md): [Jam — Informa que tem 3 mensalidades e tem apenas 1.](https://jam.dev/c/1874d0b3-5c7c-4f28-85be-91750e20cbe1), [vídeo original](Evidencias/CT-RF09_Contagem_Mensalidades/video.webm) e [Evidências](Evidencias/CT-RF09_Contagem_Mensalidades/README.md). 0:01–0:05: Todos 3 com uma linha e rodapé 1–1 de 3. 0:10–0:19: +30 dias 2 com uma linha.
+- [CT-RF13](Cenario_Teste/CT-RF13_Filtro_Mensalidades.md): [Jam — Erro no filtro de mensalidade](https://jam.dev/c/3f78cf16-2c3b-48bc-8622-23b829debbec), [vídeo original](Evidencias/CT-RF10_Filtro_Mensalidades/video.webm) e [Evidências](Evidencias/CT-RF10_Filtro_Mensalidades/README.md). 0:00: clique em Até 7 dias 1 e POST /api/contas-receber/vencidas/1 com HTTP 200. 0:02–0:09: estado vazio.
 
 ### Análise, limites e encaminhamento
 
 As gravações de Todos/+30 dias e Até 7 dias foram agrupadas em um único defeito. Não há diagnóstico da causa no banco ou nos corpos das respostas. A causa técnica não foi confirmada no código da aplicação. O status permanece aberto até que uma nova execução comprove os critérios de aceitação dos casos associados.
 
-Retestar com o CT-RF10; os dois cenários documentam manifestações do BUG-005, sem criar um defeito duplicado. Retestar em conjunto com CT-RF09 e conferir o contrato da faixa Até 7 dias antes de preparar a base.
+Retestar com o CT-RF13; os dois cenários documentam manifestações do BUG-005, sem criar um defeito duplicado. Retestar em conjunto com CT-RF12 e conferir o contrato da faixa Até 7 dias antes de preparar a base.
 
 ---
 
@@ -350,15 +350,15 @@ Retestar com o CT-RF10; os dois cenários documentam manifestações do BUG-005,
 | Status | Aberto — reteste pendente após correção. |
 | Severidade / prioridade | Média / Média, propostas para triagem. |
 | Módulo | Página inicial / Período |
-| Requisitos | [RF12](Analise%20de%20requisitos.md#rf12) |
-| Casos | [CT-RF12](Cenario_Teste/CT-RF12_Periodo_Dashboard.md) |
+| Requisitos | [RF06](Analise%20de%20requisitos.md#rf06) |
+| Casos | [CT-RF06](Cenario_Teste/CT-RF06_Periodo_Dashboard.md) |
 | Data da evidência / revisão | 14/11/2026; sem nova execução. |
 | Página | https://sifit.centrion.com.br/dashboard |
 | Ambiente | Chrome 157.0.8103.51 / Windows 11 (x86); versão e zoom não confirmados. |
 
 ### Pré-condições e reprodução
 
-**[CT-RF12](Cenario_Teste/CT-RF12_Periodo_Dashboard.md):** Sessão autenticada com acesso ao seletor de período da página inicial. Registrar as regras de aplicação do filtro e preparar um intervalo válido de controle.
+**[CT-RF06](Cenario_Teste/CT-RF06_Periodo_Dashboard.md):** Sessão autenticada com acesso ao seletor de período da página inicial. Registrar as regras de aplicação do filtro e preparar um intervalo válido de controle.
 
 1. Alterar a data final para 10/11/2026 na base de referência da gravação.
 2. Alterar a inicial para 19/11/2026, posterior à data final.
@@ -368,13 +368,13 @@ Retestar com o CT-RF10; os dois cenários documentam manifestações do BUG-005,
 
 | Caso | Esperado | Obtido |
 | --- | --- | --- |
-| CT-RF12 | Validar a ordem das datas, orientar o usuário e aplicar um período válido com retorno perceptível. | O seletor chega a exibir 19/11/2026–10/11/2026, com início posterior ao fim, sem uma validação visível. Os indicadores permanecem com os mesmos valores nos quadros conferidos. |
+| CT-RF06 | Validar a ordem das datas, orientar o usuário e aplicar um período válido com retorno perceptível. | O seletor chega a exibir 19/11/2026–10/11/2026, com início posterior ao fim, sem uma validação visível. Os indicadores permanecem com os mesmos valores nos quadros conferidos. |
 
 **Impacto:** O usuário pode deixar o filtro com um período inválido, sem orientação visível.
 
 ### Evidências
 
-- [CT-RF12](Cenario_Teste/CT-RF12_Periodo_Dashboard.md): [Jam — Botões de datas sem função e sem atualização](https://jam.dev/c/93165ba3-3bfe-4dd5-9379-ab8db2d686ba), [vídeo original](Evidencias/CT-RF12_Periodo_Dashboard/video.webm) e [Evidências](Evidencias/CT-RF12_Periodo_Dashboard/README.md). 0:04–0:08: seleção das datas. 0:10: intervalo invertido visível. No começo foram capturadas várias chamadas POST /api/dados-principais-home/1 com HTTP 200.
+- [CT-RF06](Cenario_Teste/CT-RF06_Periodo_Dashboard.md): [Jam — Botões de datas sem função e sem atualização](https://jam.dev/c/93165ba3-3bfe-4dd5-9379-ab8db2d686ba), [vídeo original](Evidencias/CT-RF12_Periodo_Dashboard/video.webm) e [Evidências](Evidencias/CT-RF12_Periodo_Dashboard/README.md). 0:04–0:08: seleção das datas. 0:10: intervalo invertido visível. No começo foram capturadas várias chamadas POST /api/dados-principais-home/1 com HTTP 200.
 
 ### Análise, limites e encaminhamento
 
@@ -393,15 +393,15 @@ Corrigir e retestar a validação do intervalo; avaliar a atualização dos indi
 | Status | Aberto — reteste pendente após correção. |
 | Severidade / prioridade | Média / Média, propostas para triagem. |
 | Módulo | SifitBox / Turmas / Tema |
-| Requisitos | [RF14](Analise%20de%20requisitos.md#rf14) |
-| Casos | [CT-RF14](Cenario_Teste/CT-RF14_Contraste_TemaEscuro.md) |
+| Requisitos | [RF41](Analise%20de%20requisitos.md#rf41) |
+| Casos | [CT-RF41](Cenario_Teste/CT-RF41_Contraste_TemaEscuro.md) |
 | Data da evidência / revisão | 14/11/2026; sem nova execução. |
 | Página | https://sifit.centrion.com.br/sifitbox/turmas |
 | Ambiente | Chrome 157.0.8103.51 / Windows 11 (x86); versão e zoom não confirmados. |
 
 ### Pré-condições e reprodução
 
-**[CT-RF14](Cenario_Teste/CT-RF14_Contraste_TemaEscuro.md):** Sessão autenticada com acesso a SifitBox – Turmas. Página com modalidades e turmas recorrentes cadastradas.
+**[CT-RF41](Cenario_Teste/CT-RF41_Contraste_TemaEscuro.md):** Sessão autenticada com acesso a SifitBox – Turmas. Página com modalidades e turmas recorrentes cadastradas.
 
 1. Registrar a apresentação das tabelas no tema Claro.
 2. Selecionar Escuro.
@@ -411,13 +411,13 @@ Corrigir e retestar a validação do intervalo; avaliar a atualização dos indi
 
 | Caso | Esperado | Obtido |
 | --- | --- | --- |
-| CT-RF14 | Aplicar cores de texto e de fundo que preservem a legibilidade em ambos os temas. | As áreas de Modalidades e Turmas recorrentes permanecem brancas enquanto diversos textos ficam muito claros, dificultando sua leitura. |
+| CT-RF41 | Aplicar cores de texto e de fundo que preservem a legibilidade em ambos os temas. | As áreas de Modalidades e Turmas recorrentes permanecem brancas enquanto diversos textos ficam muito claros, dificultando sua leitura. |
 
 **Impacto:** Dificulta ler modalidades, turmas e seus atributos no tema escuro.
 
 ### Evidências
 
-- [CT-RF14](Cenario_Teste/CT-RF14_Contraste_TemaEscuro.md): [Jam — falta de acessibilidade nas cores](https://jam.dev/c/6889db07-bed1-472b-8ec2-00402919cd65), [vídeo original](Evidencias/CT-RF14_Contraste_TemaEscuro/video.webm) e [Evidências](Evidencias/CT-RF14_Contraste_TemaEscuro/README.md). 0:02: seleção de Escuro e POST /api/usuario/tema com HTTP 200. 0:02–0:09: perda de legibilidade nas tabelas.
+- [CT-RF41](Cenario_Teste/CT-RF41_Contraste_TemaEscuro.md): [Jam — falta de acessibilidade nas cores](https://jam.dev/c/6889db07-bed1-472b-8ec2-00402919cd65), [vídeo original](Evidencias/CT-RF14_Contraste_TemaEscuro/video.webm) e [Evidências](Evidencias/CT-RF14_Contraste_TemaEscuro/README.md). 0:02: seleção de Escuro e POST /api/usuario/tema com HTTP 200. 0:02–0:09: perda de legibilidade nas tabelas.
 
 ### Análise, limites e encaminhamento
 
@@ -436,15 +436,15 @@ Ajustar as cores e retestar ambos os temas; medir contraste se houver critério 
 | Status | Aberto — reteste pendente após correção. |
 | Severidade / prioridade | Média / Média, propostas para triagem. |
 | Módulo | SifitBox / Modalidades |
-| Requisitos | [RF15](Analise%20de%20requisitos.md#rf15) |
-| Casos | [CT-RF15](Cenario_Teste/CT-RF15_Edicao_Modalidade.md) |
+| Requisitos | [RF42](Analise%20de%20requisitos.md#rf42) |
+| Casos | [CT-RF42](Cenario_Teste/CT-RF42_Edicao_Modalidade.md) |
 | Data da evidência / revisão | 14/11/2026; sem nova execução. |
 | Página | https://sifit.centrion.com.br/sifitbox/turmas |
 | Ambiente | Chrome 157.0.8103.51 / Windows 11 (x86); versão e zoom não confirmados. |
 
 ### Pré-condições e reprodução
 
-**[CT-RF15](Cenario_Teste/CT-RF15_Edicao_Modalidade.md):** Sessão autenticada com permissão para editar modalidades. Modalidade de teste com nome, descrição e status conhecidos.
+**[CT-RF42](Cenario_Teste/CT-RF42_Edicao_Modalidade.md):** Sessão autenticada com permissão para editar modalidades. Modalidade de teste com nome, descrição e status conhecidos.
 
 1. Clicar no lápis de uma modalidade.
 2. Verificar o preenchimento dos campos e alterar um valor de teste.
@@ -454,13 +454,13 @@ Ajustar as cores e retestar ambos os temas; medir contraste se houver critério 
 
 | Caso | Esperado | Obtido |
 | --- | --- | --- |
-| CT-RF15 | Oferecer ações visíveis de salvar e cancelar e confirmar a atualização. | Há ícones de lápis na lista. Ao clicar, os campos superiores são preenchidos para edição, mas não aparece uma ação clara para salvar ou concluir a alteração nos quadros analisados. |
+| CT-RF42 | Oferecer ações visíveis de salvar e cancelar e confirmar a atualização. | Há ícones de lápis na lista. Ao clicar, os campos superiores são preenchidos para edição, mas não aparece uma ação clara para salvar ou concluir a alteração nos quadros analisados. |
 
 **Impacto:** O usuário altera os campos sem encontrar uma ação clara para concluir ou cancelar a edição.
 
 ### Evidências
 
-- [CT-RF15](Cenario_Teste/CT-RF15_Edicao_Modalidade.md): [Jam — Sem botão para editar modalidades](https://jam.dev/c/951efaf8-bf32-44b0-b640-a2935a6b554a), [vídeo original](Evidencias/CT-RF15_Edicao_Modalidade/video.webm) e [Evidências](Evidencias/CT-RF15_Edicao_Modalidade/README.md). 0:03–0:13: cliques no lápis, campos preenchidos e alternância entre Ativo e Inativo. Nenhuma chamada de atualização foi capturada.
+- [CT-RF42](Cenario_Teste/CT-RF42_Edicao_Modalidade.md): [Jam — Sem botão para editar modalidades](https://jam.dev/c/951efaf8-bf32-44b0-b640-a2935a6b554a), [vídeo original](Evidencias/CT-RF15_Edicao_Modalidade/video.webm) e [Evidências](Evidencias/CT-RF15_Edicao_Modalidade/README.md). 0:03–0:13: cliques no lápis, campos preenchidos e alternância entre Ativo e Inativo. Nenhuma chamada de atualização foi capturada.
 
 ### Análise, limites e encaminhamento
 
@@ -479,15 +479,15 @@ Verificar o fluxo de conclusão da edição e retestar persistência. A evidênc
 | Status | Aberto — reteste pendente após correção. |
 | Severidade / prioridade | Média / Alta, propostas para triagem. |
 | Módulo | Categorias Crossfit / Exclusão |
-| Requisitos | [RF19](Analise%20de%20requisitos.md#rf19) |
-| Casos | [CT-RF19](Cenario_Teste/CT-RF19_Exclusao_Categoria.md) |
+| Requisitos | [RF38](Analise%20de%20requisitos.md#rf38) |
+| Casos | [CT-RF38](Cenario_Teste/CT-RF38_Exclusao_Categoria.md) |
 | Data da evidência / revisão | 14/11/2026; sem nova execução. |
 | Página | https://sifit.centrion.com.br/categorias-exercicios-crossfit |
 | Ambiente | Chrome 157.0.8103.51 / Windows 11 (x86); versão e zoom não confirmados. |
 
 ### Pré-condições e reprodução
 
-**[CT-RF19](Cenario_Teste/CT-RF19_Exclusao_Categoria.md):** Sessão autenticada com permissão para excluir categorias. Categoria descartável e vínculos conhecidos; confirmar os impedimentos de exclusão previstos.
+**[CT-RF38](Cenario_Teste/CT-RF38_Exclusao_Categoria.md):** Sessão autenticada com permissão para excluir categorias. Categoria descartável e vínculos conhecidos; confirmar os impedimentos de exclusão previstos.
 
 1. Acionar a lixeira da categoria de teste.
 2. Confirmar a exclusão no diálogo.
@@ -497,13 +497,13 @@ Verificar o fluxo de conclusão da edição e retestar persistência. A evidênc
 
 | Caso | Esperado | Obtido |
 | --- | --- | --- |
-| CT-RF19 | Concluir a exclusão permitida ou explicar de forma tratável por que o registro não pode ser excluído. | Após a confirmação, aparece o diálogo “Erro” / “Erro ao deletar categoria”. A categoria permanece na lista. |
+| CT-RF38 | Concluir a exclusão permitida ou explicar de forma tratável por que o registro não pode ser excluído. | Após a confirmação, aparece o diálogo “Erro” / “Erro ao deletar categoria”. A categoria permanece na lista. |
 
 **Impacto:** A exclusão não é concluída e o usuário recebe uma mensagem sem motivo tratável.
 
 ### Evidências
 
-- [CT-RF19](Cenario_Teste/CT-RF19_Exclusao_Categoria.md): [Jam — Erro a o deletar categoria](https://jam.dev/c/c5c78b3b-2865-4226-836f-bcb0a8fc612f), [vídeo original](Evidencias/CT-RF19_Exclusao_Categoria/video.webm) e [Evidências](Evidencias/CT-RF19_Exclusao_Categoria/README.md). 0:02: POST /api/categoria-exercicio-cross/excluir retorna HTTP 500. 0:03–0:05: mensagem de erro.
+- [CT-RF38](Cenario_Teste/CT-RF38_Exclusao_Categoria.md): [Jam — Erro a o deletar categoria](https://jam.dev/c/c5c78b3b-2865-4226-836f-bcb0a8fc612f), [vídeo original](Evidencias/CT-RF19_Exclusao_Categoria/video.webm) e [Evidências](Evidencias/CT-RF19_Exclusao_Categoria/README.md). 0:02: POST /api/categoria-exercicio-cross/excluir retorna HTTP 500. 0:03–0:05: mensagem de erro.
 
 ### Análise, limites e encaminhamento
 
@@ -522,7 +522,7 @@ Investigar o HTTP 500 com logs do servidor e vínculos da categoria; corrigir e 
 | Status | Aberto — reteste pendente após correção pela equipe da aplicação. |
 | Severidade / prioridade | Alta / Alta, propostas para triagem; bloqueia a confirmação do cadastro no cenário registrado. |
 | Módulo | Avaliações / Cadastrar Avaliação |
-| Requisito / caso | [RF21](Analise%20de%20requisitos.md#rf21) / [CT-RF21](Cenario_Teste/CT-RF21_Cadastro_Avaliacao.md) |
+| Requisito / caso | [RF10](Analise%20de%20requisitos.md#rf10) / [CT-RF10](Cenario_Teste/CT-RF10_Cadastro_Avaliacao.md) |
 | Data da evidência / revisão | 15/11/2026; sem nova execução. |
 | Página | https://sifit.centrion.com.br/avaliacoes |
 | Ambiente | Chrome 157.0.8103.51 / Windows 11 (x86), captura 1536 × 742. Versão, zoom e classificação do ambiente não identificados. |
@@ -561,7 +561,7 @@ A falha HTTP 500 está confirmada; a causa raiz depende do código e dos logs do
 
 O horário 06:00 precede a tentativa de aproximadamente 15:08; o aluno foi digitado sem confirmação pela busca. Esses fatos orientam verificações e não comprovam a causa. Não houve inspeção do código, consulta ao banco, nova execução ou correção da aplicação.
 
-**Reteste:** executar a [matriz do CT-RF21](Cenario_Teste/CT-RF21_Cadastro_Avaliacao.md#critérios-de-aceitação-e-matriz-de-reteste-proposta), confirmar sucesso com dados válidos, validação para dados recusados, persistência e ausência de registros parciais/duplicados. Manter aberto até nova evidência em versão identificada.
+**Reteste:** executar a [matriz do CT-RF10](Cenario_Teste/CT-RF10_Cadastro_Avaliacao.md#critérios-de-aceitação-e-matriz-de-reteste-proposta), confirmar sucesso com dados válidos, validação para dados recusados, persistência e ausência de registros parciais/duplicados. Manter aberto até nova evidência em versão identificada.
 
 ---
 
@@ -574,7 +574,7 @@ O horário 06:00 precede a tentativa de aproximadamente 15:08; o aluno foi digit
 | Status | Em triagem — confirmação funcional e reprodução pendentes; causa técnica não confirmada. |
 | Severidade / prioridade | Média / Média, propostas para triagem. |
 | Módulo | Exercícios / Formulário Exercício |
-| Requisito / caso | [RF22](Analise%20de%20requisitos.md#rf22) / [CT-RF22](Cenario_Teste/CT-RF22_Digitacao_Codigo_Exercicio.md) |
+| Requisito / caso | [RF21](Analise%20de%20requisitos.md#rf21) / [CT-RF21](Cenario_Teste/CT-RF21_Digitacao_Codigo_Exercicio.md) |
 | Data da evidência / revisão | 15/11/2026, 15:25 BRT / 15/11/2026; sem nova execução. |
 | Página / ambiente | https://sifit.centrion.com.br/exercicios; Edge 157.0.8103.80 / Windows 11 (x86), janela 1912 × 960. Versão, zoom e classificação do ambiente não confirmados. |
 | Frequência conhecida | Um registro do Jam; recorrência não determinada. |
@@ -604,7 +604,7 @@ Confirmar se o código é manual ou automático e quais operações permitem edi
 
 Não foram confirmadas a operação de criação/edição, a sequência de teclas ou a causa. A classificação se apoia no relato e na imagem inicial, sem análise de rede ou console. Confirmar a regra, reproduzir o impedimento e retestar o campo após correção.
 
-**Reteste:** executar os critérios do [CT-RF22](Cenario_Teste/CT-RF22_Digitacao_Codigo_Exercicio.md) em versão identificada, confirmar a premissa funcional e registrar nova evidência. Se o código for automático ou a operação original tiver sido criação, reavaliar o registro correspondente. Não encerrar por revisão documental.
+**Reteste:** executar os critérios do [CT-RF21](Cenario_Teste/CT-RF21_Digitacao_Codigo_Exercicio.md) em versão identificada, confirmar a premissa funcional e registrar nova evidência. Se o código for automático ou a operação original tiver sido criação, reavaliar o registro correspondente. Não encerrar por revisão documental.
 
 ---
 
@@ -617,7 +617,7 @@ Não foram confirmadas a operação de criação/edição, a sequência de tecla
 | Status | Em triagem — confirmação funcional e reprodução pendentes; causa técnica não confirmada. |
 | Severidade / prioridade | Média / Média, propostas para triagem. |
 | Módulo | Exercícios / Formulário Exercício |
-| Requisito / caso | [RF24](Analise%20de%20requisitos.md#rf24) / [CT-RF24](Cenario_Teste/CT-RF24_Edicao_Exercicio.md) |
+| Requisito / caso | [RF23](Analise%20de%20requisitos.md#rf23) / [CT-RF23](Cenario_Teste/CT-RF23_Edicao_Exercicio.md) |
 | Data da evidência / revisão | 15/11/2026, 15:38 BRT / 15/11/2026; sem nova execução. |
 | Página / ambiente | https://sifit.centrion.com.br/exercicios; Edge 157.0.8103.80 / Windows 11 (x86), janela 1912 × 960. Versão, zoom e classificação do ambiente não confirmados. |
 | Frequência conhecida | Um registro do Jam; recorrência não determinada. |
@@ -650,7 +650,7 @@ Exercício de teste existente, com identificador e nome original registrados ant
 
 O acionamento inicial da edição e os identificadores das duas entradas não foram confirmados. A classificação considera o propósito declarado do Jam e a divergência visual; se a operação tiver sido criação, reavaliar a conclusão. Reproduzir a partir da ação explícita de edição e comparar os identificadores antes e depois. Investigar eventual envio para criação como hipótese, sem atribuir causa técnica antes de verificar código e contrato da API.
 
-**Reteste:** executar os critérios do [CT-RF24](Cenario_Teste/CT-RF24_Edicao_Exercicio.md) em versão identificada, confirmar a premissa funcional e registrar nova evidência. Se o código for automático ou a operação original tiver sido criação, reavaliar o registro correspondente. Não encerrar por revisão documental.
+**Reteste:** executar os critérios do [CT-RF23](Cenario_Teste/CT-RF23_Edicao_Exercicio.md) em versão identificada, confirmar a premissa funcional e registrar nova evidência. Se o código for automático ou a operação original tiver sido criação, reavaliar o registro correspondente. Não encerrar por revisão documental.
 
 ---
 
@@ -663,7 +663,7 @@ O acionamento inicial da edição e os identificadores das duas entradas não fo
 | Status | Em triagem — bloqueio aparente; persistência e causa técnica não confirmadas. |
 | Severidade / prioridade | Média / Alta, propostas para triagem. |
 | Módulo | Exercícios / Validação do cadastro |
-| Requisito / caso | [RF26](Analise%20de%20requisitos.md#rf26) / [CT-RF26](Cenario_Teste/CT-RF26_Exercicio_Campos_Vazios.md) |
+| Requisito / caso | [RF25](Analise%20de%20requisitos.md#rf25) / [CT-RF25](Cenario_Teste/CT-RF25_Exercicio_Campos_Vazios.md) |
 | Data da evidência / revisão | 15/11/2026, 16:11 BRT / 15/11/2026; sem nova execução. |
 | Página / ambiente | https://sifit.centrion.com.br/exercicios; Edge 157.0.8103.80 / Windows 11 (x86), janela 1912 × 960. |
 | Frequência conhecida | Um registro do Jam; recorrência não determinada. |
@@ -711,7 +711,7 @@ Investigar a validação do cliente e do servidor, implementar feedback junto ao
 | Status | Em triagem — rejeição visual aparente; MIME, upload e causa técnica não confirmados. |
 | Severidade / prioridade | Baixa / Média, propostas para triagem. |
 | Módulo | Exercícios / Validação de mídia |
-| Requisito / caso | [RF27](Analise%20de%20requisitos.md#rf27) / [CT-RF27](Cenario_Teste/CT-RF27_Video_Campo_Imagem.md) |
+| Requisito / caso | [RF26](Analise%20de%20requisitos.md#rf26) / [CT-RF26](Cenario_Teste/CT-RF26_Video_Campo_Imagem.md) |
 | Data da evidência / revisão | 15/11/2026, 16:08 BRT / 15/11/2026; sem nova execução. |
 | Página / ambiente | https://sifit.centrion.com.br/exercicios; Edge 157.0.8103.80 / Windows 11 (x86), janela 1912 × 960. |
 | Frequência conhecida | Um registro do Jam; recorrência não determinada. |
@@ -753,7 +753,7 @@ Exibir feedback no campo e validar tipo real e extensão tanto no cliente quanto
 | Status | Em triagem — rejeição visual aparente; MIME, upload e causa técnica não confirmados. |
 | Severidade / prioridade | Baixa / Média, propostas para triagem. |
 | Módulo | Exercícios / Validação de mídia |
-| Requisito / caso | [RF28](Analise%20de%20requisitos.md#rf28) / [CT-RF28](Cenario_Teste/CT-RF28_Imagem_Campo_Video.md) |
+| Requisito / caso | [RF27](Analise%20de%20requisitos.md#rf27) / [CT-RF27](Cenario_Teste/CT-RF27_Imagem_Campo_Video.md) |
 | Data da evidência / revisão | 15/11/2026, 16:07 BRT / 15/11/2026; sem nova execução. |
 | Página / ambiente | https://sifit.centrion.com.br/exercicios; Edge 157.0.8103.80 / Windows 11 (x86), janela 1912 × 960. |
 | Frequência conhecida | Um registro do Jam; recorrência não determinada. |
@@ -795,15 +795,15 @@ Exibir feedback no campo e validar tipo real e extensão tanto no cliente quanto
 | Status | Em triagem — causa não determinada; reteste pendente após correção. |
 | Severidade / prioridade | Média / Alta, propostas para triagem. |
 | Módulo | Grupos Musculares / Exclusão |
-| Requisitos | [RF29](Analise%20de%20requisitos.md#rf29) |
-| Casos | [CT-RF29](Cenario_Teste/CT-RF29_Exclusao_GrupoMuscular.md) |
+| Requisitos | [RF28](Analise%20de%20requisitos.md#rf28) |
+| Casos | [CT-RF28](Cenario_Teste/CT-RF28_Exclusao_GrupoMuscular.md) |
 | Data da evidência / revisão | 15/11/2026; sem nova execução. |
 | Página | https://sifit.centrion.com.br/grupos-musculares |
 | Ambiente | Chrome 157.0.8103.78 / Windows (x86) 11; versão e zoom não confirmados. |
 
 ### Pré-condições e reprodução
 
-**[CT-RF29](Cenario_Teste/CT-RF29_Exclusao_GrupoMuscular.md):** Sessão autenticada com permissão para excluir grupos musculares. Registro de teste cuja exclusão seja permitida, com vínculos conhecidos para distinguir impedimento de regra de falha do servidor.
+**[CT-RF28](Cenario_Teste/CT-RF28_Exclusao_GrupoMuscular.md):** Sessão autenticada com permissão para excluir grupos musculares. Registro de teste cuja exclusão seja permitida, com vínculos conhecidos para distinguir impedimento de regra de falha do servidor.
 
 1. Acionar o ícone de exclusão na linha do grupo muscular.
 2. Confirmar a exclusão no diálogo "Deseja deletar o Grupo?".
@@ -813,13 +813,13 @@ Exibir feedback no campo e validar tipo real e extensão tanto no cliente quanto
 
 | Caso | Esperado | Obtido |
 | --- | --- | --- |
-| CT-RF29 | Concluir a exclusão permitida, removendo o registro e atualizando os contadores; ou explicar de forma tratável o impedimento, sem erro interno. | Diálogo "Erro" / "Erro ao deletar Grupo" com o botão "Fechar". O registro permanece na listagem e os contadores não se alteram. |
+| CT-RF28 | Concluir a exclusão permitida, removendo o registro e atualizando os contadores; ou explicar de forma tratável o impedimento, sem erro interno. | Diálogo "Erro" / "Erro ao deletar Grupo" com o botão "Fechar". O registro permanece na listagem e os contadores não se alteram. |
 
 **Impacto:** A exclusão não é concluída e o usuário recebe uma mensagem sem motivo tratável. O comportamento repete a assinatura de [BUG-009](#bug-009) e [BUG-010](#bug-010), em módulos distintos.
 
 ### Evidências
 
-- [CT-RF29](Cenario_Teste/CT-RF29_Exclusao_GrupoMuscular.md): [Jam — Tela de Grupos Musculares](https://jam.dev/c/98008390-0040-475e-ba7b-7f1e72cc0b2e). 1:17: acionamento do ícone de exclusão. 1:18: diálogo de confirmação. 1:19: `POST /api/deleta/grupo-muscular/1` retorna HTTP 500 em 990 ms. 1:21: diálogo de erro, com a listagem inalterada. 1:23: segunda tentativa no mesmo endpoint, também HTTP 500, em 184 ms.
+- [CT-RF28](Cenario_Teste/CT-RF28_Exclusao_GrupoMuscular.md): [Jam — Tela de Grupos Musculares](https://jam.dev/c/98008390-0040-475e-ba7b-7f1e72cc0b2e). 1:17: acionamento do ícone de exclusão. 1:18: diálogo de confirmação. 1:19: `POST /api/deleta/grupo-muscular/1` retorna HTTP 500 em 990 ms. 1:21: diálogo de erro, com a listagem inalterada. 1:23: segunda tentativa no mesmo endpoint, também HTTP 500, em 184 ms.
 - Corpo de resposta nas duas tentativas: `{"verifica_erro": true, "mensagem": "Erro interno inesperado."}`.
 - Cabeçalhos registrados: `content-type: application/json; charset=utf-8`, `content-length: 64`, `x-powered-by: PHP/8.2.35`. Primeira tentativa em `Dom, 15 de nov de 2026 18:55:46 GMT`, `x-hcdn-request-id: d7f7c4b73412a500c5bdb50eb9be6ec1-asc-edge11`; segunda em `18:55:49 GMT`, `x-hcdn-request-id: c467f11f867c2cdb2c23ce6029e59251-asc-edge11`.
 
@@ -842,15 +842,15 @@ Investigar o HTTP 500 com logs do servidor e os vínculos do registro; corrigir 
 | Status | Em triagem — causa não determinada; reteste pendente após correção. |
 | Severidade / prioridade | Média / Média, propostas para triagem. |
 | Módulo | Grupos Musculares / Listagem |
-| Requisitos | [RF30](Analise%20de%20requisitos.md#rf30) |
-| Casos | [CT-RF30](Cenario_Teste/CT-RF30_Imagens_GruposMusculares.md) |
+| Requisitos | [RF29](Analise%20de%20requisitos.md#rf29) |
+| Casos | [CT-RF29](Cenario_Teste/CT-RF29_Imagens_GruposMusculares.md) |
 | Data da evidência / revisão | 15/11/2026; sem nova execução. |
 | Página | https://sifit.centrion.com.br/grupos-musculares |
 | Ambiente | Chrome 157.0.8103.78 / Windows (x86) 11; versão e zoom não confirmados. |
 
 ### Pré-condições e reprodução
 
-**[CT-RF30](Cenario_Teste/CT-RF30_Imagens_GruposMusculares.md):** Sessão autenticada com acesso a Grupos Musculares. Ao menos um registro com imagem cadastrada e o caminho esperado dos arquivos conhecido.
+**[CT-RF29](Cenario_Teste/CT-RF29_Imagens_GruposMusculares.md):** Sessão autenticada com acesso a Grupos Musculares. Ao menos um registro com imagem cadastrada e o caminho esperado dos arquivos conhecido.
 
 1. Acessar a tela Grupos Musculares com o painel de rede aberto.
 2. Observar a coluna IMAGEM de cada linha.
@@ -861,13 +861,13 @@ Investigar o HTTP 500 com logs do servidor e os vínculos do registro; corrigir 
 
 | Caso | Esperado | Obtido |
 | --- | --- | --- |
-| CT-RF30 | A coluna IMAGEM apresenta a imagem de cada registro e as requisições dos arquivos são concluídas com sucesso. | Todas as linhas exibem o ícone de imagem quebrada e as requisições retornam HTTP 422, com ocorrências de `net::ERR_ABORTED`. |
+| CT-RF29 | A coluna IMAGEM apresenta a imagem de cada registro e as requisições dos arquivos são concluídas com sucesso. | Todas as linhas exibem o ícone de imagem quebrada e as requisições retornam HTTP 422, com ocorrências de `net::ERR_ABORTED`. |
 
 **Impacto:** A listagem não apresenta a identificação visual dos grupos musculares em nenhuma linha. A falha é constante durante toda a gravação e independe do filtro aplicado ou do tema selecionado.
 
 ### Evidências
 
-- [CT-RF30](Cenario_Teste/CT-RF30_Imagens_GruposMusculares.md): [Jam — Tela de Grupos Musculares](https://jam.dev/c/98008390-0040-475e-ba7b-7f1e72cc0b2e). Ocorrências de HTTP 422 em 0:06, 0:16, 0:53, 0:57, 1:07, 1:09, 1:12, 1:33, 1:35, 1:39, 1:47 e 1:59; três ocorrências de `net::ERR_ABORTED` em 0:53, 0:57 e 1:12.
+- [CT-RF29](Cenario_Teste/CT-RF29_Imagens_GruposMusculares.md): [Jam — Tela de Grupos Musculares](https://jam.dev/c/98008390-0040-475e-ba7b-7f1e72cc0b2e). Ocorrências de HTTP 422 em 0:06, 0:16, 0:53, 0:57, 1:07, 1:09, 1:12, 1:33, 1:35, 1:39, 1:47 e 1:59; três ocorrências de `net::ERR_ABORTED` em 0:53, 0:57 e 1:12.
 - Arquivos requisitados: `6ad0c27c20a04.png`, `6abbd0a11ec04.png`, `655226c71114f.png` e `6afa0017749b3.jpg`, todos em `https://sifit.centrion.com.br/img/grupos_musculares/imagens/`.
 - Quadros de 0:20, 0:55, 1:18, 1:21, 1:45 e 2:00, com o ícone de imagem quebrada em todas as linhas, nos temas escuro e claro.
 
@@ -892,8 +892,8 @@ Investigar a existência dos arquivos no caminho indicado, o nome gravado em cad
 | Status | Em triagem — causa não determinada; reteste pendente. |
 | Severidade / prioridade | Alta / Alta, propostas para triagem. |
 | Módulo | Dashboard / carregamento de dados |
-| Requisito | [RF34](Analise%20de%20requisitos.md#rf34) |
-| Caso | [CT-RF34](Cenario_Teste/CT-RF34_Erro_Servidor_Excesso_Requisicoes.md) |
+| Requisito | [RF08](Analise%20de%20requisitos.md#rf08) |
+| Caso | [CT-RF08](Cenario_Teste/CT-RF08_Erro_Servidor_Excesso_Requisicoes.md) |
 | Evidência | [Jam](https://jam.dev/c/eea58e17-b62f-432b-97b2-b14c14bed555) |
 
 Ao carregar o dashboard, a interface apresenta um diálogo de erro e diversas chamadas GET/POST retornam HTTP 500 entre 23 eventos visíveis. Os endpoints aparecem truncados na evidência, portanto a quantidade de requisições não foi confirmada como causa da falha.
@@ -913,8 +913,8 @@ Ao carregar o dashboard, a interface apresenta um diálogo de erro e diversas ch
 | Status | Em triagem — causa não determinada; reteste pendente após correção. |
 | Severidade / prioridade | Alta / Alta, propostas para triagem; impede confirmar o cadastro no cenário registrado. |
 | Módulo | Treinamento / Objetivos Treino / Cadastro |
-| Requisitos | [RF35](Analise%20de%20requisitos.md#rf35) |
-| Casos | [CT-RF35](Cenario_Teste/CT-RF35_Cadastro_Objetivo_Treino.md) |
+| Requisitos | [RF33](Analise%20de%20requisitos.md#rf33) |
+| Casos | [CT-RF33](Cenario_Teste/CT-RF33_Cadastro_Objetivo_Treino.md) |
 | Data da evidência / revisão | 15/11/2026, 18:13 BRT; sem nova execução. |
 | Página | https://sifit.centrion.com.br/objetivos-treino |
 | Ambiente | Chrome 157.0.8103.78 / Windows (x86) 11, janela 1920 × 911; versão e zoom não confirmados. |
@@ -922,7 +922,7 @@ Ao carregar o dashboard, a interface apresenta um diálogo de erro e diversas ch
 
 ### Pré-condições e reprodução
 
-**[CT-RF35](Cenario_Teste/CT-RF35_Cadastro_Objetivo_Treino.md):** Sessão autenticada com acesso a Objetivos Treino e à ação Novo Objetivo. Nome de teste disponível, estado inicial da listagem registrado e regra do campo Código e da descrição confirmada.
+**[CT-RF33](Cenario_Teste/CT-RF33_Cadastro_Objetivo_Treino.md):** Sessão autenticada com acesso a Objetivos Treino e à ação Novo Objetivo. Nome de teste disponível, estado inicial da listagem registrado e regra do campo Código e da descrição confirmada.
 
 1. Acessar Objetivos Treino com o painel de rede aberto e registrar a listagem e os cartões.
 2. Clicar em Novo Objetivo.
@@ -934,7 +934,7 @@ Ao carregar o dashboard, a interface apresenta um diálogo de erro e diversas ch
 
 | Caso | Esperado | Obtido |
 | --- | --- | --- |
-| CT-RF35 | Cadastrar e confirmar dados válidos; informar validação específica para dados recusados, sem erro interno. | `POST /api/objetivo-treino/salvar/1` retorna HTTP 500; a interface exibe o diálogo "Erro ao salvar objetivo" e a listagem permanece sem registros. |
+| CT-RF33 | Cadastrar e confirmar dados válidos; informar validação específica para dados recusados, sem erro interno. | `POST /api/objetivo-treino/salvar/1` retorna HTTP 500; a interface exibe o diálogo "Erro ao salvar objetivo" e a listagem permanece sem registros. |
 
 **Impacto:** o objetivo não é cadastrado e a mensagem não orienta a correção dos dados. A persistência de registro parcial não foi conferida; verificar antes de reenviar.
 
@@ -949,9 +949,9 @@ Ao carregar o dashboard, a interface apresenta um diálogo de erro e diversas ch
 
 O HTTP 500 e o endpoint estão registrados no Jam. Sem logs do servidor, corpos da requisição e da resposta e acesso ao banco, não é possível distinguir exceção não tratada, rejeição de dados (a descrição continha `#@`) ou falha de infraestrutura. A causa técnica não foi confirmada no código. O sufixo `/1` tem significado não confirmado. Duas ocorrências de HTTP 500 para um único clique em Salvar registrado sugerem reenvio ou duplicidade de submissão; é uma hipótese a confirmar, relevante para evitar registros duplicados após a correção.
 
-O comportamento repete a assinatura de [BUG-009](#bug-009), [BUG-010](#bug-010), [BUG-016](#bug-016): resposta de erro interno em operação do servidor, em módulos distintos. O campo Código permaneceu vazio nos quadros apesar da digitação registrada; não foi tratado como defeito, pois pode ser atribuído automaticamente (ver [BUG-011](#bug-011) e [CT-RF31](Cenario_Teste/CT-RF31_Cadastro_GrupoMuscular.md)).
+O comportamento repete a assinatura de [BUG-009](#bug-009), [BUG-010](#bug-010), [BUG-016](#bug-016): resposta de erro interno em operação do servidor, em módulos distintos. O campo Código permaneceu vazio nos quadros apesar da digitação registrada; não foi tratado como defeito, pois pode ser atribuído automaticamente (ver [BUG-011](#bug-011) e [CT-RF30](Cenario_Teste/CT-RF30_Cadastro_GrupoMuscular.md)).
 
-**Reteste:** executar a [matriz do CT-RF35](Cenario_Teste/CT-RF35_Cadastro_Objetivo_Treino.md#critérios-de-aceitação-e-matriz-de-reteste-proposta), confirmar sucesso com dados válidos, validação para dados recusados, persistência, uma única gravação por clique e ausência de registros parciais. Investigar o HTTP 500 correlacionando o endpoint com 21:12:42 GMT de 15/11/2026 e o request ID. Manter em triagem até nova evidência em versão identificada.
+**Reteste:** executar a [matriz do CT-RF33](Cenario_Teste/CT-RF33_Cadastro_Objetivo_Treino.md#critérios-de-aceitação-e-matriz-de-reteste-proposta), confirmar sucesso com dados válidos, validação para dados recusados, persistência, uma única gravação por clique e ausência de registros parciais. Investigar o HTTP 500 correlacionando o endpoint com 21:12:42 GMT de 15/11/2026 e o request ID. Manter em triagem até nova evidência em versão identificada.
 
 ---
 
@@ -964,8 +964,8 @@ O comportamento repete a assinatura de [BUG-009](#bug-009), [BUG-010](#bug-010),
 | Status | Em triagem — validação nativa do navegador e obrigatoriedade da modalidade não confirmadas; reteste pendente. |
 | Severidade / prioridade | Média / Alta, propostas para triagem. |
 | Módulo | SifitBox / Turmas recorrentes / Cadastro |
-| Requisitos | [RF41](Analise%20de%20requisitos.md#rf41) |
-| Casos | [CT-RF41](Cenario_Teste/CT-RF41_Cadastro_Turma_Sem_Modalidade.md) |
+| Requisitos | [RF46](Analise%20de%20requisitos.md#rf46) |
+| Casos | [CT-RF46](Cenario_Teste/CT-RF46_Cadastro_Turma_Sem_Modalidade.md) |
 | Data da evidência / revisão | 15/11/2026, 18:51 BRT; sem nova execução. |
 | Página | https://sifit.centrion.com.br/sifitbox/turmas |
 | Ambiente | Chrome 157.0.8103.78 / Windows (x86) 11, janela 1920 × 911; versão e zoom não confirmados. |
@@ -973,7 +973,7 @@ O comportamento repete a assinatura de [BUG-009](#bug-009), [BUG-010](#bug-010),
 
 ### Pré-condições e reprodução
 
-**[CT-RF41](Cenario_Teste/CT-RF41_Cadastro_Turma_Sem_Modalidade.md):** Sessão autenticada com acesso a SifitBox – Turmas, ao menos uma modalidade ativa e turmas existentes registradas.
+**[CT-RF46](Cenario_Teste/CT-RF46_Cadastro_Turma_Sem_Modalidade.md):** Sessão autenticada com acesso a SifitBox – Turmas, ao menos uma modalidade ativa e turmas existentes registradas.
 
 1. Acessar SifitBox – Turmas com o painel de rede aberto e registrar a listagem de turmas.
 2. No formulário de Turma, informar o nome "teste", os horários, os dias da semana e as vagas, mantendo o seletor Modalidade em branco.
@@ -984,7 +984,7 @@ O comportamento repete a assinatura de [BUG-009](#bug-009), [BUG-010](#bug-010),
 
 | Caso | Esperado | Obtido |
 | --- | --- | --- |
-| CT-RF41 | Bloquear o envio, indicar de forma visível o campo pendente e não criar a turma. | Nenhuma mensagem de validação visível e nenhuma requisição de criação de turma; o formulário permanece preenchido e a listagem mantém as quatro turmas. |
+| CT-RF46 | Bloquear o envio, indicar de forma visível o campo pendente e não criar a turma. | Nenhuma mensagem de validação visível e nenhuma requisição de criação de turma; o formulário permanece preenchido e a listagem mantém as quatro turmas. |
 
 **Impacto:** o usuário não sabe se o envio foi aceito, por que a turma não foi criada nem qual dado corrigir, e pode repetir a tentativa sem compreender o impedimento.
 
@@ -1011,8 +1011,8 @@ A ausência de requisição é compatível com validação no cliente (por exemp
 | Status | Em triagem — causa não determinada; reteste pendente após correção. |
 | Severidade / prioridade | Média / Média, propostas para triagem. |
 | Módulo | Financeiro / Pagar.me / Painel |
-| Requisitos | [RF45](Analise%20de%20requisitos.md#rf45) |
-| Casos | [CT-RF45](Cenario_Teste/CT-RF45_Painel_PagarMe_Periodo.md) |
+| Requisitos | [RF49](Analise%20de%20requisitos.md#rf49) |
+| Casos | [CT-RF49](Cenario_Teste/CT-RF49_Painel_PagarMe_Periodo.md) |
 | Data da evidência / revisão | 15/11/2026, 19:06 BRT; sem nova execução. |
 | Página | https://sifit.centrion.com.br/pagarme |
 | Ambiente | Chrome 157.0.8103.78 / Windows (x86) 11, janela 1920 × 911; versão e zoom não confirmados. |
@@ -1020,7 +1020,7 @@ A ausência de requisição é compatível com validação no cliente (por exemp
 
 ### Pré-condições e reprodução
 
-**[CT-RF45](Cenario_Teste/CT-RF45_Painel_PagarMe_Periodo.md):** Sessão autenticada com acesso ao módulo Pagar.me e conta de pagamento com movimentação conhecida nos últimos 30 e 7 dias.
+**[CT-RF49](Cenario_Teste/CT-RF49_Painel_PagarMe_Periodo.md):** Sessão autenticada com acesso ao módulo Pagar.me e conta de pagamento com movimentação conhecida nos últimos 30 e 7 dias.
 
 1. Acessar o painel Pagar.me com o painel de rede aberto e registrar Recebimentos, o gráfico e os meios de pagamento em "Últimos 30 dias".
 2. Selecionar "Últimos 7 dias" no cartão Recebimentos.
@@ -1057,8 +1057,8 @@ O valor e o gráfico idênticos em períodos diferentes são compatíveis com da
 | Status | Em triagem — causa não determinada; reteste pendente após correção. |
 | Severidade / prioridade | Alta / Alta, propostas para triagem. |
 | Módulo | Relatórios / Contas a Receber |
-| Requisitos | [RF51](Analise%20de%20requisitos.md#rf51) |
-| Casos | [CT-RF51](Cenario_Teste/CT-RF51_Relatorio_Contas_Receber.md) |
+| Requisitos | [RF55](Analise%20de%20requisitos.md#rf55) |
+| Casos | [CT-RF55](Cenario_Teste/CT-RF55_Relatorio_Contas_Receber.md) |
 | Data da evidência / revisão | 15/11/2026, 19:09 BRT; sem nova execução. |
 | Página | https://sifit.centrion.com.br/relatorios |
 | Ambiente | Chrome 157.0.8103.78 / Windows (x86) 11, janela 1920 × 911; versão e zoom não confirmados. |
@@ -1066,7 +1066,7 @@ O valor e o gráfico idênticos em períodos diferentes são compatíveis com da
 
 ### Pré-condições e reprodução
 
-**[CT-RF51](Cenario_Teste/CT-RF51_Relatorio_Contas_Receber.md):** Sessão autenticada com permissão para gerar relatórios e contas a receber pendentes do período com valores conhecidos.
+**[CT-RF55](Cenario_Teste/CT-RF55_Relatorio_Contas_Receber.md):** Sessão autenticada com permissão para gerar relatórios e contas a receber pendentes do período com valores conhecidos.
 
 1. Acessar Relatórios e selecionar "Contas a Receber", Tipo de Pagamento "Todos", Status "Pendente" e o período 01/11/2026 a 15/11/2026.
 2. Acionar Gerar Relatório.
@@ -1088,7 +1088,7 @@ O valor e o gráfico idênticos em períodos diferentes são compatíveis com da
 
 ### Análise, limites e encaminhamento
 
-Os valores ausentes são compatíveis com contas sem valor preenchido, com falha na leitura do campo de valor pelo relatório ou com formatação que converte o valor em marcador. A matrícula do aluno de demonstração aparece com R$ 20,00 no relatório de Matrículas (CT-RF50) e com "----" neste relatório, o que sugere que o valor existe em outra origem. A causa técnica não foi confirmada no código; o conteúdo das contas no módulo não foi comparado.
+Os valores ausentes são compatíveis com contas sem valor preenchido, com falha na leitura do campo de valor pelo relatório ou com formatação que converte o valor em marcador. A matrícula do aluno de demonstração aparece com R$ 20,00 no relatório de Matrículas (CT-RF54) e com "----" neste relatório, o que sugere que o valor existe em outra origem. A causa técnica não foi confirmada no código; o conteúdo das contas no módulo não foi comparado.
 
 **Reteste:** Comparar as contas pendentes com o módulo Contas a Receber, reexecutar com valores conhecidos e com a opção Detalhado e confirmar valores e totais. Manter em triagem até nova evidência em versão identificada.
 
@@ -1103,8 +1103,8 @@ Os valores ausentes são compatíveis com contas sem valor preenchido, com falha
 | Status | Em triagem — causa não determinada; reteste pendente após correção. |
 | Severidade / prioridade | Alta / Alta, propostas para triagem. |
 | Módulo | Relatórios / Avaliações, Clientes, Colaboradores e Caixas |
-| Requisitos | [RF53](Analise%20de%20requisitos.md#rf53), [RF54](Analise%20de%20requisitos.md#rf54), [RF55](Analise%20de%20requisitos.md#rf55) e [RF56](Analise%20de%20requisitos.md#rf56) |
-| Casos | [CT-RF53](Cenario_Teste/CT-RF53_Relatorio_Avaliacoes_Vazio.md), [CT-RF54](Cenario_Teste/CT-RF54_Relatorio_Clientes_Vazio.md), [CT-RF55](Cenario_Teste/CT-RF55_Relatorio_Colaboradores_Vazio.md) e [CT-RF56](Cenario_Teste/CT-RF56_Relatorio_Caixas_Vazio.md) |
+| Requisitos | [RF57](Analise%20de%20requisitos.md#rf57), [RF58](Analise%20de%20requisitos.md#rf58), [RF59](Analise%20de%20requisitos.md#rf59) e [RF60](Analise%20de%20requisitos.md#rf60) |
+| Casos | [CT-RF57](Cenario_Teste/CT-RF57_Relatorio_Avaliacoes_Vazio.md), [CT-RF58](Cenario_Teste/CT-RF58_Relatorio_Clientes_Vazio.md), [CT-RF59](Cenario_Teste/CT-RF59_Relatorio_Colaboradores_Vazio.md) e [CT-RF60](Cenario_Teste/CT-RF60_Relatorio_Caixas_Vazio.md) |
 | Data da evidência / revisão | 15/11/2026, 19:09 BRT; sem nova execução. |
 | Página | https://sifit.centrion.com.br/relatorios |
 | Ambiente | Chrome 157.0.8103.78 / Windows (x86) 11, janela 1920 × 911; versão e zoom não confirmados. |
@@ -1112,7 +1112,7 @@ Os valores ausentes são compatíveis com contas sem valor preenchido, com falha
 
 ### Pré-condições e reprodução
 
-**CT-RF53 a CT-RF56:** Sessão autenticada com permissão para gerar relatórios, visualizador de PDF e pasta de downloads conferida; período e filtros registrados.
+**CT-RF57 a CT-RF60:** Sessão autenticada com permissão para gerar relatórios, visualizador de PDF e pasta de downloads conferida; período e filtros registrados.
 
 1. Acessar Relatórios, selecionar o tipo (Avaliações, Clientes, Colaboradores ou Caixas) e preencher o período.
 2. Acionar Gerar Relatório e observar a requisição de rede.
@@ -1131,7 +1131,7 @@ Os valores ausentes são compatíveis com contas sem valor preenchido, com falha
 
 - [Jam — Relatórios](https://jam.dev/c/3b4777a4-e1b0-4038-9b06-26c73669d7d1): oito `POST /api/relatorio/1` com HTTP 200 e um `OPTIONS` HTTP 204; quadros com os tipos Avaliações (0:08–0:18), Clientes (0:23), Colaboradores (0:28–0:33) e Caixas (0:53–0:57).
 - Arquivos baixados: `relatorio (1).pdf`, `(2)`, `(3)`, `(4)` e `(8)` com 0 bytes (SHA-256 `e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855`); `(5)`, `(6)` e `(7)` com 7.784, 7.882 e 7.872 bytes.
-- [Evidências de CT-RF53](Evidencias/CT-RF53_Relatorio_Avaliacoes_Vazio/README.md), [CT-RF54](Evidencias/CT-RF54_Relatorio_Clientes_Vazio/README.md), [CT-RF55](Evidencias/CT-RF55_Relatorio_Colaboradores_Vazio/README.md) e [CT-RF56](Evidencias/CT-RF56_Relatorio_Caixas_Vazio/README.md).
+- [Evidências de CT-RF57](Evidencias/CT-RF53_Relatorio_Avaliacoes_Vazio/README.md), [CT-RF58](Evidencias/CT-RF54_Relatorio_Clientes_Vazio/README.md), [CT-RF59](Evidencias/CT-RF55_Relatorio_Colaboradores_Vazio/README.md) e [CT-RF60](Evidencias/CT-RF56_Relatorio_Caixas_Vazio/README.md).
 
 ### Análise, limites e encaminhamento
 
@@ -1171,15 +1171,15 @@ A geração com HTTP 200 e arquivo de 0 bytes é compatível com falha silencios
 | Status | Em triagem — causa não determinada; reteste pendente após correção. |
 | Severidade / prioridade | Média / Alta, propostas para triagem. |
 | Módulo | Treinamento / Grupos / Exclusão |
-| Requisitos | [RF57](Analise%20de%20requisitos.md#rf57) |
-| Casos | [CT-RF57](Cenario_Teste/CT-RF57_Exclusao_Grupo.md) |
+| Requisitos | [RF34](Analise%20de%20requisitos.md#rf34) |
+| Casos | [CT-RF34](Cenario_Teste/CT-RF34_Exclusao_Grupo.md) |
 | Data da evidência / revisão | 15/11/2026, 21h03 BRT; sem nova execução. |
 | Página | https://sifit.centrion.com.br/grupos |
 | Ambiente | Chrome 157.0.8103.78 / Windows (x86) 11; versão e zoom não confirmados. |
 
 ### Pré-condições e reprodução
 
-**[CT-RF57](Cenario_Teste/CT-RF57_Exclusao_Grupo.md):** Sessão autenticada com permissão para excluir grupos. Registro de teste cuja exclusão seja permitida, com vínculos conhecidos para distinguir impedimento de regra de falha do servidor.
+**[CT-RF34](Cenario_Teste/CT-RF34_Exclusao_Grupo.md):** Sessão autenticada com permissão para excluir grupos. Registro de teste cuja exclusão seja permitida, com vínculos conhecidos para distinguir impedimento de regra de falha do servidor.
 
 1. Acionar o ícone de exclusão na linha do grupo.
 2. Confirmar a exclusão no diálogo "Deseja deletar o Grupo?".
@@ -1189,13 +1189,13 @@ A geração com HTTP 200 e arquivo de 0 bytes é compatível com falha silencios
 
 | Caso | Esperado | Obtido |
 | --- | --- | --- |
-| CT-RF57 | Concluir a exclusão permitida, removendo o registro e atualizando os contadores; ou explicar de forma tratável o impedimento, sem erro interno. | O registro (grupo código 1, "Treino Livre") permanece na listagem e os contadores de cartões não se alteram entre as tentativas. |
+| CT-RF34 | Concluir a exclusão permitida, removendo o registro e atualizando os contadores; ou explicar de forma tratável o impedimento, sem erro interno. | O registro (grupo código 1, "Treino Livre") permanece na listagem e os contadores de cartões não se alteram entre as tentativas. |
 
 **Impacto:** A exclusão não é concluída. O endpoint e a mensagem genérica retornada coincidem exatamente com os já registrados em [BUG-016](#bug-016) para a exclusão de grupo muscular, o que sugere uma causa comum no tratamento de exclusões do backend.
 
 ### Evidências
 
-- [CT-RF57](Cenario_Teste/CT-RF57_Exclusao_Grupo.md): [Jam — Tela de Grupos](https://jam.dev/c/b1231a75-1a65-4bf0-b795-f52a8c7d3365). 1:19: acionamento do ícone de exclusão. 1:20: diálogo de confirmação "Deseja deletar o Grupo?". 1:21: `POST /api/deleta/grupo/1` retorna HTTP 500 em 987 ms. 1:30: segunda tentativa no mesmo endpoint, também HTTP 500, em 230 ms.
+- [CT-RF34](Cenario_Teste/CT-RF34_Exclusao_Grupo.md): [Jam — Tela de Grupos](https://jam.dev/c/b1231a75-1a65-4bf0-b795-f52a8c7d3365). 1:19: acionamento do ícone de exclusão. 1:20: diálogo de confirmação "Deseja deletar o Grupo?". 1:21: `POST /api/deleta/grupo/1` retorna HTTP 500 em 987 ms. 1:30: segunda tentativa no mesmo endpoint, também HTTP 500, em 230 ms.
 - Corpo de resposta nas duas tentativas: `{"verifica_erro": true, "mensagem": "Erro interno inesperado."}`.
 - Cabeçalhos registrados: `content-type: application/json; charset=utf-8`, `content-length: 64`, `content-encoding: br`, `x-powered-by: PHP/8.2.35`. Primeira tentativa em `Seg, 16 de nov de 2026 00:03:09 GMT`, `x-hcdn-request-id: 8f18afe5ff0e3a9e3d1c944d69811576-asc-edge13`; segunda em `00:03:19 GMT`, `x-hcdn-request-id: bc5d59dc99d0c01de186f1b3125a9b80-asc-edge13`.
 
@@ -1218,15 +1218,15 @@ Investigar o HTTP 500 com logs do servidor e os vínculos do registro, em conjun
 | Status | Em triagem — causa não determinada; reteste pendente após correção. |
 | Severidade / prioridade | Média / Alta, propostas para triagem. |
 | Módulo | Treinamento / Grupos / Edição |
-| Requisitos | [RF58](Analise%20de%20requisitos.md#rf58) |
-| Casos | [CT-RF58](Cenario_Teste/CT-RF58_Edicao_Grupo.md) |
+| Requisitos | [RF35](Analise%20de%20requisitos.md#rf35) |
+| Casos | [CT-RF35](Cenario_Teste/CT-RF35_Edicao_Grupo.md) |
 | Data da evidência / revisão | 15/11/2026, 21h03 BRT; sem nova execução. |
 | Página | https://sifit.centrion.com.br/grupos |
 | Ambiente | Chrome 157.0.8103.78 / Windows (x86) 11; versão e zoom não confirmados. |
 
 ### Pré-condições e reprodução
 
-**[CT-RF58](Cenario_Teste/CT-RF58_Edicao_Grupo.md):** Sessão autenticada com permissão para editar grupos. Grupo de teste com todos os campos atuais registrados antes da edição.
+**[CT-RF35](Cenario_Teste/CT-RF35_Edicao_Grupo.md):** Sessão autenticada com permissão para editar grupos. Grupo de teste com todos os campos atuais registrados antes da edição.
 
 1. Abrir a edição do grupo e alterar apenas o campo Status, mantendo os demais campos.
 2. Acionar o botão Salvar.
@@ -1236,13 +1236,13 @@ Investigar o HTTP 500 com logs do servidor e os vínculos do registro, em conjun
 
 | Caso | Esperado | Obtido |
 | --- | --- | --- |
-| CT-RF58 | A edição do campo Status retorna sucesso somente quando o valor é persistido; a consulta seguinte reflete o novo status. | A edição retorna sucesso (`verifica_erro: false`), mas a consulta imediatamente seguinte mostra o grupo ainda com o status anterior ("ativo"). |
+| CT-RF35 | A edição do campo Status retorna sucesso somente quando o valor é persistido; a consulta seguinte reflete o novo status. | A edição retorna sucesso (`verifica_erro: false`), mas a consulta imediatamente seguinte mostra o grupo ainda com o status anterior ("ativo"). |
 
 **Impacto:** O usuário recebe confirmação de sucesso para uma alteração que não foi salva, sem qualquer indicação de falha na interface. Na mesma sessão e no mesmo registro, a edição do campo Descrição é persistida corretamente, o que isola a falha ao campo `status` e descarta causa geral de sessão, rede ou salvamento.
 
 ### Evidências
 
-- [CT-RF58](Cenario_Teste/CT-RF58_Edicao_Grupo.md): [Jam — Tela de Grupos](https://jam.dev/c/b1231a75-1a65-4bf0-b795-f52a8c7d3365). 0:58: clique no botão Salvar após selecionar Status = "Inativo". `POST /api/edita/grupo/1` com `{"id":11,"nome":"Treino sla","mostrar_home":"nao","caixa":"interno","descricao":"Esse treino","status":"inativo"}` retorna HTTP 200, `{"verifica_erro": false}`. No mesmo instante, `GET /api/grupos/1` e `POST /api/seleciona/grupo/1` retornam o grupo id 11 ainda com `"status": "ativo"`. 1:10: segunda edição, alterando apenas a descrição para "Ess"; `POST /api/edita/grupo/1` retorna HTTP 200, `{"verifica_erro": false}`, e a consulta seguinte confirma `"descricao": "Ess"` persistida.
+- [CT-RF35](Cenario_Teste/CT-RF35_Edicao_Grupo.md): [Jam — Tela de Grupos](https://jam.dev/c/b1231a75-1a65-4bf0-b795-f52a8c7d3365). 0:58: clique no botão Salvar após selecionar Status = "Inativo". `POST /api/edita/grupo/1` com `{"id":11,"nome":"Treino sla","mostrar_home":"nao","caixa":"interno","descricao":"Esse treino","status":"inativo"}` retorna HTTP 200, `{"verifica_erro": false}`. No mesmo instante, `GET /api/grupos/1` e `POST /api/seleciona/grupo/1` retornam o grupo id 11 ainda com `"status": "ativo"`. 1:10: segunda edição, alterando apenas a descrição para "Ess"; `POST /api/edita/grupo/1` retorna HTTP 200, `{"verifica_erro": false}`, e a consulta seguinte confirma `"descricao": "Ess"` persistida.
 - Cabeçalhos registrados: `content-type: application/json; charset=utf-8`. Primeira edição em `Segunda-feira, 16 de novembro de 2026, 08:02:46 GMT`; segunda em `08:02:58 GMT`. O campo `updated_at` do corpo da resposta registra `12:02:46` e `12:02:58` para os mesmos instantes — descompasso de cerca de 4 horas em relação ao cabeçalho HTTP `data`, sem causa determinada.
 
 ### Análise, limites e encaminhamento
@@ -1274,16 +1274,16 @@ Investigar a rotina de edição do grupo (`/api/edita/grupo/{id}`), com foco no 
 | --- | --- |
 | Status | Em triagem — causa não determinada; reteste pendente após correção. |
 | Severidade / prioridade | Média / Alta, propostas para triagem. |
-| Módulo | Treinamento / Fichas de Anamnese / Cadastro |
-| Requisitos | [RF59](Analise%20de%20requisitos.md#rf59) |
-| Casos | [CT-RF59](Cenario_Teste/CT-RF59_Cadastro_Anamnese.md) |
+| Módulo | Saúde / Fichas Anamnese / Cadastro |
+| Requisitos | [RF100](Analise%20de%20requisitos.md#rf100) |
+| Casos | [CT-RF100](Cenario_Teste/CT-RF100_Cadastro_Anamnese.md) |
 | Data da evidência / revisão | 15/11/2026, 22h07 BRT; sem nova execução. |
 | Página | https://sifit.centrion.com.br/anamneses |
 | Ambiente | Chrome 157.0.8103.78 / Windows (x86) 11; versão e zoom não confirmados. |
 
 ### Pré-condições e reprodução
 
-**[CT-RF59](Cenario_Teste/CT-RF59_Cadastro_Anamnese.md):** Sessão autenticada com permissão para cadastrar anamneses. Aluno cadastrado e selecionável; modelo de anamnese com ao menos uma pergunta.
+**[CT-RF100](Cenario_Teste/CT-RF100_Cadastro_Anamnese.md):** Sessão autenticada com permissão para cadastrar anamneses. Aluno cadastrado e selecionável; modelo de anamnese com ao menos uma pergunta.
 
 1. Abrir "Nova Anamnese", selecionar aluno e modelo, avançar até a pergunta.
 2. Preencher a resposta e avançar até a revisão final.
@@ -1293,13 +1293,13 @@ Investigar a rotina de edição do grupo (`/api/edita/grupo/{id}`), com foco no 
 
 | Caso | Esperado | Obtido |
 | --- | --- | --- |
-| CT-RF59 | O backend grava o rascunho ou a anamnese aplicada e retorna sucesso. | As sete tentativas registradas (quatro em `aplicar`, três em `rascunho`) retornam HTTP 500 com a mesma mensagem genérica; nenhuma anamnese é cadastrada com sucesso. |
+| CT-RF100 | O backend grava o rascunho ou a anamnese aplicada e retorna sucesso. | As sete tentativas registradas (quatro em `aplicar`, três em `rascunho`) retornam HTTP 500 com a mesma mensagem genérica; nenhuma anamnese é cadastrada com sucesso. |
 
 **Impacto:** O usuário não consegue concluir o cadastro de nenhuma anamnese, nem como rascunho nem de forma definitiva, em nenhuma das tentativas registradas na gravação, com dois modelos e três respostas diferentes.
 
 ### Evidências
 
-- [CT-RF59](Cenario_Teste/CT-RF59_Cadastro_Anamnese.md): [Jam — Fichas de Anamnese](https://jam.dev/c/7be0fe71-3419-4050-b63f-473d943fa08e). 0:28: `POST /api/anamnese/aplicar/1` com `{"modelo_id":3,"respostas":[{"pergunta_id":"5","resposta":"Esse"}],"status":"concluida"}` retorna HTTP 500, `{"verifica_erro": true, "mensagem": "Erro interno inesperado."}`. 0:42, 1:03 e 1:10: três tentativas de `POST /api/anamnese/rascunho/1` retornam o mesmo HTTP 500. 1:12: `POST /api/anamnese/aplicar/1` com `{"modelo_id":5,"respostas":[{"pergunta_id":"5","resposta":"Agachamento"}],"status":"concluida"}` retorna o mesmo HTTP 500.
+- [CT-RF100](Cenario_Teste/CT-RF100_Cadastro_Anamnese.md): [Jam — Fichas de Anamnese](https://jam.dev/c/7be0fe71-3419-4050-b63f-473d943fa08e). 0:28: `POST /api/anamnese/aplicar/1` com `{"modelo_id":3,"respostas":[{"pergunta_id":"5","resposta":"Esse"}],"status":"concluida"}` retorna HTTP 500, `{"verifica_erro": true, "mensagem": "Erro interno inesperado."}`. 0:42, 1:03 e 1:10: três tentativas de `POST /api/anamnese/rascunho/1` retornam o mesmo HTTP 500. 1:12: `POST /api/anamnese/aplicar/1` com `{"modelo_id":5,"respostas":[{"pergunta_id":"5","resposta":"Agachamento"}],"status":"concluida"}` retorna o mesmo HTTP 500.
 - Cabeçalhos registrados: `content-type: application/json; charset=utf-8`, `comprimento-do-conteúdo: 64`. Data registrada em uma das tentativas de rascunho: `Segunda-feira, 16 de novembro de 2026, 01:05:48 GMT`.
 
 ### Análise, limites e encaminhamento
@@ -1319,8 +1319,8 @@ Investigar as rotinas de servidor acionadas por `/api/anamnese/aplicar/{id}` e `
 | Status | Em triagem — causa não determinada; reteste pendente após correção. |
 | Severidade / prioridade | Média / Alta, propostas para triagem. |
 | Módulo | Bandeiras de Cartão |
-| Requisito | [RF81](Analise%20de%20requisitos.md#rf81) |
-| Caso | [CT-RF81](Cenario_Teste/CT-RF81_Cadastro_Bandeira_Parcela_Listagem.md) |
+| Requisito | [RF89](Analise%20de%20requisitos.md#rf89) |
+| Caso | [CT-RF89](Cenario_Teste/CT-RF89_Cadastro_Bandeira_Parcela_Listagem.md) |
 | Data da evidência / integração | 16/11/2026, conforme o resumo; sem nova execução. |
 | Ambiente | URL, navegador, sistema operacional, versão e zoom não informados no resumo. |
 
@@ -1338,7 +1338,7 @@ Investigar as rotinas de servidor acionadas por `/api/anamnese/aplicar/{id}` e `
 
 | Caso | Esperado | Obtido |
 | --- | --- | --- |
-| CT-RF81 | A bandeira deve ser criada com a configuração de parcela e aparecer na listagem após o salvamento. | A API confirma a criação da bandeira de código 34 e da parcela, mas a consulta seguinte retorna [] e a interface continua exibindo Nenhuma bandeira encontrada. A criação da parcela tem retorno de sucesso; o fluxo completo apresenta erro na recuperação/exibição do cadastro. |
+| CT-RF89 | A bandeira deve ser criada com a configuração de parcela e aparecer na listagem após o salvamento. | A API confirma a criação da bandeira de código 34 e da parcela, mas a consulta seguinte retorna [] e a interface continua exibindo Nenhuma bandeira encontrada. A criação da parcela tem retorno de sucesso; o fluxo completo apresenta erro na recuperação/exibição do cadastro. |
 
 **Impacto:** O usuário recebe retornos de criação bem-sucedida, mas não consegue localizar a bandeira; repetir o cadastro pode gerar duplicidade.
 
@@ -1381,8 +1381,8 @@ Integração documental dos arquivos RESUMO.txt fornecidos em `C:\Users\Leonardo
 | Status | Em triagem — causa não determinada; reteste pendente após correção. |
 | Severidade / prioridade | Média / Média, propostas para triagem. |
 | Módulo | Bandeiras de Cartão |
-| Requisito | [RF82](Analise%20de%20requisitos.md#rf82) |
-| Caso | [CT-RF82](Cenario_Teste/CT-RF82_Tema_Escuro_Bandeiras.md) |
+| Requisito | [RF90](Analise%20de%20requisitos.md#rf90) |
+| Caso | [CT-RF90](Cenario_Teste/CT-RF90_Tema_Escuro_Bandeiras.md) |
 | Data da evidência / integração | 16/11/2026, conforme o resumo; sem nova execução. |
 | Ambiente | URL, navegador, sistema operacional, versão e zoom não informados no resumo. |
 
@@ -1399,7 +1399,7 @@ Integração documental dos arquivos RESUMO.txt fornecidos em `C:\Users\Leonardo
 
 | Caso | Esperado | Obtido |
 | --- | --- | --- |
-| CT-RF82 | O tema selecionado deve ser aplicado de forma consistente ao fundo, aos painéis e aos textos da tela. | No tema Escuro, os painéis ficam escuros, mas o fundo principal continua claro. Os textos da área vazia da listagem apresentam baixa legibilidade visual. A descrição do Jam relata: Fundo com falta de cores e modo escuro incompleto. |
+| CT-RF90 | O tema selecionado deve ser aplicado de forma consistente ao fundo, aos painéis e aos textos da tela. | No tema Escuro, os painéis ficam escuros, mas o fundo principal continua claro. Os textos da área vazia da listagem apresentam baixa legibilidade visual. A descrição do Jam relata: Fundo com falta de cores e modo escuro incompleto. |
 
 **Impacto:** A aplicação parcial do tema prejudica a consistência visual e a leitura do estado vazio da listagem.
 
@@ -1441,8 +1441,8 @@ Integração documental dos arquivos RESUMO.txt fornecidos em `C:\Users\Leonardo
 | Status | Em triagem — regra de obrigatoriedade a confirmar antes de definir correção. |
 | Severidade / prioridade | Média / Alta, propostas para triagem. |
 | Módulo | Prospecção |
-| Requisito | [RF83](Analise%20de%20requisitos.md#rf83) |
-| Caso | [CT-RF83](Cenario_Teste/CT-RF83_Cadastro_Lead_Apenas_Nome.md) |
+| Requisito | [RF69](Analise%20de%20requisitos.md#rf69) |
+| Caso | [CT-RF69](Cenario_Teste/CT-RF69_Cadastro_Lead_Apenas_Nome.md) |
 | Data da evidência / integração | 16/11/2026, conforme o resumo; sem nova execução. |
 | Ambiente | URL, navegador, sistema operacional, versão e zoom não informados no resumo. |
 
@@ -1459,7 +1459,7 @@ Integração documental dos arquivos RESUMO.txt fornecidos em `C:\Users\Leonardo
 
 | Caso | Esperado | Obtido |
 | --- | --- | --- |
-| CT-RF83 | Segundo o cenário identificado como bug pelo autor, o cadastro incompleto deveria ser bloqueado e os campos obrigatórios deveriam ser indicados. | O sistema aceita o envio sem bloqueio visível, cria o lead de código 19 e atualiza a listagem. O total de leads passa de 14 para 15. |
+| CT-RF69 | Segundo o cenário identificado como bug pelo autor, o cadastro incompleto deveria ser bloqueado e os campos obrigatórios deveriam ser indicados. | O sistema aceita o envio sem bloqueio visível, cria o lead de código 19 e atualiza a listagem. O total de leads passa de 14 para 15. |
 
 **Impacto:** Se a regra exigir dados adicionais, o cadastro aceita leads incompletos e pode comprometer o contato posterior. O impacto depende da regra de produto.
 
@@ -1501,8 +1501,8 @@ Integração documental dos arquivos RESUMO.txt fornecidos em `C:\Users\Leonardo
 | Status | Em triagem — causa não determinada; reteste pendente após correção. |
 | Severidade / prioridade | Média / Média, propostas para triagem. |
 | Módulo | Prospecção / Leads / Validação do telefone |
-| Requisitos | [RF89](Analise%20de%20requisitos.md#rf89) |
-| Casos | [CT-RF89](Cenario_Teste/CT-RF89_Telefone_Lead_Sem_Validacao.md) |
+| Requisitos | [RF72](Analise%20de%20requisitos.md#rf72) |
+| Casos | [CT-RF72](Cenario_Teste/CT-RF72_Telefone_Lead_Sem_Validacao.md) |
 | Data da evidência / revisão | 15/11/2026, 21:52 BRT; sem nova execução. |
 | Página | https://sifit.centrion.com.br/prospeccao |
 | Ambiente | Chrome 157.0.8103.78 / Windows (x86) 11, janela 1920 × 911; versão e zoom não confirmados. |
@@ -1510,7 +1510,7 @@ Integração documental dos arquivos RESUMO.txt fornecidos em `C:\Users\Leonardo
 
 ### Pré-condições e reprodução
 
-**[CT-RF89](Cenario_Teste/CT-RF89_Telefone_Lead_Sem_Validacao.md):** Sessão autenticada com acesso a Prospecção e regra do campo Telefone definida com o produto.
+**[CT-RF72](Cenario_Teste/CT-RF72_Telefone_Lead_Sem_Validacao.md):** Sessão autenticada com acesso a Prospecção e regra do campo Telefone definida com o produto.
 
 1. Acessar Prospecção e acionar Adicionar Lead.
 2. Preencher o nome e o estágio e informar no campo Telefone (placeholder "(00) 00000-0000") um valor de 30 dígitos, como 44999999999 seguido de 5757534534534534534.
@@ -1547,9 +1547,9 @@ O valor gravado com 30 dígitos é compatível com ausência de validação de t
 | --- | --- |
 | Status | Em triagem — causa não determinada; reteste pendente após correção. |
 | Severidade / prioridade | Alta / Alta, propostas para triagem. |
-| Módulo | Financeiro / Contas a Pagar / Cadastro |
-| Requisitos | [RF92](Analise%20de%20requisitos.md#rf92) |
-| Casos | [CT-RF92](Cenario_Teste/CT-RF92_Cadastro_Conta_Colaborador_Sem_Colaborador.md) |
+| Módulo | Operação da Academia / Contas a Pagar / Cadastro |
+| Requisitos | [RF17](Analise%20de%20requisitos.md#rf17) |
+| Casos | [CT-RF17](Cenario_Teste/CT-RF17_Cadastro_Conta_Colaborador_Sem_Colaborador.md) |
 | Data da evidência / revisão | 15/11/2026, 21:58 BRT; sem nova execução. |
 | Página | https://sifit.centrion.com.br/contas-pagar |
 | Ambiente | Chrome 157.0.8103.78 / Windows (x86) 11, janela 1920 × 911; versão e zoom não confirmados. |
@@ -1557,7 +1557,7 @@ O valor gravado com 30 dígitos é compatível com ausência de validação de t
 
 ### Pré-condições e reprodução
 
-**[CT-RF92](Cenario_Teste/CT-RF92_Cadastro_Conta_Colaborador_Sem_Colaborador.md):** Sessão autenticada com acesso a Contas a Pagar e regra de obrigatoriedade do colaborador definida com o produto.
+**[CT-RF17](Cenario_Teste/CT-RF17_Cadastro_Conta_Colaborador_Sem_Colaborador.md):** Sessão autenticada com acesso a Contas a Pagar e regra de obrigatoriedade do colaborador definida com o produto.
 
 1. Acessar Contas a Pagar e acionar Nova Conta.
 2. Selecionar o tipo Pagto. Colaborador e preencher título, documento, categoria e valor sem informar o colaborador (Código e Colaborador vazios).
@@ -1595,8 +1595,8 @@ A gravação sem colaborador é compatível com ausência de validação no clie
 | Status | Em triagem — causa não determinada; reteste pendente após correção. |
 | Severidade / prioridade | Alta / Alta, propostas para triagem. |
 | Módulo | Modelos de Contrato / Listagem |
-| Requisitos | [RF98](Analise%20de%20requisitos.md#rf98) |
-| Casos | [CT-RF98](Cenario_Teste/CT-RF98_Listagem_Modelos_Contrato_Vazia.md) |
+| Requisitos | [RF83](Analise%20de%20requisitos.md#rf83) |
+| Casos | [CT-RF83](Cenario_Teste/CT-RF83_Listagem_Modelos_Contrato_Vazia.md) |
 | Data da evidência / revisão | 15/11/2026, 21:55 BRT; sem nova execução. |
 | Página | https://sifit.centrion.com.br/modelos-contrato |
 | Ambiente | Chrome 157.0.8103.78 / Windows (x86) 11, janela 1920 × 855; versão e zoom não confirmados. |
@@ -1604,7 +1604,7 @@ A gravação sem colaborador é compatível com ausência de validação no clie
 
 ### Pré-condições e reprodução
 
-**[CT-RF98](Cenario_Teste/CT-RF98_Listagem_Modelos_Contrato_Vazia.md):** Sessão autenticada com acesso a Modelos de Contrato e modelos existentes no servidor.
+**[CT-RF83](Cenario_Teste/CT-RF83_Listagem_Modelos_Contrato_Vazia.md):** Sessão autenticada com acesso a Modelos de Contrato e modelos existentes no servidor.
 
 1. Acessar Modelos Contrato com o painel de rede aberto e registrar a resposta de `modelos-contrato`.
 2. Conferir a tabela da tela com a resposta do servidor.
@@ -1641,8 +1641,8 @@ A divergência entre a resposta e a tabela é compatível com falha na renderiza
 | Status | Em triagem — causa não determinada; reteste pendente após correção. |
 | Severidade / prioridade | Média / Média, propostas para triagem. |
 | Módulo | Planos / Cartões de resumo |
-| Requisitos | [RF102](Analise%20de%20requisitos.md#rf102) |
-| Casos | [CT-RF102](Cenario_Teste/CT-RF102_Contador_Ativos_Planos.md) |
+| Requisitos | [RF79](Analise%20de%20requisitos.md#rf79) |
+| Casos | [CT-RF79](Cenario_Teste/CT-RF79_Contador_Ativos_Planos.md) |
 | Data da evidência / revisão | 15/11/2026, 21:54 BRT; sem nova execução. |
 | Página | https://sifit.centrion.com.br/planos |
 | Ambiente | Chrome 157.0.8103.78 / Windows (x86) 11, janela 1920 × 855; versão e zoom não confirmados. |
@@ -1650,7 +1650,7 @@ A divergência entre a resposta e a tabela é compatível com falha na renderiza
 
 ### Pré-condições e reprodução
 
-**[CT-RF102](Cenario_Teste/CT-RF102_Contador_Ativos_Planos.md):** Sessão autenticada com acesso a Planos e base de planos com a regra do cartão Ativos definida com o produto.
+**[CT-RF79](Cenario_Teste/CT-RF79_Contador_Ativos_Planos.md):** Sessão autenticada com acesso a Planos e base de planos com a regra do cartão Ativos definida com o produto.
 
 1. Acessar Planos e registrar os cartões Planos e Ativos.
 2. Cadastrar um plano com status Inativo e conferir os cartões.
@@ -1686,9 +1686,9 @@ O aumento do cartão Ativos a cada operação com planos inativos é compatível
 | --- | --- |
 | Status | Em triagem — causa não determinada; reteste pendente após correção. |
 | Severidade / prioridade | Média / Média, propostas para triagem. |
-| Módulo | Financeiro / Tipos de Pagamento / Cadastro e listagem |
-| Requisitos | [RF105](Analise%20de%20requisitos.md#rf105) |
-| Casos | [CT-RF105](Cenario_Teste/CT-RF105_Cadastro_Tipo_Pagamento_Status.md) |
+| Módulo | Comercial / Tipos de Pagamento / Cadastro e listagem |
+| Requisitos | [RF85](Analise%20de%20requisitos.md#rf85) |
+| Casos | [CT-RF85](Cenario_Teste/CT-RF85_Cadastro_Tipo_Pagamento_Status.md) |
 | Data da evidência / revisão | 15/11/2026, 22:03 BRT; sem nova execução. |
 | Página | https://sifit.centrion.com.br/tipos-pagamento |
 | Ambiente | Chrome 157.0.8103.78 / Windows (x86) 11, janela 1920 × 855; versão e zoom não confirmados. |
@@ -1696,7 +1696,7 @@ O aumento do cartão Ativos a cada operação com planos inativos é compatível
 
 ### Pré-condições e reprodução
 
-**[CT-RF105](Cenario_Teste/CT-RF105_Cadastro_Tipo_Pagamento_Status.md):** Sessão autenticada com acesso a Tipos de Pagamento e regra do status do tipo definida com o produto.
+**[CT-RF85](Cenario_Teste/CT-RF85_Cadastro_Tipo_Pagamento_Status.md):** Sessão autenticada com acesso a Tipos de Pagamento e regra do status do tipo definida com o produto.
 
 1. Acessar Tipos de Pagamento e registrar a coluna Status e os cartões Total, Ativos e Inativos.
 2. Acionar Novo, informar o nome, manter o Status Ativo e escolher Tipo, Escolher Bandeira e Pagamento Pelo Sistema.
@@ -1733,9 +1733,9 @@ O padrão é compatível com um campo de status que existe apenas na interface, 
 | --- | --- |
 | Status | Em triagem — causa não determinada; reteste pendente após correção. |
 | Severidade / prioridade | Média / Média, propostas para triagem. |
-| Módulo | Financeiro / Tipos de Pagamento / Exclusão |
-| Requisitos | [RF107](Analise%20de%20requisitos.md#rf107) |
-| Casos | [CT-RF107](Cenario_Teste/CT-RF107_Exclusao_Tipo_Pagamento_Em_Uso.md) |
+| Módulo | Comercial / Tipos de Pagamento / Exclusão |
+| Requisitos | [RF87](Analise%20de%20requisitos.md#rf87) |
+| Casos | [CT-RF87](Cenario_Teste/CT-RF87_Exclusao_Tipo_Pagamento_Em_Uso.md) |
 | Data da evidência / revisão | 15/11/2026, 22:03 BRT; sem nova execução. |
 | Página | https://sifit.centrion.com.br/tipos-pagamento |
 | Ambiente | Chrome 157.0.8103.78 / Windows (x86) 11, janela 1920 × 855; versão e zoom não confirmados. |
@@ -1743,7 +1743,7 @@ O padrão é compatível com um campo de status que existe apenas na interface, 
 
 ### Pré-condições e reprodução
 
-**[CT-RF107](Cenario_Teste/CT-RF107_Exclusao_Tipo_Pagamento_Em_Uso.md):** Sessão autenticada com acesso a Tipos de Pagamento e tipos de pagamento referenciados por contas a receber.
+**[CT-RF87](Cenario_Teste/CT-RF87_Exclusao_Tipo_Pagamento_Em_Uso.md):** Sessão autenticada com acesso a Tipos de Pagamento e tipos de pagamento referenciados por contas a receber.
 
 1. Acessar Tipos de Pagamento com o painel de rede aberto.
 2. Acionar o ícone de exclusão da linha do tipo Dinheiro (código 1) e confirmar o diálogo.
@@ -1780,9 +1780,9 @@ O impedimento de excluir um tipo referenciado é compatível com a integridade r
 | --- | --- |
 | Status | Em triagem — causa não determinada; reteste pendente após correção. |
 | Severidade / prioridade | Alta / Alta, propostas para triagem. |
-| Módulo | Treinamento / Fichas de Anamnese / Perguntas Anamnese |
-| Requisitos | [RF62](Analise%20de%20requisitos.md#rf62--editar-pergunta-de-anamnese-sem-erro-de-servidor) |
-| Casos | [CT-RF62](Cenario_Teste/CT-RF62_Edicao_Pergunta_Anamnese.md) |
+| Módulo | Saúde / Perguntas / Edição |
+| Requisitos | [RF103](Analise%20de%20requisitos.md#rf103--editar-pergunta-de-anamnese-sem-erro-de-servidor) |
+| Casos | [CT-RF103](Cenario_Teste/CT-RF103_Edicao_Pergunta_Anamnese.md) |
 | Data da evidência / revisão | 16/11/2026, 15h57 BRT; sem nova execução. |
 | Página | https://sifit.centrion.com.br/perguntas-anamnese |
 | Ambiente | Chrome 157.0.8103.78 / Windows 11; versão e zoom não confirmados. |
@@ -1790,7 +1790,7 @@ O impedimento de excluir um tipo referenciado é compatível com a integridade r
 
 ### Pré-condições e reprodução
 
-**[CT-RF62](Cenario_Teste/CT-RF62_Edicao_Pergunta_Anamnese.md):** Sessão autenticada com permissão para gerenciar perguntas de anamnese; pergunta cadastrada com um tipo de resposta.
+**[CT-RF103](Cenario_Teste/CT-RF103_Edicao_Pergunta_Anamnese.md):** Sessão autenticada com permissão para gerenciar perguntas de anamnese; pergunta cadastrada com um tipo de resposta.
 
 1. Cadastrar uma nova pergunta de anamnese com um tipo de resposta (por exemplo, "2 opções com complemento").
 2. Reabrir a pergunta pela ação de editar.
@@ -1802,20 +1802,20 @@ O impedimento de excluir um tipo referenciado é compatível com a integridade r
 
 | Caso | Esperado | Obtido |
 | --- | --- | --- |
-| CT-RF62 | A edição do tipo de resposta ou do status de uma pergunta cadastrada é persistida e retorna sucesso. | As quatro tentativas registradas (`resposta: "3opcoes"` duas vezes, `"2opcoes"` com status INATIVO e depois ATIVO) retornam HTTP 500 com a mesma mensagem genérica; nenhuma alteração é persistida. |
+| CT-RF103 | A edição do tipo de resposta ou do status de uma pergunta cadastrada é persistida e retorna sucesso. | As quatro tentativas registradas (`resposta: "3opcoes"` duas vezes, `"2opcoes"` com status INATIVO e depois ATIVO) retornam HTTP 500 com a mesma mensagem genérica; nenhuma alteração é persistida. |
 
 **Impacto:** O usuário não consegue editar o tipo de resposta nem o status de uma pergunta de anamnese já cadastrada, em nenhuma das quatro tentativas registradas na gravação, com dois valores de tipo de resposta e os dois valores de status.
 
 ### Evidências
 
-- [CT-RF62](Cenario_Teste/CT-RF62_Edicao_Pergunta_Anamnese.md): [Jam — Perguntas Anamnese](https://jam.dev/c/84b116fb-4640-4b1e-9148-9a169b8aa2b0). 1:00 e 1:04: `POST /api/pergunta-anamnese/alterar/1` com `{"id": 11, "nome": "Pergunta", "pergunta": "Pergunta isso", "resposta": "3opcoes", "numero": 12, "status": "INATIVO"}`, ambas HTTP 500. 1:08: mesmo endpoint com `"resposta": "2opcoes"`, status INATIVO, HTTP 500. 1:12: mesmo endpoint com `"resposta": "2opcoes"`, status ATIVO, HTTP 500. Todas as quatro respostas: `{"verifica_erro": true, "mensagem": "Erro interno inesperado."}` — mesmo padrão já observado nos BUG-016, BUG-024 e BUG-032.
+- [CT-RF103](Cenario_Teste/CT-RF103_Edicao_Pergunta_Anamnese.md): [Jam — Perguntas Anamnese](https://jam.dev/c/84b116fb-4640-4b1e-9148-9a169b8aa2b0). 1:00 e 1:04: `POST /api/pergunta-anamnese/alterar/1` com `{"id": 11, "nome": "Pergunta", "pergunta": "Pergunta isso", "resposta": "3opcoes", "numero": 12, "status": "INATIVO"}`, ambas HTTP 500. 1:08: mesmo endpoint com `"resposta": "2opcoes"`, status INATIVO, HTTP 500. 1:12: mesmo endpoint com `"resposta": "2opcoes"`, status ATIVO, HTTP 500. Todas as quatro respostas: `{"verifica_erro": true, "mensagem": "Erro interno inesperado."}` — mesmo padrão já observado nos BUG-016, BUG-024 e BUG-032.
 - As quatro requisições de erro aparecem também na visão "Erros de rede" do painel Console do Jam, nos mesmos instantes.
 
 ### Análise, limites e encaminhamento
 
 A falha ocorre de forma idêntica para dois valores diferentes de tipo de resposta (`"3opcoes"` e `"2opcoes"`) e para os dois valores de status, sempre com a mesma mensagem genérica — o mesmo padrão de resposta já registrado em [BUG-016](#bug-016), [BUG-024](#bug-024) e [BUG-032](#bug-032). A pergunta foi criada com o tipo de resposta `"2opcoes_complemento"`, o que sugere que a rotina de alteração pode estar falhando ao tentar ajustar ou remover as opções/complementos associados ao tipo anterior, mas essa hipótese não foi confirmada. Não houve acesso a logs do servidor, ao código da rotina nem ao banco de dados.
 
-**Reteste:** Investigar a rotina de servidor acionada por `/api/pergunta-anamnese/alterar/{id}`, com acesso a logs, cobrindo especificamente a transição entre tipos de resposta com e sem complemento; confirmar também se o identificador final da URL corresponde ao `empresa_id`, como já hipotetizado em CT-RF59 a CT-RF61. Manter em triagem até nova evidência em versão identificada.
+**Reteste:** Investigar a rotina de servidor acionada por `/api/pergunta-anamnese/alterar/{id}`, com acesso a logs, cobrindo especificamente a transição entre tipos de resposta com e sem complemento; confirmar também se o identificador final da URL corresponde ao `empresa_id`, como já hipotetizado em CT-RF100 a CT-RF102. Manter em triagem até nova evidência em versão identificada.
 
 ---
 
@@ -1827,9 +1827,9 @@ A falha ocorre de forma idêntica para dois valores diferentes de tipo de respos
 | --- | --- |
 | Status | Em triagem. Causa técnica a confirmar e reteste após correção. |
 | Severidade / prioridade | Alta / Alta, propostas para triagem. |
-| Módulo | Treinamento / Modelos de Ficha / Cadastro |
-| Requisitos | [RF121](Analise%20de%20requisitos.md#rf121) |
-| Casos | [CT-RF121](Cenario_Teste/CT-RF121_Cadastro_Modelo_Ficha_Erro_500.md) |
+| Módulo | Configurações / Modelo Ficha / Cadastro |
+| Requisitos | [RF156](Analise%20de%20requisitos.md#rf156) |
+| Casos | [CT-RF156](Cenario_Teste/CT-RF156_Cadastro_Modelo_Ficha_Erro_500.md) |
 | Data da evidência / revisão | 16/11/2026, 22:18:52 BRT / 17/11/2026. |
 | Página | https://sifit.centrion.com.br/fichas-treino-modelo |
 | Ambiente | Chrome 157.0.8103.79 / Windows 10 (x86). Versão da aplicação e zoom a confirmar. |
@@ -1857,7 +1857,7 @@ A falha ocorre de forma idêntica para dois valores diferentes de tipo de respos
 
 ### Análise, limites e encaminhamento
 
-A falha bloqueou o cadastro no fluxo gravado. Uma tentativa foi registrada. A gravação não confirma causa técnica, persistência parcial ou abrangência para outros nomes e personais. Os CT-RF109 e CT-RF110 cobrem, respectivamente, a validação de nome vazio e o cancelamento.
+A falha bloqueou o cadastro no fluxo gravado. Uma tentativa foi registrada. A gravação não confirma causa técnica, persistência parcial ou abrangência para outros nomes e personais. Os CT-RF149 e CT-RF150 cobrem, respectivamente, a validação de nome vazio e o cancelamento.
 
 Reproduzir com dados de teste distintos, investigar a falha do endpoint e conferir a listagem e o vínculo após a correção. Para o reteste, registrar o retorno da criação e o modelo na listagem após recarga.
 
@@ -1872,8 +1872,8 @@ Reproduzir com dados de teste distintos, investigar a falha do endpoint e confer
 | Status | Em triagem. Causa técnica a confirmar e reteste após correção. |
 | Severidade / prioridade | Alta / Alta, propostas para triagem. |
 | Módulo | Configurações / Navegação e Biometria |
-| Requisitos | [RF124](Analise%20de%20requisitos.md#rf124) |
-| Casos | [CT-RF124](Cenario_Teste/CT-RF124_Configuracoes_Abas_Biometria_Senha.md) |
+| Requisitos | [RF126](Analise%20de%20requisitos.md#rf126) |
+| Casos | [CT-RF126](Cenario_Teste/CT-RF126_Configuracoes_Abas_Biometria_Senha.md) |
 | Data da evidência / revisão | 16/11/2026, 21:57:29 BRT / 17/11/2026. |
 | Página | https://sifit.centrion.com.br/configuracoes |
 | Ambiente | Chrome 157.0.8103.79 / Windows 10 (x86). Versão da aplicação e zoom a confirmar. |
@@ -1916,8 +1916,8 @@ Corrigir o mascaramento por padrão e retestar com credenciais fictícias, inclu
 | Status | Em triagem. Causa técnica a confirmar e reteste após correção. |
 | Severidade / prioridade | Média / Média, propostas para triagem. |
 | Módulo | Configurações / Home / Dias de ausência |
-| Requisitos | [RF126](Analise%20de%20requisitos.md#rf126) |
-| Casos | [CT-RF126](Cenario_Teste/CT-RF126_Configuracoes_Dias_Ausencia_Negativo.md) |
+| Requisitos | [RF120](Analise%20de%20requisitos.md#rf120) |
+| Casos | [CT-RF120](Cenario_Teste/CT-RF120_Configuracoes_Dias_Ausencia_Negativo.md) |
 | Data da evidência / revisão | 16/11/2026, 22:00:22 BRT / 17/11/2026. |
 | Página | https://sifit.centrion.com.br/configuracoes |
 | Ambiente | Chrome 157.0.8103.79 / Windows 10 (x86). Versão da aplicação e zoom a confirmar. |
@@ -1961,8 +1961,8 @@ Aplicar validação na gravação da configuração e retestar com -1, um inteir
 | Status | Em triagem. Causa técnica a confirmar e reteste após correção. |
 | Severidade / prioridade | Média / Média, propostas para triagem. |
 | Módulo | Inteligência e Automação / Central / Aniversariantes |
-| Requisitos | [RF129](Analise%20de%20requisitos.md#rf129) |
-| Casos | [CT-RF129](Cenario_Teste/CT-RF129_Central_Aniversariantes_Previa_Risco.md) |
+| Requisitos | [RF109](Analise%20de%20requisitos.md#rf109) |
+| Casos | [CT-RF109](Cenario_Teste/CT-RF109_Central_Aniversariantes_Previa_Risco.md) |
 | Data da evidência / revisão | 16/11/2026, 21:41:32 BRT / 17/11/2026. |
 | Página | https://sifit.centrion.com.br/inteligencia-automacao |
 | Ambiente | Chrome 157.0.8103.79 / Windows 10 (x86). Versão da aplicação e zoom a confirmar. |
@@ -2004,8 +2004,8 @@ Corrigir o conteúdo da prévia e retestar separadamente Aniversariantes e Risco
 | Status | Em triagem. Causa técnica a confirmar e reteste após correção. |
 | Severidade / prioridade | Média / Média, propostas para triagem. |
 | Módulo | Inteligência e Automação / Central de Automações |
-| Requisitos | [RF135](Analise%20de%20requisitos.md#rf135) e [RF136](Analise%20de%20requisitos.md#rf136) |
-| Casos | [CT-RF135](Cenario_Teste/CT-RF135_Central_Desativar_Risco_Evasao_Contador.md) e [CT-RF136](Cenario_Teste/CT-RF136_Central_Ativar_Aniversariantes_Contador.md) |
+| Requisitos | [RF107](Analise%20de%20requisitos.md#rf107) e [RF110](Analise%20de%20requisitos.md#rf110) |
+| Casos | [CT-RF107](Cenario_Teste/CT-RF107_Central_Desativar_Risco_Evasao_Contador.md) e [CT-RF110](Cenario_Teste/CT-RF110_Central_Ativar_Aniversariantes_Contador.md) |
 | Data da evidência / revisão | 16/11/2026, 21:28:33 e 21:31:02 BRT / 17/11/2026. |
 | Página | https://sifit.centrion.com.br/inteligencia-automacao |
 | Ambiente | Chrome 157.0.8103.79 / Windows 10 (x86). Versão da aplicação e zoom a confirmar. |
@@ -2013,7 +2013,7 @@ Corrigir o conteúdo da prévia e retestar separadamente Aniversariantes e Risco
 
 ### Pré-condições e reprodução
 
-**CT-RF135**
+**CT-RF107**
 
 - Sessão autenticada na Central, com Risco de Evasão como a única automação ativa no cenário de teste.
 
@@ -2022,7 +2022,7 @@ Corrigir o conteúdo da prévia e retestar separadamente Aniversariantes e Risco
 3. Acionar Atualizar e conferir a persistência do estado inativo.
 4. Reativar a automação e comparar o cartão e o contador após o sucesso do salvamento.
 
-**CT-RF136**
+**CT-RF110**
 
 - Sessão autenticada na Central. Aniversariantes inativa e Risco de Evasão ativa na configuração de teste.
 
@@ -2035,20 +2035,20 @@ Corrigir o conteúdo da prévia e retestar separadamente Aniversariantes e Risco
 
 **Esperado:** Após ativar e salvar com sucesso, o contador no resumo deve refletir o total de cartões ativos sem exigir Atualizar.
 
-**Obtido (CT-RF135):** A desativação foi salva com HTTP 200. Após Atualizar, a lista confirmou `ativo: 0` e o contador marcou zero. A reativação também retornou sucesso e o cartão voltou a indicar o estado ativo, mas o resumo retornou `ativas: 0`. O contador permaneceu em zero no restante da gravação.
+**Obtido (CT-RF107):** A desativação foi salva com HTTP 200. Após Atualizar, a lista confirmou `ativo: 0` e o contador marcou zero. A reativação também retornou sucesso e o cartão voltou a indicar o estado ativo, mas o resumo retornou `ativas: 0`. O contador permaneceu em zero no restante da gravação.
 
-**Obtido (CT-RF136):** O POST de ativação retornou sucesso e o cartão passou a indicar o estado ativo, mas o resumo ainda retornou `ativas: 1`. O contador chegou a dois quando o usuário acionou Atualizar, e a listagem confirmou Aniversariantes com `ativo: 1`. Em seguida, a desativação de restauração retornou sucesso e o contador voltou a um.
+**Obtido (CT-RF110):** O POST de ativação retornou sucesso e o cartão passou a indicar o estado ativo, mas o resumo ainda retornou `ativas: 1`. O contador chegou a dois quando o usuário acionou Atualizar, e a listagem confirmou Aniversariantes com `ativo: 1`. Em seguida, a desativação de restauração retornou sucesso e o contador voltou a um.
 
 ### Evidências técnicas
 
-[CT-RF135](Cenario_Teste/CT-RF135_Central_Desativar_Risco_Evasao_Contador.md)
+[CT-RF107](Cenario_Teste/CT-RF107_Central_Desativar_Risco_Evasao_Contador.md)
 
 - 0:05,41  POST `/api/automacoes/salvar/1` (HTTP 200), com `tipo: risco_evasao`, `ativo: 0` e `verifica_erro: false` na resposta. O GET de resumo retornou `ativas: 0`.
 - 0:09,30  Atualizar. GET `/api/automacoes/1` com `ativo: 0` para Risco de Evasão e GET de resumo com `ativas: 0` (HTTP 200).
 - 0:12,74  POST com `ativo: 1` (HTTP 200, `verifica_erro: false`). O GET de resumo associado retornou `ativas: 0`.
 - [Jam — PED-02 — Desativar Risco de Evasão](https://jam.dev/c/b63ec55f-f8b6-41aa-af4c-d4cdd4515de8) e [Evidências](Evidencias/CT-RF135_Central_Desativar_Risco_Evasao_Contador/README.md).
 
-[CT-RF136](Cenario_Teste/CT-RF136_Central_Ativar_Aniversariantes_Contador.md)
+[CT-RF110](Cenario_Teste/CT-RF110_Central_Ativar_Aniversariantes_Contador.md)
 
 - 0:04,54  POST `/api/automacoes/salvar/1` (HTTP 200), com `tipo: aniversario`, `ativo: 1` e `verifica_erro: false` na resposta. O GET de resumo retornou `ativas: 1`.
 - 0:09,31  Atualizar. GET `/api/automacoes/1` confirmou `ativo: 1` para Aniversariantes e o GET de resumo retornou `ativas: 2` (HTTP 200).
@@ -2059,9 +2059,9 @@ Corrigir o conteúdo da prévia e retestar separadamente Aniversariantes e Risco
 
 A divergência aparece no contador do resumo após a ativação. A causa técnica precisa ser investigada.
 
-**Limites (CT-RF135):** A persistência foi confirmada por nova leitura para a desativação. Após a reativação, a gravação não contém outro clique em Atualizar. A ordem em que o servidor processou o salvamento e o resumo não foi determinada.
+**Limites (CT-RF107):** A persistência foi confirmada por nova leitura para a desativação. Após a reativação, a gravação não contém outro clique em Atualizar. A ordem em que o servidor processou o salvamento e o resumo não foi determinada.
 
-**Limites (CT-RF136):** O estado ativo persistiu após Atualizar. A divergência observada ocorreu entre o cartão e o resumo depois do salvamento da ativação. A gravação não confirma a causa no servidor.
+**Limites (CT-RF110):** O estado ativo persistiu após Atualizar. A divergência observada ocorreu entre o cartão e o resumo depois do salvamento da ativação. A gravação não confirma a causa no servidor.
 
 Retestar a ativação e a desativação de cada automação. Comparar o valor de `ativas` no GET de resumo com os cartões e a lista após cada salvamento e após Atualizar.
 
@@ -2076,8 +2076,8 @@ Retestar a ativação e a desativação de cada automação. Comparar o valor de
 | Status | Em triagem. Contrato da resposta a confirmar e reteste após correção. |
 | Severidade / prioridade | Média / Média, propostas para triagem. |
 | Módulo | Configurações / Integrações / WhatsApp |
-| Requisito | [RF143](Analise%20de%20requisitos.md#rf143) |
-| Caso reprovado | [CT-RF143](Cenario_Teste/CT-RF143_Integracoes_WhatsApp_Conectar_Evolution.md) |
+| Requisito | [RF131](Analise%20de%20requisitos.md#rf131) |
+| Caso reprovado | [CT-RF131](Cenario_Teste/CT-RF131_Integracoes_WhatsApp_Conectar_Evolution.md) |
 | Data da evidência / revisão | 16/11/2026, 23:44:10 BRT / 17/11/2026. |
 | Página | https://sifit.centrion.com.br/configuracoes |
 | Ambiente | Chrome 157.0.8103.79 / Windows 10 (x86). Versão da aplicação e zoom a confirmar. |
@@ -2103,7 +2103,7 @@ Sessão autenticada na integração de WhatsApp com um provedor de teste. Prepar
 - 0:02,48 e 0:12,94  POST `/api/empresa/whatsapp/conectar/1` (HTTP 200). As duas respostas indicaram falha na mensagem com `verifica_erro: false`, `status: conectando` e `conectado: false`.
 - 0:08,59–0:08,72  O POST de configuração confirmou o salvamento de Ativo. O GET trouxe `ativo: true` e `status: desconectado` antes da segunda tentativa.
 - [Jam 5 — Tentativas de conexão pela Evolution API](https://jam.dev/c/087b5e4f-7d73-4be3-979d-9a39f474b836) e [Evidências](Evidencias/CT-RF143_Integracoes_WhatsApp_Conectar_Evolution/README.md).
-- [CT-RF144](Cenario_Teste/CT-RF144_Integracoes_WhatsApp_Atualizar_Status.md), evidência complementar de conexão após as consultas de status. 0:14,84  POST `/api/empresa/whatsapp/conectar/1` (HTTP 200), com mensagem “Erro ao conectar” e `verifica_erro: false`. Esse evento pertence à ação de conexão. [Evidências](Evidencias/CT-RF144_Integracoes_WhatsApp_Atualizar_Status/README.md).
+- [CT-RF132](Cenario_Teste/CT-RF132_Integracoes_WhatsApp_Atualizar_Status.md), evidência complementar de conexão após as consultas de status. 0:14,84  POST `/api/empresa/whatsapp/conectar/1` (HTTP 200), com mensagem “Erro ao conectar” e `verifica_erro: false`. Esse evento pertence à ação de conexão. [Evidências](Evidencias/CT-RF144_Integracoes_WhatsApp_Atualizar_Status/README.md).
 
 ### Análise, impacto e encaminhamento
 
@@ -2122,8 +2122,8 @@ Retestar com falha controlada e configuração válida de controle, conferindo o
 | Status | Em triagem. Reteste após correção. |
 | Severidade / prioridade | Média / Média, propostas para triagem. |
 | Módulo | Configurações / Design |
-| Requisito | [RF148](Analise%20de%20requisitos.md#rf148) |
-| Caso reprovado | [CT-RF148](Cenario_Teste/CT-RF148_Configuracoes_Design_Validar_Cor_Secundaria.md) |
+| Requisito | [RF140](Analise%20de%20requisitos.md#rf140) |
+| Caso reprovado | [CT-RF140](Cenario_Teste/CT-RF140_Configuracoes_Design_Validar_Cor_Secundaria.md) |
 | Data da evidência / revisão | 16/11/2026, 23:26:21 BRT / 17/11/2026. |
 | Página | https://sifit.centrion.com.br/configuracoes |
 | Ambiente | Chrome 157.0.8103.79 / Windows 10 (x86). Versão da aplicação e zoom a confirmar. |
@@ -2166,8 +2166,8 @@ Retestar com códigos hexadecimais válidos e inválidos e conferir, após cada 
 | Status | Em triagem. Reteste após correção. |
 | Severidade / prioridade | Baixa / Baixa, propostas para triagem. |
 | Módulo | Configurações / Design |
-| Requisito | [RF149](Analise%20de%20requisitos.md#rf149) |
-| Caso reprovado | [CT-RF149](Cenario_Teste/CT-RF149_Configuracoes_Design_Logo_Limite_Tamanho.md) |
+| Requisito | [RF141](Analise%20de%20requisitos.md#rf141) |
+| Caso reprovado | [CT-RF141](Cenario_Teste/CT-RF141_Configuracoes_Design_Logo_Limite_Tamanho.md) |
 | Data da evidência / revisão | 16/11/2026, 23:27:58 BRT / 17/11/2026. |
 | Página | https://sifit.centrion.com.br/configuracoes |
 | Ambiente | Chrome 157.0.8103.79 / Windows 10 (x86). Versão da aplicação e zoom a confirmar. |
@@ -2209,8 +2209,8 @@ Retestar com arquivos de tamanho conhecido no entorno do limite e confirmar a me
 | Status | Em triagem. Reteste após correção. |
 | Severidade / prioridade | Média / Média, propostas para triagem. |
 | Módulo | Configurações / Biometria |
-| Requisito | [RF163](Analise%20de%20requisitos.md#rf163) |
-| Caso reprovado | [CT-RF163](Cenario_Teste/CT-RF163_Configuracoes_Biometria_Rejeitar_IP_Invalido.md) |
+| Requisito | [RF146](Analise%20de%20requisitos.md#rf146) |
+| Caso reprovado | [CT-RF146](Cenario_Teste/CT-RF146_Configuracoes_Biometria_Rejeitar_IP_Invalido.md) |
 | Data da evidência / revisão | 16/11/2026, 23:03:49 BRT / 18/11/2026. |
 | Página | https://sifit.centrion.com.br/configuracoes |
 | Ambiente | Chrome 157.0.8103.79 / Windows 10 (x86). Versão da aplicação e zoom a confirmar. |
@@ -2253,8 +2253,8 @@ Confirmar o formato aceito pelo produto e retestar com endereços válidos e ent
 | Status | Em triagem. Reteste após correção. |
 | Severidade / prioridade | Baixa / Baixa, propostas para triagem. |
 | Módulo | Configurações / Biometria |
-| Requisito | [RF165](Analise%20de%20requisitos.md#rf165) |
-| Caso reprovado | [CT-RF165](Cenario_Teste/CT-RF165_Configuracoes_Biometria_Validar_Dias_Bloqueio.md) |
+| Requisito | [RF148](Analise%20de%20requisitos.md#rf148) |
+| Caso reprovado | [CT-RF148](Cenario_Teste/CT-RF148_Configuracoes_Biometria_Validar_Dias_Bloqueio.md) |
 | Data da evidência / revisão | 16/11/2026, 23:07:08 BRT / 18/11/2026. |
 | Página | https://sifit.centrion.com.br/configuracoes |
 | Ambiente | Chrome 157.0.8103.79 / Windows 10 (x86). Versão da aplicação e zoom a confirmar. |
@@ -2290,70 +2290,70 @@ Confirmar a regra de validação do produto e retestar -1, 0 e um número positi
 
 ## Modelos de Ficha — revisão de 17/11/2026
 
-A revisão de Modelos de Ficha inclui CT-RF109–CT-RF115 com base em 6 gravações do Jam de 16/11/2026. A revisão documental foi feita em 17/11/2026. A triagem documental de [CT-RF109](Cenario_Teste/CT-RF109_Modelo_Ficha_Sem_Nome.md), [CT-RF110](Cenario_Teste/CT-RF110_Cancelar_Cadastro_Modelo_Ficha.md), [CT-RF111](Cenario_Teste/CT-RF111_Busca_Modelo_Ficha_Codigo_Inexistente.md), [CT-RF112](Cenario_Teste/CT-RF112_Busca_Modelo_Ficha_Titulo_Inexistente.md), [CT-RF113](Cenario_Teste/CT-RF113_Busca_Modelo_Ficha_Filtros_Combinados.md), [CT-RF114](Cenario_Teste/CT-RF114_Limpeza_Filtros_Modelos_Ficha.md), [CT-RF115](Cenario_Teste/CT-RF115_Nova_Busca_Modelos_Ficha_Sem_Filtros.md) registrou 4 caso(s) de Modelos de Ficha a validar e zero novos defeitos confirmados.
+A revisão de Modelos de Ficha inclui CT-RF149–CT-RF155 com base em 6 gravações do Jam de 16/11/2026. A revisão documental foi feita em 17/11/2026. A triagem documental de [CT-RF149](Cenario_Teste/CT-RF149_Modelo_Ficha_Sem_Nome.md), [CT-RF150](Cenario_Teste/CT-RF150_Cancelar_Cadastro_Modelo_Ficha.md), [CT-RF151](Cenario_Teste/CT-RF151_Busca_Modelo_Ficha_Codigo_Inexistente.md), [CT-RF152](Cenario_Teste/CT-RF152_Busca_Modelo_Ficha_Titulo_Inexistente.md), [CT-RF153](Cenario_Teste/CT-RF153_Busca_Modelo_Ficha_Filtros_Combinados.md), [CT-RF154](Cenario_Teste/CT-RF154_Limpeza_Filtros_Modelos_Ficha.md), [CT-RF155](Cenario_Teste/CT-RF155_Nova_Busca_Modelos_Ficha_Sem_Filtros.md) registrou 4 caso(s) de Modelos de Ficha a validar e zero novos defeitos confirmados.
 
-## Configurações e Modelos de Ficha — revisão de 17/11/2026 (CT-RF116–CT-RF121)
+## Configurações e Modelos de Ficha — revisão de 17/11/2026 (CT-RF118–CT-RF156)
 
-CT-RF116–CT-RF121 amplia a cobertura de Configurações e Modelos de Ficha com gravações de 16/11/2026 entre 22:03:53 e 22:18:52 BRT. Casos aprovados: 4. Reprovados: 1. A validar: 1. A falha de cadastro está em [BUG-045](#bug-045).
+CT-RF118–CT-RF156 amplia a cobertura de Configurações e Modelos de Ficha com gravações de 16/11/2026 entre 22:03:53 e 22:18:52 BRT. Casos aprovados: 4. Reprovados: 1. A validar: 1. A falha de cadastro está em [BUG-045](#bug-045).
 
-## Inteligência e Configurações — revisão de 17/11/2026 (CT-RF122–CT-RF127)
+## Inteligência e Configurações — revisão de 17/11/2026 (CT-RF116–CT-RF121)
 
-CT-RF122–CT-RF127 cobre Inteligência e Configurações com gravações de 16/11/2026 entre 21:50:51 e 22:02:16 BRT. Casos aprovados: 3. Reprovados: 2. A validar: 1. Defeitos do lote: [BUG-046](#bug-046) e [BUG-047](#bug-047).
+CT-RF116–CT-RF121 cobre Inteligência e Configurações com gravações de 16/11/2026 entre 21:50:51 e 22:02:16 BRT. Casos aprovados: 3. Reprovados: 2. A validar: 1. Defeitos do lote: [BUG-046](#bug-046) e [BUG-047](#bug-047).
 
-## Inteligência e Automação — revisão de 17/11/2026 (CT-RF128–CT-RF133)
+## Inteligência e Automação — revisão de 17/11/2026 (CT-RF104–CT-RF115)
 
-CT-RF128–CT-RF133 cobre Inteligência e Automação com gravações de 16/11/2026 entre 21:40:31 e 21:49:48 BRT. Casos aprovados: 5. Reprovados: 1. A validar: 0. Defeitos do lote: [BUG-048](#bug-048).
+CT-RF104–CT-RF115 cobre Inteligência e Automação com gravações de 16/11/2026 entre 21:40:31 e 21:49:48 BRT. Casos aprovados: 5. Reprovados: 1. A validar: 0. Defeitos do lote: [BUG-048](#bug-048).
 
-## Inteligência e Automação / Central de Automações — revisão de 17/11/2026 (CT-RF134–CT-RF138)
+## Inteligência e Automação / Central de Automações — revisão de 17/11/2026 (CT-RF112–CT-RF106)
 
-CT-RF134–CT-RF138 cobrem a Central de Automações com gravações de 16/11/2026 entre 21:25:26 e 21:38:29 BRT. Casos aprovados: 3. Reprovados: 2. A validar: 0. Defeitos do lote: [BUG-049](#bug-049).
+CT-RF112–CT-RF106 cobrem a Central de Automações com gravações de 16/11/2026 entre 21:25:26 e 21:38:29 BRT. Casos aprovados: 3. Reprovados: 2. A validar: 0. Defeitos do lote: [BUG-049](#bug-049).
 
-## Configurações / Integrações / WhatsApp — revisão de 17/11/2026 (CT-RF139–CT-RF144)
+## Configurações / Integrações / WhatsApp — revisão de 17/11/2026 (CT-RF127–CT-RF132)
 
-CT-RF139–CT-RF144 cobrem a integração do WhatsApp com gravações de 16/11/2026 entre 23:37:22 e 23:45:52 BRT. Casos aprovados: 4. Reprovados: 1. A validar: 1. Defeitos do lote: [BUG-050](#bug-050).
+CT-RF127–CT-RF132 cobrem a integração do WhatsApp com gravações de 16/11/2026 entre 23:37:22 e 23:45:52 BRT. Casos aprovados: 4. Reprovados: 1. A validar: 1. Defeitos do lote: [BUG-050](#bug-050).
 
-## Configurações — revisão de 17/11/2026 (CT-RF145–CT-RF150)
+## Configurações — revisão de 17/11/2026 (CT-RF134–CT-RF133)
 
-CT-RF145–CT-RF150 cobrem funcionalidades de Configurações com gravações de 16/11/2026 entre 23:21:59 e 23:36:13 BRT. Casos aprovados: 4. Reprovados: 2. A validar: 0. Defeitos do lote: [BUG-051](#bug-051) e [BUG-052](#bug-052).
+CT-RF134–CT-RF133 cobrem funcionalidades de Configurações com gravações de 16/11/2026 entre 23:21:59 e 23:36:13 BRT. Casos aprovados: 4. Reprovados: 2. A validar: 0. Defeitos do lote: [BUG-051](#bug-051) e [BUG-052](#bug-052).
 
-## Configurações / Avaliação e Aniversário — revisão de 18/11/2026 (CT-RF151–CT-RF156)
+## Configurações / Avaliação e Aniversário — revisão de 18/11/2026 (CT-RF142–CT-RF137)
 
-CT-RF151–CT-RF156 cobrem as abas Avaliação e Aniversário com gravações de 16/11/2026 entre 23:10:04 e 23:20:07 BRT. Casos aprovados: 6. Reprovados: 0. A validar: 0. Nenhum defeito identificado nos fluxos gravados.
+CT-RF142–CT-RF137 cobrem as abas Avaliação e Aniversário com gravações de 16/11/2026 entre 23:10:04 e 23:20:07 BRT. Casos aprovados: 6. Reprovados: 0. A validar: 0. Nenhum defeito identificado nos fluxos gravados.
 
-## Aplicativo e Configurações / Biometria — revisão de 18/11/2026 (CT-RF157–CT-RF165)
+## Aplicativo e Configurações / Biometria — revisão de 18/11/2026 (CT-RF157–CT-RF148)
 
-CT-RF157–CT-RF165 cobrem Aplicativo e a aba Biometria com gravações de 16/11/2026 entre 22:39:05 e 23:07:08 BRT. Casos aprovados: 7. Reprovados: 2. A validar: 0. Defeitos do lote: [BUG-053](#bug-053) e [BUG-054](#bug-054).
+CT-RF157–CT-RF148 cobrem Aplicativo e a aba Biometria com gravações de 16/11/2026 entre 22:39:05 e 23:07:08 BRT. Casos aprovados: 7. Reprovados: 2. A validar: 0. Defeitos do lote: [BUG-053](#bug-053) e [BUG-054](#bug-054).
 
 ## Pontos a validar — sem defeito confirmado
 
 | Caso | Questão pendente | Evidência |
 | --- | --- | --- |
-| [CT-RF08](Cenario_Teste/CT-RF08_Calculo_Cobranca.md) | Confirmar a origem dos R$ 20,83 além de principal e multa e a regra da mensagem; não registrar cálculo incorreto antes dessa validação. | [Jam](https://jam.dev/c/79b712ae-d9e0-4600-862f-fd3a278285ff) e [Evidências](Evidencias/CT-RF08_Calculo_Cobranca/README.md) |
-| [CT-RF11](Cenario_Teste/CT-RF11_Metricas_Financeiro.md) | Confirmar os contratos dos cartões; a constância de totais globais não é suficiente para abrir outro defeito financeiro. | [Jam](https://jam.dev/c/4491c9e7-7e00-4063-91ce-8683e316df06) e [Evidências](Evidencias/CT-RF11_Metricas_Financeiro/README.md) |
-| [CT-RF13](Cenario_Teste/CT-RF13_Codigos_Personais.md) | Confirmar a semântica da coluna Código; quatro linhas e total quatro não sustentam um defeito de quantidade. | [Jam](https://jam.dev/c/69330ca9-ef19-4ece-918f-31a460628016) e [Evidências](Evidencias/CT-RF13_Codigos_Personais/README.md) |
-| [CT-RF16](Cenario_Teste/CT-RF16_Exclusao_Modalidade.md) | Confirmar a exclusão lógica e a nomenclatura da ação; registrar defeito apenas se houver divergência com a regra definida. | [Jam](https://jam.dev/c/0f55f76a-cd31-4cee-93da-23c13b1ba637) e [Evidências](Evidencias/CT-RF16_Exclusao_Modalidade/README.md) |
-| [CT-RF25](Cenario_Teste/CT-RF25_Envio_Exercicio_Imagem.md) | Conferir a imagem após reabrir e recarregar o exercício; criação visível não comprova associação persistida. | [Jam](https://jam.dev/c/25c37a9b-e9bd-4e0c-adf1-4da528ae1d58) e [Evidências](Evidencias/CT-RF25_Envio_Exercicio_Imagem/README.md) |
-| [CT-RF40](Cenario_Teste/CT-RF40_Exclusao_Turmas_Modalidades.md) | Confirmar a exclusão lógica de turmas e modalidades, a ausência de confirmação prévia e a exibição de registros inativos sob o filtro "Ativo"; registrar defeito apenas se houver divergência com a regra definida. | [Jam](https://jam.dev/c/ee9a133b-d6b1-442d-b4b0-dd87595b7e70) e [Evidências](Evidencias/CT-RF40_Exclusao_Turmas_Modalidades/README.md) |
-| [CT-RF42](Cenario_Teste/CT-RF42_Solicitacao_Saque_PagarMe.md) | Confirmar a regra de saque com saldo indisponível e capturar corpo e resposta; o envio retorna HTTP 200 sem mensagem de resultado visível. | [Jam](https://jam.dev/c/e6e551ef-9196-4c79-b6a2-89747b1e8b33) e [Evidências](Evidencias/CT-RF42_Solicitacao_Saque_PagarMe/README.md) |
-| [CT-RF44](Cenario_Teste/CT-RF44_Configuracoes_Home_Salvamento.md) | Confirmar a faixa do campo "Dias para contar cliente como ausente" (valor inicial -120 e valor informado 1100) e a mensagem de salvamento esperada. | [Jam](https://jam.dev/c/e6e551ef-9196-4c79-b6a2-89747b1e8b33) e [Evidências](Evidencias/CT-RF44_Configuracoes_Home_Salvamento/README.md) |
-| [CT-RF47](Cenario_Teste/CT-RF47_Cadastro_Despesa_Fixa.md) | Confirmar se o segundo POST de criação (HTTP 201) gerou registro adicional ou foi descartado; registrar defeito apenas se houver duplicidade confirmada. | [Jam](https://jam.dev/c/a4bac99d-e436-4792-831e-8c3a875272bb) e [Evidências](Evidencias/CT-RF47_Cadastro_Despesa_Fixa/README.md) |
-| [CT-RF52](Cenario_Teste/CT-RF52_Relatorio_Contas_Pagar_Pagas.md) | Conferir se existem contas pagas no período; PDF sem linhas e com totalizadores R$ 0,00 é compatível com período sem pagamentos. | [Jam](https://jam.dev/c/3b4777a4-e1b0-4038-9b06-26c73669d7d1) e [Evidências](Evidencias/CT-RF52_Relatorio_Contas_Pagar_Pagas/README.md) |
-| [CT-RF88](Cenario_Teste/CT-RF88_Cadastro_Lead_Prospeccao.md) | Cadastro de lead com duas requisições de criação | Confirmar se o segundo POST de criação gerou registro adicional ou foi descartado; registrar defeito apenas se houver duplicidade confirmada. | [Jam](https://jam.dev/c/308607ff-8abc-40af-8c7c-429ce506ed64) e [Evidências](Evidencias/CT-RF88_Cadastro_Lead_Prospeccao/README.md) |
-| [CT-RF91](Cenario_Teste/CT-RF91_Filtros_Contas_Pagar.md) | Filtros da tela Contas a Pagar por nome, data e status | Reexecutar com contas de controle e conferir cada critério isolado e combinado; o resultado vazio da combinação gravada não pôde ser conferido contra a base. | [Jam](https://jam.dev/c/5d0afaf4-5abd-4e85-923f-27448304a9ef) e [Evidências](Evidencias/CT-RF91_Filtros_Contas_Pagar/README.md) |
-| [CT-RF93](Cenario_Teste/CT-RF93_Busca_Colaborador_Conta_Pagar.md) | Busca de colaborador no cadastro de conta a pagar | Reexecutar com um nome existente para conferir listagem e seleção e confirmar a mensagem esperada de resultado vazio. | [Jam](https://jam.dev/c/5d0afaf4-5abd-4e85-923f-27448304a9ef) e [Evidências](Evidencias/CT-RF93_Busca_Colaborador_Conta_Pagar/README.md) |
-| [CT-RF104](Cenario_Teste/CT-RF104_Filtros_Tipos_Pagamento.md) | Filtros de busca da tela Tipos de Pagamento | Reexecutar com critérios conhecidos, registrando o valor escolhido em cada seletor, a listagem e a rede, e confirmar se a filtragem é local ou no servidor; Buscar não emitiu requisição de listagem. | [Jam](https://jam.dev/c/e8734e3d-3f8e-458b-8c7d-e85eea882e50) e [Evidências](Evidencias/CT-RF104_Filtros_Tipos_Pagamento/README.md) |
-| [CT-RF111](Cenario_Teste/CT-RF111_Busca_Modelo_Ficha_Codigo_Inexistente.md) | Reexecutar com um código existente e um comprovadamente ausente na mesma base. O estado vazio foi observado. A base de controle e a busca positiva não aparecem na gravação, por isso a eficácia do filtro por código permanece a validar. | [Jam — PED-27](https://jam.dev/c/c1aecaa8-39c7-49b0-89af-9de47a68ba40) e [Evidências](Evidencias/CT-RF111_Busca_Modelo_Ficha_Codigo_Inexistente/README.md) |
-| [CT-RF112](Cenario_Teste/CT-RF112_Busca_Modelo_Ficha_Titulo_Inexistente.md) | Reexecutar com título existente e inexistente e confirmar o critério de correspondência com o produto. A gravação começa com a listagem vazia. O comportamento com títulos registrados e o tipo de correspondência (exata ou parcial) precisam de confirmação. | [Jam — PED-28](https://jam.dev/c/0c385452-2aeb-427f-8159-79549fe7371d) e [Evidências](Evidencias/CT-RF112_Busca_Modelo_Ficha_Titulo_Inexistente/README.md) |
-| [CT-RF113](Cenario_Teste/CT-RF113_Busca_Modelo_Ficha_Filtros_Combinados.md) | Reexecutar com registros que correspondam a todos os filtros e a apenas parte deles. Confirmar onde a filtragem é feita. A resposta vazia e a ausência de parâmetros na URL não permitem distinguir filtragem local de critérios ignorados. Confirmar a lógica de combinação com o produto e usar dados que diferenciem os resultados. | [Jam — PED-29](https://jam.dev/c/006f9722-e643-4b65-904a-25471a7b90ed) e [Evidências](Evidencias/CT-RF113_Busca_Modelo_Ficha_Filtros_Combinados/README.md) |
-| [CT-RF115](Cenario_Teste/CT-RF115_Nova_Busca_Modelos_Ficha_Sem_Filtros.md) | Reexecutar com listagem padrão populada, pesquisa restritiva e comparação dos registros após a nova busca. A gravação não mostra uma listagem padrão populada. O estado vazio é compatível com os retornos, mas a recuperação de registros ocultados por uma pesquisa anterior ficou a validar. | [Jam — PED-30](https://jam.dev/c/297eec2b-7be4-498b-a0e6-e962ed93cc00) e [Evidências](Evidencias/CT-RF115_Nova_Busca_Modelos_Ficha_Sem_Filtros/README.md) |
-| [CT-RF116](Cenario_Teste/CT-RF116_Configuracoes_Dias_Ausencia_Vazio.md) | Confirmar com o produto a regra para vazio e zero. Repetir com vazio, zero explícito e os limites da faixa. A conversão de vazio para zero e a persistência estão confirmadas. A obrigatoriedade do campo, o significado de zero e o efeito sobre a contagem de clientes ausentes dependem da regra de produto. O CT-RF44 já registra a necessidade de confirmar a faixa. | [Jam — PED-20 — Dias de ausência vazio](https://jam.dev/c/4e96d4fa-65b5-459b-a795-854496e5753c) e [Evidências](Evidencias/CT-RF116_Configuracoes_Dias_Ausencia_Vazio/README.md) |
-| [CT-RF140](Cenario_Teste/CT-RF140_Integracoes_WhatsApp_Validar_URL_API.md) | Isolar a URL no reteste, mantendo a instância e a chave preenchidas, e confirmar o formato aceito com produto. O Nome da Instância vazio impede atribuir a ausência de POST à regra de URL. A gravação não demonstra qual validação bloqueou a tentativa. | [Jam 2 — Validação da URL da API](https://jam.dev/c/0d7c7274-c798-4e26-91a3-f8162b7ce932) e [Evidências](Evidencias/CT-RF140_Integracoes_WhatsApp_Validar_URL_API/README.md) |
-| [CT-RF127](Cenario_Teste/CT-RF127_Configuracoes_Dias_Ausencia_Texto.md) | Confirmar a regra de vazio com o produto e repetir a digitação e a colagem de texto, conferindo também a recarga. A rejeição da digitação de letras foi observada. A regra para o campo vazio permanece pendente no CT-RF116. A persistência de zero nesta gravação não foi verificada após recarga. | [Jam — PED-18 — Dias de ausência com texto](https://jam.dev/c/c578ed7a-c11c-4cef-8a6c-84d0244f21a5) e [Evidências](Evidencias/CT-RF127_Configuracoes_Dias_Ausencia_Texto/README.md) |
+| [CT-RF14](Cenario_Teste/CT-RF14_Calculo_Cobranca.md) | Confirmar a origem dos R$ 20,83 além de principal e multa e a regra da mensagem; não registrar cálculo incorreto antes dessa validação. | [Jam](https://jam.dev/c/79b712ae-d9e0-4600-862f-fd3a278285ff) e [Evidências](Evidencias/CT-RF08_Calculo_Cobranca/README.md) |
+| [CT-RF15](Cenario_Teste/CT-RF15_Metricas_Financeiro.md) | Confirmar os contratos dos cartões; a constância de totais globais não é suficiente para abrir outro defeito financeiro. | [Jam](https://jam.dev/c/4491c9e7-7e00-4063-91ce-8683e316df06) e [Evidências](Evidencias/CT-RF11_Metricas_Financeiro/README.md) |
+| [CT-RF07](Cenario_Teste/CT-RF07_Codigos_Personais.md) | Confirmar a semântica da coluna Código; quatro linhas e total quatro não sustentam um defeito de quantidade. | [Jam](https://jam.dev/c/69330ca9-ef19-4ece-918f-31a460628016) e [Evidências](Evidencias/CT-RF13_Codigos_Personais/README.md) |
+| [CT-RF43](Cenario_Teste/CT-RF43_Exclusao_Modalidade.md) | Confirmar a exclusão lógica e a nomenclatura da ação; registrar defeito apenas se houver divergência com a regra definida. | [Jam](https://jam.dev/c/0f55f76a-cd31-4cee-93da-23c13b1ba637) e [Evidências](Evidencias/CT-RF16_Exclusao_Modalidade/README.md) |
+| [CT-RF24](Cenario_Teste/CT-RF24_Envio_Exercicio_Imagem.md) | Conferir a imagem após reabrir e recarregar o exercício; criação visível não comprova associação persistida. | [Jam](https://jam.dev/c/25c37a9b-e9bd-4e0c-adf1-4da528ae1d58) e [Evidências](Evidencias/CT-RF25_Envio_Exercicio_Imagem/README.md) |
+| [CT-RF45](Cenario_Teste/CT-RF45_Exclusao_Turmas_Modalidades.md) | Confirmar a exclusão lógica de turmas e modalidades, a ausência de confirmação prévia e a exibição de registros inativos sob o filtro "Ativo"; registrar defeito apenas se houver divergência com a regra definida. | [Jam](https://jam.dev/c/ee9a133b-d6b1-442d-b4b0-dd87595b7e70) e [Evidências](Evidencias/CT-RF40_Exclusao_Turmas_Modalidades/README.md) |
+| [CT-RF47](Cenario_Teste/CT-RF47_Solicitacao_Saque_PagarMe.md) | Confirmar a regra de saque com saldo indisponível e capturar corpo e resposta; o envio retorna HTTP 200 sem mensagem de resultado visível. | [Jam](https://jam.dev/c/e6e551ef-9196-4c79-b6a2-89747b1e8b33) e [Evidências](Evidencias/CT-RF42_Solicitacao_Saque_PagarMe/README.md) |
+| [CT-RF117](Cenario_Teste/CT-RF117_Configuracoes_Home_Salvamento.md) | Confirmar a faixa do campo "Dias para contar cliente como ausente" (valor inicial -120 e valor informado 1100) e a mensagem de salvamento esperada. | [Jam](https://jam.dev/c/e6e551ef-9196-4c79-b6a2-89747b1e8b33) e [Evidências](Evidencias/CT-RF44_Configuracoes_Home_Salvamento/README.md) |
+| [CT-RF51](Cenario_Teste/CT-RF51_Cadastro_Despesa_Fixa.md) | Confirmar se o segundo POST de criação (HTTP 201) gerou registro adicional ou foi descartado; registrar defeito apenas se houver duplicidade confirmada. | [Jam](https://jam.dev/c/a4bac99d-e436-4792-831e-8c3a875272bb) e [Evidências](Evidencias/CT-RF47_Cadastro_Despesa_Fixa/README.md) |
+| [CT-RF56](Cenario_Teste/CT-RF56_Relatorio_Contas_Pagar_Pagas.md) | Conferir se existem contas pagas no período; PDF sem linhas e com totalizadores R$ 0,00 é compatível com período sem pagamentos. | [Jam](https://jam.dev/c/3b4777a4-e1b0-4038-9b06-26c73669d7d1) e [Evidências](Evidencias/CT-RF52_Relatorio_Contas_Pagar_Pagas/README.md) |
+| [CT-RF71](Cenario_Teste/CT-RF71_Cadastro_Lead_Prospeccao.md) | Cadastro de lead com duas requisições de criação | Confirmar se o segundo POST de criação gerou registro adicional ou foi descartado; registrar defeito apenas se houver duplicidade confirmada. | [Jam](https://jam.dev/c/308607ff-8abc-40af-8c7c-429ce506ed64) e [Evidências](Evidencias/CT-RF88_Cadastro_Lead_Prospeccao/README.md) |
+| [CT-RF16](Cenario_Teste/CT-RF16_Filtros_Contas_Pagar.md) | Filtros da tela Contas a Pagar por nome, data e status | Reexecutar com contas de controle e conferir cada critério isolado e combinado; o resultado vazio da combinação gravada não pôde ser conferido contra a base. | [Jam](https://jam.dev/c/5d0afaf4-5abd-4e85-923f-27448304a9ef) e [Evidências](Evidencias/CT-RF91_Filtros_Contas_Pagar/README.md) |
+| [CT-RF18](Cenario_Teste/CT-RF18_Busca_Colaborador_Conta_Pagar.md) | Busca de colaborador no cadastro de conta a pagar | Reexecutar com um nome existente para conferir listagem e seleção e confirmar a mensagem esperada de resultado vazio. | [Jam](https://jam.dev/c/5d0afaf4-5abd-4e85-923f-27448304a9ef) e [Evidências](Evidencias/CT-RF93_Busca_Colaborador_Conta_Pagar/README.md) |
+| [CT-RF84](Cenario_Teste/CT-RF84_Filtros_Tipos_Pagamento.md) | Filtros de busca da tela Tipos de Pagamento | Reexecutar com critérios conhecidos, registrando o valor escolhido em cada seletor, a listagem e a rede, e confirmar se a filtragem é local ou no servidor; Buscar não emitiu requisição de listagem. | [Jam](https://jam.dev/c/e8734e3d-3f8e-458b-8c7d-e85eea882e50) e [Evidências](Evidencias/CT-RF104_Filtros_Tipos_Pagamento/README.md) |
+| [CT-RF151](Cenario_Teste/CT-RF151_Busca_Modelo_Ficha_Codigo_Inexistente.md) | Reexecutar com um código existente e um comprovadamente ausente na mesma base. O estado vazio foi observado. A base de controle e a busca positiva não aparecem na gravação, por isso a eficácia do filtro por código permanece a validar. | [Jam — PED-27](https://jam.dev/c/c1aecaa8-39c7-49b0-89af-9de47a68ba40) e [Evidências](Evidencias/CT-RF111_Busca_Modelo_Ficha_Codigo_Inexistente/README.md) |
+| [CT-RF152](Cenario_Teste/CT-RF152_Busca_Modelo_Ficha_Titulo_Inexistente.md) | Reexecutar com título existente e inexistente e confirmar o critério de correspondência com o produto. A gravação começa com a listagem vazia. O comportamento com títulos registrados e o tipo de correspondência (exata ou parcial) precisam de confirmação. | [Jam — PED-28](https://jam.dev/c/0c385452-2aeb-427f-8159-79549fe7371d) e [Evidências](Evidencias/CT-RF112_Busca_Modelo_Ficha_Titulo_Inexistente/README.md) |
+| [CT-RF153](Cenario_Teste/CT-RF153_Busca_Modelo_Ficha_Filtros_Combinados.md) | Reexecutar com registros que correspondam a todos os filtros e a apenas parte deles. Confirmar onde a filtragem é feita. A resposta vazia e a ausência de parâmetros na URL não permitem distinguir filtragem local de critérios ignorados. Confirmar a lógica de combinação com o produto e usar dados que diferenciem os resultados. | [Jam — PED-29](https://jam.dev/c/006f9722-e643-4b65-904a-25471a7b90ed) e [Evidências](Evidencias/CT-RF113_Busca_Modelo_Ficha_Filtros_Combinados/README.md) |
+| [CT-RF155](Cenario_Teste/CT-RF155_Nova_Busca_Modelos_Ficha_Sem_Filtros.md) | Reexecutar com listagem padrão populada, pesquisa restritiva e comparação dos registros após a nova busca. A gravação não mostra uma listagem padrão populada. O estado vazio é compatível com os retornos, mas a recuperação de registros ocultados por uma pesquisa anterior ficou a validar. | [Jam — PED-30](https://jam.dev/c/297eec2b-7be4-498b-a0e6-e962ed93cc00) e [Evidências](Evidencias/CT-RF115_Nova_Busca_Modelos_Ficha_Sem_Filtros/README.md) |
+| [CT-RF118](Cenario_Teste/CT-RF118_Configuracoes_Dias_Ausencia_Vazio.md) | Confirmar com o produto a regra para vazio e zero. Repetir com vazio, zero explícito e os limites da faixa. A conversão de vazio para zero e a persistência estão confirmadas. A obrigatoriedade do campo, o significado de zero e o efeito sobre a contagem de clientes ausentes dependem da regra de produto. O CT-RF117 já registra a necessidade de confirmar a faixa. | [Jam — PED-20 — Dias de ausência vazio](https://jam.dev/c/4e96d4fa-65b5-459b-a795-854496e5753c) e [Evidências](Evidencias/CT-RF116_Configuracoes_Dias_Ausencia_Vazio/README.md) |
+| [CT-RF128](Cenario_Teste/CT-RF128_Integracoes_WhatsApp_Validar_URL_API.md) | Isolar a URL no reteste, mantendo a instância e a chave preenchidas, e confirmar o formato aceito com produto. O Nome da Instância vazio impede atribuir a ausência de POST à regra de URL. A gravação não demonstra qual validação bloqueou a tentativa. | [Jam 2 — Validação da URL da API](https://jam.dev/c/0d7c7274-c798-4e26-91a3-f8162b7ce932) e [Evidências](Evidencias/CT-RF140_Integracoes_WhatsApp_Validar_URL_API/README.md) |
+| [CT-RF121](Cenario_Teste/CT-RF121_Configuracoes_Dias_Ausencia_Texto.md) | Confirmar a regra de vazio com o produto e repetir a digitação e a colagem de texto, conferindo também a recarga. A rejeição da digitação de letras foi observada. A regra para o campo vazio permanece pendente no CT-RF118. A persistência de zero nesta gravação não foi verificada após recarga. | [Jam — PED-18 — Dias de ausência com texto](https://jam.dev/c/c578ed7a-c11c-4cef-8a6c-84d0244f21a5) e [Evidências](Evidencias/CT-RF127_Configuracoes_Dias_Ausencia_Texto/README.md) |
 
 A contagem de 54 defeitos registrados considera os itens do resumo de bugs. BUG-011–BUG-054 estão em triagem. Os pontos desta tabela aguardam confirmação antes de receber um registro de defeito.
 
 
-**Exclusão de exercício:** CT-RF23 está aprovado no trecho consultado, com remoção e total 11 para 10; não gerou defeito adicional. Persistência e efeitos sobre vínculos permanecem como verificações complementares.
+**Exclusão de exercício:** CT-RF22 está aprovado no trecho consultado, com remoção e total 11 para 10; não gerou defeito adicional. Persistência e efeitos sobre vínculos permanecem como verificações complementares.
 
 ---
 
