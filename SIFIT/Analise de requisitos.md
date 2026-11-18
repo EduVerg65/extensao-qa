@@ -2,11 +2,11 @@
 
 **Módulos:** Autenticação, Perfil, Clientes / Filtros, Financeiro, Página inicial / Personais, SifitBox / Modalidades e Turmas, Categorias Crossfit, Avaliações, Exercícios, Grupos Musculares, Dashboard, Objetivos de Treino, Fichas de Anamnese, Colaboradores, Prospecção e Bandeiras de Cartão.
 
-**Atualização:** 18/11/2026 — RF01 a RF35, RF38 a RF62 e RF65 a RF163 consolidados, com inclusão de Categorias Crossfit (CT-RF38), SifitBox – Turmas (CT-RF39 a CT-RF41), Pagar.me, Configurações, Despesas Fixas e Relatórios (CT-RF42 a CT-RF56), Grupos (treino) (CT-RF57 e CT-RF58), Fichas de Anamnese (CT-RF59), Modelos de Anamnese (CT-RF60), Categorias de Anamnese (CT-RF61), Perguntas Anamnese (CT-RF62), Colaboradores (CT-RF65 a CT-RF73), Prospecção e Bandeiras de Cartão (CT-RF74 a CT-RF90), Contas a Pagar / Modelos de Contrato / Planos (CT-RF91 a CT-RF103) Tipos de Pagamento (CT-RF104 a CT-RF108) e Modelos de Ficha (CT-RF109–CT-RF115) e Configurações e Modelos de Ficha (CT-RF116–CT-RF121) e Inteligência e Configurações (CT-RF122–CT-RF127) e Inteligência e Automação (CT-RF128–CT-RF133) e ampliação da cobertura da Central de Automações (CT-RF134–CT-RF138) e integração de WhatsApp (CT-RF139–CT-RF144) e novos cenários de Configurações (CT-RF145–CT-RF150) e Configurações de Avaliação e Aniversário (CT-RF151–CT-RF156) e Aplicativo e Configurações / Biometria (CT-RF157–CT-RF163). BUG-011–BUG-053 em triagem.
+**Atualização:** 18/11/2026 — RF01 a RF35, RF38 a RF62 e RF65 a RF164 consolidados, com inclusão de Categorias Crossfit (CT-RF38), SifitBox – Turmas (CT-RF39 a CT-RF41), Pagar.me, Configurações, Despesas Fixas e Relatórios (CT-RF42 a CT-RF56), Grupos (treino) (CT-RF57 e CT-RF58), Fichas de Anamnese (CT-RF59), Modelos de Anamnese (CT-RF60), Categorias de Anamnese (CT-RF61), Perguntas Anamnese (CT-RF62), Colaboradores (CT-RF65 a CT-RF73), Prospecção e Bandeiras de Cartão (CT-RF74 a CT-RF90), Contas a Pagar / Modelos de Contrato / Planos (CT-RF91 a CT-RF103) Tipos de Pagamento (CT-RF104 a CT-RF108) e Modelos de Ficha (CT-RF109–CT-RF115) e Configurações e Modelos de Ficha (CT-RF116–CT-RF121) e Inteligência e Configurações (CT-RF122–CT-RF127) e Inteligência e Automação (CT-RF128–CT-RF133) e ampliação da cobertura da Central de Automações (CT-RF134–CT-RF138) e integração de WhatsApp (CT-RF139–CT-RF144) e novos cenários de Configurações (CT-RF145–CT-RF150) e Configurações de Avaliação e Aniversário (CT-RF151–CT-RF156) e Aplicativo e Configurações / Biometria (CT-RF157–CT-RF164). BUG-011–BUG-053 em triagem.
 
 **Padronização documental:** 13/11/2026, sem alteração dos resultados registrados.
 
-Esta análise documenta 159 requisitos de QA para os cenários relacionados abaixo, com base nos relatos e nas evidências fornecidas. RF01–RF04 e suas análises históricas foram preservados; RF05–RF20 ampliam a cobertura em 14/11/2026; RF21 acrescenta Avaliações; RF22–RF28 acrescentam Exercícios; RF29–RF33 acrescentam Grupos Musculares; RF34 acrescenta o carregamento do dashboard RF35 acrescenta o cadastro de objetivos de treino e RF38 acrescenta o cadastro de categorias com código automático em 15/11/2026. RF39 acrescenta o cadastro de modalidade em SifitBox – Turmas. RF40 acrescenta a exclusão de turmas e modalidades. RF41 acrescenta o cadastro de turma. RF42 a RF56 acrescentam Pagar.me, Configurações, Despesas Fixas e Relatórios em 15/11/2026. RF57 acrescenta a exclusão de grupo (treino) e RF58 acrescenta a edição de grupo (treino), ambos também em 15/11/2026. RF59 acrescenta o cadastro de anamnese, também em 15/11/2026. RF60 acrescenta a gestão de modelos de anamnese (busca, cadastro, edição e exclusão), em 16/11/2026. RF61 acrescenta a gestão de categorias de anamnese (filtro, busca, cadastro, edição, cancelamento de edição e exclusão), também em 16/11/2026. RF62 acrescenta a edição de pergunta de anamnese, reprovada por HTTP 500, também em 16/11/2026. RF65–RF73 cobrem validações, operações e buscas de Colaboradores, também em 15/11/2026. RF74–RF84 acrescentam Prospecção e Bandeiras de Cartão a partir de resumos fornecidos, em 16/11/2026. RF85 a RF90 acrescentam Prospecção (leads) em 15/11/2026. RF91 a RF103 acrescentam Contas a Pagar, Modelos de Contrato e Planos em 15/11/2026. RF104 a RF108 acrescentam Tipos de Pagamento em 15/11/2026. RF109–RF115 cobre Modelos de Ficha com evidências gravadas em 16/11/2026. Os critérios abaixo constituem a referência de QA para esses fluxos; não representam validação de uma especificação formal pelo responsável pelo produto.
+Esta análise documenta 160 requisitos de QA para os cenários relacionados abaixo, com base nos relatos e nas evidências fornecidas. RF01–RF04 e suas análises históricas foram preservados; RF05–RF20 ampliam a cobertura em 14/11/2026; RF21 acrescenta Avaliações; RF22–RF28 acrescentam Exercícios; RF29–RF33 acrescentam Grupos Musculares; RF34 acrescenta o carregamento do dashboard RF35 acrescenta o cadastro de objetivos de treino e RF38 acrescenta o cadastro de categorias com código automático em 15/11/2026. RF39 acrescenta o cadastro de modalidade em SifitBox – Turmas. RF40 acrescenta a exclusão de turmas e modalidades. RF41 acrescenta o cadastro de turma. RF42 a RF56 acrescentam Pagar.me, Configurações, Despesas Fixas e Relatórios em 15/11/2026. RF57 acrescenta a exclusão de grupo (treino) e RF58 acrescenta a edição de grupo (treino), ambos também em 15/11/2026. RF59 acrescenta o cadastro de anamnese, também em 15/11/2026. RF60 acrescenta a gestão de modelos de anamnese (busca, cadastro, edição e exclusão), em 16/11/2026. RF61 acrescenta a gestão de categorias de anamnese (filtro, busca, cadastro, edição, cancelamento de edição e exclusão), também em 16/11/2026. RF62 acrescenta a edição de pergunta de anamnese, reprovada por HTTP 500, também em 16/11/2026. RF65–RF73 cobrem validações, operações e buscas de Colaboradores, também em 15/11/2026. RF74–RF84 acrescentam Prospecção e Bandeiras de Cartão a partir de resumos fornecidos, em 16/11/2026. RF85 a RF90 acrescentam Prospecção (leads) em 15/11/2026. RF91 a RF103 acrescentam Contas a Pagar, Modelos de Contrato e Planos em 15/11/2026. RF104 a RF108 acrescentam Tipos de Pagamento em 15/11/2026. RF109–RF115 cobre Modelos de Ficha com evidências gravadas em 16/11/2026. Os critérios abaixo constituem a referência de QA para esses fluxos; não representam validação de uma especificação formal pelo responsável pelo produto.
 
 ## 📋 Visão geral dos requisitos
 
@@ -171,6 +171,7 @@ Esta análise documenta 159 requisitos de QA para os cenários relacionados abai
 | [RF161](#rf161) | Alternar o filtro de denúncias com a lista vazia | Média, proposta | [CT-RF161](Cenario_Teste/CT-RF161_Aplicativo_Denuncias_Filtros_Estados_Vazios.md) |
 | [RF162](#rf162) | Cancelar a edição da senha de Biometria | Média, proposta | [CT-RF162](Cenario_Teste/CT-RF162_Configuracoes_Biometria_Cancelar_Edicao_Senha.md) |
 | [RF163](#rf163) | Rejeitar um valor sem formato de IP em Biometria | Média, proposta | [CT-RF163](Cenario_Teste/CT-RF163_Configuracoes_Biometria_Rejeitar_IP_Invalido.md) |
+| [RF164](#rf164) | Persistir a alteração da porta do aparelho de Biometria | Média, proposta | [CT-RF164](Cenario_Teste/CT-RF164_Configuracoes_Biometria_Persistir_Porta.md) |
 
 ---
 
@@ -3839,6 +3840,31 @@ A aprovação cobre o cancelamento. O comportamento de mascaramento de Senha est
 
 A leitura posterior comprova o valor armazenado. A gravação não verifica a tentativa de conexão ao aparelho.
 
+<a id="rf164"></a>
+
+## RF164 — Persistir a alteração da porta do aparelho de Biometria
+
+| Campo | Descrição |
+| --- | --- |
+| Requisito de QA | Confirmar que a alteração de Porta é gravada e reaparece ao consultar novamente a configuração de Biometria. |
+| Ator | Usuário autenticado com permissão para a operação. |
+| Pré-condições | Sessão autenticada com permissão para alterar a porta de um aparelho de teste. |
+| Gatilho | Editar Porta e clicar em Salvar Configurações. |
+| Caso | [CT-RF164](Cenario_Teste/CT-RF164_Configuracoes_Biometria_Persistir_Porta.md) |
+| Situação observada | Aprovado conforme a gravação. A porta alterada no POST foi confirmada no GET após recarga. A restauração retornou sucesso. |
+| Defeito | Nenhum no fluxo avaliado |
+| Evidências | Jam 8 — Persistência da porta do aparelho (gravação restrita por conter dados de integração ou dados de alunos) e [Evidências](Evidencias/CT-RF164_Configuracoes_Biometria_Persistir_Porta/README.md). |
+
+### Critérios de aceitação do RF164
+
+1. A alteração retorna sucesso.
+2. A leitura após recarregar equivale ao valor enviado.
+3. A interface mostra o valor consultado.
+
+### Pontos a confirmar e limites do RF164
+
+A gravação cobre a persistência da primeira alteração. A conectividade e a nova leitura após a restauração ficaram fora do trecho.
+
 ---
 
 ## 🔗 Rastreabilidade
@@ -4001,6 +4027,7 @@ A leitura posterior comprova o valor armazenado. A gravação não verifica a te
 | RF161 | [CT-RF161](Cenario_Teste/CT-RF161_Aplicativo_Denuncias_Filtros_Estados_Vazios.md) | Nenhum no fluxo avaliado | Aprovado conforme a gravação | [Evidências](Evidencias/CT-RF161_Aplicativo_Denuncias_Filtros_Estados_Vazios/README.md) e Jam 5 — Filtros de denúncias sem registros (gravação restrita por conter dados de integração ou dados de alunos) |
 | RF162 | [CT-RF162](Cenario_Teste/CT-RF162_Configuracoes_Biometria_Cancelar_Edicao_Senha.md) | Nenhum no fluxo avaliado | Aprovado conforme a gravação | [Evidências](Evidencias/CT-RF162_Configuracoes_Biometria_Cancelar_Edicao_Senha/README.md) e Jam 6 — Cancelamento da edição no formulário de Biometria (gravação restrita por conter dados de integração ou dados de alunos) |
 | RF163 | [CT-RF163](Cenario_Teste/CT-RF163_Configuracoes_Biometria_Rejeitar_IP_Invalido.md) | [BUG-053](Relatorio-de-Bugs.md#bug-053), em triagem | Reprovado nas evidências | [Evidências](Evidencias/CT-RF163_Configuracoes_Biometria_Rejeitar_IP_Invalido/README.md) e Jam 7 — Validação de IP do aparelho (gravação restrita por conter dados de integração ou dados de alunos) |
+| RF164 | [CT-RF164](Cenario_Teste/CT-RF164_Configuracoes_Biometria_Persistir_Porta.md) | Nenhum no fluxo avaliado | Aprovado conforme a gravação | [Evidências](Evidencias/CT-RF164_Configuracoes_Biometria_Persistir_Porta/README.md) e Jam 8 — Persistência da porta do aparelho (gravação restrita por conter dados de integração ou dados de alunos) |
 
 ---
 
@@ -4897,7 +4924,7 @@ CT-RF151–CT-RF156 cobrem as abas Avaliação e Aniversário com gravações de
 
 ### Base da análise de Aplicativo e Configurações / Biometria — revisão de 18/11/2026
 
-CT-RF157–CT-RF163 cobrem Aplicativo e a aba Biometria com gravações de 16/11/2026 entre 22:39:05 e 23:03:49 BRT.
+CT-RF157–CT-RF164 cobrem Aplicativo e a aba Biometria com gravações de 16/11/2026 entre 22:39:05 e 23:05:55 BRT.
 
 - RF157: O diálogo exibiu a notificação selecionada e sua prévia. Fechar retornou à listagem. Jam 1 — Consulta de notificação existente (gravação restrita por conter dados de integração ou dados de alunos).
 - RF158: Sem texto, Enviar aviso ficou desabilitado e a captura não registrou uma criação. Jam 2 — Validação de mensagem obrigatória (gravação restrita por conter dados de integração ou dados de alunos).
@@ -4906,6 +4933,7 @@ CT-RF157–CT-RF163 cobrem Aplicativo e a aba Biometria com gravações de 16/11
 - RF161: A lista vazia apresentou a mensagem correspondente em todas as alternâncias entre todas e pendentes. Jam 5 — Filtros de denúncias sem registros (gravação restrita por conter dados de integração ou dados de alunos).
 - RF162: A edição foi descartada e a tela retornou à Página Inicial sem POST de configuração. Jam 6 — Cancelamento da edição no formulário de Biometria (gravação restrita por conter dados de integração ou dados de alunos).
 - RF163: Um valor sem formato de IP foi salvo e apareceu na consulta e no campo após recarregar. Jam 7 — Validação de IP do aparelho (gravação restrita por conter dados de integração ou dados de alunos).
+- RF164: A porta alterada no POST foi confirmada no GET após recarga. A restauração retornou sucesso. Jam 8 — Persistência da porta do aparelho (gravação restrita por conter dados de integração ou dados de alunos).
 
 ---
 

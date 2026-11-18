@@ -1,6 +1,6 @@
 # 🧪 Índice dos cenários de teste — SIFIT
 
-**Atualização:** 18/11/2026. 159 casos documentados: 80 aprovados, 58 reprovados e 21 a validar. 53 defeitos registrados (10 abertos e 43 em triagem) e 58 casos com reteste corretivo pendente. Escopo: CT-RF01–CT-RF35, CT-RF38–CT-RF62 e CT-RF65–CT-RF163.
+**Atualização:** 18/11/2026. 160 casos documentados: 81 aprovados, 58 reprovados e 21 a validar. 53 defeitos registrados (10 abertos e 43 em triagem) e 58 casos com reteste corretivo pendente. Escopo: CT-RF01–CT-RF35, CT-RF38–CT-RF62 e CT-RF65–CT-RF164.
 
 | Caso | Funcionalidade | Resultado | Defeito | Jam |
 | --- | --- | --- | --- | --- |
@@ -376,7 +376,7 @@ CT-RF145–CT-RF150 cobrem funcionalidades de Configurações com gravações de
 
 CT-RF151–CT-RF156 cobrem as abas Avaliação e Aniversário com gravações de 16/11/2026 entre 23:10:04 e 23:20:07 BRT. A revisão é documental.
 
-## Inclusão de 18/11/2026 — Aplicativo e Configurações / Biometria (CT-RF157–CT-RF163)
+## Inclusão de 18/11/2026 — Aplicativo e Configurações / Biometria (CT-RF157–CT-RF164)
 
 | Caso | Funcionalidade | Resultado | Defeito | Jam |
 | --- | --- | --- | --- | --- |
@@ -387,7 +387,8 @@ CT-RF151–CT-RF156 cobrem as abas Avaliação e Aniversário com gravações de
 | [CT-RF161](CT-RF161_Aplicativo_Denuncias_Filtros_Estados_Vazios.md) | Alternar o filtro de denúncias com a lista vazia | Aprovado conforme a gravação | — | Jam 5 — Filtros de denúncias sem registros (gravação restrita por conter dados de integração ou dados de alunos) |
 | [CT-RF162](CT-RF162_Configuracoes_Biometria_Cancelar_Edicao_Senha.md) | Cancelar a edição da senha de Biometria | Aprovado conforme a gravação | — | Jam 6 — Cancelamento da edição no formulário de Biometria (gravação restrita por conter dados de integração ou dados de alunos) |
 | [CT-RF163](CT-RF163_Configuracoes_Biometria_Rejeitar_IP_Invalido.md) | Rejeitar um valor sem formato de IP em Biometria | Reprovado nas evidências | [BUG-053](../Relatorio-de-Bugs.md#bug-053), em triagem | Jam 7 — Validação de IP do aparelho (gravação restrita por conter dados de integração ou dados de alunos) |
+| [CT-RF164](CT-RF164_Configuracoes_Biometria_Persistir_Porta.md) | Persistir a alteração da porta do aparelho de Biometria | Aprovado conforme a gravação | — | Jam 8 — Persistência da porta do aparelho (gravação restrita por conter dados de integração ou dados de alunos) |
 
-CT-RF157–CT-RF163 cobrem Aplicativo e a aba Biometria com gravações de 16/11/2026 entre 22:39:05 e 23:03:49 BRT. A revisão é documental.
+CT-RF157–CT-RF164 cobrem Aplicativo e a aba Biometria com gravações de 16/11/2026 entre 22:39:05 e 23:05:55 BRT. A revisão é documental.
 
 [← Início](../../README.md) · [Requisitos](../Analise%20de%20requisitos.md) · [Plano](../Plano%20de%20testes.md) · [Evidências](../Evidencias/README.md)

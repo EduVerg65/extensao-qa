@@ -1,0 +1,24 @@
+CT-RF164 — Persistir a alteração da porta do aparelho de Biometria
+Fonte: Jam 8 — Persistência da porta do aparelho. Gravação restrita por conter dados de integração ou dados de alunos.
+Gravação: 16/11/2026, 23:05:55 BRT. Duração: 20,40 s.
+Revisão documental: 18/11/2026.
+Página: https://sifit.centrion.com.br/configuracoes
+Foco deste caso: Confirmar que a alteração de Porta é gravada e reaparece ao consultar novamente a configuração de Biometria.
+
+Cronologia (ações e eventos capturados no Jam):
+0:01–0:06  Altera Porta e salva.
+0:09,67–0:13  Recarrega, abre Biometria e confere Porta.
+0:17–0:19  Volta ao valor inicial e envia a restauração.
+
+Rede do conjunto gravado (eventos relevantes ao caso):
+0:06,63  POST /api/configuracoes/alterar/1 (HTTP 200, verifica_erro: false), com a nova porta.
+0:09,67  GET /api/configuracoes/1 (HTTP 200), com porta_aparelho igual ao valor enviado.
+0:18,67  POST de restauração (HTTP 200, verifica_erro: false). A captura termina sem GET após a restauração.
+
+Quadros consultados (reprodução do Jam):
+- Campo Porta editado antes do salvamento, com dados de conexão ocultos.
+- Campo Porta ao reabrir Biometria, com dados de conexão ocultos.
+
+Observações e verificações futuras:
+- A gravação cobre a persistência da primeira alteração. A conectividade e a nova leitura após a restauração ficaram fora do trecho.
+- Usar como regressão da configuração e confirmar a conectividade e a restauração em ambiente de teste.
