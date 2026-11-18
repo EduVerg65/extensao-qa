@@ -1,0 +1,26 @@
+CT-RF120 — Conferir a configuração de acesso ao sistema desktop
+Fonte: https://jam.dev/c/466be253-ad9a-4856-b567-fb17e1fdd479
+Gravação: 16/11/2026, 22:10:20 BRT; duração: 28,54 s.
+Revisão documental: 17/11/2026.
+Página: https://sifit.centrion.com.br/configuracoes
+Foco deste caso: Persistir a opção Liberar acesso ao sistema desktop? e manter o cartão Desktop coerente com a opção salva.
+
+Cronologia (ações e eventos capturados no Jam):
+0:00–0:08  Altera o seletor de Não para Sim e salva.
+0:10–0:12  Recarrega. Seletor e cartão exibem Sim.
+0:17–0:21  Volta para Não e salva.
+0:22–0:24  Recarrega. Seletor e cartão exibem Não.
+
+Rede do conjunto gravado (eventos relevantes ao caso):
+0:08,01  POST /api/configuracoes/alterar/1 (HTTP 200), com desktop=sim.
+0:11,45  GET /api/configuracoes/1 (HTTP 200), com desktop: sim.
+0:20,58  Segundo POST (HTTP 200), com desktop=nao.
+0:23,07  Segundo GET (HTTP 200), com desktop: nao.
+
+Quadros consultados (reprodução do Jam):
+- Campo e cartão Desktop em Sim após a recarga.
+- Campo e cartão Desktop em Não após a segunda recarga.
+
+Observações e verificações futuras:
+- A aprovação cobre Configurações no navegador. A autenticação e o uso efetivo do cliente desktop não foram exercitados.
+- Usar como regressão da persistência e do cartão. Validar o acesso no aplicativo desktop em um caso próprio.
