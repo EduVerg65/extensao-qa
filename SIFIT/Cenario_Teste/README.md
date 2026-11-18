@@ -1,6 +1,6 @@
 # 🧪 Índice dos cenários de teste — SIFIT
 
-**Atualização:** 17/11/2026. 146 casos documentados: 68 aprovados, 57 reprovados e 21 a validar. 52 defeitos registrados (10 abertos e 42 em triagem) e 57 casos com reteste corretivo pendente. Escopo: CT-RF01–CT-RF35, CT-RF38–CT-RF62 e CT-RF65–CT-RF150.
+**Atualização:** 18/11/2026. 147 casos documentados: 69 aprovados, 57 reprovados e 21 a validar. 52 defeitos registrados (10 abertos e 42 em triagem) e 57 casos com reteste corretivo pendente. Escopo: CT-RF01–CT-RF35, CT-RF38–CT-RF62 e CT-RF65–CT-RF151.
 
 | Caso | Funcionalidade | Resultado | Defeito | Jam |
 | --- | --- | --- | --- | --- |
@@ -362,5 +362,13 @@ CT-RF139–CT-RF144 cobrem a integração do WhatsApp com gravações de 16/11/2
 | [CT-RF150](CT-RF150_Integracoes_WhatsApp_Atualizar_Status_Aguardando_QR.md) | Atualizar a verificação do WhatsApp enquanto aguarda QR Code | Aprovado conforme a gravação | — | Jam 6 — Atualização de status enquanto aguarda QR Code (gravação restrita por conter dados de integração) |
 
 CT-RF145–CT-RF150 cobrem funcionalidades de Configurações com gravações de 16/11/2026 entre 23:21:59 e 23:36:13 BRT. A revisão é documental.
+
+## Inclusão de 18/11/2026 — Configurações / Avaliação e Aniversário (CT-RF151)
+
+| Caso | Funcionalidade | Resultado | Defeito | Jam |
+| --- | --- | --- | --- | --- |
+| [CT-RF151](CT-RF151_Configuracoes_Avaliacao_Desativar_Cobranca.md) | Desativar a cobrança da avaliação do cliente | Aprovado conforme a gravação | — | Jam 1 — Desativação da cobrança da avaliação (gravação restrita por conter dados de integração) |
+
+CT-RF151 cobre a aba Avaliação com gravações de 16/11/2026 às 23:10:04 BRT. A revisão é documental.
 
 [← Início](../../README.md) · [Requisitos](../Analise%20de%20requisitos.md) · [Plano](../Plano%20de%20testes.md) · [Evidências](../Evidencias/README.md)

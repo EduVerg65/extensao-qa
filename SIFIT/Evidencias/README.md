@@ -223,3 +223,11 @@ CT-RF139–CT-RF144 cobrem a integração do WhatsApp com gravações de 16/11/2
 | [CT-RF150](../Cenario_Teste/CT-RF150_Integracoes_WhatsApp_Atualizar_Status_Aguardando_QR.md) | [Atualizar a verificação do WhatsApp enquanto aguarda QR Code](CT-RF150_Integracoes_WhatsApp_Atualizar_Status_Aguardando_QR/README.md) | Aprovado conforme a gravação |
 
 CT-RF145–CT-RF150 cobrem funcionalidades de Configurações com gravações de 16/11/2026 entre 23:21:59 e 23:36:13 BRT. As pastas reúnem origem, cronologia e recortes identificados com SHA-256.
+
+## Inclusão de 18/11/2026 — Configurações / Avaliação e Aniversário (CT-RF151)
+
+| Caso | Evidência | Resultado |
+| --- | --- | --- |
+| [CT-RF151](../Cenario_Teste/CT-RF151_Configuracoes_Avaliacao_Desativar_Cobranca.md) | [Desativar a cobrança da avaliação do cliente](CT-RF151_Configuracoes_Avaliacao_Desativar_Cobranca/README.md) | Aprovado conforme a gravação |
+
+CT-RF151 cobre a aba Avaliação com gravações de 16/11/2026 às 23:10:04 BRT. As pastas reúnem origem, cronologia e recortes identificados com SHA-256.

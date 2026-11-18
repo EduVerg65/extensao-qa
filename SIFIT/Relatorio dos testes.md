@@ -1,10 +1,10 @@
 # 📊 Relatório de Testes — SIFIT
 
-**Escopo:** 146 casos documentados (CT-RF01–CT-RF35, CT-RF38–CT-RF62 e CT-RF65–CT-RF150) — autenticação, recuperação, perfil, Clientes, financeiro, página inicial e dashboard, modalidades / tema de SifitBox, Categorias Crossfit, Avaliações, Exercícios, Grupos Musculares, Objetivos de Treino cadastro de categorias com código automático, SifitBox – Turmas, Pagar.me, Configurações, Despesas Fixas, Relatórios, Grupos (treino), Fichas de Anamnese, gestão de Modelos de Anamnese, gestão de Categorias de Anamnese, edição de Perguntas Anamnese, validações/funções/exclusão/busca de Colaboradores, Prospecção, Bandeiras de Cartão, Contas a Pagar, Modelos de Contrato, Planos, Tipos de Pagamento, Modelos de Ficha, Central de Automações, Integrações de WhatsApp e Configurações de Aniversário, Pagamento e Design.
+**Escopo:** 147 casos documentados (CT-RF01–CT-RF35, CT-RF38–CT-RF62 e CT-RF65–CT-RF151) — autenticação, recuperação, perfil, Clientes, financeiro, página inicial e dashboard, modalidades / tema de SifitBox, Categorias Crossfit, Avaliações, Exercícios, Grupos Musculares, Objetivos de Treino cadastro de categorias com código automático, SifitBox – Turmas, Pagar.me, Configurações, Despesas Fixas, Relatórios, Grupos (treino), Fichas de Anamnese, gestão de Modelos de Anamnese, gestão de Categorias de Anamnese, edição de Perguntas Anamnese, validações/funções/exclusão/busca de Colaboradores, Prospecção, Bandeiras de Cartão, Contas a Pagar, Modelos de Contrato, Planos, Tipos de Pagamento, Modelos de Ficha, Central de Automações, Integrações de WhatsApp e Configurações de Avaliação, Aniversário, Pagamento e Design.
 
-**Datas das gravações do Jam:** CT-RF01 em 23/10/2026; CT-RF02_ERRO em 22/10/2026 às 21:45 BRT; CT-RF03 não confirmada; CT-RF04_loginComSucesso em 13/11/2026; CT-RF05–CT-RF20 em 14/11/2026; CT-RF21 em 15/11/2026 às 15:07:51,265 BRT; CT-RF22–28 em 15/11/2026 às 15:25, 15:40, 15:38, 15:35, 16:11, 16:08 e 16:07 BRT; CT-RF29–33 em 15/11/2026 às 15h56 BRT (uma única gravação); CT-RF34 em 15/11/2026 às 17:23 BRT; CT-RF35 em 15/11/2026 às 18:13 BRT; CT-RF38 em 15/11/2026 às 18:41 BRT; CT-RF39–41 em 15/11/2026 às 18:51 BRT (uma única gravação); CT-RF42–45 às 19:06, CT-RF46–49 às 19:07 e CT-RF50–56 às 19:09 BRT (uma gravação por grupo); CT-RF57 e CT-RF58 em 15/11/2026 às 21h03 BRT (mesma gravação); CT-RF59 em 15/11/2026 às 22h07 BRT; CT-RF60 em 15/11/2026 às 23h34 BRT; CT-RF61 em 16/11/2026 às 15h24 BRT; CT-RF62 em 16/11/2026 às 15h57 BRT. CT-RF74–CT-RF84: 16/11/2026 conforme os resumos, sem horário informado. CT-RF85–90 às 21:52, CT-RF91–95 às 21:58, CT-RF96–98 às 21:55 e CT-RF99–103 às 21:54 e CT-RF104–108 às 22:03 BRT em 15/11/2026 (uma gravação por grupo). CT-RF109–CT-RF115 em 16/11/2026 entre 22:19:51 e 22:29:07 BRT. CT-RF116–CT-RF121 amplia a cobertura de Configurações e Modelos de Ficha com gravações de 16/11/2026 entre 22:03:53 e 22:18:52 BRT. CT-RF122–CT-RF127 cobre Inteligência e Configurações com gravações de 16/11/2026 entre 21:50:51 e 22:02:16 BRT. CT-RF128–CT-RF133 cobre Inteligência e Automação com gravações de 16/11/2026 entre 21:40:31 e 21:49:48 BRT. CT-RF134–CT-RF138 cobrem a Central de Automações com gravações de 16/11/2026 entre 21:25:26 e 21:38:29 BRT. CT-RF139–CT-RF144 cobrem a integração do WhatsApp com gravações de 16/11/2026 entre 23:37:22 e 23:45:52 BRT. CT-RF145–CT-RF150 cobrem funcionalidades de Configurações com gravações de 16/11/2026 entre 23:21:59 e 23:36:13 BRT.
+**Datas das gravações do Jam:** CT-RF01 em 23/10/2026; CT-RF02_ERRO em 22/10/2026 às 21:45 BRT; CT-RF03 não confirmada; CT-RF04_loginComSucesso em 13/11/2026; CT-RF05–CT-RF20 em 14/11/2026; CT-RF21 em 15/11/2026 às 15:07:51,265 BRT; CT-RF22–28 em 15/11/2026 às 15:25, 15:40, 15:38, 15:35, 16:11, 16:08 e 16:07 BRT; CT-RF29–33 em 15/11/2026 às 15h56 BRT (uma única gravação); CT-RF34 em 15/11/2026 às 17:23 BRT; CT-RF35 em 15/11/2026 às 18:13 BRT; CT-RF38 em 15/11/2026 às 18:41 BRT; CT-RF39–41 em 15/11/2026 às 18:51 BRT (uma única gravação); CT-RF42–45 às 19:06, CT-RF46–49 às 19:07 e CT-RF50–56 às 19:09 BRT (uma gravação por grupo); CT-RF57 e CT-RF58 em 15/11/2026 às 21h03 BRT (mesma gravação); CT-RF59 em 15/11/2026 às 22h07 BRT; CT-RF60 em 15/11/2026 às 23h34 BRT; CT-RF61 em 16/11/2026 às 15h24 BRT; CT-RF62 em 16/11/2026 às 15h57 BRT. CT-RF74–CT-RF84: 16/11/2026 conforme os resumos, sem horário informado. CT-RF85–90 às 21:52, CT-RF91–95 às 21:58, CT-RF96–98 às 21:55 e CT-RF99–103 às 21:54 e CT-RF104–108 às 22:03 BRT em 15/11/2026 (uma gravação por grupo). CT-RF109–CT-RF115 em 16/11/2026 entre 22:19:51 e 22:29:07 BRT. CT-RF116–CT-RF121 amplia a cobertura de Configurações e Modelos de Ficha com gravações de 16/11/2026 entre 22:03:53 e 22:18:52 BRT. CT-RF122–CT-RF127 cobre Inteligência e Configurações com gravações de 16/11/2026 entre 21:50:51 e 22:02:16 BRT. CT-RF128–CT-RF133 cobre Inteligência e Automação com gravações de 16/11/2026 entre 21:40:31 e 21:49:48 BRT. CT-RF134–CT-RF138 cobrem a Central de Automações com gravações de 16/11/2026 entre 21:25:26 e 21:38:29 BRT. CT-RF139–CT-RF144 cobrem a integração do WhatsApp com gravações de 16/11/2026 entre 23:37:22 e 23:45:52 BRT. CT-RF145–CT-RF150 cobrem funcionalidades de Configurações com gravações de 16/11/2026 entre 23:21:59 e 23:36:13 BRT. CT-RF151 cobre a aba Avaliação com gravações de 16/11/2026 às 23:10:04 BRT.
 
-**Data da revisão documental:** 17/11/2026, com integração de CT-RF145–CT-RF150 (Configurações).
+**Data da revisão documental:** 18/11/2026, com integração de CT-RF151 (Configurações / Avaliação e Aniversário).
 
 **Origem do resultado:** análise de evidências fornecidas; sem nova execução no sistema nesta revisão.
 
@@ -44,9 +44,11 @@ CT-RF139–CT-RF144 cobrem a integração do WhatsApp com gravações de 16/11/2
 
 CT-RF145–CT-RF150 cobrem funcionalidades de Configurações com gravações de 16/11/2026 entre 23:21:59 e 23:36:13 BRT. Casos aprovados: 4. Reprovados: 2. A validar: 0.
 
+CT-RF151 cobre a aba Avaliação com gravações de 16/11/2026 às 23:10:04 BRT. Casos aprovados: 1. Reprovados: 0. A validar: 0.
+
 | Casos documentados | Aprovados | Reprovados | A validar | Defeitos registrados | Casos com reteste corretivo pendente |
 | :---: | :---: | :---: | :---: | :---: | :---: |
-| 146 | 68 | 57 | 21 | 52 (10 abertos + 42 em triagem) | 57 |
+| 147 | 69 | 57 | 21 | 52 (10 abertos + 42 em triagem) | 57 |
 
 Os 48 retestes incluem CT-RF22/24/26/27/28/29/30/35/41/45/51/53/54/55/56/57/58/59/62/65/66/67/68/69/70/71/73/81/82/83/89/92/98/102/105/107, sujeitos à confirmação funcional e técnica. As contagens representam os casos documentados com base nas fontes indicadas, sem novas execuções nesta revisão. As nove variações planejadas para o reteste do CT-RF03 não foram executadas e não são contabilizadas como testes adicionais realizados.
 
@@ -199,6 +201,7 @@ Os 48 retestes incluem CT-RF22/24/26/27/28/29/30/35/41/45/51/53/54/55/56/57/58/5
 | [CT-RF148](Cenario_Teste/CT-RF148_Configuracoes_Design_Validar_Cor_Secundaria.md) | [RF148](Analise%20de%20requisitos.md#rf148) | A interface ou a API rejeita o código #ZZZZZZ com uma mensagem de validação e preserva a cor válida armazenada. | As duas tentativas com #ZZZZZZ retornaram sucesso. O código fora do conjunto hexadecimal persistiu após recarregar. | Reprovado nas evidências | [BUG-051](Relatorio-de-Bugs.md#bug-051), em triagem |
 | [CT-RF149](Cenario_Teste/CT-RF149_Configuracoes_Design_Logo_Limite_Tamanho.md) | [RF149](Analise%20de%20requisitos.md#rf149) | Ao rejeitar um logo pelo tamanho, o sistema informa na tela o limite de 6 MB e permite que o usuário substitua o arquivo. | A API rejeitou pelo limite de 6 MB. A interface exibiu apenas a mensagem genérica de erro ao salvar. | Reprovado nas evidências | [BUG-052](Relatorio-de-Bugs.md#bug-052), em triagem |
 | [CT-RF150](Cenario_Teste/CT-RF150_Integracoes_WhatsApp_Atualizar_Status_Aguardando_QR.md) | [RF150](Analise%20de%20requisitos.md#rf150) | Atualizar consulta o status. Se o resultado permanece conectando, a tela mantém Aguardando QR Code e apresenta a nova verificação. | A API manteve o estado conectando, e a tela continuou em Aguardando QR Code com a verificação atualizada de 02:32 para 02:35. | Aprovado conforme a gravação | Nenhum no fluxo avaliado |
+| [CT-RF151](Cenario_Teste/CT-RF151_Configuracoes_Avaliacao_Desativar_Cobranca.md) | [RF151](Analise%20de%20requisitos.md#rf151) | Salvar Não retorna sucesso. A consulta posterior devolve `cobrar_avaliacao: nao` e Avaliação mantém Não no seletor. | A consulta e a aba Avaliação confirmaram Não após recarregar. | Aprovado conforme a gravação | Nenhum no fluxo avaliado |
 
 ---
 
@@ -618,6 +621,17 @@ O domínio do CT-RF02_ERRO é diferente do domínio `sifitalfa.centrion.com.br` 
 | Dados e permissões | Conta autorizada a acessar Configurações. Preparar mensagens de teste, valores de referência para Pagamento e Design, imagens de tamanho conhecido e um provedor autorizado para a consulta de status. |
 | Preparação | Registrar valores iniciais e comparar a interface com a consulta posterior. Usar evidências que preservem credenciais e outros dados de integração. |
 
+### Configurações / Avaliação e Aniversário (CT-RF151)
+
+| Item | Definição |
+| --- | --- |
+| Páginas | https://sifit.centrion.com.br/configuracoes |
+| Backend de referência | https://backendsifit.centrion.com.br |
+| Navegador / sistema / vídeo | Chrome 157.0.8103.79 / Windows 10 (x86) / 1918 × 998. |
+| Gravações | 16/11/2026 às 23:10:04 BRT. |
+| Dados e permissões | Conta com permissão para editar Configurações. Preparar valores de referência nos seletores de Avaliação e uma mensagem de WhatsApp cadastrada na aba Aniversário. |
+| Preparação | Registrar valores iniciais, conferir a consulta após salvar ou cancelar e usar dados de teste nas mensagens. |
+
 ## 📸 5. Evidências e observações
 
 | Evidência | Informação utilizada |
@@ -719,6 +733,7 @@ O domínio do CT-RF02_ERRO é diferente do domínio `sifitalfa.centrion.com.br` 
 | Jam 4 — Validação da Cor Secundária (gravação restrita por conter dados de integração) e [Evidências](Evidencias/CT-RF148_Configuracoes_Design_Validar_Cor_Secundaria/README.md) | CT-RF148: As duas tentativas com #ZZZZZZ retornaram sucesso. O código fora do conjunto hexadecimal persistiu após recarregar. |
 | Jam 5 — Rejeição de logo pelo limite de tamanho (gravação restrita por conter dados de integração) e [Evidências](Evidencias/CT-RF149_Configuracoes_Design_Logo_Limite_Tamanho/README.md) | CT-RF149: A API rejeitou pelo limite de 6 MB. A interface exibiu apenas a mensagem genérica de erro ao salvar. |
 | Jam 6 — Atualização de status enquanto aguarda QR Code (gravação restrita por conter dados de integração) e [Evidências](Evidencias/CT-RF150_Integracoes_WhatsApp_Atualizar_Status_Aguardando_QR/README.md) | CT-RF150: A API manteve o estado conectando, e a tela continuou em Aguardando QR Code com a verificação atualizada de 02:32 para 02:35. |
+| Jam 1 — Desativação da cobrança da avaliação (gravação restrita por conter dados de integração) e [Evidências](Evidencias/CT-RF151_Configuracoes_Avaliacao_Desativar_Cobranca/README.md) | CT-RF151: A consulta e a aba Avaliação confirmaram Não após recarregar. |
 
 A mensagem de credenciais incorretas já aparece no início do vídeo do Jam; não foi considerada uma resposta ao clique em "Esqueci minha senha". A ausência de requisição, isoladamente, não caracteriza defeito se a interface abrir um formulário local. Aqui, o resultado reprovado decorre de o fluxo não abrir.
 
@@ -1153,7 +1168,15 @@ Na inclusão dos CT-RF139 a CT-RF144, o consolidado era de 140 casos documentado
 | [CT-RF149](Cenario_Teste/CT-RF149_Configuracoes_Design_Logo_Limite_Tamanho.md) | Reprovado nas evidências | Retestar com arquivos de tamanho conhecido no entorno do limite e confirmar a mensagem de validação e a preservação do logo salvo na recusa. |
 | [CT-RF150](Cenario_Teste/CT-RF150_Integracoes_WhatsApp_Atualizar_Status_Aguardando_QR.md) | Aprovado conforme a gravação | Usar como regressão da atualização visual e cobrir, com provedor de teste, a mudança de aguardando QR Code para conectado. |
 
-146 casos documentados: 68 aprovados, 57 reprovados e 21 a validar. 52 defeitos registrados (10 abertos e 42 em triagem) e 57 casos com reteste corretivo pendente.
+Na inclusão dos CT-RF145 a CT-RF150, o consolidado era de 146 casos documentados: 68 aprovados, 57 reprovados e 21 a validar. 52 defeitos registrados (10 abertos e 42 em triagem) e 57 casos com reteste corretivo pendente.
+
+## Inclusão de 18/11/2026 — Configurações / Avaliação e Aniversário (CT-RF151)
+
+| Caso | Situação | Encaminhamento |
+| --- | --- | --- |
+| [CT-RF151](Cenario_Teste/CT-RF151_Configuracoes_Avaliacao_Desativar_Cobranca.md) | Aprovado conforme a gravação | Usar como regressão da preferência e confirmar a regra de cobrança em um fluxo de avaliação de teste. |
+
+147 casos documentados: 69 aprovados, 57 reprovados e 21 a validar. 52 defeitos registrados (10 abertos e 42 em triagem) e 57 casos com reteste corretivo pendente.
 
 ---
 

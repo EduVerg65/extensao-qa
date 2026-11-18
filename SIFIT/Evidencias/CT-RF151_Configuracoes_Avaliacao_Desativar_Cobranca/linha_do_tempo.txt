@@ -1,0 +1,25 @@
+CT-RF151 — Desativar a cobrança da avaliação do cliente
+Fonte: Jam 1 — Desativação da cobrança da avaliação. Gravação restrita por conter dados de integração.
+Gravação: 16/11/2026, 23:10:04 BRT. Duração: 18,34 s.
+Revisão documental: 18/11/2026.
+Página: https://sifit.centrion.com.br/configuracoes
+Foco deste caso: Confirmar que o valor Não de Cobrar Avaliação do Cliente permanece salvo após recarregar e reabrir Avaliação.
+
+Cronologia (ações e eventos capturados no Jam):
+0:05,77  Salva o novo valor Não.
+0:08,78  Após recarregar, o GET devolve `cobrar_avaliacao: nao`.
+0:10,14  Reabre Avaliação e confirma Não na interface.
+0:16,63  Envia a restauração para Sim e recebe sucesso.
+
+Rede do conjunto gravado (eventos relevantes ao caso):
+0:05,77  POST /api/configuracoes/alterar/1 com cobrar_avaliacao: nao (HTTP 200, verifica_erro: false).
+0:08,78  GET /api/configuracoes/1 (HTTP 200) com cobrar_avaliacao: nao.
+0:16,63  POST de restauração com cobrar_avaliacao: sim (HTTP 200, verifica_erro: false). A captura termina sem novo GET após a restauração.
+
+Quadros consultados (reprodução do Jam):
+- Cobrar Avaliação do Cliente em Sim antes da alteração.
+- Cobrar Avaliação do Cliente em Não após reabrir a aba.
+
+Observações e verificações futuras:
+- A evidência cobre a preferência salva. A geração de cobranças e o reflexo no cadastro de avaliação ficam para nova execução.
+- Usar como regressão da preferência e confirmar a regra de cobrança em um fluxo de avaliação de teste.
