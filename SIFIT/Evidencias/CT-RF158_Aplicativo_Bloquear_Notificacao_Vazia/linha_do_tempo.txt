@@ -1,0 +1,22 @@
+CT-RF158 — Impedir o envio de uma notificação sem mensagem
+Fonte: Jam 2 — Validação de mensagem obrigatória. Gravação restrita por conter dados de integração ou dados de alunos.
+Gravação: 16/11/2026, 22:40:04 BRT. Duração: 13,11 s.
+Revisão documental: 18/11/2026.
+Página: https://sifit.centrion.com.br/aplicativo
+Foco deste caso: Manter Enviar aviso desabilitado enquanto a mensagem estiver vazia.
+
+Cronologia (ações e eventos capturados no Jam):
+0:03,09  Abre Criar Notificação.
+0:05–0:10  Tenta acionar Enviar aviso com a mensagem em branco.
+0:11,70  Clica em Cancelar.
+
+Rede do conjunto gravado (eventos relevantes ao caso):
+Os cliques na área do botão durante o formulário vazio não geraram POST para /api/notificacoes/criar/1 na captura.
+
+Quadros consultados (reprodução do Jam):
+- Formulário vazio, contador em zero e ação Enviar aviso desabilitada.
+- Ação Enviar aviso permanece desabilitada durante a tentativa.
+
+Observações e verificações futuras:
+- A evidência cobre o campo totalmente vazio. Espaços em branco e limites de comprimento ficam para nova execução.
+- Usar como regressão do formulário vazio e repetir com entrada composta apenas de espaços.

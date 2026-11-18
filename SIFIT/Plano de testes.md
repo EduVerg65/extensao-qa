@@ -1,10 +1,10 @@
 # 🧪 Plano de Testes — SIFIT
 
-**Atualização:** 18/11/2026 — 153 cenários documentados (CT-RF01–CT-RF35, CT-RF38–CT-RF62 e CT-RF65–CT-RF157), com inclusão de CT-RF42 a CT-RF56 / Pagar.me, Configurações, Despesas Fixas e Relatórios, CT-RF57 e CT-RF58 / Grupos (treino), CT-RF59 / Fichas de Anamnese, CT-RF60 / Modelos de Anamnese, CT-RF61 / Categorias de Anamnese, CT-RF62 / Perguntas Anamnese, CT-RF65 a CT-RF73 / Colaboradores e CT-RF74 a CT-RF108 / Prospecção, Bandeiras de Cartão, Contas a Pagar, Modelos de Contrato, Planos e Tipos de Pagamento, além de Modelos de Ficha (CT-RF109–CT-RF115) e Configurações e Modelos de Ficha (CT-RF116–CT-RF121) e Inteligência e Configurações (CT-RF122–CT-RF127) e Inteligência e Automação (CT-RF128–CT-RF133) e ampliação da cobertura da Central de Automações (CT-RF134–CT-RF138) e integração de WhatsApp (CT-RF139–CT-RF144) e novos cenários de Configurações (CT-RF145–CT-RF150) e Configurações de Avaliação e Aniversário (CT-RF151–CT-RF156) e Aplicativo (CT-RF157). BUG-011–BUG-052 em triagem.
+**Atualização:** 18/11/2026 — 154 cenários documentados (CT-RF01–CT-RF35, CT-RF38–CT-RF62 e CT-RF65–CT-RF158), com inclusão de CT-RF42 a CT-RF56 / Pagar.me, Configurações, Despesas Fixas e Relatórios, CT-RF57 e CT-RF58 / Grupos (treino), CT-RF59 / Fichas de Anamnese, CT-RF60 / Modelos de Anamnese, CT-RF61 / Categorias de Anamnese, CT-RF62 / Perguntas Anamnese, CT-RF65 a CT-RF73 / Colaboradores e CT-RF74 a CT-RF108 / Prospecção, Bandeiras de Cartão, Contas a Pagar, Modelos de Contrato, Planos e Tipos de Pagamento, além de Modelos de Ficha (CT-RF109–CT-RF115) e Configurações e Modelos de Ficha (CT-RF116–CT-RF121) e Inteligência e Configurações (CT-RF122–CT-RF127) e Inteligência e Automação (CT-RF128–CT-RF133) e ampliação da cobertura da Central de Automações (CT-RF134–CT-RF138) e integração de WhatsApp (CT-RF139–CT-RF144) e novos cenários de Configurações (CT-RF145–CT-RF150) e Configurações de Avaliação e Aniversário (CT-RF151–CT-RF156) e Aplicativo (CT-RF157–CT-RF158). BUG-011–BUG-052 em triagem.
 
 **Padronização documental:** 13/11/2026, com resultados e pendências preservados.
 
-**Escopo:** 153 casos (CT-RF01–CT-RF35, CT-RF38–CT-RF62 e CT-RF65–CT-RF157) — autenticação, recuperação de senha, perfil, Clientes, financeiro, página inicial e dashboard, modalidades / tema de SifitBox, Categorias Crossfit, Avaliações, Exercícios, Grupos Musculares, Objetivos de Treino, Grupos (treino), Fichas de Anamnese, gestão de Modelos de Anamnese, gestão de Categorias de Anamnese, edição de Perguntas Anamnese, validações/funções/exclusão/busca de Colaboradores, Prospecção, Bandeiras de Cartão, Contas a Pagar, Modelos de Contrato, Planos, Tipos de Pagamento, Modelos de Ficha, Central de Automações, Integrações de WhatsApp e Configurações de Avaliação, Aniversário, Pagamento e Design, além de Aplicativo.
+**Escopo:** 154 casos (CT-RF01–CT-RF35, CT-RF38–CT-RF62 e CT-RF65–CT-RF158) — autenticação, recuperação de senha, perfil, Clientes, financeiro, página inicial e dashboard, modalidades / tema de SifitBox, Categorias Crossfit, Avaliações, Exercícios, Grupos Musculares, Objetivos de Treino, Grupos (treino), Fichas de Anamnese, gestão de Modelos de Anamnese, gestão de Categorias de Anamnese, edição de Perguntas Anamnese, validações/funções/exclusão/busca de Colaboradores, Prospecção, Bandeiras de Cartão, Contas a Pagar, Modelos de Contrato, Planos, Tipos de Pagamento, Modelos de Ficha, Central de Automações, Integrações de WhatsApp e Configurações de Avaliação, Aniversário, Pagamento e Design, além de Aplicativo.
 
 ## 📌 1. Identificação
 
@@ -14,13 +14,13 @@
 | Tipo de teste | Funcional manual, com análise exploratória e de evidências. |
 | Versão avaliada | Não confirmada; registrar por caso no reteste. |
 | Funcionalidades | Autenticação positiva e negativa, recuperação, Perfil, filtros de Clientes, financeiro, período, personais, modalidades / tema, Categorias Crossfit, Avaliações e Exercícios. |
-| Situação | 153 casos documentados: 75 aprovados, 57 reprovados e 21 a validar. 52 defeitos registrados (10 abertos e 42 em triagem) e 57 casos com reteste corretivo pendente. |
+| Situação | 154 casos documentados: 76 aprovados, 57 reprovados e 21 a validar. 52 defeitos registrados (10 abertos e 42 em triagem) e 57 casos com reteste corretivo pendente. |
 
 ---
 
 ## 🎯 2. Objetivo
 
-Verificar os fluxos dos 153 cenários documentados, comparando os critérios de aceitação com as evidências de autenticação, recuperação, perfil, Clientes, financeiro, página inicial, SifitBox, Categorias Crossfit, Avaliações, Exercícios, Grupos Musculares, Fichas de Anamnese, Colaboradores, Prospecção, Bandeiras de Cartão, Contas a Pagar, Modelos de Contrato, Planos, Tipos de Pagamento, Modelos de Ficha, Central de Automações, Integrações de WhatsApp e Configurações de Avaliação, Aniversário, Pagamento e Design, além de Aplicativo. Manter rastreabilidade entre requisitos, casos, Jam, vídeos, resultados e defeitos, distinguindo revisões documentais de novas execuções.
+Verificar os fluxos dos 154 cenários documentados, comparando os critérios de aceitação com as evidências de autenticação, recuperação, perfil, Clientes, financeiro, página inicial, SifitBox, Categorias Crossfit, Avaliações, Exercícios, Grupos Musculares, Fichas de Anamnese, Colaboradores, Prospecção, Bandeiras de Cartão, Contas a Pagar, Modelos de Contrato, Planos, Tipos de Pagamento, Modelos de Ficha, Central de Automações, Integrações de WhatsApp e Configurações de Avaliação, Aniversário, Pagamento e Design, além de Aplicativo. Manter rastreabilidade entre requisitos, casos, Jam, vídeos, resultados e defeitos, distinguindo revisões documentais de novas execuções.
 
 ---
 
@@ -103,7 +103,7 @@ Integração documental dos arquivos RESUMO.txt fornecidos em `C:\Users\Leonardo
 
 **Configurações / Avaliação e Aniversário — CT-RF151–CT-RF156:** desativar a cobrança da avaliação do cliente, alterar o tipo de avaliação para Bioimpedância, habilitar Teste Físico nas configurações de avaliação, desabilitar o envio automático de aniversário, cancelar a edição da mensagem de aniversário do WhatsApp, inserir variáveis na mensagem de aniversário do WhatsApp.
 
-**Aplicativo — CT-RF157:** consultar os detalhes de uma notificação.
+**Aplicativo — CT-RF157–CT-RF158:** consultar os detalhes de uma notificação, impedir o envio de uma notificação sem mensagem.
 
 **Limites da cobertura atual:**
 
@@ -531,14 +531,14 @@ Para o reteste, preparar aluno existente selecionável pela busca, personal habi
 | Dados e permissões | Conta com permissão para editar Configurações. Preparar valores de referência nos seletores de Avaliação e uma mensagem de WhatsApp cadastrada na aba Aniversário. |
 | Preparação | Registrar valores iniciais, conferir a consulta após salvar ou cancelar e usar dados de teste nas mensagens. |
 
-### Aplicativo — ambiente e preparação (CT-RF157)
+### Aplicativo — ambiente e preparação (CT-RF157–CT-RF158)
 
 | Item | Definição |
 | --- | --- |
 | Páginas | https://sifit.centrion.com.br/aplicativo |
 | Backend de referência | https://backendsifit.centrion.com.br |
 | Navegador / sistema / vídeo | Chrome 157.0.8103.79 / Windows 10 (x86) / 1918 × 998. |
-| Gravações | 16/11/2026 às 22:39:05 BRT. |
+| Gravações | 16/11/2026 entre 22:39:05 e 22:40:04 BRT. |
 | Dados e permissões | Conta com acesso ao painel Aplicativo, notificações de teste e base para verificar os estados vazios. |
 | Preparação | Conferir a requisição e a interface quando aplicável. Usar recortes que preservem credenciais, valores de conexão e dados de alunos. |
 
@@ -688,6 +688,7 @@ Para o reteste, preparar aluno existente selecionável pela busca, personal habi
 | [RF155](Analise%20de%20requisitos.md#rf155) | [CT-RF155](Cenario_Teste/CT-RF155_Configuracoes_Aniversario_Cancelar_Mensagem_WhatsApp.md) | Funcional manual / cancelamento | Aprovado conforme a gravação | Nenhum no fluxo avaliado | Usar como regressão do cancelamento e repetir com os demais canais da aba. |
 | [RF156](Analise%20de%20requisitos.md#rf156) | [CT-RF156](Cenario_Teste/CT-RF156_Configuracoes_Aniversario_Inserir_Variaveis_WhatsApp.md) | Funcional manual / edição e cancelamento | Aprovado conforme a gravação | Nenhum no fluxo avaliado | Usar como regressão do editor e testar a substituição dos marcadores em um envio controlado com dados de teste. |
 | [RF157](Analise%20de%20requisitos.md#rf157) | [CT-RF157](Cenario_Teste/CT-RF157_Aplicativo_Consultar_Notificacao.md) | Funcional manual / consulta | Aprovado conforme a gravação | Nenhum no fluxo avaliado | Usar como regressão da consulta e comparar dois avisos de teste diferentes para conferir o vínculo com a linha selecionada. |
+| [RF158](Analise%20de%20requisitos.md#rf158) | [CT-RF158](Cenario_Teste/CT-RF158_Aplicativo_Bloquear_Notificacao_Vazia.md) | Funcional manual / validação | Aprovado conforme a gravação | Nenhum no fluxo avaliado | Usar como regressão do formulário vazio e repetir com entrada composta apenas de espaços. |
 
 ---
 
@@ -987,9 +988,10 @@ Todas essas variações permanecem planejadas e não são contadas como execuç�
 5. CT-RF155: Usar como regressão do cancelamento e repetir com os demais canais da aba.
 6. CT-RF156: Usar como regressão do editor e testar a substituição dos marcadores em um envio controlado com dados de teste.
 
-### Aplicativo — próximos testes (CT-RF157)
+### Aplicativo — próximos testes (CT-RF157–CT-RF158)
 
 1. CT-RF157: Usar como regressão da consulta e comparar dois avisos de teste diferentes para conferir o vínculo com a linha selecionada.
+2. CT-RF158: Usar como regressão do formulário vazio e repetir com entrada composta apenas de espaços.
 
 ---
 
@@ -1078,6 +1080,7 @@ Todas essas variações permanecem planejadas e não são contadas como execuç�
 | Integração de CT-RF155 / RF155 | Realizada | 18/11/2026, revisão documental. |
 | Integração de CT-RF156 / RF156 | Realizada | 18/11/2026, revisão documental. |
 | Integração de CT-RF157 / RF157 | Realizada | 18/11/2026, revisão documental. |
+| Integração de CT-RF158 / RF158 | Realizada | 18/11/2026, revisão documental. |
 | Confirmação da regra do status e da exclusão de tipos de pagamento em uso, e da filtragem da listagem | Pendente | RF104, RF105 e RF107; depende do responsável pelo produto. |
 | Confirmação da obrigatoriedade do colaborador, dos filtros de contas e da regra do cartão Ativos | Pendente | RF91, RF92, RF93 e RF102; depende do responsável pelo produto. |
 | Confirmação da regra do telefone e da duplicidade de criação de leads | Pendente | RF88 e RF89; depende do responsável pelo produto. |
@@ -1120,7 +1123,7 @@ Há dez defeitos abertos (BUG-001 a BUG-010) e trinta e três em triagem (BUG-01
 
 ## 📁 13. Entregáveis e documentos associados
 
-Os entregáveis são a análise RF01–RF35, RF38–RF62 e RF65–RF157, este plano, os 153 cenários BDD, as evidências disponíveis e os relatórios atualizados. CT-RF21 possui relato original, link do Jam, quadros, cronologia, requisição/resposta sem autenticação e metadados locais; o vídeo permanece no Jam. Os vídeos e demais evidências anteriores citados nos documentos de 14/11/2026 não estavam nesta cópia do repositório em 15/11/2026; consultar o índice de evidências para a disponibilidade. 75 casos estão aprovados no alcance das evidências. 57 reprovados aguardam reteste, incluindo CT-RF22/24/26/27/28/29/30/35/41/45/51/53/54/55/56/57/58/59/65/66/67/68/69/70/71/73/81/82/83/89/92/98/102/105/107 em triagem, e 21 a validar dependem de regra/contexto ou persistência. CT-RF23–25, CT-RF35, CT-RF38–CT-RF56 e CT-RF85–CT-RF108 possuem pasta local com resumo, cronologia e origem (CT-RF35, CT-RF38–CT-RF56 e CT-RF85–CT-RF108 incluem também capturas extraídas do Jam e hashes; CT-RF50–CT-RF56 incluem os PDFs baixados); os vídeos permanecem no Jam. CT-RF29–CT-RF33, CT-RF57, CT-RF58 e CT-RF59 têm como fonte gravações únicas, cujos painéis foram lidos diretamente; as pastas locais de evidências desses casos ainda não foram criadas.
+Os entregáveis são a análise RF01–RF35, RF38–RF62 e RF65–RF158, este plano, os 154 cenários BDD, as evidências disponíveis e os relatórios atualizados. CT-RF21 possui relato original, link do Jam, quadros, cronologia, requisição/resposta sem autenticação e metadados locais; o vídeo permanece no Jam. Os vídeos e demais evidências anteriores citados nos documentos de 14/11/2026 não estavam nesta cópia do repositório em 15/11/2026; consultar o índice de evidências para a disponibilidade. 76 casos estão aprovados no alcance das evidências. 57 reprovados aguardam reteste, incluindo CT-RF22/24/26/27/28/29/30/35/41/45/51/53/54/55/56/57/58/59/65/66/67/68/69/70/71/73/81/82/83/89/92/98/102/105/107 em triagem, e 21 a validar dependem de regra/contexto ou persistência. CT-RF23–25, CT-RF35, CT-RF38–CT-RF56 e CT-RF85–CT-RF108 possuem pasta local com resumo, cronologia e origem (CT-RF35, CT-RF38–CT-RF56 e CT-RF85–CT-RF108 incluem também capturas extraídas do Jam e hashes; CT-RF50–CT-RF56 incluem os PDFs baixados); os vídeos permanecem no Jam. CT-RF29–CT-RF33, CT-RF57, CT-RF58 e CT-RF59 têm como fonte gravações únicas, cujos painéis foram lidos diretamente; as pastas locais de evidências desses casos ainda não foram criadas.
 
 - [Análise de requisitos](Analise%20de%20requisitos.md)
 - [Caso CT-RF01](Cenario_Teste/CT-RF01_Esqueci-senha.md)
@@ -1239,7 +1242,8 @@ Os entregáveis são a análise RF01–RF35, RF38–RF62 e RF65–RF157, este pl
 - [CT-RF155](Cenario_Teste/CT-RF155_Configuracoes_Aniversario_Cancelar_Mensagem_WhatsApp.md) e [Evidências](Evidencias/CT-RF155_Configuracoes_Aniversario_Cancelar_Mensagem_WhatsApp/README.md)
 - [CT-RF156](Cenario_Teste/CT-RF156_Configuracoes_Aniversario_Inserir_Variaveis_WhatsApp.md) e [Evidências](Evidencias/CT-RF156_Configuracoes_Aniversario_Inserir_Variaveis_WhatsApp/README.md)
 - [CT-RF157](Cenario_Teste/CT-RF157_Aplicativo_Consultar_Notificacao.md) e [Evidências](Evidencias/CT-RF157_Aplicativo_Consultar_Notificacao/README.md)
-- [Índice dos 153 cenários](Cenario_Teste/README.md)
+- [CT-RF158](Cenario_Teste/CT-RF158_Aplicativo_Bloquear_Notificacao_Vazia.md) e [Evidências](Evidencias/CT-RF158_Aplicativo_Bloquear_Notificacao_Vazia/README.md)
+- [Índice dos 154 cenários](Cenario_Teste/README.md)
 - [Índice das evidências e dos Jams](Evidencias/README.md)
 - [Manifesto de integridade dos novos arquivos](Evidencias/manifesto_sha256.json)
 
