@@ -1,6 +1,6 @@
 # 🐞 Relatório de Bugs — SIFIT
 
-**Escopo:** defeitos de 132 casos documentados (CT-RF01–CT-RF35, CT-RF38–CT-RF62 e CT-RF65–CT-RF136): recuperação, Perfil, Clientes, financeiro, página inicial e dashboard, tema, modalidades, categorias, avaliações, exercícios, grupos musculares, objetivos de treino, SifitBox – Turmas, Pagar.me, configurações, despesas fixas, relatórios, grupos (treino), fichas de anamnese, colaboradores, modelos de anamnese, categorias de anamnese, perguntas de anamnese, Prospecção, Bandeiras de Cartão, Contas a Pagar, Modelos de Contrato, Planos, Tipos de Pagamento, Modelos de Ficha e Central de Automações. CT-RF60 (Modelos de Anamnese) e CT-RF61 (Categorias de Anamnese) são aprovados conforme a gravação, sem defeito identificado. CT-RF62 (Perguntas Anamnese) é reprovado nas evidências e acrescenta o BUG-044 (44 defeitos registrados).
+**Escopo:** defeitos de 133 casos documentados (CT-RF01–CT-RF35, CT-RF38–CT-RF62 e CT-RF65–CT-RF137): recuperação, Perfil, Clientes, financeiro, página inicial e dashboard, tema, modalidades, categorias, avaliações, exercícios, grupos musculares, objetivos de treino, SifitBox – Turmas, Pagar.me, configurações, despesas fixas, relatórios, grupos (treino), fichas de anamnese, colaboradores, modelos de anamnese, categorias de anamnese, perguntas de anamnese, Prospecção, Bandeiras de Cartão, Contas a Pagar, Modelos de Contrato, Planos, Tipos de Pagamento, Modelos de Ficha e Central de Automações. CT-RF60 (Modelos de Anamnese) e CT-RF61 (Categorias de Anamnese) são aprovados conforme a gravação, sem defeito identificado. CT-RF62 (Perguntas Anamnese) é reprovado nas evidências e acrescenta o BUG-044 (44 defeitos registrados).
 
 **Ambientes:** CT-RF01 em https://sifitalfa.centrion.com.br/login; CT-RF02_ERRO em https://sifit.centrion.com.br/profile. CT-RF03: URL do frontend não confirmada; backend informado em `https://backendsifit.centrion.com.br/api/clientesPorNome/1`.
 
@@ -2078,9 +2078,9 @@ CT-RF122–CT-RF127 cobre Inteligência e Configurações com gravações de 16/
 
 CT-RF128–CT-RF133 cobre Inteligência e Automação com gravações de 16/11/2026 entre 21:40:31 e 21:49:48 BRT. Casos aprovados: 5. Reprovados: 1. A validar: 0. Defeitos do lote: [BUG-048](#bug-048).
 
-## Inteligência e Automação / Central de Automações — revisão de 17/11/2026 (CT-RF134–CT-RF136)
+## Inteligência e Automação / Central de Automações — revisão de 17/11/2026 (CT-RF134–CT-RF137)
 
-CT-RF134–CT-RF136 cobrem a Central de Automações com gravações de 16/11/2026 entre 21:25:26 e 21:31:02 BRT. Casos aprovados: 1. Reprovados: 2. A validar: 0. Defeitos do lote: [BUG-049](#bug-049).
+CT-RF134–CT-RF137 cobrem a Central de Automações com gravações de 16/11/2026 entre 21:25:26 e 21:33:26 BRT. Casos aprovados: 2. Reprovados: 2. A validar: 0. Defeitos do lote: [BUG-049](#bug-049).
 
 ## Pontos a validar — sem defeito confirmado
 

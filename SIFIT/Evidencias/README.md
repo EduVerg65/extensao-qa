@@ -186,12 +186,13 @@ CT-RF122–CT-RF127 cobre Inteligência e Configurações com gravações de 16/
 
 CT-RF128–CT-RF133 cobre Inteligência e Automação com gravações de 16/11/2026 entre 21:40:31 e 21:49:48 BRT. As pastas reúnem origem, cronologia e recortes identificados com SHA-256.
 
-## Inclusão de 17/11/2026 — Inteligência e Automação / Central de Automações (CT-RF134–CT-RF136)
+## Inclusão de 17/11/2026 — Inteligência e Automação / Central de Automações (CT-RF134–CT-RF137)
 
 | Caso | Evidência | Resultado |
 | --- | --- | --- |
 | [CT-RF134](../Cenario_Teste/CT-RF134_Central_Automacoes_Atualizar.md) | [Atualizar a Central de Automações](CT-RF134_Central_Automacoes_Atualizar/README.md) | Aprovado conforme a gravação |
 | [CT-RF135](../Cenario_Teste/CT-RF135_Central_Desativar_Risco_Evasao_Contador.md) | [Desativar Risco de Evasão e conferir a persistência e o contador](CT-RF135_Central_Desativar_Risco_Evasao_Contador/README.md) | Reprovado nas evidências |
 | [CT-RF136](../Cenario_Teste/CT-RF136_Central_Ativar_Aniversariantes_Contador.md) | [Ativar Aniversariantes e conferir a persistência e o contador](CT-RF136_Central_Ativar_Aniversariantes_Contador/README.md) | Reprovado nas evidências |
+| [CT-RF137](../Cenario_Teste/CT-RF137_Central_Risco_Evasao_Executar_Agora.md) | [Executar Risco de Evasão manualmente pela Central](CT-RF137_Central_Risco_Evasao_Executar_Agora/README.md) | Aprovado conforme a gravação |
 
-CT-RF134–CT-RF136 cobrem a Central de Automações com gravações de 16/11/2026 entre 21:25:26 e 21:31:02 BRT. As pastas reúnem origem, cronologia e recortes identificados com SHA-256.
+CT-RF134–CT-RF137 cobrem a Central de Automações com gravações de 16/11/2026 entre 21:25:26 e 21:33:26 BRT. As pastas reúnem origem, cronologia e recortes identificados com SHA-256.

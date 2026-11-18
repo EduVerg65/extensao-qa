@@ -1,10 +1,10 @@
 # 📊 Relatório de Testes — SIFIT
 
-**Escopo:** 132 casos documentados (CT-RF01–CT-RF35, CT-RF38–CT-RF62 e CT-RF65–CT-RF136) — autenticação, recuperação, perfil, Clientes, financeiro, página inicial e dashboard, modalidades / tema de SifitBox, Categorias Crossfit, Avaliações, Exercícios, Grupos Musculares, Objetivos de Treino cadastro de categorias com código automático, SifitBox – Turmas, Pagar.me, Configurações, Despesas Fixas, Relatórios, Grupos (treino), Fichas de Anamnese, gestão de Modelos de Anamnese, gestão de Categorias de Anamnese, edição de Perguntas Anamnese, validações/funções/exclusão/busca de Colaboradores, Prospecção, Bandeiras de Cartão, Contas a Pagar, Modelos de Contrato, Planos, Tipos de Pagamento, Modelos de Ficha e Central de Automações.
+**Escopo:** 133 casos documentados (CT-RF01–CT-RF35, CT-RF38–CT-RF62 e CT-RF65–CT-RF137) — autenticação, recuperação, perfil, Clientes, financeiro, página inicial e dashboard, modalidades / tema de SifitBox, Categorias Crossfit, Avaliações, Exercícios, Grupos Musculares, Objetivos de Treino cadastro de categorias com código automático, SifitBox – Turmas, Pagar.me, Configurações, Despesas Fixas, Relatórios, Grupos (treino), Fichas de Anamnese, gestão de Modelos de Anamnese, gestão de Categorias de Anamnese, edição de Perguntas Anamnese, validações/funções/exclusão/busca de Colaboradores, Prospecção, Bandeiras de Cartão, Contas a Pagar, Modelos de Contrato, Planos, Tipos de Pagamento, Modelos de Ficha e Central de Automações.
 
-**Datas das gravações do Jam:** CT-RF01 em 23/10/2026; CT-RF02_ERRO em 22/10/2026 às 21:45 BRT; CT-RF03 não confirmada; CT-RF04_loginComSucesso em 13/11/2026; CT-RF05–CT-RF20 em 14/11/2026; CT-RF21 em 15/11/2026 às 15:07:51,265 BRT; CT-RF22–28 em 15/11/2026 às 15:25, 15:40, 15:38, 15:35, 16:11, 16:08 e 16:07 BRT; CT-RF29–33 em 15/11/2026 às 15h56 BRT (uma única gravação); CT-RF34 em 15/11/2026 às 17:23 BRT; CT-RF35 em 15/11/2026 às 18:13 BRT; CT-RF38 em 15/11/2026 às 18:41 BRT; CT-RF39–41 em 15/11/2026 às 18:51 BRT (uma única gravação); CT-RF42–45 às 19:06, CT-RF46–49 às 19:07 e CT-RF50–56 às 19:09 BRT (uma gravação por grupo); CT-RF57 e CT-RF58 em 15/11/2026 às 21h03 BRT (mesma gravação); CT-RF59 em 15/11/2026 às 22h07 BRT; CT-RF60 em 15/11/2026 às 23h34 BRT; CT-RF61 em 16/11/2026 às 15h24 BRT; CT-RF62 em 16/11/2026 às 15h57 BRT. CT-RF74–CT-RF84: 16/11/2026 conforme os resumos, sem horário informado. CT-RF85–90 às 21:52, CT-RF91–95 às 21:58, CT-RF96–98 às 21:55 e CT-RF99–103 às 21:54 e CT-RF104–108 às 22:03 BRT em 15/11/2026 (uma gravação por grupo). CT-RF109–CT-RF115 em 16/11/2026 entre 22:19:51 e 22:29:07 BRT. CT-RF116–CT-RF121 amplia a cobertura de Configurações e Modelos de Ficha com gravações de 16/11/2026 entre 22:03:53 e 22:18:52 BRT. CT-RF122–CT-RF127 cobre Inteligência e Configurações com gravações de 16/11/2026 entre 21:50:51 e 22:02:16 BRT. CT-RF128–CT-RF133 cobre Inteligência e Automação com gravações de 16/11/2026 entre 21:40:31 e 21:49:48 BRT. CT-RF134–CT-RF136 cobrem a Central de Automações com gravações de 16/11/2026 entre 21:25:26 e 21:31:02 BRT.
+**Datas das gravações do Jam:** CT-RF01 em 23/10/2026; CT-RF02_ERRO em 22/10/2026 às 21:45 BRT; CT-RF03 não confirmada; CT-RF04_loginComSucesso em 13/11/2026; CT-RF05–CT-RF20 em 14/11/2026; CT-RF21 em 15/11/2026 às 15:07:51,265 BRT; CT-RF22–28 em 15/11/2026 às 15:25, 15:40, 15:38, 15:35, 16:11, 16:08 e 16:07 BRT; CT-RF29–33 em 15/11/2026 às 15h56 BRT (uma única gravação); CT-RF34 em 15/11/2026 às 17:23 BRT; CT-RF35 em 15/11/2026 às 18:13 BRT; CT-RF38 em 15/11/2026 às 18:41 BRT; CT-RF39–41 em 15/11/2026 às 18:51 BRT (uma única gravação); CT-RF42–45 às 19:06, CT-RF46–49 às 19:07 e CT-RF50–56 às 19:09 BRT (uma gravação por grupo); CT-RF57 e CT-RF58 em 15/11/2026 às 21h03 BRT (mesma gravação); CT-RF59 em 15/11/2026 às 22h07 BRT; CT-RF60 em 15/11/2026 às 23h34 BRT; CT-RF61 em 16/11/2026 às 15h24 BRT; CT-RF62 em 16/11/2026 às 15h57 BRT. CT-RF74–CT-RF84: 16/11/2026 conforme os resumos, sem horário informado. CT-RF85–90 às 21:52, CT-RF91–95 às 21:58, CT-RF96–98 às 21:55 e CT-RF99–103 às 21:54 e CT-RF104–108 às 22:03 BRT em 15/11/2026 (uma gravação por grupo). CT-RF109–CT-RF115 em 16/11/2026 entre 22:19:51 e 22:29:07 BRT. CT-RF116–CT-RF121 amplia a cobertura de Configurações e Modelos de Ficha com gravações de 16/11/2026 entre 22:03:53 e 22:18:52 BRT. CT-RF122–CT-RF127 cobre Inteligência e Configurações com gravações de 16/11/2026 entre 21:50:51 e 22:02:16 BRT. CT-RF128–CT-RF133 cobre Inteligência e Automação com gravações de 16/11/2026 entre 21:40:31 e 21:49:48 BRT. CT-RF134–CT-RF137 cobrem a Central de Automações com gravações de 16/11/2026 entre 21:25:26 e 21:33:26 BRT.
 
-**Data da revisão documental:** 17/11/2026, com integração de CT-RF134–CT-RF136 (Inteligência e Automação / Central de Automações).
+**Data da revisão documental:** 17/11/2026, com integração de CT-RF134–CT-RF137 (Inteligência e Automação / Central de Automações).
 
 **Origem do resultado:** análise de evidências fornecidas; sem nova execução no sistema nesta revisão.
 
@@ -38,11 +38,11 @@ CT-RF122–CT-RF127 cobre Inteligência e Configurações com gravações de 16/
 
 CT-RF128–CT-RF133 cobre Inteligência e Automação com gravações de 16/11/2026 entre 21:40:31 e 21:49:48 BRT. Casos aprovados: 5. Reprovados: 1. A validar: 0.
 
-CT-RF134–CT-RF136 cobrem a Central de Automações com gravações de 16/11/2026 entre 21:25:26 e 21:31:02 BRT. Casos aprovados: 1. Reprovados: 2. A validar: 0.
+CT-RF134–CT-RF137 cobrem a Central de Automações com gravações de 16/11/2026 entre 21:25:26 e 21:33:26 BRT. Casos aprovados: 2. Reprovados: 2. A validar: 0.
 
 | Casos documentados | Aprovados | Reprovados | A validar | Defeitos registrados | Casos com reteste corretivo pendente |
 | :---: | :---: | :---: | :---: | :---: | :---: |
-| 132 | 58 | 54 | 20 | 49 (10 abertos + 39 em triagem) | 54 |
+| 133 | 59 | 54 | 20 | 49 (10 abertos + 39 em triagem) | 54 |
 
 Os 48 retestes incluem CT-RF22/24/26/27/28/29/30/35/41/45/51/53/54/55/56/57/58/59/62/65/66/67/68/69/70/71/73/81/82/83/89/92/98/102/105/107, sujeitos à confirmação funcional e técnica. As contagens representam os casos documentados com base nas fontes indicadas, sem novas execuções nesta revisão. As nove variações planejadas para o reteste do CT-RF03 não foram executadas e não são contabilizadas como testes adicionais realizados.
 
@@ -181,6 +181,7 @@ Os 48 retestes incluem CT-RF22/24/26/27/28/29/30/35/41/45/51/53/54/55/56/57/58/5
 | [CT-RF134](Cenario_Teste/CT-RF134_Central_Automacoes_Atualizar.md) | [RF134](Analise%20de%20requisitos.md#rf134) | A Central reconsulta os três conjuntos de dados com sucesso. Uma base estável mantém os mesmos indicadores e a mesma atividade recente. | Quatro cliques atualizaram resumo, execuções e cartões com HTTP 200. Os valores permaneceram consistentes na base gravada. | Aprovado conforme a gravação | Nenhum no fluxo avaliado |
 | [CT-RF135](Cenario_Teste/CT-RF135_Central_Desativar_Risco_Evasao_Contador.md) | [RF135](Analise%20de%20requisitos.md#rf135) | A automação permanece inativa após Atualizar com o contador em zero. Ao reativar com sucesso, o cartão volta a indicar o estado ativo e o contador volta a um. | A desativação persistiu. Após reativar Risco de Evasão, o cartão ficou ativo e o contador continuou em zero. | Reprovado nas evidências | [BUG-049](Relatorio-de-Bugs.md#bug-049), em triagem |
 | [CT-RF136](Cenario_Teste/CT-RF136_Central_Ativar_Aniversariantes_Contador.md) | [RF136](Analise%20de%20requisitos.md#rf136) | A ativação é refletida no cartão e no resumo após salvar. Após Atualizar, o cartão continua ativo e o total permanece em dois. | A ativação persistiu. O resumo ficou em uma automação ativa até Atualizar, quando passou a duas. | Reprovado nas evidências | [BUG-049](Relatorio-de-Bugs.md#bug-049), em triagem |
+| [CT-RF137](Cenario_Teste/CT-RF137_Central_Risco_Evasao_Executar_Agora.md) | [RF137](Analise%20de%20requisitos.md#rf137) | O comando executa a automação com sucesso, apresenta o relatório do novo processamento e registra a nova execução na Central. | Executar agora terminou com sucesso. O relatório e a nova execução ficaram disponíveis na Central. | Aprovado conforme a gravação | Nenhum no fluxo avaliado |
 
 ---
 
@@ -564,14 +565,14 @@ O domínio do CT-RF02_ERRO é diferente do domínio `sifitalfa.centrion.com.br` 
 | Dados e permissões | Conta com acesso à Central e a Resultados IA. Usar automações de teste, estados iniciais conhecidos e resultados em períodos distintos. |
 | Preparação | Registrar o estado inicial, os controles usados e as respostas relevantes. Excluir dados de integração e de autenticação dos recortes e da documentação. |
 
-### Inteligência e Automação / Central de Automações (CT-RF134–CT-RF136)
+### Inteligência e Automação / Central de Automações (CT-RF134–CT-RF137)
 
 | Item | Definição |
 | --- | --- |
 | Páginas | https://sifit.centrion.com.br/inteligencia-automacao |
 | Backend de referência | https://backendsifit.centrion.com.br |
 | Navegador / sistema / vídeo | Chrome 157.0.8103.79 / Windows 10 (x86) / 1918 × 998. |
-| Gravações | 16/11/2026 entre 21:25:26 e 21:31:02 BRT. |
+| Gravações | 16/11/2026 entre 21:25:26 e 21:33:26 BRT. |
 | Dados e permissões | Conta autorizada a acessar a Central. Preparar automações com estados iniciais conhecidos e, para consulta, um relatório de risco existente. |
 | Preparação | Registrar o estado inicial, os controles usados e as respostas relevantes. Usar apenas dados agregados nas evidências de risco. |
 
@@ -662,6 +663,7 @@ O domínio do CT-RF02_ERRO é diferente do domínio `sifitalfa.centrion.com.br` 
 | [Jam — PED-01 — Atualizar Central de Automações](https://jam.dev/c/efe35b08-8733-434c-a6fa-32c45e248ae1) e [Evidências](Evidencias/CT-RF134_Central_Automacoes_Atualizar/README.md) | CT-RF134: Quatro cliques atualizaram resumo, execuções e cartões com HTTP 200. Os valores permaneceram consistentes na base gravada. |
 | [Jam — PED-02 — Desativar Risco de Evasão](https://jam.dev/c/b63ec55f-f8b6-41aa-af4c-d4cdd4515de8) e [Evidências](Evidencias/CT-RF135_Central_Desativar_Risco_Evasao_Contador/README.md) | CT-RF135: A desativação persistiu. Após reativar Risco de Evasão, o cartão ficou ativo e o contador continuou em zero. |
 | [Jam — PED-03 — Ativar Aniversariantes](https://jam.dev/c/60c724da-6760-4238-91f5-2ddad8f42bb3) e [Evidências](Evidencias/CT-RF136_Central_Ativar_Aniversariantes_Contador/README.md) | CT-RF136: A ativação persistiu. O resumo ficou em uma automação ativa até Atualizar, quando passou a duas. |
+| Jam — PED-04 — Executar Risco de Evasão (gravação restrita por conter dados individuais da avaliação de risco) e [Evidências](Evidencias/CT-RF137_Central_Risco_Evasao_Executar_Agora/README.md) | CT-RF137: Executar agora terminou com sucesso. O relatório e a nova execução ficaram disponíveis na Central. |
 
 A mensagem de credenciais incorretas já aparece no início do vídeo do Jam; não foi considerada uma resposta ao clique em "Esqueci minha senha". A ausência de requisição, isoladamente, não caracteriza defeito se a interface abrir um formulário local. Aqui, o resultado reprovado decorre de o fluxo não abrir.
 
@@ -1060,15 +1062,16 @@ Na inclusão dos CT-RF122 a CT-RF127, o consolidado era de 123 casos documentado
 
 Na inclusão dos CT-RF128 a CT-RF133, o consolidado era de 129 casos documentados: 52 aprovados, 52 reprovados e 20 a validar. 48 defeitos registrados (10 abertos e 38 em triagem) e 52 casos com reteste corretivo pendente.
 
-## Inclusão de 17/11/2026 — Inteligência e Automação / Central de Automações (CT-RF134–CT-RF136)
+## Inclusão de 17/11/2026 — Inteligência e Automação / Central de Automações (CT-RF134–CT-RF137)
 
 | Caso | Situação | Encaminhamento |
 | --- | --- | --- |
 | [CT-RF134](Cenario_Teste/CT-RF134_Central_Automacoes_Atualizar.md) | Aprovado conforme a gravação | Usar como regressão e repetir com uma alteração conhecida na base e com uma resposta de erro controlada. |
 | [CT-RF135](Cenario_Teste/CT-RF135_Central_Desativar_Risco_Evasao_Contador.md) | Reprovado nas evidências | Retestar desativação e reativação. Conferir se o contador passa a um após o sucesso do salvamento, antes de Atualizar manualmente. |
 | [CT-RF136](Cenario_Teste/CT-RF136_Central_Ativar_Aniversariantes_Contador.md) | Reprovado nas evidências | Retestar a ativação e conferir se o contador passa a dois após o sucesso do salvamento, antes de Atualizar manualmente. |
+| [CT-RF137](Cenario_Teste/CT-RF137_Central_Risco_Evasao_Executar_Agora.md) | Aprovado conforme a gravação | Usar como regressão para execução manual. Validar a entrega pelo canal em um teste dedicado, com destinatários de teste. |
 
-132 casos documentados: 58 aprovados, 54 reprovados e 20 a validar. 49 defeitos registrados (10 abertos e 39 em triagem) e 54 casos com reteste corretivo pendente.
+133 casos documentados: 59 aprovados, 54 reprovados e 20 a validar. 49 defeitos registrados (10 abertos e 39 em triagem) e 54 casos com reteste corretivo pendente.
 
 ---
 
