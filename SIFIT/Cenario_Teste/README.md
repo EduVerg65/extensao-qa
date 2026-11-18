@@ -1,6 +1,6 @@
 # 🧪 Índice dos cenários de teste — SIFIT
 
-**Atualização:** 17/11/2026. 118 casos documentados: 50 aprovados, 49 reprovados e 19 a validar. 45 defeitos registrados (10 abertos e 35 em triagem) e 49 casos com reteste corretivo pendente. Escopo: CT-RF01–CT-RF35, CT-RF38–CT-RF62 e CT-RF65–CT-RF122.
+**Atualização:** 17/11/2026. 119 casos documentados: 51 aprovados, 49 reprovados e 19 a validar. 45 defeitos registrados (10 abertos e 35 em triagem) e 49 casos com reteste corretivo pendente. Escopo: CT-RF01–CT-RF35, CT-RF38–CT-RF62 e CT-RF65–CT-RF123.
 
 | Caso | Funcionalidade | Resultado | Defeito | Jam |
 | --- | --- | --- | --- | --- |
@@ -299,12 +299,13 @@ A revisão de Modelos de Ficha inclui CT-RF109–CT-RF115 com base em 6 gravaç�
 
 CT-RF116–CT-RF121 amplia a cobertura de Configurações e Modelos de Ficha com gravações de 16/11/2026 entre 22:03:53 e 22:18:52 BRT. A revisão é documental.
 
-## Inclusão de 17/11/2026 — Inteligência (CT-RF122)
+## Inclusão de 17/11/2026 — Inteligência (CT-RF122–CT-RF123)
 
 | Caso | Funcionalidade | Resultado | Defeito | Jam |
 | --- | --- | --- | --- | --- |
 | [CT-RF122](CT-RF122_Resultados_IA_Filtro_90_Dias.md) | Filtrar Resultados da Inteligência pelos últimos 90 dias | Aprovado conforme a gravação | — | [Jam — PED-12 — Últimos 90 dias](https://jam.dev/c/1728cfc2-1d36-4ea4-ab68-68a84458c359) |
+| [CT-RF123](CT-RF123_Central_Resultados_IA_Execucao_Evasao.md) | Conferir a execução de Risco de Evasão na Central e em Resultados IA | Aprovado conforme a gravação | — | [Jam — PED-14 — Execução de Risco de Evasão](https://jam.dev/c/efe26a44-458a-4802-bd48-8e23c5ac5fd9) |
 
-CT-RF122 cobre Inteligência com gravações de 16/11/2026 às 21:50:51 BRT. A revisão é documental.
+CT-RF122–CT-RF123 cobre Inteligência com gravações de 16/11/2026 entre 21:50:51 e 21:56:07 BRT. A revisão é documental.
 
 [← Início](../../README.md) · [Requisitos](../Analise%20de%20requisitos.md) · [Plano](../Plano%20de%20testes.md) · [Evidências](../Evidencias/README.md)

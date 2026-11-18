@@ -1,0 +1,25 @@
+CT-RF123 — Conferir a execução de Risco de Evasão na Central e em Resultados IA
+Fonte: https://jam.dev/c/efe26a44-458a-4802-bd48-8e23c5ac5fd9
+Gravação: 16/11/2026, 21:56:07 BRT; duração: 32,12 s.
+Revisão documental: 17/11/2026.
+Página: https://sifit.centrion.com.br/inteligencia-automacao
+Foco deste caso: Refletir a nova execução da automação Risco de Evasão na Central e no resumo de Resultados IA.
+
+Cronologia (ações e eventos capturados no Jam):
+0:00–0:04  Executa Risco de Evasão. A Central passa a mostrar 00:55 e 4 relatórios enviados no mês.
+0:07–0:12  Confere o relatório identificado como Risco de Evasão e a atividade recente.
+0:17–0:20  Abre Resultados IA e ativa Hoje.
+0:22–0:30  Confere a linha do tempo e o resumo da automação mais recente.
+
+Rede do conjunto gravado (eventos relevantes ao caso):
+0:02,13  POST /api/automacoes/risco-evasao/executar/1 (HTTP 200). Em seguida, GETs de resultados, resumo e execuções retornaram HTTP 200.
+0:18,08  GET /api/inteligencia/resultados/1?periodo=7 (HTTP 200), com quatro execuções.
+0:20,37  GET com periodo=hoje (HTTP 200), com quatro execuções e executado_em mais recente às 00:55:14 na resposta.
+
+Quadros consultados (reprodução do Jam):
+- Central atualizada com última execução às 00:55.
+- Resultados IA no filtro Hoje e linha do tempo de Risco de Evasão.
+
+Observações e verificações futuras:
+- A hora de 00:55 é a referência exibida pelo SIFIT. O teste valida a exibição do mesmo registro nas duas telas. O recebimento efetivo pelo canal de envio e a regra dos cartões de risco não foram verificados.
+- Usar como regressão da integração entre telas. Verificar entrega pelo canal em um caso dedicado, com destinatários de teste.
