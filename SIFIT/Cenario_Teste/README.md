@@ -1,6 +1,6 @@
 # 🧪 Índice dos cenários de teste — SIFIT
 
-**Atualização:** 17/11/2026. 130 casos documentados: 58 aprovados, 52 reprovados e 20 a validar. 48 defeitos registrados (10 abertos e 38 em triagem) e 52 casos com reteste corretivo pendente. Escopo: CT-RF01–CT-RF35, CT-RF38–CT-RF62 e CT-RF65–CT-RF134.
+**Atualização:** 17/11/2026. 131 casos documentados: 58 aprovados, 53 reprovados e 20 a validar. 49 defeitos registrados (10 abertos e 39 em triagem) e 53 casos com reteste corretivo pendente. Escopo: CT-RF01–CT-RF35, CT-RF38–CT-RF62 e CT-RF65–CT-RF135.
 
 | Caso | Funcionalidade | Resultado | Defeito | Jam |
 | --- | --- | --- | --- | --- |
@@ -325,12 +325,13 @@ CT-RF122–CT-RF127 cobre Inteligência e Configurações com gravações de 16/
 
 CT-RF128–CT-RF133 cobre Inteligência e Automação com gravações de 16/11/2026 entre 21:40:31 e 21:49:48 BRT. A revisão é documental.
 
-## Inclusão de 17/11/2026 — Inteligência e Automação / Central de Automações (CT-RF134)
+## Inclusão de 17/11/2026 — Inteligência e Automação / Central de Automações (CT-RF134–CT-RF135)
 
 | Caso | Funcionalidade | Resultado | Defeito | Jam |
 | --- | --- | --- | --- | --- |
 | [CT-RF134](CT-RF134_Central_Automacoes_Atualizar.md) | Atualizar a Central de Automações | Aprovado conforme a gravação | — | [Jam — PED-01 — Atualizar Central de Automações](https://jam.dev/c/efe35b08-8733-434c-a6fa-32c45e248ae1) |
+| [CT-RF135](CT-RF135_Central_Desativar_Risco_Evasao_Contador.md) | Desativar Risco de Evasão e conferir a persistência e o contador | Reprovado nas evidências | [BUG-049](../Relatorio-de-Bugs.md#bug-049), em triagem | [Jam — PED-02 — Desativar Risco de Evasão](https://jam.dev/c/b63ec55f-f8b6-41aa-af4c-d4cdd4515de8) |
 
-CT-RF134 cobre a Central de Automações com gravações de 16/11/2026 às 21:25:26 BRT. A revisão é documental.
+CT-RF134–CT-RF135 cobrem a Central de Automações com gravações de 16/11/2026 entre 21:25:26 e 21:28:33 BRT. A revisão é documental.
 
 [← Início](../../README.md) · [Requisitos](../Analise%20de%20requisitos.md) · [Plano](../Plano%20de%20testes.md) · [Evidências](../Evidencias/README.md)

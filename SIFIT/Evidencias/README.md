@@ -186,10 +186,11 @@ CT-RF122–CT-RF127 cobre Inteligência e Configurações com gravações de 16/
 
 CT-RF128–CT-RF133 cobre Inteligência e Automação com gravações de 16/11/2026 entre 21:40:31 e 21:49:48 BRT. As pastas reúnem origem, cronologia e recortes identificados com SHA-256.
 
-## Inclusão de 17/11/2026 — Inteligência e Automação / Central de Automações (CT-RF134)
+## Inclusão de 17/11/2026 — Inteligência e Automação / Central de Automações (CT-RF134–CT-RF135)
 
 | Caso | Evidência | Resultado |
 | --- | --- | --- |
 | [CT-RF134](../Cenario_Teste/CT-RF134_Central_Automacoes_Atualizar.md) | [Atualizar a Central de Automações](CT-RF134_Central_Automacoes_Atualizar/README.md) | Aprovado conforme a gravação |
+| [CT-RF135](../Cenario_Teste/CT-RF135_Central_Desativar_Risco_Evasao_Contador.md) | [Desativar Risco de Evasão e conferir a persistência e o contador](CT-RF135_Central_Desativar_Risco_Evasao_Contador/README.md) | Reprovado nas evidências |
 
-CT-RF134 cobre a Central de Automações com gravações de 16/11/2026 às 21:25:26 BRT. As pastas reúnem origem, cronologia e recortes identificados com SHA-256.
+CT-RF134–CT-RF135 cobrem a Central de Automações com gravações de 16/11/2026 entre 21:25:26 e 21:28:33 BRT. As pastas reúnem origem, cronologia e recortes identificados com SHA-256.

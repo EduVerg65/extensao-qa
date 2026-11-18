@@ -2,24 +2,24 @@
 
 Repositório de documentação de QA manual do **SIFIT**, sistema de gestão de academias. Reúne requisitos, plano, cenários BDD, resultados, defeitos e evidências com links do Jam.
 
-**Atualização documental:** 17/11/2026. Integrados CT-RF134 e RF134 para Inteligência e Automação / Central de Automações. A revisão utiliza gravações e eventos do Jam.
+**Atualização documental:** 17/11/2026. Integrados CT-RF134–CT-RF135 e RF134–RF135 para Inteligência e Automação / Central de Automações. A revisão utiliza gravações e eventos do Jam.
 
 ## 📊 Situação consolidada
 
 | Cenários documentados | Aprovados | Reprovados | A validar | Defeitos registrados | Casos com reteste corretivo pendente |
 | :---: | :---: | :---: | :---: | :---: | :---: |
-| 130 | 58 | 52 | 20 | 48 (10 abertos + 38 em triagem) | 52 |
+| 131 | 58 | 53 | 20 | 49 (10 abertos + 39 em triagem) | 53 |
 
-As classificações se baseiam nas fontes indicadas em cada cenário. CT-RF09/10 compartilham BUG-005 e CT-RF53–CT-RF56 compartilham BUG-023. As 52 reprovações correspondem a 48 defeitos registrados. BUG-011–BUG-048 aguardam triagem.
+As classificações se baseiam nas fontes indicadas em cada cenário. CT-RF09/10 compartilham BUG-005 e CT-RF53–CT-RF56 compartilham BUG-023. As 53 reprovações correspondem a 49 defeitos registrados. BUG-011–BUG-049 aguardam triagem.
 
 ## 📚 Documentos do projeto
 
 | Documento | Conteúdo |
 | --- | --- |
-| [Análise de requisitos](SIFIT/Analise%20de%20requisitos.md) | RF01–RF35, RF38–RF62 e RF65–RF134, critérios de aceitação, dúvidas de regra e rastreabilidade. |
+| [Análise de requisitos](SIFIT/Analise%20de%20requisitos.md) | RF01–RF35, RF38–RF62 e RF65–RF135, critérios de aceitação, dúvidas de regra e rastreabilidade. |
 | [Plano de testes](SIFIT/Plano%20de%20testes.md) | Escopo, ambientes, preparação, critérios, regressão e retestes. |
-| [Índice dos cenários](SIFIT/Cenario_Teste/README.md) | 130 cenários com pré-condições, BDD, passos, esperado, obtido e encaminhamento. |
-| [Relatório de bugs](SIFIT/Relatorio-de-Bugs.md) | BUG-001–BUG-048: reprodução, impacto, evidências, severidade/prioridade propostas e reteste. |
+| [Índice dos cenários](SIFIT/Cenario_Teste/README.md) | 131 cenários com pré-condições, BDD, passos, esperado, obtido e encaminhamento. |
+| [Relatório de bugs](SIFIT/Relatorio-de-Bugs.md) | BUG-001–BUG-049: reprodução, impacto, evidências, severidade/prioridade propostas e reteste. |
 | [Relatório dos testes](SIFIT/Relatorio%20dos%20testes.md) | Resultados consolidados, cobertura, limites e pendências. |
 | [Índice das evidências](SIFIT/Evidencias/README.md) | Jam por cenário e arquivos locais dos novos casos. |
 
@@ -163,6 +163,7 @@ extensao-qa/
 | [CT-RF132](SIFIT/Cenario_Teste/CT-RF132_Resultados_IA_Filtro_7_Dias.md) | Filtrar Resultados da Inteligência pelos últimos 7 dias | Aprovado conforme a gravação | — | [Jam — PED-10 — Últimos 7 dias](https://jam.dev/c/cbf45b87-b7b6-4314-a359-c5e706aa755e) |
 | [CT-RF133](SIFIT/Cenario_Teste/CT-RF133_Resultados_IA_Filtro_30_Dias.md) | Filtrar Resultados da Inteligência pelos últimos 30 dias | Aprovado conforme a gravação | — | [Jam — PED-11 — Últimos 30 dias](https://jam.dev/c/2756d5c1-a823-482b-bf8d-878357b8b087) |
 | [CT-RF134](SIFIT/Cenario_Teste/CT-RF134_Central_Automacoes_Atualizar.md) | Atualizar a Central de Automações | Aprovado conforme a gravação | — | [Jam — PED-01 — Atualizar Central de Automações](https://jam.dev/c/efe35b08-8733-434c-a6fa-32c45e248ae1) |
+| [CT-RF135](SIFIT/Cenario_Teste/CT-RF135_Central_Desativar_Risco_Evasao_Contador.md) | Desativar Risco de Evasão e conferir a persistência e o contador | Reprovado nas evidências | [BUG-049](SIFIT/Relatorio-de-Bugs.md#bug-049), em triagem | [Jam — PED-02 — Desativar Risco de Evasão](https://jam.dev/c/b63ec55f-f8b6-41aa-af4c-d4cdd4515de8) |
 
 ## 🔬 Como este projeto funciona
 
