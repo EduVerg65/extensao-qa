@@ -1,0 +1,22 @@
+CT-RF160 — Alternar o filtro de postagens e abrir a lista completa
+Fonte: Jam 4 — Filtros e lista completa de postagens. Gravação restrita por conter dados de integração ou dados de alunos.
+Gravação: 16/11/2026, 22:43:07 BRT. Duração: 20,67 s.
+Revisão documental: 18/11/2026.
+Página: https://sifit.centrion.com.br/aplicativo
+Foco deste caso: Verificar que a lista e o diálogo Todas as postagens mostram o estado vazio correspondente ao filtro selecionado.
+
+Cronologia (ações e eventos capturados no Jam):
+0:06,89–0:08,79  Alterna Só pendentes e Ver todas no painel.
+0:11,30–0:13,83  Abre o diálogo no modo todas e fecha.
+0:15,20–0:18,66  Seleciona pendentes, abre o diálogo e fecha.
+
+Rede do conjunto gravado (eventos relevantes ao caso):
+A gravação registra os cliques e a troca dos avisos na interface. O trecho não contém uma nova consulta de postagens associada a esses cliques.
+
+Quadros consultados (reprodução do Jam):
+- Diálogo em todas as postagens com o aviso de lista vazia.
+- Diálogo filtrado pelas pendentes e sem postagens aguardando aprovação.
+
+Observações e verificações futuras:
+- A aprovação se limita à base vazia e à troca dos avisos. A filtragem de registros com estados diferentes exige massa de teste.
+- Repetir com postagens pendentes e aprovadas para conferir a seleção de registros e o total do diálogo.
