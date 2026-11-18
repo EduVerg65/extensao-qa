@@ -1,5 +1,5 @@
 CT-RF157 — Consultar os detalhes de uma notificação
-Fonte: Jam 1 — Consulta de notificação existente. Gravação restrita por conter dados de integração ou dados de alunos.
+Fonte: https://jam.dev/c/32edc5de-4ad3-48ca-9e19-1db449bebcc5
 Gravação: 16/11/2026, 22:39:05 BRT. Duração: 16,97 s.
 Revisão documental: 18/11/2026.
 Página: https://sifit.centrion.com.br/aplicativo

@@ -17,7 +17,7 @@
 | Tipo / prioridade | Funcional manual / persistência · Média, proposta para triagem. |
 | Defeito | Nenhum no fluxo avaliado |
 | Encaminhamento | Usar como regressão para desativação e confirmar a reativação com nova leitura em reteste. |
-| Fonte | Jam 2 — Desativação do Pagamento Online (gravação restrita por conter dados de integração) e [evidências locais](../Evidencias/CT-RF146_Configuracoes_Pagamento_Online_Desativar/README.md). |
+| Fonte | [Jam 2 — Desativação do Pagamento Online](https://jam.dev/c/845de9b6-12f7-4002-a8ba-82e1a85affba) e [evidências locais](../Evidencias/CT-RF146_Configuracoes_Pagamento_Online_Desativar/README.md). |
 
 ## Ambiente e dados de teste
 
@@ -90,7 +90,7 @@ Usar como regressão para desativação e confirmar a reativação com nova leit
 
 ## Evidências e limites
 
-- Jam 2 — Desativação do Pagamento Online (gravação restrita por conter dados de integração).
+- [Jam 2 — Desativação do Pagamento Online](https://jam.dev/c/845de9b6-12f7-4002-a8ba-82e1a85affba).
 - [Arquivos, origem e limites](../Evidencias/CT-RF146_Configuracoes_Pagamento_Online_Desativar/README.md).
 - [Pagamento Online retorna como Não após reabrir a aba](../Evidencias/CT-RF146_Configuracoes_Pagamento_Online_Desativar/pagamento_nao_apos_reabrir_00-11.jpg), [Pagamento Online alterado para Sim antes do salvamento de restauração](../Evidencias/CT-RF146_Configuracoes_Pagamento_Online_Desativar/pagamento_sim_na_restauracao_00-14.jpg).
 - [Linha do tempo](../Evidencias/CT-RF146_Configuracoes_Pagamento_Online_Desativar/linha_do_tempo.txt).

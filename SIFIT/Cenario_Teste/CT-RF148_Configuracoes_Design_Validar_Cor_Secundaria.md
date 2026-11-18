@@ -17,7 +17,7 @@
 | Tipo / prioridade | Funcional manual / validação · Média, proposta para triagem. |
 | Defeito | [BUG-051](../Relatorio-de-Bugs.md#bug-051), em triagem |
 | Encaminhamento | Retestar com códigos hexadecimais válidos e inválidos e conferir, após cada tentativa, a cor devolvida pela consulta. |
-| Fonte | Jam 4 — Validação da Cor Secundária (gravação restrita por conter dados de integração) e [evidências locais](../Evidencias/CT-RF148_Configuracoes_Design_Validar_Cor_Secundaria/README.md). |
+| Fonte | [Jam 4 — Validação da Cor Secundária](https://jam.dev/c/41aaf50a-2506-471a-8eeb-943674571771) e [evidências locais](../Evidencias/CT-RF148_Configuracoes_Design_Validar_Cor_Secundaria/README.md). |
 
 ## Ambiente e dados de teste
 
@@ -89,7 +89,7 @@ Retestar com códigos hexadecimais válidos e inválidos e conferir, após cada 
 
 ## Evidências e limites
 
-- Jam 4 — Validação da Cor Secundária (gravação restrita por conter dados de integração).
+- [Jam 4 — Validação da Cor Secundária](https://jam.dev/c/41aaf50a-2506-471a-8eeb-943674571771).
 - [Arquivos, origem e limites](../Evidencias/CT-RF148_Configuracoes_Design_Validar_Cor_Secundaria/README.md).
 - [Cor Secundária inválida durante o fluxo de salvamento](../Evidencias/CT-RF148_Configuracoes_Design_Validar_Cor_Secundaria/cor_secundaria_invalida_00-08.jpg), [Mesmo valor inválido após recarregar e reabrir a aba](../Evidencias/CT-RF148_Configuracoes_Design_Validar_Cor_Secundaria/cor_secundaria_invalida_persistida_00-16.jpg).
 - [Linha do tempo](../Evidencias/CT-RF148_Configuracoes_Design_Validar_Cor_Secundaria/linha_do_tempo.txt).

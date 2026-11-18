@@ -1,5 +1,5 @@
 CT-RF155 — Cancelar a edição da mensagem de aniversário do WhatsApp
-Fonte: Jam 5 — Cancelamento da edição da mensagem de WhatsApp. Gravação restrita por conter dados de integração.
+Fonte: https://jam.dev/c/a58b851c-77c2-4a49-be3b-8a5c007d2bcb
 Gravação: 16/11/2026, 23:17:29 BRT. Duração: 20,95 s.
 Revisão documental: 18/11/2026.
 Página: https://sifit.centrion.com.br/configuracoes

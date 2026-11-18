@@ -1,6 +1,6 @@
 # Evidência — CT-RF152: Alterar o tipo de avaliação para Bioimpedância
 
-- **Fonte:** Jam 2 — Alteração do tipo para Bioimpedância (gravação restrita por conter dados de integração).
+- **Fonte:** [Jam 2 — Alteração do tipo para Bioimpedância](https://jam.dev/c/8685a48a-ed9a-4169-a825-90036265b185).
 - **Autor exibido:** Pedro Figueiredo.
 - **Gravação:** 16/11/2026, 23:11:02 BRT, com duração de 18,94 s.
 - **Revisão:** 18/11/2026.
@@ -21,7 +21,7 @@ O salvamento de Bioimpedância retornou HTTP 200 com `verifica_erro: false`. Ap�
 | [tipo_dobras_00-01.jpg](tipo_dobras_00-01.jpg) | Tipo Dobras no formulário e no cartão de resumo antes da alteração. | `ca6a747a4b1b2d1ead9fd3f5cfd1f0f96ae67b5bcbc5600578193acdd301b4c0` |
 | [tipo_bioimpedancia_00-12.jpg](tipo_bioimpedancia_00-12.jpg) | Bioimpedância no formulário e no cartão após reabrir Avaliação. | `3bac1ad9dcd59d97e247ed3efe4204a7d45806fdd2902f65dcdcf074804383d1` |
 | [linha_do_tempo.txt](linha_do_tempo.txt) | Cronologia de ações, rede e quadros consultados no Jam. | — |
-| [origem.url](origem.url) | Página testada. O link da gravação fica restrito. | — |
+| [origem.url](origem.url) | Endereço original do Jam. | — |
 
 ## Limites
 

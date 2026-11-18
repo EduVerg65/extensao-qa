@@ -1,5 +1,5 @@
 CT-RF144 — Consultar novamente o status da integração de WhatsApp
-Fonte: Jam 6 — Atualização manual de status. Gravação restrita por conter dados de integração.
+Fonte: https://jam.dev/c/0da79ab0-b557-46af-a48c-60c1a8a62628
 Gravação: 16/11/2026, 23:45:52 BRT. Duração: 18,67 s.
 Revisão documental: 17/11/2026.
 Página: https://sifit.centrion.com.br/configuracoes

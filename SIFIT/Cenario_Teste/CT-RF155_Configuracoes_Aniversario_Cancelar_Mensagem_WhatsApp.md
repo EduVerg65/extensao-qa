@@ -17,7 +17,7 @@
 | Tipo / prioridade | Funcional manual / cancelamento · Média, proposta para triagem. |
 | Defeito | Nenhum no fluxo avaliado |
 | Encaminhamento | Usar como regressão do cancelamento e repetir com os demais canais da aba. |
-| Fonte | Jam 5 — Cancelamento da edição da mensagem de WhatsApp (gravação restrita por conter dados de integração) e [evidências locais](../Evidencias/CT-RF155_Configuracoes_Aniversario_Cancelar_Mensagem_WhatsApp/README.md). O cancelamento na aba Home está no [CT-RF117](CT-RF117_Configuracoes_Cancelar_Alteracao.md). |
+| Fonte | [Jam 5 — Cancelamento da edição da mensagem de WhatsApp](https://jam.dev/c/a58b851c-77c2-4a49-be3b-8a5c007d2bcb) e [evidências locais](../Evidencias/CT-RF155_Configuracoes_Aniversario_Cancelar_Mensagem_WhatsApp/README.md). O cancelamento na aba Home está no [CT-RF117](CT-RF117_Configuracoes_Cancelar_Alteracao.md). |
 
 ## Ambiente e dados de teste
 
@@ -90,7 +90,7 @@ Usar como regressão do cancelamento e repetir com os demais canais da aba.
 
 ## Evidências e limites
 
-- Jam 5 — Cancelamento da edição da mensagem de WhatsApp (gravação restrita por conter dados de integração).
+- [Jam 5 — Cancelamento da edição da mensagem de WhatsApp](https://jam.dev/c/a58b851c-77c2-4a49-be3b-8a5c007d2bcb).
 - [Arquivos, origem e limites](../Evidencias/CT-RF155_Configuracoes_Aniversario_Cancelar_Mensagem_WhatsApp/README.md).
 - [Texto temporário no campo WhatsApp antes de Cancelar](../Evidencias/CT-RF155_Configuracoes_Aniversario_Cancelar_Mensagem_WhatsApp/mensagem_editada_antes_de_cancelar_00-09.jpg), [Texto anterior exibido após retornar e selecionar WhatsApp novamente](../Evidencias/CT-RF155_Configuracoes_Aniversario_Cancelar_Mensagem_WhatsApp/mensagem_anterior_apos_reabrir_00-20.jpg).
 - [Linha do tempo](../Evidencias/CT-RF155_Configuracoes_Aniversario_Cancelar_Mensagem_WhatsApp/linha_do_tempo.txt).

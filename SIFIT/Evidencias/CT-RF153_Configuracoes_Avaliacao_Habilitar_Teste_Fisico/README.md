@@ -1,6 +1,6 @@
 # Evidência — CT-RF153: Habilitar Teste Físico nas configurações de avaliação
 
-- **Fonte:** Jam 3 — Habilitação de Teste Físico (gravação restrita por conter dados de integração).
+- **Fonte:** [Jam 3 — Habilitação de Teste Físico](https://jam.dev/c/86466f6e-b180-439f-ab1d-dde2484595a3).
 - **Autor exibido:** Pedro Figueiredo.
 - **Gravação:** 16/11/2026, 23:12:07 BRT, com duração de 17,30 s.
 - **Revisão:** 18/11/2026.
@@ -21,7 +21,7 @@ O salvamento de Sim retornou HTTP 200 com `verifica_erro: false`. Após recarreg
 | [teste_fisico_nao_00-01.jpg](teste_fisico_nao_00-01.jpg) | Teste Físico em Não antes da alteração. | `58fe7ec14589766bf3cd1d737c09e77494bfef3db0e70b70c9e087e43bc6190d` |
 | [teste_fisico_sim_00-12.jpg](teste_fisico_sim_00-12.jpg) | Teste Físico em Sim depois de reabrir Avaliação. | `d8c863528bdb547363c48521f957bd62dfaf19f210d71bd5fff5229bd0366b01` |
 | [linha_do_tempo.txt](linha_do_tempo.txt) | Cronologia de ações, rede e quadros consultados no Jam. | — |
-| [origem.url](origem.url) | Página testada. O link da gravação fica restrito. | — |
+| [origem.url](origem.url) | Endereço original do Jam. | — |
 
 ## Limites
 

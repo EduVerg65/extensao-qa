@@ -17,7 +17,7 @@
 | Tipo / prioridade | Funcional manual / validação e feedback · Baixa, proposta para triagem. |
 | Defeito | [BUG-052](../Relatorio-de-Bugs.md#bug-052), em triagem |
 | Encaminhamento | Retestar com arquivos de tamanho conhecido no entorno do limite e confirmar a mensagem de validação e a preservação do logo salvo na recusa. |
-| Fonte | Jam 5 — Rejeição de logo pelo limite de tamanho (gravação restrita por conter dados de integração) e [evidências locais](../Evidencias/CT-RF149_Configuracoes_Design_Logo_Limite_Tamanho/README.md). |
+| Fonte | [Jam 5 — Rejeição de logo pelo limite de tamanho](https://jam.dev/c/7aaeac50-8269-4cd6-b7f6-4c8c3740b0e5) e [evidências locais](../Evidencias/CT-RF149_Configuracoes_Design_Logo_Limite_Tamanho/README.md). |
 
 ## Ambiente e dados de teste
 
@@ -88,7 +88,7 @@ Retestar com arquivos de tamanho conhecido no entorno do limite e confirmar a me
 
 ## Evidências e limites
 
-- Jam 5 — Rejeição de logo pelo limite de tamanho (gravação restrita por conter dados de integração).
+- [Jam 5 — Rejeição de logo pelo limite de tamanho](https://jam.dev/c/7aaeac50-8269-4cd6-b7f6-4c8c3740b0e5).
 - [Arquivos, origem e limites](../Evidencias/CT-RF149_Configuracoes_Design_Logo_Limite_Tamanho/README.md).
 - [Prévia da imagem selecionada no cartão Logo](../Evidencias/CT-RF149_Configuracoes_Design_Logo_Limite_Tamanho/previa_logo_00-08.jpg), [Diálogo genérico após a rejeição pela API](../Evidencias/CT-RF149_Configuracoes_Design_Logo_Limite_Tamanho/erro_generico_ao_salvar_00-12.jpg).
 - [Linha do tempo](../Evidencias/CT-RF149_Configuracoes_Design_Logo_Limite_Tamanho/linha_do_tempo.txt).

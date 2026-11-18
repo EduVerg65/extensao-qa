@@ -17,7 +17,7 @@
 | Tipo / prioridade | Funcional manual / persistência · Média, proposta para triagem. |
 | Defeito | Nenhum no fluxo avaliado |
 | Encaminhamento | Usar como regressão do salvamento e verificar o comportamento da avaliação nos dois estados do seletor. |
-| Fonte | Jam 3 — Habilitação de Teste Físico (gravação restrita por conter dados de integração) e [evidências locais](../Evidencias/CT-RF153_Configuracoes_Avaliacao_Habilitar_Teste_Fisico/README.md). |
+| Fonte | [Jam 3 — Habilitação de Teste Físico](https://jam.dev/c/86466f6e-b180-439f-ab1d-dde2484595a3) e [evidências locais](../Evidencias/CT-RF153_Configuracoes_Avaliacao_Habilitar_Teste_Fisico/README.md). |
 
 ## Ambiente e dados de teste
 
@@ -91,7 +91,7 @@ Usar como regressão do salvamento e verificar o comportamento da avaliação no
 
 ## Evidências e limites
 
-- Jam 3 — Habilitação de Teste Físico (gravação restrita por conter dados de integração).
+- [Jam 3 — Habilitação de Teste Físico](https://jam.dev/c/86466f6e-b180-439f-ab1d-dde2484595a3).
 - [Arquivos, origem e limites](../Evidencias/CT-RF153_Configuracoes_Avaliacao_Habilitar_Teste_Fisico/README.md).
 - [Teste Físico em Não antes da alteração](../Evidencias/CT-RF153_Configuracoes_Avaliacao_Habilitar_Teste_Fisico/teste_fisico_nao_00-01.jpg), [Teste Físico em Sim depois de reabrir Avaliação](../Evidencias/CT-RF153_Configuracoes_Avaliacao_Habilitar_Teste_Fisico/teste_fisico_sim_00-12.jpg).
 - [Linha do tempo](../Evidencias/CT-RF153_Configuracoes_Avaliacao_Habilitar_Teste_Fisico/linha_do_tempo.txt).

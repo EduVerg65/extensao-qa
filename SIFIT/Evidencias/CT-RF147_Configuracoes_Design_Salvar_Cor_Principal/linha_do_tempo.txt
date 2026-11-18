@@ -1,5 +1,5 @@
 CT-RF147 — Salvar uma Cor Principal hexadecimal válida
-Fonte: Jam 3 — Persistência da Cor Principal. Gravação restrita por conter dados de integração.
+Fonte: https://jam.dev/c/c4f77e18-3b66-4c68-97e7-bd70a9bb70f9
 Gravação: 16/11/2026, 23:25:27 BRT. Duração: 25,55 s.
 Revisão documental: 17/11/2026.
 Página: https://sifit.centrion.com.br/configuracoes

@@ -17,7 +17,7 @@
 | Tipo / prioridade | Funcional manual / navegação e proteção de credencial · Alta, proposta para triagem. |
 | Defeito | [BUG-046](../Relatorio-de-Bugs.md#bug-046), em triagem |
 | Encaminhamento | Corrigir o mascaramento por padrão e retestar com credenciais fictícias, incluindo a troca de abas e a recarga. |
-| Fonte | Jam — PED-15 (gravação restrita por conter dados de integração) e [evidências locais](../Evidencias/CT-RF124_Configuracoes_Abas_Biometria_Senha/README.md). |
+| Fonte | [Jam — PED-15](https://jam.dev/c/38105352-c89c-492e-bca1-78e2f4017ae2) e [evidências locais](../Evidencias/CT-RF124_Configuracoes_Abas_Biometria_Senha/README.md). |
 
 ## Ambiente e dados de teste
 
@@ -90,7 +90,7 @@ Corrigir o mascaramento por padrão e retestar com credenciais fictícias, inclu
 
 ## Evidências e limites
 
-- Jam — PED-15 (gravação restrita por conter dados de integração).
+- [Jam — PED-15](https://jam.dev/c/38105352-c89c-492e-bca1-78e2f4017ae2).
 - [Arquivos, origem e limites](../Evidencias/CT-RF124_Configuracoes_Abas_Biometria_Senha/README.md).
 - [Cabeçalho da aba Biometria, recortado acima dos dados de integração](../Evidencias/CT-RF124_Configuracoes_Abas_Biometria_Senha/aba_biometria_00-04.jpg), [Cabeçalho da aba Integrações, recortado acima dos dados de conexão](../Evidencias/CT-RF124_Configuracoes_Abas_Biometria_Senha/aba_integracoes_00-17.jpg).
 - [Linha do tempo](../Evidencias/CT-RF124_Configuracoes_Abas_Biometria_Senha/linha_do_tempo.txt).

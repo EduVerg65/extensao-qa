@@ -1,5 +1,5 @@
 CT-RF163 — Rejeitar um valor sem formato de IP em Biometria
-Fonte: Jam 7 — Validação de IP do aparelho. Gravação restrita por conter dados de integração ou dados de alunos.
+Fonte: https://jam.dev/c/5b8eea1f-3c87-4497-8fb1-da49f09f9854
 Gravação: 16/11/2026, 23:03:49 BRT. Duração: 27,52 s.
 Revisão documental: 18/11/2026.
 Página: https://sifit.centrion.com.br/configuracoes

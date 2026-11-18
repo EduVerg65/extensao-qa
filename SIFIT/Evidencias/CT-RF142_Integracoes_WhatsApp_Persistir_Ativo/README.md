@@ -1,6 +1,6 @@
 # Evidência — CT-RF142: Persistir a opção Ativo da integração de WhatsApp
 
-- **Fonte:** Jam 4 — Persistência da opção Ativo (gravação restrita por conter dados de integração).
+- **Fonte:** [Jam 4 — Persistência da opção Ativo](https://jam.dev/c/593bb290-936a-4e01-a5af-cc8041c4eb55).
 - **Autor exibido:** Pedro Figueiredo.
 - **Gravação:** 16/11/2026, 23:42:47 BRT, com duração de 29,40 s.
 - **Revisão:** 17/11/2026.
@@ -21,7 +21,7 @@ As tentativas iniciais com a instância vazia não geraram POST. Após recarrega
 | [opcao_ativo_marcada_00-22.jpg](opcao_ativo_marcada_00-22.jpg) | Opção Ativo marcada após a confirmação pela API. | `0ed4cf382bfcb2ae48b7ce23c0b009ee5893758daa53537e20cca97297b2afdc` |
 | [opcao_ativo_desmarcada_00-29.jpg](opcao_ativo_desmarcada_00-29.jpg) | Opção Ativo desmarcada após a gravação final. | `92f9488acfd5f7ba584dce03df789d9821df35d1925acda9c72fcb6be30667ff` |
 | [linha_do_tempo.txt](linha_do_tempo.txt) | Cronologia de ações, rede e quadros consultados no Jam. | — |
-| [origem.url](origem.url) | Página testada. O link da gravação fica restrito. | — |
+| [origem.url](origem.url) | Endereço original do Jam. | — |
 
 ## Limites
 

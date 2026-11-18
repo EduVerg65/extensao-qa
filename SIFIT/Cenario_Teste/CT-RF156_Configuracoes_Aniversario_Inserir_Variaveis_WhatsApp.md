@@ -17,7 +17,7 @@
 | Tipo / prioridade | Funcional manual / edição e cancelamento · Média, proposta para triagem. |
 | Defeito | Nenhum no fluxo avaliado |
 | Encaminhamento | Usar como regressão do editor e testar a substituição dos marcadores em um envio controlado com dados de teste. |
-| Fonte | Jam 6 — Inserção de variáveis na mensagem de WhatsApp (gravação restrita por conter dados de integração) e [evidências locais](../Evidencias/CT-RF156_Configuracoes_Aniversario_Inserir_Variaveis_WhatsApp/README.md). O cancelamento de uma edição de texto está no [CT-RF155](CT-RF155_Configuracoes_Aniversario_Cancelar_Mensagem_WhatsApp.md). |
+| Fonte | [Jam 6 — Inserção de variáveis na mensagem de WhatsApp](https://jam.dev/c/fb2c4949-c68d-4f90-b47c-44da9dbe58a3) e [evidências locais](../Evidencias/CT-RF156_Configuracoes_Aniversario_Inserir_Variaveis_WhatsApp/README.md). O cancelamento de uma edição de texto está no [CT-RF155](CT-RF155_Configuracoes_Aniversario_Cancelar_Mensagem_WhatsApp.md). |
 
 ## Ambiente e dados de teste
 
@@ -90,7 +90,7 @@ Usar como regressão do editor e testar a substituição dos marcadores em um en
 
 ## Evidências e limites
 
-- Jam 6 — Inserção de variáveis na mensagem de WhatsApp (gravação restrita por conter dados de integração).
+- [Jam 6 — Inserção de variáveis na mensagem de WhatsApp](https://jam.dev/c/fb2c4949-c68d-4f90-b47c-44da9dbe58a3).
 - [Arquivos, origem e limites](../Evidencias/CT-RF156_Configuracoes_Aniversario_Inserir_Variaveis_WhatsApp/README.md).
 - [Variáveis selecionadas no painel aparecem no campo da mensagem](../Evidencias/CT-RF156_Configuracoes_Aniversario_Inserir_Variaveis_WhatsApp/variaveis_inseridas_00-16.jpg), [Modelo anterior reaparece após cancelar e voltar ao formulário](../Evidencias/CT-RF156_Configuracoes_Aniversario_Inserir_Variaveis_WhatsApp/mensagem_apos_cancelar_00-29.jpg).
 - [Linha do tempo](../Evidencias/CT-RF156_Configuracoes_Aniversario_Inserir_Variaveis_WhatsApp/linha_do_tempo.txt).

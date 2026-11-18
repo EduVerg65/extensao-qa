@@ -17,7 +17,7 @@
 | Tipo / prioridade | Funcional manual / interface · Média, proposta para triagem. |
 | Defeito | Nenhum no fluxo avaliado |
 | Encaminhamento | Usar como regressão de interface com uma chave de teste e conferir o mascaramento também pelo teclado. |
-| Fonte | Jam 1 — Mascaramento da API Key (gravação restrita por conter dados de integração) e [evidências locais](../Evidencias/CT-RF139_Integracoes_WhatsApp_Mascarar_API_Key/README.md). |
+| Fonte | [Jam 1 — Mascaramento da API Key](https://jam.dev/c/ef0b67d5-1eea-49b7-84ea-bb306143df4a) e [evidências locais](../Evidencias/CT-RF139_Integracoes_WhatsApp_Mascarar_API_Key/README.md). |
 
 ## Ambiente e dados de teste
 
@@ -89,7 +89,7 @@ Usar como regressão de interface com uma chave de teste e conferir o mascaramen
 
 ## Evidências e limites
 
-- Jam 1 — Mascaramento da API Key (gravação restrita por conter dados de integração).
+- [Jam 1 — Mascaramento da API Key](https://jam.dev/c/ef0b67d5-1eea-49b7-84ea-bb306143df4a).
 - [Arquivos, origem e limites](../Evidencias/CT-RF139_Integracoes_WhatsApp_Mascarar_API_Key/README.md).
 - [Campo API Key durante a edição, com caracteres mascarados](../Evidencias/CT-RF139_Integracoes_WhatsApp_Mascarar_API_Key/api_key_durante_edicao_00-07.jpg), [Campo API Key ainda mascarado após reabrir a aba](../Evidencias/CT-RF139_Integracoes_WhatsApp_Mascarar_API_Key/api_key_ao_reabrir_00-21.jpg).
 - [Linha do tempo](../Evidencias/CT-RF139_Integracoes_WhatsApp_Mascarar_API_Key/linha_do_tempo.txt).

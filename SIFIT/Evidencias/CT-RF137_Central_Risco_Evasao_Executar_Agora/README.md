@@ -1,6 +1,6 @@
 # Evidência — CT-RF137: Executar Risco de Evasão manualmente pela Central
 
-- **Fonte:** Jam — PED-04 — Executar Risco de Evasão (gravação restrita por conter dados individuais da avaliação de risco).
+- **Fonte:** [Jam — PED-04 — Executar Risco de Evasão](https://jam.dev/c/be5418c7-8d87-4b6c-9c64-a9b33b5f7da6).
 - **Autor exibido:** Pedro Figueiredo.
 - **Gravação:** 16/11/2026, 21:33:26 BRT, com duração de 30,21 s.
 - **Revisão:** 17/11/2026.
@@ -21,7 +21,7 @@ O POST retornou HTTP 200 e `verifica_erro: false`. O resumo da execução e o re
 | [central_antes_executar_00-08.jpg](central_antes_executar_00-08.jpg) | Resumo da Central antes da execução manual. | `1e2140a48c8084681f0d8a065b0254941485364c64d3a6e311c8376aa76c1cec` |
 | [central_apos_executar_00-23.jpg](central_apos_executar_00-23.jpg) | Resumo e atividade recente depois da execução e da atualização. | `cdeab08dbc2bad53ae2ad0c1ceddb68ed63fdd6298217bf4289ae5c31d31b03e` |
 | [linha_do_tempo.txt](linha_do_tempo.txt) | Cronologia de ações, rede e quadros consultados no Jam. | — |
-| [origem.url](origem.url) | Página testada. O link da gravação fica restrito. | — |
+| [origem.url](origem.url) | Endereço original do Jam. | — |
 
 ## Limites
 

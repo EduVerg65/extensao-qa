@@ -1,5 +1,5 @@
 CT-RF148 — Rejeitar código hexadecimal inválido na Cor Secundária
-Fonte: Jam 4 — Validação da Cor Secundária. Gravação restrita por conter dados de integração.
+Fonte: https://jam.dev/c/41aaf50a-2506-471a-8eeb-943674571771
 Gravação: 16/11/2026, 23:26:21 BRT. Duração: 19,35 s.
 Revisão documental: 17/11/2026.
 Página: https://sifit.centrion.com.br/configuracoes

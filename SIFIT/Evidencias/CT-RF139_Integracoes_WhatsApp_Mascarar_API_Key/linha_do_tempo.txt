@@ -1,5 +1,5 @@
 CT-RF139 — Mascarar a API Key no formulário de WhatsApp
-Fonte: Jam 1 — Mascaramento da API Key. Gravação restrita por conter dados de integração.
+Fonte: https://jam.dev/c/ef0b67d5-1eea-49b7-84ea-bb306143df4a
 Gravação: 16/11/2026, 23:37:22 BRT. Duração: 24,98 s.
 Revisão documental: 17/11/2026.
 Página: https://sifit.centrion.com.br/configuracoes

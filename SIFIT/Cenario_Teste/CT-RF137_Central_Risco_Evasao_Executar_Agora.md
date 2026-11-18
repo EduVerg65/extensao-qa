@@ -17,7 +17,7 @@
 | Tipo / prioridade | Funcional manual / execução e atualização · Média, proposta para triagem. |
 | Defeito | Nenhum no fluxo avaliado |
 | Encaminhamento | Usar como regressão para execução manual. Validar a entrega pelo canal em um teste dedicado, com destinatários de teste. |
-| Fonte | Jam — PED-04 — Executar Risco de Evasão (gravação restrita por conter dados individuais da avaliação de risco) e [evidências locais](../Evidencias/CT-RF137_Central_Risco_Evasao_Executar_Agora/README.md). A consulta em Resultados IA está no [CT-RF123](CT-RF123_Central_Resultados_IA_Execucao_Evasao.md). |
+| Fonte | [Jam — PED-04 — Executar Risco de Evasão](https://jam.dev/c/be5418c7-8d87-4b6c-9c64-a9b33b5f7da6) e [evidências locais](../Evidencias/CT-RF137_Central_Risco_Evasao_Executar_Agora/README.md). A consulta em Resultados IA está no [CT-RF123](CT-RF123_Central_Resultados_IA_Execucao_Evasao.md). |
 
 ## Ambiente e dados de teste
 
@@ -91,7 +91,7 @@ Usar como regressão para execução manual. Validar a entrega pelo canal em um 
 
 ## Evidências e limites
 
-- Jam — PED-04 — Executar Risco de Evasão (gravação restrita por conter dados individuais da avaliação de risco).
+- [Jam — PED-04 — Executar Risco de Evasão](https://jam.dev/c/be5418c7-8d87-4b6c-9c64-a9b33b5f7da6).
 - [Arquivos, origem e limites](../Evidencias/CT-RF137_Central_Risco_Evasao_Executar_Agora/README.md).
 - [Resumo da Central antes da execução manual](../Evidencias/CT-RF137_Central_Risco_Evasao_Executar_Agora/central_antes_executar_00-08.jpg), [Resumo e atividade recente depois da execução e da atualização](../Evidencias/CT-RF137_Central_Risco_Evasao_Executar_Agora/central_apos_executar_00-23.jpg).
 - [Linha do tempo](../Evidencias/CT-RF137_Central_Risco_Evasao_Executar_Agora/linha_do_tempo.txt).

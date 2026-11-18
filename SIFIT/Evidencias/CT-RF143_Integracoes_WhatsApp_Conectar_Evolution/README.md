@@ -1,6 +1,6 @@
 # Evidência — CT-RF143: Tratar falha ao conectar WhatsApp via Evolution API
 
-- **Fonte:** Jam 5 — Tentativas de conexão pela Evolution API (gravação restrita por conter dados de integração).
+- **Fonte:** [Jam 5 — Tentativas de conexão pela Evolution API](https://jam.dev/c/087b5e4f-7d73-4be3-979d-9a39f474b836).
 - **Autor exibido:** Pedro Figueiredo.
 - **Gravação:** 16/11/2026, 23:44:10 BRT, com duração de 20,55 s.
 - **Revisão:** 17/11/2026.
@@ -21,7 +21,7 @@ A tela exibiu “Falha ao conectar na Evolution API” nas duas tentativas e nã
 | [conectar_whatsapp_00-01.jpg](conectar_whatsapp_00-01.jpg) | Ação Conectar WhatsApp antes da primeira tentativa. | `ab248a63cfeb6e5873f8f44f9f6d7f1c6292e89821f10525f73970ad9607b60a` |
 | [falha_evolution_00-16.jpg](falha_evolution_00-16.jpg) | Mensagem de falha exibida pela interface. | `fee29a8bffa3c7e43eb2d9236e0c4e521294a2a3771a440fda880a141636ca73` |
 | [linha_do_tempo.txt](linha_do_tempo.txt) | Cronologia de ações, rede e quadros consultados no Jam. | — |
-| [origem.url](origem.url) | Página testada. O link da gravação fica restrito. | — |
+| [origem.url](origem.url) | Endereço original do Jam. | — |
 
 ## Limites
 

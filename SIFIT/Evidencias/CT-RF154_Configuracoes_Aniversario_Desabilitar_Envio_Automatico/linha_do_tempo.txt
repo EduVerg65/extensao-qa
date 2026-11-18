@@ -1,5 +1,5 @@
 CT-RF154 — Desabilitar o envio automático de aniversário
-Fonte: Jam 4 — Desativação do envio automático de aniversário. Gravação restrita por conter dados de integração.
+Fonte: https://jam.dev/c/ee8a2ba9-164c-42bb-8efe-927dd6c534d5
 Gravação: 16/11/2026, 23:15:01 BRT. Duração: 19,89 s.
 Revisão documental: 18/11/2026.
 Página: https://sifit.centrion.com.br/configuracoes

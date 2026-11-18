@@ -1,6 +1,6 @@
 # Evidência — CT-RF158: Impedir o envio de uma notificação sem mensagem
 
-- **Fonte:** Jam 2 — Validação de mensagem obrigatória (gravação restrita por conter dados de integração ou dados de alunos).
+- **Fonte:** [Jam 2 — Validação de mensagem obrigatória](https://jam.dev/c/b9ebb9d0-e7c2-4ed8-a50d-00c2948e97fd).
 - **Autor exibido:** Pedro Figueiredo.
 - **Gravação:** 16/11/2026, 22:40:04 BRT, com duração de 13,11 s.
 - **Revisão:** 18/11/2026.
@@ -21,7 +21,7 @@ O formulário abriu com contador em zero. Os cliques na região de Enviar aviso 
 | [notificacao_sem_mensagem_00-05.jpg](notificacao_sem_mensagem_00-05.jpg) | Formulário vazio, contador em zero e ação Enviar aviso desabilitada. | `e2d4ac9f9a05ee8d450a27cd2da67ddb8bbf706daff36c8c6d76f8b62392a8d4` |
 | [acao_enviar_desabilitada_00-09.jpg](acao_enviar_desabilitada_00-09.jpg) | Ação Enviar aviso permanece desabilitada durante a tentativa. | `63a5485d58cad62c7978d5fc94b73ec7134791236b2ac2fabe0a9d850ce3f946` |
 | [linha_do_tempo.txt](linha_do_tempo.txt) | Cronologia de ações, rede e quadros consultados no Jam. | — |
-| [origem.url](origem.url) | Página testada. O link da gravação fica restrito. | — |
+| [origem.url](origem.url) | Endereço original do Jam. | — |
 
 ## Limites
 

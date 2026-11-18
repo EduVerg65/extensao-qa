@@ -1,5 +1,5 @@
 CT-RF146 — Persistir a desativação do Pagamento Online
-Fonte: Jam 2 — Desativação do Pagamento Online. Gravação restrita por conter dados de integração.
+Fonte: https://jam.dev/c/845de9b6-12f7-4002-a8ba-82e1a85affba
 Gravação: 16/11/2026, 23:23:27 BRT. Duração: 15,84 s.
 Revisão documental: 17/11/2026.
 Página: https://sifit.centrion.com.br/configuracoes

@@ -17,7 +17,7 @@
 | Tipo / prioridade | Funcional manual / persistência · Média, proposta para triagem. |
 | Defeito | Nenhum no fluxo avaliado |
 | Encaminhamento | Usar como regressão da configuração e confirmar a conectividade e a restauração em ambiente de teste. |
-| Fonte | Jam 8 — Persistência da porta do aparelho (gravação restrita por conter dados de integração ou dados de alunos) e [evidências locais](../Evidencias/CT-RF164_Configuracoes_Biometria_Persistir_Porta/README.md). |
+| Fonte | [Jam 8 — Persistência da porta do aparelho](https://jam.dev/c/7d7bf60a-d8a8-4b7e-80da-1e73b45819cb) e [evidências locais](../Evidencias/CT-RF164_Configuracoes_Biometria_Persistir_Porta/README.md). |
 
 ## Ambiente e dados de teste
 
@@ -90,7 +90,7 @@ Usar como regressão da configuração e confirmar a conectividade e a restaura�
 
 ## Evidências e limites
 
-- Jam 8 — Persistência da porta do aparelho (gravação restrita por conter dados de integração ou dados de alunos).
+- [Jam 8 — Persistência da porta do aparelho](https://jam.dev/c/7d7bf60a-d8a8-4b7e-80da-1e73b45819cb).
 - [Arquivos, origem e limites](../Evidencias/CT-RF164_Configuracoes_Biometria_Persistir_Porta/README.md).
 - [Campo Porta editado antes do salvamento, com dados de conexão ocultos](../Evidencias/CT-RF164_Configuracoes_Biometria_Persistir_Porta/salvar_porta_00-06.jpg), [Campo Porta ao reabrir Biometria, com dados de conexão ocultos](../Evidencias/CT-RF164_Configuracoes_Biometria_Persistir_Porta/porta_apos_recarregar_00-14.jpg).
 - [Linha do tempo](../Evidencias/CT-RF164_Configuracoes_Biometria_Persistir_Porta/linha_do_tempo.txt).

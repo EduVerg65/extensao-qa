@@ -1,6 +1,6 @@
 # Evidência — CT-RF162: Cancelar a edição da senha de Biometria
 
-- **Fonte:** Jam 6 — Cancelamento da edição no formulário de Biometria (gravação restrita por conter dados de integração ou dados de alunos).
+- **Fonte:** [Jam 6 — Cancelamento da edição no formulário de Biometria](https://jam.dev/c/ccac55df-d2c8-4b11-898b-d12d87aced72).
 - **Autor exibido:** Pedro Figueiredo.
 - **Gravação:** 16/11/2026, 23:02:14 BRT, com duração de 22,59 s.
 - **Revisão:** 18/11/2026.
@@ -21,7 +21,7 @@ Após editar Senha e sair pelo botão Cancelar, a Página Inicial foi exibida. A
 | [formulario_senha_antes_cancelar_00-08.jpg](formulario_senha_antes_cancelar_00-08.jpg) | Formulário antes de Cancelar, com os dados de conexão ocultos. | `378c1e5e20b4986035661aeba0b89ae629f792bdb467976233debf195bf3174e` |
 | [biometria_reaberta_00-20.jpg](biometria_reaberta_00-20.jpg) | Aba Biometria reaberta após o cancelamento, com os mesmos campos ocultos. | `96ae1cfe1117df34cc729f0e659680a2bf0aaed37a887321e8ce88f942f2eee1` |
 | [linha_do_tempo.txt](linha_do_tempo.txt) | Cronologia de ações, rede e quadros consultados no Jam. | — |
-| [origem.url](origem.url) | Página testada. O link da gravação fica restrito. | — |
+| [origem.url](origem.url) | Endereço original do Jam. | — |
 
 ## Limites
 

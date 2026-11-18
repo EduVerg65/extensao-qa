@@ -17,7 +17,7 @@
 | Tipo / prioridade | Funcional manual / consulta de relatório · Média, proposta para triagem. |
 | Defeito | Nenhum no fluxo avaliado |
 | Encaminhamento | Usar como regressão da consulta e retestar cada filtro com uma base de teste com níveis distintos. |
-| Fonte | Jam — PED-05 — Ver resultados de Risco de Evasão (gravação restrita por conter dados individuais da avaliação de risco) e [evidências locais](../Evidencias/CT-RF138_Central_Abrir_Resultados_Risco_Evasao/README.md). A consulta em Resultados IA está no [CT-RF123](CT-RF123_Central_Resultados_IA_Execucao_Evasao.md). |
+| Fonte | [Jam — PED-05 — Ver resultados de Risco de Evasão](https://jam.dev/c/ac5bce26-f4a8-401b-bb23-d09d5253751a) e [evidências locais](../Evidencias/CT-RF138_Central_Abrir_Resultados_Risco_Evasao/README.md). A consulta em Resultados IA está no [CT-RF123](CT-RF123_Central_Resultados_IA_Execucao_Evasao.md). |
 
 ## Ambiente e dados de teste
 
@@ -88,7 +88,7 @@ Usar como regressão da consulta e retestar cada filtro com uma base de teste co
 
 ## Evidências e limites
 
-- Jam — PED-05 — Ver resultados de Risco de Evasão (gravação restrita por conter dados individuais da avaliação de risco).
+- [Jam — PED-05 — Ver resultados de Risco de Evasão](https://jam.dev/c/ac5bce26-f4a8-401b-bb23-d09d5253751a).
 - [Arquivos, origem e limites](../Evidencias/CT-RF138_Central_Abrir_Resultados_Risco_Evasao/README.md).
 - [Cartão Risco de Evasão com a ação Ver resultados](../Evidencias/CT-RF138_Central_Abrir_Resultados_Risco_Evasao/botao_ver_resultados_00-06.jpg), [Resumo de risco com os totais e os controles de filtro](../Evidencias/CT-RF138_Central_Abrir_Resultados_Risco_Evasao/resumo_risco_00-12.jpg).
 - [Linha do tempo](../Evidencias/CT-RF138_Central_Abrir_Resultados_Risco_Evasao/linha_do_tempo.txt).

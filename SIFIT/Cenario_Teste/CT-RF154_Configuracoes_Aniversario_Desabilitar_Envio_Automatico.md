@@ -17,7 +17,7 @@
 | Tipo / prioridade | Funcional manual / persistência · Média, proposta para triagem. |
 | Defeito | Nenhum no fluxo avaliado |
 | Encaminhamento | Usar como regressão da preferência e conferir o efeito no agendamento com canais e destinatários de teste. |
-| Fonte | Jam 4 — Desativação do envio automático de aniversário (gravação restrita por conter dados de integração) e [evidências locais](../Evidencias/CT-RF154_Configuracoes_Aniversario_Desabilitar_Envio_Automatico/README.md). |
+| Fonte | [Jam 4 — Desativação do envio automático de aniversário](https://jam.dev/c/ee8a2ba9-164c-42bb-8efe-927dd6c534d5) e [evidências locais](../Evidencias/CT-RF154_Configuracoes_Aniversario_Desabilitar_Envio_Automatico/README.md). |
 
 ## Ambiente e dados de teste
 
@@ -91,7 +91,7 @@ Usar como regressão da preferência e conferir o efeito no agendamento com cana
 
 ## Evidências e limites
 
-- Jam 4 — Desativação do envio automático de aniversário (gravação restrita por conter dados de integração).
+- [Jam 4 — Desativação do envio automático de aniversário](https://jam.dev/c/ee8a2ba9-164c-42bb-8efe-927dd6c534d5).
 - [Arquivos, origem e limites](../Evidencias/CT-RF154_Configuracoes_Aniversario_Desabilitar_Envio_Automatico/README.md).
 - [Envio automático em Habilitado antes da edição](../Evidencias/CT-RF154_Configuracoes_Aniversario_Desabilitar_Envio_Automatico/envio_habilitado_00-01.jpg), [Envio automático em Desabilitado após recarregar e reabrir Aniversário](../Evidencias/CT-RF154_Configuracoes_Aniversario_Desabilitar_Envio_Automatico/envio_desabilitado_00-15.jpg).
 - [Linha do tempo](../Evidencias/CT-RF154_Configuracoes_Aniversario_Desabilitar_Envio_Automatico/linha_do_tempo.txt).

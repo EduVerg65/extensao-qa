@@ -17,7 +17,7 @@
 | Tipo / prioridade | Funcional manual / filtragem de lista vazia · Média, proposta para triagem. |
 | Defeito | Nenhum no fluxo avaliado |
 | Encaminhamento | Repetir com postagens pendentes e aprovadas para conferir a seleção de registros e o total do diálogo. |
-| Fonte | Jam 4 — Filtros e lista completa de postagens (gravação restrita por conter dados de integração ou dados de alunos) e [evidências locais](../Evidencias/CT-RF160_Aplicativo_Postagens_Filtros_Estados_Vazios/README.md). |
+| Fonte | [Jam 4 — Filtros e lista completa de postagens](https://jam.dev/c/a58327e6-6a5a-4a2e-8b3d-cee9296d1d03) e [evidências locais](../Evidencias/CT-RF160_Aplicativo_Postagens_Filtros_Estados_Vazios/README.md). |
 
 ## Ambiente e dados de teste
 
@@ -88,7 +88,7 @@ Repetir com postagens pendentes e aprovadas para conferir a seleção de registr
 
 ## Evidências e limites
 
-- Jam 4 — Filtros e lista completa de postagens (gravação restrita por conter dados de integração ou dados de alunos).
+- [Jam 4 — Filtros e lista completa de postagens](https://jam.dev/c/a58327e6-6a5a-4a2e-8b3d-cee9296d1d03).
 - [Arquivos, origem e limites](../Evidencias/CT-RF160_Aplicativo_Postagens_Filtros_Estados_Vazios/README.md).
 - [Diálogo em todas as postagens com o aviso de lista vazia](../Evidencias/CT-RF160_Aplicativo_Postagens_Filtros_Estados_Vazios/postagens_todas_00-12.jpg), [Diálogo filtrado pelas pendentes e sem postagens aguardando aprovação](../Evidencias/CT-RF160_Aplicativo_Postagens_Filtros_Estados_Vazios/postagens_pendentes_00-18.jpg).
 - [Linha do tempo](../Evidencias/CT-RF160_Aplicativo_Postagens_Filtros_Estados_Vazios/linha_do_tempo.txt).

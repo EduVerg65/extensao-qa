@@ -1,5 +1,5 @@
 CT-RF137 — Executar Risco de Evasão manualmente pela Central
-Fonte: Jam — PED-04 — Executar Risco de Evasão. Gravação restrita por conter dados individuais da avaliação de risco.
+Fonte: https://jam.dev/c/be5418c7-8d87-4b6c-9c64-a9b33b5f7da6
 Gravação: 16/11/2026, 21:33:26 BRT. Duração: 30,21 s.
 Revisão documental: 17/11/2026.
 Página: https://sifit.centrion.com.br/inteligencia-automacao

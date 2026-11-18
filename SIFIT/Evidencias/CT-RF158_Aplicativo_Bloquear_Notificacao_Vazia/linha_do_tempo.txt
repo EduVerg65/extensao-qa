@@ -1,5 +1,5 @@
 CT-RF158 — Impedir o envio de uma notificação sem mensagem
-Fonte: Jam 2 — Validação de mensagem obrigatória. Gravação restrita por conter dados de integração ou dados de alunos.
+Fonte: https://jam.dev/c/b9ebb9d0-e7c2-4ed8-a50d-00c2948e97fd
 Gravação: 16/11/2026, 22:40:04 BRT. Duração: 13,11 s.
 Revisão documental: 18/11/2026.
 Página: https://sifit.centrion.com.br/aplicativo

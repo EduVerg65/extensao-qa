@@ -1,6 +1,6 @@
 # Evidência — CT-RF138: Abrir os resultados de Risco de Evasão pela Central
 
-- **Fonte:** Jam — PED-05 — Ver resultados de Risco de Evasão (gravação restrita por conter dados individuais da avaliação de risco).
+- **Fonte:** [Jam — PED-05 — Ver resultados de Risco de Evasão](https://jam.dev/c/ac5bce26-f4a8-401b-bb23-d09d5253751a).
 - **Autor exibido:** Pedro Figueiredo.
 - **Gravação:** 16/11/2026, 21:38:29 BRT, com duração de 18,86 s.
 - **Revisão:** 17/11/2026.
@@ -21,7 +21,7 @@ Ver resultados abriu o Relatório de Risco de Evasão. A API retornou HTTP 200 e
 | [botao_ver_resultados_00-06.jpg](botao_ver_resultados_00-06.jpg) | Cartão Risco de Evasão com a ação Ver resultados. | `74dae02a14222a987bdeb5683b6d01c17e5dc34c5a1fd01c26cc171efeb32cd6` |
 | [resumo_risco_00-12.jpg](resumo_risco_00-12.jpg) | Resumo de risco com os totais e os controles de filtro. | `98bdcfcd26f8eeba945d647cef2c5503b8cdc1736a86b7e7ab297af9214c3952` |
 | [linha_do_tempo.txt](linha_do_tempo.txt) | Cronologia de ações, rede e quadros consultados no Jam. | — |
-| [origem.url](origem.url) | Página testada. O link da gravação fica restrito. | — |
+| [origem.url](origem.url) | Endereço original do Jam. | — |
 
 ## Limites
 

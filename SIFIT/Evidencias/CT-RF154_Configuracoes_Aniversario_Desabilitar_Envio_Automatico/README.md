@@ -1,6 +1,6 @@
 # Evidência — CT-RF154: Desabilitar o envio automático de aniversário
 
-- **Fonte:** Jam 4 — Desativação do envio automático de aniversário (gravação restrita por conter dados de integração).
+- **Fonte:** [Jam 4 — Desativação do envio automático de aniversário](https://jam.dev/c/ee8a2ba9-164c-42bb-8efe-927dd6c534d5).
 - **Autor exibido:** Pedro Figueiredo.
 - **Gravação:** 16/11/2026, 23:15:01 BRT, com duração de 19,89 s.
 - **Revisão:** 18/11/2026.
@@ -21,7 +21,7 @@ O salvamento de Desabilitado retornou HTTP 200 com `verifica_erro: false`. Após
 | [envio_habilitado_00-01.jpg](envio_habilitado_00-01.jpg) | Envio automático em Habilitado antes da edição. | `47c7e4aab1e75f87fa8b8b7d859fb9dd6f7a8b08c060475ab989e85e608511e8` |
 | [envio_desabilitado_00-15.jpg](envio_desabilitado_00-15.jpg) | Envio automático em Desabilitado após recarregar e reabrir Aniversário. | `2424878abafc8073e24d35ea81018959a92cde1afe62363aff84e20b88fd108d` |
 | [linha_do_tempo.txt](linha_do_tempo.txt) | Cronologia de ações, rede e quadros consultados no Jam. | — |
-| [origem.url](origem.url) | Página testada. O link da gravação fica restrito. | — |
+| [origem.url](origem.url) | Endereço original do Jam. | — |
 
 ## Limites
 

@@ -17,7 +17,7 @@
 | Tipo / prioridade | Funcional manual / validação · Média, proposta para triagem. |
 | Defeito | Nenhum no fluxo avaliado |
 | Encaminhamento | Usar como regressão e verificar tratamento de espaços em branco e mensagem de campo obrigatório. |
-| Fonte | Jam 3 — Obrigatoriedade do Nome da Instância (gravação restrita por conter dados de integração) e [evidências locais](../Evidencias/CT-RF141_Integracoes_WhatsApp_Instancia_Obrigatoria/README.md). |
+| Fonte | [Jam 3 — Obrigatoriedade do Nome da Instância](https://jam.dev/c/8bb7f049-0299-49c9-9fb5-ff7b144f58d2) e [evidências locais](../Evidencias/CT-RF141_Integracoes_WhatsApp_Instancia_Obrigatoria/README.md). |
 
 ## Ambiente e dados de teste
 
@@ -91,7 +91,7 @@ Usar como regressão e verificar tratamento de espaços em branco e mensagem de 
 
 ## Evidências e limites
 
-- Jam 3 — Obrigatoriedade do Nome da Instância (gravação restrita por conter dados de integração).
+- [Jam 3 — Obrigatoriedade do Nome da Instância](https://jam.dev/c/8bb7f049-0299-49c9-9fb5-ff7b144f58d2).
 - [Arquivos, origem e limites](../Evidencias/CT-RF141_Integracoes_WhatsApp_Instancia_Obrigatoria/README.md).
 - [Campo Nome da Instância vazio e ação Salvar Configuração](../Evidencias/CT-RF141_Integracoes_WhatsApp_Instancia_Obrigatoria/instancia_vazia_00-14.jpg), [Nome da Instância preenchido novamente pelo valor salvo](../Evidencias/CT-RF141_Integracoes_WhatsApp_Instancia_Obrigatoria/instancia_apos_reabrir_00-24.jpg).
 - [Linha do tempo](../Evidencias/CT-RF141_Integracoes_WhatsApp_Instancia_Obrigatoria/linha_do_tempo.txt).

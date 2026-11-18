@@ -1,5 +1,5 @@
 CT-RF143 — Tratar falha ao conectar WhatsApp via Evolution API
-Fonte: Jam 5 — Tentativas de conexão pela Evolution API. Gravação restrita por conter dados de integração.
+Fonte: https://jam.dev/c/087b5e4f-7d73-4be3-979d-9a39f474b836
 Gravação: 16/11/2026, 23:44:10 BRT. Duração: 20,55 s.
 Revisão documental: 17/11/2026.
 Página: https://sifit.centrion.com.br/configuracoes

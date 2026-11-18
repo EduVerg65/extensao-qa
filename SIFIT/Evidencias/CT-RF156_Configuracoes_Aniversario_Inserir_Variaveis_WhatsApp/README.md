@@ -1,6 +1,6 @@
 # Evidência — CT-RF156: Inserir variáveis na mensagem de aniversário do WhatsApp
 
-- **Fonte:** Jam 6 — Inserção de variáveis na mensagem de WhatsApp (gravação restrita por conter dados de integração).
+- **Fonte:** [Jam 6 — Inserção de variáveis na mensagem de WhatsApp](https://jam.dev/c/fb2c4949-c68d-4f90-b47c-44da9dbe58a3).
 - **Autor exibido:** Pedro Figueiredo.
 - **Gravação:** 16/11/2026, 23:20:07 BRT, com duração de 32,14 s.
 - **Revisão:** 18/11/2026.
@@ -21,7 +21,7 @@ Os cliques acrescentaram `{nome_aluno}`, `{primeiro_nome}`, `{data_aniversario}`
 | [variaveis_inseridas_00-16.jpg](variaveis_inseridas_00-16.jpg) | Variáveis selecionadas no painel aparecem no campo da mensagem. | `1b7b73dfc78f59a13bfeabaf90cbc95e6d0bbeffd00e6231f730eb0d014203ae` |
 | [mensagem_apos_cancelar_00-29.jpg](mensagem_apos_cancelar_00-29.jpg) | Modelo anterior reaparece após cancelar e voltar ao formulário. | `d9b3055cc551bcf4ca64f43e21e1150753d7c67ea639f4afa7f280dfb208864b` |
 | [linha_do_tempo.txt](linha_do_tempo.txt) | Cronologia de ações, rede e quadros consultados no Jam. | — |
-| [origem.url](origem.url) | Página testada. O link da gravação fica restrito. | — |
+| [origem.url](origem.url) | Endereço original do Jam. | — |
 
 ## Limites
 

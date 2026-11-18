@@ -1,5 +1,5 @@
 CT-RF149 — Informar o limite de tamanho ao rejeitar o logo
-Fonte: Jam 5 — Rejeição de logo pelo limite de tamanho. Gravação restrita por conter dados de integração.
+Fonte: https://jam.dev/c/7aaeac50-8269-4cd6-b7f6-4c8c3740b0e5
 Gravação: 16/11/2026, 23:27:58 BRT. Duração: 18,41 s.
 Revisão documental: 17/11/2026.
 Página: https://sifit.centrion.com.br/configuracoes

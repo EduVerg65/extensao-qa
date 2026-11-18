@@ -17,7 +17,7 @@
 | Tipo / prioridade | Funcional manual / persistência · Média, proposta para triagem. |
 | Defeito | Nenhum no fluxo avaliado |
 | Encaminhamento | Usar como regressão da preferência e confirmar a regra de cobrança em um fluxo de avaliação de teste. |
-| Fonte | Jam 1 — Desativação da cobrança da avaliação (gravação restrita por conter dados de integração) e [evidências locais](../Evidencias/CT-RF151_Configuracoes_Avaliacao_Desativar_Cobranca/README.md). |
+| Fonte | [Jam 1 — Desativação da cobrança da avaliação](https://jam.dev/c/851c15d8-4076-4493-ad3f-c2ba0316d0ca) e [evidências locais](../Evidencias/CT-RF151_Configuracoes_Avaliacao_Desativar_Cobranca/README.md). |
 
 ## Ambiente e dados de teste
 
@@ -91,7 +91,7 @@ Usar como regressão da preferência e confirmar a regra de cobrança em um flux
 
 ## Evidências e limites
 
-- Jam 1 — Desativação da cobrança da avaliação (gravação restrita por conter dados de integração).
+- [Jam 1 — Desativação da cobrança da avaliação](https://jam.dev/c/851c15d8-4076-4493-ad3f-c2ba0316d0ca).
 - [Arquivos, origem e limites](../Evidencias/CT-RF151_Configuracoes_Avaliacao_Desativar_Cobranca/README.md).
 - [Cobrar Avaliação do Cliente em Sim antes da alteração](../Evidencias/CT-RF151_Configuracoes_Avaliacao_Desativar_Cobranca/cobrar_avaliacao_sim_00-01.jpg), [Cobrar Avaliação do Cliente em Não após reabrir a aba](../Evidencias/CT-RF151_Configuracoes_Avaliacao_Desativar_Cobranca/cobrar_avaliacao_nao_00-12.jpg).
 - [Linha do tempo](../Evidencias/CT-RF151_Configuracoes_Avaliacao_Desativar_Cobranca/linha_do_tempo.txt).

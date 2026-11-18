@@ -1,6 +1,6 @@
 # Evidência — CT-RF147: Salvar uma Cor Principal hexadecimal válida
 
-- **Fonte:** Jam 3 — Persistência da Cor Principal (gravação restrita por conter dados de integração).
+- **Fonte:** [Jam 3 — Persistência da Cor Principal](https://jam.dev/c/c4f77e18-3b66-4c68-97e7-bd70a9bb70f9).
 - **Autor exibido:** Pedro Figueiredo.
 - **Gravação:** 16/11/2026, 23:25:27 BRT, com duração de 25,55 s.
 - **Revisão:** 17/11/2026.
@@ -21,7 +21,7 @@ O POST retornou sucesso com a Cor Principal #663399. Após recarregar, o GET con
 | [cor_principal_inicial_00-01.jpg](cor_principal_inicial_00-01.jpg) | Cor Principal original antes da edição. | `56c59a7ae21c67a2fcf474a4a69c93f74eb9f2ff29757a6846e1c408be59a08a` |
 | [cor_principal_apos_reabrir_00-24.jpg](cor_principal_apos_reabrir_00-24.jpg) | Cor Principal atualizada após reabrir a aba Design. | `9f2660e883e5bab008ecef0ec890bfa0f6895d15dede77847fca0119ec93a03e` |
 | [linha_do_tempo.txt](linha_do_tempo.txt) | Cronologia de ações, rede e quadros consultados no Jam. | — |
-| [origem.url](origem.url) | Página testada. O link da gravação fica restrito. | — |
+| [origem.url](origem.url) | Endereço original do Jam. | — |
 
 ## Limites
 

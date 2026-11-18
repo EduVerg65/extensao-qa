@@ -1897,7 +1897,7 @@ Reproduzir com dados de teste distintos, investigar a falha do endpoint e confer
 
 - 0:15,55  A abertura de Integrações gerou OPTIONS (HTTP 204) e a consulta do estado da integração retornou HTTP 200.
 - O defeito de exibição foi observado na interface. A revisão não reproduz dados de integração.
-- Jam — PED-15 (gravação restrita por conter dados de integração) e [Evidências](Evidencias/CT-RF124_Configuracoes_Abas_Biometria_Senha/README.md).
+- [Jam — PED-15](https://jam.dev/c/38105352-c89c-492e-bca1-78e2f4017ae2) e [Evidências](Evidencias/CT-RF124_Configuracoes_Abas_Biometria_Senha/README.md).
 
 ### Análise, limites e encaminhamento
 
@@ -2102,7 +2102,7 @@ Sessão autenticada na integração de WhatsApp com um provedor de teste. Prepar
 
 - 0:02,48 e 0:12,94  POST `/api/empresa/whatsapp/conectar/1` (HTTP 200). As duas respostas indicaram falha na mensagem com `verifica_erro: false`, `status: conectando` e `conectado: false`.
 - 0:08,59–0:08,72  O POST de configuração confirmou o salvamento de Ativo. O GET trouxe `ativo: true` e `status: desconectado` antes da segunda tentativa.
-- Jam 5 — Tentativas de conexão pela Evolution API (gravação restrita por conter dados de integração) e [Evidências](Evidencias/CT-RF143_Integracoes_WhatsApp_Conectar_Evolution/README.md).
+- [Jam 5 — Tentativas de conexão pela Evolution API](https://jam.dev/c/087b5e4f-7d73-4be3-979d-9a39f474b836) e [Evidências](Evidencias/CT-RF143_Integracoes_WhatsApp_Conectar_Evolution/README.md).
 - [CT-RF144](Cenario_Teste/CT-RF144_Integracoes_WhatsApp_Atualizar_Status.md), evidência complementar de conexão após as consultas de status. 0:14,84  POST `/api/empresa/whatsapp/conectar/1` (HTTP 200), com mensagem “Erro ao conectar” e `verifica_erro: false`. Esse evento pertence à ação de conexão. [Evidências](Evidencias/CT-RF144_Integracoes_WhatsApp_Atualizar_Status/README.md).
 
 ### Análise, impacto e encaminhamento
@@ -2147,7 +2147,7 @@ Sessão autenticada em Design e uma Cor Secundária válida salva como referênc
 
 - 0:08,01 e 0:09,20  POST `/api/configuracoes/alterar/1` com `cor_secundaria: #ZZZZZZ` (HTTP 200, `verifica_erro: false`).
 - 0:12,33  GET `/api/configuracoes/1` (HTTP 200), com `cor_secundaria: #ZZZZZZ`.
-- Jam 4 — Validação da Cor Secundária (gravação restrita por conter dados de integração) e [Evidências](Evidencias/CT-RF148_Configuracoes_Design_Validar_Cor_Secundaria/README.md).
+- [Jam 4 — Validação da Cor Secundária](https://jam.dev/c/41aaf50a-2506-471a-8eeb-943674571771) e [Evidências](Evidencias/CT-RF148_Configuracoes_Design_Validar_Cor_Secundaria/README.md).
 
 ### Análise, impacto e encaminhamento
 
@@ -2190,7 +2190,7 @@ Sessão autenticada com acesso a Design. Preparar arquivos de teste dos formatos
 ### Evidências técnicas
 
 - 0:09,40  POST `/api/configuracoes/alterar/1` em multipart, corpo de 10.081.448 bytes conforme o Jam. HTTP 400 com “O arquivo deve ter no máximo 6 MB.”
-- Jam 5 — Rejeição de logo pelo limite de tamanho (gravação restrita por conter dados de integração) e [Evidências](Evidencias/CT-RF149_Configuracoes_Design_Logo_Limite_Tamanho/README.md).
+- [Jam 5 — Rejeição de logo pelo limite de tamanho](https://jam.dev/c/7aaeac50-8269-4cd6-b7f6-4c8c3740b0e5) e [Evidências](Evidencias/CT-RF149_Configuracoes_Design_Logo_Limite_Tamanho/README.md).
 
 ### Análise, impacto e encaminhamento
 
@@ -2234,7 +2234,7 @@ Sessão autenticada em Biometria com permissão para alterar os dados de um apar
 
 - 0:14,61  POST `/api/configuracoes/alterar/1` (HTTP 200). A captura desse evento não inclui o corpo do POST.
 - 0:18,41  GET `/api/configuracoes/1` (HTTP 200), com `ip_aparelho` composto por nove dígitos sem separadores.
-- Jam 7 — Validação de IP do aparelho (gravação restrita por conter dados de integração ou dados de alunos) e [Evidências](Evidencias/CT-RF163_Configuracoes_Biometria_Rejeitar_IP_Invalido/README.md).
+- [Jam 7 — Validação de IP do aparelho](https://jam.dev/c/5b8eea1f-3c87-4497-8fb1-da49f09f9854) e [Evidências](Evidencias/CT-RF163_Configuracoes_Biometria_Rejeitar_IP_Invalido/README.md).
 
 ### Análise, impacto e encaminhamento
 
@@ -2278,7 +2278,7 @@ Sessão autenticada em Biometria com permissão para editar dias de bloqueio no 
 
 - 0:04,24  POST `/api/configuracoes/alterar/1` com `dias_bloqueio: -1` (HTTP 200, `verifica_erro: false`).
 - 0:07,46  GET `/api/configuracoes/1` (HTTP 200), com `dias_bloqueio: 0`.
-- Jam 9 — Validação de dias de bloqueio da catraca (gravação restrita por conter dados de integração ou dados de alunos) e [Evidências](Evidencias/CT-RF165_Configuracoes_Biometria_Validar_Dias_Bloqueio/README.md).
+- [Jam 9 — Validação de dias de bloqueio da catraca](https://jam.dev/c/f607bc49-184f-4d55-81ab-7db825af6021) e [Evidências](Evidencias/CT-RF165_Configuracoes_Biometria_Validar_Dias_Bloqueio/README.md).
 
 ### Análise, impacto e encaminhamento
 
@@ -2347,7 +2347,7 @@ CT-RF157–CT-RF165 cobrem Aplicativo e a aba Biometria com gravações de 16/11
 | [CT-RF113](Cenario_Teste/CT-RF113_Busca_Modelo_Ficha_Filtros_Combinados.md) | Reexecutar com registros que correspondam a todos os filtros e a apenas parte deles. Confirmar onde a filtragem é feita. A resposta vazia e a ausência de parâmetros na URL não permitem distinguir filtragem local de critérios ignorados. Confirmar a lógica de combinação com o produto e usar dados que diferenciem os resultados. | [Jam — PED-29](https://jam.dev/c/006f9722-e643-4b65-904a-25471a7b90ed) e [Evidências](Evidencias/CT-RF113_Busca_Modelo_Ficha_Filtros_Combinados/README.md) |
 | [CT-RF115](Cenario_Teste/CT-RF115_Nova_Busca_Modelos_Ficha_Sem_Filtros.md) | Reexecutar com listagem padrão populada, pesquisa restritiva e comparação dos registros após a nova busca. A gravação não mostra uma listagem padrão populada. O estado vazio é compatível com os retornos, mas a recuperação de registros ocultados por uma pesquisa anterior ficou a validar. | [Jam — PED-30](https://jam.dev/c/297eec2b-7be4-498b-a0e6-e962ed93cc00) e [Evidências](Evidencias/CT-RF115_Nova_Busca_Modelos_Ficha_Sem_Filtros/README.md) |
 | [CT-RF116](Cenario_Teste/CT-RF116_Configuracoes_Dias_Ausencia_Vazio.md) | Confirmar com o produto a regra para vazio e zero. Repetir com vazio, zero explícito e os limites da faixa. A conversão de vazio para zero e a persistência estão confirmadas. A obrigatoriedade do campo, o significado de zero e o efeito sobre a contagem de clientes ausentes dependem da regra de produto. O CT-RF44 já registra a necessidade de confirmar a faixa. | [Jam — PED-20 — Dias de ausência vazio](https://jam.dev/c/4e96d4fa-65b5-459b-a795-854496e5753c) e [Evidências](Evidencias/CT-RF116_Configuracoes_Dias_Ausencia_Vazio/README.md) |
-| [CT-RF140](Cenario_Teste/CT-RF140_Integracoes_WhatsApp_Validar_URL_API.md) | Isolar a URL no reteste, mantendo a instância e a chave preenchidas, e confirmar o formato aceito com produto. O Nome da Instância vazio impede atribuir a ausência de POST à regra de URL. A gravação não demonstra qual validação bloqueou a tentativa. | Jam 2 — Validação da URL da API (gravação restrita por conter dados de integração) e [Evidências](Evidencias/CT-RF140_Integracoes_WhatsApp_Validar_URL_API/README.md) |
+| [CT-RF140](Cenario_Teste/CT-RF140_Integracoes_WhatsApp_Validar_URL_API.md) | Isolar a URL no reteste, mantendo a instância e a chave preenchidas, e confirmar o formato aceito com produto. O Nome da Instância vazio impede atribuir a ausência de POST à regra de URL. A gravação não demonstra qual validação bloqueou a tentativa. | [Jam 2 — Validação da URL da API](https://jam.dev/c/0d7c7274-c798-4e26-91a3-f8162b7ce932) e [Evidências](Evidencias/CT-RF140_Integracoes_WhatsApp_Validar_URL_API/README.md) |
 | [CT-RF127](Cenario_Teste/CT-RF127_Configuracoes_Dias_Ausencia_Texto.md) | Confirmar a regra de vazio com o produto e repetir a digitação e a colagem de texto, conferindo também a recarga. A rejeição da digitação de letras foi observada. A regra para o campo vazio permanece pendente no CT-RF116. A persistência de zero nesta gravação não foi verificada após recarga. | [Jam — PED-18 — Dias de ausência com texto](https://jam.dev/c/c578ed7a-c11c-4cef-8a6c-84d0244f21a5) e [Evidências](Evidencias/CT-RF127_Configuracoes_Dias_Ausencia_Texto/README.md) |
 
 A contagem de 54 defeitos registrados considera os itens do resumo de bugs. BUG-011–BUG-054 estão em triagem. Os pontos desta tabela aguardam confirmação antes de receber um registro de defeito.

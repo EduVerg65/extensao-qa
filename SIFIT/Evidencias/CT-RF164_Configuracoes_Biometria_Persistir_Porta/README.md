@@ -1,6 +1,6 @@
 # Evidência — CT-RF164: Persistir a alteração da porta do aparelho de Biometria
 
-- **Fonte:** Jam 8 — Persistência da porta do aparelho (gravação restrita por conter dados de integração ou dados de alunos).
+- **Fonte:** [Jam 8 — Persistência da porta do aparelho](https://jam.dev/c/7d7bf60a-d8a8-4b7e-80da-1e73b45819cb).
 - **Autor exibido:** Pedro Figueiredo.
 - **Gravação:** 16/11/2026, 23:05:55 BRT, com duração de 20,40 s.
 - **Revisão:** 18/11/2026.
@@ -21,7 +21,7 @@ O POST retornou HTTP 200 com `verifica_erro: false`. Após recarregar, `porta_ap
 | [salvar_porta_00-06.jpg](salvar_porta_00-06.jpg) | Campo Porta editado antes do salvamento, com dados de conexão ocultos. | `f8ced4555ee7d12d14f96b1430a3d1490d3551fbbb0132f1df1a7ca7df5806c8` |
 | [porta_apos_recarregar_00-14.jpg](porta_apos_recarregar_00-14.jpg) | Campo Porta ao reabrir Biometria, com dados de conexão ocultos. | `aa9b57919cd9b8d922ae8bc72354f92805f7994f71697a46cdcab91c95ec2bc8` |
 | [linha_do_tempo.txt](linha_do_tempo.txt) | Cronologia de ações, rede e quadros consultados no Jam. | — |
-| [origem.url](origem.url) | Página testada. O link da gravação fica restrito. | — |
+| [origem.url](origem.url) | Endereço original do Jam. | — |
 
 ## Limites
 

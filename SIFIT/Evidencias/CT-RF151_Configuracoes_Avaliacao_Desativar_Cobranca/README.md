@@ -1,6 +1,6 @@
 # Evidência — CT-RF151: Desativar a cobrança da avaliação do cliente
 
-- **Fonte:** Jam 1 — Desativação da cobrança da avaliação (gravação restrita por conter dados de integração).
+- **Fonte:** [Jam 1 — Desativação da cobrança da avaliação](https://jam.dev/c/851c15d8-4076-4493-ad3f-c2ba0316d0ca).
 - **Autor exibido:** Pedro Figueiredo.
 - **Gravação:** 16/11/2026, 23:10:04 BRT, com duração de 18,34 s.
 - **Revisão:** 18/11/2026.
@@ -21,7 +21,7 @@ O salvamento de Não retornou HTTP 200 com `verifica_erro: false`. Após recarre
 | [cobrar_avaliacao_sim_00-01.jpg](cobrar_avaliacao_sim_00-01.jpg) | Cobrar Avaliação do Cliente em Sim antes da alteração. | `7580667c26eeb26c2ccb430104782a229038d9938784c6d85fc5214516760ff0` |
 | [cobrar_avaliacao_nao_00-12.jpg](cobrar_avaliacao_nao_00-12.jpg) | Cobrar Avaliação do Cliente em Não após reabrir a aba. | `5dde09530d4b0af66262884e4d2602bc37075c05e21862867745401095448b74` |
 | [linha_do_tempo.txt](linha_do_tempo.txt) | Cronologia de ações, rede e quadros consultados no Jam. | — |
-| [origem.url](origem.url) | Página testada. O link da gravação fica restrito. | — |
+| [origem.url](origem.url) | Endereço original do Jam. | — |
 
 ## Limites
 

@@ -1,5 +1,5 @@
 CT-RF142 — Persistir a opção Ativo da integração de WhatsApp
-Fonte: Jam 4 — Persistência da opção Ativo. Gravação restrita por conter dados de integração.
+Fonte: https://jam.dev/c/593bb290-936a-4e01-a5af-cc8041c4eb55
 Gravação: 16/11/2026, 23:42:47 BRT. Duração: 29,40 s.
 Revisão documental: 17/11/2026.
 Página: https://sifit.centrion.com.br/configuracoes

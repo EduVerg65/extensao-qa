@@ -17,7 +17,7 @@
 | Tipo / prioridade | Funcional manual / consulta · Média, proposta para triagem. |
 | Defeito | [BUG-050](../Relatorio-de-Bugs.md#bug-050) na tentativa posterior de conexão |
 | Encaminhamento | Usar como regressão de consulta e retestar a transição de estado e a atualização visual do resumo com um provedor de teste. |
-| Fonte | Jam 6 — Atualização manual de status (gravação restrita por conter dados de integração) e [evidências locais](../Evidencias/CT-RF144_Integracoes_WhatsApp_Atualizar_Status/README.md). O fluxo de conexão está no [CT-RF143](CT-RF143_Integracoes_WhatsApp_Conectar_Evolution.md). |
+| Fonte | [Jam 6 — Atualização manual de status](https://jam.dev/c/0da79ab0-b557-46af-a48c-60c1a8a62628) e [evidências locais](../Evidencias/CT-RF144_Integracoes_WhatsApp_Atualizar_Status/README.md). O fluxo de conexão está no [CT-RF143](CT-RF143_Integracoes_WhatsApp_Conectar_Evolution.md). |
 
 ## Ambiente e dados de teste
 
@@ -89,7 +89,7 @@ Usar como regressão de consulta e retestar a transição de estado e a atualiza
 
 ## Evidências e limites
 
-- Jam 6 — Atualização manual de status (gravação restrita por conter dados de integração).
+- [Jam 6 — Atualização manual de status](https://jam.dev/c/0da79ab0-b557-46af-a48c-60c1a8a62628).
 - [Arquivos, origem e limites](../Evidencias/CT-RF144_Integracoes_WhatsApp_Atualizar_Status/README.md).
 - [Cartão Atualizar Status durante a sequência de consultas](../Evidencias/CT-RF144_Integracoes_WhatsApp_Atualizar_Status/atualizar_status_00-06.jpg), [Mensagem exibida após a tentativa adicional de conexão](../Evidencias/CT-RF144_Integracoes_WhatsApp_Atualizar_Status/erro_ao_conectar_00-16.jpg).
 - [Linha do tempo](../Evidencias/CT-RF144_Integracoes_WhatsApp_Atualizar_Status/linha_do_tempo.txt).

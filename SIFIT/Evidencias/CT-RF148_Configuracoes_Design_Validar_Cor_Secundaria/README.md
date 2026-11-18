@@ -1,6 +1,6 @@
 # Evidência — CT-RF148: Rejeitar código hexadecimal inválido na Cor Secundária
 
-- **Fonte:** Jam 4 — Validação da Cor Secundária (gravação restrita por conter dados de integração).
+- **Fonte:** [Jam 4 — Validação da Cor Secundária](https://jam.dev/c/41aaf50a-2506-471a-8eeb-943674571771).
 - **Autor exibido:** Pedro Figueiredo.
 - **Gravação:** 16/11/2026, 23:26:21 BRT, com duração de 19,35 s.
 - **Revisão:** 17/11/2026.
@@ -21,7 +21,7 @@ As duas tentativas retornaram HTTP 200 com `verifica_erro: false`. O GET após r
 | [cor_secundaria_invalida_00-08.jpg](cor_secundaria_invalida_00-08.jpg) | Cor Secundária inválida durante o fluxo de salvamento. | `3148f98ee9d06d664f23644a58a8215c4a18b21015add3d7316a587c4e8abe87` |
 | [cor_secundaria_invalida_persistida_00-16.jpg](cor_secundaria_invalida_persistida_00-16.jpg) | Mesmo valor inválido após recarregar e reabrir a aba. | `8cf049ef7ac0066bbfff24ffe050e94a0ed8a8bf0ab5a93279b22d932e726e1a` |
 | [linha_do_tempo.txt](linha_do_tempo.txt) | Cronologia de ações, rede e quadros consultados no Jam. | — |
-| [origem.url](origem.url) | Página testada. O link da gravação fica restrito. | — |
+| [origem.url](origem.url) | Endereço original do Jam. | — |
 
 ## Limites
 

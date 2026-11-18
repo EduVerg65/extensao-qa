@@ -1,6 +1,6 @@
 # Evidência — CT-RF144: Consultar novamente o status da integração de WhatsApp
 
-- **Fonte:** Jam 6 — Atualização manual de status (gravação restrita por conter dados de integração).
+- **Fonte:** [Jam 6 — Atualização manual de status](https://jam.dev/c/0da79ab0-b557-46af-a48c-60c1a8a62628).
 - **Autor exibido:** Pedro Figueiredo.
 - **Gravação:** 16/11/2026, 23:45:52 BRT, com duração de 18,67 s.
 - **Revisão:** 17/11/2026.
@@ -21,7 +21,7 @@ Sete cliques dispararam sete GETs bem-sucedidos. As respostas mantiveram `status
 | [atualizar_status_00-06.jpg](atualizar_status_00-06.jpg) | Cartão Atualizar Status durante a sequência de consultas. | `468559a96b737b9ccb612842a9ee7b0632b11c09e03fe3ee4f6e12c4f210b3d3` |
 | [erro_ao_conectar_00-16.jpg](erro_ao_conectar_00-16.jpg) | Mensagem exibida após a tentativa adicional de conexão. | `ca3bb43f3e5a7977747341ae0036840dd486b73085aa4125d686fc26731e32bb` |
 | [linha_do_tempo.txt](linha_do_tempo.txt) | Cronologia de ações, rede e quadros consultados no Jam. | — |
-| [origem.url](origem.url) | Página testada. O link da gravação fica restrito. | — |
+| [origem.url](origem.url) | Endereço original do Jam. | — |
 
 ## Limites
 

@@ -1,5 +1,5 @@
 CT-RF161 — Alternar o filtro de denúncias com a lista vazia
-Fonte: Jam 5 — Filtros de denúncias sem registros. Gravação restrita por conter dados de integração ou dados de alunos.
+Fonte: https://jam.dev/c/709cd210-f823-4348-805f-3cb61e7fb23f
 Gravação: 16/11/2026, 22:44:19 BRT. Duração: 10,89 s.
 Revisão documental: 18/11/2026.
 Página: https://sifit.centrion.com.br/aplicativo

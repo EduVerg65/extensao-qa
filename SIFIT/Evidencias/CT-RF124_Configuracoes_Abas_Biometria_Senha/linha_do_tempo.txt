@@ -1,5 +1,5 @@
 CT-RF124 — Navegar pelas abas de Configurações com a senha da biometria protegida
-Fonte: Jam PED-15, gravação restrita por conter dados de integração.
+Fonte: https://jam.dev/c/38105352-c89c-492e-bca1-78e2f4017ae2
 Gravação: 16/11/2026, 21:57:29 BRT; duração: 25,22 s.
 Revisão documental: 17/11/2026.
 Página: https://sifit.centrion.com.br/configuracoes

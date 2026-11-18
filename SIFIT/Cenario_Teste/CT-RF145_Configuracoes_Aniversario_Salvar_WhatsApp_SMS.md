@@ -17,7 +17,7 @@
 | Tipo / prioridade | Funcional manual / persistência · Média, proposta para triagem. |
 | Defeito | Nenhum no fluxo avaliado |
 | Encaminhamento | Usar como regressão da configuração e retestar o disparo em um ambiente de teste com destinatários autorizados. |
-| Fonte | Jam 1 — Mensagens de aniversário por WhatsApp e SMS (gravação restrita por conter dados de integração) e [evidências locais](../Evidencias/CT-RF145_Configuracoes_Aniversario_Salvar_WhatsApp_SMS/README.md). |
+| Fonte | [Jam 1 — Mensagens de aniversário por WhatsApp e SMS](https://jam.dev/c/01502381-e54a-40c9-b65b-e87c7f049154) e [evidências locais](../Evidencias/CT-RF145_Configuracoes_Aniversario_Salvar_WhatsApp_SMS/README.md). |
 
 ## Ambiente e dados de teste
 
@@ -90,7 +90,7 @@ Usar como regressão da configuração e retestar o disparo em um ambiente de te
 
 ## Evidências e limites
 
-- Jam 1 — Mensagens de aniversário por WhatsApp e SMS (gravação restrita por conter dados de integração).
+- [Jam 1 — Mensagens de aniversário por WhatsApp e SMS](https://jam.dev/c/01502381-e54a-40c9-b65b-e87c7f049154).
 - [Arquivos, origem e limites](../Evidencias/CT-RF145_Configuracoes_Aniversario_Salvar_WhatsApp_SMS/README.md).
 - [Canais WhatsApp e SMS marcados e respectivos textos antes de salvar](../Evidencias/CT-RF145_Configuracoes_Aniversario_Salvar_WhatsApp_SMS/mensagens_antes_de_salvar_00-21.jpg), [Canais e mensagens após recarregar e reabrir a aba](../Evidencias/CT-RF145_Configuracoes_Aniversario_Salvar_WhatsApp_SMS/mensagens_apos_reabrir_00-31.jpg).
 - [Linha do tempo](../Evidencias/CT-RF145_Configuracoes_Aniversario_Salvar_WhatsApp_SMS/linha_do_tempo.txt).

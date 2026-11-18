@@ -17,7 +17,7 @@
 | Tipo / prioridade | Funcional manual / validação · Média, proposta para triagem. |
 | Defeito | Sem defeito confirmado |
 | Encaminhamento | Isolar a URL no reteste, mantendo a instância e a chave preenchidas, e confirmar o formato aceito com produto. |
-| Fonte | Jam 2 — Validação da URL da API (gravação restrita por conter dados de integração) e [evidências locais](../Evidencias/CT-RF140_Integracoes_WhatsApp_Validar_URL_API/README.md). |
+| Fonte | [Jam 2 — Validação da URL da API](https://jam.dev/c/0d7c7274-c798-4e26-91a3-f8162b7ce932) e [evidências locais](../Evidencias/CT-RF140_Integracoes_WhatsApp_Validar_URL_API/README.md). |
 
 ## Ambiente e dados de teste
 
@@ -89,7 +89,7 @@ Isolar a URL no reteste, mantendo a instância e a chave preenchidas, e confirma
 
 ## Evidências e limites
 
-- Jam 2 — Validação da URL da API (gravação restrita por conter dados de integração).
+- [Jam 2 — Validação da URL da API](https://jam.dev/c/0d7c7274-c798-4e26-91a3-f8162b7ce932).
 - [Arquivos, origem e limites](../Evidencias/CT-RF140_Integracoes_WhatsApp_Validar_URL_API/README.md).
 - [Formulário após a tentativa de salvar, com valores de integração ocultos](../Evidencias/CT-RF140_Integracoes_WhatsApp_Validar_URL_API/tentativa_de_salvar_url_00-11.jpg), [Status visível após reabrir a aba Integrações](../Evidencias/CT-RF140_Integracoes_WhatsApp_Validar_URL_API/status_ao_reabrir_00-16.jpg).
 - [Linha do tempo](../Evidencias/CT-RF140_Integracoes_WhatsApp_Validar_URL_API/linha_do_tempo.txt).

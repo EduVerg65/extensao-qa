@@ -17,7 +17,7 @@
 | Tipo / prioridade | Funcional manual / validação · Média, proposta para triagem. |
 | Defeito | [BUG-053](../Relatorio-de-Bugs.md#bug-053), em triagem |
 | Encaminhamento | Confirmar o formato aceito pelo produto e retestar com endereços válidos e entradas inválidas em um equipamento de teste. |
-| Fonte | Jam 7 — Validação de IP do aparelho (gravação restrita por conter dados de integração ou dados de alunos) e [evidências locais](../Evidencias/CT-RF163_Configuracoes_Biometria_Rejeitar_IP_Invalido/README.md). |
+| Fonte | [Jam 7 — Validação de IP do aparelho](https://jam.dev/c/5b8eea1f-3c87-4497-8fb1-da49f09f9854) e [evidências locais](../Evidencias/CT-RF163_Configuracoes_Biometria_Rejeitar_IP_Invalido/README.md). |
 
 ## Ambiente e dados de teste
 
@@ -89,7 +89,7 @@ Confirmar o formato aceito pelo produto e retestar com endereços válidos e ent
 
 ## Evidências e limites
 
-- Jam 7 — Validação de IP do aparelho (gravação restrita por conter dados de integração ou dados de alunos).
+- [Jam 7 — Validação de IP do aparelho](https://jam.dev/c/5b8eea1f-3c87-4497-8fb1-da49f09f9854).
 - [Arquivos, origem e limites](../Evidencias/CT-RF163_Configuracoes_Biometria_Rejeitar_IP_Invalido/README.md).
 - [Campo IP em edição antes de salvar, com dados de conexão ocultos](../Evidencias/CT-RF163_Configuracoes_Biometria_Rejeitar_IP_Invalido/campo_ip_antes_de_salvar_00-14.jpg), [Campo IP após recarregar, com os valores de integração ocultos](../Evidencias/CT-RF163_Configuracoes_Biometria_Rejeitar_IP_Invalido/campo_ip_apos_recarregar_00-22.jpg).
 - [Linha do tempo](../Evidencias/CT-RF163_Configuracoes_Biometria_Rejeitar_IP_Invalido/linha_do_tempo.txt).

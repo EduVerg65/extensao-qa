@@ -17,7 +17,7 @@
 | Tipo / prioridade | Funcional manual / persistência · Média, proposta para triagem. |
 | Defeito | Nenhum no fluxo avaliado |
 | Encaminhamento | Usar como regressão de persistência e validar o efeito de Ativo sobre automações em um teste dedicado. |
-| Fonte | Jam 4 — Persistência da opção Ativo (gravação restrita por conter dados de integração) e [evidências locais](../Evidencias/CT-RF142_Integracoes_WhatsApp_Persistir_Ativo/README.md). |
+| Fonte | [Jam 4 — Persistência da opção Ativo](https://jam.dev/c/593bb290-936a-4e01-a5af-cc8041c4eb55) e [evidências locais](../Evidencias/CT-RF142_Integracoes_WhatsApp_Persistir_Ativo/README.md). |
 
 ## Ambiente e dados de teste
 
@@ -91,7 +91,7 @@ Usar como regressão de persistência e validar o efeito de Ativo sobre automaç
 
 ## Evidências e limites
 
-- Jam 4 — Persistência da opção Ativo (gravação restrita por conter dados de integração).
+- [Jam 4 — Persistência da opção Ativo](https://jam.dev/c/593bb290-936a-4e01-a5af-cc8041c4eb55).
 - [Arquivos, origem e limites](../Evidencias/CT-RF142_Integracoes_WhatsApp_Persistir_Ativo/README.md).
 - [Opção Ativo marcada após a confirmação pela API](../Evidencias/CT-RF142_Integracoes_WhatsApp_Persistir_Ativo/opcao_ativo_marcada_00-22.jpg), [Opção Ativo desmarcada após a gravação final](../Evidencias/CT-RF142_Integracoes_WhatsApp_Persistir_Ativo/opcao_ativo_desmarcada_00-29.jpg).
 - [Linha do tempo](../Evidencias/CT-RF142_Integracoes_WhatsApp_Persistir_Ativo/linha_do_tempo.txt).

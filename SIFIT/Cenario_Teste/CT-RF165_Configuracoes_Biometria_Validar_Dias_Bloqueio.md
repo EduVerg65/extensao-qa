@@ -17,7 +17,7 @@
 | Tipo / prioridade | Funcional manual / validação e feedback · Baixa, proposta para triagem. |
 | Defeito | [BUG-054](../Relatorio-de-Bugs.md#bug-054), em triagem |
 | Encaminhamento | Confirmar a regra de validação do produto e retestar -1, 0 e um número positivo com conferência da resposta e da mensagem da interface. |
-| Fonte | Jam 9 — Validação de dias de bloqueio da catraca (gravação restrita por conter dados de integração ou dados de alunos) e [evidências locais](../Evidencias/CT-RF165_Configuracoes_Biometria_Validar_Dias_Bloqueio/README.md). |
+| Fonte | [Jam 9 — Validação de dias de bloqueio da catraca](https://jam.dev/c/f607bc49-184f-4d55-81ab-7db825af6021) e [evidências locais](../Evidencias/CT-RF165_Configuracoes_Biometria_Validar_Dias_Bloqueio/README.md). |
 
 ## Ambiente e dados de teste
 
@@ -89,7 +89,7 @@ Confirmar a regra de validação do produto e retestar -1, 0 e um número positi
 
 ## Evidências e limites
 
-- Jam 9 — Validação de dias de bloqueio da catraca (gravação restrita por conter dados de integração ou dados de alunos).
+- [Jam 9 — Validação de dias de bloqueio da catraca](https://jam.dev/c/f607bc49-184f-4d55-81ab-7db825af6021).
 - [Arquivos, origem e limites](../Evidencias/CT-RF165_Configuracoes_Biometria_Validar_Dias_Bloqueio/README.md).
 - [Travar Catraca Após (dias) em -1 antes de salvar](../Evidencias/CT-RF165_Configuracoes_Biometria_Validar_Dias_Bloqueio/dias_bloqueio_negativo_00-04.jpg), [Campo exibe 0 após recarregar e retornar a Biometria](../Evidencias/CT-RF165_Configuracoes_Biometria_Validar_Dias_Bloqueio/dias_bloqueio_zero_apos_recarregar_00-12.jpg).
 - [Linha do tempo](../Evidencias/CT-RF165_Configuracoes_Biometria_Validar_Dias_Bloqueio/linha_do_tempo.txt).

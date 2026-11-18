@@ -1,5 +1,5 @@
 CT-RF152 — Alterar o tipo de avaliação para Bioimpedância
-Fonte: Jam 2 — Alteração do tipo para Bioimpedância. Gravação restrita por conter dados de integração.
+Fonte: https://jam.dev/c/8685a48a-ed9a-4169-a825-90036265b185
 Gravação: 16/11/2026, 23:11:02 BRT. Duração: 18,94 s.
 Revisão documental: 18/11/2026.
 Página: https://sifit.centrion.com.br/configuracoes

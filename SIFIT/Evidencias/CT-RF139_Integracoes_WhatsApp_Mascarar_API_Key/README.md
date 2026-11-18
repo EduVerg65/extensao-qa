@@ -1,6 +1,6 @@
 # Evidência — CT-RF139: Mascarar a API Key no formulário de WhatsApp
 
-- **Fonte:** Jam 1 — Mascaramento da API Key (gravação restrita por conter dados de integração).
+- **Fonte:** [Jam 1 — Mascaramento da API Key](https://jam.dev/c/ef0b67d5-1eea-49b7-84ea-bb306143df4a).
 - **Autor exibido:** Pedro Figueiredo.
 - **Gravação:** 16/11/2026, 23:37:22 BRT, com duração de 24,98 s.
 - **Revisão:** 17/11/2026.
@@ -21,7 +21,7 @@ A máscara permaneceu ao editar a API Key e após recarregar a página e voltar 
 | [api_key_durante_edicao_00-07.jpg](api_key_durante_edicao_00-07.jpg) | Campo API Key durante a edição, com caracteres mascarados. | `daa3cc4a6ed71a8dcf76b27d32facf9d97642c8d7aa7b433dda0663976e6100d` |
 | [api_key_ao_reabrir_00-21.jpg](api_key_ao_reabrir_00-21.jpg) | Campo API Key ainda mascarado após reabrir a aba. | `37647728d71b169e1120eff6b95bec9620ff2e514ffc6f352fdf695d786da42a` |
 | [linha_do_tempo.txt](linha_do_tempo.txt) | Cronologia de ações, rede e quadros consultados no Jam. | — |
-| [origem.url](origem.url) | Página testada. O link da gravação fica restrito. | — |
+| [origem.url](origem.url) | Endereço original do Jam. | — |
 
 ## Limites
 

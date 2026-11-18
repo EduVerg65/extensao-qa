@@ -17,7 +17,7 @@
 | Tipo / prioridade | Funcional manual / consulta · Média, proposta para triagem. |
 | Defeito | Nenhum no fluxo avaliado |
 | Encaminhamento | Usar como regressão da consulta e comparar dois avisos de teste diferentes para conferir o vínculo com a linha selecionada. |
-| Fonte | Jam 1 — Consulta de notificação existente (gravação restrita por conter dados de integração ou dados de alunos) e [evidências locais](../Evidencias/CT-RF157_Aplicativo_Consultar_Notificacao/README.md). |
+| Fonte | [Jam 1 — Consulta de notificação existente](https://jam.dev/c/32edc5de-4ad3-48ca-9e19-1db449bebcc5) e [evidências locais](../Evidencias/CT-RF157_Aplicativo_Consultar_Notificacao/README.md). |
 
 ## Ambiente e dados de teste
 
@@ -88,7 +88,7 @@ Usar como regressão da consulta e comparar dois avisos de teste diferentes para
 
 ## Evidências e limites
 
-- Jam 1 — Consulta de notificação existente (gravação restrita por conter dados de integração ou dados de alunos).
+- [Jam 1 — Consulta de notificação existente](https://jam.dev/c/32edc5de-4ad3-48ca-9e19-1db449bebcc5).
 - [Arquivos, origem e limites](../Evidencias/CT-RF157_Aplicativo_Consultar_Notificacao/README.md).
 - [Diálogo Notificação com destinatários e conteúdo da mensagem ocultado](../Evidencias/CT-RF157_Aplicativo_Consultar_Notificacao/detalhes_notificacao_00-10.jpg), [Ação Fechar no diálogo de consulta](../Evidencias/CT-RF157_Aplicativo_Consultar_Notificacao/acao_fechar_00-15.jpg).
 - [Linha do tempo](../Evidencias/CT-RF157_Aplicativo_Consultar_Notificacao/linha_do_tempo.txt).

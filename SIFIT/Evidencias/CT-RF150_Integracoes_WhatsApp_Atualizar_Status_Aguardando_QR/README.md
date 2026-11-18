@@ -1,6 +1,6 @@
 # Evidência — CT-RF150: Atualizar a verificação do WhatsApp enquanto aguarda QR Code
 
-- **Fonte:** Jam 6 — Atualização de status enquanto aguarda QR Code (gravação restrita por conter dados de integração).
+- **Fonte:** [Jam 6 — Atualização de status enquanto aguarda QR Code](https://jam.dev/c/7a892fd3-b6b0-49bc-a463-1b79c4b6ad50).
 - **Autor exibido:** Pedro Figueiredo.
 - **Gravação:** 16/11/2026, 23:36:13 BRT, com duração de 25,37 s.
 - **Revisão:** 17/11/2026.
@@ -21,7 +21,7 @@ Antes da consulta, a tela mostrava 02:32 em Última Verificação. A API devolve
 | [status_e_verificacao_antes_00-01.jpg](status_e_verificacao_antes_00-01.jpg) | Status Aguardando QR Code e horário de verificação antes da consulta. | `791992b74abaf074773972f1673fe52cc5186c20806835f7193036497b1ddebd` |
 | [status_e_verificacao_apos_00-22.jpg](status_e_verificacao_apos_00-22.jpg) | Mesmo status e novo horário de verificação depois de Atualizar. | `db5b64e0307e93ce139d19a4606814d58894fe0d591ec36ae085cfe9ae433e3f` |
 | [linha_do_tempo.txt](linha_do_tempo.txt) | Cronologia de ações, rede e quadros consultados no Jam. | — |
-| [origem.url](origem.url) | Página testada. O link da gravação fica restrito. | — |
+| [origem.url](origem.url) | Endereço original do Jam. | — |
 
 ## Limites
 

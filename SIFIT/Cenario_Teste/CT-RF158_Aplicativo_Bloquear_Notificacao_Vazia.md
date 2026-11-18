@@ -17,7 +17,7 @@
 | Tipo / prioridade | Funcional manual / validação · Média, proposta para triagem. |
 | Defeito | Nenhum no fluxo avaliado |
 | Encaminhamento | Usar como regressão do formulário vazio e repetir com entrada composta apenas de espaços. |
-| Fonte | Jam 2 — Validação de mensagem obrigatória (gravação restrita por conter dados de integração ou dados de alunos) e [evidências locais](../Evidencias/CT-RF158_Aplicativo_Bloquear_Notificacao_Vazia/README.md). |
+| Fonte | [Jam 2 — Validação de mensagem obrigatória](https://jam.dev/c/b9ebb9d0-e7c2-4ed8-a50d-00c2948e97fd) e [evidências locais](../Evidencias/CT-RF158_Aplicativo_Bloquear_Notificacao_Vazia/README.md). |
 
 ## Ambiente e dados de teste
 
@@ -88,7 +88,7 @@ Usar como regressão do formulário vazio e repetir com entrada composta apenas 
 
 ## Evidências e limites
 
-- Jam 2 — Validação de mensagem obrigatória (gravação restrita por conter dados de integração ou dados de alunos).
+- [Jam 2 — Validação de mensagem obrigatória](https://jam.dev/c/b9ebb9d0-e7c2-4ed8-a50d-00c2948e97fd).
 - [Arquivos, origem e limites](../Evidencias/CT-RF158_Aplicativo_Bloquear_Notificacao_Vazia/README.md).
 - [Formulário vazio, contador em zero e ação Enviar aviso desabilitada](../Evidencias/CT-RF158_Aplicativo_Bloquear_Notificacao_Vazia/notificacao_sem_mensagem_00-05.jpg), [Ação Enviar aviso permanece desabilitada durante a tentativa](../Evidencias/CT-RF158_Aplicativo_Bloquear_Notificacao_Vazia/acao_enviar_desabilitada_00-09.jpg).
 - [Linha do tempo](../Evidencias/CT-RF158_Aplicativo_Bloquear_Notificacao_Vazia/linha_do_tempo.txt).

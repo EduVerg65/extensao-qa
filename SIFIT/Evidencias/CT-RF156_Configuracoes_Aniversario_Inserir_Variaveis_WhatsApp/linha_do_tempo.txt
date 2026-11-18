@@ -1,5 +1,5 @@
 CT-RF156 — Inserir variáveis na mensagem de aniversário do WhatsApp
-Fonte: Jam 6 — Inserção de variáveis na mensagem de WhatsApp. Gravação restrita por conter dados de integração.
+Fonte: https://jam.dev/c/fb2c4949-c68d-4f90-b47c-44da9dbe58a3
 Gravação: 16/11/2026, 23:20:07 BRT. Duração: 32,14 s.
 Revisão documental: 18/11/2026.
 Página: https://sifit.centrion.com.br/configuracoes

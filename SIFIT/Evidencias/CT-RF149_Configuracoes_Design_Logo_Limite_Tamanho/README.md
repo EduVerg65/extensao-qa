@@ -1,6 +1,6 @@
 # Evidência — CT-RF149: Informar o limite de tamanho ao rejeitar o logo
 
-- **Fonte:** Jam 5 — Rejeição de logo pelo limite de tamanho (gravação restrita por conter dados de integração).
+- **Fonte:** [Jam 5 — Rejeição de logo pelo limite de tamanho](https://jam.dev/c/7aaeac50-8269-4cd6-b7f6-4c8c3740b0e5).
 - **Autor exibido:** Pedro Figueiredo.
 - **Gravação:** 16/11/2026, 23:27:58 BRT, com duração de 18,41 s.
 - **Revisão:** 17/11/2026.
@@ -21,7 +21,7 @@ A imagem selecionada apareceu na prévia. No salvamento, a API retornou HTTP 400
 | [previa_logo_00-08.jpg](previa_logo_00-08.jpg) | Prévia da imagem selecionada no cartão Logo. | `34f61a3e9ccbdcefcdb193ef912b60a5b0db7a85cb4f7d51bdd47bc548fea195` |
 | [erro_generico_ao_salvar_00-12.jpg](erro_generico_ao_salvar_00-12.jpg) | Diálogo genérico após a rejeição pela API. | `dc7ced449e04850fb2c2edcaaefe4238667197d302083332d0f32539022a77ac` |
 | [linha_do_tempo.txt](linha_do_tempo.txt) | Cronologia de ações, rede e quadros consultados no Jam. | — |
-| [origem.url](origem.url) | Página testada. O link da gravação fica restrito. | — |
+| [origem.url](origem.url) | Endereço original do Jam. | — |
 
 ## Limites
 

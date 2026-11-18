@@ -17,7 +17,7 @@
 | Tipo / prioridade | Funcional manual / persistência e interface · Média, proposta para triagem. |
 | Defeito | Nenhum no fluxo avaliado |
 | Encaminhamento | Usar como regressão da configuração e validar os campos do cadastro ao escolher cada tipo. |
-| Fonte | Jam 2 — Alteração do tipo para Bioimpedância (gravação restrita por conter dados de integração) e [evidências locais](../Evidencias/CT-RF152_Configuracoes_Avaliacao_Tipo_Bioimpedancia/README.md). |
+| Fonte | [Jam 2 — Alteração do tipo para Bioimpedância](https://jam.dev/c/8685a48a-ed9a-4169-a825-90036265b185) e [evidências locais](../Evidencias/CT-RF152_Configuracoes_Avaliacao_Tipo_Bioimpedancia/README.md). |
 
 ## Ambiente e dados de teste
 
@@ -91,7 +91,7 @@ Usar como regressão da configuração e validar os campos do cadastro ao escolh
 
 ## Evidências e limites
 
-- Jam 2 — Alteração do tipo para Bioimpedância (gravação restrita por conter dados de integração).
+- [Jam 2 — Alteração do tipo para Bioimpedância](https://jam.dev/c/8685a48a-ed9a-4169-a825-90036265b185).
 - [Arquivos, origem e limites](../Evidencias/CT-RF152_Configuracoes_Avaliacao_Tipo_Bioimpedancia/README.md).
 - [Tipo Dobras no formulário e no cartão de resumo antes da alteração](../Evidencias/CT-RF152_Configuracoes_Avaliacao_Tipo_Bioimpedancia/tipo_dobras_00-01.jpg), [Bioimpedância no formulário e no cartão após reabrir Avaliação](../Evidencias/CT-RF152_Configuracoes_Avaliacao_Tipo_Bioimpedancia/tipo_bioimpedancia_00-12.jpg).
 - [Linha do tempo](../Evidencias/CT-RF152_Configuracoes_Avaliacao_Tipo_Bioimpedancia/linha_do_tempo.txt).

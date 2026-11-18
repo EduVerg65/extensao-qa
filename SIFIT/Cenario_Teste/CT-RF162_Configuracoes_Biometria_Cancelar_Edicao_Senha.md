@@ -17,7 +17,7 @@
 | Tipo / prioridade | Funcional manual / cancelamento · Média, proposta para triagem. |
 | Defeito | Nenhum no fluxo avaliado |
 | Encaminhamento | Usar como regressão do cancelamento e repetir com outros campos de Biometria em um ambiente de teste. |
-| Fonte | Jam 6 — Cancelamento da edição no formulário de Biometria (gravação restrita por conter dados de integração ou dados de alunos) e [evidências locais](../Evidencias/CT-RF162_Configuracoes_Biometria_Cancelar_Edicao_Senha/README.md). O mascaramento é acompanhado no [BUG-046](../Relatorio-de-Bugs.md#bug-046). |
+| Fonte | [Jam 6 — Cancelamento da edição no formulário de Biometria](https://jam.dev/c/ccac55df-d2c8-4b11-898b-d12d87aced72) e [evidências locais](../Evidencias/CT-RF162_Configuracoes_Biometria_Cancelar_Edicao_Senha/README.md). O mascaramento é acompanhado no [BUG-046](../Relatorio-de-Bugs.md#bug-046). |
 
 ## Ambiente e dados de teste
 
@@ -89,7 +89,7 @@ Usar como regressão do cancelamento e repetir com outros campos de Biometria em
 
 ## Evidências e limites
 
-- Jam 6 — Cancelamento da edição no formulário de Biometria (gravação restrita por conter dados de integração ou dados de alunos).
+- [Jam 6 — Cancelamento da edição no formulário de Biometria](https://jam.dev/c/ccac55df-d2c8-4b11-898b-d12d87aced72).
 - [Arquivos, origem e limites](../Evidencias/CT-RF162_Configuracoes_Biometria_Cancelar_Edicao_Senha/README.md).
 - [Formulário antes de Cancelar, com os dados de conexão ocultos](../Evidencias/CT-RF162_Configuracoes_Biometria_Cancelar_Edicao_Senha/formulario_senha_antes_cancelar_00-08.jpg), [Aba Biometria reaberta após o cancelamento, com os mesmos campos ocultos](../Evidencias/CT-RF162_Configuracoes_Biometria_Cancelar_Edicao_Senha/biometria_reaberta_00-20.jpg).
 - [Linha do tempo](../Evidencias/CT-RF162_Configuracoes_Biometria_Cancelar_Edicao_Senha/linha_do_tempo.txt).

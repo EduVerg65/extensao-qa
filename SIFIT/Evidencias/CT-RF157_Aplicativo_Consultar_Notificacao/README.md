@@ -1,6 +1,6 @@
 # Evidência — CT-RF157: Consultar os detalhes de uma notificação
 
-- **Fonte:** Jam 1 — Consulta de notificação existente (gravação restrita por conter dados de integração ou dados de alunos).
+- **Fonte:** [Jam 1 — Consulta de notificação existente](https://jam.dev/c/32edc5de-4ad3-48ca-9e19-1db449bebcc5).
 - **Autor exibido:** Pedro Figueiredo.
 - **Gravação:** 16/11/2026, 22:39:05 BRT, com duração de 16,97 s.
 - **Revisão:** 18/11/2026.
@@ -21,7 +21,7 @@ A consulta retornou HTTP 200 e abriu Notificação com Todos os alunos. O texto 
 | [detalhes_notificacao_00-10.jpg](detalhes_notificacao_00-10.jpg) | Diálogo Notificação com destinatários e conteúdo da mensagem ocultado. | `13cd7820f125befed081085a89ab593d31c67c23af62918eb26dcf696a3bf30f` |
 | [acao_fechar_00-15.jpg](acao_fechar_00-15.jpg) | Ação Fechar no diálogo de consulta. | `46e55c1b5b0e01d0164f8b672f3d0db9a0845dc95c827518fd17a07710c024bd` |
 | [linha_do_tempo.txt](linha_do_tempo.txt) | Cronologia de ações, rede e quadros consultados no Jam. | — |
-| [origem.url](origem.url) | Página testada. O link da gravação fica restrito. | — |
+| [origem.url](origem.url) | Endereço original do Jam. | — |
 
 ## Limites
 

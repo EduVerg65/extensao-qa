@@ -17,7 +17,7 @@
 | Tipo / prioridade | Funcional manual / tratamento de erro · Média, proposta para triagem. |
 | Defeito | [BUG-050](../Relatorio-de-Bugs.md#bug-050), em triagem |
 | Encaminhamento | Retestar com falha controlada e configuração válida de controle, conferindo o contrato da resposta e o estado final apresentado. |
-| Fonte | Jam 5 — Tentativas de conexão pela Evolution API (gravação restrita por conter dados de integração) e [evidências locais](../Evidencias/CT-RF143_Integracoes_WhatsApp_Conectar_Evolution/README.md). |
+| Fonte | [Jam 5 — Tentativas de conexão pela Evolution API](https://jam.dev/c/087b5e4f-7d73-4be3-979d-9a39f474b836) e [evidências locais](../Evidencias/CT-RF143_Integracoes_WhatsApp_Conectar_Evolution/README.md). |
 
 ## Ambiente e dados de teste
 
@@ -89,7 +89,7 @@ Retestar com falha controlada e configuração válida de controle, conferindo o
 
 ## Evidências e limites
 
-- Jam 5 — Tentativas de conexão pela Evolution API (gravação restrita por conter dados de integração).
+- [Jam 5 — Tentativas de conexão pela Evolution API](https://jam.dev/c/087b5e4f-7d73-4be3-979d-9a39f474b836).
 - [Arquivos, origem e limites](../Evidencias/CT-RF143_Integracoes_WhatsApp_Conectar_Evolution/README.md).
 - [Ação Conectar WhatsApp antes da primeira tentativa](../Evidencias/CT-RF143_Integracoes_WhatsApp_Conectar_Evolution/conectar_whatsapp_00-01.jpg), [Mensagem de falha exibida pela interface](../Evidencias/CT-RF143_Integracoes_WhatsApp_Conectar_Evolution/falha_evolution_00-16.jpg).
 - [Linha do tempo](../Evidencias/CT-RF143_Integracoes_WhatsApp_Conectar_Evolution/linha_do_tempo.txt).

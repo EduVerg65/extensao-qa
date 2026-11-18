@@ -1,5 +1,5 @@
 CT-RF162 — Cancelar a edição da senha de Biometria
-Fonte: Jam 6 — Cancelamento da edição no formulário de Biometria. Gravação restrita por conter dados de integração ou dados de alunos.
+Fonte: https://jam.dev/c/ccac55df-d2c8-4b11-898b-d12d87aced72
 Gravação: 16/11/2026, 23:02:14 BRT. Duração: 22,59 s.
 Revisão documental: 18/11/2026.
 Página: https://sifit.centrion.com.br/configuracoes

@@ -1,5 +1,5 @@
 CT-RF153 — Habilitar Teste Físico nas configurações de avaliação
-Fonte: Jam 3 — Habilitação de Teste Físico. Gravação restrita por conter dados de integração.
+Fonte: https://jam.dev/c/86466f6e-b180-439f-ab1d-dde2484595a3
 Gravação: 16/11/2026, 23:12:07 BRT. Duração: 17,30 s.
 Revisão documental: 18/11/2026.
 Página: https://sifit.centrion.com.br/configuracoes

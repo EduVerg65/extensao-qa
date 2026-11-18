@@ -1,5 +1,5 @@
 CT-RF141 — Bloquear o salvamento com Nome da Instância vazio
-Fonte: Jam 3 — Obrigatoriedade do Nome da Instância. Gravação restrita por conter dados de integração.
+Fonte: https://jam.dev/c/8bb7f049-0299-49c9-9fb5-ff7b144f58d2
 Gravação: 16/11/2026, 23:41:03 BRT. Duração: 28,69 s.
 Revisão documental: 17/11/2026.
 Página: https://sifit.centrion.com.br/configuracoes

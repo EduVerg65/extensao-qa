@@ -17,7 +17,7 @@
 | Tipo / prioridade | Funcional manual / filtragem de lista vazia · Média, proposta para triagem. |
 | Defeito | Nenhum no fluxo avaliado |
 | Encaminhamento | Retestar com denúncias de teste em estados diferentes e conferir os registros exibidos em cada filtro. |
-| Fonte | Jam 5 — Filtros de denúncias sem registros (gravação restrita por conter dados de integração ou dados de alunos) e [evidências locais](../Evidencias/CT-RF161_Aplicativo_Denuncias_Filtros_Estados_Vazios/README.md). |
+| Fonte | [Jam 5 — Filtros de denúncias sem registros](https://jam.dev/c/709cd210-f823-4348-805f-3cb61e7fb23f) e [evidências locais](../Evidencias/CT-RF161_Aplicativo_Denuncias_Filtros_Estados_Vazios/README.md). |
 
 ## Ambiente e dados de teste
 
@@ -88,7 +88,7 @@ Retestar com denúncias de teste em estados diferentes e conferir os registros e
 
 ## Evidências e limites
 
-- Jam 5 — Filtros de denúncias sem registros (gravação restrita por conter dados de integração ou dados de alunos).
+- [Jam 5 — Filtros de denúncias sem registros](https://jam.dev/c/709cd210-f823-4348-805f-3cb61e7fb23f).
 - [Arquivos, origem e limites](../Evidencias/CT-RF161_Aplicativo_Denuncias_Filtros_Estados_Vazios/README.md).
 - [Lista de denúncias em todas, com o respectivo estado vazio](../Evidencias/CT-RF161_Aplicativo_Denuncias_Filtros_Estados_Vazios/denuncias_todas_00-06.jpg), [Lista filtrada por pendentes, com o aviso correspondente](../Evidencias/CT-RF161_Aplicativo_Denuncias_Filtros_Estados_Vazios/denuncias_pendentes_00-09.jpg).
 - [Linha do tempo](../Evidencias/CT-RF161_Aplicativo_Denuncias_Filtros_Estados_Vazios/linha_do_tempo.txt).

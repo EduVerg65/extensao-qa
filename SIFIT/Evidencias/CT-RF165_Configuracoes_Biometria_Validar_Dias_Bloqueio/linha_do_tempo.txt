@@ -1,5 +1,5 @@
 CT-RF165 — Validar dias negativos para travar a catraca
-Fonte: Jam 9 — Validação de dias de bloqueio da catraca. Gravação restrita por conter dados de integração ou dados de alunos.
+Fonte: https://jam.dev/c/f607bc49-184f-4d55-81ab-7db825af6021
 Gravação: 16/11/2026, 23:07:08 BRT. Duração: 15,68 s.
 Revisão documental: 18/11/2026.
 Página: https://sifit.centrion.com.br/configuracoes

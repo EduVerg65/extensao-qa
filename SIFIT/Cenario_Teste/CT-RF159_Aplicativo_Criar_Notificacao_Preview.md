@@ -17,7 +17,7 @@
 | Tipo / prioridade | Funcional manual / criação e consulta · Média, proposta para triagem. |
 | Defeito | Nenhum no fluxo avaliado |
 | Encaminhamento | Usar como regressão da criação e validar o recebimento em um dispositivo de teste em uma execução dedicada. |
-| Fonte | Jam 3 — Criação de notificação com prévia (gravação restrita por conter dados de integração ou dados de alunos) e [evidências locais](../Evidencias/CT-RF159_Aplicativo_Criar_Notificacao_Preview/README.md). |
+| Fonte | [Jam 3 — Criação de notificação com prévia](https://jam.dev/c/6720f25a-45e9-4e8d-9c5f-c48b0bfec5c0) e [evidências locais](../Evidencias/CT-RF159_Aplicativo_Criar_Notificacao_Preview/README.md). |
 
 ## Ambiente e dados de teste
 
@@ -90,7 +90,7 @@ Usar como regressão da criação e validar o recebimento em um dispositivo de t
 
 ## Evidências e limites
 
-- Jam 3 — Criação de notificação com prévia (gravação restrita por conter dados de integração ou dados de alunos).
+- [Jam 3 — Criação de notificação com prévia](https://jam.dev/c/6720f25a-45e9-4e8d-9c5f-c48b0bfec5c0).
 - [Arquivos, origem e limites](../Evidencias/CT-RF159_Aplicativo_Criar_Notificacao_Preview/README.md).
 - [Mensagem de teste no formulário e na prévia para celular](../Evidencias/CT-RF159_Aplicativo_Criar_Notificacao_Preview/mensagem_e_previa_00-18.jpg), [Novo aviso de teste no início da listagem](../Evidencias/CT-RF159_Aplicativo_Criar_Notificacao_Preview/notificacao_criada_00-26.jpg).
 - [Linha do tempo](../Evidencias/CT-RF159_Aplicativo_Criar_Notificacao_Preview/linha_do_tempo.txt).

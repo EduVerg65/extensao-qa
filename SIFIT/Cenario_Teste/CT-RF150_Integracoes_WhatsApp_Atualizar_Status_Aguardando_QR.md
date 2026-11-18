@@ -17,7 +17,7 @@
 | Tipo / prioridade | Funcional manual / consulta e interface · Média, proposta para triagem. |
 | Defeito | Nenhum no fluxo avaliado |
 | Encaminhamento | Usar como regressão da atualização visual e cobrir, com provedor de teste, a mudança de aguardando QR Code para conectado. |
-| Fonte | Jam 6 — Atualização de status enquanto aguarda QR Code (gravação restrita por conter dados de integração) e [evidências locais](../Evidencias/CT-RF150_Integracoes_WhatsApp_Atualizar_Status_Aguardando_QR/README.md). A consulta em estado desconectado está no [CT-RF144](CT-RF144_Integracoes_WhatsApp_Atualizar_Status.md). |
+| Fonte | [Jam 6 — Atualização de status enquanto aguarda QR Code](https://jam.dev/c/7a892fd3-b6b0-49bc-a463-1b79c4b6ad50) e [evidências locais](../Evidencias/CT-RF150_Integracoes_WhatsApp_Atualizar_Status_Aguardando_QR/README.md). A consulta em estado desconectado está no [CT-RF144](CT-RF144_Integracoes_WhatsApp_Atualizar_Status.md). |
 
 ## Ambiente e dados de teste
 
@@ -88,7 +88,7 @@ Usar como regressão da atualização visual e cobrir, com provedor de teste, a 
 
 ## Evidências e limites
 
-- Jam 6 — Atualização de status enquanto aguarda QR Code (gravação restrita por conter dados de integração).
+- [Jam 6 — Atualização de status enquanto aguarda QR Code](https://jam.dev/c/7a892fd3-b6b0-49bc-a463-1b79c4b6ad50).
 - [Arquivos, origem e limites](../Evidencias/CT-RF150_Integracoes_WhatsApp_Atualizar_Status_Aguardando_QR/README.md).
 - [Status Aguardando QR Code e horário de verificação antes da consulta](../Evidencias/CT-RF150_Integracoes_WhatsApp_Atualizar_Status_Aguardando_QR/status_e_verificacao_antes_00-01.jpg), [Mesmo status e novo horário de verificação depois de Atualizar](../Evidencias/CT-RF150_Integracoes_WhatsApp_Atualizar_Status_Aguardando_QR/status_e_verificacao_apos_00-22.jpg).
 - [Linha do tempo](../Evidencias/CT-RF150_Integracoes_WhatsApp_Atualizar_Status_Aguardando_QR/linha_do_tempo.txt).

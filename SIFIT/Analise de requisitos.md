@@ -2854,7 +2854,7 @@ A hora de 00:55 é a referência exibida pelo SIFIT. O teste valida a exibição
 | Caso | [CT-RF124](Cenario_Teste/CT-RF124_Configuracoes_Abas_Biometria_Senha.md) |
 | Situação observada | Reprovado nas evidências. A navegação funcionou. A aba Biometria exibiu o valor do campo Senha sem mascaramento. |
 | Defeito | [BUG-046](Relatorio-de-Bugs.md#bug-046), em triagem |
-| Evidências | Jam — PED-15 (gravação restrita por conter dados de integração) e [Evidências](Evidencias/CT-RF124_Configuracoes_Abas_Biometria_Senha/README.md). |
+| Evidências | [Jam — PED-15](https://jam.dev/c/38105352-c89c-492e-bca1-78e2f4017ae2) e [Evidências](Evidencias/CT-RF124_Configuracoes_Abas_Biometria_Senha/README.md). |
 
 ### Critérios de aceitação do RF124
 
@@ -3179,7 +3179,7 @@ O estado ativo persistiu após Atualizar. A divergência observada ocorreu entre
 | Caso | [CT-RF137](Cenario_Teste/CT-RF137_Central_Risco_Evasao_Executar_Agora.md) |
 | Situação observada | Aprovado conforme a gravação. Executar agora terminou com sucesso. O relatório e a nova execução ficaram disponíveis na Central. |
 | Defeito | Nenhum no fluxo avaliado |
-| Evidências | Jam — PED-04 — Executar Risco de Evasão (gravação restrita por conter dados individuais da avaliação de risco) e [Evidências](Evidencias/CT-RF137_Central_Risco_Evasao_Executar_Agora/README.md). |
+| Evidências | [Jam — PED-04 — Executar Risco de Evasão](https://jam.dev/c/be5418c7-8d87-4b6c-9c64-a9b33b5f7da6) e [Evidências](Evidencias/CT-RF137_Central_Risco_Evasao_Executar_Agora/README.md). |
 
 ### Critérios de aceitação do RF137
 
@@ -3204,7 +3204,7 @@ A aprovação se limita à execução e à exibição do resultado na Central. O
 | Caso | [CT-RF138](Cenario_Teste/CT-RF138_Central_Abrir_Resultados_Risco_Evasao.md) |
 | Situação observada | Aprovado conforme a gravação. Ver resultados abriu o relatório existente com a mesma distribuição retornada pela API: 0 alto, 23 médio e 0 baixo. |
 | Defeito | Nenhum no fluxo avaliado |
-| Evidências | Jam — PED-05 — Ver resultados de Risco de Evasão (gravação restrita por conter dados individuais da avaliação de risco) e [Evidências](Evidencias/CT-RF138_Central_Abrir_Resultados_Risco_Evasao/README.md). |
+| Evidências | [Jam — PED-05 — Ver resultados de Risco de Evasão](https://jam.dev/c/ac5bce26-f4a8-401b-bb23-d09d5253751a) e [Evidências](Evidencias/CT-RF138_Central_Abrir_Resultados_Risco_Evasao/README.md). |
 
 ### Critérios de aceitação do RF138
 
@@ -3229,7 +3229,7 @@ A evidência cobre a abertura e os totais. O funcionamento dos filtros de nível
 | Caso | [CT-RF139](Cenario_Teste/CT-RF139_Integracoes_WhatsApp_Mascarar_API_Key.md) |
 | Situação observada | Aprovado conforme a gravação. A API Key permaneceu mascarada na edição e na reabertura da aba. A gravação não registrou POST de salvamento. |
 | Defeito | Nenhum no fluxo avaliado |
-| Evidências | Jam 1 — Mascaramento da API Key (gravação restrita por conter dados de integração) e [Evidências](Evidencias/CT-RF139_Integracoes_WhatsApp_Mascarar_API_Key/README.md). |
+| Evidências | [Jam 1 — Mascaramento da API Key](https://jam.dev/c/ef0b67d5-1eea-49b7-84ea-bb306143df4a) e [Evidências](Evidencias/CT-RF139_Integracoes_WhatsApp_Mascarar_API_Key/README.md). |
 
 ### Critérios de aceitação do RF139
 
@@ -3254,7 +3254,7 @@ A aprovação cobre o mascaramento visual e a ausência de envio ao editar sem s
 | Caso | [CT-RF140](Cenario_Teste/CT-RF140_Integracoes_WhatsApp_Validar_URL_API.md) |
 | Situação observada | A validar — regra ou contexto pendente. A tentativa com URL fora do formato também tinha a instância vazia. Houve reconsulta sem POST de configuração, e a regra da URL ficou a validar. |
 | Defeito | Sem defeito confirmado |
-| Evidências | Jam 2 — Validação da URL da API (gravação restrita por conter dados de integração) e [Evidências](Evidencias/CT-RF140_Integracoes_WhatsApp_Validar_URL_API/README.md). |
+| Evidências | [Jam 2 — Validação da URL da API](https://jam.dev/c/0d7c7274-c798-4e26-91a3-f8162b7ce932) e [Evidências](Evidencias/CT-RF140_Integracoes_WhatsApp_Validar_URL_API/README.md). |
 
 ### Critérios de aceitação do RF140
 
@@ -3279,7 +3279,7 @@ O Nome da Instância vazio impede atribuir a ausência de POST à regra de URL. 
 | Caso | [CT-RF141](Cenario_Teste/CT-RF141_Integracoes_WhatsApp_Instancia_Obrigatoria.md) |
 | Situação observada | Aprovado conforme a gravação. O nome preenchido foi salvo. As tentativas com a instância vazia ficaram sem POST e o valor anterior voltou ao reabrir. |
 | Defeito | Nenhum no fluxo avaliado |
-| Evidências | Jam 3 — Obrigatoriedade do Nome da Instância (gravação restrita por conter dados de integração) e [Evidências](Evidencias/CT-RF141_Integracoes_WhatsApp_Instancia_Obrigatoria/README.md). |
+| Evidências | [Jam 3 — Obrigatoriedade do Nome da Instância](https://jam.dev/c/8bb7f049-0299-49c9-9fb5-ff7b144f58d2) e [Evidências](Evidencias/CT-RF141_Integracoes_WhatsApp_Instancia_Obrigatoria/README.md). |
 
 ### Critérios de aceitação do RF141
 
@@ -3304,7 +3304,7 @@ A evidência confirma o bloqueio e a persistência do valor anterior. A regra pa
 | Caso | [CT-RF142](Cenario_Teste/CT-RF142_Integracoes_WhatsApp_Persistir_Ativo.md) |
 | Situação observada | Aprovado conforme a gravação. Os dois estados de Ativo foram salvos e confirmados por GET, com a conexão permanecendo desconectada. |
 | Defeito | Nenhum no fluxo avaliado |
-| Evidências | Jam 4 — Persistência da opção Ativo (gravação restrita por conter dados de integração) e [Evidências](Evidencias/CT-RF142_Integracoes_WhatsApp_Persistir_Ativo/README.md). |
+| Evidências | [Jam 4 — Persistência da opção Ativo](https://jam.dev/c/593bb290-936a-4e01-a5af-cc8041c4eb55) e [Evidências](Evidencias/CT-RF142_Integracoes_WhatsApp_Persistir_Ativo/README.md). |
 
 ### Critérios de aceitação do RF142
 
@@ -3329,7 +3329,7 @@ A aprovação é restrita à persistência da opção. A execução de automaç�
 | Caso | [CT-RF143](Cenario_Teste/CT-RF143_Integracoes_WhatsApp_Conectar_Evolution.md) |
 | Situação observada | Reprovado nas evidências. As duas tentativas exibiram falha. A resposta trouxe a mesma falha, mas devolveu `verifica_erro: false`. |
 | Defeito | [BUG-050](Relatorio-de-Bugs.md#bug-050), em triagem |
-| Evidências | Jam 5 — Tentativas de conexão pela Evolution API (gravação restrita por conter dados de integração) e [Evidências](Evidencias/CT-RF143_Integracoes_WhatsApp_Conectar_Evolution/README.md). |
+| Evidências | [Jam 5 — Tentativas de conexão pela Evolution API](https://jam.dev/c/087b5e4f-7d73-4be3-979d-9a39f474b836) e [Evidências](Evidencias/CT-RF143_Integracoes_WhatsApp_Conectar_Evolution/README.md). |
 
 ### Critérios de aceitação do RF143
 
@@ -3354,7 +3354,7 @@ Os parâmetros do provedor não foram validados. A causa da falha de conexão e 
 | Caso | [CT-RF144](Cenario_Teste/CT-RF144_Integracoes_WhatsApp_Atualizar_Status.md) |
 | Situação observada | Aprovado conforme a gravação. Sete consultas retornaram HTTP 200 com o estado desconectado e o horário de verificação atualizado. |
 | Defeito | [BUG-050](Relatorio-de-Bugs.md#bug-050) na tentativa posterior de conexão |
-| Evidências | Jam 6 — Atualização manual de status (gravação restrita por conter dados de integração) e [Evidências](Evidencias/CT-RF144_Integracoes_WhatsApp_Atualizar_Status/README.md). |
+| Evidências | [Jam 6 — Atualização manual de status](https://jam.dev/c/0da79ab0-b557-46af-a48c-60c1a8a62628) e [Evidências](Evidencias/CT-RF144_Integracoes_WhatsApp_Atualizar_Status/README.md). |
 
 ### Critérios de aceitação do RF144
 
@@ -3379,7 +3379,7 @@ A aprovação cobre o comando de consulta e a resposta em estado desconectado. A
 | Caso | [CT-RF145](Cenario_Teste/CT-RF145_Configuracoes_Aniversario_Salvar_WhatsApp_SMS.md) |
 | Situação observada | Aprovado conforme a gravação. WhatsApp e SMS e os dois textos de teste reapareceram após recarregar e reabrir Aniversário. |
 | Defeito | Nenhum no fluxo avaliado |
-| Evidências | Jam 1 — Mensagens de aniversário por WhatsApp e SMS (gravação restrita por conter dados de integração) e [Evidências](Evidencias/CT-RF145_Configuracoes_Aniversario_Salvar_WhatsApp_SMS/README.md). |
+| Evidências | [Jam 1 — Mensagens de aniversário por WhatsApp e SMS](https://jam.dev/c/01502381-e54a-40c9-b65b-e87c7f049154) e [Evidências](Evidencias/CT-RF145_Configuracoes_Aniversario_Salvar_WhatsApp_SMS/README.md). |
 
 ### Critérios de aceitação do RF145
 
@@ -3404,7 +3404,7 @@ A gravação verifica a configuração. O disparo automático, a entrega e a sub
 | Caso | [CT-RF146](Cenario_Teste/CT-RF146_Configuracoes_Pagamento_Online_Desativar.md) |
 | Situação observada | Aprovado conforme a gravação. A resposta e a tela confirmaram Não após recarregar. O salvamento de restauração para Sim retornou sucesso. |
 | Defeito | Nenhum no fluxo avaliado |
-| Evidências | Jam 2 — Desativação do Pagamento Online (gravação restrita por conter dados de integração) e [Evidências](Evidencias/CT-RF146_Configuracoes_Pagamento_Online_Desativar/README.md). |
+| Evidências | [Jam 2 — Desativação do Pagamento Online](https://jam.dev/c/845de9b6-12f7-4002-a8ba-82e1a85affba) e [Evidências](Evidencias/CT-RF146_Configuracoes_Pagamento_Online_Desativar/README.md). |
 
 ### Critérios de aceitação do RF146
 
@@ -3429,7 +3429,7 @@ A aprovação cobre a persistência de Não. A gravação termina após o POST d
 | Caso | [CT-RF147](Cenario_Teste/CT-RF147_Configuracoes_Design_Salvar_Cor_Principal.md) |
 | Situação observada | Aprovado conforme a gravação. O código #663399 persistiu e a aba Design exibiu o valor com a amostra correspondente. |
 | Defeito | Nenhum no fluxo avaliado |
-| Evidências | Jam 3 — Persistência da Cor Principal (gravação restrita por conter dados de integração) e [Evidências](Evidencias/CT-RF147_Configuracoes_Design_Salvar_Cor_Principal/README.md). |
+| Evidências | [Jam 3 — Persistência da Cor Principal](https://jam.dev/c/c4f77e18-3b66-4c68-97e7-bd70a9bb70f9) e [Evidências](Evidencias/CT-RF147_Configuracoes_Design_Salvar_Cor_Principal/README.md). |
 
 ### Critérios de aceitação do RF147
 
@@ -3454,7 +3454,7 @@ O resultado cobre a Cor Principal e a amostra da aba Design. A aplicação da co
 | Caso | [CT-RF148](Cenario_Teste/CT-RF148_Configuracoes_Design_Validar_Cor_Secundaria.md) |
 | Situação observada | Reprovado nas evidências. As duas tentativas com #ZZZZZZ retornaram sucesso. O código fora do conjunto hexadecimal persistiu após recarregar. |
 | Defeito | [BUG-051](Relatorio-de-Bugs.md#bug-051), em triagem |
-| Evidências | Jam 4 — Validação da Cor Secundária (gravação restrita por conter dados de integração) e [Evidências](Evidencias/CT-RF148_Configuracoes_Design_Validar_Cor_Secundaria/README.md). |
+| Evidências | [Jam 4 — Validação da Cor Secundária](https://jam.dev/c/41aaf50a-2506-471a-8eeb-943674571771) e [Evidências](Evidencias/CT-RF148_Configuracoes_Design_Validar_Cor_Secundaria/README.md). |
 
 ### Critérios de aceitação do RF148
 
@@ -3479,7 +3479,7 @@ O defeito foi confirmado pela leitura posterior. O efeito do código inválido n
 | Caso | [CT-RF149](Cenario_Teste/CT-RF149_Configuracoes_Design_Logo_Limite_Tamanho.md) |
 | Situação observada | Reprovado nas evidências. A API rejeitou pelo limite de 6 MB. A interface exibiu apenas a mensagem genérica de erro ao salvar. |
 | Defeito | [BUG-052](Relatorio-de-Bugs.md#bug-052), em triagem |
-| Evidências | Jam 5 — Rejeição de logo pelo limite de tamanho (gravação restrita por conter dados de integração) e [Evidências](Evidencias/CT-RF149_Configuracoes_Design_Logo_Limite_Tamanho/README.md). |
+| Evidências | [Jam 5 — Rejeição de logo pelo limite de tamanho](https://jam.dev/c/7aaeac50-8269-4cd6-b7f6-4c8c3740b0e5) e [Evidências](Evidencias/CT-RF149_Configuracoes_Design_Logo_Limite_Tamanho/README.md). |
 
 ### Critérios de aceitação do RF149
 
@@ -3504,7 +3504,7 @@ O total em bytes corresponde à requisição inteira. O tamanho exato do arquivo
 | Caso | [CT-RF150](Cenario_Teste/CT-RF150_Integracoes_WhatsApp_Atualizar_Status_Aguardando_QR.md) |
 | Situação observada | Aprovado conforme a gravação. A API manteve o estado conectando, e a tela continuou em Aguardando QR Code com a verificação atualizada de 02:32 para 02:35. |
 | Defeito | Nenhum no fluxo avaliado |
-| Evidências | Jam 6 — Atualização de status enquanto aguarda QR Code (gravação restrita por conter dados de integração) e [Evidências](Evidencias/CT-RF150_Integracoes_WhatsApp_Atualizar_Status_Aguardando_QR/README.md). |
+| Evidências | [Jam 6 — Atualização de status enquanto aguarda QR Code](https://jam.dev/c/7a892fd3-b6b0-49bc-a463-1b79c4b6ad50) e [Evidências](Evidencias/CT-RF150_Integracoes_WhatsApp_Atualizar_Status_Aguardando_QR/README.md). |
 
 ### Critérios de aceitação do RF150
 
@@ -3529,7 +3529,7 @@ O horário citado é o exibido pelo SIFIT e pela API. A gravação cobre a consu
 | Caso | [CT-RF151](Cenario_Teste/CT-RF151_Configuracoes_Avaliacao_Desativar_Cobranca.md) |
 | Situação observada | Aprovado conforme a gravação. A consulta e a aba Avaliação confirmaram Não após recarregar. |
 | Defeito | Nenhum no fluxo avaliado |
-| Evidências | Jam 1 — Desativação da cobrança da avaliação (gravação restrita por conter dados de integração) e [Evidências](Evidencias/CT-RF151_Configuracoes_Avaliacao_Desativar_Cobranca/README.md). |
+| Evidências | [Jam 1 — Desativação da cobrança da avaliação](https://jam.dev/c/851c15d8-4076-4493-ad3f-c2ba0316d0ca) e [Evidências](Evidencias/CT-RF151_Configuracoes_Avaliacao_Desativar_Cobranca/README.md). |
 
 ### Critérios de aceitação do RF151
 
@@ -3554,7 +3554,7 @@ A evidência cobre a preferência salva. A geração de cobranças e o reflexo n
 | Caso | [CT-RF152](Cenario_Teste/CT-RF152_Configuracoes_Avaliacao_Tipo_Bioimpedancia.md) |
 | Situação observada | Aprovado conforme a gravação. A consulta e a aba Avaliação confirmaram Bioimpedância após recarregar. O cartão de resumo Avaliação também exibiu Bioimpedância. |
 | Defeito | Nenhum no fluxo avaliado |
-| Evidências | Jam 2 — Alteração do tipo para Bioimpedância (gravação restrita por conter dados de integração) e [Evidências](Evidencias/CT-RF152_Configuracoes_Avaliacao_Tipo_Bioimpedancia/README.md). |
+| Evidências | [Jam 2 — Alteração do tipo para Bioimpedância](https://jam.dev/c/8685a48a-ed9a-4169-a825-90036265b185) e [Evidências](Evidencias/CT-RF152_Configuracoes_Avaliacao_Tipo_Bioimpedancia/README.md). |
 
 ### Critérios de aceitação do RF152
 
@@ -3579,7 +3579,7 @@ O tipo foi conferido no formulário e no cartão de resumo de Configurações. A
 | Caso | [CT-RF153](Cenario_Teste/CT-RF153_Configuracoes_Avaliacao_Habilitar_Teste_Fisico.md) |
 | Situação observada | Aprovado conforme a gravação. A consulta e a aba Avaliação confirmaram Sim após recarregar. |
 | Defeito | Nenhum no fluxo avaliado |
-| Evidências | Jam 3 — Habilitação de Teste Físico (gravação restrita por conter dados de integração) e [Evidências](Evidencias/CT-RF153_Configuracoes_Avaliacao_Habilitar_Teste_Fisico/README.md). |
+| Evidências | [Jam 3 — Habilitação de Teste Físico](https://jam.dev/c/86466f6e-b180-439f-ab1d-dde2484595a3) e [Evidências](Evidencias/CT-RF153_Configuracoes_Avaliacao_Habilitar_Teste_Fisico/README.md). |
 
 ### Critérios de aceitação do RF153
 
@@ -3604,7 +3604,7 @@ A gravação cobre a alteração e a leitura da preferência. A disponibilidade 
 | Caso | [CT-RF154](Cenario_Teste/CT-RF154_Configuracoes_Aniversario_Desabilitar_Envio_Automatico.md) |
 | Situação observada | Aprovado conforme a gravação. A consulta e a aba Aniversário confirmaram Desabilitado após recarregar. |
 | Defeito | Nenhum no fluxo avaliado |
-| Evidências | Jam 4 — Desativação do envio automático de aniversário (gravação restrita por conter dados de integração) e [Evidências](Evidencias/CT-RF154_Configuracoes_Aniversario_Desabilitar_Envio_Automatico/README.md). |
+| Evidências | [Jam 4 — Desativação do envio automático de aniversário](https://jam.dev/c/ee8a2ba9-164c-42bb-8efe-927dd6c534d5) e [Evidências](Evidencias/CT-RF154_Configuracoes_Aniversario_Desabilitar_Envio_Automatico/README.md). |
 
 ### Critérios de aceitação do RF154
 
@@ -3629,7 +3629,7 @@ Os canais estavam desmarcados na gravação. O disparo de mensagens e a interaç
 | Caso | [CT-RF155](Cenario_Teste/CT-RF155_Configuracoes_Aniversario_Cancelar_Mensagem_WhatsApp.md) |
 | Situação observada | Aprovado conforme a gravação. Cancelar retornou à Página Inicial e preservou a seleção do canal e a mensagem anterior. |
 | Defeito | Nenhum no fluxo avaliado |
-| Evidências | Jam 5 — Cancelamento da edição da mensagem de WhatsApp (gravação restrita por conter dados de integração) e [Evidências](Evidencias/CT-RF155_Configuracoes_Aniversario_Cancelar_Mensagem_WhatsApp/README.md). |
+| Evidências | [Jam 5 — Cancelamento da edição da mensagem de WhatsApp](https://jam.dev/c/a58b851c-77c2-4a49-be3b-8a5c007d2bcb) e [Evidências](Evidencias/CT-RF155_Configuracoes_Aniversario_Cancelar_Mensagem_WhatsApp/README.md). |
 
 ### Critérios de aceitação do RF155
 
@@ -3654,7 +3654,7 @@ O resultado cobre o cancelamento antes de salvar na aba Aniversário. O envio da
 | Caso | [CT-RF156](Cenario_Teste/CT-RF156_Configuracoes_Aniversario_Inserir_Variaveis_WhatsApp.md) |
 | Situação observada | Aprovado conforme a gravação. As quatro variáveis apareceram no editor na ordem selecionada. Ao cancelar, a mensagem anterior foi preservada. |
 | Defeito | Nenhum no fluxo avaliado |
-| Evidências | Jam 6 — Inserção de variáveis na mensagem de WhatsApp (gravação restrita por conter dados de integração) e [Evidências](Evidencias/CT-RF156_Configuracoes_Aniversario_Inserir_Variaveis_WhatsApp/README.md). |
+| Evidências | [Jam 6 — Inserção de variáveis na mensagem de WhatsApp](https://jam.dev/c/fb2c4949-c68d-4f90-b47c-44da9dbe58a3) e [Evidências](Evidencias/CT-RF156_Configuracoes_Aniversario_Inserir_Variaveis_WhatsApp/README.md). |
 
 ### Critérios de aceitação do RF156
 
@@ -3679,7 +3679,7 @@ O caso verifica a inserção dos marcadores no editor e o descarte da edição. 
 | Caso | [CT-RF157](Cenario_Teste/CT-RF157_Aplicativo_Consultar_Notificacao.md) |
 | Situação observada | Aprovado conforme a gravação. O diálogo exibiu a notificação selecionada e sua prévia. Fechar retornou à listagem. |
 | Defeito | Nenhum no fluxo avaliado |
-| Evidências | Jam 1 — Consulta de notificação existente (gravação restrita por conter dados de integração ou dados de alunos) e [Evidências](Evidencias/CT-RF157_Aplicativo_Consultar_Notificacao/README.md). |
+| Evidências | [Jam 1 — Consulta de notificação existente](https://jam.dev/c/32edc5de-4ad3-48ca-9e19-1db449bebcc5) e [Evidências](Evidencias/CT-RF157_Aplicativo_Consultar_Notificacao/README.md). |
 
 ### Critérios de aceitação do RF157
 
@@ -3704,7 +3704,7 @@ O caso verifica a consulta no painel. A gravação não demonstra recebimento no
 | Caso | [CT-RF158](Cenario_Teste/CT-RF158_Aplicativo_Bloquear_Notificacao_Vazia.md) |
 | Situação observada | Aprovado conforme a gravação. Sem texto, Enviar aviso ficou desabilitado e a captura não registrou uma criação. |
 | Defeito | Nenhum no fluxo avaliado |
-| Evidências | Jam 2 — Validação de mensagem obrigatória (gravação restrita por conter dados de integração ou dados de alunos) e [Evidências](Evidencias/CT-RF158_Aplicativo_Bloquear_Notificacao_Vazia/README.md). |
+| Evidências | [Jam 2 — Validação de mensagem obrigatória](https://jam.dev/c/b9ebb9d0-e7c2-4ed8-a50d-00c2948e97fd) e [Evidências](Evidencias/CT-RF158_Aplicativo_Bloquear_Notificacao_Vazia/README.md). |
 
 ### Critérios de aceitação do RF158
 
@@ -3729,7 +3729,7 @@ A evidência cobre o campo totalmente vazio. Espaços em branco e limites de com
 | Caso | [CT-RF159](Cenario_Teste/CT-RF159_Aplicativo_Criar_Notificacao_Preview.md) |
 | Situação observada | Aprovado conforme a gravação. A prévia refletiu o texto e a criação retornou HTTP 201. A nova notificação apareceu na lista. |
 | Defeito | Nenhum no fluxo avaliado |
-| Evidências | Jam 3 — Criação de notificação com prévia (gravação restrita por conter dados de integração ou dados de alunos) e [Evidências](Evidencias/CT-RF159_Aplicativo_Criar_Notificacao_Preview/README.md). |
+| Evidências | [Jam 3 — Criação de notificação com prévia](https://jam.dev/c/6720f25a-45e9-4e8d-9c5f-c48b0bfec5c0) e [Evidências](Evidencias/CT-RF159_Aplicativo_Criar_Notificacao_Preview/README.md). |
 
 ### Critérios de aceitação do RF159
 
@@ -3754,7 +3754,7 @@ O resultado cobre a criação, a prévia e a listagem. A entrega efetiva no apli
 | Caso | [CT-RF160](Cenario_Teste/CT-RF160_Aplicativo_Postagens_Filtros_Estados_Vazios.md) |
 | Situação observada | Aprovado conforme a gravação. O painel e o diálogo alternaram corretamente os avisos para todas e pendentes na base vazia. |
 | Defeito | Nenhum no fluxo avaliado |
-| Evidências | Jam 4 — Filtros e lista completa de postagens (gravação restrita por conter dados de integração ou dados de alunos) e [Evidências](Evidencias/CT-RF160_Aplicativo_Postagens_Filtros_Estados_Vazios/README.md). |
+| Evidências | [Jam 4 — Filtros e lista completa de postagens](https://jam.dev/c/a58327e6-6a5a-4a2e-8b3d-cee9296d1d03) e [Evidências](Evidencias/CT-RF160_Aplicativo_Postagens_Filtros_Estados_Vazios/README.md). |
 
 ### Critérios de aceitação do RF160
 
@@ -3779,7 +3779,7 @@ A aprovação se limita à base vazia e à troca dos avisos. A filtragem de regi
 | Caso | [CT-RF161](Cenario_Teste/CT-RF161_Aplicativo_Denuncias_Filtros_Estados_Vazios.md) |
 | Situação observada | Aprovado conforme a gravação. A lista vazia apresentou a mensagem correspondente em todas as alternâncias entre todas e pendentes. |
 | Defeito | Nenhum no fluxo avaliado |
-| Evidências | Jam 5 — Filtros de denúncias sem registros (gravação restrita por conter dados de integração ou dados de alunos) e [Evidências](Evidencias/CT-RF161_Aplicativo_Denuncias_Filtros_Estados_Vazios/README.md). |
+| Evidências | [Jam 5 — Filtros de denúncias sem registros](https://jam.dev/c/709cd210-f823-4348-805f-3cb61e7fb23f) e [Evidências](Evidencias/CT-RF161_Aplicativo_Denuncias_Filtros_Estados_Vazios/README.md). |
 
 ### Critérios de aceitação do RF161
 
@@ -3804,7 +3804,7 @@ A evidência cobre a interface sem denúncias. A filtragem com registros pendent
 | Caso | [CT-RF162](Cenario_Teste/CT-RF162_Configuracoes_Biometria_Cancelar_Edicao_Senha.md) |
 | Situação observada | Aprovado conforme a gravação. A edição foi descartada e a tela retornou à Página Inicial sem POST de configuração. |
 | Defeito | Nenhum no fluxo avaliado |
-| Evidências | Jam 6 — Cancelamento da edição no formulário de Biometria (gravação restrita por conter dados de integração ou dados de alunos) e [Evidências](Evidencias/CT-RF162_Configuracoes_Biometria_Cancelar_Edicao_Senha/README.md). |
+| Evidências | [Jam 6 — Cancelamento da edição no formulário de Biometria](https://jam.dev/c/ccac55df-d2c8-4b11-898b-d12d87aced72) e [Evidências](Evidencias/CT-RF162_Configuracoes_Biometria_Cancelar_Edicao_Senha/README.md). |
 
 ### Critérios de aceitação do RF162
 
@@ -3829,7 +3829,7 @@ A aprovação cobre o cancelamento. O comportamento de mascaramento de Senha est
 | Caso | [CT-RF163](Cenario_Teste/CT-RF163_Configuracoes_Biometria_Rejeitar_IP_Invalido.md) |
 | Situação observada | Reprovado nas evidências. Um valor sem formato de IP foi salvo e apareceu na consulta e no campo após recarregar. |
 | Defeito | [BUG-053](Relatorio-de-Bugs.md#bug-053), em triagem |
-| Evidências | Jam 7 — Validação de IP do aparelho (gravação restrita por conter dados de integração ou dados de alunos) e [Evidências](Evidencias/CT-RF163_Configuracoes_Biometria_Rejeitar_IP_Invalido/README.md). |
+| Evidências | [Jam 7 — Validação de IP do aparelho](https://jam.dev/c/5b8eea1f-3c87-4497-8fb1-da49f09f9854) e [Evidências](Evidencias/CT-RF163_Configuracoes_Biometria_Rejeitar_IP_Invalido/README.md). |
 
 ### Critérios de aceitação do RF163
 
@@ -3854,7 +3854,7 @@ A leitura posterior comprova o valor armazenado. A gravação não verifica a te
 | Caso | [CT-RF164](Cenario_Teste/CT-RF164_Configuracoes_Biometria_Persistir_Porta.md) |
 | Situação observada | Aprovado conforme a gravação. A porta alterada no POST foi confirmada no GET após recarga. A restauração retornou sucesso. |
 | Defeito | Nenhum no fluxo avaliado |
-| Evidências | Jam 8 — Persistência da porta do aparelho (gravação restrita por conter dados de integração ou dados de alunos) e [Evidências](Evidencias/CT-RF164_Configuracoes_Biometria_Persistir_Porta/README.md). |
+| Evidências | [Jam 8 — Persistência da porta do aparelho](https://jam.dev/c/7d7bf60a-d8a8-4b7e-80da-1e73b45819cb) e [Evidências](Evidencias/CT-RF164_Configuracoes_Biometria_Persistir_Porta/README.md). |
 
 ### Critérios de aceitação do RF164
 
@@ -3879,7 +3879,7 @@ A gravação cobre a persistência da primeira alteração. A conectividade e a 
 | Caso | [CT-RF165](Cenario_Teste/CT-RF165_Configuracoes_Biometria_Validar_Dias_Bloqueio.md) |
 | Situação observada | Reprovado nas evidências. A API confirmou o salvamento de -1. A leitura posterior trouxe 0 e a gravação não mostrou explicação para a diferença. |
 | Defeito | [BUG-054](Relatorio-de-Bugs.md#bug-054), em triagem |
-| Evidências | Jam 9 — Validação de dias de bloqueio da catraca (gravação restrita por conter dados de integração ou dados de alunos) e [Evidências](Evidencias/CT-RF165_Configuracoes_Biometria_Validar_Dias_Bloqueio/README.md). |
+| Evidências | [Jam 9 — Validação de dias de bloqueio da catraca](https://jam.dev/c/f607bc49-184f-4d55-81ab-7db825af6021) e [Evidências](Evidencias/CT-RF165_Configuracoes_Biometria_Validar_Dias_Bloqueio/README.md). |
 
 ### Critérios de aceitação do RF165
 
@@ -4013,7 +4013,7 @@ A consulta devolveu 0. A gravação não determina se esse valor resultou de nor
 | RF121 | [CT-RF121](Cenario_Teste/CT-RF121_Cadastro_Modelo_Ficha_Erro_500.md) | [BUG-045](Relatorio-de-Bugs.md#bug-045), em triagem | Reprovado nas evidências | [Evidências](Evidencias/CT-RF121_Cadastro_Modelo_Ficha_Erro_500/README.md) e [Jam — PED-24 — Cadastro de modelo de ficha](https://jam.dev/c/04e2cae2-f3f2-43ff-8361-b3b9d9f50d35) |
 | RF122 | [CT-RF122](Cenario_Teste/CT-RF122_Resultados_IA_Filtro_90_Dias.md) | Nenhum no fluxo avaliado | Aprovado conforme a gravação | [Evidências](Evidencias/CT-RF122_Resultados_IA_Filtro_90_Dias/README.md) e [Jam — PED-12 — Últimos 90 dias](https://jam.dev/c/1728cfc2-1d36-4ea4-ab68-68a84458c359) |
 | RF123 | [CT-RF123](Cenario_Teste/CT-RF123_Central_Resultados_IA_Execucao_Evasao.md) | Nenhum no fluxo avaliado | Aprovado conforme a gravação | [Evidências](Evidencias/CT-RF123_Central_Resultados_IA_Execucao_Evasao/README.md) e [Jam — PED-14 — Execução de Risco de Evasão](https://jam.dev/c/efe26a44-458a-4802-bd48-8e23c5ac5fd9) |
-| RF124 | [CT-RF124](Cenario_Teste/CT-RF124_Configuracoes_Abas_Biometria_Senha.md) | [BUG-046](Relatorio-de-Bugs.md#bug-046), em triagem | Reprovado nas evidências | [Evidências](Evidencias/CT-RF124_Configuracoes_Abas_Biometria_Senha/README.md) e Jam — PED-15 (gravação restrita por conter dados de integração) |
+| RF124 | [CT-RF124](Cenario_Teste/CT-RF124_Configuracoes_Abas_Biometria_Senha.md) | [BUG-046](Relatorio-de-Bugs.md#bug-046), em triagem | Reprovado nas evidências | [Evidências](Evidencias/CT-RF124_Configuracoes_Abas_Biometria_Senha/README.md) e [Jam — PED-15](https://jam.dev/c/38105352-c89c-492e-bca1-78e2f4017ae2) |
 | RF125 | [CT-RF125](Cenario_Teste/CT-RF125_Configuracoes_Salvar_Dias_Ausencia_Valido.md) | Nenhum no fluxo avaliado | Aprovado conforme a gravação | [Evidências](Evidencias/CT-RF125_Configuracoes_Salvar_Dias_Ausencia_Valido/README.md) e [Jam — PED-16 — Salvar dias de ausência](https://jam.dev/c/12d6bba7-a67e-4882-86a5-4dd08d194af2) |
 | RF126 | [CT-RF126](Cenario_Teste/CT-RF126_Configuracoes_Dias_Ausencia_Negativo.md) | [BUG-047](Relatorio-de-Bugs.md#bug-047), em triagem | Reprovado nas evidências | [Evidências](Evidencias/CT-RF126_Configuracoes_Dias_Ausencia_Negativo/README.md) e [Jam — PED-17 — Dias de ausência negativos](https://jam.dev/c/d5786f67-6e5f-44f5-bbba-fbd763a88740) |
 | RF127 | [CT-RF127](Cenario_Teste/CT-RF127_Configuracoes_Dias_Ausencia_Texto.md) | Sem defeito confirmado | A validar — regra ou contexto pendente | [Evidências](Evidencias/CT-RF127_Configuracoes_Dias_Ausencia_Texto/README.md) e [Jam — PED-18 — Dias de ausência com texto](https://jam.dev/c/c578ed7a-c11c-4cef-8a6c-84d0244f21a5) |
@@ -4026,35 +4026,35 @@ A consulta devolveu 0. A gravação não determina se esse valor resultou de nor
 | RF134 | [CT-RF134](Cenario_Teste/CT-RF134_Central_Automacoes_Atualizar.md) | Nenhum no fluxo avaliado | Aprovado conforme a gravação | [Evidências](Evidencias/CT-RF134_Central_Automacoes_Atualizar/README.md) e [Jam — PED-01 — Atualizar Central de Automações](https://jam.dev/c/efe35b08-8733-434c-a6fa-32c45e248ae1) |
 | RF135 | [CT-RF135](Cenario_Teste/CT-RF135_Central_Desativar_Risco_Evasao_Contador.md) | [BUG-049](Relatorio-de-Bugs.md#bug-049), em triagem | Reprovado nas evidências | [Evidências](Evidencias/CT-RF135_Central_Desativar_Risco_Evasao_Contador/README.md) e [Jam — PED-02 — Desativar Risco de Evasão](https://jam.dev/c/b63ec55f-f8b6-41aa-af4c-d4cdd4515de8) |
 | RF136 | [CT-RF136](Cenario_Teste/CT-RF136_Central_Ativar_Aniversariantes_Contador.md) | [BUG-049](Relatorio-de-Bugs.md#bug-049), em triagem | Reprovado nas evidências | [Evidências](Evidencias/CT-RF136_Central_Ativar_Aniversariantes_Contador/README.md) e [Jam — PED-03 — Ativar Aniversariantes](https://jam.dev/c/60c724da-6760-4238-91f5-2ddad8f42bb3) |
-| RF137 | [CT-RF137](Cenario_Teste/CT-RF137_Central_Risco_Evasao_Executar_Agora.md) | Nenhum no fluxo avaliado | Aprovado conforme a gravação | [Evidências](Evidencias/CT-RF137_Central_Risco_Evasao_Executar_Agora/README.md) e Jam — PED-04 — Executar Risco de Evasão (gravação restrita por conter dados individuais da avaliação de risco) |
-| RF138 | [CT-RF138](Cenario_Teste/CT-RF138_Central_Abrir_Resultados_Risco_Evasao.md) | Nenhum no fluxo avaliado | Aprovado conforme a gravação | [Evidências](Evidencias/CT-RF138_Central_Abrir_Resultados_Risco_Evasao/README.md) e Jam — PED-05 — Ver resultados de Risco de Evasão (gravação restrita por conter dados individuais da avaliação de risco) |
-| RF139 | [CT-RF139](Cenario_Teste/CT-RF139_Integracoes_WhatsApp_Mascarar_API_Key.md) | Nenhum no fluxo avaliado | Aprovado conforme a gravação | [Evidências](Evidencias/CT-RF139_Integracoes_WhatsApp_Mascarar_API_Key/README.md) e Jam 1 — Mascaramento da API Key (gravação restrita por conter dados de integração) |
-| RF140 | [CT-RF140](Cenario_Teste/CT-RF140_Integracoes_WhatsApp_Validar_URL_API.md) | Sem defeito confirmado | A validar — regra ou contexto pendente | [Evidências](Evidencias/CT-RF140_Integracoes_WhatsApp_Validar_URL_API/README.md) e Jam 2 — Validação da URL da API (gravação restrita por conter dados de integração) |
-| RF141 | [CT-RF141](Cenario_Teste/CT-RF141_Integracoes_WhatsApp_Instancia_Obrigatoria.md) | Nenhum no fluxo avaliado | Aprovado conforme a gravação | [Evidências](Evidencias/CT-RF141_Integracoes_WhatsApp_Instancia_Obrigatoria/README.md) e Jam 3 — Obrigatoriedade do Nome da Instância (gravação restrita por conter dados de integração) |
-| RF142 | [CT-RF142](Cenario_Teste/CT-RF142_Integracoes_WhatsApp_Persistir_Ativo.md) | Nenhum no fluxo avaliado | Aprovado conforme a gravação | [Evidências](Evidencias/CT-RF142_Integracoes_WhatsApp_Persistir_Ativo/README.md) e Jam 4 — Persistência da opção Ativo (gravação restrita por conter dados de integração) |
-| RF143 | [CT-RF143](Cenario_Teste/CT-RF143_Integracoes_WhatsApp_Conectar_Evolution.md) | [BUG-050](Relatorio-de-Bugs.md#bug-050), em triagem | Reprovado nas evidências | [Evidências](Evidencias/CT-RF143_Integracoes_WhatsApp_Conectar_Evolution/README.md) e Jam 5 — Tentativas de conexão pela Evolution API (gravação restrita por conter dados de integração) |
-| RF144 | [CT-RF144](Cenario_Teste/CT-RF144_Integracoes_WhatsApp_Atualizar_Status.md) | [BUG-050](Relatorio-de-Bugs.md#bug-050) na tentativa posterior de conexão | Aprovado conforme a gravação | [Evidências](Evidencias/CT-RF144_Integracoes_WhatsApp_Atualizar_Status/README.md) e Jam 6 — Atualização manual de status (gravação restrita por conter dados de integração) |
-| RF145 | [CT-RF145](Cenario_Teste/CT-RF145_Configuracoes_Aniversario_Salvar_WhatsApp_SMS.md) | Nenhum no fluxo avaliado | Aprovado conforme a gravação | [Evidências](Evidencias/CT-RF145_Configuracoes_Aniversario_Salvar_WhatsApp_SMS/README.md) e Jam 1 — Mensagens de aniversário por WhatsApp e SMS (gravação restrita por conter dados de integração) |
-| RF146 | [CT-RF146](Cenario_Teste/CT-RF146_Configuracoes_Pagamento_Online_Desativar.md) | Nenhum no fluxo avaliado | Aprovado conforme a gravação | [Evidências](Evidencias/CT-RF146_Configuracoes_Pagamento_Online_Desativar/README.md) e Jam 2 — Desativação do Pagamento Online (gravação restrita por conter dados de integração) |
-| RF147 | [CT-RF147](Cenario_Teste/CT-RF147_Configuracoes_Design_Salvar_Cor_Principal.md) | Nenhum no fluxo avaliado | Aprovado conforme a gravação | [Evidências](Evidencias/CT-RF147_Configuracoes_Design_Salvar_Cor_Principal/README.md) e Jam 3 — Persistência da Cor Principal (gravação restrita por conter dados de integração) |
-| RF148 | [CT-RF148](Cenario_Teste/CT-RF148_Configuracoes_Design_Validar_Cor_Secundaria.md) | [BUG-051](Relatorio-de-Bugs.md#bug-051), em triagem | Reprovado nas evidências | [Evidências](Evidencias/CT-RF148_Configuracoes_Design_Validar_Cor_Secundaria/README.md) e Jam 4 — Validação da Cor Secundária (gravação restrita por conter dados de integração) |
-| RF149 | [CT-RF149](Cenario_Teste/CT-RF149_Configuracoes_Design_Logo_Limite_Tamanho.md) | [BUG-052](Relatorio-de-Bugs.md#bug-052), em triagem | Reprovado nas evidências | [Evidências](Evidencias/CT-RF149_Configuracoes_Design_Logo_Limite_Tamanho/README.md) e Jam 5 — Rejeição de logo pelo limite de tamanho (gravação restrita por conter dados de integração) |
-| RF150 | [CT-RF150](Cenario_Teste/CT-RF150_Integracoes_WhatsApp_Atualizar_Status_Aguardando_QR.md) | Nenhum no fluxo avaliado | Aprovado conforme a gravação | [Evidências](Evidencias/CT-RF150_Integracoes_WhatsApp_Atualizar_Status_Aguardando_QR/README.md) e Jam 6 — Atualização de status enquanto aguarda QR Code (gravação restrita por conter dados de integração) |
-| RF151 | [CT-RF151](Cenario_Teste/CT-RF151_Configuracoes_Avaliacao_Desativar_Cobranca.md) | Nenhum no fluxo avaliado | Aprovado conforme a gravação | [Evidências](Evidencias/CT-RF151_Configuracoes_Avaliacao_Desativar_Cobranca/README.md) e Jam 1 — Desativação da cobrança da avaliação (gravação restrita por conter dados de integração) |
-| RF152 | [CT-RF152](Cenario_Teste/CT-RF152_Configuracoes_Avaliacao_Tipo_Bioimpedancia.md) | Nenhum no fluxo avaliado | Aprovado conforme a gravação | [Evidências](Evidencias/CT-RF152_Configuracoes_Avaliacao_Tipo_Bioimpedancia/README.md) e Jam 2 — Alteração do tipo para Bioimpedância (gravação restrita por conter dados de integração) |
-| RF153 | [CT-RF153](Cenario_Teste/CT-RF153_Configuracoes_Avaliacao_Habilitar_Teste_Fisico.md) | Nenhum no fluxo avaliado | Aprovado conforme a gravação | [Evidências](Evidencias/CT-RF153_Configuracoes_Avaliacao_Habilitar_Teste_Fisico/README.md) e Jam 3 — Habilitação de Teste Físico (gravação restrita por conter dados de integração) |
-| RF154 | [CT-RF154](Cenario_Teste/CT-RF154_Configuracoes_Aniversario_Desabilitar_Envio_Automatico.md) | Nenhum no fluxo avaliado | Aprovado conforme a gravação | [Evidências](Evidencias/CT-RF154_Configuracoes_Aniversario_Desabilitar_Envio_Automatico/README.md) e Jam 4 — Desativação do envio automático de aniversário (gravação restrita por conter dados de integração) |
-| RF155 | [CT-RF155](Cenario_Teste/CT-RF155_Configuracoes_Aniversario_Cancelar_Mensagem_WhatsApp.md) | Nenhum no fluxo avaliado | Aprovado conforme a gravação | [Evidências](Evidencias/CT-RF155_Configuracoes_Aniversario_Cancelar_Mensagem_WhatsApp/README.md) e Jam 5 — Cancelamento da edição da mensagem de WhatsApp (gravação restrita por conter dados de integração) |
-| RF156 | [CT-RF156](Cenario_Teste/CT-RF156_Configuracoes_Aniversario_Inserir_Variaveis_WhatsApp.md) | Nenhum no fluxo avaliado | Aprovado conforme a gravação | [Evidências](Evidencias/CT-RF156_Configuracoes_Aniversario_Inserir_Variaveis_WhatsApp/README.md) e Jam 6 — Inserção de variáveis na mensagem de WhatsApp (gravação restrita por conter dados de integração) |
-| RF157 | [CT-RF157](Cenario_Teste/CT-RF157_Aplicativo_Consultar_Notificacao.md) | Nenhum no fluxo avaliado | Aprovado conforme a gravação | [Evidências](Evidencias/CT-RF157_Aplicativo_Consultar_Notificacao/README.md) e Jam 1 — Consulta de notificação existente (gravação restrita por conter dados de integração ou dados de alunos) |
-| RF158 | [CT-RF158](Cenario_Teste/CT-RF158_Aplicativo_Bloquear_Notificacao_Vazia.md) | Nenhum no fluxo avaliado | Aprovado conforme a gravação | [Evidências](Evidencias/CT-RF158_Aplicativo_Bloquear_Notificacao_Vazia/README.md) e Jam 2 — Validação de mensagem obrigatória (gravação restrita por conter dados de integração ou dados de alunos) |
-| RF159 | [CT-RF159](Cenario_Teste/CT-RF159_Aplicativo_Criar_Notificacao_Preview.md) | Nenhum no fluxo avaliado | Aprovado conforme a gravação | [Evidências](Evidencias/CT-RF159_Aplicativo_Criar_Notificacao_Preview/README.md) e Jam 3 — Criação de notificação com prévia (gravação restrita por conter dados de integração ou dados de alunos) |
-| RF160 | [CT-RF160](Cenario_Teste/CT-RF160_Aplicativo_Postagens_Filtros_Estados_Vazios.md) | Nenhum no fluxo avaliado | Aprovado conforme a gravação | [Evidências](Evidencias/CT-RF160_Aplicativo_Postagens_Filtros_Estados_Vazios/README.md) e Jam 4 — Filtros e lista completa de postagens (gravação restrita por conter dados de integração ou dados de alunos) |
-| RF161 | [CT-RF161](Cenario_Teste/CT-RF161_Aplicativo_Denuncias_Filtros_Estados_Vazios.md) | Nenhum no fluxo avaliado | Aprovado conforme a gravação | [Evidências](Evidencias/CT-RF161_Aplicativo_Denuncias_Filtros_Estados_Vazios/README.md) e Jam 5 — Filtros de denúncias sem registros (gravação restrita por conter dados de integração ou dados de alunos) |
-| RF162 | [CT-RF162](Cenario_Teste/CT-RF162_Configuracoes_Biometria_Cancelar_Edicao_Senha.md) | Nenhum no fluxo avaliado | Aprovado conforme a gravação | [Evidências](Evidencias/CT-RF162_Configuracoes_Biometria_Cancelar_Edicao_Senha/README.md) e Jam 6 — Cancelamento da edição no formulário de Biometria (gravação restrita por conter dados de integração ou dados de alunos) |
-| RF163 | [CT-RF163](Cenario_Teste/CT-RF163_Configuracoes_Biometria_Rejeitar_IP_Invalido.md) | [BUG-053](Relatorio-de-Bugs.md#bug-053), em triagem | Reprovado nas evidências | [Evidências](Evidencias/CT-RF163_Configuracoes_Biometria_Rejeitar_IP_Invalido/README.md) e Jam 7 — Validação de IP do aparelho (gravação restrita por conter dados de integração ou dados de alunos) |
-| RF164 | [CT-RF164](Cenario_Teste/CT-RF164_Configuracoes_Biometria_Persistir_Porta.md) | Nenhum no fluxo avaliado | Aprovado conforme a gravação | [Evidências](Evidencias/CT-RF164_Configuracoes_Biometria_Persistir_Porta/README.md) e Jam 8 — Persistência da porta do aparelho (gravação restrita por conter dados de integração ou dados de alunos) |
-| RF165 | [CT-RF165](Cenario_Teste/CT-RF165_Configuracoes_Biometria_Validar_Dias_Bloqueio.md) | [BUG-054](Relatorio-de-Bugs.md#bug-054), em triagem | Reprovado nas evidências | [Evidências](Evidencias/CT-RF165_Configuracoes_Biometria_Validar_Dias_Bloqueio/README.md) e Jam 9 — Validação de dias de bloqueio da catraca (gravação restrita por conter dados de integração ou dados de alunos) |
+| RF137 | [CT-RF137](Cenario_Teste/CT-RF137_Central_Risco_Evasao_Executar_Agora.md) | Nenhum no fluxo avaliado | Aprovado conforme a gravação | [Evidências](Evidencias/CT-RF137_Central_Risco_Evasao_Executar_Agora/README.md) e [Jam — PED-04 — Executar Risco de Evasão](https://jam.dev/c/be5418c7-8d87-4b6c-9c64-a9b33b5f7da6) |
+| RF138 | [CT-RF138](Cenario_Teste/CT-RF138_Central_Abrir_Resultados_Risco_Evasao.md) | Nenhum no fluxo avaliado | Aprovado conforme a gravação | [Evidências](Evidencias/CT-RF138_Central_Abrir_Resultados_Risco_Evasao/README.md) e [Jam — PED-05 — Ver resultados de Risco de Evasão](https://jam.dev/c/ac5bce26-f4a8-401b-bb23-d09d5253751a) |
+| RF139 | [CT-RF139](Cenario_Teste/CT-RF139_Integracoes_WhatsApp_Mascarar_API_Key.md) | Nenhum no fluxo avaliado | Aprovado conforme a gravação | [Evidências](Evidencias/CT-RF139_Integracoes_WhatsApp_Mascarar_API_Key/README.md) e [Jam 1 — Mascaramento da API Key](https://jam.dev/c/ef0b67d5-1eea-49b7-84ea-bb306143df4a) |
+| RF140 | [CT-RF140](Cenario_Teste/CT-RF140_Integracoes_WhatsApp_Validar_URL_API.md) | Sem defeito confirmado | A validar — regra ou contexto pendente | [Evidências](Evidencias/CT-RF140_Integracoes_WhatsApp_Validar_URL_API/README.md) e [Jam 2 — Validação da URL da API](https://jam.dev/c/0d7c7274-c798-4e26-91a3-f8162b7ce932) |
+| RF141 | [CT-RF141](Cenario_Teste/CT-RF141_Integracoes_WhatsApp_Instancia_Obrigatoria.md) | Nenhum no fluxo avaliado | Aprovado conforme a gravação | [Evidências](Evidencias/CT-RF141_Integracoes_WhatsApp_Instancia_Obrigatoria/README.md) e [Jam 3 — Obrigatoriedade do Nome da Instância](https://jam.dev/c/8bb7f049-0299-49c9-9fb5-ff7b144f58d2) |
+| RF142 | [CT-RF142](Cenario_Teste/CT-RF142_Integracoes_WhatsApp_Persistir_Ativo.md) | Nenhum no fluxo avaliado | Aprovado conforme a gravação | [Evidências](Evidencias/CT-RF142_Integracoes_WhatsApp_Persistir_Ativo/README.md) e [Jam 4 — Persistência da opção Ativo](https://jam.dev/c/593bb290-936a-4e01-a5af-cc8041c4eb55) |
+| RF143 | [CT-RF143](Cenario_Teste/CT-RF143_Integracoes_WhatsApp_Conectar_Evolution.md) | [BUG-050](Relatorio-de-Bugs.md#bug-050), em triagem | Reprovado nas evidências | [Evidências](Evidencias/CT-RF143_Integracoes_WhatsApp_Conectar_Evolution/README.md) e [Jam 5 — Tentativas de conexão pela Evolution API](https://jam.dev/c/087b5e4f-7d73-4be3-979d-9a39f474b836) |
+| RF144 | [CT-RF144](Cenario_Teste/CT-RF144_Integracoes_WhatsApp_Atualizar_Status.md) | [BUG-050](Relatorio-de-Bugs.md#bug-050) na tentativa posterior de conexão | Aprovado conforme a gravação | [Evidências](Evidencias/CT-RF144_Integracoes_WhatsApp_Atualizar_Status/README.md) e [Jam 6 — Atualização manual de status](https://jam.dev/c/0da79ab0-b557-46af-a48c-60c1a8a62628) |
+| RF145 | [CT-RF145](Cenario_Teste/CT-RF145_Configuracoes_Aniversario_Salvar_WhatsApp_SMS.md) | Nenhum no fluxo avaliado | Aprovado conforme a gravação | [Evidências](Evidencias/CT-RF145_Configuracoes_Aniversario_Salvar_WhatsApp_SMS/README.md) e [Jam 1 — Mensagens de aniversário por WhatsApp e SMS](https://jam.dev/c/01502381-e54a-40c9-b65b-e87c7f049154) |
+| RF146 | [CT-RF146](Cenario_Teste/CT-RF146_Configuracoes_Pagamento_Online_Desativar.md) | Nenhum no fluxo avaliado | Aprovado conforme a gravação | [Evidências](Evidencias/CT-RF146_Configuracoes_Pagamento_Online_Desativar/README.md) e [Jam 2 — Desativação do Pagamento Online](https://jam.dev/c/845de9b6-12f7-4002-a8ba-82e1a85affba) |
+| RF147 | [CT-RF147](Cenario_Teste/CT-RF147_Configuracoes_Design_Salvar_Cor_Principal.md) | Nenhum no fluxo avaliado | Aprovado conforme a gravação | [Evidências](Evidencias/CT-RF147_Configuracoes_Design_Salvar_Cor_Principal/README.md) e [Jam 3 — Persistência da Cor Principal](https://jam.dev/c/c4f77e18-3b66-4c68-97e7-bd70a9bb70f9) |
+| RF148 | [CT-RF148](Cenario_Teste/CT-RF148_Configuracoes_Design_Validar_Cor_Secundaria.md) | [BUG-051](Relatorio-de-Bugs.md#bug-051), em triagem | Reprovado nas evidências | [Evidências](Evidencias/CT-RF148_Configuracoes_Design_Validar_Cor_Secundaria/README.md) e [Jam 4 — Validação da Cor Secundária](https://jam.dev/c/41aaf50a-2506-471a-8eeb-943674571771) |
+| RF149 | [CT-RF149](Cenario_Teste/CT-RF149_Configuracoes_Design_Logo_Limite_Tamanho.md) | [BUG-052](Relatorio-de-Bugs.md#bug-052), em triagem | Reprovado nas evidências | [Evidências](Evidencias/CT-RF149_Configuracoes_Design_Logo_Limite_Tamanho/README.md) e [Jam 5 — Rejeição de logo pelo limite de tamanho](https://jam.dev/c/7aaeac50-8269-4cd6-b7f6-4c8c3740b0e5) |
+| RF150 | [CT-RF150](Cenario_Teste/CT-RF150_Integracoes_WhatsApp_Atualizar_Status_Aguardando_QR.md) | Nenhum no fluxo avaliado | Aprovado conforme a gravação | [Evidências](Evidencias/CT-RF150_Integracoes_WhatsApp_Atualizar_Status_Aguardando_QR/README.md) e [Jam 6 — Atualização de status enquanto aguarda QR Code](https://jam.dev/c/7a892fd3-b6b0-49bc-a463-1b79c4b6ad50) |
+| RF151 | [CT-RF151](Cenario_Teste/CT-RF151_Configuracoes_Avaliacao_Desativar_Cobranca.md) | Nenhum no fluxo avaliado | Aprovado conforme a gravação | [Evidências](Evidencias/CT-RF151_Configuracoes_Avaliacao_Desativar_Cobranca/README.md) e [Jam 1 — Desativação da cobrança da avaliação](https://jam.dev/c/851c15d8-4076-4493-ad3f-c2ba0316d0ca) |
+| RF152 | [CT-RF152](Cenario_Teste/CT-RF152_Configuracoes_Avaliacao_Tipo_Bioimpedancia.md) | Nenhum no fluxo avaliado | Aprovado conforme a gravação | [Evidências](Evidencias/CT-RF152_Configuracoes_Avaliacao_Tipo_Bioimpedancia/README.md) e [Jam 2 — Alteração do tipo para Bioimpedância](https://jam.dev/c/8685a48a-ed9a-4169-a825-90036265b185) |
+| RF153 | [CT-RF153](Cenario_Teste/CT-RF153_Configuracoes_Avaliacao_Habilitar_Teste_Fisico.md) | Nenhum no fluxo avaliado | Aprovado conforme a gravação | [Evidências](Evidencias/CT-RF153_Configuracoes_Avaliacao_Habilitar_Teste_Fisico/README.md) e [Jam 3 — Habilitação de Teste Físico](https://jam.dev/c/86466f6e-b180-439f-ab1d-dde2484595a3) |
+| RF154 | [CT-RF154](Cenario_Teste/CT-RF154_Configuracoes_Aniversario_Desabilitar_Envio_Automatico.md) | Nenhum no fluxo avaliado | Aprovado conforme a gravação | [Evidências](Evidencias/CT-RF154_Configuracoes_Aniversario_Desabilitar_Envio_Automatico/README.md) e [Jam 4 — Desativação do envio automático de aniversário](https://jam.dev/c/ee8a2ba9-164c-42bb-8efe-927dd6c534d5) |
+| RF155 | [CT-RF155](Cenario_Teste/CT-RF155_Configuracoes_Aniversario_Cancelar_Mensagem_WhatsApp.md) | Nenhum no fluxo avaliado | Aprovado conforme a gravação | [Evidências](Evidencias/CT-RF155_Configuracoes_Aniversario_Cancelar_Mensagem_WhatsApp/README.md) e [Jam 5 — Cancelamento da edição da mensagem de WhatsApp](https://jam.dev/c/a58b851c-77c2-4a49-be3b-8a5c007d2bcb) |
+| RF156 | [CT-RF156](Cenario_Teste/CT-RF156_Configuracoes_Aniversario_Inserir_Variaveis_WhatsApp.md) | Nenhum no fluxo avaliado | Aprovado conforme a gravação | [Evidências](Evidencias/CT-RF156_Configuracoes_Aniversario_Inserir_Variaveis_WhatsApp/README.md) e [Jam 6 — Inserção de variáveis na mensagem de WhatsApp](https://jam.dev/c/fb2c4949-c68d-4f90-b47c-44da9dbe58a3) |
+| RF157 | [CT-RF157](Cenario_Teste/CT-RF157_Aplicativo_Consultar_Notificacao.md) | Nenhum no fluxo avaliado | Aprovado conforme a gravação | [Evidências](Evidencias/CT-RF157_Aplicativo_Consultar_Notificacao/README.md) e [Jam 1 — Consulta de notificação existente](https://jam.dev/c/32edc5de-4ad3-48ca-9e19-1db449bebcc5) |
+| RF158 | [CT-RF158](Cenario_Teste/CT-RF158_Aplicativo_Bloquear_Notificacao_Vazia.md) | Nenhum no fluxo avaliado | Aprovado conforme a gravação | [Evidências](Evidencias/CT-RF158_Aplicativo_Bloquear_Notificacao_Vazia/README.md) e [Jam 2 — Validação de mensagem obrigatória](https://jam.dev/c/b9ebb9d0-e7c2-4ed8-a50d-00c2948e97fd) |
+| RF159 | [CT-RF159](Cenario_Teste/CT-RF159_Aplicativo_Criar_Notificacao_Preview.md) | Nenhum no fluxo avaliado | Aprovado conforme a gravação | [Evidências](Evidencias/CT-RF159_Aplicativo_Criar_Notificacao_Preview/README.md) e [Jam 3 — Criação de notificação com prévia](https://jam.dev/c/6720f25a-45e9-4e8d-9c5f-c48b0bfec5c0) |
+| RF160 | [CT-RF160](Cenario_Teste/CT-RF160_Aplicativo_Postagens_Filtros_Estados_Vazios.md) | Nenhum no fluxo avaliado | Aprovado conforme a gravação | [Evidências](Evidencias/CT-RF160_Aplicativo_Postagens_Filtros_Estados_Vazios/README.md) e [Jam 4 — Filtros e lista completa de postagens](https://jam.dev/c/a58327e6-6a5a-4a2e-8b3d-cee9296d1d03) |
+| RF161 | [CT-RF161](Cenario_Teste/CT-RF161_Aplicativo_Denuncias_Filtros_Estados_Vazios.md) | Nenhum no fluxo avaliado | Aprovado conforme a gravação | [Evidências](Evidencias/CT-RF161_Aplicativo_Denuncias_Filtros_Estados_Vazios/README.md) e [Jam 5 — Filtros de denúncias sem registros](https://jam.dev/c/709cd210-f823-4348-805f-3cb61e7fb23f) |
+| RF162 | [CT-RF162](Cenario_Teste/CT-RF162_Configuracoes_Biometria_Cancelar_Edicao_Senha.md) | Nenhum no fluxo avaliado | Aprovado conforme a gravação | [Evidências](Evidencias/CT-RF162_Configuracoes_Biometria_Cancelar_Edicao_Senha/README.md) e [Jam 6 — Cancelamento da edição no formulário de Biometria](https://jam.dev/c/ccac55df-d2c8-4b11-898b-d12d87aced72) |
+| RF163 | [CT-RF163](Cenario_Teste/CT-RF163_Configuracoes_Biometria_Rejeitar_IP_Invalido.md) | [BUG-053](Relatorio-de-Bugs.md#bug-053), em triagem | Reprovado nas evidências | [Evidências](Evidencias/CT-RF163_Configuracoes_Biometria_Rejeitar_IP_Invalido/README.md) e [Jam 7 — Validação de IP do aparelho](https://jam.dev/c/5b8eea1f-3c87-4497-8fb1-da49f09f9854) |
+| RF164 | [CT-RF164](Cenario_Teste/CT-RF164_Configuracoes_Biometria_Persistir_Porta.md) | Nenhum no fluxo avaliado | Aprovado conforme a gravação | [Evidências](Evidencias/CT-RF164_Configuracoes_Biometria_Persistir_Porta/README.md) e [Jam 8 — Persistência da porta do aparelho](https://jam.dev/c/7d7bf60a-d8a8-4b7e-80da-1e73b45819cb) |
+| RF165 | [CT-RF165](Cenario_Teste/CT-RF165_Configuracoes_Biometria_Validar_Dias_Bloqueio.md) | [BUG-054](Relatorio-de-Bugs.md#bug-054), em triagem | Reprovado nas evidências | [Evidências](Evidencias/CT-RF165_Configuracoes_Biometria_Validar_Dias_Bloqueio/README.md) e [Jam 9 — Validação de dias de bloqueio da catraca](https://jam.dev/c/f607bc49-184f-4d55-81ab-7db825af6021) |
 
 ---
 
@@ -4890,7 +4890,7 @@ CT-RF122–CT-RF127 cobre Inteligência e Configurações com gravações de 16/
 
 - RF122: Cartões e linha do tempo acompanharam a troca de 7, 30 e 90 dias. Os resultados de 90 dias se repetiram. [Jam — PED-12 — Últimos 90 dias](https://jam.dev/c/1728cfc2-1d36-4ea4-ab68-68a84458c359).
 - RF123: A Central passou a mostrar 00:55. A linha do tempo de Hoje e o resumo de Resultados IA incluíram essa execução. [Jam — PED-14 — Execução de Risco de Evasão](https://jam.dev/c/efe26a44-458a-4802-bd48-8e23c5ac5fd9).
-- RF124: A navegação funcionou. A aba Biometria exibiu o valor do campo Senha sem mascaramento. Jam — PED-15 (gravação restrita por conter dados de integração).
+- RF124: A navegação funcionou. A aba Biometria exibiu o valor do campo Senha sem mascaramento. [Jam — PED-15](https://jam.dev/c/38105352-c89c-492e-bca1-78e2f4017ae2).
 - RF125: 15 foi salvo e confirmado após recarga. A segunda recarga confirmou a restauração de 1100. [Jam — PED-16 — Salvar dias de ausência](https://jam.dev/c/12d6bba7-a67e-4882-86a5-4dd08d194af2).
 - RF126: -1 foi aceito com HTTP 200 e confirmado na interface e no GET após recarga. [Jam — PED-17 — Dias de ausência negativos](https://jam.dev/c/d5786f67-6e5f-44f5-bbba-fbd763a88740).
 - RF127: Letras não apareceram no campo. O salvamento com campo vazio enviou 0 e retornou HTTP 200. [Jam — PED-18 — Dias de ausência com texto](https://jam.dev/c/c578ed7a-c11c-4cef-8a6c-84d0244f21a5).
@@ -4913,55 +4913,55 @@ CT-RF134–CT-RF138 cobrem a Central de Automações com gravações de 16/11/20
 - RF134: Quatro cliques atualizaram resumo, execuções e cartões com HTTP 200. Os valores permaneceram consistentes na base gravada. [Jam — PED-01 — Atualizar Central de Automações](https://jam.dev/c/efe35b08-8733-434c-a6fa-32c45e248ae1).
 - RF135: A desativação persistiu. Após reativar Risco de Evasão, o cartão ficou ativo e o contador continuou em zero. [Jam — PED-02 — Desativar Risco de Evasão](https://jam.dev/c/b63ec55f-f8b6-41aa-af4c-d4cdd4515de8).
 - RF136: A ativação persistiu. O resumo ficou em uma automação ativa até Atualizar, quando passou a duas. [Jam — PED-03 — Ativar Aniversariantes](https://jam.dev/c/60c724da-6760-4238-91f5-2ddad8f42bb3).
-- RF137: Executar agora terminou com sucesso. O relatório e a nova execução ficaram disponíveis na Central. Jam — PED-04 — Executar Risco de Evasão (gravação restrita por conter dados individuais da avaliação de risco).
-- RF138: Ver resultados abriu o relatório existente com a mesma distribuição retornada pela API: 0 alto, 23 médio e 0 baixo. Jam — PED-05 — Ver resultados de Risco de Evasão (gravação restrita por conter dados individuais da avaliação de risco).
+- RF137: Executar agora terminou com sucesso. O relatório e a nova execução ficaram disponíveis na Central. [Jam — PED-04 — Executar Risco de Evasão](https://jam.dev/c/be5418c7-8d87-4b6c-9c64-a9b33b5f7da6).
+- RF138: Ver resultados abriu o relatório existente com a mesma distribuição retornada pela API: 0 alto, 23 médio e 0 baixo. [Jam — PED-05 — Ver resultados de Risco de Evasão](https://jam.dev/c/ac5bce26-f4a8-401b-bb23-d09d5253751a).
 
 ### Base da análise de Configurações / Integrações / WhatsApp — revisão de 17/11/2026
 
 CT-RF139–CT-RF144 cobrem a integração do WhatsApp com gravações de 16/11/2026 entre 23:37:22 e 23:45:52 BRT.
 
-- RF139: A API Key permaneceu mascarada na edição e na reabertura da aba. A gravação não registrou POST de salvamento. Jam 1 — Mascaramento da API Key (gravação restrita por conter dados de integração).
-- RF140: A tentativa com URL fora do formato também tinha a instância vazia. Houve reconsulta sem POST de configuração, e a regra da URL ficou a validar. Jam 2 — Validação da URL da API (gravação restrita por conter dados de integração).
-- RF141: O nome preenchido foi salvo. As tentativas com a instância vazia ficaram sem POST e o valor anterior voltou ao reabrir. Jam 3 — Obrigatoriedade do Nome da Instância (gravação restrita por conter dados de integração).
-- RF142: Os dois estados de Ativo foram salvos e confirmados por GET, com a conexão permanecendo desconectada. Jam 4 — Persistência da opção Ativo (gravação restrita por conter dados de integração).
-- RF143: As duas tentativas exibiram falha. A resposta trouxe a mesma falha, mas devolveu `verifica_erro: false`. Jam 5 — Tentativas de conexão pela Evolution API (gravação restrita por conter dados de integração).
-- RF144: Sete consultas retornaram HTTP 200 com o estado desconectado e o horário de verificação atualizado. Jam 6 — Atualização manual de status (gravação restrita por conter dados de integração).
+- RF139: A API Key permaneceu mascarada na edição e na reabertura da aba. A gravação não registrou POST de salvamento. [Jam 1 — Mascaramento da API Key](https://jam.dev/c/ef0b67d5-1eea-49b7-84ea-bb306143df4a).
+- RF140: A tentativa com URL fora do formato também tinha a instância vazia. Houve reconsulta sem POST de configuração, e a regra da URL ficou a validar. [Jam 2 — Validação da URL da API](https://jam.dev/c/0d7c7274-c798-4e26-91a3-f8162b7ce932).
+- RF141: O nome preenchido foi salvo. As tentativas com a instância vazia ficaram sem POST e o valor anterior voltou ao reabrir. [Jam 3 — Obrigatoriedade do Nome da Instância](https://jam.dev/c/8bb7f049-0299-49c9-9fb5-ff7b144f58d2).
+- RF142: Os dois estados de Ativo foram salvos e confirmados por GET, com a conexão permanecendo desconectada. [Jam 4 — Persistência da opção Ativo](https://jam.dev/c/593bb290-936a-4e01-a5af-cc8041c4eb55).
+- RF143: As duas tentativas exibiram falha. A resposta trouxe a mesma falha, mas devolveu `verifica_erro: false`. [Jam 5 — Tentativas de conexão pela Evolution API](https://jam.dev/c/087b5e4f-7d73-4be3-979d-9a39f474b836).
+- RF144: Sete consultas retornaram HTTP 200 com o estado desconectado e o horário de verificação atualizado. [Jam 6 — Atualização manual de status](https://jam.dev/c/0da79ab0-b557-46af-a48c-60c1a8a62628).
 
 ### Base da análise de Configurações — revisão de 17/11/2026
 
 CT-RF145–CT-RF150 cobrem funcionalidades de Configurações com gravações de 16/11/2026 entre 23:21:59 e 23:36:13 BRT.
 
-- RF145: WhatsApp e SMS e os dois textos de teste reapareceram após recarregar e reabrir Aniversário. Jam 1 — Mensagens de aniversário por WhatsApp e SMS (gravação restrita por conter dados de integração).
-- RF146: A resposta e a tela confirmaram Não após recarregar. O salvamento de restauração para Sim retornou sucesso. Jam 2 — Desativação do Pagamento Online (gravação restrita por conter dados de integração).
-- RF147: O código #663399 persistiu e a aba Design exibiu o valor com a amostra correspondente. Jam 3 — Persistência da Cor Principal (gravação restrita por conter dados de integração).
-- RF148: As duas tentativas com #ZZZZZZ retornaram sucesso. O código fora do conjunto hexadecimal persistiu após recarregar. Jam 4 — Validação da Cor Secundária (gravação restrita por conter dados de integração).
-- RF149: A API rejeitou pelo limite de 6 MB. A interface exibiu apenas a mensagem genérica de erro ao salvar. Jam 5 — Rejeição de logo pelo limite de tamanho (gravação restrita por conter dados de integração).
-- RF150: A API manteve o estado conectando, e a tela continuou em Aguardando QR Code com a verificação atualizada de 02:32 para 02:35. Jam 6 — Atualização de status enquanto aguarda QR Code (gravação restrita por conter dados de integração).
+- RF145: WhatsApp e SMS e os dois textos de teste reapareceram após recarregar e reabrir Aniversário. [Jam 1 — Mensagens de aniversário por WhatsApp e SMS](https://jam.dev/c/01502381-e54a-40c9-b65b-e87c7f049154).
+- RF146: A resposta e a tela confirmaram Não após recarregar. O salvamento de restauração para Sim retornou sucesso. [Jam 2 — Desativação do Pagamento Online](https://jam.dev/c/845de9b6-12f7-4002-a8ba-82e1a85affba).
+- RF147: O código #663399 persistiu e a aba Design exibiu o valor com a amostra correspondente. [Jam 3 — Persistência da Cor Principal](https://jam.dev/c/c4f77e18-3b66-4c68-97e7-bd70a9bb70f9).
+- RF148: As duas tentativas com #ZZZZZZ retornaram sucesso. O código fora do conjunto hexadecimal persistiu após recarregar. [Jam 4 — Validação da Cor Secundária](https://jam.dev/c/41aaf50a-2506-471a-8eeb-943674571771).
+- RF149: A API rejeitou pelo limite de 6 MB. A interface exibiu apenas a mensagem genérica de erro ao salvar. [Jam 5 — Rejeição de logo pelo limite de tamanho](https://jam.dev/c/7aaeac50-8269-4cd6-b7f6-4c8c3740b0e5).
+- RF150: A API manteve o estado conectando, e a tela continuou em Aguardando QR Code com a verificação atualizada de 02:32 para 02:35. [Jam 6 — Atualização de status enquanto aguarda QR Code](https://jam.dev/c/7a892fd3-b6b0-49bc-a463-1b79c4b6ad50).
 
 ### Base da análise de Configurações / Avaliação e Aniversário — revisão de 18/11/2026
 
 CT-RF151–CT-RF156 cobrem as abas Avaliação e Aniversário com gravações de 16/11/2026 entre 23:10:04 e 23:20:07 BRT.
 
-- RF151: A consulta e a aba Avaliação confirmaram Não após recarregar. Jam 1 — Desativação da cobrança da avaliação (gravação restrita por conter dados de integração).
-- RF152: A consulta e a aba Avaliação confirmaram Bioimpedância após recarregar. O cartão de resumo Avaliação também exibiu Bioimpedância. Jam 2 — Alteração do tipo para Bioimpedância (gravação restrita por conter dados de integração).
-- RF153: A consulta e a aba Avaliação confirmaram Sim após recarregar. Jam 3 — Habilitação de Teste Físico (gravação restrita por conter dados de integração).
-- RF154: A consulta e a aba Aniversário confirmaram Desabilitado após recarregar. Jam 4 — Desativação do envio automático de aniversário (gravação restrita por conter dados de integração).
-- RF155: Cancelar retornou à Página Inicial e preservou a seleção do canal e a mensagem anterior. Jam 5 — Cancelamento da edição da mensagem de WhatsApp (gravação restrita por conter dados de integração).
-- RF156: As quatro variáveis apareceram no editor na ordem selecionada. Ao cancelar, a mensagem anterior foi preservada. Jam 6 — Inserção de variáveis na mensagem de WhatsApp (gravação restrita por conter dados de integração).
+- RF151: A consulta e a aba Avaliação confirmaram Não após recarregar. [Jam 1 — Desativação da cobrança da avaliação](https://jam.dev/c/851c15d8-4076-4493-ad3f-c2ba0316d0ca).
+- RF152: A consulta e a aba Avaliação confirmaram Bioimpedância após recarregar. O cartão de resumo Avaliação também exibiu Bioimpedância. [Jam 2 — Alteração do tipo para Bioimpedância](https://jam.dev/c/8685a48a-ed9a-4169-a825-90036265b185).
+- RF153: A consulta e a aba Avaliação confirmaram Sim após recarregar. [Jam 3 — Habilitação de Teste Físico](https://jam.dev/c/86466f6e-b180-439f-ab1d-dde2484595a3).
+- RF154: A consulta e a aba Aniversário confirmaram Desabilitado após recarregar. [Jam 4 — Desativação do envio automático de aniversário](https://jam.dev/c/ee8a2ba9-164c-42bb-8efe-927dd6c534d5).
+- RF155: Cancelar retornou à Página Inicial e preservou a seleção do canal e a mensagem anterior. [Jam 5 — Cancelamento da edição da mensagem de WhatsApp](https://jam.dev/c/a58b851c-77c2-4a49-be3b-8a5c007d2bcb).
+- RF156: As quatro variáveis apareceram no editor na ordem selecionada. Ao cancelar, a mensagem anterior foi preservada. [Jam 6 — Inserção de variáveis na mensagem de WhatsApp](https://jam.dev/c/fb2c4949-c68d-4f90-b47c-44da9dbe58a3).
 
 ### Base da análise de Aplicativo e Configurações / Biometria — revisão de 18/11/2026
 
 CT-RF157–CT-RF165 cobrem Aplicativo e a aba Biometria com gravações de 16/11/2026 entre 22:39:05 e 23:07:08 BRT.
 
-- RF157: O diálogo exibiu a notificação selecionada e sua prévia. Fechar retornou à listagem. Jam 1 — Consulta de notificação existente (gravação restrita por conter dados de integração ou dados de alunos).
-- RF158: Sem texto, Enviar aviso ficou desabilitado e a captura não registrou uma criação. Jam 2 — Validação de mensagem obrigatória (gravação restrita por conter dados de integração ou dados de alunos).
-- RF159: A prévia refletiu o texto e a criação retornou HTTP 201. A nova notificação apareceu na lista. Jam 3 — Criação de notificação com prévia (gravação restrita por conter dados de integração ou dados de alunos).
-- RF160: O painel e o diálogo alternaram corretamente os avisos para todas e pendentes na base vazia. Jam 4 — Filtros e lista completa de postagens (gravação restrita por conter dados de integração ou dados de alunos).
-- RF161: A lista vazia apresentou a mensagem correspondente em todas as alternâncias entre todas e pendentes. Jam 5 — Filtros de denúncias sem registros (gravação restrita por conter dados de integração ou dados de alunos).
-- RF162: A edição foi descartada e a tela retornou à Página Inicial sem POST de configuração. Jam 6 — Cancelamento da edição no formulário de Biometria (gravação restrita por conter dados de integração ou dados de alunos).
-- RF163: Um valor sem formato de IP foi salvo e apareceu na consulta e no campo após recarregar. Jam 7 — Validação de IP do aparelho (gravação restrita por conter dados de integração ou dados de alunos).
-- RF164: A porta alterada no POST foi confirmada no GET após recarga. A restauração retornou sucesso. Jam 8 — Persistência da porta do aparelho (gravação restrita por conter dados de integração ou dados de alunos).
-- RF165: A API confirmou o salvamento de -1. A leitura posterior trouxe 0 e a gravação não mostrou explicação para a diferença. Jam 9 — Validação de dias de bloqueio da catraca (gravação restrita por conter dados de integração ou dados de alunos).
+- RF157: O diálogo exibiu a notificação selecionada e sua prévia. Fechar retornou à listagem. [Jam 1 — Consulta de notificação existente](https://jam.dev/c/32edc5de-4ad3-48ca-9e19-1db449bebcc5).
+- RF158: Sem texto, Enviar aviso ficou desabilitado e a captura não registrou uma criação. [Jam 2 — Validação de mensagem obrigatória](https://jam.dev/c/b9ebb9d0-e7c2-4ed8-a50d-00c2948e97fd).
+- RF159: A prévia refletiu o texto e a criação retornou HTTP 201. A nova notificação apareceu na lista. [Jam 3 — Criação de notificação com prévia](https://jam.dev/c/6720f25a-45e9-4e8d-9c5f-c48b0bfec5c0).
+- RF160: O painel e o diálogo alternaram corretamente os avisos para todas e pendentes na base vazia. [Jam 4 — Filtros e lista completa de postagens](https://jam.dev/c/a58327e6-6a5a-4a2e-8b3d-cee9296d1d03).
+- RF161: A lista vazia apresentou a mensagem correspondente em todas as alternâncias entre todas e pendentes. [Jam 5 — Filtros de denúncias sem registros](https://jam.dev/c/709cd210-f823-4348-805f-3cb61e7fb23f).
+- RF162: A edição foi descartada e a tela retornou à Página Inicial sem POST de configuração. [Jam 6 — Cancelamento da edição no formulário de Biometria](https://jam.dev/c/ccac55df-d2c8-4b11-898b-d12d87aced72).
+- RF163: Um valor sem formato de IP foi salvo e apareceu na consulta e no campo após recarregar. [Jam 7 — Validação de IP do aparelho](https://jam.dev/c/5b8eea1f-3c87-4497-8fb1-da49f09f9854).
+- RF164: A porta alterada no POST foi confirmada no GET após recarga. A restauração retornou sucesso. [Jam 8 — Persistência da porta do aparelho](https://jam.dev/c/7d7bf60a-d8a8-4b7e-80da-1e73b45819cb).
+- RF165: A API confirmou o salvamento de -1. A leitura posterior trouxe 0 e a gravação não mostrou explicação para a diferença. [Jam 9 — Validação de dias de bloqueio da catraca](https://jam.dev/c/f607bc49-184f-4d55-81ab-7db825af6021).
 
 ---
 

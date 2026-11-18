@@ -17,7 +17,7 @@
 | Tipo / prioridade | Funcional manual / persistência · Média, proposta para triagem. |
 | Defeito | Nenhum no fluxo avaliado |
 | Encaminhamento | Usar como regressão para códigos válidos e verificar a aplicação da cor nas telas que consomem o tema. |
-| Fonte | Jam 3 — Persistência da Cor Principal (gravação restrita por conter dados de integração) e [evidências locais](../Evidencias/CT-RF147_Configuracoes_Design_Salvar_Cor_Principal/README.md). |
+| Fonte | [Jam 3 — Persistência da Cor Principal](https://jam.dev/c/c4f77e18-3b66-4c68-97e7-bd70a9bb70f9) e [evidências locais](../Evidencias/CT-RF147_Configuracoes_Design_Salvar_Cor_Principal/README.md). |
 
 ## Ambiente e dados de teste
 
@@ -89,7 +89,7 @@ Usar como regressão para códigos válidos e verificar a aplicação da cor nas
 
 ## Evidências e limites
 
-- Jam 3 — Persistência da Cor Principal (gravação restrita por conter dados de integração).
+- [Jam 3 — Persistência da Cor Principal](https://jam.dev/c/c4f77e18-3b66-4c68-97e7-bd70a9bb70f9).
 - [Arquivos, origem e limites](../Evidencias/CT-RF147_Configuracoes_Design_Salvar_Cor_Principal/README.md).
 - [Cor Principal original antes da edição](../Evidencias/CT-RF147_Configuracoes_Design_Salvar_Cor_Principal/cor_principal_inicial_00-01.jpg), [Cor Principal atualizada após reabrir a aba Design](../Evidencias/CT-RF147_Configuracoes_Design_Salvar_Cor_Principal/cor_principal_apos_reabrir_00-24.jpg).
 - [Linha do tempo](../Evidencias/CT-RF147_Configuracoes_Design_Salvar_Cor_Principal/linha_do_tempo.txt).
