@@ -1,0 +1,24 @@
+CT-RF113 — Buscar modelos de ficha com filtros combinados
+Fonte: https://jam.dev/c/006f9722-e643-4b65-904a-25471a7b90ed
+Gravação: 16/11/2026, 22:27:13 BRT; duração: 15,22 s.
+Revisão documental: 17/11/2026.
+Página: https://sifit.centrion.com.br/fichas-treino-modelo
+Foco deste caso: combinação dos filtros Código, Título e Criador (0:00 a 0:13).
+
+Cronologia (ações e eventos capturados no Jam):
+0:00–0:03  Digita 989898 no campo Código.
+0:04–0:06  Digita PEDRO-01 no campo Título.
+0:07–0:09  Digita PEDRO-01 no campo Criador.
+0:11  Clique em Buscar com os três filtros preenchidos.
+
+Rede do conjunto gravado (1 entrada capturada no domínio backendsifit.centrion.com.br):
+0:11  GET /api/fichas-modelo/1 (HTTP 200, 2 B). Resposta: []. URL sem parâmetros de filtro.
+
+Quadros consultados (reprodução do Jam):
+0:00–0:09  Preenche Código com 989898 e Título e Criador com PEDRO-01.
+0:11  Aciona Buscar. GET retorna HTTP 200 com [].
+0:13  A tela mantém os três valores exibidos e 0 registros.
+
+Observações e verificações futuras:
+- A resposta vazia e a ausência de parâmetros na URL não permitem distinguir filtragem local de critérios ignorados. Confirmar a lógica de combinação com o produto e usar dados que diferenciem os resultados.
+- Reexecutar com registros que correspondam a todos os filtros e a apenas parte deles. Confirmar onde a filtragem é feita.
