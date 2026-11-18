@@ -1,10 +1,10 @@
 # 📊 Relatório de Testes — SIFIT
 
-**Escopo:** 134 casos documentados (CT-RF01–CT-RF35, CT-RF38–CT-RF62 e CT-RF65–CT-RF138) — autenticação, recuperação, perfil, Clientes, financeiro, página inicial e dashboard, modalidades / tema de SifitBox, Categorias Crossfit, Avaliações, Exercícios, Grupos Musculares, Objetivos de Treino cadastro de categorias com código automático, SifitBox – Turmas, Pagar.me, Configurações, Despesas Fixas, Relatórios, Grupos (treino), Fichas de Anamnese, gestão de Modelos de Anamnese, gestão de Categorias de Anamnese, edição de Perguntas Anamnese, validações/funções/exclusão/busca de Colaboradores, Prospecção, Bandeiras de Cartão, Contas a Pagar, Modelos de Contrato, Planos, Tipos de Pagamento, Modelos de Ficha e Central de Automações.
+**Escopo:** 135 casos documentados (CT-RF01–CT-RF35, CT-RF38–CT-RF62 e CT-RF65–CT-RF139) — autenticação, recuperação, perfil, Clientes, financeiro, página inicial e dashboard, modalidades / tema de SifitBox, Categorias Crossfit, Avaliações, Exercícios, Grupos Musculares, Objetivos de Treino cadastro de categorias com código automático, SifitBox – Turmas, Pagar.me, Configurações, Despesas Fixas, Relatórios, Grupos (treino), Fichas de Anamnese, gestão de Modelos de Anamnese, gestão de Categorias de Anamnese, edição de Perguntas Anamnese, validações/funções/exclusão/busca de Colaboradores, Prospecção, Bandeiras de Cartão, Contas a Pagar, Modelos de Contrato, Planos, Tipos de Pagamento, Modelos de Ficha, Central de Automações e Integrações de WhatsApp.
 
-**Datas das gravações do Jam:** CT-RF01 em 23/10/2026; CT-RF02_ERRO em 22/10/2026 às 21:45 BRT; CT-RF03 não confirmada; CT-RF04_loginComSucesso em 13/11/2026; CT-RF05–CT-RF20 em 14/11/2026; CT-RF21 em 15/11/2026 às 15:07:51,265 BRT; CT-RF22–28 em 15/11/2026 às 15:25, 15:40, 15:38, 15:35, 16:11, 16:08 e 16:07 BRT; CT-RF29–33 em 15/11/2026 às 15h56 BRT (uma única gravação); CT-RF34 em 15/11/2026 às 17:23 BRT; CT-RF35 em 15/11/2026 às 18:13 BRT; CT-RF38 em 15/11/2026 às 18:41 BRT; CT-RF39–41 em 15/11/2026 às 18:51 BRT (uma única gravação); CT-RF42–45 às 19:06, CT-RF46–49 às 19:07 e CT-RF50–56 às 19:09 BRT (uma gravação por grupo); CT-RF57 e CT-RF58 em 15/11/2026 às 21h03 BRT (mesma gravação); CT-RF59 em 15/11/2026 às 22h07 BRT; CT-RF60 em 15/11/2026 às 23h34 BRT; CT-RF61 em 16/11/2026 às 15h24 BRT; CT-RF62 em 16/11/2026 às 15h57 BRT. CT-RF74–CT-RF84: 16/11/2026 conforme os resumos, sem horário informado. CT-RF85–90 às 21:52, CT-RF91–95 às 21:58, CT-RF96–98 às 21:55 e CT-RF99–103 às 21:54 e CT-RF104–108 às 22:03 BRT em 15/11/2026 (uma gravação por grupo). CT-RF109–CT-RF115 em 16/11/2026 entre 22:19:51 e 22:29:07 BRT. CT-RF116–CT-RF121 amplia a cobertura de Configurações e Modelos de Ficha com gravações de 16/11/2026 entre 22:03:53 e 22:18:52 BRT. CT-RF122–CT-RF127 cobre Inteligência e Configurações com gravações de 16/11/2026 entre 21:50:51 e 22:02:16 BRT. CT-RF128–CT-RF133 cobre Inteligência e Automação com gravações de 16/11/2026 entre 21:40:31 e 21:49:48 BRT. CT-RF134–CT-RF138 cobrem a Central de Automações com gravações de 16/11/2026 entre 21:25:26 e 21:38:29 BRT.
+**Datas das gravações do Jam:** CT-RF01 em 23/10/2026; CT-RF02_ERRO em 22/10/2026 às 21:45 BRT; CT-RF03 não confirmada; CT-RF04_loginComSucesso em 13/11/2026; CT-RF05–CT-RF20 em 14/11/2026; CT-RF21 em 15/11/2026 às 15:07:51,265 BRT; CT-RF22–28 em 15/11/2026 às 15:25, 15:40, 15:38, 15:35, 16:11, 16:08 e 16:07 BRT; CT-RF29–33 em 15/11/2026 às 15h56 BRT (uma única gravação); CT-RF34 em 15/11/2026 às 17:23 BRT; CT-RF35 em 15/11/2026 às 18:13 BRT; CT-RF38 em 15/11/2026 às 18:41 BRT; CT-RF39–41 em 15/11/2026 às 18:51 BRT (uma única gravação); CT-RF42–45 às 19:06, CT-RF46–49 às 19:07 e CT-RF50–56 às 19:09 BRT (uma gravação por grupo); CT-RF57 e CT-RF58 em 15/11/2026 às 21h03 BRT (mesma gravação); CT-RF59 em 15/11/2026 às 22h07 BRT; CT-RF60 em 15/11/2026 às 23h34 BRT; CT-RF61 em 16/11/2026 às 15h24 BRT; CT-RF62 em 16/11/2026 às 15h57 BRT. CT-RF74–CT-RF84: 16/11/2026 conforme os resumos, sem horário informado. CT-RF85–90 às 21:52, CT-RF91–95 às 21:58, CT-RF96–98 às 21:55 e CT-RF99–103 às 21:54 e CT-RF104–108 às 22:03 BRT em 15/11/2026 (uma gravação por grupo). CT-RF109–CT-RF115 em 16/11/2026 entre 22:19:51 e 22:29:07 BRT. CT-RF116–CT-RF121 amplia a cobertura de Configurações e Modelos de Ficha com gravações de 16/11/2026 entre 22:03:53 e 22:18:52 BRT. CT-RF122–CT-RF127 cobre Inteligência e Configurações com gravações de 16/11/2026 entre 21:50:51 e 22:02:16 BRT. CT-RF128–CT-RF133 cobre Inteligência e Automação com gravações de 16/11/2026 entre 21:40:31 e 21:49:48 BRT. CT-RF134–CT-RF138 cobrem a Central de Automações com gravações de 16/11/2026 entre 21:25:26 e 21:38:29 BRT. CT-RF139 cobre a integração do WhatsApp com gravações de 16/11/2026 às 23:37:22 BRT.
 
-**Data da revisão documental:** 17/11/2026, com integração de CT-RF134–CT-RF138 (Inteligência e Automação / Central de Automações).
+**Data da revisão documental:** 17/11/2026, com integração de CT-RF139 (Configurações / Integrações / WhatsApp).
 
 **Origem do resultado:** análise de evidências fornecidas; sem nova execução no sistema nesta revisão.
 
@@ -40,9 +40,11 @@ CT-RF128–CT-RF133 cobre Inteligência e Automação com gravações de 16/11/2
 
 CT-RF134–CT-RF138 cobrem a Central de Automações com gravações de 16/11/2026 entre 21:25:26 e 21:38:29 BRT. Casos aprovados: 3. Reprovados: 2. A validar: 0.
 
+CT-RF139 cobre a integração do WhatsApp com gravações de 16/11/2026 às 23:37:22 BRT. Casos aprovados: 1. Reprovados: 0. A validar: 0.
+
 | Casos documentados | Aprovados | Reprovados | A validar | Defeitos registrados | Casos com reteste corretivo pendente |
 | :---: | :---: | :---: | :---: | :---: | :---: |
-| 134 | 60 | 54 | 20 | 49 (10 abertos + 39 em triagem) | 54 |
+| 135 | 61 | 54 | 20 | 49 (10 abertos + 39 em triagem) | 54 |
 
 Os 48 retestes incluem CT-RF22/24/26/27/28/29/30/35/41/45/51/53/54/55/56/57/58/59/62/65/66/67/68/69/70/71/73/81/82/83/89/92/98/102/105/107, sujeitos à confirmação funcional e técnica. As contagens representam os casos documentados com base nas fontes indicadas, sem novas execuções nesta revisão. As nove variações planejadas para o reteste do CT-RF03 não foram executadas e não são contabilizadas como testes adicionais realizados.
 
@@ -183,6 +185,7 @@ Os 48 retestes incluem CT-RF22/24/26/27/28/29/30/35/41/45/51/53/54/55/56/57/58/5
 | [CT-RF136](Cenario_Teste/CT-RF136_Central_Ativar_Aniversariantes_Contador.md) | [RF136](Analise%20de%20requisitos.md#rf136) | A ativação é refletida no cartão e no resumo após salvar. Após Atualizar, o cartão continua ativo e o total permanece em dois. | A ativação persistiu. O resumo ficou em uma automação ativa até Atualizar, quando passou a duas. | Reprovado nas evidências | [BUG-049](Relatorio-de-Bugs.md#bug-049), em triagem |
 | [CT-RF137](Cenario_Teste/CT-RF137_Central_Risco_Evasao_Executar_Agora.md) | [RF137](Analise%20de%20requisitos.md#rf137) | O comando executa a automação com sucesso, apresenta o relatório do novo processamento e registra a nova execução na Central. | Executar agora terminou com sucesso. O relatório e a nova execução ficaram disponíveis na Central. | Aprovado conforme a gravação | Nenhum no fluxo avaliado |
 | [CT-RF138](Cenario_Teste/CT-RF138_Central_Abrir_Resultados_Risco_Evasao.md) | [RF138](Analise%20de%20requisitos.md#rf138) | Ver resultados abre o relatório existente com o total de registros e a distribuição por nível, de acordo com a consulta. | Ver resultados abriu o relatório existente com a mesma distribuição retornada pela API: 0 alto, 23 médio e 0 baixo. | Aprovado conforme a gravação | Nenhum no fluxo avaliado |
+| [CT-RF139](Cenario_Teste/CT-RF139_Integracoes_WhatsApp_Mascarar_API_Key.md) | [RF139](Analise%20de%20requisitos.md#rf139) | A API Key aparece mascarada antes e durante a edição. Ao reabrir a aba, o campo continua mascarado e a digitação sem salvar não resulta em uma gravação. | A API Key permaneceu mascarada na edição e na reabertura da aba. A gravação não registrou POST de salvamento. | Aprovado conforme a gravação | Nenhum no fluxo avaliado |
 
 ---
 
@@ -577,6 +580,17 @@ O domínio do CT-RF02_ERRO é diferente do domínio `sifitalfa.centrion.com.br` 
 | Dados e permissões | Conta autorizada a acessar a Central. Preparar automações com estados iniciais conhecidos e, para consulta, um relatório de risco existente. |
 | Preparação | Registrar o estado inicial, os controles usados e as respostas relevantes. Usar apenas dados agregados nas evidências de risco. |
 
+### Configurações / Integrações / WhatsApp (CT-RF139)
+
+| Item | Definição |
+| --- | --- |
+| Páginas | https://sifit.centrion.com.br/configuracoes |
+| Backend de referência | https://backendsifit.centrion.com.br |
+| Navegador / sistema / vídeo | Chrome 157.0.8103.79 / Windows 10 (x86) / 1918 × 998. |
+| Gravações | 16/11/2026 às 23:37:22 BRT. |
+| Dados e permissões | Conta autorizada a acessar Configurações e provedor de teste. Preparar dados de integração de teste, estado inicial conhecido e falha controlada para reteste. |
+| Preparação | Registrar os estados do formulário e os retornos relevantes. Manter valores de credenciais e dados de integração fora dos recortes. |
+
 ## 📸 5. Evidências e observações
 
 | Evidência | Informação utilizada |
@@ -666,6 +680,7 @@ O domínio do CT-RF02_ERRO é diferente do domínio `sifitalfa.centrion.com.br` 
 | [Jam — PED-03 — Ativar Aniversariantes](https://jam.dev/c/60c724da-6760-4238-91f5-2ddad8f42bb3) e [Evidências](Evidencias/CT-RF136_Central_Ativar_Aniversariantes_Contador/README.md) | CT-RF136: A ativação persistiu. O resumo ficou em uma automação ativa até Atualizar, quando passou a duas. |
 | Jam — PED-04 — Executar Risco de Evasão (gravação restrita por conter dados individuais da avaliação de risco) e [Evidências](Evidencias/CT-RF137_Central_Risco_Evasao_Executar_Agora/README.md) | CT-RF137: Executar agora terminou com sucesso. O relatório e a nova execução ficaram disponíveis na Central. |
 | Jam — PED-05 — Ver resultados de Risco de Evasão (gravação restrita por conter dados individuais da avaliação de risco) e [Evidências](Evidencias/CT-RF138_Central_Abrir_Resultados_Risco_Evasao/README.md) | CT-RF138: Ver resultados abriu o relatório existente com a mesma distribuição retornada pela API: 0 alto, 23 médio e 0 baixo. |
+| Jam 1 — Mascaramento da API Key (gravação restrita por conter dados de integração) e [Evidências](Evidencias/CT-RF139_Integracoes_WhatsApp_Mascarar_API_Key/README.md) | CT-RF139: A API Key permaneceu mascarada na edição e na reabertura da aba. A gravação não registrou POST de salvamento. |
 
 A mensagem de credenciais incorretas já aparece no início do vídeo do Jam; não foi considerada uma resposta ao clique em "Esqueci minha senha". A ausência de requisição, isoladamente, não caracteriza defeito se a interface abrir um formulário local. Aqui, o resultado reprovado decorre de o fluxo não abrir.
 
@@ -1062,7 +1077,7 @@ Na inclusão dos CT-RF122 a CT-RF127, o consolidado era de 123 casos documentado
 | [CT-RF132](Cenario_Teste/CT-RF132_Resultados_IA_Filtro_7_Dias.md) | Aprovado conforme a gravação | Usar como regressão e preparar dados nos dias de fronteira para verificar inclusão e exclusão. |
 | [CT-RF133](Cenario_Teste/CT-RF133_Resultados_IA_Filtro_30_Dias.md) | Aprovado conforme a gravação | Usar como regressão e retestar com registros preparados no limite de 30 dias. |
 
-Na inclusão dos CT-RF128 a CT-RF133, o consolidado era de 129 casos documentados: 52 aprovados, 52 reprovados e 20 a validar. 48 defeitos registrados (10 abertos e 38 em triagem) e 52 casos com reteste corretivo pendente.
+Na inclusão dos CT-RF128 a CT-RF133, o consolidado era de 129 casos documentados: 57 aprovados, 52 reprovados e 20 a validar. 48 defeitos registrados (10 abertos e 38 em triagem) e 52 casos com reteste corretivo pendente.
 
 ## Inclusão de 17/11/2026 — Inteligência e Automação / Central de Automações (CT-RF134–CT-RF138)
 
@@ -1074,7 +1089,15 @@ Na inclusão dos CT-RF128 a CT-RF133, o consolidado era de 129 casos documentado
 | [CT-RF137](Cenario_Teste/CT-RF137_Central_Risco_Evasao_Executar_Agora.md) | Aprovado conforme a gravação | Usar como regressão para execução manual. Validar a entrega pelo canal em um teste dedicado, com destinatários de teste. |
 | [CT-RF138](Cenario_Teste/CT-RF138_Central_Abrir_Resultados_Risco_Evasao.md) | Aprovado conforme a gravação | Usar como regressão da consulta e retestar cada filtro com uma base de teste com níveis distintos. |
 
-134 casos documentados: 60 aprovados, 54 reprovados e 20 a validar. 49 defeitos registrados (10 abertos e 39 em triagem) e 54 casos com reteste corretivo pendente.
+Na inclusão dos CT-RF134 a CT-RF138, o consolidado era de 134 casos documentados: 60 aprovados, 54 reprovados e 20 a validar. 49 defeitos registrados (10 abertos e 39 em triagem) e 54 casos com reteste corretivo pendente.
+
+## Inclusão de 17/11/2026 — Configurações / Integrações / WhatsApp (CT-RF139)
+
+| Caso | Situação | Encaminhamento |
+| --- | --- | --- |
+| [CT-RF139](Cenario_Teste/CT-RF139_Integracoes_WhatsApp_Mascarar_API_Key.md) | Aprovado conforme a gravação | Usar como regressão de interface com uma chave de teste e conferir o mascaramento também pelo teclado. |
+
+135 casos documentados: 61 aprovados, 54 reprovados e 20 a validar. 49 defeitos registrados (10 abertos e 39 em triagem) e 54 casos com reteste corretivo pendente.
 
 ---
 

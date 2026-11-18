@@ -1,0 +1,23 @@
+CT-RF139 — Mascarar a API Key no formulário de WhatsApp
+Fonte: Jam 1 — Mascaramento da API Key. Gravação restrita por conter dados de integração.
+Gravação: 16/11/2026, 23:37:22 BRT. Duração: 24,98 s.
+Revisão documental: 17/11/2026.
+Página: https://sifit.centrion.com.br/configuracoes
+Foco deste caso: Manter os caracteres da API Key ocultos durante a edição e ao reabrir a aba Integrações.
+
+Cronologia (ações e eventos capturados no Jam):
+0:02–0:10  O usuário edita a API Key, com os caracteres mascarados na tela.
+0:13–0:17  Após recarregar a página, o usuário seleciona Integrações e a configuração é consultada novamente.
+0:17–0:23  O campo API Key continua mascarado durante as novas interações.
+
+Rede do conjunto gravado (eventos relevantes ao caso):
+0:16,93  GET /api/empresa/whatsapp/1 (HTTP 200), ao retornar a Integrações.
+A captura não registra POST de salvamento da configuração durante o trecho.
+
+Quadros consultados (reprodução do Jam):
+- Campo API Key durante a edição, com caracteres mascarados.
+- Campo API Key ainda mascarado após reabrir a aba.
+
+Observações e verificações futuras:
+- A aprovação cobre o mascaramento visual e a ausência de envio ao editar sem salvar. A gravação não verifica proteção em trânsito ou em armazenamento.
+- Usar como regressão de interface com uma chave de teste e conferir o mascaramento também pelo teclado.
