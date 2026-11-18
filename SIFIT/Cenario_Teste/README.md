@@ -1,6 +1,6 @@
 # 🧪 Índice dos cenários de teste — SIFIT
 
-**Atualização:** 17/11/2026. 123 casos documentados: 52 aprovados, 51 reprovados e 20 a validar. 47 defeitos registrados (10 abertos e 37 em triagem) e 51 casos com reteste corretivo pendente. Escopo: CT-RF01–CT-RF35, CT-RF38–CT-RF62 e CT-RF65–CT-RF127.
+**Atualização:** 17/11/2026. 124 casos documentados: 53 aprovados, 51 reprovados e 20 a validar. 47 defeitos registrados (10 abertos e 37 em triagem) e 51 casos com reteste corretivo pendente. Escopo: CT-RF01–CT-RF35, CT-RF38–CT-RF62 e CT-RF65–CT-RF128.
 
 | Caso | Funcionalidade | Resultado | Defeito | Jam |
 | --- | --- | --- | --- | --- |
@@ -311,5 +311,13 @@ CT-RF116–CT-RF121 amplia a cobertura de Configurações e Modelos de Ficha com
 | [CT-RF127](CT-RF127_Configuracoes_Dias_Ausencia_Texto.md) | Validar letras no campo de dias de ausência | A validar — regra ou contexto pendente | — | [Jam — PED-18 — Dias de ausência com texto](https://jam.dev/c/c578ed7a-c11c-4cef-8a6c-84d0244f21a5) |
 
 CT-RF122–CT-RF127 cobre Inteligência e Configurações com gravações de 16/11/2026 entre 21:50:51 e 22:02:16 BRT. A revisão é documental.
+
+## Inclusão de 17/11/2026 — Inteligência e Automação (CT-RF128)
+
+| Caso | Funcionalidade | Resultado | Defeito | Jam |
+| --- | --- | --- | --- | --- |
+| [CT-RF128](CT-RF128_Central_Configuracao_Risco_Evasao_Cancelar.md) | Abrir e fechar a configuração de Risco de Evasão | Aprovado conforme a gravação | — | [Jam — PED-06 — Configuração de Risco de Evasão](https://jam.dev/c/d49b8ffc-a6e2-4e37-a618-c280b5e807db) |
+
+CT-RF128 cobre Inteligência e Automação com gravações de 16/11/2026 às 21:40:31 BRT. A revisão é documental.
 
 [← Início](../../README.md) · [Requisitos](../Analise%20de%20requisitos.md) · [Plano](../Plano%20de%20testes.md) · [Evidências](../Evidencias/README.md)

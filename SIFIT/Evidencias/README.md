@@ -172,3 +172,11 @@ CT-RF116–CT-RF121 amplia a cobertura de Configurações e Modelos de Ficha com
 | [CT-RF127](../Cenario_Teste/CT-RF127_Configuracoes_Dias_Ausencia_Texto.md) | [Validar letras no campo de dias de ausência](CT-RF127_Configuracoes_Dias_Ausencia_Texto/README.md) | A validar — regra ou contexto pendente |
 
 CT-RF122–CT-RF127 cobre Inteligência e Configurações com gravações de 16/11/2026 entre 21:50:51 e 22:02:16 BRT. As pastas reúnem origem, cronologia e recortes identificados com SHA-256.
+
+## Inclusão de 17/11/2026 — Inteligência e Automação (CT-RF128)
+
+| Caso | Evidência | Resultado |
+| --- | --- | --- |
+| [CT-RF128](../Cenario_Teste/CT-RF128_Central_Configuracao_Risco_Evasao_Cancelar.md) | [Abrir e fechar a configuração de Risco de Evasão](CT-RF128_Central_Configuracao_Risco_Evasao_Cancelar/README.md) | Aprovado conforme a gravação |
+
+CT-RF128 cobre Inteligência e Automação com gravações de 16/11/2026 às 21:40:31 BRT. As pastas reúnem origem, cronologia e recortes identificados com SHA-256.

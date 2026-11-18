@@ -1,0 +1,22 @@
+CT-RF128 — Abrir e fechar a configuração de Risco de Evasão
+Fonte: https://jam.dev/c/d49b8ffc-a6e2-4e37-a618-c280b5e807db
+Gravação: 16/11/2026, 21:40:31 BRT; duração: 19,66 s.
+Revisão documental: 17/11/2026.
+Página: https://sifit.centrion.com.br/inteligencia-automacao
+Foco deste caso: Abrir o painel correto de Risco de Evasão, consultar as opções e fechá-lo sem gravar uma alteração.
+
+Cronologia (ações e eventos capturados no Jam):
+0:00–0:03  Confere o cartão ativo e abre Configurar.
+0:04–0:14  Consulta os grupos de opções e a prévia do relatório.
+0:15–0:17  Aciona Cancelar. O painel fecha e o cartão continua ativo.
+
+Rede do conjunto gravado (eventos relevantes ao caso):
+O Jam registrou os cliques em Configurar (0:02,56) e Cancelar (0:15,25). Não houve eventos de rede capturados no trecho.
+
+Quadros consultados (reprodução do Jam):
+- Painel de Risco de Evasão com as configurações iniciais.
+- Central após cancelar, com Risco de Evasão ainda ativa.
+
+Observações e verificações futuras:
+- A gravação percorre o painel sem editar opções. O descarte de valores alterados, o salvamento e a execução da automação ficaram fora deste cenário.
+- Usar como regressão de abertura e fechamento. Em um caso complementar, alterar uma opção de teste e conferir o descarte após cancelar.
