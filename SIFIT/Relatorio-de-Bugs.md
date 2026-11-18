@@ -1,6 +1,6 @@
 # 🐞 Relatório de Bugs — SIFIT
 
-**Escopo:** defeitos de 122 casos documentados (CT-RF01–CT-RF35, CT-RF38–CT-RF62 e CT-RF65–CT-RF126): recuperação, Perfil, Clientes, financeiro, página inicial e dashboard, tema, modalidades, categorias, avaliações, exercícios, grupos musculares, objetivos de treino, SifitBox – Turmas, Pagar.me, configurações, despesas fixas, relatórios, grupos (treino), fichas de anamnese, colaboradores, modelos de anamnese, categorias de anamnese, perguntas de anamnese, Prospecção, Bandeiras de Cartão, Contas a Pagar, Modelos de Contrato, Planos, Tipos de Pagamento e Modelos de Ficha. CT-RF60 (Modelos de Anamnese) e CT-RF61 (Categorias de Anamnese) são aprovados conforme a gravação, sem defeito identificado. CT-RF62 (Perguntas Anamnese) é reprovado nas evidências e acrescenta o BUG-044 (44 defeitos registrados).
+**Escopo:** defeitos de 123 casos documentados (CT-RF01–CT-RF35, CT-RF38–CT-RF62 e CT-RF65–CT-RF127): recuperação, Perfil, Clientes, financeiro, página inicial e dashboard, tema, modalidades, categorias, avaliações, exercícios, grupos musculares, objetivos de treino, SifitBox – Turmas, Pagar.me, configurações, despesas fixas, relatórios, grupos (treino), fichas de anamnese, colaboradores, modelos de anamnese, categorias de anamnese, perguntas de anamnese, Prospecção, Bandeiras de Cartão, Contas a Pagar, Modelos de Contrato, Planos, Tipos de Pagamento e Modelos de Ficha. CT-RF60 (Modelos de Anamnese) e CT-RF61 (Categorias de Anamnese) são aprovados conforme a gravação, sem defeito identificado. CT-RF62 (Perguntas Anamnese) é reprovado nas evidências e acrescenta o BUG-044 (44 defeitos registrados).
 
 **Ambientes:** CT-RF01 em https://sifitalfa.centrion.com.br/login; CT-RF02_ERRO em https://sifit.centrion.com.br/profile. CT-RF03: URL do frontend não confirmada; backend informado em `https://backendsifit.centrion.com.br/api/clientesPorNome/1`.
 
@@ -1953,9 +1953,9 @@ A revisão de Modelos de Ficha inclui CT-RF109–CT-RF115 com base em 6 gravaç�
 
 CT-RF116–CT-RF121 amplia a cobertura de Configurações e Modelos de Ficha com gravações de 16/11/2026 entre 22:03:53 e 22:18:52 BRT. Casos aprovados: 4. Reprovados: 1. A validar: 1. A falha de cadastro está em [BUG-045](#bug-045).
 
-## Inteligência e Configurações — revisão de 17/11/2026 (CT-RF122–CT-RF126)
+## Inteligência e Configurações — revisão de 17/11/2026 (CT-RF122–CT-RF127)
 
-CT-RF122–CT-RF126 cobre Inteligência e Configurações com gravações de 16/11/2026 entre 21:50:51 e 22:00:22 BRT. Casos aprovados: 3. Reprovados: 2. A validar: 0. Defeitos do lote: [BUG-046](#bug-046) e [BUG-047](#bug-047).
+CT-RF122–CT-RF127 cobre Inteligência e Configurações com gravações de 16/11/2026 entre 21:50:51 e 22:02:16 BRT. Casos aprovados: 3. Reprovados: 2. A validar: 1. Defeitos do lote: [BUG-046](#bug-046) e [BUG-047](#bug-047).
 
 ## Pontos a validar — sem defeito confirmado
 
@@ -1980,6 +1980,7 @@ CT-RF122–CT-RF126 cobre Inteligência e Configurações com gravações de 16/
 | [CT-RF113](Cenario_Teste/CT-RF113_Busca_Modelo_Ficha_Filtros_Combinados.md) | Reexecutar com registros que correspondam a todos os filtros e a apenas parte deles. Confirmar onde a filtragem é feita. A resposta vazia e a ausência de parâmetros na URL não permitem distinguir filtragem local de critérios ignorados. Confirmar a lógica de combinação com o produto e usar dados que diferenciem os resultados. | [Jam — PED-29](https://jam.dev/c/006f9722-e643-4b65-904a-25471a7b90ed) e [Evidências](Evidencias/CT-RF113_Busca_Modelo_Ficha_Filtros_Combinados/README.md) |
 | [CT-RF115](Cenario_Teste/CT-RF115_Nova_Busca_Modelos_Ficha_Sem_Filtros.md) | Reexecutar com listagem padrão populada, pesquisa restritiva e comparação dos registros após a nova busca. A gravação não mostra uma listagem padrão populada. O estado vazio é compatível com os retornos, mas a recuperação de registros ocultados por uma pesquisa anterior ficou a validar. | [Jam — PED-30](https://jam.dev/c/297eec2b-7be4-498b-a0e6-e962ed93cc00) e [Evidências](Evidencias/CT-RF115_Nova_Busca_Modelos_Ficha_Sem_Filtros/README.md) |
 | [CT-RF116](Cenario_Teste/CT-RF116_Configuracoes_Dias_Ausencia_Vazio.md) | Confirmar com o produto a regra para vazio e zero. Repetir com vazio, zero explícito e os limites da faixa. A conversão de vazio para zero e a persistência estão confirmadas. A obrigatoriedade do campo, o significado de zero e o efeito sobre a contagem de clientes ausentes dependem da regra de produto. O CT-RF44 já registra a necessidade de confirmar a faixa. | [Jam — PED-20 — Dias de ausência vazio](https://jam.dev/c/4e96d4fa-65b5-459b-a795-854496e5753c) e [Evidências](Evidencias/CT-RF116_Configuracoes_Dias_Ausencia_Vazio/README.md) |
+| [CT-RF127](Cenario_Teste/CT-RF127_Configuracoes_Dias_Ausencia_Texto.md) | Confirmar a regra de vazio com o produto e repetir a digitação e a colagem de texto, conferindo também a recarga. A rejeição da digitação de letras foi observada. A regra para o campo vazio permanece pendente no CT-RF116. A persistência de zero nesta gravação não foi verificada após recarga. | [Jam — PED-18 — Dias de ausência com texto](https://jam.dev/c/c578ed7a-c11c-4cef-8a6c-84d0244f21a5) e [Evidências](Evidencias/CT-RF127_Configuracoes_Dias_Ausencia_Texto/README.md) |
 
 A contagem de 47 defeitos registrados considera os itens do resumo de bugs. BUG-011–BUG-047 estão em triagem. Os pontos desta tabela aguardam confirmação antes de receber um registro de defeito.
 

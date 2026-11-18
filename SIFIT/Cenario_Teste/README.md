@@ -1,6 +1,6 @@
 # 🧪 Índice dos cenários de teste — SIFIT
 
-**Atualização:** 17/11/2026. 122 casos documentados: 52 aprovados, 51 reprovados e 19 a validar. 47 defeitos registrados (10 abertos e 37 em triagem) e 51 casos com reteste corretivo pendente. Escopo: CT-RF01–CT-RF35, CT-RF38–CT-RF62 e CT-RF65–CT-RF126.
+**Atualização:** 17/11/2026. 123 casos documentados: 52 aprovados, 51 reprovados e 20 a validar. 47 defeitos registrados (10 abertos e 37 em triagem) e 51 casos com reteste corretivo pendente. Escopo: CT-RF01–CT-RF35, CT-RF38–CT-RF62 e CT-RF65–CT-RF127.
 
 | Caso | Funcionalidade | Resultado | Defeito | Jam |
 | --- | --- | --- | --- | --- |
@@ -299,7 +299,7 @@ A revisão de Modelos de Ficha inclui CT-RF109–CT-RF115 com base em 6 gravaç�
 
 CT-RF116–CT-RF121 amplia a cobertura de Configurações e Modelos de Ficha com gravações de 16/11/2026 entre 22:03:53 e 22:18:52 BRT. A revisão é documental.
 
-## Inclusão de 17/11/2026 — Inteligência e Configurações (CT-RF122–CT-RF126)
+## Inclusão de 17/11/2026 — Inteligência e Configurações (CT-RF122–CT-RF127)
 
 | Caso | Funcionalidade | Resultado | Defeito | Jam |
 | --- | --- | --- | --- | --- |
@@ -308,7 +308,8 @@ CT-RF116–CT-RF121 amplia a cobertura de Configurações e Modelos de Ficha com
 | [CT-RF124](CT-RF124_Configuracoes_Abas_Biometria_Senha.md) | Navegar pelas abas de Configurações com a senha da biometria protegida | Reprovado nas evidências | [BUG-046](../Relatorio-de-Bugs.md#bug-046), em triagem | Jam — PED-15 (gravação restrita por conter dados de integração) |
 | [CT-RF125](CT-RF125_Configuracoes_Salvar_Dias_Ausencia_Valido.md) | Salvar um valor válido de dias de ausência | Aprovado conforme a gravação | — | [Jam — PED-16 — Salvar dias de ausência](https://jam.dev/c/12d6bba7-a67e-4882-86a5-4dd08d194af2) |
 | [CT-RF126](CT-RF126_Configuracoes_Dias_Ausencia_Negativo.md) | Bloquear número negativo no campo de dias de ausência | Reprovado nas evidências | [BUG-047](../Relatorio-de-Bugs.md#bug-047), em triagem | [Jam — PED-17 — Dias de ausência negativos](https://jam.dev/c/d5786f67-6e5f-44f5-bbba-fbd763a88740) |
+| [CT-RF127](CT-RF127_Configuracoes_Dias_Ausencia_Texto.md) | Validar letras no campo de dias de ausência | A validar — regra ou contexto pendente | — | [Jam — PED-18 — Dias de ausência com texto](https://jam.dev/c/c578ed7a-c11c-4cef-8a6c-84d0244f21a5) |
 
-CT-RF122–CT-RF126 cobre Inteligência e Configurações com gravações de 16/11/2026 entre 21:50:51 e 22:00:22 BRT. A revisão é documental.
+CT-RF122–CT-RF127 cobre Inteligência e Configurações com gravações de 16/11/2026 entre 21:50:51 e 22:02:16 BRT. A revisão é documental.
 
 [← Início](../../README.md) · [Requisitos](../Analise%20de%20requisitos.md) · [Plano](../Plano%20de%20testes.md) · [Evidências](../Evidencias/README.md)

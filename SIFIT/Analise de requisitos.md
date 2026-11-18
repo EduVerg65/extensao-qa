@@ -2,11 +2,11 @@
 
 **Módulos:** Autenticação, Perfil, Clientes / Filtros, Financeiro, Página inicial / Personais, SifitBox / Modalidades e Turmas, Categorias Crossfit, Avaliações, Exercícios, Grupos Musculares, Dashboard, Objetivos de Treino, Fichas de Anamnese, Colaboradores, Prospecção e Bandeiras de Cartão.
 
-**Atualização:** 17/11/2026 — RF01 a RF35, RF38 a RF62 e RF65 a RF126 consolidados, com inclusão de Categorias Crossfit (CT-RF38), SifitBox – Turmas (CT-RF39 a CT-RF41), Pagar.me, Configurações, Despesas Fixas e Relatórios (CT-RF42 a CT-RF56), Grupos (treino) (CT-RF57 e CT-RF58), Fichas de Anamnese (CT-RF59), Modelos de Anamnese (CT-RF60), Categorias de Anamnese (CT-RF61), Perguntas Anamnese (CT-RF62), Colaboradores (CT-RF65 a CT-RF73), Prospecção e Bandeiras de Cartão (CT-RF74 a CT-RF90), Contas a Pagar / Modelos de Contrato / Planos (CT-RF91 a CT-RF103) Tipos de Pagamento (CT-RF104 a CT-RF108) e Modelos de Ficha (CT-RF109–CT-RF115) e Configurações e Modelos de Ficha (CT-RF116–CT-RF121) e Inteligência e Configurações (CT-RF122–CT-RF126). BUG-011–BUG-047 em triagem.
+**Atualização:** 17/11/2026 — RF01 a RF35, RF38 a RF62 e RF65 a RF127 consolidados, com inclusão de Categorias Crossfit (CT-RF38), SifitBox – Turmas (CT-RF39 a CT-RF41), Pagar.me, Configurações, Despesas Fixas e Relatórios (CT-RF42 a CT-RF56), Grupos (treino) (CT-RF57 e CT-RF58), Fichas de Anamnese (CT-RF59), Modelos de Anamnese (CT-RF60), Categorias de Anamnese (CT-RF61), Perguntas Anamnese (CT-RF62), Colaboradores (CT-RF65 a CT-RF73), Prospecção e Bandeiras de Cartão (CT-RF74 a CT-RF90), Contas a Pagar / Modelos de Contrato / Planos (CT-RF91 a CT-RF103) Tipos de Pagamento (CT-RF104 a CT-RF108) e Modelos de Ficha (CT-RF109–CT-RF115) e Configurações e Modelos de Ficha (CT-RF116–CT-RF121) e Inteligência e Configurações (CT-RF122–CT-RF127). BUG-011–BUG-047 em triagem.
 
 **Padronização documental:** 13/11/2026, sem alteração dos resultados registrados.
 
-Esta análise documenta 122 requisitos de QA para os cenários relacionados abaixo, com base nos relatos e nas evidências fornecidas. RF01–RF04 e suas análises históricas foram preservados; RF05–RF20 ampliam a cobertura em 14/11/2026; RF21 acrescenta Avaliações; RF22–RF28 acrescentam Exercícios; RF29–RF33 acrescentam Grupos Musculares; RF34 acrescenta o carregamento do dashboard RF35 acrescenta o cadastro de objetivos de treino e RF38 acrescenta o cadastro de categorias com código automático em 15/11/2026. RF39 acrescenta o cadastro de modalidade em SifitBox – Turmas. RF40 acrescenta a exclusão de turmas e modalidades. RF41 acrescenta o cadastro de turma. RF42 a RF56 acrescentam Pagar.me, Configurações, Despesas Fixas e Relatórios em 15/11/2026. RF57 acrescenta a exclusão de grupo (treino) e RF58 acrescenta a edição de grupo (treino), ambos também em 15/11/2026. RF59 acrescenta o cadastro de anamnese, também em 15/11/2026. RF60 acrescenta a gestão de modelos de anamnese (busca, cadastro, edição e exclusão), em 16/11/2026. RF61 acrescenta a gestão de categorias de anamnese (filtro, busca, cadastro, edição, cancelamento de edição e exclusão), também em 16/11/2026. RF62 acrescenta a edição de pergunta de anamnese, reprovada por HTTP 500, também em 16/11/2026. RF65–RF73 cobrem validações, operações e buscas de Colaboradores, também em 15/11/2026. RF74–RF84 acrescentam Prospecção e Bandeiras de Cartão a partir de resumos fornecidos, em 16/11/2026. RF85 a RF90 acrescentam Prospecção (leads) em 15/11/2026. RF91 a RF103 acrescentam Contas a Pagar, Modelos de Contrato e Planos em 15/11/2026. RF104 a RF108 acrescentam Tipos de Pagamento em 15/11/2026. RF109–RF115 cobre Modelos de Ficha com evidências gravadas em 16/11/2026. Os critérios abaixo constituem a referência de QA para esses fluxos; não representam validação de uma especificação formal pelo responsável pelo produto.
+Esta análise documenta 123 requisitos de QA para os cenários relacionados abaixo, com base nos relatos e nas evidências fornecidas. RF01–RF04 e suas análises históricas foram preservados; RF05–RF20 ampliam a cobertura em 14/11/2026; RF21 acrescenta Avaliações; RF22–RF28 acrescentam Exercícios; RF29–RF33 acrescentam Grupos Musculares; RF34 acrescenta o carregamento do dashboard RF35 acrescenta o cadastro de objetivos de treino e RF38 acrescenta o cadastro de categorias com código automático em 15/11/2026. RF39 acrescenta o cadastro de modalidade em SifitBox – Turmas. RF40 acrescenta a exclusão de turmas e modalidades. RF41 acrescenta o cadastro de turma. RF42 a RF56 acrescentam Pagar.me, Configurações, Despesas Fixas e Relatórios em 15/11/2026. RF57 acrescenta a exclusão de grupo (treino) e RF58 acrescenta a edição de grupo (treino), ambos também em 15/11/2026. RF59 acrescenta o cadastro de anamnese, também em 15/11/2026. RF60 acrescenta a gestão de modelos de anamnese (busca, cadastro, edição e exclusão), em 16/11/2026. RF61 acrescenta a gestão de categorias de anamnese (filtro, busca, cadastro, edição, cancelamento de edição e exclusão), também em 16/11/2026. RF62 acrescenta a edição de pergunta de anamnese, reprovada por HTTP 500, também em 16/11/2026. RF65–RF73 cobrem validações, operações e buscas de Colaboradores, também em 15/11/2026. RF74–RF84 acrescentam Prospecção e Bandeiras de Cartão a partir de resumos fornecidos, em 16/11/2026. RF85 a RF90 acrescentam Prospecção (leads) em 15/11/2026. RF91 a RF103 acrescentam Contas a Pagar, Modelos de Contrato e Planos em 15/11/2026. RF104 a RF108 acrescentam Tipos de Pagamento em 15/11/2026. RF109–RF115 cobre Modelos de Ficha com evidências gravadas em 16/11/2026. Os critérios abaixo constituem a referência de QA para esses fluxos; não representam validação de uma especificação formal pelo responsável pelo produto.
 
 ## 📋 Visão geral dos requisitos
 
@@ -134,6 +134,7 @@ Esta análise documenta 122 requisitos de QA para os cenários relacionados abai
 | [RF124](#rf124) | Navegar pelas abas de Configurações com a senha da biometria protegida | Alta, proposta | [CT-RF124](Cenario_Teste/CT-RF124_Configuracoes_Abas_Biometria_Senha.md) |
 | [RF125](#rf125) | Salvar um valor válido de dias de ausência | Média, proposta | [CT-RF125](Cenario_Teste/CT-RF125_Configuracoes_Salvar_Dias_Ausencia_Valido.md) |
 | [RF126](#rf126) | Bloquear número negativo no campo de dias de ausência | Média, proposta | [CT-RF126](Cenario_Teste/CT-RF126_Configuracoes_Dias_Ausencia_Negativo.md) |
+| [RF127](#rf127) | Validar letras no campo de dias de ausência | Média, proposta | [CT-RF127](Cenario_Teste/CT-RF127_Configuracoes_Dias_Ausencia_Texto.md) |
 
 ---
 
@@ -2877,6 +2878,31 @@ A evidência confirma persistência para o valor testado e restauração do valo
 
 A evidência confirma a persistência de -1. O efeito sobre a classificação de clientes ausentes e a abrangência para outros negativos não foram exercitados.
 
+<a id="rf127"></a>
+
+## RF127 — Validar letras no campo de dias de ausência
+
+| Campo | Descrição |
+| --- | --- |
+| Requisito de QA | Rejeitar letras no campo numérico de dias de ausência e tratar o valor vazio resultante conforme a regra de salvamento. |
+| Ator | Usuário autenticado com permissão para a operação. |
+| Pré-condições | Sessão autenticada com permissão para editar Configurações e valor inicial conhecido no campo de dias de ausência. |
+| Gatilho | Apagar o valor do campo, tentar digitar letras e clicar em Salvar Configurações. |
+| Caso | [CT-RF127](Cenario_Teste/CT-RF127_Configuracoes_Dias_Ausencia_Texto.md) |
+| Situação observada | A validar — regra ou contexto pendente. Letras não apareceram no campo. O salvamento com campo vazio enviou 0 e retornou HTTP 200. |
+| Defeito | Sem defeito confirmado |
+| Evidências | [Jam — PED-18 — Dias de ausência com texto](https://jam.dev/c/c578ed7a-c11c-4cef-8a6c-84d0244f21a5) e [Evidências](Evidencias/CT-RF127_Configuracoes_Dias_Ausencia_Texto/README.md). |
+
+### Critérios de aceitação do RF127
+
+1. Letras não são aceitas como valor do campo numérico.
+2. Se o campo permanecer vazio, o salvamento preserva o valor anterior ou aplica o padrão definido pelo produto.
+3. A próxima consulta confirma o comportamento definido para a entrada vazia.
+
+### Pontos a confirmar e limites do RF127
+
+A rejeição da digitação de letras foi observada. A regra para o campo vazio permanece pendente no CT-RF116. A persistência de zero nesta gravação não foi verificada após recarga.
+
 ---
 
 ## 🔗 Rastreabilidade
@@ -3002,6 +3028,7 @@ A evidência confirma a persistência de -1. O efeito sobre a classificação de
 | RF124 | [CT-RF124](Cenario_Teste/CT-RF124_Configuracoes_Abas_Biometria_Senha.md) | [BUG-046](Relatorio-de-Bugs.md#bug-046), em triagem | Reprovado nas evidências | [Evidências](Evidencias/CT-RF124_Configuracoes_Abas_Biometria_Senha/README.md) e Jam — PED-15 (gravação restrita por conter dados de integração) |
 | RF125 | [CT-RF125](Cenario_Teste/CT-RF125_Configuracoes_Salvar_Dias_Ausencia_Valido.md) | Nenhum no fluxo avaliado | Aprovado conforme a gravação | [Evidências](Evidencias/CT-RF125_Configuracoes_Salvar_Dias_Ausencia_Valido/README.md) e [Jam — PED-16 — Salvar dias de ausência](https://jam.dev/c/12d6bba7-a67e-4882-86a5-4dd08d194af2) |
 | RF126 | [CT-RF126](Cenario_Teste/CT-RF126_Configuracoes_Dias_Ausencia_Negativo.md) | [BUG-047](Relatorio-de-Bugs.md#bug-047), em triagem | Reprovado nas evidências | [Evidências](Evidencias/CT-RF126_Configuracoes_Dias_Ausencia_Negativo/README.md) e [Jam — PED-17 — Dias de ausência negativos](https://jam.dev/c/d5786f67-6e5f-44f5-bbba-fbd763a88740) |
+| RF127 | [CT-RF127](Cenario_Teste/CT-RF127_Configuracoes_Dias_Ausencia_Texto.md) | Sem defeito confirmado | A validar — regra ou contexto pendente | [Evidências](Evidencias/CT-RF127_Configuracoes_Dias_Ausencia_Texto/README.md) e [Jam — PED-18 — Dias de ausência com texto](https://jam.dev/c/c578ed7a-c11c-4cef-8a6c-84d0244f21a5) |
 
 ---
 
@@ -3833,13 +3860,14 @@ CT-RF116–CT-RF121 amplia a cobertura de Configurações e Modelos de Ficha com
 
 ### Base da análise de Inteligência e Configurações — revisão de 17/11/2026
 
-CT-RF122–CT-RF126 cobre Inteligência e Configurações com gravações de 16/11/2026 entre 21:50:51 e 22:00:22 BRT.
+CT-RF122–CT-RF127 cobre Inteligência e Configurações com gravações de 16/11/2026 entre 21:50:51 e 22:02:16 BRT.
 
 - RF122: Cartões e linha do tempo acompanharam a troca de 7, 30 e 90 dias. Os resultados de 90 dias se repetiram. [Jam — PED-12 — Últimos 90 dias](https://jam.dev/c/1728cfc2-1d36-4ea4-ab68-68a84458c359).
 - RF123: A Central passou a mostrar 00:55. A linha do tempo de Hoje e o resumo de Resultados IA incluíram essa execução. [Jam — PED-14 — Execução de Risco de Evasão](https://jam.dev/c/efe26a44-458a-4802-bd48-8e23c5ac5fd9).
 - RF124: A navegação funcionou. A aba Biometria exibiu o valor do campo Senha sem mascaramento. Jam — PED-15 (gravação restrita por conter dados de integração).
 - RF125: 15 foi salvo e confirmado após recarga. A segunda recarga confirmou a restauração de 1100. [Jam — PED-16 — Salvar dias de ausência](https://jam.dev/c/12d6bba7-a67e-4882-86a5-4dd08d194af2).
 - RF126: -1 foi aceito com HTTP 200 e confirmado na interface e no GET após recarga. [Jam — PED-17 — Dias de ausência negativos](https://jam.dev/c/d5786f67-6e5f-44f5-bbba-fbd763a88740).
+- RF127: Letras não apareceram no campo. O salvamento com campo vazio enviou 0 e retornou HTTP 200. [Jam — PED-18 — Dias de ausência com texto](https://jam.dev/c/c578ed7a-c11c-4cef-8a6c-84d0244f21a5).
 
 ---
 

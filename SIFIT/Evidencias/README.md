@@ -160,7 +160,7 @@ A revisão de Modelos de Ficha inclui CT-RF109–CT-RF115 com base em 6 gravaç�
 
 CT-RF116–CT-RF121 amplia a cobertura de Configurações e Modelos de Ficha com gravações de 16/11/2026 entre 22:03:53 e 22:18:52 BRT. As pastas seguem o padrão de origem, cronologia e quadros com SHA-256.
 
-## Inclusão de 17/11/2026 — Inteligência e Configurações (CT-RF122–CT-RF126)
+## Inclusão de 17/11/2026 — Inteligência e Configurações (CT-RF122–CT-RF127)
 
 | Caso | Evidência | Resultado |
 | --- | --- | --- |
@@ -169,5 +169,6 @@ CT-RF116–CT-RF121 amplia a cobertura de Configurações e Modelos de Ficha com
 | [CT-RF124](../Cenario_Teste/CT-RF124_Configuracoes_Abas_Biometria_Senha.md) | [Navegar pelas abas de Configurações com a senha da biometria protegida](CT-RF124_Configuracoes_Abas_Biometria_Senha/README.md) | Reprovado nas evidências |
 | [CT-RF125](../Cenario_Teste/CT-RF125_Configuracoes_Salvar_Dias_Ausencia_Valido.md) | [Salvar um valor válido de dias de ausência](CT-RF125_Configuracoes_Salvar_Dias_Ausencia_Valido/README.md) | Aprovado conforme a gravação |
 | [CT-RF126](../Cenario_Teste/CT-RF126_Configuracoes_Dias_Ausencia_Negativo.md) | [Bloquear número negativo no campo de dias de ausência](CT-RF126_Configuracoes_Dias_Ausencia_Negativo/README.md) | Reprovado nas evidências |
+| [CT-RF127](../Cenario_Teste/CT-RF127_Configuracoes_Dias_Ausencia_Texto.md) | [Validar letras no campo de dias de ausência](CT-RF127_Configuracoes_Dias_Ausencia_Texto/README.md) | A validar — regra ou contexto pendente |
 
-CT-RF122–CT-RF126 cobre Inteligência e Configurações com gravações de 16/11/2026 entre 21:50:51 e 22:00:22 BRT. As pastas reúnem origem, cronologia e recortes identificados com SHA-256.
+CT-RF122–CT-RF127 cobre Inteligência e Configurações com gravações de 16/11/2026 entre 21:50:51 e 22:02:16 BRT. As pastas reúnem origem, cronologia e recortes identificados com SHA-256.
