@@ -1,0 +1,22 @@
+CT-RF157 — Consultar os detalhes de uma notificação
+Fonte: Jam 1 — Consulta de notificação existente. Gravação restrita por conter dados de integração ou dados de alunos.
+Gravação: 16/11/2026, 22:39:05 BRT. Duração: 16,97 s.
+Revisão documental: 18/11/2026.
+Página: https://sifit.centrion.com.br/aplicativo
+Foco deste caso: Abrir a notificação selecionada e conferir a mensagem, o público indicado e a prévia.
+
+Cronologia (ações e eventos capturados no Jam):
+0:06,96  Aciona a lupa da linha e abre os detalhes.
+0:09–0:14  Confere o público, a mensagem e a prévia.
+0:15,34  Aciona Fechar e volta à lista.
+
+Rede do conjunto gravado (eventos relevantes ao caso):
+0:06,96  POST /api/notificacoes/buscar/1 (HTTP 200), com devolução da notificação correspondente à consulta.
+
+Quadros consultados (reprodução do Jam):
+- Diálogo Notificação com destinatários e conteúdo da mensagem ocultado.
+- Ação Fechar no diálogo de consulta.
+
+Observações e verificações futuras:
+- O caso verifica a consulta no painel. A gravação não demonstra recebimento no celular.
+- Usar como regressão da consulta e comparar dois avisos de teste diferentes para conferir o vínculo com a linha selecionada.

@@ -2,11 +2,11 @@
 
 **Módulos:** Autenticação, Perfil, Clientes / Filtros, Financeiro, Página inicial / Personais, SifitBox / Modalidades e Turmas, Categorias Crossfit, Avaliações, Exercícios, Grupos Musculares, Dashboard, Objetivos de Treino, Fichas de Anamnese, Colaboradores, Prospecção e Bandeiras de Cartão.
 
-**Atualização:** 18/11/2026 — RF01 a RF35, RF38 a RF62 e RF65 a RF156 consolidados, com inclusão de Categorias Crossfit (CT-RF38), SifitBox – Turmas (CT-RF39 a CT-RF41), Pagar.me, Configurações, Despesas Fixas e Relatórios (CT-RF42 a CT-RF56), Grupos (treino) (CT-RF57 e CT-RF58), Fichas de Anamnese (CT-RF59), Modelos de Anamnese (CT-RF60), Categorias de Anamnese (CT-RF61), Perguntas Anamnese (CT-RF62), Colaboradores (CT-RF65 a CT-RF73), Prospecção e Bandeiras de Cartão (CT-RF74 a CT-RF90), Contas a Pagar / Modelos de Contrato / Planos (CT-RF91 a CT-RF103) Tipos de Pagamento (CT-RF104 a CT-RF108) e Modelos de Ficha (CT-RF109–CT-RF115) e Configurações e Modelos de Ficha (CT-RF116–CT-RF121) e Inteligência e Configurações (CT-RF122–CT-RF127) e Inteligência e Automação (CT-RF128–CT-RF133) e ampliação da cobertura da Central de Automações (CT-RF134–CT-RF138) e integração de WhatsApp (CT-RF139–CT-RF144) e novos cenários de Configurações (CT-RF145–CT-RF150) e Configurações de Avaliação e Aniversário (CT-RF151–CT-RF156). BUG-011–BUG-052 em triagem.
+**Atualização:** 18/11/2026 — RF01 a RF35, RF38 a RF62 e RF65 a RF157 consolidados, com inclusão de Categorias Crossfit (CT-RF38), SifitBox – Turmas (CT-RF39 a CT-RF41), Pagar.me, Configurações, Despesas Fixas e Relatórios (CT-RF42 a CT-RF56), Grupos (treino) (CT-RF57 e CT-RF58), Fichas de Anamnese (CT-RF59), Modelos de Anamnese (CT-RF60), Categorias de Anamnese (CT-RF61), Perguntas Anamnese (CT-RF62), Colaboradores (CT-RF65 a CT-RF73), Prospecção e Bandeiras de Cartão (CT-RF74 a CT-RF90), Contas a Pagar / Modelos de Contrato / Planos (CT-RF91 a CT-RF103) Tipos de Pagamento (CT-RF104 a CT-RF108) e Modelos de Ficha (CT-RF109–CT-RF115) e Configurações e Modelos de Ficha (CT-RF116–CT-RF121) e Inteligência e Configurações (CT-RF122–CT-RF127) e Inteligência e Automação (CT-RF128–CT-RF133) e ampliação da cobertura da Central de Automações (CT-RF134–CT-RF138) e integração de WhatsApp (CT-RF139–CT-RF144) e novos cenários de Configurações (CT-RF145–CT-RF150) e Configurações de Avaliação e Aniversário (CT-RF151–CT-RF156) e Aplicativo (CT-RF157). BUG-011–BUG-052 em triagem.
 
 **Padronização documental:** 13/11/2026, sem alteração dos resultados registrados.
 
-Esta análise documenta 152 requisitos de QA para os cenários relacionados abaixo, com base nos relatos e nas evidências fornecidas. RF01–RF04 e suas análises históricas foram preservados; RF05–RF20 ampliam a cobertura em 14/11/2026; RF21 acrescenta Avaliações; RF22–RF28 acrescentam Exercícios; RF29–RF33 acrescentam Grupos Musculares; RF34 acrescenta o carregamento do dashboard RF35 acrescenta o cadastro de objetivos de treino e RF38 acrescenta o cadastro de categorias com código automático em 15/11/2026. RF39 acrescenta o cadastro de modalidade em SifitBox – Turmas. RF40 acrescenta a exclusão de turmas e modalidades. RF41 acrescenta o cadastro de turma. RF42 a RF56 acrescentam Pagar.me, Configurações, Despesas Fixas e Relatórios em 15/11/2026. RF57 acrescenta a exclusão de grupo (treino) e RF58 acrescenta a edição de grupo (treino), ambos também em 15/11/2026. RF59 acrescenta o cadastro de anamnese, também em 15/11/2026. RF60 acrescenta a gestão de modelos de anamnese (busca, cadastro, edição e exclusão), em 16/11/2026. RF61 acrescenta a gestão de categorias de anamnese (filtro, busca, cadastro, edição, cancelamento de edição e exclusão), também em 16/11/2026. RF62 acrescenta a edição de pergunta de anamnese, reprovada por HTTP 500, também em 16/11/2026. RF65–RF73 cobrem validações, operações e buscas de Colaboradores, também em 15/11/2026. RF74–RF84 acrescentam Prospecção e Bandeiras de Cartão a partir de resumos fornecidos, em 16/11/2026. RF85 a RF90 acrescentam Prospecção (leads) em 15/11/2026. RF91 a RF103 acrescentam Contas a Pagar, Modelos de Contrato e Planos em 15/11/2026. RF104 a RF108 acrescentam Tipos de Pagamento em 15/11/2026. RF109–RF115 cobre Modelos de Ficha com evidências gravadas em 16/11/2026. Os critérios abaixo constituem a referência de QA para esses fluxos; não representam validação de uma especificação formal pelo responsável pelo produto.
+Esta análise documenta 153 requisitos de QA para os cenários relacionados abaixo, com base nos relatos e nas evidências fornecidas. RF01–RF04 e suas análises históricas foram preservados; RF05–RF20 ampliam a cobertura em 14/11/2026; RF21 acrescenta Avaliações; RF22–RF28 acrescentam Exercícios; RF29–RF33 acrescentam Grupos Musculares; RF34 acrescenta o carregamento do dashboard RF35 acrescenta o cadastro de objetivos de treino e RF38 acrescenta o cadastro de categorias com código automático em 15/11/2026. RF39 acrescenta o cadastro de modalidade em SifitBox – Turmas. RF40 acrescenta a exclusão de turmas e modalidades. RF41 acrescenta o cadastro de turma. RF42 a RF56 acrescentam Pagar.me, Configurações, Despesas Fixas e Relatórios em 15/11/2026. RF57 acrescenta a exclusão de grupo (treino) e RF58 acrescenta a edição de grupo (treino), ambos também em 15/11/2026. RF59 acrescenta o cadastro de anamnese, também em 15/11/2026. RF60 acrescenta a gestão de modelos de anamnese (busca, cadastro, edição e exclusão), em 16/11/2026. RF61 acrescenta a gestão de categorias de anamnese (filtro, busca, cadastro, edição, cancelamento de edição e exclusão), também em 16/11/2026. RF62 acrescenta a edição de pergunta de anamnese, reprovada por HTTP 500, também em 16/11/2026. RF65–RF73 cobrem validações, operações e buscas de Colaboradores, também em 15/11/2026. RF74–RF84 acrescentam Prospecção e Bandeiras de Cartão a partir de resumos fornecidos, em 16/11/2026. RF85 a RF90 acrescentam Prospecção (leads) em 15/11/2026. RF91 a RF103 acrescentam Contas a Pagar, Modelos de Contrato e Planos em 15/11/2026. RF104 a RF108 acrescentam Tipos de Pagamento em 15/11/2026. RF109–RF115 cobre Modelos de Ficha com evidências gravadas em 16/11/2026. Os critérios abaixo constituem a referência de QA para esses fluxos; não representam validação de uma especificação formal pelo responsável pelo produto.
 
 ## 📋 Visão geral dos requisitos
 
@@ -164,6 +164,7 @@ Esta análise documenta 152 requisitos de QA para os cenários relacionados abai
 | [RF154](#rf154) | Desabilitar o envio automático de aniversário | Média, proposta | [CT-RF154](Cenario_Teste/CT-RF154_Configuracoes_Aniversario_Desabilitar_Envio_Automatico.md) |
 | [RF155](#rf155) | Cancelar a edição da mensagem de aniversário do WhatsApp | Média, proposta | [CT-RF155](Cenario_Teste/CT-RF155_Configuracoes_Aniversario_Cancelar_Mensagem_WhatsApp.md) |
 | [RF156](#rf156) | Inserir variáveis na mensagem de aniversário do WhatsApp | Média, proposta | [CT-RF156](Cenario_Teste/CT-RF156_Configuracoes_Aniversario_Inserir_Variaveis_WhatsApp.md) |
+| [RF157](#rf157) | Consultar os detalhes de uma notificação | Média, proposta | [CT-RF157](Cenario_Teste/CT-RF157_Aplicativo_Consultar_Notificacao.md) |
 
 ---
 
@@ -3657,6 +3658,31 @@ O resultado cobre o cancelamento antes de salvar na aba Aniversário. O envio da
 
 O caso verifica a inserção dos marcadores no editor e o descarte da edição. A substituição por dados reais e o envio não foram exercitados.
 
+<a id="rf157"></a>
+
+## RF157 — Consultar os detalhes de uma notificação
+
+| Campo | Descrição |
+| --- | --- |
+| Requisito de QA | Abrir a notificação selecionada e conferir a mensagem, o público indicado e a prévia. |
+| Ator | Usuário autenticado com permissão para a operação. |
+| Pré-condições | Sessão autenticada com acesso a Aplicativo e ao menos uma notificação de teste na lista. |
+| Gatilho | Clicar na lupa da notificação selecionada. |
+| Caso | [CT-RF157](Cenario_Teste/CT-RF157_Aplicativo_Consultar_Notificacao.md) |
+| Situação observada | Aprovado conforme a gravação. O diálogo exibiu a notificação selecionada e sua prévia. Fechar retornou à listagem. |
+| Defeito | Nenhum no fluxo avaliado |
+| Evidências | Jam 1 — Consulta de notificação existente (gravação restrita por conter dados de integração ou dados de alunos) e [Evidências](Evidencias/CT-RF157_Aplicativo_Consultar_Notificacao/README.md). |
+
+### Critérios de aceitação do RF157
+
+1. A ação consulta o registro da linha selecionada.
+2. O diálogo exibe a mensagem e a prévia correspondentes.
+3. Fechar encerra apenas a consulta.
+
+### Pontos a confirmar e limites do RF157
+
+O caso verifica a consulta no painel. A gravação não demonstra recebimento no celular.
+
 ---
 
 ## 🔗 Rastreabilidade
@@ -3812,6 +3838,7 @@ O caso verifica a inserção dos marcadores no editor e o descarte da edição. 
 | RF154 | [CT-RF154](Cenario_Teste/CT-RF154_Configuracoes_Aniversario_Desabilitar_Envio_Automatico.md) | Nenhum no fluxo avaliado | Aprovado conforme a gravação | [Evidências](Evidencias/CT-RF154_Configuracoes_Aniversario_Desabilitar_Envio_Automatico/README.md) e Jam 4 — Desativação do envio automático de aniversário (gravação restrita por conter dados de integração) |
 | RF155 | [CT-RF155](Cenario_Teste/CT-RF155_Configuracoes_Aniversario_Cancelar_Mensagem_WhatsApp.md) | Nenhum no fluxo avaliado | Aprovado conforme a gravação | [Evidências](Evidencias/CT-RF155_Configuracoes_Aniversario_Cancelar_Mensagem_WhatsApp/README.md) e Jam 5 — Cancelamento da edição da mensagem de WhatsApp (gravação restrita por conter dados de integração) |
 | RF156 | [CT-RF156](Cenario_Teste/CT-RF156_Configuracoes_Aniversario_Inserir_Variaveis_WhatsApp.md) | Nenhum no fluxo avaliado | Aprovado conforme a gravação | [Evidências](Evidencias/CT-RF156_Configuracoes_Aniversario_Inserir_Variaveis_WhatsApp/README.md) e Jam 6 — Inserção de variáveis na mensagem de WhatsApp (gravação restrita por conter dados de integração) |
+| RF157 | [CT-RF157](Cenario_Teste/CT-RF157_Aplicativo_Consultar_Notificacao.md) | Nenhum no fluxo avaliado | Aprovado conforme a gravação | [Evidências](Evidencias/CT-RF157_Aplicativo_Consultar_Notificacao/README.md) e Jam 1 — Consulta de notificação existente (gravação restrita por conter dados de integração ou dados de alunos) |
 
 ---
 
@@ -4705,6 +4732,12 @@ CT-RF151–CT-RF156 cobrem as abas Avaliação e Aniversário com gravações de
 - RF154: A consulta e a aba Aniversário confirmaram Desabilitado após recarregar. Jam 4 — Desativação do envio automático de aniversário (gravação restrita por conter dados de integração).
 - RF155: Cancelar retornou à Página Inicial e preservou a seleção do canal e a mensagem anterior. Jam 5 — Cancelamento da edição da mensagem de WhatsApp (gravação restrita por conter dados de integração).
 - RF156: As quatro variáveis apareceram no editor na ordem selecionada. Ao cancelar, a mensagem anterior foi preservada. Jam 6 — Inserção de variáveis na mensagem de WhatsApp (gravação restrita por conter dados de integração).
+
+### Base da análise de Aplicativo — revisão de 18/11/2026
+
+CT-RF157 cobre a aba Aplicativo com gravações de 16/11/2026 às 22:39:05 BRT.
+
+- RF157: O diálogo exibiu a notificação selecionada e sua prévia. Fechar retornou à listagem. Jam 1 — Consulta de notificação existente (gravação restrita por conter dados de integração ou dados de alunos).
 
 ---
 

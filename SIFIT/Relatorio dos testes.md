@@ -1,10 +1,10 @@
 # 📊 Relatório de Testes — SIFIT
 
-**Escopo:** 152 casos documentados (CT-RF01–CT-RF35, CT-RF38–CT-RF62 e CT-RF65–CT-RF156) — autenticação, recuperação, perfil, Clientes, financeiro, página inicial e dashboard, modalidades / tema de SifitBox, Categorias Crossfit, Avaliações, Exercícios, Grupos Musculares, Objetivos de Treino cadastro de categorias com código automático, SifitBox – Turmas, Pagar.me, Configurações, Despesas Fixas, Relatórios, Grupos (treino), Fichas de Anamnese, gestão de Modelos de Anamnese, gestão de Categorias de Anamnese, edição de Perguntas Anamnese, validações/funções/exclusão/busca de Colaboradores, Prospecção, Bandeiras de Cartão, Contas a Pagar, Modelos de Contrato, Planos, Tipos de Pagamento, Modelos de Ficha, Central de Automações, Integrações de WhatsApp e Configurações de Avaliação, Aniversário, Pagamento e Design.
+**Escopo:** 153 casos documentados (CT-RF01–CT-RF35, CT-RF38–CT-RF62 e CT-RF65–CT-RF157) — autenticação, recuperação, perfil, Clientes, financeiro, página inicial e dashboard, modalidades / tema de SifitBox, Categorias Crossfit, Avaliações, Exercícios, Grupos Musculares, Objetivos de Treino cadastro de categorias com código automático, SifitBox – Turmas, Pagar.me, Configurações, Despesas Fixas, Relatórios, Grupos (treino), Fichas de Anamnese, gestão de Modelos de Anamnese, gestão de Categorias de Anamnese, edição de Perguntas Anamnese, validações/funções/exclusão/busca de Colaboradores, Prospecção, Bandeiras de Cartão, Contas a Pagar, Modelos de Contrato, Planos, Tipos de Pagamento, Modelos de Ficha, Central de Automações, Integrações de WhatsApp e Configurações de Avaliação, Aniversário, Pagamento e Design, além de Aplicativo.
 
-**Datas das gravações do Jam:** CT-RF01 em 23/10/2026; CT-RF02_ERRO em 22/10/2026 às 21:45 BRT; CT-RF03 não confirmada; CT-RF04_loginComSucesso em 13/11/2026; CT-RF05–CT-RF20 em 14/11/2026; CT-RF21 em 15/11/2026 às 15:07:51,265 BRT; CT-RF22–28 em 15/11/2026 às 15:25, 15:40, 15:38, 15:35, 16:11, 16:08 e 16:07 BRT; CT-RF29–33 em 15/11/2026 às 15h56 BRT (uma única gravação); CT-RF34 em 15/11/2026 às 17:23 BRT; CT-RF35 em 15/11/2026 às 18:13 BRT; CT-RF38 em 15/11/2026 às 18:41 BRT; CT-RF39–41 em 15/11/2026 às 18:51 BRT (uma única gravação); CT-RF42–45 às 19:06, CT-RF46–49 às 19:07 e CT-RF50–56 às 19:09 BRT (uma gravação por grupo); CT-RF57 e CT-RF58 em 15/11/2026 às 21h03 BRT (mesma gravação); CT-RF59 em 15/11/2026 às 22h07 BRT; CT-RF60 em 15/11/2026 às 23h34 BRT; CT-RF61 em 16/11/2026 às 15h24 BRT; CT-RF62 em 16/11/2026 às 15h57 BRT. CT-RF74–CT-RF84: 16/11/2026 conforme os resumos, sem horário informado. CT-RF85–90 às 21:52, CT-RF91–95 às 21:58, CT-RF96–98 às 21:55 e CT-RF99–103 às 21:54 e CT-RF104–108 às 22:03 BRT em 15/11/2026 (uma gravação por grupo). CT-RF109–CT-RF115 em 16/11/2026 entre 22:19:51 e 22:29:07 BRT. CT-RF116–CT-RF121 amplia a cobertura de Configurações e Modelos de Ficha com gravações de 16/11/2026 entre 22:03:53 e 22:18:52 BRT. CT-RF122–CT-RF127 cobre Inteligência e Configurações com gravações de 16/11/2026 entre 21:50:51 e 22:02:16 BRT. CT-RF128–CT-RF133 cobre Inteligência e Automação com gravações de 16/11/2026 entre 21:40:31 e 21:49:48 BRT. CT-RF134–CT-RF138 cobrem a Central de Automações com gravações de 16/11/2026 entre 21:25:26 e 21:38:29 BRT. CT-RF139–CT-RF144 cobrem a integração do WhatsApp com gravações de 16/11/2026 entre 23:37:22 e 23:45:52 BRT. CT-RF145–CT-RF150 cobrem funcionalidades de Configurações com gravações de 16/11/2026 entre 23:21:59 e 23:36:13 BRT. CT-RF151–CT-RF156 cobrem as abas Avaliação e Aniversário com gravações de 16/11/2026 entre 23:10:04 e 23:20:07 BRT.
+**Datas das gravações do Jam:** CT-RF01 em 23/10/2026; CT-RF02_ERRO em 22/10/2026 às 21:45 BRT; CT-RF03 não confirmada; CT-RF04_loginComSucesso em 13/11/2026; CT-RF05–CT-RF20 em 14/11/2026; CT-RF21 em 15/11/2026 às 15:07:51,265 BRT; CT-RF22–28 em 15/11/2026 às 15:25, 15:40, 15:38, 15:35, 16:11, 16:08 e 16:07 BRT; CT-RF29–33 em 15/11/2026 às 15h56 BRT (uma única gravação); CT-RF34 em 15/11/2026 às 17:23 BRT; CT-RF35 em 15/11/2026 às 18:13 BRT; CT-RF38 em 15/11/2026 às 18:41 BRT; CT-RF39–41 em 15/11/2026 às 18:51 BRT (uma única gravação); CT-RF42–45 às 19:06, CT-RF46–49 às 19:07 e CT-RF50–56 às 19:09 BRT (uma gravação por grupo); CT-RF57 e CT-RF58 em 15/11/2026 às 21h03 BRT (mesma gravação); CT-RF59 em 15/11/2026 às 22h07 BRT; CT-RF60 em 15/11/2026 às 23h34 BRT; CT-RF61 em 16/11/2026 às 15h24 BRT; CT-RF62 em 16/11/2026 às 15h57 BRT. CT-RF74–CT-RF84: 16/11/2026 conforme os resumos, sem horário informado. CT-RF85–90 às 21:52, CT-RF91–95 às 21:58, CT-RF96–98 às 21:55 e CT-RF99–103 às 21:54 e CT-RF104–108 às 22:03 BRT em 15/11/2026 (uma gravação por grupo). CT-RF109–CT-RF115 em 16/11/2026 entre 22:19:51 e 22:29:07 BRT. CT-RF116–CT-RF121 amplia a cobertura de Configurações e Modelos de Ficha com gravações de 16/11/2026 entre 22:03:53 e 22:18:52 BRT. CT-RF122–CT-RF127 cobre Inteligência e Configurações com gravações de 16/11/2026 entre 21:50:51 e 22:02:16 BRT. CT-RF128–CT-RF133 cobre Inteligência e Automação com gravações de 16/11/2026 entre 21:40:31 e 21:49:48 BRT. CT-RF134–CT-RF138 cobrem a Central de Automações com gravações de 16/11/2026 entre 21:25:26 e 21:38:29 BRT. CT-RF139–CT-RF144 cobrem a integração do WhatsApp com gravações de 16/11/2026 entre 23:37:22 e 23:45:52 BRT. CT-RF145–CT-RF150 cobrem funcionalidades de Configurações com gravações de 16/11/2026 entre 23:21:59 e 23:36:13 BRT. CT-RF151–CT-RF156 cobrem as abas Avaliação e Aniversário com gravações de 16/11/2026 entre 23:10:04 e 23:20:07 BRT. CT-RF157 cobre a aba Aplicativo com gravações de 16/11/2026 às 22:39:05 BRT.
 
-**Data da revisão documental:** 18/11/2026, com integração de CT-RF151–CT-RF156 (Configurações / Avaliação e Aniversário).
+**Data da revisão documental:** 18/11/2026, com integração de CT-RF157 (Aplicativo).
 
 **Origem do resultado:** análise de evidências fornecidas; sem nova execução no sistema nesta revisão.
 
@@ -46,9 +46,11 @@ CT-RF145–CT-RF150 cobrem funcionalidades de Configurações com gravações de
 
 CT-RF151–CT-RF156 cobrem as abas Avaliação e Aniversário com gravações de 16/11/2026 entre 23:10:04 e 23:20:07 BRT. Casos aprovados: 6. Reprovados: 0. A validar: 0.
 
+CT-RF157 cobre a aba Aplicativo com gravações de 16/11/2026 às 22:39:05 BRT. Casos aprovados: 1. Reprovados: 0. A validar: 0.
+
 | Casos documentados | Aprovados | Reprovados | A validar | Defeitos registrados | Casos com reteste corretivo pendente |
 | :---: | :---: | :---: | :---: | :---: | :---: |
-| 152 | 74 | 57 | 21 | 52 (10 abertos + 42 em triagem) | 57 |
+| 153 | 75 | 57 | 21 | 52 (10 abertos + 42 em triagem) | 57 |
 
 Os 48 retestes incluem CT-RF22/24/26/27/28/29/30/35/41/45/51/53/54/55/56/57/58/59/62/65/66/67/68/69/70/71/73/81/82/83/89/92/98/102/105/107, sujeitos à confirmação funcional e técnica. As contagens representam os casos documentados com base nas fontes indicadas, sem novas execuções nesta revisão. As nove variações planejadas para o reteste do CT-RF03 não foram executadas e não são contabilizadas como testes adicionais realizados.
 
@@ -207,6 +209,7 @@ Os 48 retestes incluem CT-RF22/24/26/27/28/29/30/35/41/45/51/53/54/55/56/57/58/5
 | [CT-RF154](Cenario_Teste/CT-RF154_Configuracoes_Aniversario_Desabilitar_Envio_Automatico.md) | [RF154](Analise%20de%20requisitos.md#rf154) | Salvar Desabilitado retorna sucesso. A consulta posterior devolve `enviar_mensagens_aniversario: nao` e Aniversário mantém Desabilitado no seletor. | A consulta e a aba Aniversário confirmaram Desabilitado após recarregar. | Aprovado conforme a gravação | Nenhum no fluxo avaliado |
 | [CT-RF155](Cenario_Teste/CT-RF155_Configuracoes_Aniversario_Cancelar_Mensagem_WhatsApp.md) | [RF155](Analise%20de%20requisitos.md#rf155) | Cancelar retorna à Página Inicial. Ao voltar, o canal segue desmarcado e, ao marcá-lo localmente, o texto anterior reaparece. | Cancelar retornou à Página Inicial e preservou a seleção do canal e a mensagem anterior. | Aprovado conforme a gravação | Nenhum no fluxo avaliado |
 | [CT-RF156](Cenario_Teste/CT-RF156_Configuracoes_Aniversario_Inserir_Variaveis_WhatsApp.md) | [RF156](Analise%20de%20requisitos.md#rf156) | O editor exibe os quatro marcadores na ordem escolhida. Após Cancelar, ao reabrir e marcar WhatsApp, aparece a mensagem anterior. | As quatro variáveis apareceram no editor na ordem selecionada. Ao cancelar, a mensagem anterior foi preservada. | Aprovado conforme a gravação | Nenhum no fluxo avaliado |
+| [CT-RF157](Cenario_Teste/CT-RF157_Aplicativo_Consultar_Notificacao.md) | [RF157](Analise%20de%20requisitos.md#rf157) | O diálogo Notificação abre com os dados da linha selecionada, mostra a prévia e pode ser fechado. | O diálogo exibiu a notificação selecionada e sua prévia. Fechar retornou à listagem. | Aprovado conforme a gravação | Nenhum no fluxo avaliado |
 
 ---
 
@@ -637,6 +640,17 @@ O domínio do CT-RF02_ERRO é diferente do domínio `sifitalfa.centrion.com.br` 
 | Dados e permissões | Conta com permissão para editar Configurações. Preparar valores de referência nos seletores de Avaliação e uma mensagem de WhatsApp cadastrada na aba Aniversário. |
 | Preparação | Registrar valores iniciais, conferir a consulta após salvar ou cancelar e usar dados de teste nas mensagens. |
 
+### Aplicativo (CT-RF157)
+
+| Item | Definição |
+| --- | --- |
+| Páginas | https://sifit.centrion.com.br/aplicativo |
+| Backend de referência | https://backendsifit.centrion.com.br |
+| Navegador / sistema / vídeo | Chrome 157.0.8103.79 / Windows 10 (x86) / 1918 × 998. |
+| Gravações | 16/11/2026 às 22:39:05 BRT. |
+| Dados e permissões | Conta com acesso ao painel Aplicativo, notificações de teste e base para verificar os estados vazios. |
+| Preparação | Conferir a requisição e a interface quando aplicável. Usar recortes que preservem credenciais, valores de conexão e dados de alunos. |
+
 ## 📸 5. Evidências e observações
 
 | Evidência | Informação utilizada |
@@ -744,6 +758,7 @@ O domínio do CT-RF02_ERRO é diferente do domínio `sifitalfa.centrion.com.br` 
 | Jam 4 — Desativação do envio automático de aniversário (gravação restrita por conter dados de integração) e [Evidências](Evidencias/CT-RF154_Configuracoes_Aniversario_Desabilitar_Envio_Automatico/README.md) | CT-RF154: A consulta e a aba Aniversário confirmaram Desabilitado após recarregar. |
 | Jam 5 — Cancelamento da edição da mensagem de WhatsApp (gravação restrita por conter dados de integração) e [Evidências](Evidencias/CT-RF155_Configuracoes_Aniversario_Cancelar_Mensagem_WhatsApp/README.md) | CT-RF155: Cancelar retornou à Página Inicial e preservou a seleção do canal e a mensagem anterior. |
 | Jam 6 — Inserção de variáveis na mensagem de WhatsApp (gravação restrita por conter dados de integração) e [Evidências](Evidencias/CT-RF156_Configuracoes_Aniversario_Inserir_Variaveis_WhatsApp/README.md) | CT-RF156: As quatro variáveis apareceram no editor na ordem selecionada. Ao cancelar, a mensagem anterior foi preservada. |
+| Jam 1 — Consulta de notificação existente (gravação restrita por conter dados de integração ou dados de alunos) e [Evidências](Evidencias/CT-RF157_Aplicativo_Consultar_Notificacao/README.md) | CT-RF157: O diálogo exibiu a notificação selecionada e sua prévia. Fechar retornou à listagem. |
 
 A mensagem de credenciais incorretas já aparece no início do vídeo do Jam; não foi considerada uma resposta ao clique em "Esqueci minha senha". A ausência de requisição, isoladamente, não caracteriza defeito se a interface abrir um formulário local. Aqui, o resultado reprovado decorre de o fluxo não abrir.
 
@@ -1191,7 +1206,15 @@ Na inclusão dos CT-RF145 a CT-RF150, o consolidado era de 146 casos documentado
 | [CT-RF155](Cenario_Teste/CT-RF155_Configuracoes_Aniversario_Cancelar_Mensagem_WhatsApp.md) | Aprovado conforme a gravação | Usar como regressão do cancelamento e repetir com os demais canais da aba. |
 | [CT-RF156](Cenario_Teste/CT-RF156_Configuracoes_Aniversario_Inserir_Variaveis_WhatsApp.md) | Aprovado conforme a gravação | Usar como regressão do editor e testar a substituição dos marcadores em um envio controlado com dados de teste. |
 
-152 casos documentados: 74 aprovados, 57 reprovados e 21 a validar. 52 defeitos registrados (10 abertos e 42 em triagem) e 57 casos com reteste corretivo pendente.
+Na inclusão dos CT-RF151 a CT-RF156, o consolidado era de 152 casos documentados: 74 aprovados, 57 reprovados e 21 a validar. 52 defeitos registrados (10 abertos e 42 em triagem) e 57 casos com reteste corretivo pendente.
+
+## Inclusão de 18/11/2026 — Aplicativo (CT-RF157)
+
+| Caso | Situação | Encaminhamento |
+| --- | --- | --- |
+| [CT-RF157](Cenario_Teste/CT-RF157_Aplicativo_Consultar_Notificacao.md) | Aprovado conforme a gravação | Usar como regressão da consulta e comparar dois avisos de teste diferentes para conferir o vínculo com a linha selecionada. |
+
+153 casos documentados: 75 aprovados, 57 reprovados e 21 a validar. 52 defeitos registrados (10 abertos e 42 em triagem) e 57 casos com reteste corretivo pendente.
 
 ---
 

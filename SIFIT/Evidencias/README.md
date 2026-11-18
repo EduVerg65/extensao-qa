@@ -236,3 +236,11 @@ CT-RF145–CT-RF150 cobrem funcionalidades de Configurações com gravações de
 | [CT-RF156](../Cenario_Teste/CT-RF156_Configuracoes_Aniversario_Inserir_Variaveis_WhatsApp.md) | [Inserir variáveis na mensagem de aniversário do WhatsApp](CT-RF156_Configuracoes_Aniversario_Inserir_Variaveis_WhatsApp/README.md) | Aprovado conforme a gravação |
 
 CT-RF151–CT-RF156 cobrem as abas Avaliação e Aniversário com gravações de 16/11/2026 entre 23:10:04 e 23:20:07 BRT. As pastas reúnem origem, cronologia e recortes identificados com SHA-256.
+
+## Inclusão de 18/11/2026 — Aplicativo (CT-RF157)
+
+| Caso | Evidência | Resultado |
+| --- | --- | --- |
+| [CT-RF157](../Cenario_Teste/CT-RF157_Aplicativo_Consultar_Notificacao.md) | [Consultar os detalhes de uma notificação](CT-RF157_Aplicativo_Consultar_Notificacao/README.md) | Aprovado conforme a gravação |
+
+CT-RF157 cobre a aba Aplicativo com gravações de 16/11/2026 às 22:39:05 BRT. As pastas reúnem origem, cronologia e recortes identificados com SHA-256.

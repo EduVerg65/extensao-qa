@@ -1,6 +1,6 @@
 # 🧪 Índice dos cenários de teste — SIFIT
 
-**Atualização:** 18/11/2026. 152 casos documentados: 74 aprovados, 57 reprovados e 21 a validar. 52 defeitos registrados (10 abertos e 42 em triagem) e 57 casos com reteste corretivo pendente. Escopo: CT-RF01–CT-RF35, CT-RF38–CT-RF62 e CT-RF65–CT-RF156.
+**Atualização:** 18/11/2026. 153 casos documentados: 75 aprovados, 57 reprovados e 21 a validar. 52 defeitos registrados (10 abertos e 42 em triagem) e 57 casos com reteste corretivo pendente. Escopo: CT-RF01–CT-RF35, CT-RF38–CT-RF62 e CT-RF65–CT-RF157.
 
 | Caso | Funcionalidade | Resultado | Defeito | Jam |
 | --- | --- | --- | --- | --- |
@@ -375,5 +375,13 @@ CT-RF145–CT-RF150 cobrem funcionalidades de Configurações com gravações de
 | [CT-RF156](CT-RF156_Configuracoes_Aniversario_Inserir_Variaveis_WhatsApp.md) | Inserir variáveis na mensagem de aniversário do WhatsApp | Aprovado conforme a gravação | — | Jam 6 — Inserção de variáveis na mensagem de WhatsApp (gravação restrita por conter dados de integração) |
 
 CT-RF151–CT-RF156 cobrem as abas Avaliação e Aniversário com gravações de 16/11/2026 entre 23:10:04 e 23:20:07 BRT. A revisão é documental.
+
+## Inclusão de 18/11/2026 — Aplicativo (CT-RF157)
+
+| Caso | Funcionalidade | Resultado | Defeito | Jam |
+| --- | --- | --- | --- | --- |
+| [CT-RF157](CT-RF157_Aplicativo_Consultar_Notificacao.md) | Consultar os detalhes de uma notificação | Aprovado conforme a gravação | — | Jam 1 — Consulta de notificação existente (gravação restrita por conter dados de integração ou dados de alunos) |
+
+CT-RF157 cobre a aba Aplicativo com gravações de 16/11/2026 às 22:39:05 BRT. A revisão é documental.
 
 [← Início](../../README.md) · [Requisitos](../Analise%20de%20requisitos.md) · [Plano](../Plano%20de%20testes.md) · [Evidências](../Evidencias/README.md)
