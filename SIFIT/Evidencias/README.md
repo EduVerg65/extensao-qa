@@ -147,11 +147,12 @@ Uma gravação do Jam ([Tipos de Pagamento](https://jam.dev/c/e8734e3d-3f8e-458b
 
 A revisão de Modelos de Ficha inclui CT-RF109–CT-RF115 com base em 6 gravações do Jam de 16/11/2026. A revisão documental foi feita em 17/11/2026. Cada pasta reúne a origem, a cronologia, os quadros do fluxo e os hashes SHA-256 das imagens. Os vídeos permanecem no Jam.
 
-## Inclusão de 17/11/2026 — Configurações (Home) (CT-RF116–CT-RF117)
+## Inclusão de 17/11/2026 — Configurações (Home) (CT-RF116–CT-RF118)
 
 | Caso | Evidência | Resultado |
 | --- | --- | --- |
 | [CT-RF116](../Cenario_Teste/CT-RF116_Configuracoes_Dias_Ausencia_Vazio.md) | [Validar o salvamento com o campo de dias de ausência vazio](CT-RF116_Configuracoes_Dias_Ausencia_Vazio/README.md) | A validar — regra ou contexto pendente |
 | [CT-RF117](../Cenario_Teste/CT-RF117_Configuracoes_Cancelar_Alteracao.md) | [Cancelar uma alteração nas Configurações sem salvar](CT-RF117_Configuracoes_Cancelar_Alteracao/README.md) | Aprovado conforme a gravação |
+| [CT-RF118](../Cenario_Teste/CT-RF118_Configuracoes_Trabalha_Com_Turmas.md) | [Alterar e persistir a opção Trabalha com turmas?](CT-RF118_Configuracoes_Trabalha_Com_Turmas/README.md) | Aprovado conforme a gravação |
 
-CT-RF116–CT-RF117 amplia a cobertura de Configurações (Home) com gravações de 16/11/2026 entre 22:03:53 e 22:05:00 BRT. As pastas seguem o padrão de origem, cronologia e quadros com SHA-256.
+CT-RF116–CT-RF118 amplia a cobertura de Configurações (Home) com gravações de 16/11/2026 entre 22:03:53 e 22:06:12 BRT. As pastas seguem o padrão de origem, cronologia e quadros com SHA-256.

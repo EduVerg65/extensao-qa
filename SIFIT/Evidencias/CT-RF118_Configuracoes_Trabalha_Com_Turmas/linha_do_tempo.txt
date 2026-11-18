@@ -1,0 +1,26 @@
+CT-RF118 — Alterar e persistir a opção Trabalha com turmas?
+Fonte: https://jam.dev/c/a51c33a5-537a-40fd-a55d-990b70ac0696
+Gravação: 16/11/2026, 22:06:12 BRT; duração: 25,33 s.
+Revisão documental: 17/11/2026.
+Página: https://sifit.centrion.com.br/configuracoes
+Foco deste caso: Salvar os estados Sim e Não da opção Trabalha com turmas? e refletir a escolha após recarregar a página.
+
+Cronologia (ações e eventos capturados no Jam):
+0:00–0:08  Começa em Sim, troca para Não e salva.
+0:10–0:12  Recarrega. O formulário apresenta Não.
+0:16–0:19  Seleciona Sim e salva novamente.
+0:20–0:22  Recarrega. O formulário volta a apresentar Sim.
+
+Rede do conjunto gravado (eventos relevantes ao caso):
+0:08,18  POST /api/configuracoes/alterar/1 (HTTP 200), com usa_turmas=nao.
+0:11,53  GET /api/configuracoes/1 (HTTP 200), com usa_turmas: nao.
+0:18,52  Segundo POST (HTTP 200), com usa_turmas=sim.
+0:20,88  Segundo GET (HTTP 200), com usa_turmas: sim.
+
+Quadros consultados (reprodução do Jam):
+- Trabalha com turmas? em Não após a recarga.
+- Trabalha com turmas? em Sim após a segunda recarga.
+
+Observações e verificações futuras:
+- A evidência cobre o seletor nas Configurações e o valor retornado após recarga. Os efeitos sobre criação de turmas e sobre o menu Turmas exigem casos específicos.
+- Usar como regressão para persistência de ambos os estados. Verificar separadamente os efeitos sobre o módulo de turmas.
