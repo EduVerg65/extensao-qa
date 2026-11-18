@@ -1,0 +1,22 @@
+CT-RF111 — Buscar modelo de ficha por código inexistente
+Fonte: https://jam.dev/c/c1aecaa8-39c7-49b0-89af-9de47a68ba40
+Gravação: 16/11/2026, 22:23:48 BRT; duração: 10,07 s.
+Revisão documental: 17/11/2026.
+Página: https://sifit.centrion.com.br/fichas-treino-modelo
+Foco deste caso: busca por código sem correspondência (0:00 a 0:09).
+
+Cronologia (ações e eventos capturados no Jam):
+0:00–0:05  Digita 989898 no campo Código. Título e Criador ficam vazios.
+0:06  Clique em Buscar.
+
+Rede do conjunto gravado (1 entrada capturada no domínio backendsifit.centrion.com.br):
+0:06  GET /api/fichas-modelo/1 (HTTP 200, 2 B). Resposta: []. URL sem parâmetros de filtro.
+
+Quadros consultados (reprodução do Jam):
+0:00–0:05  Parte de 0 registros e preenche Código com 989898.
+0:06  Aciona a busca. GET retorna HTTP 200 com [].
+0:09  Tela apresenta a mensagem de estado vazio e 0 registros.
+
+Observações e verificações futuras:
+- O estado vazio foi observado. A base de controle e a busca positiva não aparecem na gravação, por isso a eficácia do filtro por código permanece a validar.
+- Reexecutar com um código existente e um comprovadamente ausente na mesma base.

@@ -1,6 +1,6 @@
 # 🧪 Índice dos cenários de teste — SIFIT
 
-**Atualização:** 17/11/2026. 106 casos documentados: 44 aprovados, 48 reprovados e 14 a validar; 44 defeitos registrados (10 abertos e 34 em triagem) e 48 casos com reteste corretivo pendente. Escopo: CT-RF01–CT-RF35, CT-RF38–CT-RF62 e CT-RF65–CT-RF110.
+**Atualização:** 17/11/2026. 107 casos documentados: 44 aprovados, 48 reprovados e 15 a validar; 44 defeitos registrados (10 abertos e 34 em triagem) e 48 casos com reteste corretivo pendente. Escopo: CT-RF01–CT-RF35, CT-RF38–CT-RF62 e CT-RF65–CT-RF111.
 
 | Caso | Funcionalidade | Resultado | Defeito | Jam |
 | --- | --- | --- | --- | --- |
@@ -278,7 +278,8 @@ Os cinco casos têm como fonte uma única gravação. Os resultados são documen
 | --- | --- | --- | --- | --- |
 | [CT-RF109](CT-RF109_Modelo_Ficha_Sem_Nome.md) | Bloquear cadastro de modelo de ficha sem nome | Aprovado conforme a gravação | — | [Jam — PED-25](https://jam.dev/c/fb5673c9-3cd1-46c4-88f4-d5fb32574a8e) |
 | [CT-RF110](CT-RF110_Cancelar_Cadastro_Modelo_Ficha.md) | Cancelar cadastro de modelo de ficha preenchido | Aprovado conforme a gravação | — | [Jam — PED-26](https://jam.dev/c/a2a39e11-04f4-40aa-a97e-75a57a5f1b0f) |
+| [CT-RF111](CT-RF111_Busca_Modelo_Ficha_Codigo_Inexistente.md) | Buscar modelo de ficha por código inexistente | A validar — regra ou contexto pendente | — | [Jam — PED-27](https://jam.dev/c/c1aecaa8-39c7-49b0-89af-9de47a68ba40) |
 
-A revisão de Modelos de Ficha inclui CT-RF109–CT-RF110 com base em 2 gravações do Jam de 16/11/2026. A revisão documental foi feita em 17/11/2026.
+A revisão de Modelos de Ficha inclui CT-RF109–CT-RF111 com base em 3 gravações do Jam de 16/11/2026. A revisão documental foi feita em 17/11/2026.
 
 [← Início](../../README.md) · [Requisitos](../Analise%20de%20requisitos.md) · [Plano](../Plano%20de%20testes.md) · [Evidências](../Evidencias/README.md)

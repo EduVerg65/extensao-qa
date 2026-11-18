@@ -1,10 +1,10 @@
 # 📊 Relatório de Testes — SIFIT
 
-**Escopo:** 106 casos documentados (CT-RF01–CT-RF35, CT-RF38–CT-RF62 e CT-RF65–CT-RF110) — autenticação, recuperação, perfil, Clientes, financeiro, página inicial e dashboard, modalidades / tema de SifitBox, Categorias Crossfit, Avaliações, Exercícios, Grupos Musculares, Objetivos de Treino cadastro de categorias com código automático, SifitBox – Turmas, Pagar.me, Configurações, Despesas Fixas, Relatórios, Grupos (treino), Fichas de Anamnese, gestão de Modelos de Anamnese, gestão de Categorias de Anamnese, edição de Perguntas Anamnese, validações/funções/exclusão/busca de Colaboradores, Prospecção, Bandeiras de Cartão, Contas a Pagar, Modelos de Contrato, Planos, Tipos de Pagamento e Modelos de Ficha.
+**Escopo:** 107 casos documentados (CT-RF01–CT-RF35, CT-RF38–CT-RF62 e CT-RF65–CT-RF111) — autenticação, recuperação, perfil, Clientes, financeiro, página inicial e dashboard, modalidades / tema de SifitBox, Categorias Crossfit, Avaliações, Exercícios, Grupos Musculares, Objetivos de Treino cadastro de categorias com código automático, SifitBox – Turmas, Pagar.me, Configurações, Despesas Fixas, Relatórios, Grupos (treino), Fichas de Anamnese, gestão de Modelos de Anamnese, gestão de Categorias de Anamnese, edição de Perguntas Anamnese, validações/funções/exclusão/busca de Colaboradores, Prospecção, Bandeiras de Cartão, Contas a Pagar, Modelos de Contrato, Planos, Tipos de Pagamento e Modelos de Ficha.
 
-**Datas das gravações do Jam:** CT-RF01 em 23/10/2026; CT-RF02_ERRO em 22/10/2026 às 21:45 BRT; CT-RF03 não confirmada; CT-RF04_loginComSucesso em 13/11/2026; CT-RF05–CT-RF20 em 14/11/2026; CT-RF21 em 15/11/2026 às 15:07:51,265 BRT; CT-RF22–28 em 15/11/2026 às 15:25, 15:40, 15:38, 15:35, 16:11, 16:08 e 16:07 BRT; CT-RF29–33 em 15/11/2026 às 15h56 BRT (uma única gravação); CT-RF34 em 15/11/2026 às 17:23 BRT; CT-RF35 em 15/11/2026 às 18:13 BRT; CT-RF38 em 15/11/2026 às 18:41 BRT; CT-RF39–41 em 15/11/2026 às 18:51 BRT (uma única gravação); CT-RF42–45 às 19:06, CT-RF46–49 às 19:07 e CT-RF50–56 às 19:09 BRT (uma gravação por grupo); CT-RF57 e CT-RF58 em 15/11/2026 às 21h03 BRT (mesma gravação); CT-RF59 em 15/11/2026 às 22h07 BRT; CT-RF60 em 15/11/2026 às 23h34 BRT; CT-RF61 em 16/11/2026 às 15h24 BRT; CT-RF62 em 16/11/2026 às 15h57 BRT. CT-RF74–CT-RF84: 16/11/2026 conforme os resumos, sem horário informado. CT-RF85–90 às 21:52, CT-RF91–95 às 21:58, CT-RF96–98 às 21:55 e CT-RF99–103 às 21:54 e CT-RF104–108 às 22:03 BRT em 15/11/2026 (uma gravação por grupo). CT-RF109–CT-RF110 em 16/11/2026 entre 22:19:51 e 22:20:56 BRT.
+**Datas das gravações do Jam:** CT-RF01 em 23/10/2026; CT-RF02_ERRO em 22/10/2026 às 21:45 BRT; CT-RF03 não confirmada; CT-RF04_loginComSucesso em 13/11/2026; CT-RF05–CT-RF20 em 14/11/2026; CT-RF21 em 15/11/2026 às 15:07:51,265 BRT; CT-RF22–28 em 15/11/2026 às 15:25, 15:40, 15:38, 15:35, 16:11, 16:08 e 16:07 BRT; CT-RF29–33 em 15/11/2026 às 15h56 BRT (uma única gravação); CT-RF34 em 15/11/2026 às 17:23 BRT; CT-RF35 em 15/11/2026 às 18:13 BRT; CT-RF38 em 15/11/2026 às 18:41 BRT; CT-RF39–41 em 15/11/2026 às 18:51 BRT (uma única gravação); CT-RF42–45 às 19:06, CT-RF46–49 às 19:07 e CT-RF50–56 às 19:09 BRT (uma gravação por grupo); CT-RF57 e CT-RF58 em 15/11/2026 às 21h03 BRT (mesma gravação); CT-RF59 em 15/11/2026 às 22h07 BRT; CT-RF60 em 15/11/2026 às 23h34 BRT; CT-RF61 em 16/11/2026 às 15h24 BRT; CT-RF62 em 16/11/2026 às 15h57 BRT. CT-RF74–CT-RF84: 16/11/2026 conforme os resumos, sem horário informado. CT-RF85–90 às 21:52, CT-RF91–95 às 21:58, CT-RF96–98 às 21:55 e CT-RF99–103 às 21:54 e CT-RF104–108 às 22:03 BRT em 15/11/2026 (uma gravação por grupo). CT-RF109–CT-RF111 em 16/11/2026 entre 22:19:51 e 22:23:48 BRT.
 
-**Data da revisão documental:** 17/11/2026, com integração de CT-RF109–CT-RF110 (Modelos de Ficha).
+**Data da revisão documental:** 17/11/2026, com integração de CT-RF109–CT-RF111 (Modelos de Ficha).
 
 **Origem do resultado:** análise de evidências fornecidas; sem nova execução no sistema nesta revisão.
 
@@ -30,11 +30,11 @@ CT-RF30 acrescenta uma reprovação e o BUG-017 (imagens dos grupos musculares c
 
 CT-RF74–CT-RF84 acrescentam oito aprovações e três reprovações conforme os resumos fornecidos, com BUG-035–BUG-037 em triagem. CT-RF83 mantém a classificação do relato, condicionada à confirmação da regra de obrigatoriedade. Os dez casos anteriores a validar permanecem inalterados.
 
-A revisão de Modelos de Ficha inclui CT-RF109–CT-RF110 com base em 2 gravações do Jam de 16/11/2026. A revisão documental foi feita em 17/11/2026. 2 aprovado(s) conforme a gravação e 0 a validar. O material não acrescenta defeitos confirmados.
+A revisão de Modelos de Ficha inclui CT-RF109–CT-RF111 com base em 3 gravações do Jam de 16/11/2026. A revisão documental foi feita em 17/11/2026. 2 aprovado(s) conforme a gravação e 1 a validar. O material não acrescenta defeitos confirmados.
 
 | Casos documentados | Aprovados | Reprovados | A validar | Defeitos registrados | Casos com reteste corretivo pendente |
 | :---: | :---: | :---: | :---: | :---: | :---: |
-| 106 | 44 | 48 | 14 | 44 (10 abertos + 34 em triagem) | 48 |
+| 107 | 44 | 48 | 15 | 44 (10 abertos + 34 em triagem) | 48 |
 
 Os 48 retestes incluem CT-RF22/24/26/27/28/29/30/35/41/45/51/53/54/55/56/57/58/59/62/65/66/67/68/69/70/71/73/81/82/83/89/92/98/102/105/107, sujeitos à confirmação funcional e técnica. As contagens representam os casos documentados com base nas fontes indicadas, sem novas execuções nesta revisão. As nove variações planejadas para o reteste do CT-RF03 não foram executadas e não são contabilizadas como testes adicionais realizados.
 
@@ -147,6 +147,7 @@ Os 48 retestes incluem CT-RF22/24/26/27/28/29/30/35/41/45/51/53/54/55/56/57/58/5
 | [CT-RF108](Cenario_Teste/CT-RF108_Tema_Notificacoes_Tipos_Pagamento.md) | [RF108](Analise%20de%20requisitos.md#rf108) | Aplicar o tema escolhido e exibir o estado das notificações. | Tema Escuro aplicado, notificações vazias e retorno a Claro; seis POST tema HTTP 200. | Aprovado conforme a gravação | Nenhum no fluxo avaliado |
 | [CT-RF109](Cenario_Teste/CT-RF109_Modelo_Ficha_Sem_Nome.md) | [RF109](Analise%20de%20requisitos.md#rf109) | O sistema exibe um aviso de nome obrigatório, mantém o formulário disponível para correção e não cria um modelo. | Aviso “Informe o nome do modelo.”. Modal permaneceu aberto após Entendi, sem requisição capturada. | Aprovado conforme a gravação | Nenhum no fluxo avaliado |
 | [CT-RF110](Cenario_Teste/CT-RF110_Cancelar_Cadastro_Modelo_Ficha.md) | [RF110](Analise%20de%20requisitos.md#rf110) | Cancelar fecha o formulário e mantém a listagem e a contagem, sem criar o modelo informado. | Cancelar fechou o modal preenchido e manteve 0 registros, sem requisição capturada. | Aprovado conforme a gravação | Nenhum no fluxo avaliado |
+| [CT-RF111](Cenario_Teste/CT-RF111_Busca_Modelo_Ficha_Codigo_Inexistente.md) | [RF111](Analise%20de%20requisitos.md#rf111) | A pesquisa pelo código ausente exibe a mensagem de lista vazia e 0 registros, mesmo com outros modelos disponíveis. | Busca por 989898 exibiu estado vazio. GET retornou HTTP 200 com `[]`. | A validar — regra ou contexto pendente | Sem defeito confirmado |
 
 ---
 
@@ -487,7 +488,7 @@ O domínio do CT-RF02_ERRO é diferente do domínio `sifitalfa.centrion.com.br` 
 | Item | Registro |
 | --- | --- |
 | Página / API | https://sifit.centrion.com.br/fichas-treino-modelo / https://backendsifit.centrion.com.br |
-| Data / horário | 16/11/2026 entre 22:19:51 e 22:20:56 BRT. |
+| Data / horário | 16/11/2026 entre 22:19:51 e 22:23:48 BRT. |
 | Navegador / sistema / vídeo | Chrome 157.0.8103.79 / Windows (x86) 10 (identificação do Jam) / 1918 × 998 (vídeo). |
 | Material e limites | Os resultados se baseiam nos vídeos, metadados e eventos capturados pelo Jam. Versão da aplicação e zoom a confirmar. |
 
@@ -552,6 +553,7 @@ O domínio do CT-RF02_ERRO é diferente do domínio `sifitalfa.centrion.com.br` 
 | [Jam — Tipos de Pagamento](https://jam.dev/c/e8734e3d-3f8e-458b-8c7d-e85eea882e50) e evidências por caso | CT-RF104: Buscar e seletores sem requisição de listagem; 16 tipos inalterados. CT-RF105: `POST cria/tipo-pagamento` com HTTP 201 sem status; Total 17, Ativos 0, Inativos 17. CT-RF106: `POST edita/tipo-pagamento` com HTTP 200; Via gateway 6 → 5. CT-RF107: dois `POST deleta/tipo-pagamento` com HTTP 404 e erro SQL de chave estrangeira. CT-RF108: seis `POST usuario/tema` e notificações sem pendências. |
 | [Jam — PED-25](https://jam.dev/c/fb5673c9-3cd1-46c4-88f4-d5fb32574a8e) e [Evidências](Evidencias/CT-RF109_Modelo_Ficha_Sem_Nome/README.md) | CT-RF109: Nenhuma requisição de rede capturada durante o trecho, incluindo o clique em Criar Modelo. |
 | [Jam — PED-26](https://jam.dev/c/a2a39e11-04f4-40aa-a97e-75a57a5f1b0f) e [Evidências](Evidencias/CT-RF110_Cancelar_Cadastro_Modelo_Ficha/README.md) | CT-RF110: Nenhuma requisição de rede capturada durante a gravação, incluindo o clique em Cancelar. |
+| [Jam — PED-27](https://jam.dev/c/c1aecaa8-39c7-49b0-89af-9de47a68ba40) e [Evidências](Evidencias/CT-RF111_Busca_Modelo_Ficha_Codigo_Inexistente/README.md) | CT-RF111: Em 0:06, GET `/api/fichas-modelo/1` com HTTP 200 e corpo `[]` (2 B). A URL capturada não contém parâmetros de filtro. |
 
 A mensagem de credenciais incorretas já aparece no início do vídeo do Jam; não foi considerada uma resposta ao clique em "Esqueci minha senha". A ausência de requisição, isoladamente, não caracteriza defeito se a interface abrir um formulário local. Aqui, o resultado reprovado decorre de o fluxo não abrir.
 
@@ -903,8 +905,9 @@ O consolidado na inclusão de Tipos de Pagamento era de 104 casos documentados (
 | --- | --- | --- |
 | [CT-RF109](Cenario_Teste/CT-RF109_Modelo_Ficha_Sem_Nome.md) | Aprovado conforme a gravação | Usar como regressão e verificar nome composto apenas por espaços e submissão com todos os campos vazios. |
 | [CT-RF110](Cenario_Teste/CT-RF110_Cancelar_Cadastro_Modelo_Ficha.md) | Aprovado conforme a gravação | Usar como regressão e reabrir o formulário após o cancelamento para conferir a limpeza dos campos. |
+| [CT-RF111](Cenario_Teste/CT-RF111_Busca_Modelo_Ficha_Codigo_Inexistente.md) | A validar — regra ou contexto pendente | Reexecutar com um código existente e um comprovadamente ausente na mesma base. |
 
-O consolidado atual é de 106 casos documentados: 44 aprovados, 48 reprovados e 14 a validar; 44 defeitos registrados (10 abertos e 34 em triagem) e 48 casos com reteste corretivo pendente. Os resultados acima se limitam ao material do Jam.
+O consolidado atual é de 107 casos documentados: 44 aprovados, 48 reprovados e 15 a validar; 44 defeitos registrados (10 abertos e 34 em triagem) e 48 casos com reteste corretivo pendente. Os resultados acima se limitam ao material do Jam.
 
 ---
 
