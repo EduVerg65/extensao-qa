@@ -1,0 +1,23 @@
+CT-RF143 — Tratar falha ao conectar WhatsApp via Evolution API
+Fonte: Jam 5 — Tentativas de conexão pela Evolution API. Gravação restrita por conter dados de integração.
+Gravação: 16/11/2026, 23:44:10 BRT. Duração: 20,55 s.
+Revisão documental: 17/11/2026.
+Página: https://sifit.centrion.com.br/configuracoes
+Foco deste caso: Verificar a consistência entre a resposta da API e a mensagem da tela quando a tentativa de conexão com WhatsApp falha.
+
+Cronologia (ações e eventos capturados no Jam):
+0:02–0:07  Primeira tentativa de conexão. A tela exibe “Falha ao conectar na Evolution API”.
+0:07–0:09  Marca Ativo e salva. A configuração é consultada novamente.
+0:12–0:20  Segunda tentativa de conexão com a opção salva. A mensagem de falha reaparece.
+
+Rede do conjunto gravado (eventos relevantes ao caso):
+0:02,48 e 0:12,94  POST /api/empresa/whatsapp/conectar/1 (HTTP 200). As duas respostas indicaram falha na mensagem com verifica_erro: false, status: conectando e conectado: false.
+0:08,59–0:08,72  O POST de configuração confirmou o salvamento de Ativo. O GET trouxe ativo: true e status: desconectado antes da segunda tentativa.
+
+Quadros consultados (reprodução do Jam):
+- Ação Conectar WhatsApp antes da primeira tentativa.
+- Mensagem de falha exibida pela interface.
+
+Observações e verificações futuras:
+- Os parâmetros do provedor não foram validados. A causa da falha de conexão e o caminho de sucesso exigem testes controlados. O defeito registrado é a divergência da flag de erro.
+- Retestar com falha controlada e configuração válida de controle, conferindo o contrato da resposta e o estado final apresentado.

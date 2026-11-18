@@ -1,12 +1,12 @@
 # 🐞 Relatório de Bugs — SIFIT
 
-**Escopo:** defeitos de 138 casos documentados (CT-RF01–CT-RF35, CT-RF38–CT-RF62 e CT-RF65–CT-RF142): recuperação, Perfil, Clientes, financeiro, página inicial e dashboard, tema, modalidades, categorias, avaliações, exercícios, grupos musculares, objetivos de treino, SifitBox – Turmas, Pagar.me, configurações, despesas fixas, relatórios, grupos (treino), fichas de anamnese, colaboradores, modelos de anamnese, categorias de anamnese, perguntas de anamnese, Prospecção, Bandeiras de Cartão, Contas a Pagar, Modelos de Contrato, Planos, Tipos de Pagamento, Modelos de Ficha, Central de Automações e Integrações de WhatsApp. CT-RF60 (Modelos de Anamnese) e CT-RF61 (Categorias de Anamnese) são aprovados conforme a gravação, sem defeito identificado. CT-RF62 (Perguntas Anamnese) é reprovado nas evidências e acrescenta o BUG-044 (44 defeitos registrados).
+**Escopo:** defeitos de 139 casos documentados (CT-RF01–CT-RF35, CT-RF38–CT-RF62 e CT-RF65–CT-RF143): recuperação, Perfil, Clientes, financeiro, página inicial e dashboard, tema, modalidades, categorias, avaliações, exercícios, grupos musculares, objetivos de treino, SifitBox – Turmas, Pagar.me, configurações, despesas fixas, relatórios, grupos (treino), fichas de anamnese, colaboradores, modelos de anamnese, categorias de anamnese, perguntas de anamnese, Prospecção, Bandeiras de Cartão, Contas a Pagar, Modelos de Contrato, Planos, Tipos de Pagamento, Modelos de Ficha, Central de Automações e Integrações de WhatsApp. CT-RF60 (Modelos de Anamnese) e CT-RF61 (Categorias de Anamnese) são aprovados conforme a gravação, sem defeito identificado. CT-RF62 (Perguntas Anamnese) é reprovado nas evidências e acrescenta o BUG-044 (44 defeitos registrados).
 
 **Ambientes:** CT-RF01 em https://sifitalfa.centrion.com.br/login; CT-RF02_ERRO em https://sifit.centrion.com.br/profile. CT-RF03: URL do frontend não confirmada; backend informado em `https://backendsifit.centrion.com.br/api/clientesPorNome/1`.
 
 **Datas das gravações do Jam:** CT-RF01 em 23/10/2026; CT-RF02_ERRO em 22/10/2026 às 21:45 BRT; CT-RF03 não confirmada.
 
-**Atualização documental:** 17/11/2026 — 49 defeitos registrados: 10 abertos (BUG-001 a BUG-010) e 39 em triagem (BUG-011 a BUG-049). BUG-019 registra o HTTP 500 no cadastro de objetivo de treino, BUG-020 a ausência de retorno visível no cadastro de turma sem modalidade, BUG-024 e BUG-025 cobrem Grupos (treino), BUG-026–BUG-031 cobrem Colaboradores e BUG-032 o HTTP 500 no cadastro de anamnese (aplicar e rascunho), todos sem causa técnica confirmada. CT-RF60 (Modelos de Anamnese) e CT-RF61 (Categorias de Anamnese), incluídos em 16/11/2026, são aprovados conforme a gravação e não geram novo defeito. BUG-038 a BUG-041 cobrem Prospecção (telefone), Contas a Pagar, Modelos de Contrato e Planos; BUG-042 e BUG-043 cobrem Tipos de Pagamento (status e exclusão); BUG-044, também em 16/11/2026, registra o HTTP 500 na edição do tipo de resposta de pergunta de anamnese (CT-RF62); BUG-035 e BUG-036 cobrem Bandeiras; BUG-037 registra o relato de cadastro de lead apenas com nome, com regra a confirmar. As análises anteriores foram preservadas.
+**Atualização documental:** 17/11/2026 — 50 defeitos registrados: 10 abertos (BUG-001 a BUG-010) e 40 em triagem (BUG-011 a BUG-050). BUG-019 registra o HTTP 500 no cadastro de objetivo de treino, BUG-020 a ausência de retorno visível no cadastro de turma sem modalidade, BUG-024 e BUG-025 cobrem Grupos (treino), BUG-026–BUG-031 cobrem Colaboradores e BUG-032 o HTTP 500 no cadastro de anamnese (aplicar e rascunho), todos sem causa técnica confirmada. CT-RF60 (Modelos de Anamnese) e CT-RF61 (Categorias de Anamnese), incluídos em 16/11/2026, são aprovados conforme a gravação e não geram novo defeito. BUG-038 a BUG-041 cobrem Prospecção (telefone), Contas a Pagar, Modelos de Contrato e Planos; BUG-042 e BUG-043 cobrem Tipos de Pagamento (status e exclusão); BUG-044, também em 16/11/2026, registra o HTTP 500 na edição do tipo de resposta de pergunta de anamnese (CT-RF62); BUG-035 e BUG-036 cobrem Bandeiras; BUG-037 registra o relato de cadastro de lead apenas com nome, com regra a confirmar. As análises anteriores foram preservadas.
 
 **Gravação de CT-RF104–CT-RF108:** 15/11/2026, Tipos de Pagamento, 22:03 BRT, Chrome 157.0.8103.78 / Windows 11; uma única gravação; evidência e limites no BUG-042 e no BUG-043.
 
@@ -89,8 +89,9 @@
 | [BUG-047](#bug-047) | Configurações aceitam e persistem dias de ausência negativos | Média / Média, propostas | Em triagem. Reteste após correção. | [CT-RF126](Cenario_Teste/CT-RF126_Configuracoes_Dias_Ausencia_Negativo.md) |
 | [BUG-048](#bug-048) | Configuração de Aniversariantes exibe prévia de risco de evasão | Média / Média, propostas | Em triagem. Reteste após correção. | [CT-RF129](Cenario_Teste/CT-RF129_Central_Aniversariantes_Previa_Risco.md) |
 | [BUG-049](#bug-049) | Contador de automações ativas mantém total anterior após ativar automação | Média / Média, propostas | Em triagem. Reteste após correção. | [CT-RF135](Cenario_Teste/CT-RF135_Central_Desativar_Risco_Evasao_Contador.md) e [CT-RF136](Cenario_Teste/CT-RF136_Central_Ativar_Aniversariantes_Contador.md) |
+| [BUG-050](#bug-050) | API de conexão do WhatsApp indica sucesso quando a tentativa falha | Média / Média, propostas | Em triagem. Reteste após correção. | [CT-RF143](Cenario_Teste/CT-RF143_Integracoes_WhatsApp_Conectar_Evolution.md) |
 
-BUG-001–BUG-010 aguardam correção e reteste. BUG-011–BUG-049 aguardam confirmação das premissas e triagem antes do encaminhamento de correção. As causas técnicas permanecem não confirmadas; o BUG-003 se apoia no relato e nas capturas fornecidos, com os limites registrados no caso.
+BUG-001–BUG-010 aguardam correção e reteste. BUG-011–BUG-050 aguardam confirmação das premissas e triagem antes do encaminhamento de correção. As causas técnicas permanecem não confirmadas; o BUG-003 se apoia no relato e nas capturas fornecidos, com os limites registrados no caso.
 
 ---
 
@@ -2062,6 +2063,51 @@ Retestar a ativação e a desativação de cada automação. Comparar o valor de
 
 ---
 
+<a id="bug-050"></a>
+
+## BUG-050 — API de conexão do WhatsApp indica sucesso quando a tentativa falha
+
+| Campo | Descrição |
+| --- | --- |
+| Status | Em triagem. Contrato da resposta a confirmar e reteste após correção. |
+| Severidade / prioridade | Média / Média, propostas para triagem. |
+| Módulo | Configurações / Integrações / WhatsApp |
+| Requisito | [RF143](Analise%20de%20requisitos.md#rf143) |
+| Caso reprovado | [CT-RF143](Cenario_Teste/CT-RF143_Integracoes_WhatsApp_Conectar_Evolution.md) |
+| Data da evidência / revisão | 16/11/2026, 23:44:10 BRT / 17/11/2026. |
+| Página | https://sifit.centrion.com.br/configuracoes |
+| Ambiente | Chrome 157.0.8103.79 / Windows 10 (x86). Versão da aplicação e zoom a confirmar. |
+| Frequência conhecida | Duas tentativas na gravação principal. |
+
+### Pré-condições e reprodução
+
+Sessão autenticada na integração de WhatsApp com um provedor de teste. Preparar uma falha controlada com a equipe responsável pelo ambiente.
+
+1. Abrir Configurações → Integrações → WhatsApp com um provedor de teste.
+2. Em ambiente autorizado, preparar uma resposta de falha controlada do provedor.
+3. Acionar Conectar WhatsApp e registrar a mensagem, a flag de erro e a indicação de conexão.
+4. Repetir a tentativa após salvar a opção Ativo e comparar os resultados.
+
+### Esperado e obtido
+
+**Esperado:** Se a tentativa falhar, os indicadores e a mensagem da API representam a falha. A interface informa o erro sem apresentar um QR Code utilizável nem indicar uma conexão estabelecida.
+
+**Obtido:** A tela exibiu “Falha ao conectar na Evolution API” nas duas tentativas e não apresentou QR Code utilizável. Em ambas, o POST retornou HTTP 200 com `verifica_erro: false`, `status: conectando` e `conectado: false`. A resposta continha a mensagem de falha, em desacordo com a flag `verifica_erro`.
+
+### Evidências técnicas
+
+- 0:02,48 e 0:12,94  POST `/api/empresa/whatsapp/conectar/1` (HTTP 200). As duas respostas indicaram falha na mensagem com `verifica_erro: false`, `status: conectando` e `conectado: false`.
+- 0:08,59–0:08,72  O POST de configuração confirmou o salvamento de Ativo. O GET trouxe `ativo: true` e `status: desconectado` antes da segunda tentativa.
+- Jam 5 — Tentativas de conexão pela Evolution API (gravação restrita por conter dados de integração) e [Evidências](Evidencias/CT-RF143_Integracoes_WhatsApp_Conectar_Evolution/README.md).
+
+### Análise, impacto e encaminhamento
+
+A flag `verifica_erro: false` pode levar consumidores da resposta a interpretar a tentativa como bem-sucedida. Confirmar a semântica do campo e do status intermediário com a equipe responsável. Os parâmetros do provedor não foram validados. A causa da falha de conexão e o caminho de sucesso exigem testes controlados. O defeito registrado é a divergência da flag de erro.
+
+Retestar com falha controlada e configuração válida de controle, conferindo o contrato da resposta e o estado final apresentado.
+
+---
+
 ## Modelos de Ficha — revisão de 17/11/2026
 
 A revisão de Modelos de Ficha inclui CT-RF109–CT-RF115 com base em 6 gravações do Jam de 16/11/2026. A revisão documental foi feita em 17/11/2026. A triagem documental de [CT-RF109](Cenario_Teste/CT-RF109_Modelo_Ficha_Sem_Nome.md), [CT-RF110](Cenario_Teste/CT-RF110_Cancelar_Cadastro_Modelo_Ficha.md), [CT-RF111](Cenario_Teste/CT-RF111_Busca_Modelo_Ficha_Codigo_Inexistente.md), [CT-RF112](Cenario_Teste/CT-RF112_Busca_Modelo_Ficha_Titulo_Inexistente.md), [CT-RF113](Cenario_Teste/CT-RF113_Busca_Modelo_Ficha_Filtros_Combinados.md), [CT-RF114](Cenario_Teste/CT-RF114_Limpeza_Filtros_Modelos_Ficha.md), [CT-RF115](Cenario_Teste/CT-RF115_Nova_Busca_Modelos_Ficha_Sem_Filtros.md) registrou 4 caso(s) de Modelos de Ficha a validar e zero novos defeitos confirmados.
@@ -2082,9 +2128,9 @@ CT-RF128–CT-RF133 cobre Inteligência e Automação com gravações de 16/11/2
 
 CT-RF134–CT-RF138 cobrem a Central de Automações com gravações de 16/11/2026 entre 21:25:26 e 21:38:29 BRT. Casos aprovados: 3. Reprovados: 2. A validar: 0. Defeitos do lote: [BUG-049](#bug-049).
 
-## Configurações / Integrações / WhatsApp — revisão de 17/11/2026 (CT-RF139–CT-RF142)
+## Configurações / Integrações / WhatsApp — revisão de 17/11/2026 (CT-RF139–CT-RF143)
 
-CT-RF139–CT-RF142 cobrem a integração do WhatsApp com gravações de 16/11/2026 entre 23:37:22 e 23:42:47 BRT. Casos aprovados: 3. Reprovados: 0. A validar: 1.
+CT-RF139–CT-RF143 cobrem a integração do WhatsApp com gravações de 16/11/2026 entre 23:37:22 e 23:44:10 BRT. Casos aprovados: 3. Reprovados: 1. A validar: 1. Defeitos do lote: [BUG-050](#bug-050).
 
 ## Pontos a validar — sem defeito confirmado
 
@@ -2112,7 +2158,7 @@ CT-RF139–CT-RF142 cobrem a integração do WhatsApp com gravações de 16/11/2
 | [CT-RF140](Cenario_Teste/CT-RF140_Integracoes_WhatsApp_Validar_URL_API.md) | Isolar a URL no reteste, mantendo a instância e a chave preenchidas, e confirmar o formato aceito com produto. O Nome da Instância vazio impede atribuir a ausência de POST à regra de URL. A gravação não demonstra qual validação bloqueou a tentativa. | Jam 2 — Validação da URL da API (gravação restrita por conter dados de integração) e [Evidências](Evidencias/CT-RF140_Integracoes_WhatsApp_Validar_URL_API/README.md) |
 | [CT-RF127](Cenario_Teste/CT-RF127_Configuracoes_Dias_Ausencia_Texto.md) | Confirmar a regra de vazio com o produto e repetir a digitação e a colagem de texto, conferindo também a recarga. A rejeição da digitação de letras foi observada. A regra para o campo vazio permanece pendente no CT-RF116. A persistência de zero nesta gravação não foi verificada após recarga. | [Jam — PED-18 — Dias de ausência com texto](https://jam.dev/c/c578ed7a-c11c-4cef-8a6c-84d0244f21a5) e [Evidências](Evidencias/CT-RF127_Configuracoes_Dias_Ausencia_Texto/README.md) |
 
-A contagem de 49 defeitos registrados considera os itens do resumo de bugs. BUG-011–BUG-049 estão em triagem. Os pontos desta tabela aguardam confirmação antes de receber um registro de defeito.
+A contagem de 50 defeitos registrados considera os itens do resumo de bugs. BUG-011–BUG-050 estão em triagem. Os pontos desta tabela aguardam confirmação antes de receber um registro de defeito.
 
 
 **Exclusão de exercício:** CT-RF23 está aprovado no trecho consultado, com remoção e total 11 para 10; não gerou defeito adicional. Persistência e efeitos sobre vínculos permanecem como verificações complementares.

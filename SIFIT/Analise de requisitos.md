@@ -2,11 +2,11 @@
 
 **Módulos:** Autenticação, Perfil, Clientes / Filtros, Financeiro, Página inicial / Personais, SifitBox / Modalidades e Turmas, Categorias Crossfit, Avaliações, Exercícios, Grupos Musculares, Dashboard, Objetivos de Treino, Fichas de Anamnese, Colaboradores, Prospecção e Bandeiras de Cartão.
 
-**Atualização:** 17/11/2026 — RF01 a RF35, RF38 a RF62 e RF65 a RF142 consolidados, com inclusão de Categorias Crossfit (CT-RF38), SifitBox – Turmas (CT-RF39 a CT-RF41), Pagar.me, Configurações, Despesas Fixas e Relatórios (CT-RF42 a CT-RF56), Grupos (treino) (CT-RF57 e CT-RF58), Fichas de Anamnese (CT-RF59), Modelos de Anamnese (CT-RF60), Categorias de Anamnese (CT-RF61), Perguntas Anamnese (CT-RF62), Colaboradores (CT-RF65 a CT-RF73), Prospecção e Bandeiras de Cartão (CT-RF74 a CT-RF90), Contas a Pagar / Modelos de Contrato / Planos (CT-RF91 a CT-RF103) Tipos de Pagamento (CT-RF104 a CT-RF108) e Modelos de Ficha (CT-RF109–CT-RF115) e Configurações e Modelos de Ficha (CT-RF116–CT-RF121) e Inteligência e Configurações (CT-RF122–CT-RF127) e Inteligência e Automação (CT-RF128–CT-RF133) e ampliação da cobertura da Central de Automações (CT-RF134–CT-RF138) e integração de WhatsApp (CT-RF139–CT-RF142). BUG-011–BUG-049 em triagem.
+**Atualização:** 17/11/2026 — RF01 a RF35, RF38 a RF62 e RF65 a RF143 consolidados, com inclusão de Categorias Crossfit (CT-RF38), SifitBox – Turmas (CT-RF39 a CT-RF41), Pagar.me, Configurações, Despesas Fixas e Relatórios (CT-RF42 a CT-RF56), Grupos (treino) (CT-RF57 e CT-RF58), Fichas de Anamnese (CT-RF59), Modelos de Anamnese (CT-RF60), Categorias de Anamnese (CT-RF61), Perguntas Anamnese (CT-RF62), Colaboradores (CT-RF65 a CT-RF73), Prospecção e Bandeiras de Cartão (CT-RF74 a CT-RF90), Contas a Pagar / Modelos de Contrato / Planos (CT-RF91 a CT-RF103) Tipos de Pagamento (CT-RF104 a CT-RF108) e Modelos de Ficha (CT-RF109–CT-RF115) e Configurações e Modelos de Ficha (CT-RF116–CT-RF121) e Inteligência e Configurações (CT-RF122–CT-RF127) e Inteligência e Automação (CT-RF128–CT-RF133) e ampliação da cobertura da Central de Automações (CT-RF134–CT-RF138) e integração de WhatsApp (CT-RF139–CT-RF143). BUG-011–BUG-050 em triagem.
 
 **Padronização documental:** 13/11/2026, sem alteração dos resultados registrados.
 
-Esta análise documenta 138 requisitos de QA para os cenários relacionados abaixo, com base nos relatos e nas evidências fornecidas. RF01–RF04 e suas análises históricas foram preservados; RF05–RF20 ampliam a cobertura em 14/11/2026; RF21 acrescenta Avaliações; RF22–RF28 acrescentam Exercícios; RF29–RF33 acrescentam Grupos Musculares; RF34 acrescenta o carregamento do dashboard RF35 acrescenta o cadastro de objetivos de treino e RF38 acrescenta o cadastro de categorias com código automático em 15/11/2026. RF39 acrescenta o cadastro de modalidade em SifitBox – Turmas. RF40 acrescenta a exclusão de turmas e modalidades. RF41 acrescenta o cadastro de turma. RF42 a RF56 acrescentam Pagar.me, Configurações, Despesas Fixas e Relatórios em 15/11/2026. RF57 acrescenta a exclusão de grupo (treino) e RF58 acrescenta a edição de grupo (treino), ambos também em 15/11/2026. RF59 acrescenta o cadastro de anamnese, também em 15/11/2026. RF60 acrescenta a gestão de modelos de anamnese (busca, cadastro, edição e exclusão), em 16/11/2026. RF61 acrescenta a gestão de categorias de anamnese (filtro, busca, cadastro, edição, cancelamento de edição e exclusão), também em 16/11/2026. RF62 acrescenta a edição de pergunta de anamnese, reprovada por HTTP 500, também em 16/11/2026. RF65–RF73 cobrem validações, operações e buscas de Colaboradores, também em 15/11/2026. RF74–RF84 acrescentam Prospecção e Bandeiras de Cartão a partir de resumos fornecidos, em 16/11/2026. RF85 a RF90 acrescentam Prospecção (leads) em 15/11/2026. RF91 a RF103 acrescentam Contas a Pagar, Modelos de Contrato e Planos em 15/11/2026. RF104 a RF108 acrescentam Tipos de Pagamento em 15/11/2026. RF109–RF115 cobre Modelos de Ficha com evidências gravadas em 16/11/2026. Os critérios abaixo constituem a referência de QA para esses fluxos; não representam validação de uma especificação formal pelo responsável pelo produto.
+Esta análise documenta 139 requisitos de QA para os cenários relacionados abaixo, com base nos relatos e nas evidências fornecidas. RF01–RF04 e suas análises históricas foram preservados; RF05–RF20 ampliam a cobertura em 14/11/2026; RF21 acrescenta Avaliações; RF22–RF28 acrescentam Exercícios; RF29–RF33 acrescentam Grupos Musculares; RF34 acrescenta o carregamento do dashboard RF35 acrescenta o cadastro de objetivos de treino e RF38 acrescenta o cadastro de categorias com código automático em 15/11/2026. RF39 acrescenta o cadastro de modalidade em SifitBox – Turmas. RF40 acrescenta a exclusão de turmas e modalidades. RF41 acrescenta o cadastro de turma. RF42 a RF56 acrescentam Pagar.me, Configurações, Despesas Fixas e Relatórios em 15/11/2026. RF57 acrescenta a exclusão de grupo (treino) e RF58 acrescenta a edição de grupo (treino), ambos também em 15/11/2026. RF59 acrescenta o cadastro de anamnese, também em 15/11/2026. RF60 acrescenta a gestão de modelos de anamnese (busca, cadastro, edição e exclusão), em 16/11/2026. RF61 acrescenta a gestão de categorias de anamnese (filtro, busca, cadastro, edição, cancelamento de edição e exclusão), também em 16/11/2026. RF62 acrescenta a edição de pergunta de anamnese, reprovada por HTTP 500, também em 16/11/2026. RF65–RF73 cobrem validações, operações e buscas de Colaboradores, também em 15/11/2026. RF74–RF84 acrescentam Prospecção e Bandeiras de Cartão a partir de resumos fornecidos, em 16/11/2026. RF85 a RF90 acrescentam Prospecção (leads) em 15/11/2026. RF91 a RF103 acrescentam Contas a Pagar, Modelos de Contrato e Planos em 15/11/2026. RF104 a RF108 acrescentam Tipos de Pagamento em 15/11/2026. RF109–RF115 cobre Modelos de Ficha com evidências gravadas em 16/11/2026. Os critérios abaixo constituem a referência de QA para esses fluxos; não representam validação de uma especificação formal pelo responsável pelo produto.
 
 ## 📋 Visão geral dos requisitos
 
@@ -150,6 +150,7 @@ Esta análise documenta 138 requisitos de QA para os cenários relacionados abai
 | [RF140](#rf140) | Validar uma URL da API sem formato de endereço | Média, proposta | [CT-RF140](Cenario_Teste/CT-RF140_Integracoes_WhatsApp_Validar_URL_API.md) |
 | [RF141](#rf141) | Bloquear o salvamento com Nome da Instância vazio | Média, proposta | [CT-RF141](Cenario_Teste/CT-RF141_Integracoes_WhatsApp_Instancia_Obrigatoria.md) |
 | [RF142](#rf142) | Persistir a opção Ativo da integração de WhatsApp | Média, proposta | [CT-RF142](Cenario_Teste/CT-RF142_Integracoes_WhatsApp_Persistir_Ativo.md) |
+| [RF143](#rf143) | Tratar falha ao conectar WhatsApp via Evolution API | Média, proposta | [CT-RF143](Cenario_Teste/CT-RF143_Integracoes_WhatsApp_Conectar_Evolution.md) |
 
 ---
 
@@ -3293,6 +3294,31 @@ A evidência confirma o bloqueio e a persistência do valor anterior. A regra pa
 
 A aprovação é restrita à persistência da opção. A execução de automações e o envio de mensagens não foram exercitados.
 
+<a id="rf143"></a>
+
+## RF143 — Tratar falha ao conectar WhatsApp via Evolution API
+
+| Campo | Descrição |
+| --- | --- |
+| Requisito de QA | Verificar a consistência entre a resposta da API e a mensagem da tela quando a tentativa de conexão com WhatsApp falha. |
+| Ator | Usuário autenticado com permissão para a operação. |
+| Pré-condições | Sessão autenticada na integração de WhatsApp com um provedor de teste. Preparar uma falha controlada com a equipe responsável pelo ambiente. |
+| Gatilho | Acionar Conectar WhatsApp quando a tentativa de conexão encontra uma falha. |
+| Caso | [CT-RF143](Cenario_Teste/CT-RF143_Integracoes_WhatsApp_Conectar_Evolution.md) |
+| Situação observada | Reprovado nas evidências. As duas tentativas exibiram falha. A resposta trouxe a mesma falha, mas devolveu `verifica_erro: false`. |
+| Defeito | [BUG-050](Relatorio-de-Bugs.md#bug-050), em triagem |
+| Evidências | Jam 5 — Tentativas de conexão pela Evolution API (gravação restrita por conter dados de integração) e [Evidências](Evidencias/CT-RF143_Integracoes_WhatsApp_Conectar_Evolution/README.md). |
+
+### Critérios de aceitação do RF143
+
+1. A tentativa com falha é indicada como falha no contrato da API e na interface.
+2. O estado informado permanece coerente com a ausência de sessão conectada.
+3. O retorno de falha não disponibiliza QR Code como se a tentativa tivesse sido bem-sucedida.
+
+### Pontos a confirmar e limites do RF143
+
+Os parâmetros do provedor não foram validados. A causa da falha de conexão e o caminho de sucesso exigem testes controlados. O defeito registrado é a divergência da flag de erro.
+
 ---
 
 ## 🔗 Rastreabilidade
@@ -3434,6 +3460,7 @@ A aprovação é restrita à persistência da opção. A execução de automaç�
 | RF140 | [CT-RF140](Cenario_Teste/CT-RF140_Integracoes_WhatsApp_Validar_URL_API.md) | Sem defeito confirmado | A validar — regra ou contexto pendente | [Evidências](Evidencias/CT-RF140_Integracoes_WhatsApp_Validar_URL_API/README.md) e Jam 2 — Validação da URL da API (gravação restrita por conter dados de integração) |
 | RF141 | [CT-RF141](Cenario_Teste/CT-RF141_Integracoes_WhatsApp_Instancia_Obrigatoria.md) | Nenhum no fluxo avaliado | Aprovado conforme a gravação | [Evidências](Evidencias/CT-RF141_Integracoes_WhatsApp_Instancia_Obrigatoria/README.md) e Jam 3 — Obrigatoriedade do Nome da Instância (gravação restrita por conter dados de integração) |
 | RF142 | [CT-RF142](Cenario_Teste/CT-RF142_Integracoes_WhatsApp_Persistir_Ativo.md) | Nenhum no fluxo avaliado | Aprovado conforme a gravação | [Evidências](Evidencias/CT-RF142_Integracoes_WhatsApp_Persistir_Ativo/README.md) e Jam 4 — Persistência da opção Ativo (gravação restrita por conter dados de integração) |
+| RF143 | [CT-RF143](Cenario_Teste/CT-RF143_Integracoes_WhatsApp_Conectar_Evolution.md) | [BUG-050](Relatorio-de-Bugs.md#bug-050), em triagem | Reprovado nas evidências | [Evidências](Evidencias/CT-RF143_Integracoes_WhatsApp_Conectar_Evolution/README.md) e Jam 5 — Tentativas de conexão pela Evolution API (gravação restrita por conter dados de integração) |
 
 ---
 
@@ -4297,12 +4324,13 @@ CT-RF134–CT-RF138 cobrem a Central de Automações com gravações de 16/11/20
 
 ### Base da análise de Configurações / Integrações / WhatsApp — revisão de 17/11/2026
 
-CT-RF139–CT-RF142 cobrem a integração do WhatsApp com gravações de 16/11/2026 entre 23:37:22 e 23:42:47 BRT.
+CT-RF139–CT-RF143 cobrem a integração do WhatsApp com gravações de 16/11/2026 entre 23:37:22 e 23:44:10 BRT.
 
 - RF139: A API Key permaneceu mascarada na edição e na reabertura da aba. A gravação não registrou POST de salvamento. Jam 1 — Mascaramento da API Key (gravação restrita por conter dados de integração).
 - RF140: A tentativa com URL fora do formato também tinha a instância vazia. Houve reconsulta sem POST de configuração, e a regra da URL ficou a validar. Jam 2 — Validação da URL da API (gravação restrita por conter dados de integração).
 - RF141: O nome preenchido foi salvo. As tentativas com a instância vazia ficaram sem POST e o valor anterior voltou ao reabrir. Jam 3 — Obrigatoriedade do Nome da Instância (gravação restrita por conter dados de integração).
 - RF142: Os dois estados de Ativo foram salvos e confirmados por GET, com a conexão permanecendo desconectada. Jam 4 — Persistência da opção Ativo (gravação restrita por conter dados de integração).
+- RF143: As duas tentativas exibiram falha. A resposta trouxe a mesma falha, mas devolveu `verifica_erro: false`. Jam 5 — Tentativas de conexão pela Evolution API (gravação restrita por conter dados de integração).
 
 ---
 

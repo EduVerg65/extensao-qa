@@ -2,24 +2,24 @@
 
 Repositório de documentação de QA manual do **SIFIT**, sistema de gestão de academias. Reúne requisitos, plano, cenários BDD, resultados, defeitos e evidências com links do Jam.
 
-**Atualização documental:** 17/11/2026. Integrados CT-RF139–CT-RF142 e RF139–RF142 para Configurações / Integrações / WhatsApp. A revisão utiliza gravações e eventos do Jam.
+**Atualização documental:** 17/11/2026. Integrados CT-RF139–CT-RF143 e RF139–RF143 para Configurações / Integrações / WhatsApp. A revisão utiliza gravações e eventos do Jam.
 
 ## 📊 Situação consolidada
 
 | Cenários documentados | Aprovados | Reprovados | A validar | Defeitos registrados | Casos com reteste corretivo pendente |
 | :---: | :---: | :---: | :---: | :---: | :---: |
-| 138 | 63 | 54 | 21 | 49 (10 abertos + 39 em triagem) | 54 |
+| 139 | 63 | 55 | 21 | 50 (10 abertos + 40 em triagem) | 55 |
 
-As classificações se baseiam nas fontes indicadas em cada cenário. CT-RF09/10 compartilham BUG-005 e CT-RF53–CT-RF56 compartilham BUG-023. CT-RF135 e CT-RF136 compartilham o BUG-049. As 54 reprovações correspondem a 49 defeitos registrados. BUG-011–BUG-049 aguardam triagem.
+As classificações se baseiam nas fontes indicadas em cada cenário. CT-RF09/10 compartilham BUG-005 e CT-RF53–CT-RF56 compartilham BUG-023. CT-RF135 e CT-RF136 compartilham o BUG-049. As 55 reprovações correspondem a 50 defeitos registrados. BUG-011–BUG-050 aguardam triagem.
 
 ## 📚 Documentos do projeto
 
 | Documento | Conteúdo |
 | --- | --- |
-| [Análise de requisitos](SIFIT/Analise%20de%20requisitos.md) | RF01–RF35, RF38–RF62 e RF65–RF142, critérios de aceitação, dúvidas de regra e rastreabilidade. |
+| [Análise de requisitos](SIFIT/Analise%20de%20requisitos.md) | RF01–RF35, RF38–RF62 e RF65–RF143, critérios de aceitação, dúvidas de regra e rastreabilidade. |
 | [Plano de testes](SIFIT/Plano%20de%20testes.md) | Escopo, ambientes, preparação, critérios, regressão e retestes. |
-| [Índice dos cenários](SIFIT/Cenario_Teste/README.md) | 138 cenários com pré-condições, BDD, passos, esperado, obtido e encaminhamento. |
-| [Relatório de bugs](SIFIT/Relatorio-de-Bugs.md) | BUG-001–BUG-049: reprodução, impacto, evidências, severidade/prioridade propostas e reteste. |
+| [Índice dos cenários](SIFIT/Cenario_Teste/README.md) | 139 cenários com pré-condições, BDD, passos, esperado, obtido e encaminhamento. |
+| [Relatório de bugs](SIFIT/Relatorio-de-Bugs.md) | BUG-001–BUG-050: reprodução, impacto, evidências, severidade/prioridade propostas e reteste. |
 | [Relatório dos testes](SIFIT/Relatorio%20dos%20testes.md) | Resultados consolidados, cobertura, limites e pendências. |
 | [Índice das evidências](SIFIT/Evidencias/README.md) | Jam por cenário e arquivos locais dos novos casos. |
 
@@ -171,6 +171,7 @@ extensao-qa/
 | [CT-RF140](SIFIT/Cenario_Teste/CT-RF140_Integracoes_WhatsApp_Validar_URL_API.md) | Validar uma URL da API sem formato de endereço | A validar — regra ou contexto pendente | — | Jam 2 — Validação da URL da API (gravação restrita por conter dados de integração) |
 | [CT-RF141](SIFIT/Cenario_Teste/CT-RF141_Integracoes_WhatsApp_Instancia_Obrigatoria.md) | Bloquear o salvamento com Nome da Instância vazio | Aprovado conforme a gravação | — | Jam 3 — Obrigatoriedade do Nome da Instância (gravação restrita por conter dados de integração) |
 | [CT-RF142](SIFIT/Cenario_Teste/CT-RF142_Integracoes_WhatsApp_Persistir_Ativo.md) | Persistir a opção Ativo da integração de WhatsApp | Aprovado conforme a gravação | — | Jam 4 — Persistência da opção Ativo (gravação restrita por conter dados de integração) |
+| [CT-RF143](SIFIT/Cenario_Teste/CT-RF143_Integracoes_WhatsApp_Conectar_Evolution.md) | Tratar falha ao conectar WhatsApp via Evolution API | Reprovado nas evidências | [BUG-050](SIFIT/Relatorio-de-Bugs.md#bug-050), em triagem | Jam 5 — Tentativas de conexão pela Evolution API (gravação restrita por conter dados de integração) |
 
 ## 🔬 Como este projeto funciona
 
