@@ -132,3 +132,11 @@ Três gravações do Jam ([Contas a Pagar](https://jam.dev/c/5d0afaf4-5abd-4e85-
 | [CT-RF108](../Cenario_Teste/CT-RF108_Tema_Notificacoes_Tipos_Pagamento.md) | [Tema Claro/Escuro e notificações na tela Tipos de Pagamento](CT-RF108_Tema_Notificacoes_Tipos_Pagamento/README.md) | Aprovado conforme a gravação |
 
 Uma gravação do Jam ([Tipos de Pagamento](https://jam.dev/c/e8734e3d-3f8e-458b-8c7d-e85eea882e50)) é a fonte dos cinco casos; cada pasta contém resumo, cronologia, origem, capturas extraídas da reprodução do Jam e seus hashes SHA-256. O vídeo permanece no Jam.
+
+## Inclusão de 17/11/2026 — Modelos de Ficha
+
+| Caso | Evidência | Resultado |
+| --- | --- | --- |
+| [CT-RF109](../Cenario_Teste/CT-RF109_Modelo_Ficha_Sem_Nome.md) | [Bloquear cadastro de modelo de ficha sem nome](CT-RF109_Modelo_Ficha_Sem_Nome/README.md) | Aprovado conforme a gravação |
+
+A revisão de Modelos de Ficha inclui CT-RF109 com base em uma gravação do Jam de 16/11/2026. A revisão documental foi feita em 17/11/2026. Cada pasta reúne a origem, a cronologia, os quadros do fluxo e os hashes SHA-256 das imagens. Os vídeos permanecem no Jam.

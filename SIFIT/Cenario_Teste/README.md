@@ -1,6 +1,6 @@
 # 🧪 Índice dos cenários de teste — SIFIT
 
-**Atualização:** 16/11/2026. 104 casos documentados: 42 aprovados, 48 reprovados e 14 a validar; 44 defeitos registrados (10 abertos e 34 em triagem) e 48 casos com reteste corretivo pendente (CT-RF01–CT-RF35, CT-RF38–CT-RF59, CT-RF60, CT-RF61, CT-RF62, CT-RF65–CT-RF84, CT-RF85–CT-RF103 e CT-RF104–CT-RF108).
+**Atualização:** 17/11/2026. 105 casos documentados: 43 aprovados, 48 reprovados e 14 a validar; 44 defeitos registrados (10 abertos e 34 em triagem) e 48 casos com reteste corretivo pendente. Escopo: CT-RF01–CT-RF35, CT-RF38–CT-RF62 e CT-RF65–CT-RF109.
 
 | Caso | Funcionalidade | Resultado | Defeito | Jam |
 | --- | --- | --- | --- | --- |
@@ -271,5 +271,13 @@ Cada grupo tem como fonte uma única gravação. Os resultados são documentais;
 | [CT-RF108](CT-RF108_Tema_Notificacoes_Tipos_Pagamento.md) | Tema Claro/Escuro e notificações na tela Tipos de Pagamento | Aprovado conforme a gravação | — | [Jam](https://jam.dev/c/e8734e3d-3f8e-458b-8c7d-e85eea882e50) |
 
 Os cinco casos têm como fonte uma única gravação. Os resultados são documentais; nenhuma nova execução ou reteste foi realizada.
+
+## Inclusão de 17/11/2026 — Modelos de Ficha
+
+| Caso | Funcionalidade | Resultado | Defeito | Jam |
+| --- | --- | --- | --- | --- |
+| [CT-RF109](CT-RF109_Modelo_Ficha_Sem_Nome.md) | Bloquear cadastro de modelo de ficha sem nome | Aprovado conforme a gravação | — | [Jam — PED-25](https://jam.dev/c/fb5673c9-3cd1-46c4-88f4-d5fb32574a8e) |
+
+A revisão de Modelos de Ficha inclui CT-RF109 com base em uma gravação do Jam de 16/11/2026. A revisão documental foi feita em 17/11/2026.
 
 [← Início](../../README.md) · [Requisitos](../Analise%20de%20requisitos.md) · [Plano](../Plano%20de%20testes.md) · [Evidências](../Evidencias/README.md)

@@ -1,0 +1,24 @@
+CT-RF109 — Bloquear cadastro de modelo de ficha sem nome
+Fonte: https://jam.dev/c/fb5673c9-3cd1-46c4-88f4-d5fb32574a8e
+Gravação: 16/11/2026, 22:19:51 BRT; duração: 18,91 s.
+Revisão documental: 17/11/2026.
+Página: https://sifit.centrion.com.br/fichas-treino-modelo
+Foco deste caso: bloqueio do cadastro por nome vazio (0:03 a 0:18).
+
+Cronologia (ações e eventos capturados no Jam):
+0:03  Clique no botão de adição. Abre o modal Novo Modelo de Ficha.
+0:09–0:11  Abre o seletor Personal e seleciona uma opção. Nome do Modelo continua vazio.
+0:12  Clique em Criar Modelo.
+0:15  Clique em Entendi para fechar o aviso.
+
+Rede do conjunto gravado (0 requisições capturadas):
+Nenhuma requisição de rede foi capturada durante a gravação.
+
+Quadros consultados (reprodução do Jam):
+0:03–0:11  Abre Novo Modelo de Ficha e seleciona um personal enquanto mantém o nome vazio.
+0:12–0:13  Aciona Criar Modelo e recebe o aviso de nome obrigatório.
+0:15–0:18  Fecha o aviso com Entendi. O formulário permanece aberto.
+
+Observações e verificações futuras:
+- A gravação cobre o nome vazio com um personal selecionado. Entrada composta apenas por espaços, envio com todos os campos vazios e validação no servidor exigem verificação própria.
+- Usar como regressão e verificar nome composto apenas por espaços e submissão com todos os campos vazios.
