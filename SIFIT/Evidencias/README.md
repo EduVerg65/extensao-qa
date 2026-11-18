@@ -138,5 +138,6 @@ Uma gravação do Jam ([Tipos de Pagamento](https://jam.dev/c/e8734e3d-3f8e-458b
 | Caso | Evidência | Resultado |
 | --- | --- | --- |
 | [CT-RF109](../Cenario_Teste/CT-RF109_Modelo_Ficha_Sem_Nome.md) | [Bloquear cadastro de modelo de ficha sem nome](CT-RF109_Modelo_Ficha_Sem_Nome/README.md) | Aprovado conforme a gravação |
+| [CT-RF110](../Cenario_Teste/CT-RF110_Cancelar_Cadastro_Modelo_Ficha.md) | [Cancelar cadastro de modelo de ficha preenchido](CT-RF110_Cancelar_Cadastro_Modelo_Ficha/README.md) | Aprovado conforme a gravação |
 
-A revisão de Modelos de Ficha inclui CT-RF109 com base em uma gravação do Jam de 16/11/2026. A revisão documental foi feita em 17/11/2026. Cada pasta reúne a origem, a cronologia, os quadros do fluxo e os hashes SHA-256 das imagens. Os vídeos permanecem no Jam.
+A revisão de Modelos de Ficha inclui CT-RF109–CT-RF110 com base em 2 gravações do Jam de 16/11/2026. A revisão documental foi feita em 17/11/2026. Cada pasta reúne a origem, a cronologia, os quadros do fluxo e os hashes SHA-256 das imagens. Os vídeos permanecem no Jam.

@@ -1,10 +1,10 @@
 # 🧪 Plano de Testes — SIFIT
 
-**Atualização:** 17/11/2026 — 105 cenários documentados (CT-RF01–CT-RF35, CT-RF38–CT-RF62 e CT-RF65–CT-RF109), com inclusão de CT-RF42 a CT-RF56 / Pagar.me, Configurações, Despesas Fixas e Relatórios, CT-RF57 e CT-RF58 / Grupos (treino), CT-RF59 / Fichas de Anamnese, CT-RF60 / Modelos de Anamnese, CT-RF61 / Categorias de Anamnese, CT-RF62 / Perguntas Anamnese, CT-RF65 a CT-RF73 / Colaboradores e CT-RF74 a CT-RF108 / Prospecção, Bandeiras de Cartão, Contas a Pagar, Modelos de Contrato, Planos e Tipos de Pagamento, além de Modelos de Ficha (CT-RF109); BUG-011–BUG-044 em triagem.
+**Atualização:** 17/11/2026 — 106 cenários documentados (CT-RF01–CT-RF35, CT-RF38–CT-RF62 e CT-RF65–CT-RF110), com inclusão de CT-RF42 a CT-RF56 / Pagar.me, Configurações, Despesas Fixas e Relatórios, CT-RF57 e CT-RF58 / Grupos (treino), CT-RF59 / Fichas de Anamnese, CT-RF60 / Modelos de Anamnese, CT-RF61 / Categorias de Anamnese, CT-RF62 / Perguntas Anamnese, CT-RF65 a CT-RF73 / Colaboradores e CT-RF74 a CT-RF108 / Prospecção, Bandeiras de Cartão, Contas a Pagar, Modelos de Contrato, Planos e Tipos de Pagamento, além de Modelos de Ficha (CT-RF109–CT-RF110); BUG-011–BUG-044 em triagem.
 
 **Padronização documental:** 13/11/2026, com resultados e pendências preservados.
 
-**Escopo:** 105 casos (CT-RF01–CT-RF35, CT-RF38–CT-RF62 e CT-RF65–CT-RF109) — autenticação, recuperação de senha, perfil, Clientes, financeiro, página inicial e dashboard, modalidades / tema de SifitBox, Categorias Crossfit, Avaliações, Exercícios, Grupos Musculares, Objetivos de Treino, Grupos (treino), Fichas de Anamnese, gestão de Modelos de Anamnese, gestão de Categorias de Anamnese, edição de Perguntas Anamnese, validações/funções/exclusão/busca de Colaboradores, Prospecção, Bandeiras de Cartão, Contas a Pagar, Modelos de Contrato, Planos, Tipos de Pagamento e Modelos de Ficha.
+**Escopo:** 106 casos (CT-RF01–CT-RF35, CT-RF38–CT-RF62 e CT-RF65–CT-RF110) — autenticação, recuperação de senha, perfil, Clientes, financeiro, página inicial e dashboard, modalidades / tema de SifitBox, Categorias Crossfit, Avaliações, Exercícios, Grupos Musculares, Objetivos de Treino, Grupos (treino), Fichas de Anamnese, gestão de Modelos de Anamnese, gestão de Categorias de Anamnese, edição de Perguntas Anamnese, validações/funções/exclusão/busca de Colaboradores, Prospecção, Bandeiras de Cartão, Contas a Pagar, Modelos de Contrato, Planos, Tipos de Pagamento e Modelos de Ficha.
 
 ## 📌 1. Identificação
 
@@ -14,13 +14,13 @@
 | Tipo de teste | Funcional manual, com análise exploratória e de evidências. |
 | Versão avaliada | Não confirmada; registrar por caso no reteste. |
 | Funcionalidades | Autenticação positiva e negativa, recuperação, Perfil, filtros de Clientes, financeiro, período, personais, modalidades / tema, Categorias Crossfit, Avaliações e Exercícios. |
-| Situação | 105 casos documentados: 43 aprovados, 48 reprovados e 14 a validar; 44 defeitos registrados (10 abertos e 34 em triagem) e 48 casos com reteste corretivo pendente. |
+| Situação | 106 casos documentados: 44 aprovados, 48 reprovados e 14 a validar; 44 defeitos registrados (10 abertos e 34 em triagem) e 48 casos com reteste corretivo pendente. |
 
 ---
 
 ## 🎯 2. Objetivo
 
-Verificar os fluxos dos 105 cenários documentados, comparando os critérios de aceitação com as evidências de autenticação, recuperação, perfil, Clientes, financeiro, página inicial, SifitBox, Categorias Crossfit, Avaliações, Exercícios, Grupos Musculares, Fichas de Anamnese, Colaboradores, Prospecção, Bandeiras de Cartão, Contas a Pagar, Modelos de Contrato, Planos, Tipos de Pagamento e Modelos de Ficha. Manter rastreabilidade entre requisitos, casos, Jam, vídeos, resultados e defeitos, distinguindo revisões documentais de novas execuções.
+Verificar os fluxos dos 106 cenários documentados, comparando os critérios de aceitação com as evidências de autenticação, recuperação, perfil, Clientes, financeiro, página inicial, SifitBox, Categorias Crossfit, Avaliações, Exercícios, Grupos Musculares, Fichas de Anamnese, Colaboradores, Prospecção, Bandeiras de Cartão, Contas a Pagar, Modelos de Contrato, Planos, Tipos de Pagamento e Modelos de Ficha. Manter rastreabilidade entre requisitos, casos, Jam, vídeos, resultados e defeitos, distinguindo revisões documentais de novas execuções.
 
 ---
 
@@ -87,7 +87,7 @@ Integração documental dos arquivos RESUMO.txt fornecidos em `C:\Users\Leonardo
 
 **Tipos de Pagamento — CT-RF104–CT-RF108:** filtros, cadastro com status, edição, exclusão de tipo em uso e tema com notificações, a partir de uma única gravação. BUG-042 e BUG-043 aguardam triagem; filtros permanecem a validar.
 
-**Modelos de Ficha — CT-RF109:** bloquear cadastro de modelo de ficha sem nome.
+**Modelos de Ficha — CT-RF109–CT-RF110:** bloquear cadastro de modelo de ficha sem nome, cancelar cadastro de modelo de ficha preenchido.
 
 **Limites da cobertura atual:**
 
@@ -433,7 +433,7 @@ Para o reteste, preparar aluno existente selecionável pela busca, personal habi
 | Página | https://sifit.centrion.com.br/fichas-treino-modelo |
 | Backend de referência | https://backendsifit.centrion.com.br |
 | Navegador / sistema / vídeo | Chrome 157.0.8103.79 / Windows (x86) 10 (identificação do Jam) / 1918 × 998 (vídeo). |
-| Gravações | 16/11/2026 às 22:19:51 BRT. |
+| Gravações | 16/11/2026 entre 22:19:51 e 22:20:56 BRT. |
 | Dados e permissões | Conta de teste com acesso a Modelos de Ficha e personal disponível. Para as buscas, preparar modelos conhecidos com Código, Título e Criador, incluindo um conjunto que permita distinguir os filtros isolados e combinados. |
 | Preparação | Registrar versão e ambiente, estado inicial da listagem, valores de teste, ações, contagem, requisições e respostas. Omitir credenciais e dados de autenticação. |
 | Limites | Revisão das gravações fornecidas. As buscas registradas partem de uma tela com 0 registros. |
@@ -536,6 +536,7 @@ Para o reteste, preparar aluno existente selecionável pela busca, personal habi
 | [RF107](Analise%20de%20requisitos.md#rf107) | [CT-RF107](Cenario_Teste/CT-RF107_Exclusao_Tipo_Pagamento_Em_Uso.md) | Funcional manual / teste negativo | Reprovado nas evidências | [BUG-043](Relatorio-de-Bugs.md#bug-043), em triagem | Confirmar a regra, reproduzir com tipo em uso e sem uso e retestar código HTTP, resposta e mensagem. |
 | [RF108](Analise%20de%20requisitos.md#rf108) | [CT-RF108](Cenario_Teste/CT-RF108_Tema_Notificacoes_Tipos_Pagamento.md) | Interface manual / tema e notificações | Aprovado conforme a gravação | Nenhum no fluxo avaliado | Usar como regressão visual; conferir diálogos e modais no tema Escuro e a persistência do tema. |
 | [RF109](Analise%20de%20requisitos.md#rf109) | [CT-RF109](Cenario_Teste/CT-RF109_Modelo_Ficha_Sem_Nome.md) | Funcional manual / teste negativo | Aprovado conforme a gravação | Nenhum no fluxo avaliado | Usar como regressão e verificar nome composto apenas por espaços e submissão com todos os campos vazios. |
+| [RF110](Analise%20de%20requisitos.md#rf110) | [CT-RF110](Cenario_Teste/CT-RF110_Cancelar_Cadastro_Modelo_Ficha.md) | Funcional manual / cancelamento | Aprovado conforme a gravação | Nenhum no fluxo avaliado | Usar como regressão e reabrir o formulário após o cancelamento para conferir a limpeza dos campos. |
 
 ---
 
@@ -766,6 +767,7 @@ Todas essas variações permanecem planejadas e não são contadas como execuç�
 ### Modelos de Ficha — próximos testes
 
 1. CT-RF109: Usar como regressão e verificar nome composto apenas por espaços e submissão com todos os campos vazios.
+2. CT-RF110: Usar como regressão e reabrir o formulário após o cancelamento para conferir a limpeza dos campos.
 
 ---
 
@@ -806,6 +808,7 @@ Todas essas variações permanecem planejadas e não são contadas como execuç�
 | Integração de CT-RF91–CT-RF103 / RF91–RF103 | Realizada | 15/11/2026; sem nova execução; BUG-039 a BUG-041 em triagem. |
 | Integração de CT-RF104–CT-RF108 / RF104–RF108 | Realizada | 16/11/2026; sem nova execução; BUG-042 e BUG-043 em triagem. |
 | Integração de CT-RF109 / RF109 | Realizada | 17/11/2026, revisão documental. |
+| Integração de CT-RF110 / RF110 | Realizada | 17/11/2026, revisão documental. |
 | Confirmação da regra do status e da exclusão de tipos de pagamento em uso, e da filtragem da listagem | Pendente | RF104, RF105 e RF107; depende do responsável pelo produto. |
 | Confirmação da obrigatoriedade do colaborador, dos filtros de contas e da regra do cartão Ativos | Pendente | RF91, RF92, RF93 e RF102; depende do responsável pelo produto. |
 | Confirmação da regra do telefone e da duplicidade de criação de leads | Pendente | RF88 e RF89; depende do responsável pelo produto. |
@@ -848,7 +851,7 @@ Há dez defeitos abertos (BUG-001 a BUG-010) e trinta e três em triagem (BUG-01
 
 ## 📁 13. Entregáveis e documentos associados
 
-Os entregáveis são a análise RF01–RF35, RF38–RF62 e RF65–RF109, este plano, os 105 cenários BDD, as evidências disponíveis e os relatórios atualizados. CT-RF21 possui relato original, link do Jam, quadros, cronologia, requisição/resposta sem autenticação e metadados locais; o vídeo permanece no Jam. Os vídeos e demais evidências anteriores citados nos documentos de 14/11/2026 não estavam nesta cópia do repositório em 15/11/2026; consultar o índice de evidências para a disponibilidade. 43 casos estão aprovados no alcance das evidências; 48 reprovados aguardam reteste, incluindo CT-RF22/24/26/27/28/29/30/35/41/45/51/53/54/55/56/57/58/59/65/66/67/68/69/70/71/73/81/82/83/89/92/98/102/105/107 em triagem, e 14 a validar dependem de regra/contexto ou persistência. CT-RF23–25, CT-RF35, CT-RF38–CT-RF56 e CT-RF85–CT-RF108 possuem pasta local com resumo, cronologia e origem (CT-RF35, CT-RF38–CT-RF56 e CT-RF85–CT-RF108 incluem também capturas extraídas do Jam e hashes; CT-RF50–CT-RF56 incluem os PDFs baixados); os vídeos permanecem no Jam. CT-RF29–CT-RF33, CT-RF57, CT-RF58 e CT-RF59 têm como fonte gravações únicas, cujos painéis foram lidos diretamente; as pastas locais de evidências desses casos ainda não foram criadas.
+Os entregáveis são a análise RF01–RF35, RF38–RF62 e RF65–RF110, este plano, os 106 cenários BDD, as evidências disponíveis e os relatórios atualizados. CT-RF21 possui relato original, link do Jam, quadros, cronologia, requisição/resposta sem autenticação e metadados locais; o vídeo permanece no Jam. Os vídeos e demais evidências anteriores citados nos documentos de 14/11/2026 não estavam nesta cópia do repositório em 15/11/2026; consultar o índice de evidências para a disponibilidade. 44 casos estão aprovados no alcance das evidências; 48 reprovados aguardam reteste, incluindo CT-RF22/24/26/27/28/29/30/35/41/45/51/53/54/55/56/57/58/59/65/66/67/68/69/70/71/73/81/82/83/89/92/98/102/105/107 em triagem, e 14 a validar dependem de regra/contexto ou persistência. CT-RF23–25, CT-RF35, CT-RF38–CT-RF56 e CT-RF85–CT-RF108 possuem pasta local com resumo, cronologia e origem (CT-RF35, CT-RF38–CT-RF56 e CT-RF85–CT-RF108 incluem também capturas extraídas do Jam e hashes; CT-RF50–CT-RF56 incluem os PDFs baixados); os vídeos permanecem no Jam. CT-RF29–CT-RF33, CT-RF57, CT-RF58 e CT-RF59 têm como fonte gravações únicas, cujos painéis foram lidos diretamente; as pastas locais de evidências desses casos ainda não foram criadas.
 
 - [Análise de requisitos](Analise%20de%20requisitos.md)
 - [Caso CT-RF01](Cenario_Teste/CT-RF01_Esqueci-senha.md)
@@ -919,7 +922,8 @@ Os entregáveis são a análise RF01–RF35, RF38–RF62 e RF65–RF109, este pl
 - [Caso CT-RF107](Cenario_Teste/CT-RF107_Exclusao_Tipo_Pagamento_Em_Uso.md) e [evidências](Evidencias/CT-RF107_Exclusao_Tipo_Pagamento_Em_Uso/README.md)
 - [Caso CT-RF108](Cenario_Teste/CT-RF108_Tema_Notificacoes_Tipos_Pagamento.md) e [evidências](Evidencias/CT-RF108_Tema_Notificacoes_Tipos_Pagamento/README.md)
 - [CT-RF109](Cenario_Teste/CT-RF109_Modelo_Ficha_Sem_Nome.md) e [Evidências](Evidencias/CT-RF109_Modelo_Ficha_Sem_Nome/README.md)
-- [Índice dos 105 cenários](Cenario_Teste/README.md)
+- [CT-RF110](Cenario_Teste/CT-RF110_Cancelar_Cadastro_Modelo_Ficha.md) e [Evidências](Evidencias/CT-RF110_Cancelar_Cadastro_Modelo_Ficha/README.md)
+- [Índice dos 106 cenários](Cenario_Teste/README.md)
 - [Índice das evidências e dos Jams](Evidencias/README.md)
 - [Manifesto de integridade dos novos arquivos](Evidencias/manifesto_sha256.json)
 

@@ -1,6 +1,6 @@
 # 🐞 Relatório de Bugs — SIFIT
 
-**Escopo:** defeitos de 105 casos documentados (CT-RF01–CT-RF35, CT-RF38–CT-RF62 e CT-RF65–CT-RF109): recuperação, Perfil, Clientes, financeiro, página inicial e dashboard, tema, modalidades, categorias, avaliações, exercícios, grupos musculares, objetivos de treino, SifitBox – Turmas, Pagar.me, configurações, despesas fixas, relatórios, grupos (treino), fichas de anamnese, colaboradores, modelos de anamnese, categorias de anamnese, perguntas de anamnese, Prospecção, Bandeiras de Cartão, Contas a Pagar, Modelos de Contrato, Planos, Tipos de Pagamento e Modelos de Ficha. CT-RF60 (Modelos de Anamnese) e CT-RF61 (Categorias de Anamnese) são aprovados conforme a gravação, sem defeito identificado. CT-RF62 (Perguntas Anamnese) é reprovado nas evidências e acrescenta o BUG-044 (44 defeitos registrados).
+**Escopo:** defeitos de 106 casos documentados (CT-RF01–CT-RF35, CT-RF38–CT-RF62 e CT-RF65–CT-RF110): recuperação, Perfil, Clientes, financeiro, página inicial e dashboard, tema, modalidades, categorias, avaliações, exercícios, grupos musculares, objetivos de treino, SifitBox – Turmas, Pagar.me, configurações, despesas fixas, relatórios, grupos (treino), fichas de anamnese, colaboradores, modelos de anamnese, categorias de anamnese, perguntas de anamnese, Prospecção, Bandeiras de Cartão, Contas a Pagar, Modelos de Contrato, Planos, Tipos de Pagamento e Modelos de Ficha. CT-RF60 (Modelos de Anamnese) e CT-RF61 (Categorias de Anamnese) são aprovados conforme a gravação, sem defeito identificado. CT-RF62 (Perguntas Anamnese) é reprovado nas evidências e acrescenta o BUG-044 (44 defeitos registrados).
 
 **Ambientes:** CT-RF01 em https://sifitalfa.centrion.com.br/login; CT-RF02_ERRO em https://sifit.centrion.com.br/profile. CT-RF03: URL do frontend não confirmada; backend informado em `https://backendsifit.centrion.com.br/api/clientesPorNome/1`.
 
@@ -1811,7 +1811,7 @@ A falha ocorre de forma idêntica para dois valores diferentes de tipo de respos
 
 ## Modelos de Ficha — revisão de 17/11/2026
 
-A revisão de Modelos de Ficha inclui CT-RF109 com base em uma gravação do Jam de 16/11/2026. A revisão documental foi feita em 17/11/2026. A triagem documental de [CT-RF109](Cenario_Teste/CT-RF109_Modelo_Ficha_Sem_Nome.md) registrou 0 caso(s) de Modelos de Ficha a validar e zero novos defeitos confirmados.
+A revisão de Modelos de Ficha inclui CT-RF109–CT-RF110 com base em 2 gravações do Jam de 16/11/2026. A revisão documental foi feita em 17/11/2026. A triagem documental de [CT-RF109](Cenario_Teste/CT-RF109_Modelo_Ficha_Sem_Nome.md), [CT-RF110](Cenario_Teste/CT-RF110_Cancelar_Cadastro_Modelo_Ficha.md) registrou 0 caso(s) de Modelos de Ficha a validar e zero novos defeitos confirmados.
 
 ## Pontos a validar — sem defeito confirmado
 

@@ -2,11 +2,11 @@
 
 **Módulos:** Autenticação, Perfil, Clientes / Filtros, Financeiro, Página inicial / Personais, SifitBox / Modalidades e Turmas, Categorias Crossfit, Avaliações, Exercícios, Grupos Musculares, Dashboard, Objetivos de Treino, Fichas de Anamnese, Colaboradores, Prospecção e Bandeiras de Cartão.
 
-**Atualização:** 17/11/2026 — RF01 a RF35, RF38 a RF62 e RF65 a RF109 consolidados, com inclusão de Categorias Crossfit (CT-RF38), SifitBox – Turmas (CT-RF39 a CT-RF41), Pagar.me, Configurações, Despesas Fixas e Relatórios (CT-RF42 a CT-RF56), Grupos (treino) (CT-RF57 e CT-RF58), Fichas de Anamnese (CT-RF59), Modelos de Anamnese (CT-RF60), Categorias de Anamnese (CT-RF61), Perguntas Anamnese (CT-RF62), Colaboradores (CT-RF65 a CT-RF73), Prospecção e Bandeiras de Cartão (CT-RF74 a CT-RF90), Contas a Pagar / Modelos de Contrato / Planos (CT-RF91 a CT-RF103) Tipos de Pagamento (CT-RF104 a CT-RF108) e Modelos de Ficha (CT-RF109); BUG-011–BUG-044 em triagem.
+**Atualização:** 17/11/2026 — RF01 a RF35, RF38 a RF62 e RF65 a RF110 consolidados, com inclusão de Categorias Crossfit (CT-RF38), SifitBox – Turmas (CT-RF39 a CT-RF41), Pagar.me, Configurações, Despesas Fixas e Relatórios (CT-RF42 a CT-RF56), Grupos (treino) (CT-RF57 e CT-RF58), Fichas de Anamnese (CT-RF59), Modelos de Anamnese (CT-RF60), Categorias de Anamnese (CT-RF61), Perguntas Anamnese (CT-RF62), Colaboradores (CT-RF65 a CT-RF73), Prospecção e Bandeiras de Cartão (CT-RF74 a CT-RF90), Contas a Pagar / Modelos de Contrato / Planos (CT-RF91 a CT-RF103) Tipos de Pagamento (CT-RF104 a CT-RF108) e Modelos de Ficha (CT-RF109–CT-RF110); BUG-011–BUG-044 em triagem.
 
 **Padronização documental:** 13/11/2026, sem alteração dos resultados registrados.
 
-Esta análise documenta 105 requisitos de QA para os cenários relacionados abaixo, com base nos relatos e nas evidências fornecidas. RF01–RF04 e suas análises históricas foram preservados; RF05–RF20 ampliam a cobertura em 14/11/2026; RF21 acrescenta Avaliações; RF22–RF28 acrescentam Exercícios; RF29–RF33 acrescentam Grupos Musculares; RF34 acrescenta o carregamento do dashboard RF35 acrescenta o cadastro de objetivos de treino e RF38 acrescenta o cadastro de categorias com código automático em 15/11/2026. RF39 acrescenta o cadastro de modalidade em SifitBox – Turmas. RF40 acrescenta a exclusão de turmas e modalidades. RF41 acrescenta o cadastro de turma. RF42 a RF56 acrescentam Pagar.me, Configurações, Despesas Fixas e Relatórios em 15/11/2026. RF57 acrescenta a exclusão de grupo (treino) e RF58 acrescenta a edição de grupo (treino), ambos também em 15/11/2026. RF59 acrescenta o cadastro de anamnese, também em 15/11/2026. RF60 acrescenta a gestão de modelos de anamnese (busca, cadastro, edição e exclusão), em 16/11/2026. RF61 acrescenta a gestão de categorias de anamnese (filtro, busca, cadastro, edição, cancelamento de edição e exclusão), também em 16/11/2026. RF62 acrescenta a edição de pergunta de anamnese, reprovada por HTTP 500, também em 16/11/2026. RF65–RF73 cobrem validações, operações e buscas de Colaboradores, também em 15/11/2026. RF74–RF84 acrescentam Prospecção e Bandeiras de Cartão a partir de resumos fornecidos, em 16/11/2026. RF85 a RF90 acrescentam Prospecção (leads) em 15/11/2026. RF91 a RF103 acrescentam Contas a Pagar, Modelos de Contrato e Planos em 15/11/2026. RF104 a RF108 acrescentam Tipos de Pagamento em 15/11/2026. RF109 cobre Modelos de Ficha com evidências gravadas em 16/11/2026. Os critérios abaixo constituem a referência de QA para esses fluxos; não representam validação de uma especificação formal pelo responsável pelo produto.
+Esta análise documenta 106 requisitos de QA para os cenários relacionados abaixo, com base nos relatos e nas evidências fornecidas. RF01–RF04 e suas análises históricas foram preservados; RF05–RF20 ampliam a cobertura em 14/11/2026; RF21 acrescenta Avaliações; RF22–RF28 acrescentam Exercícios; RF29–RF33 acrescentam Grupos Musculares; RF34 acrescenta o carregamento do dashboard RF35 acrescenta o cadastro de objetivos de treino e RF38 acrescenta o cadastro de categorias com código automático em 15/11/2026. RF39 acrescenta o cadastro de modalidade em SifitBox – Turmas. RF40 acrescenta a exclusão de turmas e modalidades. RF41 acrescenta o cadastro de turma. RF42 a RF56 acrescentam Pagar.me, Configurações, Despesas Fixas e Relatórios em 15/11/2026. RF57 acrescenta a exclusão de grupo (treino) e RF58 acrescenta a edição de grupo (treino), ambos também em 15/11/2026. RF59 acrescenta o cadastro de anamnese, também em 15/11/2026. RF60 acrescenta a gestão de modelos de anamnese (busca, cadastro, edição e exclusão), em 16/11/2026. RF61 acrescenta a gestão de categorias de anamnese (filtro, busca, cadastro, edição, cancelamento de edição e exclusão), também em 16/11/2026. RF62 acrescenta a edição de pergunta de anamnese, reprovada por HTTP 500, também em 16/11/2026. RF65–RF73 cobrem validações, operações e buscas de Colaboradores, também em 15/11/2026. RF74–RF84 acrescentam Prospecção e Bandeiras de Cartão a partir de resumos fornecidos, em 16/11/2026. RF85 a RF90 acrescentam Prospecção (leads) em 15/11/2026. RF91 a RF103 acrescentam Contas a Pagar, Modelos de Contrato e Planos em 15/11/2026. RF104 a RF108 acrescentam Tipos de Pagamento em 15/11/2026. RF109–RF110 cobre Modelos de Ficha com evidências gravadas em 16/11/2026. Os critérios abaixo constituem a referência de QA para esses fluxos; não representam validação de uma especificação formal pelo responsável pelo produto.
 
 ## 📋 Visão geral dos requisitos
 
@@ -117,6 +117,7 @@ Esta análise documenta 105 requisitos de QA para os cenários relacionados abai
 | [RF107](#rf107) | Impedir a exclusão de tipo de pagamento em uso com mensagem clara | Média, proposta | [CT-RF107](Cenario_Teste/CT-RF107_Exclusao_Tipo_Pagamento_Em_Uso.md) |
 | [RF108](#rf108) | Alternar tema Claro/Escuro e abrir as notificações em Tipos de Pagamento | Baixa, proposta | [CT-RF108](Cenario_Teste/CT-RF108_Tema_Notificacoes_Tipos_Pagamento.md) |
 | [RF109](#rf109) | Bloquear cadastro de modelo de ficha sem nome | Média, proposta | [CT-RF109](Cenario_Teste/CT-RF109_Modelo_Ficha_Sem_Nome.md) |
+| [RF110](#rf110) | Cancelar cadastro de modelo de ficha preenchido | Média, proposta | [CT-RF110](Cenario_Teste/CT-RF110_Cancelar_Cadastro_Modelo_Ficha.md) |
 
 ---
 
@@ -2435,6 +2436,31 @@ Contraste, persistência após recarga e modais no tema Escuro não foram verifi
 
 A gravação cobre o nome vazio com um personal selecionado. Entrada composta apenas por espaços, envio com todos os campos vazios e validação no servidor exigem verificação própria.
 
+<a id="rf110"></a>
+
+## RF110 — Cancelar cadastro de modelo de ficha preenchido
+
+| Campo | Descrição |
+| --- | --- |
+| Requisito de QA | Encerrar o formulário de cadastro sem salvar os dados preenchidos. |
+| Ator | Usuário autenticado com acesso a Modelos de Ficha. |
+| Pré-condições | Sessão autenticada com acesso ao cadastro e um personal disponível para seleção. |
+| Gatilho | Acionar Cancelar em Novo Modelo de Ficha com os campos preenchidos. |
+| Caso | [CT-RF110](Cenario_Teste/CT-RF110_Cancelar_Cadastro_Modelo_Ficha.md) |
+| Situação observada | Aprovado conforme a gravação. Cancelar fechou o modal preenchido e manteve 0 registros, sem requisição capturada. |
+| Defeito | Nenhum no fluxo avaliado |
+| Evidências | [Jam — PED-26](https://jam.dev/c/a2a39e11-04f4-40aa-a97e-75a57a5f1b0f) e [Evidências](Evidencias/CT-RF110_Cancelar_Cadastro_Modelo_Ficha/README.md). |
+
+### Critérios de aceitação do RF110
+
+1. O botão Cancelar fecha o formulário preenchido.
+2. O modelo informado não é incluído na listagem e a contagem permanece igual à inicial.
+3. Uma nova abertura do formulário exibe os valores iniciais.
+
+### Pontos a confirmar e limites do RF110
+
+O formulário não foi reaberto depois do cancelamento. A listagem inicial e a final mostram 0 registros.
+
 ---
 
 ## 🔗 Rastreabilidade
@@ -2543,6 +2569,7 @@ A gravação cobre o nome vazio com um personal selecionado. Entrada composta ap
 | RF107 | [CT-RF107](Cenario_Teste/CT-RF107_Exclusao_Tipo_Pagamento_Em_Uso.md) | [BUG-043](Relatorio-de-Bugs.md#bug-043), em triagem | Reprovado nas evidências; reteste pendente. | [Evidências](Evidencias/CT-RF107_Exclusao_Tipo_Pagamento_Em_Uso/README.md) e [Jam](https://jam.dev/c/e8734e3d-3f8e-458b-8c7d-e85eea882e50) |
 | RF108 | [CT-RF108](Cenario_Teste/CT-RF108_Tema_Notificacoes_Tipos_Pagamento.md) | Nenhum no fluxo avaliado | Aprovado conforme a gravação | [Evidências](Evidencias/CT-RF108_Tema_Notificacoes_Tipos_Pagamento/README.md) e [Jam](https://jam.dev/c/e8734e3d-3f8e-458b-8c7d-e85eea882e50) |
 | RF109 | [CT-RF109](Cenario_Teste/CT-RF109_Modelo_Ficha_Sem_Nome.md) | Nenhum no fluxo avaliado | Aprovado conforme a gravação | [Evidências](Evidencias/CT-RF109_Modelo_Ficha_Sem_Nome/README.md) e [Jam — PED-25](https://jam.dev/c/fb5673c9-3cd1-46c4-88f4-d5fb32574a8e) |
+| RF110 | [CT-RF110](Cenario_Teste/CT-RF110_Cancelar_Cadastro_Modelo_Ficha.md) | Nenhum no fluxo avaliado | Aprovado conforme a gravação | [Evidências](Evidencias/CT-RF110_Cancelar_Cadastro_Modelo_Ficha/README.md) e [Jam — PED-26](https://jam.dev/c/a2a39e11-04f4-40aa-a97e-75a57a5f1b0f) |
 
 ---
 
@@ -3351,9 +3378,10 @@ Com RF108, a análise passa a cobrir 101 requisitos documentados. O CT-RF108 acr
 
 ### Base da análise de Modelos de Ficha — revisão de 17/11/2026
 
-A revisão de Modelos de Ficha inclui CT-RF109 com base em uma gravação do Jam de 16/11/2026. A revisão documental foi feita em 17/11/2026. Os resultados se baseiam nos vídeos, metadados e eventos capturados pelo Jam.
+A revisão de Modelos de Ficha inclui CT-RF109–CT-RF110 com base em 2 gravações do Jam de 16/11/2026. A revisão documental foi feita em 17/11/2026. Os resultados se baseiam nos vídeos, metadados e eventos capturados pelo Jam.
 
 - RF109: Aviso “Informe o nome do modelo.”. Modal permaneceu aberto após Entendi, sem requisição capturada. [Jam — PED-25](https://jam.dev/c/fb5673c9-3cd1-46c4-88f4-d5fb32574a8e).
+- RF110: Cancelar fechou o modal preenchido e manteve 0 registros, sem requisição capturada. [Jam — PED-26](https://jam.dev/c/a2a39e11-04f4-40aa-a97e-75a57a5f1b0f).
 
 ---
 

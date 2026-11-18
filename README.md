@@ -2,13 +2,13 @@
 
 Repositório de documentação de QA manual do **SIFIT**, sistema de gestão de academias. Reúne requisitos, plano, cenários BDD, resultados, defeitos e evidências com links do Jam.
 
-**Atualização documental:** 17/11/2026. Integrados CT-RF109 e RF109 para Modelos de Ficha. Os resultados se baseiam nos vídeos, metadados e eventos capturados pelo Jam.
+**Atualização documental:** 17/11/2026. Integrados CT-RF109–CT-RF110 e RF109–RF110 para Modelos de Ficha. Os resultados se baseiam nos vídeos, metadados e eventos capturados pelo Jam.
 
 ## 📊 Situação consolidada
 
 | Cenários documentados | Aprovados | Reprovados | A validar | Defeitos registrados | Casos com reteste corretivo pendente |
 | :---: | :---: | :---: | :---: | :---: | :---: |
-| 105 | 43 | 48 | 14 | 44 (10 abertos + 34 em triagem) | 48 |
+| 106 | 44 | 48 | 14 | 44 (10 abertos + 34 em triagem) | 48 |
 
 As classificações se baseiam nas fontes indicadas em cada cenário. CT-RF09/10 compartilham BUG-005 e CT-RF53–CT-RF56 compartilham BUG-023. As 48 reprovações correspondem a 44 defeitos registrados. BUG-011–BUG-044 aguardam triagem.
 
@@ -16,9 +16,9 @@ As classificações se baseiam nas fontes indicadas em cada cenário. CT-RF09/10
 
 | Documento | Conteúdo |
 | --- | --- |
-| [Análise de requisitos](SIFIT/Analise%20de%20requisitos.md) | RF01–RF35, RF38–RF62 e RF65–RF109, critérios de aceitação, dúvidas de regra e rastreabilidade. |
+| [Análise de requisitos](SIFIT/Analise%20de%20requisitos.md) | RF01–RF35, RF38–RF62 e RF65–RF110, critérios de aceitação, dúvidas de regra e rastreabilidade. |
 | [Plano de testes](SIFIT/Plano%20de%20testes.md) | Escopo, ambientes, preparação, critérios, regressão e retestes. |
-| [Índice dos cenários](SIFIT/Cenario_Teste/README.md) | 105 cenários com pré-condições, BDD, passos, esperado, obtido e encaminhamento. |
+| [Índice dos cenários](SIFIT/Cenario_Teste/README.md) | 106 cenários com pré-condições, BDD, passos, esperado, obtido e encaminhamento. |
 | [Relatório de bugs](SIFIT/Relatorio-de-Bugs.md) | BUG-001–BUG-044: reprodução, impacto, evidências, severidade/prioridade propostas e reteste. |
 | [Relatório dos testes](SIFIT/Relatorio%20dos%20testes.md) | Resultados consolidados, cobertura, limites e pendências. |
 | [Índice das evidências](SIFIT/Evidencias/README.md) | Jam por cenário e arquivos locais dos novos casos. |
@@ -138,6 +138,7 @@ extensao-qa/
 | [CT-RF107](SIFIT/Cenario_Teste/CT-RF107_Exclusao_Tipo_Pagamento_Em_Uso.md) | Exclusão de tipo de pagamento em uso retorna HTTP 404 com erro SQL | Reprovado nas evidências | [BUG-043](SIFIT/Relatorio-de-Bugs.md#bug-043), em triagem | [Jam](https://jam.dev/c/e8734e3d-3f8e-458b-8c7d-e85eea882e50) |
 | [CT-RF108](SIFIT/Cenario_Teste/CT-RF108_Tema_Notificacoes_Tipos_Pagamento.md) | Tema Claro/Escuro e notificações na tela Tipos de Pagamento | Aprovado conforme a gravação | — | [Jam](https://jam.dev/c/e8734e3d-3f8e-458b-8c7d-e85eea882e50) |
 | [CT-RF109](SIFIT/Cenario_Teste/CT-RF109_Modelo_Ficha_Sem_Nome.md) | Bloquear cadastro de modelo de ficha sem nome | Aprovado conforme a gravação | — | [Jam — PED-25](https://jam.dev/c/fb5673c9-3cd1-46c4-88f4-d5fb32574a8e) |
+| [CT-RF110](SIFIT/Cenario_Teste/CT-RF110_Cancelar_Cadastro_Modelo_Ficha.md) | Cancelar cadastro de modelo de ficha preenchido | Aprovado conforme a gravação | — | [Jam — PED-26](https://jam.dev/c/a2a39e11-04f4-40aa-a97e-75a57a5f1b0f) |
 
 ## 🔬 Como este projeto funciona
 

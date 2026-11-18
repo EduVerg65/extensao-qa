@@ -1,0 +1,23 @@
+CT-RF110 — Cancelar cadastro de modelo de ficha preenchido
+Fonte: https://jam.dev/c/a2a39e11-04f4-40aa-a97e-75a57a5f1b0f
+Gravação: 16/11/2026, 22:20:56 BRT; duração: 20,18 s.
+Revisão documental: 17/11/2026.
+Página: https://sifit.centrion.com.br/fichas-treino-modelo
+Foco deste caso: cancelamento de um cadastro preenchido (0:03 a 0:19).
+
+Cronologia (ações e eventos capturados no Jam):
+0:03  Clique no botão de adição. Abre o modal Novo Modelo de Ficha.
+0:07–0:13  Preenche Nome do Modelo com PEDRO-01 e seleciona um personal.
+0:15  Clique em Cancelar.
+
+Rede do conjunto gravado (0 requisições capturadas):
+Nenhuma requisição de rede foi capturada durante a gravação.
+
+Quadros consultados (reprodução do Jam):
+0:03–0:13  Abre o formulário, informa PEDRO-01 e seleciona um personal.
+0:15  Aciona Cancelar.
+0:17–0:19  Listagem visível com 0 registros.
+
+Observações e verificações futuras:
+- O formulário não foi reaberto depois do cancelamento. A listagem inicial e a final mostram 0 registros.
+- Usar como regressão e reabrir o formulário após o cancelamento para conferir a limpeza dos campos.
