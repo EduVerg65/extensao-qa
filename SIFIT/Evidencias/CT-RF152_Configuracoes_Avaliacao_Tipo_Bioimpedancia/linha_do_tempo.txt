@@ -1,0 +1,25 @@
+CT-RF152 — Alterar o tipo de avaliação para Bioimpedância
+Fonte: Jam 2 — Alteração do tipo para Bioimpedância. Gravação restrita por conter dados de integração.
+Gravação: 16/11/2026, 23:11:02 BRT. Duração: 18,94 s.
+Revisão documental: 18/11/2026.
+Página: https://sifit.centrion.com.br/configuracoes
+Foco deste caso: Confirmar que o valor Bioimpedância de Tipo de avaliação permanece salvo após recarregar e reabrir Avaliação.
+
+Cronologia (ações e eventos capturados no Jam):
+0:05,78  Salva o novo valor Bioimpedância.
+0:08,21  Após recarregar, o GET devolve `tipo_avaliacao: BIOIMPEDANCIA`.
+0:10,63  Reabre Avaliação e confirma Bioimpedância na interface.
+0:17,35  Envia a restauração para Dobras e recebe sucesso.
+
+Rede do conjunto gravado (eventos relevantes ao caso):
+0:05,78  POST /api/configuracoes/alterar/1 com tipo_avaliacao: BIOIMPEDANCIA (HTTP 200, verifica_erro: false).
+0:08,21  GET /api/configuracoes/1 (HTTP 200) com tipo_avaliacao: BIOIMPEDANCIA.
+0:17,35  POST de restauração com tipo_avaliacao: DOBRAS (HTTP 200, verifica_erro: false). A captura termina sem novo GET após a restauração.
+
+Quadros consultados (reprodução do Jam):
+- Tipo Dobras no formulário e no cartão de resumo antes da alteração.
+- Bioimpedância no formulário e no cartão após reabrir Avaliação.
+
+Observações e verificações futuras:
+- O tipo foi conferido no formulário e no cartão de resumo de Configurações. A gravação não cobre a criação de uma avaliação nesse tipo.
+- Usar como regressão da configuração e validar os campos do cadastro ao escolher cada tipo.
