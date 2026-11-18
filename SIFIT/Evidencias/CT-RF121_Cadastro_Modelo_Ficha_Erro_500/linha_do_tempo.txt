@@ -1,0 +1,24 @@
+CT-RF121 — Cadastrar um modelo de ficha com nome e personal
+Fonte: https://jam.dev/c/04e2cae2-f3f2-43ff-8361-b3b9d9f50d35
+Gravação: 16/11/2026, 22:18:52 BRT; duração: 21,55 s.
+Revisão documental: 17/11/2026.
+Página: https://sifit.centrion.com.br/fichas-treino-modelo
+Foco deste caso: Cadastrar um novo modelo de ficha com nome e personal e disponibilizá-lo na listagem.
+
+Cronologia (ações e eventos capturados no Jam):
+0:00–0:03  Listagem inicialmente vazia. Usuário abre Novo Modelo de Ficha.
+0:04–0:16  Informa Pedro-01 e seleciona um personal.
+0:17–0:19  Aciona Criar Modelo. A chamada retorna HTTP 500 e a interface exibe o diálogo de erro.
+0:20  Aciona Fechar no diálogo.
+
+Rede do conjunto gravado (eventos relevantes ao caso):
+0:17,62  POST /api/adicionar-ficha/1 (HTTP 500). O corpo registra tipo_ficha: modelo, nome_ficha e nome_modelo com Pedro-01 e prescritor_id preenchido.
+A resposta traz verifica_erro: true e mensagem: "Erro interno inesperado.".
+
+Quadros consultados (reprodução do Jam):
+- Formulário preenchido antes de Criar Modelo.
+- Aviso Erro ao salvar modelo após o HTTP 500.
+
+Observações e verificações futuras:
+- Uma tentativa foi registrada. A gravação não confirma causa técnica, persistência parcial ou abrangência para outros nomes e personais. Os CT-RF109 e CT-RF110 cobrem, respectivamente, a validação de nome vazio e o cancelamento.
+- Reproduzir com dados de teste distintos, investigar a falha do endpoint e conferir a listagem e o vínculo após a correção.
