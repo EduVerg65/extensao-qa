@@ -1,10 +1,10 @@
 # 📊 Relatório de Testes — SIFIT
 
-**Escopo:** 111 casos documentados (CT-RF01–CT-RF35, CT-RF38–CT-RF62 e CT-RF65–CT-RF115) — autenticação, recuperação, perfil, Clientes, financeiro, página inicial e dashboard, modalidades / tema de SifitBox, Categorias Crossfit, Avaliações, Exercícios, Grupos Musculares, Objetivos de Treino cadastro de categorias com código automático, SifitBox – Turmas, Pagar.me, Configurações, Despesas Fixas, Relatórios, Grupos (treino), Fichas de Anamnese, gestão de Modelos de Anamnese, gestão de Categorias de Anamnese, edição de Perguntas Anamnese, validações/funções/exclusão/busca de Colaboradores, Prospecção, Bandeiras de Cartão, Contas a Pagar, Modelos de Contrato, Planos, Tipos de Pagamento e Modelos de Ficha.
+**Escopo:** 112 casos documentados (CT-RF01–CT-RF35, CT-RF38–CT-RF62 e CT-RF65–CT-RF116) — autenticação, recuperação, perfil, Clientes, financeiro, página inicial e dashboard, modalidades / tema de SifitBox, Categorias Crossfit, Avaliações, Exercícios, Grupos Musculares, Objetivos de Treino cadastro de categorias com código automático, SifitBox – Turmas, Pagar.me, Configurações, Despesas Fixas, Relatórios, Grupos (treino), Fichas de Anamnese, gestão de Modelos de Anamnese, gestão de Categorias de Anamnese, edição de Perguntas Anamnese, validações/funções/exclusão/busca de Colaboradores, Prospecção, Bandeiras de Cartão, Contas a Pagar, Modelos de Contrato, Planos, Tipos de Pagamento e Modelos de Ficha.
 
-**Datas das gravações do Jam:** CT-RF01 em 23/10/2026; CT-RF02_ERRO em 22/10/2026 às 21:45 BRT; CT-RF03 não confirmada; CT-RF04_loginComSucesso em 13/11/2026; CT-RF05–CT-RF20 em 14/11/2026; CT-RF21 em 15/11/2026 às 15:07:51,265 BRT; CT-RF22–28 em 15/11/2026 às 15:25, 15:40, 15:38, 15:35, 16:11, 16:08 e 16:07 BRT; CT-RF29–33 em 15/11/2026 às 15h56 BRT (uma única gravação); CT-RF34 em 15/11/2026 às 17:23 BRT; CT-RF35 em 15/11/2026 às 18:13 BRT; CT-RF38 em 15/11/2026 às 18:41 BRT; CT-RF39–41 em 15/11/2026 às 18:51 BRT (uma única gravação); CT-RF42–45 às 19:06, CT-RF46–49 às 19:07 e CT-RF50–56 às 19:09 BRT (uma gravação por grupo); CT-RF57 e CT-RF58 em 15/11/2026 às 21h03 BRT (mesma gravação); CT-RF59 em 15/11/2026 às 22h07 BRT; CT-RF60 em 15/11/2026 às 23h34 BRT; CT-RF61 em 16/11/2026 às 15h24 BRT; CT-RF62 em 16/11/2026 às 15h57 BRT. CT-RF74–CT-RF84: 16/11/2026 conforme os resumos, sem horário informado. CT-RF85–90 às 21:52, CT-RF91–95 às 21:58, CT-RF96–98 às 21:55 e CT-RF99–103 às 21:54 e CT-RF104–108 às 22:03 BRT em 15/11/2026 (uma gravação por grupo). CT-RF109–CT-RF115 em 16/11/2026 entre 22:19:51 e 22:29:07 BRT.
+**Datas das gravações do Jam:** CT-RF01 em 23/10/2026; CT-RF02_ERRO em 22/10/2026 às 21:45 BRT; CT-RF03 não confirmada; CT-RF04_loginComSucesso em 13/11/2026; CT-RF05–CT-RF20 em 14/11/2026; CT-RF21 em 15/11/2026 às 15:07:51,265 BRT; CT-RF22–28 em 15/11/2026 às 15:25, 15:40, 15:38, 15:35, 16:11, 16:08 e 16:07 BRT; CT-RF29–33 em 15/11/2026 às 15h56 BRT (uma única gravação); CT-RF34 em 15/11/2026 às 17:23 BRT; CT-RF35 em 15/11/2026 às 18:13 BRT; CT-RF38 em 15/11/2026 às 18:41 BRT; CT-RF39–41 em 15/11/2026 às 18:51 BRT (uma única gravação); CT-RF42–45 às 19:06, CT-RF46–49 às 19:07 e CT-RF50–56 às 19:09 BRT (uma gravação por grupo); CT-RF57 e CT-RF58 em 15/11/2026 às 21h03 BRT (mesma gravação); CT-RF59 em 15/11/2026 às 22h07 BRT; CT-RF60 em 15/11/2026 às 23h34 BRT; CT-RF61 em 16/11/2026 às 15h24 BRT; CT-RF62 em 16/11/2026 às 15h57 BRT. CT-RF74–CT-RF84: 16/11/2026 conforme os resumos, sem horário informado. CT-RF85–90 às 21:52, CT-RF91–95 às 21:58, CT-RF96–98 às 21:55 e CT-RF99–103 às 21:54 e CT-RF104–108 às 22:03 BRT em 15/11/2026 (uma gravação por grupo). CT-RF109–CT-RF115 em 16/11/2026 entre 22:19:51 e 22:29:07 BRT. CT-RF116 amplia a cobertura de Configurações (Home) com gravações de 16/11/2026 às 22:03:53 BRT.
 
-**Data da revisão documental:** 17/11/2026, com integração de CT-RF109–CT-RF115 (Modelos de Ficha).
+**Data da revisão documental:** 17/11/2026, com integração de CT-RF116 (Configurações (Home)).
 
 **Origem do resultado:** análise de evidências fornecidas; sem nova execução no sistema nesta revisão.
 
@@ -32,9 +32,11 @@ CT-RF74–CT-RF84 acrescentam oito aprovações e três reprovações conforme o
 
 A revisão de Modelos de Ficha inclui CT-RF109–CT-RF115 com base em 6 gravações do Jam de 16/11/2026. A revisão documental foi feita em 17/11/2026. 3 aprovado(s) conforme a gravação e 4 a validar. O material não acrescenta defeitos confirmados.
 
+CT-RF116 amplia a cobertura de Configurações (Home) com gravações de 16/11/2026 às 22:03:53 BRT. Casos aprovados: 0. Reprovados: 0. A validar: 1.
+
 | Casos documentados | Aprovados | Reprovados | A validar | Defeitos registrados | Casos com reteste corretivo pendente |
 | :---: | :---: | :---: | :---: | :---: | :---: |
-| 111 | 45 | 48 | 18 | 44 (10 abertos + 34 em triagem) | 48 |
+| 112 | 45 | 48 | 19 | 44 (10 abertos + 34 em triagem) | 48 |
 
 Os 48 retestes incluem CT-RF22/24/26/27/28/29/30/35/41/45/51/53/54/55/56/57/58/59/62/65/66/67/68/69/70/71/73/81/82/83/89/92/98/102/105/107, sujeitos à confirmação funcional e técnica. As contagens representam os casos documentados com base nas fontes indicadas, sem novas execuções nesta revisão. As nove variações planejadas para o reteste do CT-RF03 não foram executadas e não são contabilizadas como testes adicionais realizados.
 
@@ -152,6 +154,7 @@ Os 48 retestes incluem CT-RF22/24/26/27/28/29/30/35/41/45/51/53/54/55/56/57/58/5
 | [CT-RF113](Cenario_Teste/CT-RF113_Busca_Modelo_Ficha_Filtros_Combinados.md) | [RF113](Analise%20de%20requisitos.md#rf113) | Como critério de QA, a pesquisa lista a interseção dos três filtros. Uma combinação sem correspondência mostra a mensagem de estado vazio com 0 registros. | Três filtros preenchidos, 0 registros. GET sem parâmetros na URL retornou HTTP 200 com `[]`. | A validar — regra ou contexto pendente | Sem defeito confirmado |
 | [CT-RF114](Cenario_Teste/CT-RF114_Limpeza_Filtros_Modelos_Ficha.md) | [RF114](Analise%20de%20requisitos.md#rf114) | Os três campos voltam a ficar vazios, com seus textos de indicação, e a ação de busca continua disponível. | Criador, Título e Código foram limpos manualmente e Buscar permaneceu disponível. | Aprovado conforme a gravação | Nenhum no fluxo avaliado |
 | [CT-RF115](Cenario_Teste/CT-RF115_Nova_Busca_Modelos_Ficha_Sem_Filtros.md) | [RF115](Analise%20de%20requisitos.md#rf115) | Após a nova pesquisa, os registros padrão reaparecem, a contagem é atualizada e os campos permanecem em branco. | Dois cliques em Buscar com campos vazios geraram HTTP 200 com `[]`. A lista permaneceu vazia. | A validar — regra ou contexto pendente | Sem defeito confirmado |
+| [CT-RF116](Cenario_Teste/CT-RF116_Configuracoes_Dias_Ausencia_Vazio.md) | [RF116](Analise%20de%20requisitos.md#rf116) | Se o campo for obrigatório, o sistema impede o salvamento e preserva o valor anterior. Se o campo for opcional, aplica o padrão definido e informa como tratou a entrada vazia. | Campo vazio convertido em 0, com HTTP 200. A recarga e a consulta confirmaram 0. | A validar — regra ou contexto pendente | Sem defeito confirmado |
 
 ---
 
@@ -496,6 +499,17 @@ O domínio do CT-RF02_ERRO é diferente do domínio `sifitalfa.centrion.com.br` 
 | Navegador / sistema / vídeo | Chrome 157.0.8103.79 / Windows (x86) 10 (identificação do Jam) / 1918 × 998 (vídeo). |
 | Material e limites | Os resultados se baseiam nos vídeos, metadados e eventos capturados pelo Jam. Versão da aplicação e zoom a confirmar. |
 
+### Configurações (Home) (CT-RF116)
+
+| Item | Definição |
+| --- | --- |
+| Página | https://sifit.centrion.com.br/configuracoes |
+| Backend de referência | https://backendsifit.centrion.com.br |
+| Navegador / sistema / vídeo | Chrome 157.0.8103.79 / Windows 10 (x86) / 1918 × 998. |
+| Gravações | 16/11/2026 às 22:03:53 BRT. |
+| Dados e permissões | Conta com permissão para as operações. Registrar os valores iniciais das Configurações e restaurá-los após os testes. |
+| Preparação | Registrar estado inicial, ações e respostas da API. Usar recortes da interface e omitir dados de autenticação. |
+
 ## 📸 5. Evidências e observações
 
 | Evidência | Informação utilizada |
@@ -562,6 +576,7 @@ O domínio do CT-RF02_ERRO é diferente do domínio `sifitalfa.centrion.com.br` 
 | [Jam — PED-29](https://jam.dev/c/006f9722-e643-4b65-904a-25471a7b90ed) e [Evidências](Evidencias/CT-RF113_Busca_Modelo_Ficha_Filtros_Combinados/README.md) | CT-RF113: Em 0:11, GET `/api/fichas-modelo/1` com HTTP 200 e corpo `[]` (2 B). O evento não mostra os filtros na URL. |
 | [Jam — PED-30](https://jam.dev/c/297eec2b-7be4-498b-a0e6-e962ed93cc00) e [Evidências](Evidencias/CT-RF114_Limpeza_Filtros_Modelos_Ficha/README.md) | CT-RF114: Nenhuma requisição durante a limpeza. Os dois GET ocorreram após os cliques de busca com os campos vazios. |
 | [Jam — PED-30](https://jam.dev/c/297eec2b-7be4-498b-a0e6-e962ed93cc00) e [Evidências](Evidencias/CT-RF115_Nova_Busca_Modelos_Ficha_Sem_Filtros/README.md) | CT-RF115: Em 0:11 e 0:13, dois GET `/api/fichas-modelo/1`, ambos com HTTP 200 e corpo `[]` (2 B cada). |
+| [Jam — PED-20 — Dias de ausência vazio](https://jam.dev/c/4e96d4fa-65b5-459b-a795-854496e5753c) e [Evidências](Evidencias/CT-RF116_Configuracoes_Dias_Ausencia_Vazio/README.md) | CT-RF116: Campo vazio convertido em 0, com HTTP 200. A recarga e a consulta confirmaram 0. |
 
 A mensagem de credenciais incorretas já aparece no início do vídeo do Jam; não foi considerada uma resposta ao clique em "Esqueci minha senha". A ausência de requisição, isoladamente, não caracteriza defeito se a interface abrir um formulário local. Aqui, o resultado reprovado decorre de o fluxo não abrir.
 
@@ -919,7 +934,15 @@ O consolidado na inclusão de Tipos de Pagamento era de 104 casos documentados (
 | [CT-RF114](Cenario_Teste/CT-RF114_Limpeza_Filtros_Modelos_Ficha.md) | Aprovado conforme a gravação | Usar como regressão de interface e conferir o uso dos campos com teclado e mouse. |
 | [CT-RF115](Cenario_Teste/CT-RF115_Nova_Busca_Modelos_Ficha_Sem_Filtros.md) | A validar — regra ou contexto pendente | Reexecutar com listagem padrão populada, pesquisa restritiva e comparação dos registros após a nova busca. |
 
-O consolidado atual é de 111 casos documentados: 45 aprovados, 48 reprovados e 18 a validar; 44 defeitos registrados (10 abertos e 34 em triagem) e 48 casos com reteste corretivo pendente. Os resultados acima se limitam ao material do Jam.
+O consolidado na inclusão dos CT-RF109 a CT-RF115 era de 111 casos documentados: 45 aprovados, 48 reprovados e 18 a validar; 44 defeitos registrados (10 abertos e 34 em triagem) e 48 casos com reteste corretivo pendente. Os resultados acima se limitam ao material do Jam.
+
+## Inclusão de 17/11/2026 — Configurações (Home) (CT-RF116)
+
+| Caso | Situação | Encaminhamento |
+| --- | --- | --- |
+| [CT-RF116](Cenario_Teste/CT-RF116_Configuracoes_Dias_Ausencia_Vazio.md) | A validar — regra ou contexto pendente | Confirmar com o produto a regra para vazio e zero. Repetir com vazio, zero explícito e os limites da faixa. |
+
+112 casos documentados: 45 aprovados, 48 reprovados e 19 a validar. 44 defeitos registrados (10 abertos e 34 em triagem) e 48 casos com reteste corretivo pendente.
 
 ---
 

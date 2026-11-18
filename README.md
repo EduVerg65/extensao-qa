@@ -2,13 +2,13 @@
 
 Repositório de documentação de QA manual do **SIFIT**, sistema de gestão de academias. Reúne requisitos, plano, cenários BDD, resultados, defeitos e evidências com links do Jam.
 
-**Atualização documental:** 17/11/2026. Integrados CT-RF109–CT-RF115 e RF109–RF115 para Modelos de Ficha. Os resultados se baseiam nos vídeos, metadados e eventos capturados pelo Jam.
+**Atualização documental:** 17/11/2026. Integrados CT-RF116 e RF116 para Configurações (Home). A revisão utiliza as gravações e os eventos do Jam.
 
 ## 📊 Situação consolidada
 
 | Cenários documentados | Aprovados | Reprovados | A validar | Defeitos registrados | Casos com reteste corretivo pendente |
 | :---: | :---: | :---: | :---: | :---: | :---: |
-| 111 | 45 | 48 | 18 | 44 (10 abertos + 34 em triagem) | 48 |
+| 112 | 45 | 48 | 19 | 44 (10 abertos + 34 em triagem) | 48 |
 
 As classificações se baseiam nas fontes indicadas em cada cenário. CT-RF09/10 compartilham BUG-005 e CT-RF53–CT-RF56 compartilham BUG-023. As 48 reprovações correspondem a 44 defeitos registrados. BUG-011–BUG-044 aguardam triagem.
 
@@ -16,9 +16,9 @@ As classificações se baseiam nas fontes indicadas em cada cenário. CT-RF09/10
 
 | Documento | Conteúdo |
 | --- | --- |
-| [Análise de requisitos](SIFIT/Analise%20de%20requisitos.md) | RF01–RF35, RF38–RF62 e RF65–RF115, critérios de aceitação, dúvidas de regra e rastreabilidade. |
+| [Análise de requisitos](SIFIT/Analise%20de%20requisitos.md) | RF01–RF35, RF38–RF62 e RF65–RF116, critérios de aceitação, dúvidas de regra e rastreabilidade. |
 | [Plano de testes](SIFIT/Plano%20de%20testes.md) | Escopo, ambientes, preparação, critérios, regressão e retestes. |
-| [Índice dos cenários](SIFIT/Cenario_Teste/README.md) | 111 cenários com pré-condições, BDD, passos, esperado, obtido e encaminhamento. |
+| [Índice dos cenários](SIFIT/Cenario_Teste/README.md) | 112 cenários com pré-condições, BDD, passos, esperado, obtido e encaminhamento. |
 | [Relatório de bugs](SIFIT/Relatorio-de-Bugs.md) | BUG-001–BUG-044: reprodução, impacto, evidências, severidade/prioridade propostas e reteste. |
 | [Relatório dos testes](SIFIT/Relatorio%20dos%20testes.md) | Resultados consolidados, cobertura, limites e pendências. |
 | [Índice das evidências](SIFIT/Evidencias/README.md) | Jam por cenário e arquivos locais dos novos casos. |
@@ -144,6 +144,7 @@ extensao-qa/
 | [CT-RF113](SIFIT/Cenario_Teste/CT-RF113_Busca_Modelo_Ficha_Filtros_Combinados.md) | Buscar modelos de ficha com filtros combinados | A validar — regra ou contexto pendente | — | [Jam — PED-29](https://jam.dev/c/006f9722-e643-4b65-904a-25471a7b90ed) |
 | [CT-RF114](SIFIT/Cenario_Teste/CT-RF114_Limpeza_Filtros_Modelos_Ficha.md) | Limpar os filtros de Modelos de Ficha | Aprovado conforme a gravação | — | [Jam — PED-30](https://jam.dev/c/297eec2b-7be4-498b-a0e6-e962ed93cc00) |
 | [CT-RF115](SIFIT/Cenario_Teste/CT-RF115_Nova_Busca_Modelos_Ficha_Sem_Filtros.md) | Pesquisar novamente modelos de ficha sem filtros | A validar — regra ou contexto pendente | — | [Jam — PED-30](https://jam.dev/c/297eec2b-7be4-498b-a0e6-e962ed93cc00) |
+| [CT-RF116](SIFIT/Cenario_Teste/CT-RF116_Configuracoes_Dias_Ausencia_Vazio.md) | Validar o salvamento com o campo de dias de ausência vazio | A validar — regra ou contexto pendente | — | [Jam — PED-20 — Dias de ausência vazio](https://jam.dev/c/4e96d4fa-65b5-459b-a795-854496e5753c) |
 
 ## 🔬 Como este projeto funciona
 

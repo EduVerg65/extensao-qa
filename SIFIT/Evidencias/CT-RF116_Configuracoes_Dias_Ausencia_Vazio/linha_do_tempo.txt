@@ -1,0 +1,25 @@
+CT-RF116 — Validar o salvamento com o campo de dias de ausência vazio
+Fonte: https://jam.dev/c/4e96d4fa-65b5-459b-a795-854496e5753c
+Gravação: 16/11/2026, 22:03:53 BRT; duração: 21,47 s.
+Revisão documental: 17/11/2026.
+Página: https://sifit.centrion.com.br/configuracoes
+Foco deste caso: Tratar explicitamente o campo Dias para contar cliente como ausente quando ele é enviado vazio, conforme a regra de obrigatoriedade e de valor padrão.
+
+Cronologia (ações e eventos capturados no Jam):
+0:00–0:06  Campo inicia em 1100 e é esvaziado.
+0:07  Clique em Salvar Configurações com o campo vazio. A interface exibe o estado de salvamento.
+0:10–0:13  A página é recarregada e o valor 0 aparece no formulário e na rede.
+0:17–0:19  O valor 1100 é informado e enviado para restaurar a configuração.
+
+Rede do conjunto gravado (eventos relevantes ao caso):
+0:07,42  POST /api/configuracoes/alterar/1 (HTTP 200), com dias_ausente=0 e verifica_erro: false na resposta.
+0:11,16  GET /api/configuracoes/1 (HTTP 200), com dias_ausente: 0.
+0:19,15  Segundo POST (HTTP 200), com dias_ausente=1100. A gravação termina sem nova leitura desse valor.
+
+Quadros consultados (reprodução do Jam):
+- Campo de dias vazio antes do salvamento.
+- Estado do campo de dias após a recarga.
+
+Observações e verificações futuras:
+- A conversão de vazio para zero e a persistência estão confirmadas. A obrigatoriedade do campo, o significado de zero e o efeito sobre a contagem de clientes ausentes dependem da regra de produto. O CT-RF44 já registra a necessidade de confirmar a faixa.
+- Confirmar com o produto a regra para vazio e zero. Repetir com vazio, zero explícito e os limites da faixa.

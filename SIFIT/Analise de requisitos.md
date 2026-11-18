@@ -2,11 +2,11 @@
 
 **Módulos:** Autenticação, Perfil, Clientes / Filtros, Financeiro, Página inicial / Personais, SifitBox / Modalidades e Turmas, Categorias Crossfit, Avaliações, Exercícios, Grupos Musculares, Dashboard, Objetivos de Treino, Fichas de Anamnese, Colaboradores, Prospecção e Bandeiras de Cartão.
 
-**Atualização:** 17/11/2026 — RF01 a RF35, RF38 a RF62 e RF65 a RF115 consolidados, com inclusão de Categorias Crossfit (CT-RF38), SifitBox – Turmas (CT-RF39 a CT-RF41), Pagar.me, Configurações, Despesas Fixas e Relatórios (CT-RF42 a CT-RF56), Grupos (treino) (CT-RF57 e CT-RF58), Fichas de Anamnese (CT-RF59), Modelos de Anamnese (CT-RF60), Categorias de Anamnese (CT-RF61), Perguntas Anamnese (CT-RF62), Colaboradores (CT-RF65 a CT-RF73), Prospecção e Bandeiras de Cartão (CT-RF74 a CT-RF90), Contas a Pagar / Modelos de Contrato / Planos (CT-RF91 a CT-RF103) Tipos de Pagamento (CT-RF104 a CT-RF108) e Modelos de Ficha (CT-RF109–CT-RF115); BUG-011–BUG-044 em triagem.
+**Atualização:** 17/11/2026 — RF01 a RF35, RF38 a RF62 e RF65 a RF116 consolidados, com inclusão de Categorias Crossfit (CT-RF38), SifitBox – Turmas (CT-RF39 a CT-RF41), Pagar.me, Configurações, Despesas Fixas e Relatórios (CT-RF42 a CT-RF56), Grupos (treino) (CT-RF57 e CT-RF58), Fichas de Anamnese (CT-RF59), Modelos de Anamnese (CT-RF60), Categorias de Anamnese (CT-RF61), Perguntas Anamnese (CT-RF62), Colaboradores (CT-RF65 a CT-RF73), Prospecção e Bandeiras de Cartão (CT-RF74 a CT-RF90), Contas a Pagar / Modelos de Contrato / Planos (CT-RF91 a CT-RF103) Tipos de Pagamento (CT-RF104 a CT-RF108) e Modelos de Ficha (CT-RF109–CT-RF115) e Configurações (Home) (CT-RF116). BUG-011–BUG-044 em triagem.
 
 **Padronização documental:** 13/11/2026, sem alteração dos resultados registrados.
 
-Esta análise documenta 111 requisitos de QA para os cenários relacionados abaixo, com base nos relatos e nas evidências fornecidas. RF01–RF04 e suas análises históricas foram preservados; RF05–RF20 ampliam a cobertura em 14/11/2026; RF21 acrescenta Avaliações; RF22–RF28 acrescentam Exercícios; RF29–RF33 acrescentam Grupos Musculares; RF34 acrescenta o carregamento do dashboard RF35 acrescenta o cadastro de objetivos de treino e RF38 acrescenta o cadastro de categorias com código automático em 15/11/2026. RF39 acrescenta o cadastro de modalidade em SifitBox – Turmas. RF40 acrescenta a exclusão de turmas e modalidades. RF41 acrescenta o cadastro de turma. RF42 a RF56 acrescentam Pagar.me, Configurações, Despesas Fixas e Relatórios em 15/11/2026. RF57 acrescenta a exclusão de grupo (treino) e RF58 acrescenta a edição de grupo (treino), ambos também em 15/11/2026. RF59 acrescenta o cadastro de anamnese, também em 15/11/2026. RF60 acrescenta a gestão de modelos de anamnese (busca, cadastro, edição e exclusão), em 16/11/2026. RF61 acrescenta a gestão de categorias de anamnese (filtro, busca, cadastro, edição, cancelamento de edição e exclusão), também em 16/11/2026. RF62 acrescenta a edição de pergunta de anamnese, reprovada por HTTP 500, também em 16/11/2026. RF65–RF73 cobrem validações, operações e buscas de Colaboradores, também em 15/11/2026. RF74–RF84 acrescentam Prospecção e Bandeiras de Cartão a partir de resumos fornecidos, em 16/11/2026. RF85 a RF90 acrescentam Prospecção (leads) em 15/11/2026. RF91 a RF103 acrescentam Contas a Pagar, Modelos de Contrato e Planos em 15/11/2026. RF104 a RF108 acrescentam Tipos de Pagamento em 15/11/2026. RF109–RF115 cobre Modelos de Ficha com evidências gravadas em 16/11/2026. Os critérios abaixo constituem a referência de QA para esses fluxos; não representam validação de uma especificação formal pelo responsável pelo produto.
+Esta análise documenta 112 requisitos de QA para os cenários relacionados abaixo, com base nos relatos e nas evidências fornecidas. RF01–RF04 e suas análises históricas foram preservados; RF05–RF20 ampliam a cobertura em 14/11/2026; RF21 acrescenta Avaliações; RF22–RF28 acrescentam Exercícios; RF29–RF33 acrescentam Grupos Musculares; RF34 acrescenta o carregamento do dashboard RF35 acrescenta o cadastro de objetivos de treino e RF38 acrescenta o cadastro de categorias com código automático em 15/11/2026. RF39 acrescenta o cadastro de modalidade em SifitBox – Turmas. RF40 acrescenta a exclusão de turmas e modalidades. RF41 acrescenta o cadastro de turma. RF42 a RF56 acrescentam Pagar.me, Configurações, Despesas Fixas e Relatórios em 15/11/2026. RF57 acrescenta a exclusão de grupo (treino) e RF58 acrescenta a edição de grupo (treino), ambos também em 15/11/2026. RF59 acrescenta o cadastro de anamnese, também em 15/11/2026. RF60 acrescenta a gestão de modelos de anamnese (busca, cadastro, edição e exclusão), em 16/11/2026. RF61 acrescenta a gestão de categorias de anamnese (filtro, busca, cadastro, edição, cancelamento de edição e exclusão), também em 16/11/2026. RF62 acrescenta a edição de pergunta de anamnese, reprovada por HTTP 500, também em 16/11/2026. RF65–RF73 cobrem validações, operações e buscas de Colaboradores, também em 15/11/2026. RF74–RF84 acrescentam Prospecção e Bandeiras de Cartão a partir de resumos fornecidos, em 16/11/2026. RF85 a RF90 acrescentam Prospecção (leads) em 15/11/2026. RF91 a RF103 acrescentam Contas a Pagar, Modelos de Contrato e Planos em 15/11/2026. RF104 a RF108 acrescentam Tipos de Pagamento em 15/11/2026. RF109–RF115 cobre Modelos de Ficha com evidências gravadas em 16/11/2026. Os critérios abaixo constituem a referência de QA para esses fluxos; não representam validação de uma especificação formal pelo responsável pelo produto.
 
 ## 📋 Visão geral dos requisitos
 
@@ -123,6 +123,7 @@ Esta análise documenta 111 requisitos de QA para os cenários relacionados abai
 | [RF113](#rf113) | Buscar modelos de ficha com filtros combinados | Média, proposta | [CT-RF113](Cenario_Teste/CT-RF113_Busca_Modelo_Ficha_Filtros_Combinados.md) |
 | [RF114](#rf114) | Limpar os filtros de Modelos de Ficha | Baixa, proposta | [CT-RF114](Cenario_Teste/CT-RF114_Limpeza_Filtros_Modelos_Ficha.md) |
 | [RF115](#rf115) | Pesquisar novamente modelos de ficha sem filtros | Média, proposta | [CT-RF115](Cenario_Teste/CT-RF115_Nova_Busca_Modelos_Ficha_Sem_Filtros.md) |
+| [RF116](#rf116) | Validar o salvamento com o campo de dias de ausência vazio | Média, proposta | [CT-RF116](Cenario_Teste/CT-RF116_Configuracoes_Dias_Ausencia_Vazio.md) |
 
 ---
 
@@ -2591,6 +2592,31 @@ Este cenário cobre a limpeza dos campos. A recuperação dos resultados em uma 
 
 A gravação não mostra uma listagem padrão populada. O estado vazio é compatível com os retornos, mas a recuperação de registros ocultados por uma pesquisa anterior ficou a validar.
 
+<a id="rf116"></a>
+
+## RF116 — Validar o salvamento com o campo de dias de ausência vazio
+
+| Campo | Descrição |
+| --- | --- |
+| Requisito de QA | Tratar explicitamente o campo Dias para contar cliente como ausente quando ele é enviado vazio, conforme a regra de obrigatoriedade e de valor padrão. |
+| Ator | Usuário autenticado com permissão para a operação. |
+| Pré-condições | Sessão autenticada com permissão para alterar Configurações e um valor inicial conhecido para dias de ausência. |
+| Gatilho | Esvaziar o campo Dias para contar cliente como ausente e acionar Salvar Configurações. |
+| Caso | [CT-RF116](Cenario_Teste/CT-RF116_Configuracoes_Dias_Ausencia_Vazio.md) |
+| Situação observada | A validar — regra ou contexto pendente. Campo vazio convertido em 0, com HTTP 200. A recarga e a consulta confirmaram 0. |
+| Defeito | Sem defeito confirmado |
+| Evidências | [Jam — PED-20 — Dias de ausência vazio](https://jam.dev/c/4e96d4fa-65b5-459b-a795-854496e5753c) e [Evidências](Evidencias/CT-RF116_Configuracoes_Dias_Ausencia_Vazio/README.md). |
+
+### Critérios de aceitação do RF116
+
+1. O sistema aplica a regra acordada para o campo vazio e comunica o resultado.
+2. O valor retornado após recarga corresponde ao tratamento definido.
+3. Zero explícito e campo vazio são verificados separadamente.
+
+### Pontos a confirmar e limites do RF116
+
+A conversão de vazio para zero e a persistência estão confirmadas. A obrigatoriedade do campo, o significado de zero e o efeito sobre a contagem de clientes ausentes dependem da regra de produto. O CT-RF44 já registra a necessidade de confirmar a faixa.
+
 ---
 
 ## 🔗 Rastreabilidade
@@ -2705,6 +2731,7 @@ A gravação não mostra uma listagem padrão populada. O estado vazio é compat
 | RF113 | [CT-RF113](Cenario_Teste/CT-RF113_Busca_Modelo_Ficha_Filtros_Combinados.md) | Sem defeito confirmado | A validar — regra ou contexto pendente | [Evidências](Evidencias/CT-RF113_Busca_Modelo_Ficha_Filtros_Combinados/README.md) e [Jam — PED-29](https://jam.dev/c/006f9722-e643-4b65-904a-25471a7b90ed) |
 | RF114 | [CT-RF114](Cenario_Teste/CT-RF114_Limpeza_Filtros_Modelos_Ficha.md) | Nenhum no fluxo avaliado | Aprovado conforme a gravação | [Evidências](Evidencias/CT-RF114_Limpeza_Filtros_Modelos_Ficha/README.md) e [Jam — PED-30](https://jam.dev/c/297eec2b-7be4-498b-a0e6-e962ed93cc00) |
 | RF115 | [CT-RF115](Cenario_Teste/CT-RF115_Nova_Busca_Modelos_Ficha_Sem_Filtros.md) | Sem defeito confirmado | A validar — regra ou contexto pendente | [Evidências](Evidencias/CT-RF115_Nova_Busca_Modelos_Ficha_Sem_Filtros/README.md) e [Jam — PED-30](https://jam.dev/c/297eec2b-7be4-498b-a0e6-e962ed93cc00) |
+| RF116 | [CT-RF116](Cenario_Teste/CT-RF116_Configuracoes_Dias_Ausencia_Vazio.md) | Sem defeito confirmado | A validar — regra ou contexto pendente | [Evidências](Evidencias/CT-RF116_Configuracoes_Dias_Ausencia_Vazio/README.md) e [Jam — PED-20 — Dias de ausência vazio](https://jam.dev/c/4e96d4fa-65b5-459b-a795-854496e5753c) |
 
 ---
 
@@ -3522,6 +3549,12 @@ A revisão de Modelos de Ficha inclui CT-RF109–CT-RF115 com base em 6 gravaç�
 - RF113: Três filtros preenchidos, 0 registros. GET sem parâmetros na URL retornou HTTP 200 com `[]`. [Jam — PED-29](https://jam.dev/c/006f9722-e643-4b65-904a-25471a7b90ed).
 - RF114: Criador, Título e Código foram limpos manualmente e Buscar permaneceu disponível. [Jam — PED-30](https://jam.dev/c/297eec2b-7be4-498b-a0e6-e962ed93cc00).
 - RF115: Dois cliques em Buscar com campos vazios geraram HTTP 200 com `[]`. A lista permaneceu vazia. [Jam — PED-30](https://jam.dev/c/297eec2b-7be4-498b-a0e6-e962ed93cc00).
+
+### Base da análise de Configurações (Home) — revisão de 17/11/2026
+
+CT-RF116 amplia a cobertura de Configurações (Home) com gravações de 16/11/2026 às 22:03:53 BRT.
+
+- RF116: Campo vazio convertido em 0, com HTTP 200. A recarga e a consulta confirmaram 0. [Jam — PED-20 — Dias de ausência vazio](https://jam.dev/c/4e96d4fa-65b5-459b-a795-854496e5753c).
 
 ---
 
