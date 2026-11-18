@@ -140,5 +140,6 @@ Uma gravação do Jam ([Tipos de Pagamento](https://jam.dev/c/e8734e3d-3f8e-458b
 | [CT-RF109](../Cenario_Teste/CT-RF109_Modelo_Ficha_Sem_Nome.md) | [Bloquear cadastro de modelo de ficha sem nome](CT-RF109_Modelo_Ficha_Sem_Nome/README.md) | Aprovado conforme a gravação |
 | [CT-RF110](../Cenario_Teste/CT-RF110_Cancelar_Cadastro_Modelo_Ficha.md) | [Cancelar cadastro de modelo de ficha preenchido](CT-RF110_Cancelar_Cadastro_Modelo_Ficha/README.md) | Aprovado conforme a gravação |
 | [CT-RF111](../Cenario_Teste/CT-RF111_Busca_Modelo_Ficha_Codigo_Inexistente.md) | [Buscar modelo de ficha por código inexistente](CT-RF111_Busca_Modelo_Ficha_Codigo_Inexistente/README.md) | A validar — regra ou contexto pendente |
+| [CT-RF112](../Cenario_Teste/CT-RF112_Busca_Modelo_Ficha_Titulo_Inexistente.md) | [Buscar modelo de ficha por título inexistente](CT-RF112_Busca_Modelo_Ficha_Titulo_Inexistente/README.md) | A validar — regra ou contexto pendente |
 
-A revisão de Modelos de Ficha inclui CT-RF109–CT-RF111 com base em 3 gravações do Jam de 16/11/2026. A revisão documental foi feita em 17/11/2026. Cada pasta reúne a origem, a cronologia, os quadros do fluxo e os hashes SHA-256 das imagens. Os vídeos permanecem no Jam.
+A revisão de Modelos de Ficha inclui CT-RF109–CT-RF112 com base em 4 gravações do Jam de 16/11/2026. A revisão documental foi feita em 17/11/2026. Cada pasta reúne a origem, a cronologia, os quadros do fluxo e os hashes SHA-256 das imagens. Os vídeos permanecem no Jam.

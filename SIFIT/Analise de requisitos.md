@@ -2,11 +2,11 @@
 
 **Módulos:** Autenticação, Perfil, Clientes / Filtros, Financeiro, Página inicial / Personais, SifitBox / Modalidades e Turmas, Categorias Crossfit, Avaliações, Exercícios, Grupos Musculares, Dashboard, Objetivos de Treino, Fichas de Anamnese, Colaboradores, Prospecção e Bandeiras de Cartão.
 
-**Atualização:** 17/11/2026 — RF01 a RF35, RF38 a RF62 e RF65 a RF111 consolidados, com inclusão de Categorias Crossfit (CT-RF38), SifitBox – Turmas (CT-RF39 a CT-RF41), Pagar.me, Configurações, Despesas Fixas e Relatórios (CT-RF42 a CT-RF56), Grupos (treino) (CT-RF57 e CT-RF58), Fichas de Anamnese (CT-RF59), Modelos de Anamnese (CT-RF60), Categorias de Anamnese (CT-RF61), Perguntas Anamnese (CT-RF62), Colaboradores (CT-RF65 a CT-RF73), Prospecção e Bandeiras de Cartão (CT-RF74 a CT-RF90), Contas a Pagar / Modelos de Contrato / Planos (CT-RF91 a CT-RF103) Tipos de Pagamento (CT-RF104 a CT-RF108) e Modelos de Ficha (CT-RF109–CT-RF111); BUG-011–BUG-044 em triagem.
+**Atualização:** 17/11/2026 — RF01 a RF35, RF38 a RF62 e RF65 a RF112 consolidados, com inclusão de Categorias Crossfit (CT-RF38), SifitBox – Turmas (CT-RF39 a CT-RF41), Pagar.me, Configurações, Despesas Fixas e Relatórios (CT-RF42 a CT-RF56), Grupos (treino) (CT-RF57 e CT-RF58), Fichas de Anamnese (CT-RF59), Modelos de Anamnese (CT-RF60), Categorias de Anamnese (CT-RF61), Perguntas Anamnese (CT-RF62), Colaboradores (CT-RF65 a CT-RF73), Prospecção e Bandeiras de Cartão (CT-RF74 a CT-RF90), Contas a Pagar / Modelos de Contrato / Planos (CT-RF91 a CT-RF103) Tipos de Pagamento (CT-RF104 a CT-RF108) e Modelos de Ficha (CT-RF109–CT-RF112); BUG-011–BUG-044 em triagem.
 
 **Padronização documental:** 13/11/2026, sem alteração dos resultados registrados.
 
-Esta análise documenta 107 requisitos de QA para os cenários relacionados abaixo, com base nos relatos e nas evidências fornecidas. RF01–RF04 e suas análises históricas foram preservados; RF05–RF20 ampliam a cobertura em 14/11/2026; RF21 acrescenta Avaliações; RF22–RF28 acrescentam Exercícios; RF29–RF33 acrescentam Grupos Musculares; RF34 acrescenta o carregamento do dashboard RF35 acrescenta o cadastro de objetivos de treino e RF38 acrescenta o cadastro de categorias com código automático em 15/11/2026. RF39 acrescenta o cadastro de modalidade em SifitBox – Turmas. RF40 acrescenta a exclusão de turmas e modalidades. RF41 acrescenta o cadastro de turma. RF42 a RF56 acrescentam Pagar.me, Configurações, Despesas Fixas e Relatórios em 15/11/2026. RF57 acrescenta a exclusão de grupo (treino) e RF58 acrescenta a edição de grupo (treino), ambos também em 15/11/2026. RF59 acrescenta o cadastro de anamnese, também em 15/11/2026. RF60 acrescenta a gestão de modelos de anamnese (busca, cadastro, edição e exclusão), em 16/11/2026. RF61 acrescenta a gestão de categorias de anamnese (filtro, busca, cadastro, edição, cancelamento de edição e exclusão), também em 16/11/2026. RF62 acrescenta a edição de pergunta de anamnese, reprovada por HTTP 500, também em 16/11/2026. RF65–RF73 cobrem validações, operações e buscas de Colaboradores, também em 15/11/2026. RF74–RF84 acrescentam Prospecção e Bandeiras de Cartão a partir de resumos fornecidos, em 16/11/2026. RF85 a RF90 acrescentam Prospecção (leads) em 15/11/2026. RF91 a RF103 acrescentam Contas a Pagar, Modelos de Contrato e Planos em 15/11/2026. RF104 a RF108 acrescentam Tipos de Pagamento em 15/11/2026. RF109–RF111 cobre Modelos de Ficha com evidências gravadas em 16/11/2026. Os critérios abaixo constituem a referência de QA para esses fluxos; não representam validação de uma especificação formal pelo responsável pelo produto.
+Esta análise documenta 108 requisitos de QA para os cenários relacionados abaixo, com base nos relatos e nas evidências fornecidas. RF01–RF04 e suas análises históricas foram preservados; RF05–RF20 ampliam a cobertura em 14/11/2026; RF21 acrescenta Avaliações; RF22–RF28 acrescentam Exercícios; RF29–RF33 acrescentam Grupos Musculares; RF34 acrescenta o carregamento do dashboard RF35 acrescenta o cadastro de objetivos de treino e RF38 acrescenta o cadastro de categorias com código automático em 15/11/2026. RF39 acrescenta o cadastro de modalidade em SifitBox – Turmas. RF40 acrescenta a exclusão de turmas e modalidades. RF41 acrescenta o cadastro de turma. RF42 a RF56 acrescentam Pagar.me, Configurações, Despesas Fixas e Relatórios em 15/11/2026. RF57 acrescenta a exclusão de grupo (treino) e RF58 acrescenta a edição de grupo (treino), ambos também em 15/11/2026. RF59 acrescenta o cadastro de anamnese, também em 15/11/2026. RF60 acrescenta a gestão de modelos de anamnese (busca, cadastro, edição e exclusão), em 16/11/2026. RF61 acrescenta a gestão de categorias de anamnese (filtro, busca, cadastro, edição, cancelamento de edição e exclusão), também em 16/11/2026. RF62 acrescenta a edição de pergunta de anamnese, reprovada por HTTP 500, também em 16/11/2026. RF65–RF73 cobrem validações, operações e buscas de Colaboradores, também em 15/11/2026. RF74–RF84 acrescentam Prospecção e Bandeiras de Cartão a partir de resumos fornecidos, em 16/11/2026. RF85 a RF90 acrescentam Prospecção (leads) em 15/11/2026. RF91 a RF103 acrescentam Contas a Pagar, Modelos de Contrato e Planos em 15/11/2026. RF104 a RF108 acrescentam Tipos de Pagamento em 15/11/2026. RF109–RF112 cobre Modelos de Ficha com evidências gravadas em 16/11/2026. Os critérios abaixo constituem a referência de QA para esses fluxos; não representam validação de uma especificação formal pelo responsável pelo produto.
 
 ## 📋 Visão geral dos requisitos
 
@@ -119,6 +119,7 @@ Esta análise documenta 107 requisitos de QA para os cenários relacionados abai
 | [RF109](#rf109) | Bloquear cadastro de modelo de ficha sem nome | Média, proposta | [CT-RF109](Cenario_Teste/CT-RF109_Modelo_Ficha_Sem_Nome.md) |
 | [RF110](#rf110) | Cancelar cadastro de modelo de ficha preenchido | Média, proposta | [CT-RF110](Cenario_Teste/CT-RF110_Cancelar_Cadastro_Modelo_Ficha.md) |
 | [RF111](#rf111) | Buscar modelo de ficha por código inexistente | Média, proposta | [CT-RF111](Cenario_Teste/CT-RF111_Busca_Modelo_Ficha_Codigo_Inexistente.md) |
+| [RF112](#rf112) | Buscar modelo de ficha por título inexistente | Média, proposta | [CT-RF112](Cenario_Teste/CT-RF112_Busca_Modelo_Ficha_Titulo_Inexistente.md) |
 
 ---
 
@@ -2487,6 +2488,31 @@ O formulário não foi reaberto depois do cancelamento. A listagem inicial e a f
 
 O estado vazio foi observado. A base de controle e a busca positiva não aparecem na gravação, por isso a eficácia do filtro por código permanece a validar.
 
+<a id="rf112"></a>
+
+## RF112 — Buscar modelo de ficha por título inexistente
+
+| Campo | Descrição |
+| --- | --- |
+| Requisito de QA | Exibir zero resultados quando nenhum modelo satisfaz o filtro por título em uma base com registros. |
+| Ator | Usuário autenticado com acesso a Modelos de Ficha. |
+| Pré-condições | Sessão autenticada e base de controle com títulos conhecidos, incluindo um termo sem correspondência. |
+| Gatilho | Preencher somente Título com um valor ausente e clicar no botão de busca. |
+| Caso | [CT-RF112](Cenario_Teste/CT-RF112_Busca_Modelo_Ficha_Titulo_Inexistente.md) |
+| Situação observada | A validar — regra ou contexto pendente. Título PEDRO-01 exibiu carregamento e estado vazio. GET retornou HTTP 200 com `[]`. |
+| Defeito | Sem defeito confirmado |
+| Evidências | [Jam — PED-28](https://jam.dev/c/0c385452-2aeb-427f-8159-79549fe7371d) e [Evidências](Evidencias/CT-RF112_Busca_Modelo_Ficha_Titulo_Inexistente/README.md). |
+
+### Critérios de aceitação do RF112
+
+1. A busca sem correspondência apresenta a mensagem de estado vazio e 0 registros.
+2. A indicação de carregamento termina após a resposta.
+3. A busca de controle encontra um título existente segundo a regra de correspondência acordada.
+
+### Pontos a confirmar e limites do RF112
+
+A gravação começa com a listagem vazia. O comportamento com títulos registrados e o tipo de correspondência (exata ou parcial) precisam de confirmação.
+
 ---
 
 ## 🔗 Rastreabilidade
@@ -2597,6 +2623,7 @@ O estado vazio foi observado. A base de controle e a busca positiva não aparece
 | RF109 | [CT-RF109](Cenario_Teste/CT-RF109_Modelo_Ficha_Sem_Nome.md) | Nenhum no fluxo avaliado | Aprovado conforme a gravação | [Evidências](Evidencias/CT-RF109_Modelo_Ficha_Sem_Nome/README.md) e [Jam — PED-25](https://jam.dev/c/fb5673c9-3cd1-46c4-88f4-d5fb32574a8e) |
 | RF110 | [CT-RF110](Cenario_Teste/CT-RF110_Cancelar_Cadastro_Modelo_Ficha.md) | Nenhum no fluxo avaliado | Aprovado conforme a gravação | [Evidências](Evidencias/CT-RF110_Cancelar_Cadastro_Modelo_Ficha/README.md) e [Jam — PED-26](https://jam.dev/c/a2a39e11-04f4-40aa-a97e-75a57a5f1b0f) |
 | RF111 | [CT-RF111](Cenario_Teste/CT-RF111_Busca_Modelo_Ficha_Codigo_Inexistente.md) | Sem defeito confirmado | A validar — regra ou contexto pendente | [Evidências](Evidencias/CT-RF111_Busca_Modelo_Ficha_Codigo_Inexistente/README.md) e [Jam — PED-27](https://jam.dev/c/c1aecaa8-39c7-49b0-89af-9de47a68ba40) |
+| RF112 | [CT-RF112](Cenario_Teste/CT-RF112_Busca_Modelo_Ficha_Titulo_Inexistente.md) | Sem defeito confirmado | A validar — regra ou contexto pendente | [Evidências](Evidencias/CT-RF112_Busca_Modelo_Ficha_Titulo_Inexistente/README.md) e [Jam — PED-28](https://jam.dev/c/0c385452-2aeb-427f-8159-79549fe7371d) |
 
 ---
 
@@ -3405,11 +3432,12 @@ Com RF108, a análise passa a cobrir 101 requisitos documentados. O CT-RF108 acr
 
 ### Base da análise de Modelos de Ficha — revisão de 17/11/2026
 
-A revisão de Modelos de Ficha inclui CT-RF109–CT-RF111 com base em 3 gravações do Jam de 16/11/2026. A revisão documental foi feita em 17/11/2026. Os resultados se baseiam nos vídeos, metadados e eventos capturados pelo Jam.
+A revisão de Modelos de Ficha inclui CT-RF109–CT-RF112 com base em 4 gravações do Jam de 16/11/2026. A revisão documental foi feita em 17/11/2026. Os resultados se baseiam nos vídeos, metadados e eventos capturados pelo Jam.
 
 - RF109: Aviso “Informe o nome do modelo.”. Modal permaneceu aberto após Entendi, sem requisição capturada. [Jam — PED-25](https://jam.dev/c/fb5673c9-3cd1-46c4-88f4-d5fb32574a8e).
 - RF110: Cancelar fechou o modal preenchido e manteve 0 registros, sem requisição capturada. [Jam — PED-26](https://jam.dev/c/a2a39e11-04f4-40aa-a97e-75a57a5f1b0f).
 - RF111: Busca por 989898 exibiu estado vazio. GET retornou HTTP 200 com `[]`. [Jam — PED-27](https://jam.dev/c/c1aecaa8-39c7-49b0-89af-9de47a68ba40).
+- RF112: Título PEDRO-01 exibiu carregamento e estado vazio. GET retornou HTTP 200 com `[]`. [Jam — PED-28](https://jam.dev/c/0c385452-2aeb-427f-8159-79549fe7371d).
 
 ---
 

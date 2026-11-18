@@ -1,0 +1,22 @@
+CT-RF112 — Buscar modelo de ficha por título inexistente
+Fonte: https://jam.dev/c/0c385452-2aeb-427f-8159-79549fe7371d
+Gravação: 16/11/2026, 22:24:36 BRT; duração: 10,30 s.
+Revisão documental: 17/11/2026.
+Página: https://sifit.centrion.com.br/fichas-treino-modelo
+Foco deste caso: busca por título sem correspondência (0:00 a 0:09).
+
+Cronologia (ações e eventos capturados no Jam):
+0:00–0:05  Digita PEDRO-01 no campo Título. Código e Criador ficam vazios.
+0:06  Clique em Buscar. A listagem exibe o indicador de carregamento.
+
+Rede do conjunto gravado (1 entrada capturada no domínio backendsifit.centrion.com.br):
+0:06  GET /api/fichas-modelo/1 (HTTP 200, 2 B). Resposta: []. URL sem parâmetros de filtro.
+
+Quadros consultados (reprodução do Jam):
+0:00–0:05  Parte de 0 registros e preenche Título com PEDRO-01.
+0:06–0:07  Aciona Buscar. O GET retorna HTTP 200 com [] e a interface mostra carregamento durante a busca.
+0:09  Tela apresenta a mensagem de estado vazio e 0 registros.
+
+Observações e verificações futuras:
+- A gravação começa com a listagem vazia. O comportamento com títulos registrados e o tipo de correspondência (exata ou parcial) precisam de confirmação.
+- Reexecutar com título existente e inexistente e confirmar o critério de correspondência com o produto.
