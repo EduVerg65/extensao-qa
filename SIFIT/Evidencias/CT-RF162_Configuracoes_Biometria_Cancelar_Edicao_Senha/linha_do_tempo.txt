@@ -1,0 +1,23 @@
+CT-RF162 — Cancelar a edição da senha de Biometria
+Fonte: Jam 6 — Cancelamento da edição no formulário de Biometria. Gravação restrita por conter dados de integração ou dados de alunos.
+Gravação: 16/11/2026, 23:02:14 BRT. Duração: 22,59 s.
+Revisão documental: 18/11/2026.
+Página: https://sifit.centrion.com.br/configuracoes
+Foco deste caso: Conferir que Cancelar descarta a edição de Senha sem alterar a configuração armazenada.
+
+Cronologia (ações e eventos capturados no Jam):
+0:00–0:09  Edita Senha no formulário de Biometria.
+0:09–0:10  Aciona Cancelar e volta à Página Inicial.
+0:15–0:21  Retorna a Configurações e abre Biometria com o valor anterior.
+
+Rede do conjunto gravado (eventos relevantes ao caso):
+A captura não mostra POST para /api/configuracoes/alterar/1 no fluxo de cancelamento.
+0:15,93  GET /api/configuracoes/1 (HTTP 200) ao voltar a Configurações. Valores de conexão e autenticação omitidos.
+
+Quadros consultados (reprodução do Jam):
+- Formulário antes de Cancelar, com os dados de conexão ocultos.
+- Aba Biometria reaberta após o cancelamento, com os mesmos campos ocultos.
+
+Observações e verificações futuras:
+- A aprovação cobre o cancelamento. O comportamento de mascaramento de Senha está documentado no BUG-046.
+- Usar como regressão do cancelamento e repetir com outros campos de Biometria em um ambiente de teste.
