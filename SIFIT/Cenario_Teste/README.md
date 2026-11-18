@@ -1,6 +1,6 @@
 # 🧪 Índice dos cenários de teste — SIFIT
 
-**Atualização:** 17/11/2026. 135 casos documentados: 61 aprovados, 54 reprovados e 20 a validar. 49 defeitos registrados (10 abertos e 39 em triagem) e 54 casos com reteste corretivo pendente. Escopo: CT-RF01–CT-RF35, CT-RF38–CT-RF62 e CT-RF65–CT-RF139.
+**Atualização:** 17/11/2026. 136 casos documentados: 61 aprovados, 54 reprovados e 21 a validar. 49 defeitos registrados (10 abertos e 39 em triagem) e 54 casos com reteste corretivo pendente. Escopo: CT-RF01–CT-RF35, CT-RF38–CT-RF62 e CT-RF65–CT-RF140.
 
 | Caso | Funcionalidade | Resultado | Defeito | Jam |
 | --- | --- | --- | --- | --- |
@@ -337,12 +337,13 @@ CT-RF128–CT-RF133 cobre Inteligência e Automação com gravações de 16/11/2
 
 CT-RF134–CT-RF138 cobrem a Central de Automações com gravações de 16/11/2026 entre 21:25:26 e 21:38:29 BRT. A revisão é documental.
 
-## Inclusão de 17/11/2026 — Configurações / Integrações / WhatsApp (CT-RF139)
+## Inclusão de 17/11/2026 — Configurações / Integrações / WhatsApp (CT-RF139–CT-RF140)
 
 | Caso | Funcionalidade | Resultado | Defeito | Jam |
 | --- | --- | --- | --- | --- |
 | [CT-RF139](CT-RF139_Integracoes_WhatsApp_Mascarar_API_Key.md) | Mascarar a API Key no formulário de WhatsApp | Aprovado conforme a gravação | — | Jam 1 — Mascaramento da API Key (gravação restrita por conter dados de integração) |
+| [CT-RF140](CT-RF140_Integracoes_WhatsApp_Validar_URL_API.md) | Validar uma URL da API sem formato de endereço | A validar — regra ou contexto pendente | — | Jam 2 — Validação da URL da API (gravação restrita por conter dados de integração) |
 
-CT-RF139 cobre a integração do WhatsApp com gravações de 16/11/2026 às 23:37:22 BRT. A revisão é documental.
+CT-RF139–CT-RF140 cobrem a integração do WhatsApp com gravações de 16/11/2026 entre 23:37:22 e 23:39:06 BRT. A revisão é documental.
 
 [← Início](../../README.md) · [Requisitos](../Analise%20de%20requisitos.md) · [Plano](../Plano%20de%20testes.md) · [Evidências](../Evidencias/README.md)

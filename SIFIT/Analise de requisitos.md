@@ -2,11 +2,11 @@
 
 **Módulos:** Autenticação, Perfil, Clientes / Filtros, Financeiro, Página inicial / Personais, SifitBox / Modalidades e Turmas, Categorias Crossfit, Avaliações, Exercícios, Grupos Musculares, Dashboard, Objetivos de Treino, Fichas de Anamnese, Colaboradores, Prospecção e Bandeiras de Cartão.
 
-**Atualização:** 17/11/2026 — RF01 a RF35, RF38 a RF62 e RF65 a RF139 consolidados, com inclusão de Categorias Crossfit (CT-RF38), SifitBox – Turmas (CT-RF39 a CT-RF41), Pagar.me, Configurações, Despesas Fixas e Relatórios (CT-RF42 a CT-RF56), Grupos (treino) (CT-RF57 e CT-RF58), Fichas de Anamnese (CT-RF59), Modelos de Anamnese (CT-RF60), Categorias de Anamnese (CT-RF61), Perguntas Anamnese (CT-RF62), Colaboradores (CT-RF65 a CT-RF73), Prospecção e Bandeiras de Cartão (CT-RF74 a CT-RF90), Contas a Pagar / Modelos de Contrato / Planos (CT-RF91 a CT-RF103) Tipos de Pagamento (CT-RF104 a CT-RF108) e Modelos de Ficha (CT-RF109–CT-RF115) e Configurações e Modelos de Ficha (CT-RF116–CT-RF121) e Inteligência e Configurações (CT-RF122–CT-RF127) e Inteligência e Automação (CT-RF128–CT-RF133) e ampliação da cobertura da Central de Automações (CT-RF134–CT-RF138) e integração de WhatsApp (CT-RF139). BUG-011–BUG-049 em triagem.
+**Atualização:** 17/11/2026 — RF01 a RF35, RF38 a RF62 e RF65 a RF140 consolidados, com inclusão de Categorias Crossfit (CT-RF38), SifitBox – Turmas (CT-RF39 a CT-RF41), Pagar.me, Configurações, Despesas Fixas e Relatórios (CT-RF42 a CT-RF56), Grupos (treino) (CT-RF57 e CT-RF58), Fichas de Anamnese (CT-RF59), Modelos de Anamnese (CT-RF60), Categorias de Anamnese (CT-RF61), Perguntas Anamnese (CT-RF62), Colaboradores (CT-RF65 a CT-RF73), Prospecção e Bandeiras de Cartão (CT-RF74 a CT-RF90), Contas a Pagar / Modelos de Contrato / Planos (CT-RF91 a CT-RF103) Tipos de Pagamento (CT-RF104 a CT-RF108) e Modelos de Ficha (CT-RF109–CT-RF115) e Configurações e Modelos de Ficha (CT-RF116–CT-RF121) e Inteligência e Configurações (CT-RF122–CT-RF127) e Inteligência e Automação (CT-RF128–CT-RF133) e ampliação da cobertura da Central de Automações (CT-RF134–CT-RF138) e integração de WhatsApp (CT-RF139–CT-RF140). BUG-011–BUG-049 em triagem.
 
 **Padronização documental:** 13/11/2026, sem alteração dos resultados registrados.
 
-Esta análise documenta 135 requisitos de QA para os cenários relacionados abaixo, com base nos relatos e nas evidências fornecidas. RF01–RF04 e suas análises históricas foram preservados; RF05–RF20 ampliam a cobertura em 14/11/2026; RF21 acrescenta Avaliações; RF22–RF28 acrescentam Exercícios; RF29–RF33 acrescentam Grupos Musculares; RF34 acrescenta o carregamento do dashboard RF35 acrescenta o cadastro de objetivos de treino e RF38 acrescenta o cadastro de categorias com código automático em 15/11/2026. RF39 acrescenta o cadastro de modalidade em SifitBox – Turmas. RF40 acrescenta a exclusão de turmas e modalidades. RF41 acrescenta o cadastro de turma. RF42 a RF56 acrescentam Pagar.me, Configurações, Despesas Fixas e Relatórios em 15/11/2026. RF57 acrescenta a exclusão de grupo (treino) e RF58 acrescenta a edição de grupo (treino), ambos também em 15/11/2026. RF59 acrescenta o cadastro de anamnese, também em 15/11/2026. RF60 acrescenta a gestão de modelos de anamnese (busca, cadastro, edição e exclusão), em 16/11/2026. RF61 acrescenta a gestão de categorias de anamnese (filtro, busca, cadastro, edição, cancelamento de edição e exclusão), também em 16/11/2026. RF62 acrescenta a edição de pergunta de anamnese, reprovada por HTTP 500, também em 16/11/2026. RF65–RF73 cobrem validações, operações e buscas de Colaboradores, também em 15/11/2026. RF74–RF84 acrescentam Prospecção e Bandeiras de Cartão a partir de resumos fornecidos, em 16/11/2026. RF85 a RF90 acrescentam Prospecção (leads) em 15/11/2026. RF91 a RF103 acrescentam Contas a Pagar, Modelos de Contrato e Planos em 15/11/2026. RF104 a RF108 acrescentam Tipos de Pagamento em 15/11/2026. RF109–RF115 cobre Modelos de Ficha com evidências gravadas em 16/11/2026. Os critérios abaixo constituem a referência de QA para esses fluxos; não representam validação de uma especificação formal pelo responsável pelo produto.
+Esta análise documenta 136 requisitos de QA para os cenários relacionados abaixo, com base nos relatos e nas evidências fornecidas. RF01–RF04 e suas análises históricas foram preservados; RF05–RF20 ampliam a cobertura em 14/11/2026; RF21 acrescenta Avaliações; RF22–RF28 acrescentam Exercícios; RF29–RF33 acrescentam Grupos Musculares; RF34 acrescenta o carregamento do dashboard RF35 acrescenta o cadastro de objetivos de treino e RF38 acrescenta o cadastro de categorias com código automático em 15/11/2026. RF39 acrescenta o cadastro de modalidade em SifitBox – Turmas. RF40 acrescenta a exclusão de turmas e modalidades. RF41 acrescenta o cadastro de turma. RF42 a RF56 acrescentam Pagar.me, Configurações, Despesas Fixas e Relatórios em 15/11/2026. RF57 acrescenta a exclusão de grupo (treino) e RF58 acrescenta a edição de grupo (treino), ambos também em 15/11/2026. RF59 acrescenta o cadastro de anamnese, também em 15/11/2026. RF60 acrescenta a gestão de modelos de anamnese (busca, cadastro, edição e exclusão), em 16/11/2026. RF61 acrescenta a gestão de categorias de anamnese (filtro, busca, cadastro, edição, cancelamento de edição e exclusão), também em 16/11/2026. RF62 acrescenta a edição de pergunta de anamnese, reprovada por HTTP 500, também em 16/11/2026. RF65–RF73 cobrem validações, operações e buscas de Colaboradores, também em 15/11/2026. RF74–RF84 acrescentam Prospecção e Bandeiras de Cartão a partir de resumos fornecidos, em 16/11/2026. RF85 a RF90 acrescentam Prospecção (leads) em 15/11/2026. RF91 a RF103 acrescentam Contas a Pagar, Modelos de Contrato e Planos em 15/11/2026. RF104 a RF108 acrescentam Tipos de Pagamento em 15/11/2026. RF109–RF115 cobre Modelos de Ficha com evidências gravadas em 16/11/2026. Os critérios abaixo constituem a referência de QA para esses fluxos; não representam validação de uma especificação formal pelo responsável pelo produto.
 
 ## 📋 Visão geral dos requisitos
 
@@ -147,6 +147,7 @@ Esta análise documenta 135 requisitos de QA para os cenários relacionados abai
 | [RF137](#rf137) | Executar Risco de Evasão manualmente pela Central | Média, proposta | [CT-RF137](Cenario_Teste/CT-RF137_Central_Risco_Evasao_Executar_Agora.md) |
 | [RF138](#rf138) | Abrir os resultados de Risco de Evasão pela Central | Média, proposta | [CT-RF138](Cenario_Teste/CT-RF138_Central_Abrir_Resultados_Risco_Evasao.md) |
 | [RF139](#rf139) | Mascarar a API Key no formulário de WhatsApp | Média, proposta | [CT-RF139](Cenario_Teste/CT-RF139_Integracoes_WhatsApp_Mascarar_API_Key.md) |
+| [RF140](#rf140) | Validar uma URL da API sem formato de endereço | Média, proposta | [CT-RF140](Cenario_Teste/CT-RF140_Integracoes_WhatsApp_Validar_URL_API.md) |
 
 ---
 
@@ -3215,6 +3216,31 @@ A evidência cobre a abertura e os totais. O funcionamento dos filtros de nível
 
 A aprovação cobre o mascaramento visual e a ausência de envio ao editar sem salvar. A gravação não verifica proteção em trânsito ou em armazenamento.
 
+<a id="rf140"></a>
+
+## RF140 — Validar uma URL da API sem formato de endereço
+
+| Campo | Descrição |
+| --- | --- |
+| Requisito de QA | Verificar se a integração recusa uma URL em formato inválido e orienta a correção do campo. |
+| Ator | Usuário autenticado com permissão para a operação. |
+| Pré-condições | Sessão autenticada com acesso à integração de WhatsApp. No reteste, preencher os demais campos com dados autorizados. |
+| Gatilho | Acionar Salvar Configuração após substituir a URL da API por texto sem formato de endereço. |
+| Caso | [CT-RF140](Cenario_Teste/CT-RF140_Integracoes_WhatsApp_Validar_URL_API.md) |
+| Situação observada | A validar — regra ou contexto pendente. A tentativa com URL fora do formato também tinha a instância vazia. Houve reconsulta sem POST de configuração, e a regra da URL ficou a validar. |
+| Defeito | Sem defeito confirmado |
+| Evidências | Jam 2 — Validação da URL da API (gravação restrita por conter dados de integração) e [Evidências](Evidencias/CT-RF140_Integracoes_WhatsApp_Validar_URL_API/README.md). |
+
+### Critérios de aceitação do RF140
+
+1. A tentativa com apenas a URL inválida é recusada.
+2. A interface identifica a URL como o campo a corrigir.
+3. A leitura posterior preserva a configuração anterior.
+
+### Pontos a confirmar e limites do RF140
+
+O Nome da Instância vazio impede atribuir a ausência de POST à regra de URL. A gravação não demonstra qual validação bloqueou a tentativa.
+
 ---
 
 ## 🔗 Rastreabilidade
@@ -3353,6 +3379,7 @@ A aprovação cobre o mascaramento visual e a ausência de envio ao editar sem s
 | RF137 | [CT-RF137](Cenario_Teste/CT-RF137_Central_Risco_Evasao_Executar_Agora.md) | Nenhum no fluxo avaliado | Aprovado conforme a gravação | [Evidências](Evidencias/CT-RF137_Central_Risco_Evasao_Executar_Agora/README.md) e Jam — PED-04 — Executar Risco de Evasão (gravação restrita por conter dados individuais da avaliação de risco) |
 | RF138 | [CT-RF138](Cenario_Teste/CT-RF138_Central_Abrir_Resultados_Risco_Evasao.md) | Nenhum no fluxo avaliado | Aprovado conforme a gravação | [Evidências](Evidencias/CT-RF138_Central_Abrir_Resultados_Risco_Evasao/README.md) e Jam — PED-05 — Ver resultados de Risco de Evasão (gravação restrita por conter dados individuais da avaliação de risco) |
 | RF139 | [CT-RF139](Cenario_Teste/CT-RF139_Integracoes_WhatsApp_Mascarar_API_Key.md) | Nenhum no fluxo avaliado | Aprovado conforme a gravação | [Evidências](Evidencias/CT-RF139_Integracoes_WhatsApp_Mascarar_API_Key/README.md) e Jam 1 — Mascaramento da API Key (gravação restrita por conter dados de integração) |
+| RF140 | [CT-RF140](Cenario_Teste/CT-RF140_Integracoes_WhatsApp_Validar_URL_API.md) | Sem defeito confirmado | A validar — regra ou contexto pendente | [Evidências](Evidencias/CT-RF140_Integracoes_WhatsApp_Validar_URL_API/README.md) e Jam 2 — Validação da URL da API (gravação restrita por conter dados de integração) |
 
 ---
 
@@ -4216,9 +4243,10 @@ CT-RF134–CT-RF138 cobrem a Central de Automações com gravações de 16/11/20
 
 ### Base da análise de Configurações / Integrações / WhatsApp — revisão de 17/11/2026
 
-CT-RF139 cobre a integração do WhatsApp com gravações de 16/11/2026 às 23:37:22 BRT.
+CT-RF139–CT-RF140 cobrem a integração do WhatsApp com gravações de 16/11/2026 entre 23:37:22 e 23:39:06 BRT.
 
 - RF139: A API Key permaneceu mascarada na edição e na reabertura da aba. A gravação não registrou POST de salvamento. Jam 1 — Mascaramento da API Key (gravação restrita por conter dados de integração).
+- RF140: A tentativa com URL fora do formato também tinha a instância vazia. Houve reconsulta sem POST de configuração, e a regra da URL ficou a validar. Jam 2 — Validação da URL da API (gravação restrita por conter dados de integração).
 
 ---
 

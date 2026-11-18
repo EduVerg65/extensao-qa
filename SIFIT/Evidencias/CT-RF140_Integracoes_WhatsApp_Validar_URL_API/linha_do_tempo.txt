@@ -1,0 +1,23 @@
+CT-RF140 — Validar uma URL da API sem formato de endereço
+Fonte: Jam 2 — Validação da URL da API. Gravação restrita por conter dados de integração.
+Gravação: 16/11/2026, 23:39:06 BRT. Duração: 22,92 s.
+Revisão documental: 17/11/2026.
+Página: https://sifit.centrion.com.br/configuracoes
+Foco deste caso: Verificar se a integração recusa uma URL em formato inválido e orienta a correção do campo.
+
+Cronologia (ações e eventos capturados no Jam):
+0:00–0:07  O usuário seleciona o campo URL da API e insere texto sem formato de endereço.
+0:10,57  Aciona Salvar Configuração com o Nome da Instância vazio.
+0:13–0:16  Recarrega a página, seleciona Integrações e a configuração é lida novamente.
+
+Rede do conjunto gravado (eventos relevantes ao caso):
+0:10,57  Clique em Salvar Configuração. A captura não apresenta POST para /api/empresa/whatsapp/1.
+0:15,97  GET /api/empresa/whatsapp/1 (HTTP 200) ao reabrir a aba.
+
+Quadros consultados (reprodução do Jam):
+- Formulário após a tentativa de salvar, com valores de integração ocultos.
+- Status visível após reabrir a aba Integrações.
+
+Observações e verificações futuras:
+- O Nome da Instância vazio impede atribuir a ausência de POST à regra de URL. A gravação não demonstra qual validação bloqueou a tentativa.
+- Isolar a URL no reteste, mantendo a instância e a chave preenchidas, e confirmar o formato aceito com produto.
