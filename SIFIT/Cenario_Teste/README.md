@@ -1,6 +1,6 @@
 # 🧪 Índice dos cenários de teste — SIFIT
 
-**Atualização:** 17/11/2026. 144 casos documentados: 67 aprovados, 56 reprovados e 21 a validar. 51 defeitos registrados (10 abertos e 41 em triagem) e 56 casos com reteste corretivo pendente. Escopo: CT-RF01–CT-RF35, CT-RF38–CT-RF62 e CT-RF65–CT-RF148.
+**Atualização:** 17/11/2026. 145 casos documentados: 67 aprovados, 57 reprovados e 21 a validar. 52 defeitos registrados (10 abertos e 42 em triagem) e 57 casos com reteste corretivo pendente. Escopo: CT-RF01–CT-RF35, CT-RF38–CT-RF62 e CT-RF65–CT-RF149.
 
 | Caso | Funcionalidade | Resultado | Defeito | Jam |
 | --- | --- | --- | --- | --- |
@@ -350,7 +350,7 @@ CT-RF134–CT-RF138 cobrem a Central de Automações com gravações de 16/11/20
 
 CT-RF139–CT-RF144 cobrem a integração do WhatsApp com gravações de 16/11/2026 entre 23:37:22 e 23:45:52 BRT. A revisão é documental.
 
-## Inclusão de 17/11/2026 — Configurações (CT-RF145–CT-RF148)
+## Inclusão de 17/11/2026 — Configurações (CT-RF145–CT-RF149)
 
 | Caso | Funcionalidade | Resultado | Defeito | Jam |
 | --- | --- | --- | --- | --- |
@@ -358,7 +358,8 @@ CT-RF139–CT-RF144 cobrem a integração do WhatsApp com gravações de 16/11/2
 | [CT-RF146](CT-RF146_Configuracoes_Pagamento_Online_Desativar.md) | Persistir a desativação do Pagamento Online | Aprovado conforme a gravação | — | Jam 2 — Desativação do Pagamento Online (gravação restrita por conter dados de integração) |
 | [CT-RF147](CT-RF147_Configuracoes_Design_Salvar_Cor_Principal.md) | Salvar uma Cor Principal hexadecimal válida | Aprovado conforme a gravação | — | Jam 3 — Persistência da Cor Principal (gravação restrita por conter dados de integração) |
 | [CT-RF148](CT-RF148_Configuracoes_Design_Validar_Cor_Secundaria.md) | Rejeitar código hexadecimal inválido na Cor Secundária | Reprovado nas evidências | [BUG-051](../Relatorio-de-Bugs.md#bug-051), em triagem | Jam 4 — Validação da Cor Secundária (gravação restrita por conter dados de integração) |
+| [CT-RF149](CT-RF149_Configuracoes_Design_Logo_Limite_Tamanho.md) | Informar o limite de tamanho ao rejeitar o logo | Reprovado nas evidências | [BUG-052](../Relatorio-de-Bugs.md#bug-052), em triagem | Jam 5 — Rejeição de logo pelo limite de tamanho (gravação restrita por conter dados de integração) |
 
-CT-RF145–CT-RF148 cobrem funcionalidades de Configurações com gravações de 16/11/2026 entre 23:21:59 e 23:26:21 BRT. A revisão é documental.
+CT-RF145–CT-RF149 cobrem funcionalidades de Configurações com gravações de 16/11/2026 entre 23:21:59 e 23:27:58 BRT. A revisão é documental.
 
 [← Início](../../README.md) · [Requisitos](../Analise%20de%20requisitos.md) · [Plano](../Plano%20de%20testes.md) · [Evidências](../Evidencias/README.md)

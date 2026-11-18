@@ -2,24 +2,24 @@
 
 Repositório de documentação de QA manual do **SIFIT**, sistema de gestão de academias. Reúne requisitos, plano, cenários BDD, resultados, defeitos e evidências com links do Jam.
 
-**Atualização documental:** 17/11/2026. Integrados CT-RF145–CT-RF148 e RF145–RF148 para Configurações. A revisão utiliza gravações e eventos do Jam.
+**Atualização documental:** 17/11/2026. Integrados CT-RF145–CT-RF149 e RF145–RF149 para Configurações. A revisão utiliza gravações e eventos do Jam.
 
 ## 📊 Situação consolidada
 
 | Cenários documentados | Aprovados | Reprovados | A validar | Defeitos registrados | Casos com reteste corretivo pendente |
 | :---: | :---: | :---: | :---: | :---: | :---: |
-| 144 | 67 | 56 | 21 | 51 (10 abertos + 41 em triagem) | 56 |
+| 145 | 67 | 57 | 21 | 52 (10 abertos + 42 em triagem) | 57 |
 
-As classificações se baseiam nas fontes indicadas em cada cenário. CT-RF09/10 compartilham BUG-005 e CT-RF53–CT-RF56 compartilham BUG-023. CT-RF135 e CT-RF136 compartilham o BUG-049. As 56 reprovações correspondem a 51 defeitos registrados. BUG-011–BUG-051 aguardam triagem.
+As classificações se baseiam nas fontes indicadas em cada cenário. CT-RF09/10 compartilham BUG-005 e CT-RF53–CT-RF56 compartilham BUG-023. CT-RF135 e CT-RF136 compartilham o BUG-049. As 57 reprovações correspondem a 52 defeitos registrados. BUG-011–BUG-052 aguardam triagem.
 
 ## 📚 Documentos do projeto
 
 | Documento | Conteúdo |
 | --- | --- |
-| [Análise de requisitos](SIFIT/Analise%20de%20requisitos.md) | RF01–RF35, RF38–RF62 e RF65–RF148, critérios de aceitação, dúvidas de regra e rastreabilidade. |
+| [Análise de requisitos](SIFIT/Analise%20de%20requisitos.md) | RF01–RF35, RF38–RF62 e RF65–RF149, critérios de aceitação, dúvidas de regra e rastreabilidade. |
 | [Plano de testes](SIFIT/Plano%20de%20testes.md) | Escopo, ambientes, preparação, critérios, regressão e retestes. |
-| [Índice dos cenários](SIFIT/Cenario_Teste/README.md) | 144 cenários com pré-condições, BDD, passos, esperado, obtido e encaminhamento. |
-| [Relatório de bugs](SIFIT/Relatorio-de-Bugs.md) | BUG-001–BUG-051: reprodução, impacto, evidências, severidade/prioridade propostas e reteste. |
+| [Índice dos cenários](SIFIT/Cenario_Teste/README.md) | 145 cenários com pré-condições, BDD, passos, esperado, obtido e encaminhamento. |
+| [Relatório de bugs](SIFIT/Relatorio-de-Bugs.md) | BUG-001–BUG-052: reprodução, impacto, evidências, severidade/prioridade propostas e reteste. |
 | [Relatório dos testes](SIFIT/Relatorio%20dos%20testes.md) | Resultados consolidados, cobertura, limites e pendências. |
 | [Índice das evidências](SIFIT/Evidencias/README.md) | Jam por cenário e arquivos locais dos novos casos. |
 
@@ -177,6 +177,7 @@ extensao-qa/
 | [CT-RF146](SIFIT/Cenario_Teste/CT-RF146_Configuracoes_Pagamento_Online_Desativar.md) | Persistir a desativação do Pagamento Online | Aprovado conforme a gravação | — | Jam 2 — Desativação do Pagamento Online (gravação restrita por conter dados de integração) |
 | [CT-RF147](SIFIT/Cenario_Teste/CT-RF147_Configuracoes_Design_Salvar_Cor_Principal.md) | Salvar uma Cor Principal hexadecimal válida | Aprovado conforme a gravação | — | Jam 3 — Persistência da Cor Principal (gravação restrita por conter dados de integração) |
 | [CT-RF148](SIFIT/Cenario_Teste/CT-RF148_Configuracoes_Design_Validar_Cor_Secundaria.md) | Rejeitar código hexadecimal inválido na Cor Secundária | Reprovado nas evidências | [BUG-051](SIFIT/Relatorio-de-Bugs.md#bug-051), em triagem | Jam 4 — Validação da Cor Secundária (gravação restrita por conter dados de integração) |
+| [CT-RF149](SIFIT/Cenario_Teste/CT-RF149_Configuracoes_Design_Logo_Limite_Tamanho.md) | Informar o limite de tamanho ao rejeitar o logo | Reprovado nas evidências | [BUG-052](SIFIT/Relatorio-de-Bugs.md#bug-052), em triagem | Jam 5 — Rejeição de logo pelo limite de tamanho (gravação restrita por conter dados de integração) |
 
 ## 🔬 Como este projeto funciona
 

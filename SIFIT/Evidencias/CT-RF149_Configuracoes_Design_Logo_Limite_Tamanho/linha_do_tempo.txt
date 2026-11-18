@@ -1,0 +1,22 @@
+CT-RF149 — Informar o limite de tamanho ao rejeitar o logo
+Fonte: Jam 5 — Rejeição de logo pelo limite de tamanho. Gravação restrita por conter dados de integração.
+Gravação: 16/11/2026, 23:27:58 BRT. Duração: 18,41 s.
+Revisão documental: 17/11/2026.
+Página: https://sifit.centrion.com.br/configuracoes
+Foco deste caso: Verificar se a rejeição de logo por tamanho informa ao usuário o limite retornado pela API.
+
+Cronologia (ações e eventos capturados no Jam):
+0:00–0:08  Seleciona o logo e a tela mostra a nova prévia.
+0:09,38–0:09,40  Aciona Salvar Configurações. A API recusa o tamanho e a tela mostra o diálogo genérico.
+0:15,20  Fecha o diálogo. A prévia ainda aparece no formulário.
+
+Rede do conjunto gravado (eventos relevantes ao caso):
+0:09,40  POST /api/configuracoes/alterar/1 em multipart, corpo de 10.081.448 bytes conforme o Jam. HTTP 400 com “O arquivo deve ter no máximo 6 MB.”
+
+Quadros consultados (reprodução do Jam):
+- Prévia da imagem selecionada no cartão Logo.
+- Diálogo genérico após a rejeição pela API.
+
+Observações e verificações futuras:
+- O total em bytes corresponde à requisição inteira. O tamanho exato do arquivo e o logo armazenado após recarregar não ficaram demonstrados.
+- Retestar com arquivos de tamanho conhecido no entorno do limite e confirmar a mensagem de validação e a preservação do logo salvo na recusa.
