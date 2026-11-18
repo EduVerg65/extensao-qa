@@ -1,0 +1,25 @@
+CT-RF153 — Habilitar Teste Físico nas configurações de avaliação
+Fonte: Jam 3 — Habilitação de Teste Físico. Gravação restrita por conter dados de integração.
+Gravação: 16/11/2026, 23:12:07 BRT. Duração: 17,30 s.
+Revisão documental: 18/11/2026.
+Página: https://sifit.centrion.com.br/configuracoes
+Foco deste caso: Confirmar que o valor Sim de Teste Físico permanece salvo após recarregar e reabrir Avaliação.
+
+Cronologia (ações e eventos capturados no Jam):
+0:05,38  Salva o novo valor Sim.
+0:08,42  Após recarregar, o GET devolve `teste_fisico: SIM`.
+0:10,29  Reabre Avaliação e confirma Sim na interface.
+0:15,64  Envia a restauração para Não e recebe sucesso.
+
+Rede do conjunto gravado (eventos relevantes ao caso):
+0:05,38  POST /api/configuracoes/alterar/1 com teste_fisico: SIM (HTTP 200, verifica_erro: false).
+0:08,42  GET /api/configuracoes/1 (HTTP 200) com teste_fisico: SIM.
+0:15,64  POST de restauração com teste_fisico: NAO (HTTP 200, verifica_erro: false). A captura termina sem novo GET após a restauração.
+
+Quadros consultados (reprodução do Jam):
+- Teste Físico em Não antes da alteração.
+- Teste Físico em Sim depois de reabrir Avaliação.
+
+Observações e verificações futuras:
+- A gravação cobre a alteração e a leitura da preferência. A disponibilidade do teste no cadastro de avaliação fica para verificação separada.
+- Usar como regressão do salvamento e verificar o comportamento da avaliação nos dois estados do seletor.

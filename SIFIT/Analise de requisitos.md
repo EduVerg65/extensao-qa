@@ -2,11 +2,11 @@
 
 **Módulos:** Autenticação, Perfil, Clientes / Filtros, Financeiro, Página inicial / Personais, SifitBox / Modalidades e Turmas, Categorias Crossfit, Avaliações, Exercícios, Grupos Musculares, Dashboard, Objetivos de Treino, Fichas de Anamnese, Colaboradores, Prospecção e Bandeiras de Cartão.
 
-**Atualização:** 18/11/2026 — RF01 a RF35, RF38 a RF62 e RF65 a RF152 consolidados, com inclusão de Categorias Crossfit (CT-RF38), SifitBox – Turmas (CT-RF39 a CT-RF41), Pagar.me, Configurações, Despesas Fixas e Relatórios (CT-RF42 a CT-RF56), Grupos (treino) (CT-RF57 e CT-RF58), Fichas de Anamnese (CT-RF59), Modelos de Anamnese (CT-RF60), Categorias de Anamnese (CT-RF61), Perguntas Anamnese (CT-RF62), Colaboradores (CT-RF65 a CT-RF73), Prospecção e Bandeiras de Cartão (CT-RF74 a CT-RF90), Contas a Pagar / Modelos de Contrato / Planos (CT-RF91 a CT-RF103) Tipos de Pagamento (CT-RF104 a CT-RF108) e Modelos de Ficha (CT-RF109–CT-RF115) e Configurações e Modelos de Ficha (CT-RF116–CT-RF121) e Inteligência e Configurações (CT-RF122–CT-RF127) e Inteligência e Automação (CT-RF128–CT-RF133) e ampliação da cobertura da Central de Automações (CT-RF134–CT-RF138) e integração de WhatsApp (CT-RF139–CT-RF144) e novos cenários de Configurações (CT-RF145–CT-RF150) e Configurações de Avaliação e Aniversário (CT-RF151–CT-RF152). BUG-011–BUG-052 em triagem.
+**Atualização:** 18/11/2026 — RF01 a RF35, RF38 a RF62 e RF65 a RF153 consolidados, com inclusão de Categorias Crossfit (CT-RF38), SifitBox – Turmas (CT-RF39 a CT-RF41), Pagar.me, Configurações, Despesas Fixas e Relatórios (CT-RF42 a CT-RF56), Grupos (treino) (CT-RF57 e CT-RF58), Fichas de Anamnese (CT-RF59), Modelos de Anamnese (CT-RF60), Categorias de Anamnese (CT-RF61), Perguntas Anamnese (CT-RF62), Colaboradores (CT-RF65 a CT-RF73), Prospecção e Bandeiras de Cartão (CT-RF74 a CT-RF90), Contas a Pagar / Modelos de Contrato / Planos (CT-RF91 a CT-RF103) Tipos de Pagamento (CT-RF104 a CT-RF108) e Modelos de Ficha (CT-RF109–CT-RF115) e Configurações e Modelos de Ficha (CT-RF116–CT-RF121) e Inteligência e Configurações (CT-RF122–CT-RF127) e Inteligência e Automação (CT-RF128–CT-RF133) e ampliação da cobertura da Central de Automações (CT-RF134–CT-RF138) e integração de WhatsApp (CT-RF139–CT-RF144) e novos cenários de Configurações (CT-RF145–CT-RF150) e Configurações de Avaliação e Aniversário (CT-RF151–CT-RF153). BUG-011–BUG-052 em triagem.
 
 **Padronização documental:** 13/11/2026, sem alteração dos resultados registrados.
 
-Esta análise documenta 148 requisitos de QA para os cenários relacionados abaixo, com base nos relatos e nas evidências fornecidas. RF01–RF04 e suas análises históricas foram preservados; RF05–RF20 ampliam a cobertura em 14/11/2026; RF21 acrescenta Avaliações; RF22–RF28 acrescentam Exercícios; RF29–RF33 acrescentam Grupos Musculares; RF34 acrescenta o carregamento do dashboard RF35 acrescenta o cadastro de objetivos de treino e RF38 acrescenta o cadastro de categorias com código automático em 15/11/2026. RF39 acrescenta o cadastro de modalidade em SifitBox – Turmas. RF40 acrescenta a exclusão de turmas e modalidades. RF41 acrescenta o cadastro de turma. RF42 a RF56 acrescentam Pagar.me, Configurações, Despesas Fixas e Relatórios em 15/11/2026. RF57 acrescenta a exclusão de grupo (treino) e RF58 acrescenta a edição de grupo (treino), ambos também em 15/11/2026. RF59 acrescenta o cadastro de anamnese, também em 15/11/2026. RF60 acrescenta a gestão de modelos de anamnese (busca, cadastro, edição e exclusão), em 16/11/2026. RF61 acrescenta a gestão de categorias de anamnese (filtro, busca, cadastro, edição, cancelamento de edição e exclusão), também em 16/11/2026. RF62 acrescenta a edição de pergunta de anamnese, reprovada por HTTP 500, também em 16/11/2026. RF65–RF73 cobrem validações, operações e buscas de Colaboradores, também em 15/11/2026. RF74–RF84 acrescentam Prospecção e Bandeiras de Cartão a partir de resumos fornecidos, em 16/11/2026. RF85 a RF90 acrescentam Prospecção (leads) em 15/11/2026. RF91 a RF103 acrescentam Contas a Pagar, Modelos de Contrato e Planos em 15/11/2026. RF104 a RF108 acrescentam Tipos de Pagamento em 15/11/2026. RF109–RF115 cobre Modelos de Ficha com evidências gravadas em 16/11/2026. Os critérios abaixo constituem a referência de QA para esses fluxos; não representam validação de uma especificação formal pelo responsável pelo produto.
+Esta análise documenta 149 requisitos de QA para os cenários relacionados abaixo, com base nos relatos e nas evidências fornecidas. RF01–RF04 e suas análises históricas foram preservados; RF05–RF20 ampliam a cobertura em 14/11/2026; RF21 acrescenta Avaliações; RF22–RF28 acrescentam Exercícios; RF29–RF33 acrescentam Grupos Musculares; RF34 acrescenta o carregamento do dashboard RF35 acrescenta o cadastro de objetivos de treino e RF38 acrescenta o cadastro de categorias com código automático em 15/11/2026. RF39 acrescenta o cadastro de modalidade em SifitBox – Turmas. RF40 acrescenta a exclusão de turmas e modalidades. RF41 acrescenta o cadastro de turma. RF42 a RF56 acrescentam Pagar.me, Configurações, Despesas Fixas e Relatórios em 15/11/2026. RF57 acrescenta a exclusão de grupo (treino) e RF58 acrescenta a edição de grupo (treino), ambos também em 15/11/2026. RF59 acrescenta o cadastro de anamnese, também em 15/11/2026. RF60 acrescenta a gestão de modelos de anamnese (busca, cadastro, edição e exclusão), em 16/11/2026. RF61 acrescenta a gestão de categorias de anamnese (filtro, busca, cadastro, edição, cancelamento de edição e exclusão), também em 16/11/2026. RF62 acrescenta a edição de pergunta de anamnese, reprovada por HTTP 500, também em 16/11/2026. RF65–RF73 cobrem validações, operações e buscas de Colaboradores, também em 15/11/2026. RF74–RF84 acrescentam Prospecção e Bandeiras de Cartão a partir de resumos fornecidos, em 16/11/2026. RF85 a RF90 acrescentam Prospecção (leads) em 15/11/2026. RF91 a RF103 acrescentam Contas a Pagar, Modelos de Contrato e Planos em 15/11/2026. RF104 a RF108 acrescentam Tipos de Pagamento em 15/11/2026. RF109–RF115 cobre Modelos de Ficha com evidências gravadas em 16/11/2026. Os critérios abaixo constituem a referência de QA para esses fluxos; não representam validação de uma especificação formal pelo responsável pelo produto.
 
 ## 📋 Visão geral dos requisitos
 
@@ -160,6 +160,7 @@ Esta análise documenta 148 requisitos de QA para os cenários relacionados abai
 | [RF150](#rf150) | Atualizar a verificação do WhatsApp enquanto aguarda QR Code | Média, proposta | [CT-RF150](Cenario_Teste/CT-RF150_Integracoes_WhatsApp_Atualizar_Status_Aguardando_QR.md) |
 | [RF151](#rf151) | Desativar a cobrança da avaliação do cliente | Média, proposta | [CT-RF151](Cenario_Teste/CT-RF151_Configuracoes_Avaliacao_Desativar_Cobranca.md) |
 | [RF152](#rf152) | Alterar o tipo de avaliação para Bioimpedância | Média, proposta | [CT-RF152](Cenario_Teste/CT-RF152_Configuracoes_Avaliacao_Tipo_Bioimpedancia.md) |
+| [RF153](#rf153) | Habilitar Teste Físico nas configurações de avaliação | Média, proposta | [CT-RF153](Cenario_Teste/CT-RF153_Configuracoes_Avaliacao_Habilitar_Teste_Fisico.md) |
 
 ---
 
@@ -3553,6 +3554,31 @@ A evidência cobre a preferência salva. A geração de cobranças e o reflexo n
 
 O tipo foi conferido no formulário e no cartão de resumo de Configurações. A gravação não cobre a criação de uma avaliação nesse tipo.
 
+<a id="rf153"></a>
+
+## RF153 — Habilitar Teste Físico nas configurações de avaliação
+
+| Campo | Descrição |
+| --- | --- |
+| Requisito de QA | Confirmar que o valor Sim de Teste Físico permanece salvo após recarregar e reabrir Avaliação. |
+| Ator | Usuário autenticado com permissão para a operação. |
+| Pré-condições | Sessão autenticada com permissão para editar Configurações → Avaliação. Registrar o valor inicial com a base de teste. |
+| Gatilho | Selecionar Sim em Teste Físico e clicar em Salvar Configurações. |
+| Caso | [CT-RF153](Cenario_Teste/CT-RF153_Configuracoes_Avaliacao_Habilitar_Teste_Fisico.md) |
+| Situação observada | Aprovado conforme a gravação. A consulta e a aba Avaliação confirmaram Sim após recarregar. |
+| Defeito | Nenhum no fluxo avaliado |
+| Evidências | Jam 3 — Habilitação de Teste Físico (gravação restrita por conter dados de integração) e [Evidências](Evidencias/CT-RF153_Configuracoes_Avaliacao_Habilitar_Teste_Fisico/README.md). |
+
+### Critérios de aceitação do RF153
+
+1. O salvamento de Sim retorna sucesso.
+2. O GET após recarregar devolve `teste_fisico: SIM`.
+3. O seletor mantém Sim após reabrir a aba.
+
+### Pontos a confirmar e limites do RF153
+
+A gravação cobre a alteração e a leitura da preferência. A disponibilidade do teste no cadastro de avaliação fica para verificação separada.
+
 ---
 
 ## 🔗 Rastreabilidade
@@ -3704,6 +3730,7 @@ O tipo foi conferido no formulário e no cartão de resumo de Configurações. A
 | RF150 | [CT-RF150](Cenario_Teste/CT-RF150_Integracoes_WhatsApp_Atualizar_Status_Aguardando_QR.md) | Nenhum no fluxo avaliado | Aprovado conforme a gravação | [Evidências](Evidencias/CT-RF150_Integracoes_WhatsApp_Atualizar_Status_Aguardando_QR/README.md) e Jam 6 — Atualização de status enquanto aguarda QR Code (gravação restrita por conter dados de integração) |
 | RF151 | [CT-RF151](Cenario_Teste/CT-RF151_Configuracoes_Avaliacao_Desativar_Cobranca.md) | Nenhum no fluxo avaliado | Aprovado conforme a gravação | [Evidências](Evidencias/CT-RF151_Configuracoes_Avaliacao_Desativar_Cobranca/README.md) e Jam 1 — Desativação da cobrança da avaliação (gravação restrita por conter dados de integração) |
 | RF152 | [CT-RF152](Cenario_Teste/CT-RF152_Configuracoes_Avaliacao_Tipo_Bioimpedancia.md) | Nenhum no fluxo avaliado | Aprovado conforme a gravação | [Evidências](Evidencias/CT-RF152_Configuracoes_Avaliacao_Tipo_Bioimpedancia/README.md) e Jam 2 — Alteração do tipo para Bioimpedância (gravação restrita por conter dados de integração) |
+| RF153 | [CT-RF153](Cenario_Teste/CT-RF153_Configuracoes_Avaliacao_Habilitar_Teste_Fisico.md) | Nenhum no fluxo avaliado | Aprovado conforme a gravação | [Evidências](Evidencias/CT-RF153_Configuracoes_Avaliacao_Habilitar_Teste_Fisico/README.md) e Jam 3 — Habilitação de Teste Físico (gravação restrita por conter dados de integração) |
 
 ---
 
@@ -4589,10 +4616,11 @@ CT-RF145–CT-RF150 cobrem funcionalidades de Configurações com gravações de
 
 ### Base da análise de Configurações / Avaliação e Aniversário — revisão de 18/11/2026
 
-CT-RF151–CT-RF152 cobrem a aba Avaliação com gravações de 16/11/2026 entre 23:10:04 e 23:11:02 BRT.
+CT-RF151–CT-RF153 cobrem a aba Avaliação com gravações de 16/11/2026 entre 23:10:04 e 23:12:07 BRT.
 
 - RF151: A consulta e a aba Avaliação confirmaram Não após recarregar. Jam 1 — Desativação da cobrança da avaliação (gravação restrita por conter dados de integração).
 - RF152: A consulta e a aba Avaliação confirmaram Bioimpedância após recarregar. O cartão de resumo Avaliação também exibiu Bioimpedância. Jam 2 — Alteração do tipo para Bioimpedância (gravação restrita por conter dados de integração).
+- RF153: A consulta e a aba Avaliação confirmaram Sim após recarregar. Jam 3 — Habilitação de Teste Físico (gravação restrita por conter dados de integração).
 
 ---
 

@@ -1,6 +1,6 @@
 # 🧪 Índice dos cenários de teste — SIFIT
 
-**Atualização:** 18/11/2026. 148 casos documentados: 70 aprovados, 57 reprovados e 21 a validar. 52 defeitos registrados (10 abertos e 42 em triagem) e 57 casos com reteste corretivo pendente. Escopo: CT-RF01–CT-RF35, CT-RF38–CT-RF62 e CT-RF65–CT-RF152.
+**Atualização:** 18/11/2026. 149 casos documentados: 71 aprovados, 57 reprovados e 21 a validar. 52 defeitos registrados (10 abertos e 42 em triagem) e 57 casos com reteste corretivo pendente. Escopo: CT-RF01–CT-RF35, CT-RF38–CT-RF62 e CT-RF65–CT-RF153.
 
 | Caso | Funcionalidade | Resultado | Defeito | Jam |
 | --- | --- | --- | --- | --- |
@@ -363,13 +363,14 @@ CT-RF139–CT-RF144 cobrem a integração do WhatsApp com gravações de 16/11/2
 
 CT-RF145–CT-RF150 cobrem funcionalidades de Configurações com gravações de 16/11/2026 entre 23:21:59 e 23:36:13 BRT. A revisão é documental.
 
-## Inclusão de 18/11/2026 — Configurações / Avaliação e Aniversário (CT-RF151–CT-RF152)
+## Inclusão de 18/11/2026 — Configurações / Avaliação e Aniversário (CT-RF151–CT-RF153)
 
 | Caso | Funcionalidade | Resultado | Defeito | Jam |
 | --- | --- | --- | --- | --- |
 | [CT-RF151](CT-RF151_Configuracoes_Avaliacao_Desativar_Cobranca.md) | Desativar a cobrança da avaliação do cliente | Aprovado conforme a gravação | — | Jam 1 — Desativação da cobrança da avaliação (gravação restrita por conter dados de integração) |
 | [CT-RF152](CT-RF152_Configuracoes_Avaliacao_Tipo_Bioimpedancia.md) | Alterar o tipo de avaliação para Bioimpedância | Aprovado conforme a gravação | — | Jam 2 — Alteração do tipo para Bioimpedância (gravação restrita por conter dados de integração) |
+| [CT-RF153](CT-RF153_Configuracoes_Avaliacao_Habilitar_Teste_Fisico.md) | Habilitar Teste Físico nas configurações de avaliação | Aprovado conforme a gravação | — | Jam 3 — Habilitação de Teste Físico (gravação restrita por conter dados de integração) |
 
-CT-RF151–CT-RF152 cobrem a aba Avaliação com gravações de 16/11/2026 entre 23:10:04 e 23:11:02 BRT. A revisão é documental.
+CT-RF151–CT-RF153 cobrem a aba Avaliação com gravações de 16/11/2026 entre 23:10:04 e 23:12:07 BRT. A revisão é documental.
 
 [← Início](../../README.md) · [Requisitos](../Analise%20de%20requisitos.md) · [Plano](../Plano%20de%20testes.md) · [Evidências](../Evidencias/README.md)

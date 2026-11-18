@@ -224,11 +224,12 @@ CT-RF139–CT-RF144 cobrem a integração do WhatsApp com gravações de 16/11/2
 
 CT-RF145–CT-RF150 cobrem funcionalidades de Configurações com gravações de 16/11/2026 entre 23:21:59 e 23:36:13 BRT. As pastas reúnem origem, cronologia e recortes identificados com SHA-256.
 
-## Inclusão de 18/11/2026 — Configurações / Avaliação e Aniversário (CT-RF151–CT-RF152)
+## Inclusão de 18/11/2026 — Configurações / Avaliação e Aniversário (CT-RF151–CT-RF153)
 
 | Caso | Evidência | Resultado |
 | --- | --- | --- |
 | [CT-RF151](../Cenario_Teste/CT-RF151_Configuracoes_Avaliacao_Desativar_Cobranca.md) | [Desativar a cobrança da avaliação do cliente](CT-RF151_Configuracoes_Avaliacao_Desativar_Cobranca/README.md) | Aprovado conforme a gravação |
 | [CT-RF152](../Cenario_Teste/CT-RF152_Configuracoes_Avaliacao_Tipo_Bioimpedancia.md) | [Alterar o tipo de avaliação para Bioimpedância](CT-RF152_Configuracoes_Avaliacao_Tipo_Bioimpedancia/README.md) | Aprovado conforme a gravação |
+| [CT-RF153](../Cenario_Teste/CT-RF153_Configuracoes_Avaliacao_Habilitar_Teste_Fisico.md) | [Habilitar Teste Físico nas configurações de avaliação](CT-RF153_Configuracoes_Avaliacao_Habilitar_Teste_Fisico/README.md) | Aprovado conforme a gravação |
 
-CT-RF151–CT-RF152 cobrem a aba Avaliação com gravações de 16/11/2026 entre 23:10:04 e 23:11:02 BRT. As pastas reúnem origem, cronologia e recortes identificados com SHA-256.
+CT-RF151–CT-RF153 cobrem a aba Avaliação com gravações de 16/11/2026 entre 23:10:04 e 23:12:07 BRT. As pastas reúnem origem, cronologia e recortes identificados com SHA-256.

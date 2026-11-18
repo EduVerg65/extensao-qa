@@ -2,13 +2,13 @@
 
 Repositório de documentação de QA manual do **SIFIT**, sistema de gestão de academias. Reúne requisitos, plano, cenários BDD, resultados, defeitos e evidências com links do Jam.
 
-**Atualização documental:** 18/11/2026. Integrados CT-RF151–CT-RF152 e RF151–RF152 para Configurações / Avaliação e Aniversário. A revisão utiliza gravações e eventos do Jam.
+**Atualização documental:** 18/11/2026. Integrados CT-RF151–CT-RF153 e RF151–RF153 para Configurações / Avaliação e Aniversário. A revisão utiliza gravações e eventos do Jam.
 
 ## 📊 Situação consolidada
 
 | Cenários documentados | Aprovados | Reprovados | A validar | Defeitos registrados | Casos com reteste corretivo pendente |
 | :---: | :---: | :---: | :---: | :---: | :---: |
-| 148 | 70 | 57 | 21 | 52 (10 abertos + 42 em triagem) | 57 |
+| 149 | 71 | 57 | 21 | 52 (10 abertos + 42 em triagem) | 57 |
 
 As classificações se baseiam nas fontes indicadas em cada cenário. CT-RF09/10 compartilham BUG-005 e CT-RF53–CT-RF56 compartilham BUG-023. CT-RF135 e CT-RF136 compartilham o BUG-049. As 57 reprovações correspondem a 52 defeitos registrados. BUG-011–BUG-052 aguardam triagem.
 
@@ -16,9 +16,9 @@ As classificações se baseiam nas fontes indicadas em cada cenário. CT-RF09/10
 
 | Documento | Conteúdo |
 | --- | --- |
-| [Análise de requisitos](SIFIT/Analise%20de%20requisitos.md) | RF01–RF35, RF38–RF62 e RF65–RF152, critérios de aceitação, dúvidas de regra e rastreabilidade. |
+| [Análise de requisitos](SIFIT/Analise%20de%20requisitos.md) | RF01–RF35, RF38–RF62 e RF65–RF153, critérios de aceitação, dúvidas de regra e rastreabilidade. |
 | [Plano de testes](SIFIT/Plano%20de%20testes.md) | Escopo, ambientes, preparação, critérios, regressão e retestes. |
-| [Índice dos cenários](SIFIT/Cenario_Teste/README.md) | 148 cenários com pré-condições, BDD, passos, esperado, obtido e encaminhamento. |
+| [Índice dos cenários](SIFIT/Cenario_Teste/README.md) | 149 cenários com pré-condições, BDD, passos, esperado, obtido e encaminhamento. |
 | [Relatório de bugs](SIFIT/Relatorio-de-Bugs.md) | BUG-001–BUG-052: reprodução, impacto, evidências, severidade/prioridade propostas e reteste. |
 | [Relatório dos testes](SIFIT/Relatorio%20dos%20testes.md) | Resultados consolidados, cobertura, limites e pendências. |
 | [Índice das evidências](SIFIT/Evidencias/README.md) | Jam por cenário e arquivos locais dos novos casos. |
@@ -181,6 +181,7 @@ extensao-qa/
 | [CT-RF150](SIFIT/Cenario_Teste/CT-RF150_Integracoes_WhatsApp_Atualizar_Status_Aguardando_QR.md) | Atualizar a verificação do WhatsApp enquanto aguarda QR Code | Aprovado conforme a gravação | — | Jam 6 — Atualização de status enquanto aguarda QR Code (gravação restrita por conter dados de integração) |
 | [CT-RF151](SIFIT/Cenario_Teste/CT-RF151_Configuracoes_Avaliacao_Desativar_Cobranca.md) | Desativar a cobrança da avaliação do cliente | Aprovado conforme a gravação | — | Jam 1 — Desativação da cobrança da avaliação (gravação restrita por conter dados de integração) |
 | [CT-RF152](SIFIT/Cenario_Teste/CT-RF152_Configuracoes_Avaliacao_Tipo_Bioimpedancia.md) | Alterar o tipo de avaliação para Bioimpedância | Aprovado conforme a gravação | — | Jam 2 — Alteração do tipo para Bioimpedância (gravação restrita por conter dados de integração) |
+| [CT-RF153](SIFIT/Cenario_Teste/CT-RF153_Configuracoes_Avaliacao_Habilitar_Teste_Fisico.md) | Habilitar Teste Físico nas configurações de avaliação | Aprovado conforme a gravação | — | Jam 3 — Habilitação de Teste Físico (gravação restrita por conter dados de integração) |
 
 ## 🔬 Como este projeto funciona
 
