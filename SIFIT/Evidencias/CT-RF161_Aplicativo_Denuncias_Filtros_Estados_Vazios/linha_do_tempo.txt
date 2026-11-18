@@ -1,0 +1,22 @@
+CT-RF161 — Alternar o filtro de denúncias com a lista vazia
+Fonte: Jam 5 — Filtros de denúncias sem registros. Gravação restrita por conter dados de integração ou dados de alunos.
+Gravação: 16/11/2026, 22:44:19 BRT. Duração: 10,89 s.
+Revisão documental: 18/11/2026.
+Página: https://sifit.centrion.com.br/aplicativo
+Foco deste caso: Conferir a troca entre todos os registros e apenas pendentes na seção Denúncias com a lista vazia.
+
+Cronologia (ações e eventos capturados no Jam):
+0:03–0:05  Localiza Denúncias no painel Aplicativo.
+0:05,70 e 0:07,56  Aciona Ver todas. A tela indica nenhuma denúncia registrada.
+0:06,67 e 0:08,28  Aciona Só pendentes. A tela indica nenhuma denúncia pendente.
+
+Rede do conjunto gravado (eventos relevantes ao caso):
+Os eventos registram quatro cliques nos controles de filtro. A evidência deste fluxo é a alteração visual do aviso de lista vazia.
+
+Quadros consultados (reprodução do Jam):
+- Lista de denúncias em todas, com o respectivo estado vazio.
+- Lista filtrada por pendentes, com o aviso correspondente.
+
+Observações e verificações futuras:
+- A evidência cobre a interface sem denúncias. A filtragem com registros pendentes e tratados ficou fora da gravação.
+- Retestar com denúncias de teste em estados diferentes e conferir os registros exibidos em cada filtro.
