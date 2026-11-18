@@ -1,10 +1,10 @@
 # 📊 Relatório de Testes — SIFIT
 
-**Escopo:** 149 casos documentados (CT-RF01–CT-RF35, CT-RF38–CT-RF62 e CT-RF65–CT-RF153) — autenticação, recuperação, perfil, Clientes, financeiro, página inicial e dashboard, modalidades / tema de SifitBox, Categorias Crossfit, Avaliações, Exercícios, Grupos Musculares, Objetivos de Treino cadastro de categorias com código automático, SifitBox – Turmas, Pagar.me, Configurações, Despesas Fixas, Relatórios, Grupos (treino), Fichas de Anamnese, gestão de Modelos de Anamnese, gestão de Categorias de Anamnese, edição de Perguntas Anamnese, validações/funções/exclusão/busca de Colaboradores, Prospecção, Bandeiras de Cartão, Contas a Pagar, Modelos de Contrato, Planos, Tipos de Pagamento, Modelos de Ficha, Central de Automações, Integrações de WhatsApp e Configurações de Avaliação, Aniversário, Pagamento e Design.
+**Escopo:** 150 casos documentados (CT-RF01–CT-RF35, CT-RF38–CT-RF62 e CT-RF65–CT-RF154) — autenticação, recuperação, perfil, Clientes, financeiro, página inicial e dashboard, modalidades / tema de SifitBox, Categorias Crossfit, Avaliações, Exercícios, Grupos Musculares, Objetivos de Treino cadastro de categorias com código automático, SifitBox – Turmas, Pagar.me, Configurações, Despesas Fixas, Relatórios, Grupos (treino), Fichas de Anamnese, gestão de Modelos de Anamnese, gestão de Categorias de Anamnese, edição de Perguntas Anamnese, validações/funções/exclusão/busca de Colaboradores, Prospecção, Bandeiras de Cartão, Contas a Pagar, Modelos de Contrato, Planos, Tipos de Pagamento, Modelos de Ficha, Central de Automações, Integrações de WhatsApp e Configurações de Avaliação, Aniversário, Pagamento e Design.
 
-**Datas das gravações do Jam:** CT-RF01 em 23/10/2026; CT-RF02_ERRO em 22/10/2026 às 21:45 BRT; CT-RF03 não confirmada; CT-RF04_loginComSucesso em 13/11/2026; CT-RF05–CT-RF20 em 14/11/2026; CT-RF21 em 15/11/2026 às 15:07:51,265 BRT; CT-RF22–28 em 15/11/2026 às 15:25, 15:40, 15:38, 15:35, 16:11, 16:08 e 16:07 BRT; CT-RF29–33 em 15/11/2026 às 15h56 BRT (uma única gravação); CT-RF34 em 15/11/2026 às 17:23 BRT; CT-RF35 em 15/11/2026 às 18:13 BRT; CT-RF38 em 15/11/2026 às 18:41 BRT; CT-RF39–41 em 15/11/2026 às 18:51 BRT (uma única gravação); CT-RF42–45 às 19:06, CT-RF46–49 às 19:07 e CT-RF50–56 às 19:09 BRT (uma gravação por grupo); CT-RF57 e CT-RF58 em 15/11/2026 às 21h03 BRT (mesma gravação); CT-RF59 em 15/11/2026 às 22h07 BRT; CT-RF60 em 15/11/2026 às 23h34 BRT; CT-RF61 em 16/11/2026 às 15h24 BRT; CT-RF62 em 16/11/2026 às 15h57 BRT. CT-RF74–CT-RF84: 16/11/2026 conforme os resumos, sem horário informado. CT-RF85–90 às 21:52, CT-RF91–95 às 21:58, CT-RF96–98 às 21:55 e CT-RF99–103 às 21:54 e CT-RF104–108 às 22:03 BRT em 15/11/2026 (uma gravação por grupo). CT-RF109–CT-RF115 em 16/11/2026 entre 22:19:51 e 22:29:07 BRT. CT-RF116–CT-RF121 amplia a cobertura de Configurações e Modelos de Ficha com gravações de 16/11/2026 entre 22:03:53 e 22:18:52 BRT. CT-RF122–CT-RF127 cobre Inteligência e Configurações com gravações de 16/11/2026 entre 21:50:51 e 22:02:16 BRT. CT-RF128–CT-RF133 cobre Inteligência e Automação com gravações de 16/11/2026 entre 21:40:31 e 21:49:48 BRT. CT-RF134–CT-RF138 cobrem a Central de Automações com gravações de 16/11/2026 entre 21:25:26 e 21:38:29 BRT. CT-RF139–CT-RF144 cobrem a integração do WhatsApp com gravações de 16/11/2026 entre 23:37:22 e 23:45:52 BRT. CT-RF145–CT-RF150 cobrem funcionalidades de Configurações com gravações de 16/11/2026 entre 23:21:59 e 23:36:13 BRT. CT-RF151–CT-RF153 cobrem a aba Avaliação com gravações de 16/11/2026 entre 23:10:04 e 23:12:07 BRT.
+**Datas das gravações do Jam:** CT-RF01 em 23/10/2026; CT-RF02_ERRO em 22/10/2026 às 21:45 BRT; CT-RF03 não confirmada; CT-RF04_loginComSucesso em 13/11/2026; CT-RF05–CT-RF20 em 14/11/2026; CT-RF21 em 15/11/2026 às 15:07:51,265 BRT; CT-RF22–28 em 15/11/2026 às 15:25, 15:40, 15:38, 15:35, 16:11, 16:08 e 16:07 BRT; CT-RF29–33 em 15/11/2026 às 15h56 BRT (uma única gravação); CT-RF34 em 15/11/2026 às 17:23 BRT; CT-RF35 em 15/11/2026 às 18:13 BRT; CT-RF38 em 15/11/2026 às 18:41 BRT; CT-RF39–41 em 15/11/2026 às 18:51 BRT (uma única gravação); CT-RF42–45 às 19:06, CT-RF46–49 às 19:07 e CT-RF50–56 às 19:09 BRT (uma gravação por grupo); CT-RF57 e CT-RF58 em 15/11/2026 às 21h03 BRT (mesma gravação); CT-RF59 em 15/11/2026 às 22h07 BRT; CT-RF60 em 15/11/2026 às 23h34 BRT; CT-RF61 em 16/11/2026 às 15h24 BRT; CT-RF62 em 16/11/2026 às 15h57 BRT. CT-RF74–CT-RF84: 16/11/2026 conforme os resumos, sem horário informado. CT-RF85–90 às 21:52, CT-RF91–95 às 21:58, CT-RF96–98 às 21:55 e CT-RF99–103 às 21:54 e CT-RF104–108 às 22:03 BRT em 15/11/2026 (uma gravação por grupo). CT-RF109–CT-RF115 em 16/11/2026 entre 22:19:51 e 22:29:07 BRT. CT-RF116–CT-RF121 amplia a cobertura de Configurações e Modelos de Ficha com gravações de 16/11/2026 entre 22:03:53 e 22:18:52 BRT. CT-RF122–CT-RF127 cobre Inteligência e Configurações com gravações de 16/11/2026 entre 21:50:51 e 22:02:16 BRT. CT-RF128–CT-RF133 cobre Inteligência e Automação com gravações de 16/11/2026 entre 21:40:31 e 21:49:48 BRT. CT-RF134–CT-RF138 cobrem a Central de Automações com gravações de 16/11/2026 entre 21:25:26 e 21:38:29 BRT. CT-RF139–CT-RF144 cobrem a integração do WhatsApp com gravações de 16/11/2026 entre 23:37:22 e 23:45:52 BRT. CT-RF145–CT-RF150 cobrem funcionalidades de Configurações com gravações de 16/11/2026 entre 23:21:59 e 23:36:13 BRT. CT-RF151–CT-RF154 cobrem as abas Avaliação e Aniversário com gravações de 16/11/2026 entre 23:10:04 e 23:15:01 BRT.
 
-**Data da revisão documental:** 18/11/2026, com integração de CT-RF151–CT-RF153 (Configurações / Avaliação e Aniversário).
+**Data da revisão documental:** 18/11/2026, com integração de CT-RF151–CT-RF154 (Configurações / Avaliação e Aniversário).
 
 **Origem do resultado:** análise de evidências fornecidas; sem nova execução no sistema nesta revisão.
 
@@ -44,11 +44,11 @@ CT-RF139–CT-RF144 cobrem a integração do WhatsApp com gravações de 16/11/2
 
 CT-RF145–CT-RF150 cobrem funcionalidades de Configurações com gravações de 16/11/2026 entre 23:21:59 e 23:36:13 BRT. Casos aprovados: 4. Reprovados: 2. A validar: 0.
 
-CT-RF151–CT-RF153 cobrem a aba Avaliação com gravações de 16/11/2026 entre 23:10:04 e 23:12:07 BRT. Casos aprovados: 3. Reprovados: 0. A validar: 0.
+CT-RF151–CT-RF154 cobrem as abas Avaliação e Aniversário com gravações de 16/11/2026 entre 23:10:04 e 23:15:01 BRT. Casos aprovados: 4. Reprovados: 0. A validar: 0.
 
 | Casos documentados | Aprovados | Reprovados | A validar | Defeitos registrados | Casos com reteste corretivo pendente |
 | :---: | :---: | :---: | :---: | :---: | :---: |
-| 149 | 71 | 57 | 21 | 52 (10 abertos + 42 em triagem) | 57 |
+| 150 | 72 | 57 | 21 | 52 (10 abertos + 42 em triagem) | 57 |
 
 Os 48 retestes incluem CT-RF22/24/26/27/28/29/30/35/41/45/51/53/54/55/56/57/58/59/62/65/66/67/68/69/70/71/73/81/82/83/89/92/98/102/105/107, sujeitos à confirmação funcional e técnica. As contagens representam os casos documentados com base nas fontes indicadas, sem novas execuções nesta revisão. As nove variações planejadas para o reteste do CT-RF03 não foram executadas e não são contabilizadas como testes adicionais realizados.
 
@@ -204,6 +204,7 @@ Os 48 retestes incluem CT-RF22/24/26/27/28/29/30/35/41/45/51/53/54/55/56/57/58/5
 | [CT-RF151](Cenario_Teste/CT-RF151_Configuracoes_Avaliacao_Desativar_Cobranca.md) | [RF151](Analise%20de%20requisitos.md#rf151) | Salvar Não retorna sucesso. A consulta posterior devolve `cobrar_avaliacao: nao` e Avaliação mantém Não no seletor. | A consulta e a aba Avaliação confirmaram Não após recarregar. | Aprovado conforme a gravação | Nenhum no fluxo avaliado |
 | [CT-RF152](Cenario_Teste/CT-RF152_Configuracoes_Avaliacao_Tipo_Bioimpedancia.md) | [RF152](Analise%20de%20requisitos.md#rf152) | Salvar Bioimpedância retorna sucesso. A consulta posterior devolve `tipo_avaliacao: BIOIMPEDANCIA` e Avaliação mantém Bioimpedância no seletor. O cartão Avaliação reflete o mesmo tipo. | A consulta e a aba Avaliação confirmaram Bioimpedância após recarregar. O cartão de resumo Avaliação também exibiu Bioimpedância. | Aprovado conforme a gravação | Nenhum no fluxo avaliado |
 | [CT-RF153](Cenario_Teste/CT-RF153_Configuracoes_Avaliacao_Habilitar_Teste_Fisico.md) | [RF153](Analise%20de%20requisitos.md#rf153) | Salvar Sim retorna sucesso. A consulta posterior devolve `teste_fisico: SIM` e Avaliação mantém Sim no seletor. | A consulta e a aba Avaliação confirmaram Sim após recarregar. | Aprovado conforme a gravação | Nenhum no fluxo avaliado |
+| [CT-RF154](Cenario_Teste/CT-RF154_Configuracoes_Aniversario_Desabilitar_Envio_Automatico.md) | [RF154](Analise%20de%20requisitos.md#rf154) | Salvar Desabilitado retorna sucesso. A consulta posterior devolve `enviar_mensagens_aniversario: nao` e Aniversário mantém Desabilitado no seletor. | A consulta e a aba Aniversário confirmaram Desabilitado após recarregar. | Aprovado conforme a gravação | Nenhum no fluxo avaliado |
 
 ---
 
@@ -623,14 +624,14 @@ O domínio do CT-RF02_ERRO é diferente do domínio `sifitalfa.centrion.com.br` 
 | Dados e permissões | Conta autorizada a acessar Configurações. Preparar mensagens de teste, valores de referência para Pagamento e Design, imagens de tamanho conhecido e um provedor autorizado para a consulta de status. |
 | Preparação | Registrar valores iniciais e comparar a interface com a consulta posterior. Usar evidências que preservem credenciais e outros dados de integração. |
 
-### Configurações / Avaliação e Aniversário (CT-RF151–CT-RF153)
+### Configurações / Avaliação e Aniversário (CT-RF151–CT-RF154)
 
 | Item | Definição |
 | --- | --- |
 | Páginas | https://sifit.centrion.com.br/configuracoes |
 | Backend de referência | https://backendsifit.centrion.com.br |
 | Navegador / sistema / vídeo | Chrome 157.0.8103.79 / Windows 10 (x86) / 1918 × 998. |
-| Gravações | 16/11/2026 entre 23:10:04 e 23:12:07 BRT. |
+| Gravações | 16/11/2026 entre 23:10:04 e 23:15:01 BRT. |
 | Dados e permissões | Conta com permissão para editar Configurações. Preparar valores de referência nos seletores de Avaliação e uma mensagem de WhatsApp cadastrada na aba Aniversário. |
 | Preparação | Registrar valores iniciais, conferir a consulta após salvar ou cancelar e usar dados de teste nas mensagens. |
 
@@ -738,6 +739,7 @@ O domínio do CT-RF02_ERRO é diferente do domínio `sifitalfa.centrion.com.br` 
 | Jam 1 — Desativação da cobrança da avaliação (gravação restrita por conter dados de integração) e [Evidências](Evidencias/CT-RF151_Configuracoes_Avaliacao_Desativar_Cobranca/README.md) | CT-RF151: A consulta e a aba Avaliação confirmaram Não após recarregar. |
 | Jam 2 — Alteração do tipo para Bioimpedância (gravação restrita por conter dados de integração) e [Evidências](Evidencias/CT-RF152_Configuracoes_Avaliacao_Tipo_Bioimpedancia/README.md) | CT-RF152: A consulta e a aba Avaliação confirmaram Bioimpedância após recarregar. O cartão de resumo Avaliação também exibiu Bioimpedância. |
 | Jam 3 — Habilitação de Teste Físico (gravação restrita por conter dados de integração) e [Evidências](Evidencias/CT-RF153_Configuracoes_Avaliacao_Habilitar_Teste_Fisico/README.md) | CT-RF153: A consulta e a aba Avaliação confirmaram Sim após recarregar. |
+| Jam 4 — Desativação do envio automático de aniversário (gravação restrita por conter dados de integração) e [Evidências](Evidencias/CT-RF154_Configuracoes_Aniversario_Desabilitar_Envio_Automatico/README.md) | CT-RF154: A consulta e a aba Aniversário confirmaram Desabilitado após recarregar. |
 
 A mensagem de credenciais incorretas já aparece no início do vídeo do Jam; não foi considerada uma resposta ao clique em "Esqueci minha senha". A ausência de requisição, isoladamente, não caracteriza defeito se a interface abrir um formulário local. Aqui, o resultado reprovado decorre de o fluxo não abrir.
 
@@ -1174,15 +1176,16 @@ Na inclusão dos CT-RF139 a CT-RF144, o consolidado era de 140 casos documentado
 
 Na inclusão dos CT-RF145 a CT-RF150, o consolidado era de 146 casos documentados: 68 aprovados, 57 reprovados e 21 a validar. 52 defeitos registrados (10 abertos e 42 em triagem) e 57 casos com reteste corretivo pendente.
 
-## Inclusão de 18/11/2026 — Configurações / Avaliação e Aniversário (CT-RF151–CT-RF153)
+## Inclusão de 18/11/2026 — Configurações / Avaliação e Aniversário (CT-RF151–CT-RF154)
 
 | Caso | Situação | Encaminhamento |
 | --- | --- | --- |
 | [CT-RF151](Cenario_Teste/CT-RF151_Configuracoes_Avaliacao_Desativar_Cobranca.md) | Aprovado conforme a gravação | Usar como regressão da preferência e confirmar a regra de cobrança em um fluxo de avaliação de teste. |
 | [CT-RF152](Cenario_Teste/CT-RF152_Configuracoes_Avaliacao_Tipo_Bioimpedancia.md) | Aprovado conforme a gravação | Usar como regressão da configuração e validar os campos do cadastro ao escolher cada tipo. |
 | [CT-RF153](Cenario_Teste/CT-RF153_Configuracoes_Avaliacao_Habilitar_Teste_Fisico.md) | Aprovado conforme a gravação | Usar como regressão do salvamento e verificar o comportamento da avaliação nos dois estados do seletor. |
+| [CT-RF154](Cenario_Teste/CT-RF154_Configuracoes_Aniversario_Desabilitar_Envio_Automatico.md) | Aprovado conforme a gravação | Usar como regressão da preferência e conferir o efeito no agendamento com canais e destinatários de teste. |
 
-149 casos documentados: 71 aprovados, 57 reprovados e 21 a validar. 52 defeitos registrados (10 abertos e 42 em triagem) e 57 casos com reteste corretivo pendente.
+150 casos documentados: 72 aprovados, 57 reprovados e 21 a validar. 52 defeitos registrados (10 abertos e 42 em triagem) e 57 casos com reteste corretivo pendente.
 
 ---
 

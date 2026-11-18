@@ -1,0 +1,25 @@
+CT-RF154 — Desabilitar o envio automático de aniversário
+Fonte: Jam 4 — Desativação do envio automático de aniversário. Gravação restrita por conter dados de integração.
+Gravação: 16/11/2026, 23:15:01 BRT. Duração: 19,89 s.
+Revisão documental: 18/11/2026.
+Página: https://sifit.centrion.com.br/configuracoes
+Foco deste caso: Confirmar que o valor Desabilitado de Envio automático permanece salvo após recarregar e reabrir Aniversário.
+
+Cronologia (ações e eventos capturados no Jam):
+0:07,29  Salva o novo valor Desabilitado.
+0:10,82  Após recarregar, o GET devolve `enviar_mensagens_aniversario: nao`.
+0:13,12  Reabre Aniversário e confirma Desabilitado na interface.
+0:18,02  Envia a restauração para Habilitado e recebe sucesso.
+
+Rede do conjunto gravado (eventos relevantes ao caso):
+0:07,29  POST /api/configuracoes/alterar/1 com enviar_mensagens_aniversario: nao (HTTP 200, verifica_erro: false).
+0:10,82  GET /api/configuracoes/1 (HTTP 200) com enviar_mensagens_aniversario: nao.
+0:18,02  POST de restauração com enviar_mensagens_aniversario: sim (HTTP 200, verifica_erro: false). A captura termina sem novo GET após a restauração.
+
+Quadros consultados (reprodução do Jam):
+- Envio automático em Habilitado antes da edição.
+- Envio automático em Desabilitado após recarregar e reabrir Aniversário.
+
+Observações e verificações futuras:
+- Os canais estavam desmarcados na gravação. O disparo de mensagens e a interação com canais já habilitados não foram exercitados.
+- Usar como regressão da preferência e conferir o efeito no agendamento com canais e destinatários de teste.
