@@ -173,7 +173,7 @@ CT-RF116–CT-RF121 amplia a cobertura de Configurações e Modelos de Ficha com
 
 CT-RF122–CT-RF127 cobre Inteligência e Configurações com gravações de 16/11/2026 entre 21:50:51 e 22:02:16 BRT. As pastas reúnem origem, cronologia e recortes identificados com SHA-256.
 
-## Inclusão de 17/11/2026 — Inteligência e Automação (CT-RF128–CT-RF132)
+## Inclusão de 17/11/2026 — Inteligência e Automação (CT-RF128–CT-RF133)
 
 | Caso | Evidência | Resultado |
 | --- | --- | --- |
@@ -182,5 +182,6 @@ CT-RF122–CT-RF127 cobre Inteligência e Configurações com gravações de 16/
 | [CT-RF130](../Cenario_Teste/CT-RF130_Central_Recursos_Em_Desenvolvimento.md) | [Verificar recursos marcados como Em desenvolvimento](CT-RF130_Central_Recursos_Em_Desenvolvimento/README.md) | Aprovado conforme a gravação |
 | [CT-RF131](../Cenario_Teste/CT-RF131_Resultados_IA_Filtro_Hoje.md) | [Filtrar Resultados da Inteligência por Hoje](CT-RF131_Resultados_IA_Filtro_Hoje/README.md) | Aprovado conforme a gravação |
 | [CT-RF132](../Cenario_Teste/CT-RF132_Resultados_IA_Filtro_7_Dias.md) | [Filtrar Resultados da Inteligência pelos últimos 7 dias](CT-RF132_Resultados_IA_Filtro_7_Dias/README.md) | Aprovado conforme a gravação |
+| [CT-RF133](../Cenario_Teste/CT-RF133_Resultados_IA_Filtro_30_Dias.md) | [Filtrar Resultados da Inteligência pelos últimos 30 dias](CT-RF133_Resultados_IA_Filtro_30_Dias/README.md) | Aprovado conforme a gravação |
 
-CT-RF128–CT-RF132 cobre Inteligência e Automação com gravações de 16/11/2026 entre 21:40:31 e 21:48:38 BRT. As pastas reúnem origem, cronologia e recortes identificados com SHA-256.
+CT-RF128–CT-RF133 cobre Inteligência e Automação com gravações de 16/11/2026 entre 21:40:31 e 21:49:48 BRT. As pastas reúnem origem, cronologia e recortes identificados com SHA-256.

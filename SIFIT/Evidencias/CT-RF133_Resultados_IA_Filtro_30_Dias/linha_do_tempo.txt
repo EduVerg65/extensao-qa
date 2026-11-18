@@ -1,0 +1,25 @@
+CT-RF133 — Filtrar Resultados da Inteligência pelos últimos 30 dias
+Fonte: https://jam.dev/c/2756d5c1-a823-482b-bf8d-878357b8b087
+Gravação: 16/11/2026, 21:49:48 BRT; duração: 20,07 s.
+Revisão documental: 17/11/2026.
+Página: https://sifit.centrion.com.br/inteligencia/resultados
+Foco deste caso: Atualizar os indicadores e a linha do tempo ao selecionar 30 dias e confirmar o resultado ao voltar ao mesmo filtro.
+
+Cronologia (ações e eventos capturados no Jam):
+0:03–0:08  Carrega os últimos 7 dias, consulta Hoje e retorna a 7 dias.
+0:08–0:15  Seleciona 30 dias e confere 12 automações, 12 relatórios e 6 aniversariantes.
+0:16–0:19  Volta a 7 e seleciona 30 novamente. Os indicadores acompanham as duas trocas.
+
+Rede do conjunto gravado (eventos relevantes ao caso):
+0:07,44  GET /api/inteligencia/resultados/1?periodo=7 (HTTP 200), com três itens na linha do tempo.
+0:08,81  GET com periodo=30 (HTTP 200), com dias: 30 e doze itens na linha do tempo.
+0:16,71  GET com periodo=7 (HTTP 200).
+0:17,70  Segundo GET com periodo=30 (HTTP 200), com os mesmos totais da primeira consulta.
+
+Quadros consultados (reprodução do Jam):
+- Últimos 7 dias com três automações e dois aniversariantes.
+- Últimos 30 dias com doze automações e seis aniversariantes.
+
+Observações e verificações futuras:
+- O teste confirma troca de filtro e consistência com a API. Os limites de data e a regra dos cartões que ficaram constantes exigem dados de controle.
+- Usar como regressão e retestar com registros preparados no limite de 30 dias.

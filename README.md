@@ -2,13 +2,13 @@
 
 Repositório de documentação de QA manual do **SIFIT**, sistema de gestão de academias. Reúne requisitos, plano, cenários BDD, resultados, defeitos e evidências com links do Jam.
 
-**Atualização documental:** 17/11/2026. Integrados CT-RF128–CT-RF132 e RF128–RF132 para Inteligência e Automação. A revisão utiliza gravações e eventos do Jam.
+**Atualização documental:** 17/11/2026. Integrados CT-RF128–CT-RF133 e RF128–RF133 para Inteligência e Automação. A revisão utiliza gravações e eventos do Jam.
 
 ## 📊 Situação consolidada
 
 | Cenários documentados | Aprovados | Reprovados | A validar | Defeitos registrados | Casos com reteste corretivo pendente |
 | :---: | :---: | :---: | :---: | :---: | :---: |
-| 128 | 56 | 52 | 20 | 48 (10 abertos + 38 em triagem) | 52 |
+| 129 | 57 | 52 | 20 | 48 (10 abertos + 38 em triagem) | 52 |
 
 As classificações se baseiam nas fontes indicadas em cada cenário. CT-RF09/10 compartilham BUG-005 e CT-RF53–CT-RF56 compartilham BUG-023. As 52 reprovações correspondem a 48 defeitos registrados. BUG-011–BUG-048 aguardam triagem.
 
@@ -16,9 +16,9 @@ As classificações se baseiam nas fontes indicadas em cada cenário. CT-RF09/10
 
 | Documento | Conteúdo |
 | --- | --- |
-| [Análise de requisitos](SIFIT/Analise%20de%20requisitos.md) | RF01–RF35, RF38–RF62 e RF65–RF132, critérios de aceitação, dúvidas de regra e rastreabilidade. |
+| [Análise de requisitos](SIFIT/Analise%20de%20requisitos.md) | RF01–RF35, RF38–RF62 e RF65–RF133, critérios de aceitação, dúvidas de regra e rastreabilidade. |
 | [Plano de testes](SIFIT/Plano%20de%20testes.md) | Escopo, ambientes, preparação, critérios, regressão e retestes. |
-| [Índice dos cenários](SIFIT/Cenario_Teste/README.md) | 128 cenários com pré-condições, BDD, passos, esperado, obtido e encaminhamento. |
+| [Índice dos cenários](SIFIT/Cenario_Teste/README.md) | 129 cenários com pré-condições, BDD, passos, esperado, obtido e encaminhamento. |
 | [Relatório de bugs](SIFIT/Relatorio-de-Bugs.md) | BUG-001–BUG-048: reprodução, impacto, evidências, severidade/prioridade propostas e reteste. |
 | [Relatório dos testes](SIFIT/Relatorio%20dos%20testes.md) | Resultados consolidados, cobertura, limites e pendências. |
 | [Índice das evidências](SIFIT/Evidencias/README.md) | Jam por cenário e arquivos locais dos novos casos. |
@@ -161,6 +161,7 @@ extensao-qa/
 | [CT-RF130](SIFIT/Cenario_Teste/CT-RF130_Central_Recursos_Em_Desenvolvimento.md) | Verificar recursos marcados como Em desenvolvimento | Aprovado conforme a gravação | — | [Jam — PED-08 — Recursos em desenvolvimento](https://jam.dev/c/0a7ae8fb-980d-4df2-8ef8-de78d6b11b8f) |
 | [CT-RF131](SIFIT/Cenario_Teste/CT-RF131_Resultados_IA_Filtro_Hoje.md) | Filtrar Resultados da Inteligência por Hoje | Aprovado conforme a gravação | — | [Jam — PED-09 — Hoje](https://jam.dev/c/a83c4c74-0b8e-4242-9612-0202c9063d56) |
 | [CT-RF132](SIFIT/Cenario_Teste/CT-RF132_Resultados_IA_Filtro_7_Dias.md) | Filtrar Resultados da Inteligência pelos últimos 7 dias | Aprovado conforme a gravação | — | [Jam — PED-10 — Últimos 7 dias](https://jam.dev/c/cbf45b87-b7b6-4314-a359-c5e706aa755e) |
+| [CT-RF133](SIFIT/Cenario_Teste/CT-RF133_Resultados_IA_Filtro_30_Dias.md) | Filtrar Resultados da Inteligência pelos últimos 30 dias | Aprovado conforme a gravação | — | [Jam — PED-11 — Últimos 30 dias](https://jam.dev/c/2756d5c1-a823-482b-bf8d-878357b8b087) |
 
 ## 🔬 Como este projeto funciona
 

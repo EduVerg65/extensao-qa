@@ -1,6 +1,6 @@
 # 🧪 Índice dos cenários de teste — SIFIT
 
-**Atualização:** 17/11/2026. 128 casos documentados: 56 aprovados, 52 reprovados e 20 a validar. 48 defeitos registrados (10 abertos e 38 em triagem) e 52 casos com reteste corretivo pendente. Escopo: CT-RF01–CT-RF35, CT-RF38–CT-RF62 e CT-RF65–CT-RF132.
+**Atualização:** 17/11/2026. 129 casos documentados: 57 aprovados, 52 reprovados e 20 a validar. 48 defeitos registrados (10 abertos e 38 em triagem) e 52 casos com reteste corretivo pendente. Escopo: CT-RF01–CT-RF35, CT-RF38–CT-RF62 e CT-RF65–CT-RF133.
 
 | Caso | Funcionalidade | Resultado | Defeito | Jam |
 | --- | --- | --- | --- | --- |
@@ -312,7 +312,7 @@ CT-RF116–CT-RF121 amplia a cobertura de Configurações e Modelos de Ficha com
 
 CT-RF122–CT-RF127 cobre Inteligência e Configurações com gravações de 16/11/2026 entre 21:50:51 e 22:02:16 BRT. A revisão é documental.
 
-## Inclusão de 17/11/2026 — Inteligência e Automação (CT-RF128–CT-RF132)
+## Inclusão de 17/11/2026 — Inteligência e Automação (CT-RF128–CT-RF133)
 
 | Caso | Funcionalidade | Resultado | Defeito | Jam |
 | --- | --- | --- | --- | --- |
@@ -321,7 +321,8 @@ CT-RF122–CT-RF127 cobre Inteligência e Configurações com gravações de 16/
 | [CT-RF130](CT-RF130_Central_Recursos_Em_Desenvolvimento.md) | Verificar recursos marcados como Em desenvolvimento | Aprovado conforme a gravação | — | [Jam — PED-08 — Recursos em desenvolvimento](https://jam.dev/c/0a7ae8fb-980d-4df2-8ef8-de78d6b11b8f) |
 | [CT-RF131](CT-RF131_Resultados_IA_Filtro_Hoje.md) | Filtrar Resultados da Inteligência por Hoje | Aprovado conforme a gravação | — | [Jam — PED-09 — Hoje](https://jam.dev/c/a83c4c74-0b8e-4242-9612-0202c9063d56) |
 | [CT-RF132](CT-RF132_Resultados_IA_Filtro_7_Dias.md) | Filtrar Resultados da Inteligência pelos últimos 7 dias | Aprovado conforme a gravação | — | [Jam — PED-10 — Últimos 7 dias](https://jam.dev/c/cbf45b87-b7b6-4314-a359-c5e706aa755e) |
+| [CT-RF133](CT-RF133_Resultados_IA_Filtro_30_Dias.md) | Filtrar Resultados da Inteligência pelos últimos 30 dias | Aprovado conforme a gravação | — | [Jam — PED-11 — Últimos 30 dias](https://jam.dev/c/2756d5c1-a823-482b-bf8d-878357b8b087) |
 
-CT-RF128–CT-RF132 cobre Inteligência e Automação com gravações de 16/11/2026 entre 21:40:31 e 21:48:38 BRT. A revisão é documental.
+CT-RF128–CT-RF133 cobre Inteligência e Automação com gravações de 16/11/2026 entre 21:40:31 e 21:49:48 BRT. A revisão é documental.
 
 [← Início](../../README.md) · [Requisitos](../Analise%20de%20requisitos.md) · [Plano](../Plano%20de%20testes.md) · [Evidências](../Evidencias/README.md)
