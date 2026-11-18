@@ -1,0 +1,24 @@
+CT-RF124 — Navegar pelas abas de Configurações com a senha da biometria protegida
+Fonte: Jam PED-15, gravação restrita por conter dados de integração.
+Gravação: 16/11/2026, 21:57:29 BRT; duração: 25,22 s.
+Revisão documental: 17/11/2026.
+Página: https://sifit.centrion.com.br/configuracoes
+Foco deste caso: Abrir as abas de Configurações e manter o valor da senha de integração de biometria mascarado por padrão.
+
+Cronologia (ações e eventos capturados no Jam):
+0:03–0:04  Abre Biometria. O painel é carregado e mostra a senha sem mascaramento.
+0:05–0:13  Abre Avaliação, Aniversário e Pagamento. Os painéis correspondentes aparecem.
+0:15–0:20  Abre Integrações e depois Design.
+0:23  Volta a Home.
+
+Rede do conjunto gravado (eventos relevantes ao caso):
+0:15,55  A abertura de Integrações gerou OPTIONS (HTTP 204) e a consulta do estado da integração retornou HTTP 200.
+O defeito de exibição foi observado na interface. A revisão não reproduz dados de integração.
+
+Quadros consultados (reprodução do Jam):
+- Cabeçalho da aba Biometria, recortado acima dos dados de integração.
+- Cabeçalho da aba Integrações, recortado acima dos dados de conexão.
+
+Observações e verificações futuras:
+- O defeito foi observado na interface de uma sessão autenticada. O alcance por perfil, a exposição em respostas de API e a validade do valor exibido não foram testados. As evidências versionadas mostram apenas os cabeçalhos das abas.
+- Corrigir o mascaramento por padrão e retestar com credenciais fictícias, incluindo a troca de abas e a recarga.
