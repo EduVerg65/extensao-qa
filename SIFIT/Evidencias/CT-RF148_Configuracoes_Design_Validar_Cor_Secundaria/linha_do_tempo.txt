@@ -1,0 +1,23 @@
+CT-RF148 — Rejeitar código hexadecimal inválido na Cor Secundária
+Fonte: Jam 4 — Validação da Cor Secundária. Gravação restrita por conter dados de integração.
+Gravação: 16/11/2026, 23:26:21 BRT. Duração: 19,35 s.
+Revisão documental: 17/11/2026.
+Página: https://sifit.centrion.com.br/configuracoes
+Foco deste caso: Verificar o bloqueio de código fora do formato hexadecimal no campo Cor Secundária e a preservação da cor já salva.
+
+Cronologia (ações e eventos capturados no Jam):
+0:00–0:07  Edita Cor Secundária de #000 para #ZZZZZZ.
+0:08–0:09  Aciona Salvar Configurações duas vezes, com retorno de sucesso.
+0:12–0:18  Recarrega e reabre Design. A consulta e o campo mostram #ZZZZZZ.
+
+Rede do conjunto gravado (eventos relevantes ao caso):
+0:08,01 e 0:09,20  POST /api/configuracoes/alterar/1 com cor_secundaria: #ZZZZZZ (HTTP 200, verifica_erro: false).
+0:12,33  GET /api/configuracoes/1 (HTTP 200), com cor_secundaria: #ZZZZZZ.
+
+Quadros consultados (reprodução do Jam):
+- Cor Secundária inválida durante o fluxo de salvamento.
+- Mesmo valor inválido após recarregar e reabrir a aba.
+
+Observações e verificações futuras:
+- O defeito foi confirmado pela leitura posterior. O efeito do código inválido nos ambientes online não foi avaliado.
+- Retestar com códigos hexadecimais válidos e inválidos e conferir, após cada tentativa, a cor devolvida pela consulta.

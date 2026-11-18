@@ -211,12 +211,13 @@ CT-RF134–CT-RF138 cobrem a Central de Automações com gravações de 16/11/20
 
 CT-RF139–CT-RF144 cobrem a integração do WhatsApp com gravações de 16/11/2026 entre 23:37:22 e 23:45:52 BRT. As pastas reúnem origem, cronologia e recortes identificados com SHA-256.
 
-## Inclusão de 17/11/2026 — Configurações (CT-RF145–CT-RF147)
+## Inclusão de 17/11/2026 — Configurações (CT-RF145–CT-RF148)
 
 | Caso | Evidência | Resultado |
 | --- | --- | --- |
 | [CT-RF145](../Cenario_Teste/CT-RF145_Configuracoes_Aniversario_Salvar_WhatsApp_SMS.md) | [Salvar mensagens de aniversário para WhatsApp e SMS](CT-RF145_Configuracoes_Aniversario_Salvar_WhatsApp_SMS/README.md) | Aprovado conforme a gravação |
 | [CT-RF146](../Cenario_Teste/CT-RF146_Configuracoes_Pagamento_Online_Desativar.md) | [Persistir a desativação do Pagamento Online](CT-RF146_Configuracoes_Pagamento_Online_Desativar/README.md) | Aprovado conforme a gravação |
 | [CT-RF147](../Cenario_Teste/CT-RF147_Configuracoes_Design_Salvar_Cor_Principal.md) | [Salvar uma Cor Principal hexadecimal válida](CT-RF147_Configuracoes_Design_Salvar_Cor_Principal/README.md) | Aprovado conforme a gravação |
+| [CT-RF148](../Cenario_Teste/CT-RF148_Configuracoes_Design_Validar_Cor_Secundaria.md) | [Rejeitar código hexadecimal inválido na Cor Secundária](CT-RF148_Configuracoes_Design_Validar_Cor_Secundaria/README.md) | Reprovado nas evidências |
 
-CT-RF145–CT-RF147 cobrem funcionalidades de Configurações com gravações de 16/11/2026 entre 23:21:59 e 23:25:27 BRT. As pastas reúnem origem, cronologia e recortes identificados com SHA-256.
+CT-RF145–CT-RF148 cobrem funcionalidades de Configurações com gravações de 16/11/2026 entre 23:21:59 e 23:26:21 BRT. As pastas reúnem origem, cronologia e recortes identificados com SHA-256.

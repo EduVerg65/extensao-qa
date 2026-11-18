@@ -2,11 +2,11 @@
 
 **Módulos:** Autenticação, Perfil, Clientes / Filtros, Financeiro, Página inicial / Personais, SifitBox / Modalidades e Turmas, Categorias Crossfit, Avaliações, Exercícios, Grupos Musculares, Dashboard, Objetivos de Treino, Fichas de Anamnese, Colaboradores, Prospecção e Bandeiras de Cartão.
 
-**Atualização:** 17/11/2026 — RF01 a RF35, RF38 a RF62 e RF65 a RF147 consolidados, com inclusão de Categorias Crossfit (CT-RF38), SifitBox – Turmas (CT-RF39 a CT-RF41), Pagar.me, Configurações, Despesas Fixas e Relatórios (CT-RF42 a CT-RF56), Grupos (treino) (CT-RF57 e CT-RF58), Fichas de Anamnese (CT-RF59), Modelos de Anamnese (CT-RF60), Categorias de Anamnese (CT-RF61), Perguntas Anamnese (CT-RF62), Colaboradores (CT-RF65 a CT-RF73), Prospecção e Bandeiras de Cartão (CT-RF74 a CT-RF90), Contas a Pagar / Modelos de Contrato / Planos (CT-RF91 a CT-RF103) Tipos de Pagamento (CT-RF104 a CT-RF108) e Modelos de Ficha (CT-RF109–CT-RF115) e Configurações e Modelos de Ficha (CT-RF116–CT-RF121) e Inteligência e Configurações (CT-RF122–CT-RF127) e Inteligência e Automação (CT-RF128–CT-RF133) e ampliação da cobertura da Central de Automações (CT-RF134–CT-RF138) e integração de WhatsApp (CT-RF139–CT-RF144) e novos cenários de Configurações (CT-RF145–CT-RF147). BUG-011–BUG-050 em triagem.
+**Atualização:** 17/11/2026 — RF01 a RF35, RF38 a RF62 e RF65 a RF148 consolidados, com inclusão de Categorias Crossfit (CT-RF38), SifitBox – Turmas (CT-RF39 a CT-RF41), Pagar.me, Configurações, Despesas Fixas e Relatórios (CT-RF42 a CT-RF56), Grupos (treino) (CT-RF57 e CT-RF58), Fichas de Anamnese (CT-RF59), Modelos de Anamnese (CT-RF60), Categorias de Anamnese (CT-RF61), Perguntas Anamnese (CT-RF62), Colaboradores (CT-RF65 a CT-RF73), Prospecção e Bandeiras de Cartão (CT-RF74 a CT-RF90), Contas a Pagar / Modelos de Contrato / Planos (CT-RF91 a CT-RF103) Tipos de Pagamento (CT-RF104 a CT-RF108) e Modelos de Ficha (CT-RF109–CT-RF115) e Configurações e Modelos de Ficha (CT-RF116–CT-RF121) e Inteligência e Configurações (CT-RF122–CT-RF127) e Inteligência e Automação (CT-RF128–CT-RF133) e ampliação da cobertura da Central de Automações (CT-RF134–CT-RF138) e integração de WhatsApp (CT-RF139–CT-RF144) e novos cenários de Configurações (CT-RF145–CT-RF148). BUG-011–BUG-051 em triagem.
 
 **Padronização documental:** 13/11/2026, sem alteração dos resultados registrados.
 
-Esta análise documenta 143 requisitos de QA para os cenários relacionados abaixo, com base nos relatos e nas evidências fornecidas. RF01–RF04 e suas análises históricas foram preservados; RF05–RF20 ampliam a cobertura em 14/11/2026; RF21 acrescenta Avaliações; RF22–RF28 acrescentam Exercícios; RF29–RF33 acrescentam Grupos Musculares; RF34 acrescenta o carregamento do dashboard RF35 acrescenta o cadastro de objetivos de treino e RF38 acrescenta o cadastro de categorias com código automático em 15/11/2026. RF39 acrescenta o cadastro de modalidade em SifitBox – Turmas. RF40 acrescenta a exclusão de turmas e modalidades. RF41 acrescenta o cadastro de turma. RF42 a RF56 acrescentam Pagar.me, Configurações, Despesas Fixas e Relatórios em 15/11/2026. RF57 acrescenta a exclusão de grupo (treino) e RF58 acrescenta a edição de grupo (treino), ambos também em 15/11/2026. RF59 acrescenta o cadastro de anamnese, também em 15/11/2026. RF60 acrescenta a gestão de modelos de anamnese (busca, cadastro, edição e exclusão), em 16/11/2026. RF61 acrescenta a gestão de categorias de anamnese (filtro, busca, cadastro, edição, cancelamento de edição e exclusão), também em 16/11/2026. RF62 acrescenta a edição de pergunta de anamnese, reprovada por HTTP 500, também em 16/11/2026. RF65–RF73 cobrem validações, operações e buscas de Colaboradores, também em 15/11/2026. RF74–RF84 acrescentam Prospecção e Bandeiras de Cartão a partir de resumos fornecidos, em 16/11/2026. RF85 a RF90 acrescentam Prospecção (leads) em 15/11/2026. RF91 a RF103 acrescentam Contas a Pagar, Modelos de Contrato e Planos em 15/11/2026. RF104 a RF108 acrescentam Tipos de Pagamento em 15/11/2026. RF109–RF115 cobre Modelos de Ficha com evidências gravadas em 16/11/2026. Os critérios abaixo constituem a referência de QA para esses fluxos; não representam validação de uma especificação formal pelo responsável pelo produto.
+Esta análise documenta 144 requisitos de QA para os cenários relacionados abaixo, com base nos relatos e nas evidências fornecidas. RF01–RF04 e suas análises históricas foram preservados; RF05–RF20 ampliam a cobertura em 14/11/2026; RF21 acrescenta Avaliações; RF22–RF28 acrescentam Exercícios; RF29–RF33 acrescentam Grupos Musculares; RF34 acrescenta o carregamento do dashboard RF35 acrescenta o cadastro de objetivos de treino e RF38 acrescenta o cadastro de categorias com código automático em 15/11/2026. RF39 acrescenta o cadastro de modalidade em SifitBox – Turmas. RF40 acrescenta a exclusão de turmas e modalidades. RF41 acrescenta o cadastro de turma. RF42 a RF56 acrescentam Pagar.me, Configurações, Despesas Fixas e Relatórios em 15/11/2026. RF57 acrescenta a exclusão de grupo (treino) e RF58 acrescenta a edição de grupo (treino), ambos também em 15/11/2026. RF59 acrescenta o cadastro de anamnese, também em 15/11/2026. RF60 acrescenta a gestão de modelos de anamnese (busca, cadastro, edição e exclusão), em 16/11/2026. RF61 acrescenta a gestão de categorias de anamnese (filtro, busca, cadastro, edição, cancelamento de edição e exclusão), também em 16/11/2026. RF62 acrescenta a edição de pergunta de anamnese, reprovada por HTTP 500, também em 16/11/2026. RF65–RF73 cobrem validações, operações e buscas de Colaboradores, também em 15/11/2026. RF74–RF84 acrescentam Prospecção e Bandeiras de Cartão a partir de resumos fornecidos, em 16/11/2026. RF85 a RF90 acrescentam Prospecção (leads) em 15/11/2026. RF91 a RF103 acrescentam Contas a Pagar, Modelos de Contrato e Planos em 15/11/2026. RF104 a RF108 acrescentam Tipos de Pagamento em 15/11/2026. RF109–RF115 cobre Modelos de Ficha com evidências gravadas em 16/11/2026. Os critérios abaixo constituem a referência de QA para esses fluxos; não representam validação de uma especificação formal pelo responsável pelo produto.
 
 ## 📋 Visão geral dos requisitos
 
@@ -155,6 +155,7 @@ Esta análise documenta 143 requisitos de QA para os cenários relacionados abai
 | [RF145](#rf145) | Salvar mensagens de aniversário para WhatsApp e SMS | Média, proposta | [CT-RF145](Cenario_Teste/CT-RF145_Configuracoes_Aniversario_Salvar_WhatsApp_SMS.md) |
 | [RF146](#rf146) | Persistir a desativação do Pagamento Online | Média, proposta | [CT-RF146](Cenario_Teste/CT-RF146_Configuracoes_Pagamento_Online_Desativar.md) |
 | [RF147](#rf147) | Salvar uma Cor Principal hexadecimal válida | Média, proposta | [CT-RF147](Cenario_Teste/CT-RF147_Configuracoes_Design_Salvar_Cor_Principal.md) |
+| [RF148](#rf148) | Rejeitar código hexadecimal inválido na Cor Secundária | Média, proposta | [CT-RF148](Cenario_Teste/CT-RF148_Configuracoes_Design_Validar_Cor_Secundaria.md) |
 
 ---
 
@@ -3423,6 +3424,31 @@ A aprovação cobre a persistência de Não. A gravação termina após o POST d
 
 O resultado cobre a Cor Principal e a amostra da aba Design. A aplicação da cor nos ambientes online não foi verificada.
 
+<a id="rf148"></a>
+
+## RF148 — Rejeitar código hexadecimal inválido na Cor Secundária
+
+| Campo | Descrição |
+| --- | --- |
+| Requisito de QA | Verificar o bloqueio de código fora do formato hexadecimal no campo Cor Secundária e a preservação da cor já salva. |
+| Ator | Usuário autenticado com permissão para a operação. |
+| Pré-condições | Sessão autenticada em Design e uma Cor Secundária válida salva como referência. |
+| Gatilho | Preencher Cor Secundária com #ZZZZZZ e salvar. |
+| Caso | [CT-RF148](Cenario_Teste/CT-RF148_Configuracoes_Design_Validar_Cor_Secundaria.md) |
+| Situação observada | Reprovado nas evidências. As duas tentativas com #ZZZZZZ retornaram sucesso. O código fora do conjunto hexadecimal persistiu após recarregar. |
+| Defeito | [BUG-051](Relatorio-de-Bugs.md#bug-051), em triagem |
+| Evidências | Jam 4 — Validação da Cor Secundária (gravação restrita por conter dados de integração) e [Evidências](Evidencias/CT-RF148_Configuracoes_Design_Validar_Cor_Secundaria/README.md). |
+
+### Critérios de aceitação do RF148
+
+1. O valor com caracteres fora da faixa hexadecimal é rejeitado.
+2. A interface identifica Cor Secundária como o campo a corrigir.
+3. O valor inválido não substitui a última configuração válida.
+
+### Pontos a confirmar e limites do RF148
+
+O defeito foi confirmado pela leitura posterior. O efeito do código inválido nos ambientes online não foi avaliado.
+
 ---
 
 ## 🔗 Rastreabilidade
@@ -3569,6 +3595,7 @@ O resultado cobre a Cor Principal e a amostra da aba Design. A aplicação da co
 | RF145 | [CT-RF145](Cenario_Teste/CT-RF145_Configuracoes_Aniversario_Salvar_WhatsApp_SMS.md) | Nenhum no fluxo avaliado | Aprovado conforme a gravação | [Evidências](Evidencias/CT-RF145_Configuracoes_Aniversario_Salvar_WhatsApp_SMS/README.md) e Jam 1 — Mensagens de aniversário por WhatsApp e SMS (gravação restrita por conter dados de integração) |
 | RF146 | [CT-RF146](Cenario_Teste/CT-RF146_Configuracoes_Pagamento_Online_Desativar.md) | Nenhum no fluxo avaliado | Aprovado conforme a gravação | [Evidências](Evidencias/CT-RF146_Configuracoes_Pagamento_Online_Desativar/README.md) e Jam 2 — Desativação do Pagamento Online (gravação restrita por conter dados de integração) |
 | RF147 | [CT-RF147](Cenario_Teste/CT-RF147_Configuracoes_Design_Salvar_Cor_Principal.md) | Nenhum no fluxo avaliado | Aprovado conforme a gravação | [Evidências](Evidencias/CT-RF147_Configuracoes_Design_Salvar_Cor_Principal/README.md) e Jam 3 — Persistência da Cor Principal (gravação restrita por conter dados de integração) |
+| RF148 | [CT-RF148](Cenario_Teste/CT-RF148_Configuracoes_Design_Validar_Cor_Secundaria.md) | [BUG-051](Relatorio-de-Bugs.md#bug-051), em triagem | Reprovado nas evidências | [Evidências](Evidencias/CT-RF148_Configuracoes_Design_Validar_Cor_Secundaria/README.md) e Jam 4 — Validação da Cor Secundária (gravação restrita por conter dados de integração) |
 
 ---
 
@@ -4443,11 +4470,12 @@ CT-RF139–CT-RF144 cobrem a integração do WhatsApp com gravações de 16/11/2
 
 ### Base da análise de Configurações — revisão de 17/11/2026
 
-CT-RF145–CT-RF147 cobrem funcionalidades de Configurações com gravações de 16/11/2026 entre 23:21:59 e 23:25:27 BRT.
+CT-RF145–CT-RF148 cobrem funcionalidades de Configurações com gravações de 16/11/2026 entre 23:21:59 e 23:26:21 BRT.
 
 - RF145: WhatsApp e SMS e os dois textos de teste reapareceram após recarregar e reabrir Aniversário. Jam 1 — Mensagens de aniversário por WhatsApp e SMS (gravação restrita por conter dados de integração).
 - RF146: A resposta e a tela confirmaram Não após recarregar. O salvamento de restauração para Sim retornou sucesso. Jam 2 — Desativação do Pagamento Online (gravação restrita por conter dados de integração).
 - RF147: O código #663399 persistiu e a aba Design exibiu o valor com a amostra correspondente. Jam 3 — Persistência da Cor Principal (gravação restrita por conter dados de integração).
+- RF148: As duas tentativas com #ZZZZZZ retornaram sucesso. O código fora do conjunto hexadecimal persistiu após recarregar. Jam 4 — Validação da Cor Secundária (gravação restrita por conter dados de integração).
 
 ---
 

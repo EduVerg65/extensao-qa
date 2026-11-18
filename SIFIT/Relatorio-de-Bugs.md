@@ -1,12 +1,12 @@
 # 🐞 Relatório de Bugs — SIFIT
 
-**Escopo:** defeitos de 143 casos documentados (CT-RF01–CT-RF35, CT-RF38–CT-RF62 e CT-RF65–CT-RF147): recuperação, Perfil, Clientes, financeiro, página inicial e dashboard, tema, modalidades, categorias, avaliações, exercícios, grupos musculares, objetivos de treino, SifitBox – Turmas, Pagar.me, configurações, despesas fixas, relatórios, grupos (treino), fichas de anamnese, colaboradores, modelos de anamnese, categorias de anamnese, perguntas de anamnese, Prospecção, Bandeiras de Cartão, Contas a Pagar, Modelos de Contrato, Planos, Tipos de Pagamento, Modelos de Ficha, Central de Automações, Integrações de WhatsApp e Configurações de Aniversário, Pagamento e Design. CT-RF60 (Modelos de Anamnese) e CT-RF61 (Categorias de Anamnese) são aprovados conforme a gravação, sem defeito identificado. CT-RF62 (Perguntas Anamnese) é reprovado nas evidências e acrescenta o BUG-044 (44 defeitos registrados).
+**Escopo:** defeitos de 144 casos documentados (CT-RF01–CT-RF35, CT-RF38–CT-RF62 e CT-RF65–CT-RF148): recuperação, Perfil, Clientes, financeiro, página inicial e dashboard, tema, modalidades, categorias, avaliações, exercícios, grupos musculares, objetivos de treino, SifitBox – Turmas, Pagar.me, configurações, despesas fixas, relatórios, grupos (treino), fichas de anamnese, colaboradores, modelos de anamnese, categorias de anamnese, perguntas de anamnese, Prospecção, Bandeiras de Cartão, Contas a Pagar, Modelos de Contrato, Planos, Tipos de Pagamento, Modelos de Ficha, Central de Automações, Integrações de WhatsApp e Configurações de Aniversário, Pagamento e Design. CT-RF60 (Modelos de Anamnese) e CT-RF61 (Categorias de Anamnese) são aprovados conforme a gravação, sem defeito identificado. CT-RF62 (Perguntas Anamnese) é reprovado nas evidências e acrescenta o BUG-044 (44 defeitos registrados).
 
 **Ambientes:** CT-RF01 em https://sifitalfa.centrion.com.br/login; CT-RF02_ERRO em https://sifit.centrion.com.br/profile. CT-RF03: URL do frontend não confirmada; backend informado em `https://backendsifit.centrion.com.br/api/clientesPorNome/1`.
 
 **Datas das gravações do Jam:** CT-RF01 em 23/10/2026; CT-RF02_ERRO em 22/10/2026 às 21:45 BRT; CT-RF03 não confirmada.
 
-**Atualização documental:** 17/11/2026 — 50 defeitos registrados: 10 abertos (BUG-001 a BUG-010) e 40 em triagem (BUG-011 a BUG-050). BUG-019 registra o HTTP 500 no cadastro de objetivo de treino, BUG-020 a ausência de retorno visível no cadastro de turma sem modalidade, BUG-024 e BUG-025 cobrem Grupos (treino), BUG-026–BUG-031 cobrem Colaboradores e BUG-032 o HTTP 500 no cadastro de anamnese (aplicar e rascunho), todos sem causa técnica confirmada. CT-RF60 (Modelos de Anamnese) e CT-RF61 (Categorias de Anamnese), incluídos em 16/11/2026, são aprovados conforme a gravação e não geram novo defeito. BUG-038 a BUG-041 cobrem Prospecção (telefone), Contas a Pagar, Modelos de Contrato e Planos; BUG-042 e BUG-043 cobrem Tipos de Pagamento (status e exclusão); BUG-044, também em 16/11/2026, registra o HTTP 500 na edição do tipo de resposta de pergunta de anamnese (CT-RF62); BUG-035 e BUG-036 cobrem Bandeiras; BUG-037 registra o relato de cadastro de lead apenas com nome, com regra a confirmar. As análises anteriores foram preservadas.
+**Atualização documental:** 17/11/2026 — 51 defeitos registrados: 10 abertos (BUG-001 a BUG-010) e 41 em triagem (BUG-011 a BUG-051). BUG-019 registra o HTTP 500 no cadastro de objetivo de treino, BUG-020 a ausência de retorno visível no cadastro de turma sem modalidade, BUG-024 e BUG-025 cobrem Grupos (treino), BUG-026–BUG-031 cobrem Colaboradores e BUG-032 o HTTP 500 no cadastro de anamnese (aplicar e rascunho), todos sem causa técnica confirmada. CT-RF60 (Modelos de Anamnese) e CT-RF61 (Categorias de Anamnese), incluídos em 16/11/2026, são aprovados conforme a gravação e não geram novo defeito. BUG-038 a BUG-041 cobrem Prospecção (telefone), Contas a Pagar, Modelos de Contrato e Planos; BUG-042 e BUG-043 cobrem Tipos de Pagamento (status e exclusão); BUG-044, também em 16/11/2026, registra o HTTP 500 na edição do tipo de resposta de pergunta de anamnese (CT-RF62); BUG-035 e BUG-036 cobrem Bandeiras; BUG-037 registra o relato de cadastro de lead apenas com nome, com regra a confirmar. As análises anteriores foram preservadas.
 
 **Gravação de CT-RF104–CT-RF108:** 15/11/2026, Tipos de Pagamento, 22:03 BRT, Chrome 157.0.8103.78 / Windows 11; uma única gravação; evidência e limites no BUG-042 e no BUG-043.
 
@@ -90,8 +90,9 @@
 | [BUG-048](#bug-048) | Configuração de Aniversariantes exibe prévia de risco de evasão | Média / Média, propostas | Em triagem. Reteste após correção. | [CT-RF129](Cenario_Teste/CT-RF129_Central_Aniversariantes_Previa_Risco.md) |
 | [BUG-049](#bug-049) | Contador de automações ativas mantém total anterior após ativar automação | Média / Média, propostas | Em triagem. Reteste após correção. | [CT-RF135](Cenario_Teste/CT-RF135_Central_Desativar_Risco_Evasao_Contador.md) e [CT-RF136](Cenario_Teste/CT-RF136_Central_Ativar_Aniversariantes_Contador.md) |
 | [BUG-050](#bug-050) | API de conexão do WhatsApp indica sucesso quando a tentativa falha | Média / Média, propostas | Em triagem. Reteste após correção. | [CT-RF143](Cenario_Teste/CT-RF143_Integracoes_WhatsApp_Conectar_Evolution.md) |
+| [BUG-051](#bug-051) | Configurações persiste código inválido na Cor Secundária | Média / Média, propostas | Em triagem. Reteste após correção. | [CT-RF148](Cenario_Teste/CT-RF148_Configuracoes_Design_Validar_Cor_Secundaria.md) |
 
-BUG-001–BUG-010 aguardam correção e reteste. BUG-011–BUG-050 aguardam confirmação das premissas e triagem antes do encaminhamento de correção. As causas técnicas permanecem não confirmadas; o BUG-003 se apoia no relato e nas capturas fornecidos, com os limites registrados no caso.
+BUG-001–BUG-010 aguardam correção e reteste. BUG-011–BUG-051 aguardam confirmação das premissas e triagem antes do encaminhamento de correção. As causas técnicas permanecem não confirmadas; o BUG-003 se apoia no relato e nas capturas fornecidos, com os limites registrados no caso.
 
 ---
 
@@ -2109,6 +2110,50 @@ Retestar com falha controlada e configuração válida de controle, conferindo o
 
 ---
 
+<a id="bug-051"></a>
+
+## BUG-051 — Configurações persiste código inválido na Cor Secundária
+
+| Campo | Descrição |
+| --- | --- |
+| Status | Em triagem. Reteste após correção. |
+| Severidade / prioridade | Média / Média, propostas para triagem. |
+| Módulo | Configurações / Design |
+| Requisito | [RF148](Analise%20de%20requisitos.md#rf148) |
+| Caso reprovado | [CT-RF148](Cenario_Teste/CT-RF148_Configuracoes_Design_Validar_Cor_Secundaria.md) |
+| Data da evidência / revisão | 16/11/2026, 23:26:21 BRT / 17/11/2026. |
+| Página | https://sifit.centrion.com.br/configuracoes |
+| Ambiente | Chrome 157.0.8103.79 / Windows 10 (x86). Versão da aplicação e zoom a confirmar. |
+| Frequência conhecida | Duas tentativas de salvamento na mesma gravação e uma leitura posterior. |
+
+### Pré-condições e reprodução
+
+Sessão autenticada em Design e uma Cor Secundária válida salva como referência.
+
+1. Abrir Design e registrar a Cor Secundária salva.
+2. Trocar a Cor Secundária para #ZZZZZZ e salvar.
+3. Conferir a resposta, recarregar e reabrir Design.
+
+### Esperado e obtido
+
+**Esperado:** A interface ou a API rejeita o código #ZZZZZZ com uma mensagem de validação e preserva a cor válida armazenada.
+
+**Obtido:** As duas tentativas retornaram HTTP 200 com `verifica_erro: false`. O GET após recarregar devolveu `cor_secundaria: #ZZZZZZ` e o campo ainda mostrou esse valor ao reabrir a aba. Não houve indicação de rejeição na gravação. Ao reabrir, a amostra da Cor Secundária ficou sem a cor preta original.
+
+### Evidências técnicas
+
+- 0:08,01 e 0:09,20  POST `/api/configuracoes/alterar/1` com `cor_secundaria: #ZZZZZZ` (HTTP 200, `verifica_erro: false`).
+- 0:12,33  GET `/api/configuracoes/1` (HTTP 200), com `cor_secundaria: #ZZZZZZ`.
+- Jam 4 — Validação da Cor Secundária (gravação restrita por conter dados de integração) e [Evidências](Evidencias/CT-RF148_Configuracoes_Design_Validar_Cor_Secundaria/README.md).
+
+### Análise, impacto e encaminhamento
+
+O valor inválido substitui a configuração anterior e pode impedir a aplicação da cor secundária nos ambientes que a usam. O defeito foi confirmado pela leitura posterior. O efeito do código inválido nos ambientes online não foi avaliado.
+
+Retestar com códigos hexadecimais válidos e inválidos e conferir, após cada tentativa, a cor devolvida pela consulta.
+
+---
+
 ## Modelos de Ficha — revisão de 17/11/2026
 
 A revisão de Modelos de Ficha inclui CT-RF109–CT-RF115 com base em 6 gravações do Jam de 16/11/2026. A revisão documental foi feita em 17/11/2026. A triagem documental de [CT-RF109](Cenario_Teste/CT-RF109_Modelo_Ficha_Sem_Nome.md), [CT-RF110](Cenario_Teste/CT-RF110_Cancelar_Cadastro_Modelo_Ficha.md), [CT-RF111](Cenario_Teste/CT-RF111_Busca_Modelo_Ficha_Codigo_Inexistente.md), [CT-RF112](Cenario_Teste/CT-RF112_Busca_Modelo_Ficha_Titulo_Inexistente.md), [CT-RF113](Cenario_Teste/CT-RF113_Busca_Modelo_Ficha_Filtros_Combinados.md), [CT-RF114](Cenario_Teste/CT-RF114_Limpeza_Filtros_Modelos_Ficha.md), [CT-RF115](Cenario_Teste/CT-RF115_Nova_Busca_Modelos_Ficha_Sem_Filtros.md) registrou 4 caso(s) de Modelos de Ficha a validar e zero novos defeitos confirmados.
@@ -2133,9 +2178,9 @@ CT-RF134–CT-RF138 cobrem a Central de Automações com gravações de 16/11/20
 
 CT-RF139–CT-RF144 cobrem a integração do WhatsApp com gravações de 16/11/2026 entre 23:37:22 e 23:45:52 BRT. Casos aprovados: 4. Reprovados: 1. A validar: 1. Defeitos do lote: [BUG-050](#bug-050).
 
-## Configurações — revisão de 17/11/2026 (CT-RF145–CT-RF147)
+## Configurações — revisão de 17/11/2026 (CT-RF145–CT-RF148)
 
-CT-RF145–CT-RF147 cobrem funcionalidades de Configurações com gravações de 16/11/2026 entre 23:21:59 e 23:25:27 BRT. Casos aprovados: 3. Reprovados: 0. A validar: 0.
+CT-RF145–CT-RF148 cobrem funcionalidades de Configurações com gravações de 16/11/2026 entre 23:21:59 e 23:26:21 BRT. Casos aprovados: 3. Reprovados: 1. A validar: 0. Defeitos do lote: [BUG-051](#bug-051).
 
 ## Pontos a validar — sem defeito confirmado
 
@@ -2163,7 +2208,7 @@ CT-RF145–CT-RF147 cobrem funcionalidades de Configurações com gravações de
 | [CT-RF140](Cenario_Teste/CT-RF140_Integracoes_WhatsApp_Validar_URL_API.md) | Isolar a URL no reteste, mantendo a instância e a chave preenchidas, e confirmar o formato aceito com produto. O Nome da Instância vazio impede atribuir a ausência de POST à regra de URL. A gravação não demonstra qual validação bloqueou a tentativa. | Jam 2 — Validação da URL da API (gravação restrita por conter dados de integração) e [Evidências](Evidencias/CT-RF140_Integracoes_WhatsApp_Validar_URL_API/README.md) |
 | [CT-RF127](Cenario_Teste/CT-RF127_Configuracoes_Dias_Ausencia_Texto.md) | Confirmar a regra de vazio com o produto e repetir a digitação e a colagem de texto, conferindo também a recarga. A rejeição da digitação de letras foi observada. A regra para o campo vazio permanece pendente no CT-RF116. A persistência de zero nesta gravação não foi verificada após recarga. | [Jam — PED-18 — Dias de ausência com texto](https://jam.dev/c/c578ed7a-c11c-4cef-8a6c-84d0244f21a5) e [Evidências](Evidencias/CT-RF127_Configuracoes_Dias_Ausencia_Texto/README.md) |
 
-A contagem de 50 defeitos registrados considera os itens do resumo de bugs. BUG-011–BUG-050 estão em triagem. Os pontos desta tabela aguardam confirmação antes de receber um registro de defeito.
+A contagem de 51 defeitos registrados considera os itens do resumo de bugs. BUG-011–BUG-051 estão em triagem. Os pontos desta tabela aguardam confirmação antes de receber um registro de defeito.
 
 
 **Exclusão de exercício:** CT-RF23 está aprovado no trecho consultado, com remoção e total 11 para 10; não gerou defeito adicional. Persistência e efeitos sobre vínculos permanecem como verificações complementares.
