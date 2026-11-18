@@ -1,6 +1,6 @@
 # 🧪 Índice dos cenários de teste — SIFIT
 
-**Atualização:** 17/11/2026. 139 casos documentados: 63 aprovados, 55 reprovados e 21 a validar. 50 defeitos registrados (10 abertos e 40 em triagem) e 55 casos com reteste corretivo pendente. Escopo: CT-RF01–CT-RF35, CT-RF38–CT-RF62 e CT-RF65–CT-RF143.
+**Atualização:** 17/11/2026. 140 casos documentados: 64 aprovados, 55 reprovados e 21 a validar. 50 defeitos registrados (10 abertos e 40 em triagem) e 55 casos com reteste corretivo pendente. Escopo: CT-RF01–CT-RF35, CT-RF38–CT-RF62 e CT-RF65–CT-RF144.
 
 | Caso | Funcionalidade | Resultado | Defeito | Jam |
 | --- | --- | --- | --- | --- |
@@ -337,7 +337,7 @@ CT-RF128–CT-RF133 cobre Inteligência e Automação com gravações de 16/11/2
 
 CT-RF134–CT-RF138 cobrem a Central de Automações com gravações de 16/11/2026 entre 21:25:26 e 21:38:29 BRT. A revisão é documental.
 
-## Inclusão de 17/11/2026 — Configurações / Integrações / WhatsApp (CT-RF139–CT-RF143)
+## Inclusão de 17/11/2026 — Configurações / Integrações / WhatsApp (CT-RF139–CT-RF144)
 
 | Caso | Funcionalidade | Resultado | Defeito | Jam |
 | --- | --- | --- | --- | --- |
@@ -346,7 +346,8 @@ CT-RF134–CT-RF138 cobrem a Central de Automações com gravações de 16/11/20
 | [CT-RF141](CT-RF141_Integracoes_WhatsApp_Instancia_Obrigatoria.md) | Bloquear o salvamento com Nome da Instância vazio | Aprovado conforme a gravação | — | Jam 3 — Obrigatoriedade do Nome da Instância (gravação restrita por conter dados de integração) |
 | [CT-RF142](CT-RF142_Integracoes_WhatsApp_Persistir_Ativo.md) | Persistir a opção Ativo da integração de WhatsApp | Aprovado conforme a gravação | — | Jam 4 — Persistência da opção Ativo (gravação restrita por conter dados de integração) |
 | [CT-RF143](CT-RF143_Integracoes_WhatsApp_Conectar_Evolution.md) | Tratar falha ao conectar WhatsApp via Evolution API | Reprovado nas evidências | [BUG-050](../Relatorio-de-Bugs.md#bug-050), em triagem | Jam 5 — Tentativas de conexão pela Evolution API (gravação restrita por conter dados de integração) |
+| [CT-RF144](CT-RF144_Integracoes_WhatsApp_Atualizar_Status.md) | Consultar novamente o status da integração de WhatsApp | Aprovado conforme a gravação | [BUG-050](../Relatorio-de-Bugs.md#bug-050) na tentativa posterior de conexão | Jam 6 — Atualização manual de status (gravação restrita por conter dados de integração) |
 
-CT-RF139–CT-RF143 cobrem a integração do WhatsApp com gravações de 16/11/2026 entre 23:37:22 e 23:44:10 BRT. A revisão é documental.
+CT-RF139–CT-RF144 cobrem a integração do WhatsApp com gravações de 16/11/2026 entre 23:37:22 e 23:45:52 BRT. A revisão é documental.
 
 [← Início](../../README.md) · [Requisitos](../Analise%20de%20requisitos.md) · [Plano](../Plano%20de%20testes.md) · [Evidências](../Evidencias/README.md)

@@ -1,0 +1,23 @@
+CT-RF144 — Consultar novamente o status da integração de WhatsApp
+Fonte: Jam 6 — Atualização manual de status. Gravação restrita por conter dados de integração.
+Gravação: 16/11/2026, 23:45:52 BRT. Duração: 18,67 s.
+Revisão documental: 17/11/2026.
+Página: https://sifit.centrion.com.br/configuracoes
+Foco deste caso: Verificar se Atualizar Status reconsulta o serviço e devolve o estado atual da integração.
+
+Cronologia (ações e eventos capturados no Jam):
+0:04–0:08  Aciona Atualizar cinco vezes. A consulta retorna desconectado em todas elas.
+0:13–0:14  Aciona Atualizar mais duas vezes. O horário da última verificação avança na resposta.
+0:14–0:18  Aciona Conectar WhatsApp em uma ação posterior. A tela mostra “Erro ao conectar”.
+
+Rede do conjunto gravado (eventos relevantes ao caso):
+0:04,86–0:13,81  Sete GETs /api/empresa/whatsapp/status/1 (HTTP 200), status: desconectado e conectado: false. O campo ultima_verificacao avançou nas respostas.
+0:14,84  POST /api/empresa/whatsapp/conectar/1 (HTTP 200), com mensagem “Erro ao conectar” e verifica_erro: false. Esse evento pertence à ação de conexão.
+
+Quadros consultados (reprodução do Jam):
+- Cartão Atualizar Status durante a sequência de consultas.
+- Mensagem exibida após a tentativa adicional de conexão.
+
+Observações e verificações futuras:
+- A aprovação cobre o comando de consulta e a resposta em estado desconectado. A gravação não mostra a atualização visual do cartão de resumo após os cliques. A conexão posterior tem evidência vinculada ao BUG-050.
+- Usar como regressão de consulta e retestar a transição de estado e a atualização visual do resumo com um provedor de teste.

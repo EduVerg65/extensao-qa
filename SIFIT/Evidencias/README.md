@@ -198,7 +198,7 @@ CT-RF128–CT-RF133 cobre Inteligência e Automação com gravações de 16/11/2
 
 CT-RF134–CT-RF138 cobrem a Central de Automações com gravações de 16/11/2026 entre 21:25:26 e 21:38:29 BRT. As pastas reúnem origem, cronologia e recortes identificados com SHA-256.
 
-## Inclusão de 17/11/2026 — Configurações / Integrações / WhatsApp (CT-RF139–CT-RF143)
+## Inclusão de 17/11/2026 — Configurações / Integrações / WhatsApp (CT-RF139–CT-RF144)
 
 | Caso | Evidência | Resultado |
 | --- | --- | --- |
@@ -207,5 +207,6 @@ CT-RF134–CT-RF138 cobrem a Central de Automações com gravações de 16/11/20
 | [CT-RF141](../Cenario_Teste/CT-RF141_Integracoes_WhatsApp_Instancia_Obrigatoria.md) | [Bloquear o salvamento com Nome da Instância vazio](CT-RF141_Integracoes_WhatsApp_Instancia_Obrigatoria/README.md) | Aprovado conforme a gravação |
 | [CT-RF142](../Cenario_Teste/CT-RF142_Integracoes_WhatsApp_Persistir_Ativo.md) | [Persistir a opção Ativo da integração de WhatsApp](CT-RF142_Integracoes_WhatsApp_Persistir_Ativo/README.md) | Aprovado conforme a gravação |
 | [CT-RF143](../Cenario_Teste/CT-RF143_Integracoes_WhatsApp_Conectar_Evolution.md) | [Tratar falha ao conectar WhatsApp via Evolution API](CT-RF143_Integracoes_WhatsApp_Conectar_Evolution/README.md) | Reprovado nas evidências |
+| [CT-RF144](../Cenario_Teste/CT-RF144_Integracoes_WhatsApp_Atualizar_Status.md) | [Consultar novamente o status da integração de WhatsApp](CT-RF144_Integracoes_WhatsApp_Atualizar_Status/README.md) | Aprovado conforme a gravação |
 
-CT-RF139–CT-RF143 cobrem a integração do WhatsApp com gravações de 16/11/2026 entre 23:37:22 e 23:44:10 BRT. As pastas reúnem origem, cronologia e recortes identificados com SHA-256.
+CT-RF139–CT-RF144 cobrem a integração do WhatsApp com gravações de 16/11/2026 entre 23:37:22 e 23:45:52 BRT. As pastas reúnem origem, cronologia e recortes identificados com SHA-256.

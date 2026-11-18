@@ -1,6 +1,6 @@
 # 🐞 Relatório de Bugs — SIFIT
 
-**Escopo:** defeitos de 139 casos documentados (CT-RF01–CT-RF35, CT-RF38–CT-RF62 e CT-RF65–CT-RF143): recuperação, Perfil, Clientes, financeiro, página inicial e dashboard, tema, modalidades, categorias, avaliações, exercícios, grupos musculares, objetivos de treino, SifitBox – Turmas, Pagar.me, configurações, despesas fixas, relatórios, grupos (treino), fichas de anamnese, colaboradores, modelos de anamnese, categorias de anamnese, perguntas de anamnese, Prospecção, Bandeiras de Cartão, Contas a Pagar, Modelos de Contrato, Planos, Tipos de Pagamento, Modelos de Ficha, Central de Automações e Integrações de WhatsApp. CT-RF60 (Modelos de Anamnese) e CT-RF61 (Categorias de Anamnese) são aprovados conforme a gravação, sem defeito identificado. CT-RF62 (Perguntas Anamnese) é reprovado nas evidências e acrescenta o BUG-044 (44 defeitos registrados).
+**Escopo:** defeitos de 140 casos documentados (CT-RF01–CT-RF35, CT-RF38–CT-RF62 e CT-RF65–CT-RF144): recuperação, Perfil, Clientes, financeiro, página inicial e dashboard, tema, modalidades, categorias, avaliações, exercícios, grupos musculares, objetivos de treino, SifitBox – Turmas, Pagar.me, configurações, despesas fixas, relatórios, grupos (treino), fichas de anamnese, colaboradores, modelos de anamnese, categorias de anamnese, perguntas de anamnese, Prospecção, Bandeiras de Cartão, Contas a Pagar, Modelos de Contrato, Planos, Tipos de Pagamento, Modelos de Ficha, Central de Automações e Integrações de WhatsApp. CT-RF60 (Modelos de Anamnese) e CT-RF61 (Categorias de Anamnese) são aprovados conforme a gravação, sem defeito identificado. CT-RF62 (Perguntas Anamnese) é reprovado nas evidências e acrescenta o BUG-044 (44 defeitos registrados).
 
 **Ambientes:** CT-RF01 em https://sifitalfa.centrion.com.br/login; CT-RF02_ERRO em https://sifit.centrion.com.br/profile. CT-RF03: URL do frontend não confirmada; backend informado em `https://backendsifit.centrion.com.br/api/clientesPorNome/1`.
 
@@ -2077,7 +2077,7 @@ Retestar a ativação e a desativação de cada automação. Comparar o valor de
 | Data da evidência / revisão | 16/11/2026, 23:44:10 BRT / 17/11/2026. |
 | Página | https://sifit.centrion.com.br/configuracoes |
 | Ambiente | Chrome 157.0.8103.79 / Windows 10 (x86). Versão da aplicação e zoom a confirmar. |
-| Frequência conhecida | Duas tentativas na gravação principal. |
+| Frequência conhecida | Três tentativas em duas gravações. |
 
 ### Pré-condições e reprodução
 
@@ -2099,6 +2099,7 @@ Sessão autenticada na integração de WhatsApp com um provedor de teste. Prepar
 - 0:02,48 e 0:12,94  POST `/api/empresa/whatsapp/conectar/1` (HTTP 200). As duas respostas indicaram falha na mensagem com `verifica_erro: false`, `status: conectando` e `conectado: false`.
 - 0:08,59–0:08,72  O POST de configuração confirmou o salvamento de Ativo. O GET trouxe `ativo: true` e `status: desconectado` antes da segunda tentativa.
 - Jam 5 — Tentativas de conexão pela Evolution API (gravação restrita por conter dados de integração) e [Evidências](Evidencias/CT-RF143_Integracoes_WhatsApp_Conectar_Evolution/README.md).
+- [CT-RF144](Cenario_Teste/CT-RF144_Integracoes_WhatsApp_Atualizar_Status.md), evidência complementar de conexão após as consultas de status. 0:14,84  POST `/api/empresa/whatsapp/conectar/1` (HTTP 200), com mensagem “Erro ao conectar” e `verifica_erro: false`. Esse evento pertence à ação de conexão. [Evidências](Evidencias/CT-RF144_Integracoes_WhatsApp_Atualizar_Status/README.md).
 
 ### Análise, impacto e encaminhamento
 
@@ -2128,9 +2129,9 @@ CT-RF128–CT-RF133 cobre Inteligência e Automação com gravações de 16/11/2
 
 CT-RF134–CT-RF138 cobrem a Central de Automações com gravações de 16/11/2026 entre 21:25:26 e 21:38:29 BRT. Casos aprovados: 3. Reprovados: 2. A validar: 0. Defeitos do lote: [BUG-049](#bug-049).
 
-## Configurações / Integrações / WhatsApp — revisão de 17/11/2026 (CT-RF139–CT-RF143)
+## Configurações / Integrações / WhatsApp — revisão de 17/11/2026 (CT-RF139–CT-RF144)
 
-CT-RF139–CT-RF143 cobrem a integração do WhatsApp com gravações de 16/11/2026 entre 23:37:22 e 23:44:10 BRT. Casos aprovados: 3. Reprovados: 1. A validar: 1. Defeitos do lote: [BUG-050](#bug-050).
+CT-RF139–CT-RF144 cobrem a integração do WhatsApp com gravações de 16/11/2026 entre 23:37:22 e 23:45:52 BRT. Casos aprovados: 4. Reprovados: 1. A validar: 1. Defeitos do lote: [BUG-050](#bug-050).
 
 ## Pontos a validar — sem defeito confirmado
 
