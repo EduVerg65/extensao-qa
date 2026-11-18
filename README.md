@@ -2,24 +2,24 @@
 
 Repositório de documentação de QA manual do **SIFIT**, sistema de gestão de academias. Reúne requisitos, plano, cenários BDD, resultados, defeitos e evidências com links do Jam.
 
-**Atualização documental:** 18/11/2026. Integrados CT-RF157–CT-RF164 e RF157–RF164 para Aplicativo e Configurações / Biometria. A revisão utiliza gravações e eventos do Jam.
+**Atualização documental:** 18/11/2026. Integrados CT-RF157–CT-RF165 e RF157–RF165 para Aplicativo e Configurações / Biometria. A revisão utiliza gravações e eventos do Jam.
 
 ## 📊 Situação consolidada
 
 | Cenários documentados | Aprovados | Reprovados | A validar | Defeitos registrados | Casos com reteste corretivo pendente |
 | :---: | :---: | :---: | :---: | :---: | :---: |
-| 160 | 81 | 58 | 21 | 53 (10 abertos + 43 em triagem) | 58 |
+| 161 | 81 | 59 | 21 | 54 (10 abertos + 44 em triagem) | 59 |
 
-As classificações se baseiam nas fontes indicadas em cada cenário. CT-RF09/10 compartilham BUG-005 e CT-RF53–CT-RF56 compartilham BUG-023. CT-RF135 e CT-RF136 compartilham o BUG-049. As 58 reprovações correspondem a 53 defeitos registrados. BUG-011–BUG-053 aguardam triagem.
+As classificações se baseiam nas fontes indicadas em cada cenário. CT-RF09/10 compartilham BUG-005 e CT-RF53–CT-RF56 compartilham BUG-023. CT-RF135 e CT-RF136 compartilham o BUG-049. As 59 reprovações correspondem a 54 defeitos registrados. BUG-011–BUG-054 aguardam triagem.
 
 ## 📚 Documentos do projeto
 
 | Documento | Conteúdo |
 | --- | --- |
-| [Análise de requisitos](SIFIT/Analise%20de%20requisitos.md) | RF01–RF35, RF38–RF62 e RF65–RF164, critérios de aceitação, dúvidas de regra e rastreabilidade. |
+| [Análise de requisitos](SIFIT/Analise%20de%20requisitos.md) | RF01–RF35, RF38–RF62 e RF65–RF165, critérios de aceitação, dúvidas de regra e rastreabilidade. |
 | [Plano de testes](SIFIT/Plano%20de%20testes.md) | Escopo, ambientes, preparação, critérios, regressão e retestes. |
-| [Índice dos cenários](SIFIT/Cenario_Teste/README.md) | 160 cenários com pré-condições, BDD, passos, esperado, obtido e encaminhamento. |
-| [Relatório de bugs](SIFIT/Relatorio-de-Bugs.md) | BUG-001–BUG-053: reprodução, impacto, evidências, severidade/prioridade propostas e reteste. |
+| [Índice dos cenários](SIFIT/Cenario_Teste/README.md) | 161 cenários com pré-condições, BDD, passos, esperado, obtido e encaminhamento. |
+| [Relatório de bugs](SIFIT/Relatorio-de-Bugs.md) | BUG-001–BUG-054: reprodução, impacto, evidências, severidade/prioridade propostas e reteste. |
 | [Relatório dos testes](SIFIT/Relatorio%20dos%20testes.md) | Resultados consolidados, cobertura, limites e pendências. |
 | [Índice das evidências](SIFIT/Evidencias/README.md) | Jam por cenário e arquivos locais dos novos casos. |
 
@@ -193,6 +193,7 @@ extensao-qa/
 | [CT-RF162](SIFIT/Cenario_Teste/CT-RF162_Configuracoes_Biometria_Cancelar_Edicao_Senha.md) | Cancelar a edição da senha de Biometria | Aprovado conforme a gravação | — | Jam 6 — Cancelamento da edição no formulário de Biometria (gravação restrita por conter dados de integração ou dados de alunos) |
 | [CT-RF163](SIFIT/Cenario_Teste/CT-RF163_Configuracoes_Biometria_Rejeitar_IP_Invalido.md) | Rejeitar um valor sem formato de IP em Biometria | Reprovado nas evidências | [BUG-053](SIFIT/Relatorio-de-Bugs.md#bug-053), em triagem | Jam 7 — Validação de IP do aparelho (gravação restrita por conter dados de integração ou dados de alunos) |
 | [CT-RF164](SIFIT/Cenario_Teste/CT-RF164_Configuracoes_Biometria_Persistir_Porta.md) | Persistir a alteração da porta do aparelho de Biometria | Aprovado conforme a gravação | — | Jam 8 — Persistência da porta do aparelho (gravação restrita por conter dados de integração ou dados de alunos) |
+| [CT-RF165](SIFIT/Cenario_Teste/CT-RF165_Configuracoes_Biometria_Validar_Dias_Bloqueio.md) | Validar dias negativos para travar a catraca | Reprovado nas evidências | [BUG-054](SIFIT/Relatorio-de-Bugs.md#bug-054), em triagem | Jam 9 — Validação de dias de bloqueio da catraca (gravação restrita por conter dados de integração ou dados de alunos) |
 
 ## 🔬 Como este projeto funciona
 

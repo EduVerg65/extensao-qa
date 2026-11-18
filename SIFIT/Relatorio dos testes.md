@@ -1,10 +1,10 @@
 # 📊 Relatório de Testes — SIFIT
 
-**Escopo:** 160 casos documentados (CT-RF01–CT-RF35, CT-RF38–CT-RF62 e CT-RF65–CT-RF164) — autenticação, recuperação, perfil, Clientes, financeiro, página inicial e dashboard, modalidades / tema de SifitBox, Categorias Crossfit, Avaliações, Exercícios, Grupos Musculares, Objetivos de Treino cadastro de categorias com código automático, SifitBox – Turmas, Pagar.me, Configurações, Despesas Fixas, Relatórios, Grupos (treino), Fichas de Anamnese, gestão de Modelos de Anamnese, gestão de Categorias de Anamnese, edição de Perguntas Anamnese, validações/funções/exclusão/busca de Colaboradores, Prospecção, Bandeiras de Cartão, Contas a Pagar, Modelos de Contrato, Planos, Tipos de Pagamento, Modelos de Ficha, Central de Automações, Integrações de WhatsApp e Configurações de Avaliação, Aniversário, Pagamento, Design e Biometria, além de Aplicativo.
+**Escopo:** 161 casos documentados (CT-RF01–CT-RF35, CT-RF38–CT-RF62 e CT-RF65–CT-RF165) — autenticação, recuperação, perfil, Clientes, financeiro, página inicial e dashboard, modalidades / tema de SifitBox, Categorias Crossfit, Avaliações, Exercícios, Grupos Musculares, Objetivos de Treino cadastro de categorias com código automático, SifitBox – Turmas, Pagar.me, Configurações, Despesas Fixas, Relatórios, Grupos (treino), Fichas de Anamnese, gestão de Modelos de Anamnese, gestão de Categorias de Anamnese, edição de Perguntas Anamnese, validações/funções/exclusão/busca de Colaboradores, Prospecção, Bandeiras de Cartão, Contas a Pagar, Modelos de Contrato, Planos, Tipos de Pagamento, Modelos de Ficha, Central de Automações, Integrações de WhatsApp e Configurações de Avaliação, Aniversário, Pagamento, Design e Biometria, além de Aplicativo.
 
-**Datas das gravações do Jam:** CT-RF01 em 23/10/2026; CT-RF02_ERRO em 22/10/2026 às 21:45 BRT; CT-RF03 não confirmada; CT-RF04_loginComSucesso em 13/11/2026; CT-RF05–CT-RF20 em 14/11/2026; CT-RF21 em 15/11/2026 às 15:07:51,265 BRT; CT-RF22–28 em 15/11/2026 às 15:25, 15:40, 15:38, 15:35, 16:11, 16:08 e 16:07 BRT; CT-RF29–33 em 15/11/2026 às 15h56 BRT (uma única gravação); CT-RF34 em 15/11/2026 às 17:23 BRT; CT-RF35 em 15/11/2026 às 18:13 BRT; CT-RF38 em 15/11/2026 às 18:41 BRT; CT-RF39–41 em 15/11/2026 às 18:51 BRT (uma única gravação); CT-RF42–45 às 19:06, CT-RF46–49 às 19:07 e CT-RF50–56 às 19:09 BRT (uma gravação por grupo); CT-RF57 e CT-RF58 em 15/11/2026 às 21h03 BRT (mesma gravação); CT-RF59 em 15/11/2026 às 22h07 BRT; CT-RF60 em 15/11/2026 às 23h34 BRT; CT-RF61 em 16/11/2026 às 15h24 BRT; CT-RF62 em 16/11/2026 às 15h57 BRT. CT-RF74–CT-RF84: 16/11/2026 conforme os resumos, sem horário informado. CT-RF85–90 às 21:52, CT-RF91–95 às 21:58, CT-RF96–98 às 21:55 e CT-RF99–103 às 21:54 e CT-RF104–108 às 22:03 BRT em 15/11/2026 (uma gravação por grupo). CT-RF109–CT-RF115 em 16/11/2026 entre 22:19:51 e 22:29:07 BRT. CT-RF116–CT-RF121 amplia a cobertura de Configurações e Modelos de Ficha com gravações de 16/11/2026 entre 22:03:53 e 22:18:52 BRT. CT-RF122–CT-RF127 cobre Inteligência e Configurações com gravações de 16/11/2026 entre 21:50:51 e 22:02:16 BRT. CT-RF128–CT-RF133 cobre Inteligência e Automação com gravações de 16/11/2026 entre 21:40:31 e 21:49:48 BRT. CT-RF134–CT-RF138 cobrem a Central de Automações com gravações de 16/11/2026 entre 21:25:26 e 21:38:29 BRT. CT-RF139–CT-RF144 cobrem a integração do WhatsApp com gravações de 16/11/2026 entre 23:37:22 e 23:45:52 BRT. CT-RF145–CT-RF150 cobrem funcionalidades de Configurações com gravações de 16/11/2026 entre 23:21:59 e 23:36:13 BRT. CT-RF151–CT-RF156 cobrem as abas Avaliação e Aniversário com gravações de 16/11/2026 entre 23:10:04 e 23:20:07 BRT. CT-RF157–CT-RF164 cobrem Aplicativo e a aba Biometria com gravações de 16/11/2026 entre 22:39:05 e 23:05:55 BRT.
+**Datas das gravações do Jam:** CT-RF01 em 23/10/2026; CT-RF02_ERRO em 22/10/2026 às 21:45 BRT; CT-RF03 não confirmada; CT-RF04_loginComSucesso em 13/11/2026; CT-RF05–CT-RF20 em 14/11/2026; CT-RF21 em 15/11/2026 às 15:07:51,265 BRT; CT-RF22–28 em 15/11/2026 às 15:25, 15:40, 15:38, 15:35, 16:11, 16:08 e 16:07 BRT; CT-RF29–33 em 15/11/2026 às 15h56 BRT (uma única gravação); CT-RF34 em 15/11/2026 às 17:23 BRT; CT-RF35 em 15/11/2026 às 18:13 BRT; CT-RF38 em 15/11/2026 às 18:41 BRT; CT-RF39–41 em 15/11/2026 às 18:51 BRT (uma única gravação); CT-RF42–45 às 19:06, CT-RF46–49 às 19:07 e CT-RF50–56 às 19:09 BRT (uma gravação por grupo); CT-RF57 e CT-RF58 em 15/11/2026 às 21h03 BRT (mesma gravação); CT-RF59 em 15/11/2026 às 22h07 BRT; CT-RF60 em 15/11/2026 às 23h34 BRT; CT-RF61 em 16/11/2026 às 15h24 BRT; CT-RF62 em 16/11/2026 às 15h57 BRT. CT-RF74–CT-RF84: 16/11/2026 conforme os resumos, sem horário informado. CT-RF85–90 às 21:52, CT-RF91–95 às 21:58, CT-RF96–98 às 21:55 e CT-RF99–103 às 21:54 e CT-RF104–108 às 22:03 BRT em 15/11/2026 (uma gravação por grupo). CT-RF109–CT-RF115 em 16/11/2026 entre 22:19:51 e 22:29:07 BRT. CT-RF116–CT-RF121 amplia a cobertura de Configurações e Modelos de Ficha com gravações de 16/11/2026 entre 22:03:53 e 22:18:52 BRT. CT-RF122–CT-RF127 cobre Inteligência e Configurações com gravações de 16/11/2026 entre 21:50:51 e 22:02:16 BRT. CT-RF128–CT-RF133 cobre Inteligência e Automação com gravações de 16/11/2026 entre 21:40:31 e 21:49:48 BRT. CT-RF134–CT-RF138 cobrem a Central de Automações com gravações de 16/11/2026 entre 21:25:26 e 21:38:29 BRT. CT-RF139–CT-RF144 cobrem a integração do WhatsApp com gravações de 16/11/2026 entre 23:37:22 e 23:45:52 BRT. CT-RF145–CT-RF150 cobrem funcionalidades de Configurações com gravações de 16/11/2026 entre 23:21:59 e 23:36:13 BRT. CT-RF151–CT-RF156 cobrem as abas Avaliação e Aniversário com gravações de 16/11/2026 entre 23:10:04 e 23:20:07 BRT. CT-RF157–CT-RF165 cobrem Aplicativo e a aba Biometria com gravações de 16/11/2026 entre 22:39:05 e 23:07:08 BRT.
 
-**Data da revisão documental:** 18/11/2026, com integração de CT-RF157–CT-RF164 (Aplicativo e Configurações / Biometria).
+**Data da revisão documental:** 18/11/2026, com integração de CT-RF157–CT-RF165 (Aplicativo e Configurações / Biometria).
 
 **Origem do resultado:** análise de evidências fornecidas; sem nova execução no sistema nesta revisão.
 
@@ -46,11 +46,11 @@ CT-RF145–CT-RF150 cobrem funcionalidades de Configurações com gravações de
 
 CT-RF151–CT-RF156 cobrem as abas Avaliação e Aniversário com gravações de 16/11/2026 entre 23:10:04 e 23:20:07 BRT. Casos aprovados: 6. Reprovados: 0. A validar: 0.
 
-CT-RF157–CT-RF164 cobrem Aplicativo e a aba Biometria com gravações de 16/11/2026 entre 22:39:05 e 23:05:55 BRT. Casos aprovados: 7. Reprovados: 1. A validar: 0.
+CT-RF157–CT-RF165 cobrem Aplicativo e a aba Biometria com gravações de 16/11/2026 entre 22:39:05 e 23:07:08 BRT. Casos aprovados: 7. Reprovados: 2. A validar: 0.
 
 | Casos documentados | Aprovados | Reprovados | A validar | Defeitos registrados | Casos com reteste corretivo pendente |
 | :---: | :---: | :---: | :---: | :---: | :---: |
-| 160 | 81 | 58 | 21 | 53 (10 abertos + 43 em triagem) | 58 |
+| 161 | 81 | 59 | 21 | 54 (10 abertos + 44 em triagem) | 59 |
 
 Os 48 retestes incluem CT-RF22/24/26/27/28/29/30/35/41/45/51/53/54/55/56/57/58/59/62/65/66/67/68/69/70/71/73/81/82/83/89/92/98/102/105/107, sujeitos à confirmação funcional e técnica. As contagens representam os casos documentados com base nas fontes indicadas, sem novas execuções nesta revisão. As nove variações planejadas para o reteste do CT-RF03 não foram executadas e não são contabilizadas como testes adicionais realizados.
 
@@ -217,6 +217,7 @@ Os 48 retestes incluem CT-RF22/24/26/27/28/29/30/35/41/45/51/53/54/55/56/57/58/5
 | [CT-RF162](Cenario_Teste/CT-RF162_Configuracoes_Biometria_Cancelar_Edicao_Senha.md) | [RF162](Analise%20de%20requisitos.md#rf162) | Cancelar sai de Biometria e a edição de Senha é descartada. | A edição foi descartada e a tela retornou à Página Inicial sem POST de configuração. | Aprovado conforme a gravação | Nenhum no fluxo avaliado |
 | [CT-RF163](Cenario_Teste/CT-RF163_Configuracoes_Biometria_Rejeitar_IP_Invalido.md) | [RF163](Analise%20de%20requisitos.md#rf163) | A aplicação recusa a entrada sem formato de IP, informa o campo a corrigir e mantém a configuração anterior. | Um valor sem formato de IP foi salvo e apareceu na consulta e no campo após recarregar. | Reprovado nas evidências | [BUG-053](Relatorio-de-Bugs.md#bug-053), em triagem |
 | [CT-RF164](Cenario_Teste/CT-RF164_Configuracoes_Biometria_Persistir_Porta.md) | [RF164](Analise%20de%20requisitos.md#rf164) | O salvamento aceita o número de porta de teste. A consulta após recarregar devolve o mesmo valor enviado. | A porta alterada no POST foi confirmada no GET após recarga. A restauração retornou sucesso. | Aprovado conforme a gravação | Nenhum no fluxo avaliado |
+| [CT-RF165](Cenario_Teste/CT-RF165_Configuracoes_Biometria_Validar_Dias_Bloqueio.md) | [RF165](Analise%20de%20requisitos.md#rf165) | A interface recusa a entrada negativa com mensagem de validação ou, conforme a regra do produto, informa o valor válido que foi aplicado. | A API confirmou o salvamento de -1. A leitura posterior trouxe 0 e a gravação não mostrou explicação para a diferença. | Reprovado nas evidências | [BUG-054](Relatorio-de-Bugs.md#bug-054), em triagem |
 
 ---
 
@@ -275,6 +276,7 @@ Os 48 retestes incluem CT-RF22/24/26/27/28/29/30/35/41/45/51/53/54/55/56/57/58/5
 | [BUG-051](Relatorio-de-Bugs.md#bug-051) | Configurações persiste código inválido na Cor Secundária | Média, proposta | Média, proposta | Em triagem. Reteste após correção. |
 | [BUG-052](Relatorio-de-Bugs.md#bug-052) | Design omite o limite de 6 MB ao rejeitar o salvamento do logo | Baixa, proposta | Baixa, proposta | Em triagem. Reteste após correção. |
 | [BUG-053](Relatorio-de-Bugs.md#bug-053) | Biometria persiste valor sem formato de IP no campo do aparelho | Média, proposta | Média, proposta | Em triagem. Reteste após correção. |
+| [BUG-054](Relatorio-de-Bugs.md#bug-054) | Biometria confirma salvamento de dias de bloqueio negativos sem informar a correção | Baixa, proposta | Baixa, proposta | Em triagem. Reteste após correção. |
 
 As classificações propostas dependem de triagem. O BUG-003 mantém o resultado atribuído ao relato fornecido.
 
@@ -648,14 +650,14 @@ O domínio do CT-RF02_ERRO é diferente do domínio `sifitalfa.centrion.com.br` 
 | Dados e permissões | Conta com permissão para editar Configurações. Preparar valores de referência nos seletores de Avaliação e uma mensagem de WhatsApp cadastrada na aba Aniversário. |
 | Preparação | Registrar valores iniciais, conferir a consulta após salvar ou cancelar e usar dados de teste nas mensagens. |
 
-### Aplicativo e Configurações / Biometria (CT-RF157–CT-RF164)
+### Aplicativo e Configurações / Biometria (CT-RF157–CT-RF165)
 
 | Item | Definição |
 | --- | --- |
 | Páginas | https://sifit.centrion.com.br/aplicativo, https://sifit.centrion.com.br/configuracoes |
 | Backend de referência | https://backendsifit.centrion.com.br |
 | Navegador / sistema / vídeo | Chrome 157.0.8103.79 / Windows 10 (x86) / 1918 × 998. |
-| Gravações | 16/11/2026 entre 22:39:05 e 23:05:55 BRT. |
+| Gravações | 16/11/2026 entre 22:39:05 e 23:07:08 BRT. |
 | Dados e permissões | Conta de teste com acesso a Aplicativo e Configurações. Preparar avisos e registros de teste e valores conhecidos para o aparelho de Biometria. |
 | Preparação | Conferir a requisição e a interface quando aplicável. Usar recortes que preservem credenciais, valores de conexão e dados de alunos. |
 
@@ -774,6 +776,7 @@ O domínio do CT-RF02_ERRO é diferente do domínio `sifitalfa.centrion.com.br` 
 | Jam 6 — Cancelamento da edição no formulário de Biometria (gravação restrita por conter dados de integração ou dados de alunos) e [Evidências](Evidencias/CT-RF162_Configuracoes_Biometria_Cancelar_Edicao_Senha/README.md) | CT-RF162: A edição foi descartada e a tela retornou à Página Inicial sem POST de configuração. |
 | Jam 7 — Validação de IP do aparelho (gravação restrita por conter dados de integração ou dados de alunos) e [Evidências](Evidencias/CT-RF163_Configuracoes_Biometria_Rejeitar_IP_Invalido/README.md) | CT-RF163: Um valor sem formato de IP foi salvo e apareceu na consulta e no campo após recarregar. |
 | Jam 8 — Persistência da porta do aparelho (gravação restrita por conter dados de integração ou dados de alunos) e [Evidências](Evidencias/CT-RF164_Configuracoes_Biometria_Persistir_Porta/README.md) | CT-RF164: A porta alterada no POST foi confirmada no GET após recarga. A restauração retornou sucesso. |
+| Jam 9 — Validação de dias de bloqueio da catraca (gravação restrita por conter dados de integração ou dados de alunos) e [Evidências](Evidencias/CT-RF165_Configuracoes_Biometria_Validar_Dias_Bloqueio/README.md) | CT-RF165: A API confirmou o salvamento de -1. A leitura posterior trouxe 0 e a gravação não mostrou explicação para a diferença. |
 
 A mensagem de credenciais incorretas já aparece no início do vídeo do Jam; não foi considerada uma resposta ao clique em "Esqueci minha senha". A ausência de requisição, isoladamente, não caracteriza defeito se a interface abrir um formulário local. Aqui, o resultado reprovado decorre de o fluxo não abrir.
 
@@ -1223,7 +1226,7 @@ Na inclusão dos CT-RF145 a CT-RF150, o consolidado era de 146 casos documentado
 
 Na inclusão dos CT-RF151 a CT-RF156, o consolidado era de 152 casos documentados: 74 aprovados, 57 reprovados e 21 a validar. 52 defeitos registrados (10 abertos e 42 em triagem) e 57 casos com reteste corretivo pendente.
 
-## Inclusão de 18/11/2026 — Aplicativo e Configurações / Biometria (CT-RF157–CT-RF164)
+## Inclusão de 18/11/2026 — Aplicativo e Configurações / Biometria (CT-RF157–CT-RF165)
 
 | Caso | Situação | Encaminhamento |
 | --- | --- | --- |
@@ -1235,8 +1238,9 @@ Na inclusão dos CT-RF151 a CT-RF156, o consolidado era de 152 casos documentado
 | [CT-RF162](Cenario_Teste/CT-RF162_Configuracoes_Biometria_Cancelar_Edicao_Senha.md) | Aprovado conforme a gravação | Usar como regressão do cancelamento e repetir com outros campos de Biometria em um ambiente de teste. |
 | [CT-RF163](Cenario_Teste/CT-RF163_Configuracoes_Biometria_Rejeitar_IP_Invalido.md) | Reprovado nas evidências | Confirmar o formato aceito pelo produto e retestar com endereços válidos e entradas inválidas em um equipamento de teste. |
 | [CT-RF164](Cenario_Teste/CT-RF164_Configuracoes_Biometria_Persistir_Porta.md) | Aprovado conforme a gravação | Usar como regressão da configuração e confirmar a conectividade e a restauração em ambiente de teste. |
+| [CT-RF165](Cenario_Teste/CT-RF165_Configuracoes_Biometria_Validar_Dias_Bloqueio.md) | Reprovado nas evidências | Confirmar a regra de validação do produto e retestar -1, 0 e um número positivo com conferência da resposta e da mensagem da interface. |
 
-160 casos documentados: 81 aprovados, 58 reprovados e 21 a validar. 53 defeitos registrados (10 abertos e 43 em triagem) e 58 casos com reteste corretivo pendente.
+161 casos documentados: 81 aprovados, 59 reprovados e 21 a validar. 54 defeitos registrados (10 abertos e 44 em triagem) e 59 casos com reteste corretivo pendente.
 
 ---
 

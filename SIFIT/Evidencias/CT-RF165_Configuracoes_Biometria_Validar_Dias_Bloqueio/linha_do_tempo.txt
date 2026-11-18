@@ -1,0 +1,23 @@
+CT-RF165 — Validar dias negativos para travar a catraca
+Fonte: Jam 9 — Validação de dias de bloqueio da catraca. Gravação restrita por conter dados de integração ou dados de alunos.
+Gravação: 16/11/2026, 23:07:08 BRT. Duração: 15,68 s.
+Revisão documental: 18/11/2026.
+Página: https://sifit.centrion.com.br/configuracoes
+Foco deste caso: Recusar um número negativo em Travar Catraca Após (dias) ou explicar a correção aplicada antes de confirmar o salvamento.
+
+Cronologia (ações e eventos capturados no Jam):
+0:01–0:04  Preenche -1 em Travar Catraca Após (dias) e salva.
+0:04,24  O POST retorna sucesso com a entrada -1.
+0:07,46–0:12  Após recarregar e abrir Biometria, a consulta e o campo mostram zero.
+
+Rede do conjunto gravado (eventos relevantes ao caso):
+0:04,24  POST /api/configuracoes/alterar/1 com dias_bloqueio: -1 (HTTP 200, verifica_erro: false).
+0:07,46  GET /api/configuracoes/1 (HTTP 200), com dias_bloqueio: 0.
+
+Quadros consultados (reprodução do Jam):
+- Travar Catraca Após (dias) em -1 antes de salvar.
+- Campo exibe 0 após recarregar e retornar a Biometria.
+
+Observações e verificações futuras:
+- A consulta devolveu 0. A gravação não determina se esse valor resultou de normalização ou se o sistema preservou o valor anterior.
+- Confirmar a regra de validação do produto e retestar -1, 0 e um número positivo com conferência da resposta e da mensagem da interface.
