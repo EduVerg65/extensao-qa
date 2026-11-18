@@ -1,10 +1,10 @@
 # 🧪 Plano de Testes — SIFIT
 
-**Atualização:** 17/11/2026 — 129 cenários documentados (CT-RF01–CT-RF35, CT-RF38–CT-RF62 e CT-RF65–CT-RF133), com inclusão de CT-RF42 a CT-RF56 / Pagar.me, Configurações, Despesas Fixas e Relatórios, CT-RF57 e CT-RF58 / Grupos (treino), CT-RF59 / Fichas de Anamnese, CT-RF60 / Modelos de Anamnese, CT-RF61 / Categorias de Anamnese, CT-RF62 / Perguntas Anamnese, CT-RF65 a CT-RF73 / Colaboradores e CT-RF74 a CT-RF108 / Prospecção, Bandeiras de Cartão, Contas a Pagar, Modelos de Contrato, Planos e Tipos de Pagamento, além de Modelos de Ficha (CT-RF109–CT-RF115) e Configurações e Modelos de Ficha (CT-RF116–CT-RF121) e Inteligência e Configurações (CT-RF122–CT-RF127) e Inteligência e Automação (CT-RF128–CT-RF133). BUG-011–BUG-048 em triagem.
+**Atualização:** 17/11/2026 — 130 cenários documentados (CT-RF01–CT-RF35, CT-RF38–CT-RF62 e CT-RF65–CT-RF134), com inclusão de CT-RF42 a CT-RF56 / Pagar.me, Configurações, Despesas Fixas e Relatórios, CT-RF57 e CT-RF58 / Grupos (treino), CT-RF59 / Fichas de Anamnese, CT-RF60 / Modelos de Anamnese, CT-RF61 / Categorias de Anamnese, CT-RF62 / Perguntas Anamnese, CT-RF65 a CT-RF73 / Colaboradores e CT-RF74 a CT-RF108 / Prospecção, Bandeiras de Cartão, Contas a Pagar, Modelos de Contrato, Planos e Tipos de Pagamento, além de Modelos de Ficha (CT-RF109–CT-RF115) e Configurações e Modelos de Ficha (CT-RF116–CT-RF121) e Inteligência e Configurações (CT-RF122–CT-RF127) e Inteligência e Automação (CT-RF128–CT-RF133) e ampliação da cobertura da Central de Automações (CT-RF134). BUG-011–BUG-048 em triagem.
 
 **Padronização documental:** 13/11/2026, com resultados e pendências preservados.
 
-**Escopo:** 129 casos (CT-RF01–CT-RF35, CT-RF38–CT-RF62 e CT-RF65–CT-RF133) — autenticação, recuperação de senha, perfil, Clientes, financeiro, página inicial e dashboard, modalidades / tema de SifitBox, Categorias Crossfit, Avaliações, Exercícios, Grupos Musculares, Objetivos de Treino, Grupos (treino), Fichas de Anamnese, gestão de Modelos de Anamnese, gestão de Categorias de Anamnese, edição de Perguntas Anamnese, validações/funções/exclusão/busca de Colaboradores, Prospecção, Bandeiras de Cartão, Contas a Pagar, Modelos de Contrato, Planos, Tipos de Pagamento e Modelos de Ficha.
+**Escopo:** 130 casos (CT-RF01–CT-RF35, CT-RF38–CT-RF62 e CT-RF65–CT-RF134) — autenticação, recuperação de senha, perfil, Clientes, financeiro, página inicial e dashboard, modalidades / tema de SifitBox, Categorias Crossfit, Avaliações, Exercícios, Grupos Musculares, Objetivos de Treino, Grupos (treino), Fichas de Anamnese, gestão de Modelos de Anamnese, gestão de Categorias de Anamnese, edição de Perguntas Anamnese, validações/funções/exclusão/busca de Colaboradores, Prospecção, Bandeiras de Cartão, Contas a Pagar, Modelos de Contrato, Planos, Tipos de Pagamento, Modelos de Ficha e Central de Automações.
 
 ## 📌 1. Identificação
 
@@ -14,13 +14,13 @@
 | Tipo de teste | Funcional manual, com análise exploratória e de evidências. |
 | Versão avaliada | Não confirmada; registrar por caso no reteste. |
 | Funcionalidades | Autenticação positiva e negativa, recuperação, Perfil, filtros de Clientes, financeiro, período, personais, modalidades / tema, Categorias Crossfit, Avaliações e Exercícios. |
-| Situação | 129 casos documentados: 57 aprovados, 52 reprovados e 20 a validar. 48 defeitos registrados (10 abertos e 38 em triagem) e 52 casos com reteste corretivo pendente. |
+| Situação | 130 casos documentados: 58 aprovados, 52 reprovados e 20 a validar. 48 defeitos registrados (10 abertos e 38 em triagem) e 52 casos com reteste corretivo pendente. |
 
 ---
 
 ## 🎯 2. Objetivo
 
-Verificar os fluxos dos 129 cenários documentados, comparando os critérios de aceitação com as evidências de autenticação, recuperação, perfil, Clientes, financeiro, página inicial, SifitBox, Categorias Crossfit, Avaliações, Exercícios, Grupos Musculares, Fichas de Anamnese, Colaboradores, Prospecção, Bandeiras de Cartão, Contas a Pagar, Modelos de Contrato, Planos, Tipos de Pagamento e Modelos de Ficha. Manter rastreabilidade entre requisitos, casos, Jam, vídeos, resultados e defeitos, distinguindo revisões documentais de novas execuções.
+Verificar os fluxos dos 130 cenários documentados, comparando os critérios de aceitação com as evidências de autenticação, recuperação, perfil, Clientes, financeiro, página inicial, SifitBox, Categorias Crossfit, Avaliações, Exercícios, Grupos Musculares, Fichas de Anamnese, Colaboradores, Prospecção, Bandeiras de Cartão, Contas a Pagar, Modelos de Contrato, Planos, Tipos de Pagamento, Modelos de Ficha e Central de Automações. Manter rastreabilidade entre requisitos, casos, Jam, vídeos, resultados e defeitos, distinguindo revisões documentais de novas execuções.
 
 ---
 
@@ -94,6 +94,8 @@ Integração documental dos arquivos RESUMO.txt fornecidos em `C:\Users\Leonardo
 **Inteligência e Configurações — CT-RF122–CT-RF127:** filtrar Resultados da Inteligência pelos últimos 90 dias, conferir a execução de Risco de Evasão na Central e em Resultados IA, navegar pelas abas de Configurações com a senha da biometria protegida, salvar um valor válido de dias de ausência, bloquear número negativo no campo de dias de ausência, validar letras no campo de dias de ausência.
 
 **Inteligência e Automação — CT-RF128–CT-RF133:** abrir e fechar a configuração de Risco de Evasão, abrir Aniversariantes e conferir a prévia da automação, verificar recursos marcados como Em desenvolvimento, filtrar Resultados da Inteligência por Hoje, filtrar Resultados da Inteligência pelos últimos 7 dias, filtrar Resultados da Inteligência pelos últimos 30 dias.
+
+**Inteligência e Automação / Central de Automações — CT-RF134:** atualizar a Central de Automações.
 
 **Limites da cobertura atual:**
 
@@ -477,6 +479,17 @@ Para o reteste, preparar aluno existente selecionável pela busca, personal habi
 | Dados e permissões | Conta com acesso à Central e a Resultados IA. Usar automações de teste, estados iniciais conhecidos e resultados em períodos distintos. |
 | Preparação | Registrar o estado inicial, os controles usados e as respostas relevantes. Excluir dados de integração e de autenticação dos recortes e da documentação. |
 
+### Inteligência e Automação / Central de Automações — ambiente e preparação (CT-RF134)
+
+| Item | Definição |
+| --- | --- |
+| Páginas | https://sifit.centrion.com.br/inteligencia-automacao |
+| Backend de referência | https://backendsifit.centrion.com.br |
+| Navegador / sistema / vídeo | Chrome 157.0.8103.79 / Windows 10 (x86) / 1918 × 998. |
+| Gravações | 16/11/2026 às 21:25:26 BRT. |
+| Dados e permissões | Conta autorizada a acessar a Central. Preparar automações com estados iniciais conhecidos e, para consulta, um relatório de risco existente. |
+| Preparação | Registrar o estado inicial, os controles usados e as respostas relevantes. Usar apenas dados agregados nas evidências de risco. |
+
 ---
 
 ## 📋 7. Casos de teste e situação
@@ -599,6 +612,7 @@ Para o reteste, preparar aluno existente selecionável pela busca, personal habi
 | [RF131](Analise%20de%20requisitos.md#rf131) | [CT-RF131](Cenario_Teste/CT-RF131_Resultados_IA_Filtro_Hoje.md) | Funcional manual / filtragem | Aprovado conforme a gravação | Nenhum no fluxo avaliado | Usar como regressão e conferir o recorte com eventos antes e depois da virada do dia. |
 | [RF132](Analise%20de%20requisitos.md#rf132) | [CT-RF132](Cenario_Teste/CT-RF132_Resultados_IA_Filtro_7_Dias.md) | Funcional manual / filtragem | Aprovado conforme a gravação | Nenhum no fluxo avaliado | Usar como regressão e preparar dados nos dias de fronteira para verificar inclusão e exclusão. |
 | [RF133](Analise%20de%20requisitos.md#rf133) | [CT-RF133](Cenario_Teste/CT-RF133_Resultados_IA_Filtro_30_Dias.md) | Funcional manual / filtragem | Aprovado conforme a gravação | Nenhum no fluxo avaliado | Usar como regressão e retestar com registros preparados no limite de 30 dias. |
+| [RF134](Analise%20de%20requisitos.md#rf134) | [CT-RF134](Cenario_Teste/CT-RF134_Central_Automacoes_Atualizar.md) | Funcional manual / atualização de dados | Aprovado conforme a gravação | Nenhum no fluxo avaliado | Usar como regressão e repetir com uma alteração conhecida na base e com uma resposta de erro controlada. |
 
 ---
 
@@ -863,6 +877,10 @@ Todas essas variações permanecem planejadas e não são contadas como execuç�
 5. CT-RF132: Usar como regressão e preparar dados nos dias de fronteira para verificar inclusão e exclusão.
 6. CT-RF133: Usar como regressão e retestar com registros preparados no limite de 30 dias.
 
+### Inteligência e Automação / Central de Automações — próximos testes (CT-RF134)
+
+1. CT-RF134: Usar como regressão e repetir com uma alteração conhecida na base e com uma resposta de erro controlada.
+
 ---
 
 ## 🚦 9. Critérios de entrada, saída e aceitação
@@ -926,6 +944,7 @@ Todas essas variações permanecem planejadas e não são contadas como execuç�
 | Integração de CT-RF131 / RF131 | Realizada | 17/11/2026, revisão documental. |
 | Integração de CT-RF132 / RF132 | Realizada | 17/11/2026, revisão documental. |
 | Integração de CT-RF133 / RF133 | Realizada | 17/11/2026, revisão documental. |
+| Integração de CT-RF134 / RF134 | Realizada | 17/11/2026, revisão documental. |
 | Confirmação da regra do status e da exclusão de tipos de pagamento em uso, e da filtragem da listagem | Pendente | RF104, RF105 e RF107; depende do responsável pelo produto. |
 | Confirmação da obrigatoriedade do colaborador, dos filtros de contas e da regra do cartão Ativos | Pendente | RF91, RF92, RF93 e RF102; depende do responsável pelo produto. |
 | Confirmação da regra do telefone e da duplicidade de criação de leads | Pendente | RF88 e RF89; depende do responsável pelo produto. |
@@ -968,7 +987,7 @@ Há dez defeitos abertos (BUG-001 a BUG-010) e trinta e três em triagem (BUG-01
 
 ## 📁 13. Entregáveis e documentos associados
 
-Os entregáveis são a análise RF01–RF35, RF38–RF62 e RF65–RF133, este plano, os 129 cenários BDD, as evidências disponíveis e os relatórios atualizados. CT-RF21 possui relato original, link do Jam, quadros, cronologia, requisição/resposta sem autenticação e metadados locais; o vídeo permanece no Jam. Os vídeos e demais evidências anteriores citados nos documentos de 14/11/2026 não estavam nesta cópia do repositório em 15/11/2026; consultar o índice de evidências para a disponibilidade. 57 casos estão aprovados no alcance das evidências. 52 reprovados aguardam reteste, incluindo CT-RF22/24/26/27/28/29/30/35/41/45/51/53/54/55/56/57/58/59/65/66/67/68/69/70/71/73/81/82/83/89/92/98/102/105/107 em triagem, e 20 a validar dependem de regra/contexto ou persistência. CT-RF23–25, CT-RF35, CT-RF38–CT-RF56 e CT-RF85–CT-RF108 possuem pasta local com resumo, cronologia e origem (CT-RF35, CT-RF38–CT-RF56 e CT-RF85–CT-RF108 incluem também capturas extraídas do Jam e hashes; CT-RF50–CT-RF56 incluem os PDFs baixados); os vídeos permanecem no Jam. CT-RF29–CT-RF33, CT-RF57, CT-RF58 e CT-RF59 têm como fonte gravações únicas, cujos painéis foram lidos diretamente; as pastas locais de evidências desses casos ainda não foram criadas.
+Os entregáveis são a análise RF01–RF35, RF38–RF62 e RF65–RF134, este plano, os 130 cenários BDD, as evidências disponíveis e os relatórios atualizados. CT-RF21 possui relato original, link do Jam, quadros, cronologia, requisição/resposta sem autenticação e metadados locais; o vídeo permanece no Jam. Os vídeos e demais evidências anteriores citados nos documentos de 14/11/2026 não estavam nesta cópia do repositório em 15/11/2026; consultar o índice de evidências para a disponibilidade. 58 casos estão aprovados no alcance das evidências. 52 reprovados aguardam reteste, incluindo CT-RF22/24/26/27/28/29/30/35/41/45/51/53/54/55/56/57/58/59/65/66/67/68/69/70/71/73/81/82/83/89/92/98/102/105/107 em triagem, e 20 a validar dependem de regra/contexto ou persistência. CT-RF23–25, CT-RF35, CT-RF38–CT-RF56 e CT-RF85–CT-RF108 possuem pasta local com resumo, cronologia e origem (CT-RF35, CT-RF38–CT-RF56 e CT-RF85–CT-RF108 incluem também capturas extraídas do Jam e hashes; CT-RF50–CT-RF56 incluem os PDFs baixados); os vídeos permanecem no Jam. CT-RF29–CT-RF33, CT-RF57, CT-RF58 e CT-RF59 têm como fonte gravações únicas, cujos painéis foram lidos diretamente; as pastas locais de evidências desses casos ainda não foram criadas.
 
 - [Análise de requisitos](Analise%20de%20requisitos.md)
 - [Caso CT-RF01](Cenario_Teste/CT-RF01_Esqueci-senha.md)
@@ -1063,7 +1082,8 @@ Os entregáveis são a análise RF01–RF35, RF38–RF62 e RF65–RF133, este pl
 - [CT-RF131](Cenario_Teste/CT-RF131_Resultados_IA_Filtro_Hoje.md) e [Evidências](Evidencias/CT-RF131_Resultados_IA_Filtro_Hoje/README.md)
 - [CT-RF132](Cenario_Teste/CT-RF132_Resultados_IA_Filtro_7_Dias.md) e [Evidências](Evidencias/CT-RF132_Resultados_IA_Filtro_7_Dias/README.md)
 - [CT-RF133](Cenario_Teste/CT-RF133_Resultados_IA_Filtro_30_Dias.md) e [Evidências](Evidencias/CT-RF133_Resultados_IA_Filtro_30_Dias/README.md)
-- [Índice dos 129 cenários](Cenario_Teste/README.md)
+- [CT-RF134](Cenario_Teste/CT-RF134_Central_Automacoes_Atualizar.md) e [Evidências](Evidencias/CT-RF134_Central_Automacoes_Atualizar/README.md)
+- [Índice dos 130 cenários](Cenario_Teste/README.md)
 - [Índice das evidências e dos Jams](Evidencias/README.md)
 - [Manifesto de integridade dos novos arquivos](Evidencias/manifesto_sha256.json)
 

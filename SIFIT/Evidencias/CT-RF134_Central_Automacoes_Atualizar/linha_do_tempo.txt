@@ -1,0 +1,23 @@
+CT-RF134 — Atualizar a Central de Automações
+Fonte: https://jam.dev/c/efe35b08-8733-434c-a6fa-32c45e248ae1
+Gravação: 16/11/2026, 21:25:26 BRT. Duração: 20,16 s.
+Revisão documental: 17/11/2026.
+Página: https://sifit.centrion.com.br/inteligencia-automacao
+Foco deste caso: Reconsultar o resumo, a atividade recente e os cartões ao acionar Atualizar na Central de Automações.
+
+Cronologia (ações e eventos capturados no Jam):
+0:00–0:05  Confere os cartões e o resumo inicial.
+0:06–0:09  Aciona Atualizar três vezes. As consultas terminam com HTTP 200 e os indicadores se mantêm.
+0:17–0:19  Aciona Atualizar novamente e confirma o mesmo estado da Central.
+
+Rede do conjunto gravado (eventos relevantes ao caso):
+0:06,05  GET /api/automacoes/resumo/1, GET /api/automacoes/execucoes/1 e GET /api/automacoes/1 (HTTP 200 nas três consultas).
+0:07,79, 0:08,99 e 0:17,28–0:17,29  As mesmas consultas foram realizadas novamente com HTTP 200.
+
+Quadros consultados (reprodução do Jam):
+- Resumo e cartões antes de acionar Atualizar.
+- Resumo e cartões depois da última atualização.
+
+Observações e verificações futuras:
+- A gravação verifica atualização com dados estáveis. A reação a uma mudança da base e o tratamento de falhas de rede não foram exercitados.
+- Usar como regressão e repetir com uma alteração conhecida na base e com uma resposta de erro controlada.
