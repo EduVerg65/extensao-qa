@@ -1,0 +1,23 @@
+CT-RF117 — Cancelar uma alteração nas Configurações sem salvar
+Fonte: https://jam.dev/c/e8faa199-1177-4563-8b00-590606669a1d
+Gravação: 16/11/2026, 22:05:00 BRT; duração: 20,02 s.
+Revisão documental: 17/11/2026.
+Página: https://sifit.centrion.com.br/configuracoes
+Foco deste caso: Descartar uma alteração feita no formulário de Configurações ao acionar Cancelar e preservar o valor salvo.
+
+Cronologia (ações e eventos capturados no Jam):
+0:01–0:07  O campo inicialmente em 1100 é alterado para 15.
+0:08–0:10  Clica em Cancelar e chega à Página Inicial.
+0:13–0:16  Volta a Configurações. O formulário volta a exibir 1100.
+
+Rede do conjunto gravado (eventos relevantes ao caso):
+0:08,37  Clique em Cancelar. Os eventos seguintes são de navegação e carga da Página Inicial.
+0:14,14  GET /api/configuracoes/1 (HTTP 200), com dias_ausente: 1100. Nenhum POST de alteração de Configurações no trecho.
+
+Quadros consultados (reprodução do Jam):
+- Valor 15 no formulário antes de cancelar.
+- Valor 1100 após voltar a Configurações.
+
+Observações e verificações futuras:
+- O cancelamento foi verificado para uma alteração no campo de dias de ausência na aba Home. Alterações simultâneas e as demais abas ficam para nova execução.
+- Usar como regressão e repetir com múltiplos campos alterados na mesma aba.

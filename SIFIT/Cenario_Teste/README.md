@@ -1,6 +1,6 @@
 # 🧪 Índice dos cenários de teste — SIFIT
 
-**Atualização:** 17/11/2026. 112 casos documentados: 45 aprovados, 48 reprovados e 19 a validar. 44 defeitos registrados (10 abertos e 34 em triagem) e 48 casos com reteste corretivo pendente. Escopo: CT-RF01–CT-RF35, CT-RF38–CT-RF62 e CT-RF65–CT-RF116.
+**Atualização:** 17/11/2026. 113 casos documentados: 46 aprovados, 48 reprovados e 19 a validar. 44 defeitos registrados (10 abertos e 34 em triagem) e 48 casos com reteste corretivo pendente. Escopo: CT-RF01–CT-RF35, CT-RF38–CT-RF62 e CT-RF65–CT-RF117.
 
 | Caso | Funcionalidade | Resultado | Defeito | Jam |
 | --- | --- | --- | --- | --- |
@@ -286,12 +286,13 @@ Os cinco casos têm como fonte uma única gravação. Os resultados são documen
 
 A revisão de Modelos de Ficha inclui CT-RF109–CT-RF115 com base em 6 gravações do Jam de 16/11/2026. A revisão documental foi feita em 17/11/2026.
 
-## Inclusão de 17/11/2026 — Configurações (Home) (CT-RF116)
+## Inclusão de 17/11/2026 — Configurações (Home) (CT-RF116–CT-RF117)
 
 | Caso | Funcionalidade | Resultado | Defeito | Jam |
 | --- | --- | --- | --- | --- |
 | [CT-RF116](CT-RF116_Configuracoes_Dias_Ausencia_Vazio.md) | Validar o salvamento com o campo de dias de ausência vazio | A validar — regra ou contexto pendente | — | [Jam — PED-20 — Dias de ausência vazio](https://jam.dev/c/4e96d4fa-65b5-459b-a795-854496e5753c) |
+| [CT-RF117](CT-RF117_Configuracoes_Cancelar_Alteracao.md) | Cancelar uma alteração nas Configurações sem salvar | Aprovado conforme a gravação | — | [Jam — PED-20 — Cancelar alteração](https://jam.dev/c/e8faa199-1177-4563-8b00-590606669a1d) |
 
-CT-RF116 amplia a cobertura de Configurações (Home) com gravações de 16/11/2026 às 22:03:53 BRT. A revisão é documental.
+CT-RF116–CT-RF117 amplia a cobertura de Configurações (Home) com gravações de 16/11/2026 entre 22:03:53 e 22:05:00 BRT. A revisão é documental.
 
 [← Início](../../README.md) · [Requisitos](../Analise%20de%20requisitos.md) · [Plano](../Plano%20de%20testes.md) · [Evidências](../Evidencias/README.md)
