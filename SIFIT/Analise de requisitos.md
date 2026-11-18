@@ -2,11 +2,11 @@
 
 **Módulos:** Autenticação, Perfil, Clientes / Filtros, Financeiro, Página inicial / Personais, SifitBox / Modalidades e Turmas, Categorias Crossfit, Avaliações, Exercícios, Grupos Musculares, Dashboard, Objetivos de Treino, Fichas de Anamnese, Colaboradores, Prospecção e Bandeiras de Cartão.
 
-**Atualização:** 17/11/2026 — RF01 a RF35, RF38 a RF62 e RF65 a RF135 consolidados, com inclusão de Categorias Crossfit (CT-RF38), SifitBox – Turmas (CT-RF39 a CT-RF41), Pagar.me, Configurações, Despesas Fixas e Relatórios (CT-RF42 a CT-RF56), Grupos (treino) (CT-RF57 e CT-RF58), Fichas de Anamnese (CT-RF59), Modelos de Anamnese (CT-RF60), Categorias de Anamnese (CT-RF61), Perguntas Anamnese (CT-RF62), Colaboradores (CT-RF65 a CT-RF73), Prospecção e Bandeiras de Cartão (CT-RF74 a CT-RF90), Contas a Pagar / Modelos de Contrato / Planos (CT-RF91 a CT-RF103) Tipos de Pagamento (CT-RF104 a CT-RF108) e Modelos de Ficha (CT-RF109–CT-RF115) e Configurações e Modelos de Ficha (CT-RF116–CT-RF121) e Inteligência e Configurações (CT-RF122–CT-RF127) e Inteligência e Automação (CT-RF128–CT-RF133) e ampliação da cobertura da Central de Automações (CT-RF134–CT-RF135). BUG-011–BUG-049 em triagem.
+**Atualização:** 17/11/2026 — RF01 a RF35, RF38 a RF62 e RF65 a RF136 consolidados, com inclusão de Categorias Crossfit (CT-RF38), SifitBox – Turmas (CT-RF39 a CT-RF41), Pagar.me, Configurações, Despesas Fixas e Relatórios (CT-RF42 a CT-RF56), Grupos (treino) (CT-RF57 e CT-RF58), Fichas de Anamnese (CT-RF59), Modelos de Anamnese (CT-RF60), Categorias de Anamnese (CT-RF61), Perguntas Anamnese (CT-RF62), Colaboradores (CT-RF65 a CT-RF73), Prospecção e Bandeiras de Cartão (CT-RF74 a CT-RF90), Contas a Pagar / Modelos de Contrato / Planos (CT-RF91 a CT-RF103) Tipos de Pagamento (CT-RF104 a CT-RF108) e Modelos de Ficha (CT-RF109–CT-RF115) e Configurações e Modelos de Ficha (CT-RF116–CT-RF121) e Inteligência e Configurações (CT-RF122–CT-RF127) e Inteligência e Automação (CT-RF128–CT-RF133) e ampliação da cobertura da Central de Automações (CT-RF134–CT-RF136). BUG-011–BUG-049 em triagem.
 
 **Padronização documental:** 13/11/2026, sem alteração dos resultados registrados.
 
-Esta análise documenta 131 requisitos de QA para os cenários relacionados abaixo, com base nos relatos e nas evidências fornecidas. RF01–RF04 e suas análises históricas foram preservados; RF05–RF20 ampliam a cobertura em 14/11/2026; RF21 acrescenta Avaliações; RF22–RF28 acrescentam Exercícios; RF29–RF33 acrescentam Grupos Musculares; RF34 acrescenta o carregamento do dashboard RF35 acrescenta o cadastro de objetivos de treino e RF38 acrescenta o cadastro de categorias com código automático em 15/11/2026. RF39 acrescenta o cadastro de modalidade em SifitBox – Turmas. RF40 acrescenta a exclusão de turmas e modalidades. RF41 acrescenta o cadastro de turma. RF42 a RF56 acrescentam Pagar.me, Configurações, Despesas Fixas e Relatórios em 15/11/2026. RF57 acrescenta a exclusão de grupo (treino) e RF58 acrescenta a edição de grupo (treino), ambos também em 15/11/2026. RF59 acrescenta o cadastro de anamnese, também em 15/11/2026. RF60 acrescenta a gestão de modelos de anamnese (busca, cadastro, edição e exclusão), em 16/11/2026. RF61 acrescenta a gestão de categorias de anamnese (filtro, busca, cadastro, edição, cancelamento de edição e exclusão), também em 16/11/2026. RF62 acrescenta a edição de pergunta de anamnese, reprovada por HTTP 500, também em 16/11/2026. RF65–RF73 cobrem validações, operações e buscas de Colaboradores, também em 15/11/2026. RF74–RF84 acrescentam Prospecção e Bandeiras de Cartão a partir de resumos fornecidos, em 16/11/2026. RF85 a RF90 acrescentam Prospecção (leads) em 15/11/2026. RF91 a RF103 acrescentam Contas a Pagar, Modelos de Contrato e Planos em 15/11/2026. RF104 a RF108 acrescentam Tipos de Pagamento em 15/11/2026. RF109–RF115 cobre Modelos de Ficha com evidências gravadas em 16/11/2026. Os critérios abaixo constituem a referência de QA para esses fluxos; não representam validação de uma especificação formal pelo responsável pelo produto.
+Esta análise documenta 132 requisitos de QA para os cenários relacionados abaixo, com base nos relatos e nas evidências fornecidas. RF01–RF04 e suas análises históricas foram preservados; RF05–RF20 ampliam a cobertura em 14/11/2026; RF21 acrescenta Avaliações; RF22–RF28 acrescentam Exercícios; RF29–RF33 acrescentam Grupos Musculares; RF34 acrescenta o carregamento do dashboard RF35 acrescenta o cadastro de objetivos de treino e RF38 acrescenta o cadastro de categorias com código automático em 15/11/2026. RF39 acrescenta o cadastro de modalidade em SifitBox – Turmas. RF40 acrescenta a exclusão de turmas e modalidades. RF41 acrescenta o cadastro de turma. RF42 a RF56 acrescentam Pagar.me, Configurações, Despesas Fixas e Relatórios em 15/11/2026. RF57 acrescenta a exclusão de grupo (treino) e RF58 acrescenta a edição de grupo (treino), ambos também em 15/11/2026. RF59 acrescenta o cadastro de anamnese, também em 15/11/2026. RF60 acrescenta a gestão de modelos de anamnese (busca, cadastro, edição e exclusão), em 16/11/2026. RF61 acrescenta a gestão de categorias de anamnese (filtro, busca, cadastro, edição, cancelamento de edição e exclusão), também em 16/11/2026. RF62 acrescenta a edição de pergunta de anamnese, reprovada por HTTP 500, também em 16/11/2026. RF65–RF73 cobrem validações, operações e buscas de Colaboradores, também em 15/11/2026. RF74–RF84 acrescentam Prospecção e Bandeiras de Cartão a partir de resumos fornecidos, em 16/11/2026. RF85 a RF90 acrescentam Prospecção (leads) em 15/11/2026. RF91 a RF103 acrescentam Contas a Pagar, Modelos de Contrato e Planos em 15/11/2026. RF104 a RF108 acrescentam Tipos de Pagamento em 15/11/2026. RF109–RF115 cobre Modelos de Ficha com evidências gravadas em 16/11/2026. Os critérios abaixo constituem a referência de QA para esses fluxos; não representam validação de uma especificação formal pelo responsável pelo produto.
 
 ## 📋 Visão geral dos requisitos
 
@@ -143,6 +143,7 @@ Esta análise documenta 131 requisitos de QA para os cenários relacionados abai
 | [RF133](#rf133) | Filtrar Resultados da Inteligência pelos últimos 30 dias | Média, proposta | [CT-RF133](Cenario_Teste/CT-RF133_Resultados_IA_Filtro_30_Dias.md) |
 | [RF134](#rf134) | Atualizar a Central de Automações | Média, proposta | [CT-RF134](Cenario_Teste/CT-RF134_Central_Automacoes_Atualizar.md) |
 | [RF135](#rf135) | Desativar Risco de Evasão e conferir a persistência e o contador | Média, proposta | [CT-RF135](Cenario_Teste/CT-RF135_Central_Desativar_Risco_Evasao_Contador.md) |
+| [RF136](#rf136) | Ativar Aniversariantes e conferir a persistência e o contador | Média, proposta | [CT-RF136](Cenario_Teste/CT-RF136_Central_Ativar_Aniversariantes_Contador.md) |
 
 ---
 
@@ -3111,6 +3112,31 @@ A gravação verifica atualização com dados estáveis. A reação a uma mudan�
 
 A persistência foi confirmada por nova leitura para a desativação. Após a reativação, a gravação não contém outro clique em Atualizar. A ordem em que o servidor processou o salvamento e o resumo não foi determinada.
 
+<a id="rf136"></a>
+
+## RF136 — Ativar Aniversariantes e conferir a persistência e o contador
+
+| Campo | Descrição |
+| --- | --- |
+| Requisito de QA | Confirmar que a ativação de Aniversariantes permanece após Atualizar e que o contador acompanha a alteração salva. |
+| Ator | Usuário autenticado com permissão para a operação. |
+| Pré-condições | Sessão autenticada na Central. Aniversariantes inativa e Risco de Evasão ativa na configuração de teste. |
+| Gatilho | Ativar Aniversariantes no cartão e acionar Atualizar. |
+| Caso | [CT-RF136](Cenario_Teste/CT-RF136_Central_Ativar_Aniversariantes_Contador.md) |
+| Situação observada | Reprovado nas evidências. A ativação persistiu. O resumo ficou em uma automação ativa até Atualizar, quando passou a duas. |
+| Defeito | [BUG-049](Relatorio-de-Bugs.md#bug-049), em triagem |
+| Evidências | [Jam — PED-03 — Ativar Aniversariantes](https://jam.dev/c/60c724da-6760-4238-91f5-2ddad8f42bb3) e [Evidências](Evidencias/CT-RF136_Central_Ativar_Aniversariantes_Contador/README.md). |
+
+### Critérios de aceitação do RF136
+
+1. O cartão indica o estado ativo após o salvamento.
+2. O resumo passa a duas automações ativas depois de o salvamento concluir.
+3. Após Atualizar, a automação permanece ativa e o resumo mantém o mesmo total.
+
+### Pontos a confirmar e limites do RF136
+
+O estado ativo persistiu após Atualizar. A divergência observada ocorreu entre o cartão e o resumo depois do salvamento da ativação. A gravação não confirma a causa no servidor.
+
 ---
 
 ## 🔗 Rastreabilidade
@@ -3245,6 +3271,7 @@ A persistência foi confirmada por nova leitura para a desativação. Após a re
 | RF133 | [CT-RF133](Cenario_Teste/CT-RF133_Resultados_IA_Filtro_30_Dias.md) | Nenhum no fluxo avaliado | Aprovado conforme a gravação | [Evidências](Evidencias/CT-RF133_Resultados_IA_Filtro_30_Dias/README.md) e [Jam — PED-11 — Últimos 30 dias](https://jam.dev/c/2756d5c1-a823-482b-bf8d-878357b8b087) |
 | RF134 | [CT-RF134](Cenario_Teste/CT-RF134_Central_Automacoes_Atualizar.md) | Nenhum no fluxo avaliado | Aprovado conforme a gravação | [Evidências](Evidencias/CT-RF134_Central_Automacoes_Atualizar/README.md) e [Jam — PED-01 — Atualizar Central de Automações](https://jam.dev/c/efe35b08-8733-434c-a6fa-32c45e248ae1) |
 | RF135 | [CT-RF135](Cenario_Teste/CT-RF135_Central_Desativar_Risco_Evasao_Contador.md) | [BUG-049](Relatorio-de-Bugs.md#bug-049), em triagem | Reprovado nas evidências | [Evidências](Evidencias/CT-RF135_Central_Desativar_Risco_Evasao_Contador/README.md) e [Jam — PED-02 — Desativar Risco de Evasão](https://jam.dev/c/b63ec55f-f8b6-41aa-af4c-d4cdd4515de8) |
+| RF136 | [CT-RF136](Cenario_Teste/CT-RF136_Central_Ativar_Aniversariantes_Contador.md) | [BUG-049](Relatorio-de-Bugs.md#bug-049), em triagem | Reprovado nas evidências | [Evidências](Evidencias/CT-RF136_Central_Ativar_Aniversariantes_Contador/README.md) e [Jam — PED-03 — Ativar Aniversariantes](https://jam.dev/c/60c724da-6760-4238-91f5-2ddad8f42bb3) |
 
 ---
 
@@ -4098,10 +4125,11 @@ CT-RF128–CT-RF133 cobre Inteligência e Automação com gravações de 16/11/2
 
 ### Base da análise de Inteligência e Automação / Central de Automações — revisão de 17/11/2026
 
-CT-RF134–CT-RF135 cobrem a Central de Automações com gravações de 16/11/2026 entre 21:25:26 e 21:28:33 BRT.
+CT-RF134–CT-RF136 cobrem a Central de Automações com gravações de 16/11/2026 entre 21:25:26 e 21:31:02 BRT.
 
 - RF134: Quatro cliques atualizaram resumo, execuções e cartões com HTTP 200. Os valores permaneceram consistentes na base gravada. [Jam — PED-01 — Atualizar Central de Automações](https://jam.dev/c/efe35b08-8733-434c-a6fa-32c45e248ae1).
 - RF135: A desativação persistiu. Após reativar Risco de Evasão, o cartão ficou ativo e o contador continuou em zero. [Jam — PED-02 — Desativar Risco de Evasão](https://jam.dev/c/b63ec55f-f8b6-41aa-af4c-d4cdd4515de8).
+- RF136: A ativação persistiu. O resumo ficou em uma automação ativa até Atualizar, quando passou a duas. [Jam — PED-03 — Ativar Aniversariantes](https://jam.dev/c/60c724da-6760-4238-91f5-2ddad8f42bb3).
 
 ---
 

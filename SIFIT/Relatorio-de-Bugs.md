@@ -1,6 +1,6 @@
 # 🐞 Relatório de Bugs — SIFIT
 
-**Escopo:** defeitos de 131 casos documentados (CT-RF01–CT-RF35, CT-RF38–CT-RF62 e CT-RF65–CT-RF135): recuperação, Perfil, Clientes, financeiro, página inicial e dashboard, tema, modalidades, categorias, avaliações, exercícios, grupos musculares, objetivos de treino, SifitBox – Turmas, Pagar.me, configurações, despesas fixas, relatórios, grupos (treino), fichas de anamnese, colaboradores, modelos de anamnese, categorias de anamnese, perguntas de anamnese, Prospecção, Bandeiras de Cartão, Contas a Pagar, Modelos de Contrato, Planos, Tipos de Pagamento, Modelos de Ficha e Central de Automações. CT-RF60 (Modelos de Anamnese) e CT-RF61 (Categorias de Anamnese) são aprovados conforme a gravação, sem defeito identificado. CT-RF62 (Perguntas Anamnese) é reprovado nas evidências e acrescenta o BUG-044 (44 defeitos registrados).
+**Escopo:** defeitos de 132 casos documentados (CT-RF01–CT-RF35, CT-RF38–CT-RF62 e CT-RF65–CT-RF136): recuperação, Perfil, Clientes, financeiro, página inicial e dashboard, tema, modalidades, categorias, avaliações, exercícios, grupos musculares, objetivos de treino, SifitBox – Turmas, Pagar.me, configurações, despesas fixas, relatórios, grupos (treino), fichas de anamnese, colaboradores, modelos de anamnese, categorias de anamnese, perguntas de anamnese, Prospecção, Bandeiras de Cartão, Contas a Pagar, Modelos de Contrato, Planos, Tipos de Pagamento, Modelos de Ficha e Central de Automações. CT-RF60 (Modelos de Anamnese) e CT-RF61 (Categorias de Anamnese) são aprovados conforme a gravação, sem defeito identificado. CT-RF62 (Perguntas Anamnese) é reprovado nas evidências e acrescenta o BUG-044 (44 defeitos registrados).
 
 **Ambientes:** CT-RF01 em https://sifitalfa.centrion.com.br/login; CT-RF02_ERRO em https://sifit.centrion.com.br/profile. CT-RF03: URL do frontend não confirmada; backend informado em `https://backendsifit.centrion.com.br/api/clientesPorNome/1`.
 
@@ -88,7 +88,7 @@
 | [BUG-046](#bug-046) | Configurações de Biometria exibem senha sem mascaramento | Alta / Alta, propostas | Em triagem. Reteste após correção. | [CT-RF124](Cenario_Teste/CT-RF124_Configuracoes_Abas_Biometria_Senha.md) |
 | [BUG-047](#bug-047) | Configurações aceitam e persistem dias de ausência negativos | Média / Média, propostas | Em triagem. Reteste após correção. | [CT-RF126](Cenario_Teste/CT-RF126_Configuracoes_Dias_Ausencia_Negativo.md) |
 | [BUG-048](#bug-048) | Configuração de Aniversariantes exibe prévia de risco de evasão | Média / Média, propostas | Em triagem. Reteste após correção. | [CT-RF129](Cenario_Teste/CT-RF129_Central_Aniversariantes_Previa_Risco.md) |
-| [BUG-049](#bug-049) | Contador de automações ativas mantém total anterior após ativar automação | Média / Média, propostas | Em triagem. Reteste após correção. | [CT-RF135](Cenario_Teste/CT-RF135_Central_Desativar_Risco_Evasao_Contador.md) |
+| [BUG-049](#bug-049) | Contador de automações ativas mantém total anterior após ativar automação | Média / Média, propostas | Em triagem. Reteste após correção. | [CT-RF135](Cenario_Teste/CT-RF135_Central_Desativar_Risco_Evasao_Contador.md) e [CT-RF136](Cenario_Teste/CT-RF136_Central_Ativar_Aniversariantes_Contador.md) |
 
 BUG-001–BUG-010 aguardam correção e reteste. BUG-011–BUG-049 aguardam confirmação das premissas e triagem antes do encaminhamento de correção. As causas técnicas permanecem não confirmadas; o BUG-003 se apoia no relato e nas capturas fornecidos, com os limites registrados no caso.
 
@@ -1999,12 +1999,12 @@ Corrigir o conteúdo da prévia e retestar separadamente Aniversariantes e Risco
 | Status | Em triagem. Causa técnica a confirmar e reteste após correção. |
 | Severidade / prioridade | Média / Média, propostas para triagem. |
 | Módulo | Inteligência e Automação / Central de Automações |
-| Requisitos | [RF135](Analise%20de%20requisitos.md#rf135) |
-| Casos | [CT-RF135](Cenario_Teste/CT-RF135_Central_Desativar_Risco_Evasao_Contador.md) |
-| Data da evidência / revisão | 16/11/2026, 21:28:33 BRT / 17/11/2026. |
+| Requisitos | [RF135](Analise%20de%20requisitos.md#rf135) e [RF136](Analise%20de%20requisitos.md#rf136) |
+| Casos | [CT-RF135](Cenario_Teste/CT-RF135_Central_Desativar_Risco_Evasao_Contador.md) e [CT-RF136](Cenario_Teste/CT-RF136_Central_Ativar_Aniversariantes_Contador.md) |
+| Data da evidência / revisão | 16/11/2026, 21:28:33 e 21:31:02 BRT / 17/11/2026. |
 | Página | https://sifit.centrion.com.br/inteligencia-automacao |
 | Ambiente | Chrome 157.0.8103.79 / Windows 10 (x86). Versão da aplicação e zoom a confirmar. |
-| Frequência conhecida | Uma ocorrência gravada. Recorrência a verificar. |
+| Frequência conhecida | Duas ocorrências gravadas, uma por automação. |
 
 ### Pré-condições e reprodução
 
@@ -2017,11 +2017,22 @@ Corrigir o conteúdo da prévia e retestar separadamente Aniversariantes e Risco
 3. Acionar Atualizar e conferir a persistência do estado inativo.
 4. Reativar a automação e comparar o cartão e o contador após o sucesso do salvamento.
 
+**CT-RF136**
+
+- Sessão autenticada na Central. Aniversariantes inativa e Risco de Evasão ativa na configuração de teste.
+
+1. Registrar o estado de Aniversariantes e o total de automações ativas.
+2. Ativar a automação. Conferir o retorno do salvamento, o cartão e o contador.
+3. Acionar Atualizar e conferir a persistência na lista e no resumo.
+4. Restaurar o estado inativo e registrar o contador final.
+
 ### Esperado e obtido
 
 **Esperado:** Após ativar e salvar com sucesso, o contador no resumo deve refletir o total de cartões ativos sem exigir Atualizar.
 
 **Obtido (CT-RF135):** A desativação foi salva com HTTP 200. Após Atualizar, a lista confirmou `ativo: 0` e o contador marcou zero. A reativação também retornou sucesso e o cartão voltou a indicar o estado ativo, mas o resumo retornou `ativas: 0`. O contador permaneceu em zero no restante da gravação.
+
+**Obtido (CT-RF136):** O POST de ativação retornou sucesso e o cartão passou a indicar o estado ativo, mas o resumo ainda retornou `ativas: 1`. O contador chegou a dois quando o usuário acionou Atualizar, e a listagem confirmou Aniversariantes com `ativo: 1`. Em seguida, a desativação de restauração retornou sucesso e o contador voltou a um.
 
 ### Evidências técnicas
 
@@ -2032,11 +2043,20 @@ Corrigir o conteúdo da prévia e retestar separadamente Aniversariantes e Risco
 - 0:12,74  POST com `ativo: 1` (HTTP 200, `verifica_erro: false`). O GET de resumo associado retornou `ativas: 0`.
 - [Jam — PED-02 — Desativar Risco de Evasão](https://jam.dev/c/b63ec55f-f8b6-41aa-af4c-d4cdd4515de8) e [Evidências](Evidencias/CT-RF135_Central_Desativar_Risco_Evasao_Contador/README.md).
 
+[CT-RF136](Cenario_Teste/CT-RF136_Central_Ativar_Aniversariantes_Contador.md)
+
+- 0:04,54  POST `/api/automacoes/salvar/1` (HTTP 200), com `tipo: aniversario`, `ativo: 1` e `verifica_erro: false` na resposta. O GET de resumo retornou `ativas: 1`.
+- 0:09,31  Atualizar. GET `/api/automacoes/1` confirmou `ativo: 1` para Aniversariantes e o GET de resumo retornou `ativas: 2` (HTTP 200).
+- 0:13,29  POST de restauração com `ativo: 0` (HTTP 200, `verifica_erro: false`), seguido de resumo com `ativas: 1`.
+- [Jam — PED-03 — Ativar Aniversariantes](https://jam.dev/c/60c724da-6760-4238-91f5-2ddad8f42bb3) e [Evidências](Evidencias/CT-RF136_Central_Ativar_Aniversariantes_Contador/README.md).
+
 ### Análise, limites e encaminhamento
 
 A divergência aparece no contador do resumo após a ativação. A causa técnica precisa ser investigada.
 
 **Limites (CT-RF135):** A persistência foi confirmada por nova leitura para a desativação. Após a reativação, a gravação não contém outro clique em Atualizar. A ordem em que o servidor processou o salvamento e o resumo não foi determinada.
+
+**Limites (CT-RF136):** O estado ativo persistiu após Atualizar. A divergência observada ocorreu entre o cartão e o resumo depois do salvamento da ativação. A gravação não confirma a causa no servidor.
 
 Retestar a ativação e a desativação de cada automação. Comparar o valor de `ativas` no GET de resumo com os cartões e a lista após cada salvamento e após Atualizar.
 
@@ -2058,9 +2078,9 @@ CT-RF122–CT-RF127 cobre Inteligência e Configurações com gravações de 16/
 
 CT-RF128–CT-RF133 cobre Inteligência e Automação com gravações de 16/11/2026 entre 21:40:31 e 21:49:48 BRT. Casos aprovados: 5. Reprovados: 1. A validar: 0. Defeitos do lote: [BUG-048](#bug-048).
 
-## Inteligência e Automação / Central de Automações — revisão de 17/11/2026 (CT-RF134–CT-RF135)
+## Inteligência e Automação / Central de Automações — revisão de 17/11/2026 (CT-RF134–CT-RF136)
 
-CT-RF134–CT-RF135 cobrem a Central de Automações com gravações de 16/11/2026 entre 21:25:26 e 21:28:33 BRT. Casos aprovados: 1. Reprovados: 1. A validar: 0. Defeitos do lote: [BUG-049](#bug-049).
+CT-RF134–CT-RF136 cobrem a Central de Automações com gravações de 16/11/2026 entre 21:25:26 e 21:31:02 BRT. Casos aprovados: 1. Reprovados: 2. A validar: 0. Defeitos do lote: [BUG-049](#bug-049).
 
 ## Pontos a validar — sem defeito confirmado
 

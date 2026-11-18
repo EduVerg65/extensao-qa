@@ -1,0 +1,25 @@
+CT-RF136 — Ativar Aniversariantes e conferir a persistência e o contador
+Fonte: https://jam.dev/c/60c724da-6760-4238-91f5-2ddad8f42bb3
+Gravação: 16/11/2026, 21:31:02 BRT. Duração: 19,17 s.
+Revisão documental: 17/11/2026.
+Página: https://sifit.centrion.com.br/inteligencia-automacao
+Foco deste caso: Confirmar que a ativação de Aniversariantes permanece após Atualizar e que o contador acompanha a alteração salva.
+
+Cronologia (ações e eventos capturados no Jam):
+0:00–0:04  Aniversariantes começa inativa e o resumo mostra uma automação ativa.
+0:04–0:08  Ativa Aniversariantes. O cartão fica ativo, mas o contador ainda mostra um.
+0:09–0:12  Aciona Atualizar. Aniversariantes permanece ativa e o contador passa a dois.
+0:13–0:16  Desativa Aniversariantes para restaurar o estado inicial. O contador volta a um.
+
+Rede do conjunto gravado (eventos relevantes ao caso):
+0:04,54  POST /api/automacoes/salvar/1 (HTTP 200), com tipo: aniversario, ativo: 1 e verifica_erro: false na resposta. O GET de resumo retornou ativas: 1.
+0:09,31  Atualizar. GET /api/automacoes/1 confirmou ativo: 1 para Aniversariantes e o GET de resumo retornou ativas: 2 (HTTP 200).
+0:13,29  POST de restauração com ativo: 0 (HTTP 200, verifica_erro: false), seguido de resumo com ativas: 1.
+
+Quadros consultados (reprodução do Jam):
+- Aniversariantes ativa com contador ainda em uma automação.
+- Aniversariantes ativa e contador em dois após Atualizar.
+
+Observações e verificações futuras:
+- O estado ativo persistiu após Atualizar. A divergência observada ocorreu entre o cartão e o resumo depois do salvamento da ativação. A gravação não confirma a causa no servidor.
+- Retestar a ativação e conferir se o contador passa a dois após o sucesso do salvamento, antes de Atualizar manualmente.
