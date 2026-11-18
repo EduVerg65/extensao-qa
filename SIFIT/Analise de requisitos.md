@@ -2,11 +2,11 @@
 
 **Módulos:** Autenticação, Perfil, Clientes / Filtros, Financeiro, Página inicial / Personais, SifitBox / Modalidades e Turmas, Categorias Crossfit, Avaliações, Exercícios, Grupos Musculares, Dashboard, Objetivos de Treino, Fichas de Anamnese, Colaboradores, Prospecção e Bandeiras de Cartão.
 
-**Atualização:** 17/11/2026 — RF01 a RF35, RF38 a RF62 e RF65 a RF121 consolidados, com inclusão de Categorias Crossfit (CT-RF38), SifitBox – Turmas (CT-RF39 a CT-RF41), Pagar.me, Configurações, Despesas Fixas e Relatórios (CT-RF42 a CT-RF56), Grupos (treino) (CT-RF57 e CT-RF58), Fichas de Anamnese (CT-RF59), Modelos de Anamnese (CT-RF60), Categorias de Anamnese (CT-RF61), Perguntas Anamnese (CT-RF62), Colaboradores (CT-RF65 a CT-RF73), Prospecção e Bandeiras de Cartão (CT-RF74 a CT-RF90), Contas a Pagar / Modelos de Contrato / Planos (CT-RF91 a CT-RF103) Tipos de Pagamento (CT-RF104 a CT-RF108) e Modelos de Ficha (CT-RF109–CT-RF115) e Configurações e Modelos de Ficha (CT-RF116–CT-RF121). BUG-011–BUG-045 em triagem.
+**Atualização:** 17/11/2026 — RF01 a RF35, RF38 a RF62 e RF65 a RF122 consolidados, com inclusão de Categorias Crossfit (CT-RF38), SifitBox – Turmas (CT-RF39 a CT-RF41), Pagar.me, Configurações, Despesas Fixas e Relatórios (CT-RF42 a CT-RF56), Grupos (treino) (CT-RF57 e CT-RF58), Fichas de Anamnese (CT-RF59), Modelos de Anamnese (CT-RF60), Categorias de Anamnese (CT-RF61), Perguntas Anamnese (CT-RF62), Colaboradores (CT-RF65 a CT-RF73), Prospecção e Bandeiras de Cartão (CT-RF74 a CT-RF90), Contas a Pagar / Modelos de Contrato / Planos (CT-RF91 a CT-RF103) Tipos de Pagamento (CT-RF104 a CT-RF108) e Modelos de Ficha (CT-RF109–CT-RF115) e Configurações e Modelos de Ficha (CT-RF116–CT-RF121) e Inteligência (CT-RF122). BUG-011–BUG-045 em triagem.
 
 **Padronização documental:** 13/11/2026, sem alteração dos resultados registrados.
 
-Esta análise documenta 117 requisitos de QA para os cenários relacionados abaixo, com base nos relatos e nas evidências fornecidas. RF01–RF04 e suas análises históricas foram preservados; RF05–RF20 ampliam a cobertura em 14/11/2026; RF21 acrescenta Avaliações; RF22–RF28 acrescentam Exercícios; RF29–RF33 acrescentam Grupos Musculares; RF34 acrescenta o carregamento do dashboard RF35 acrescenta o cadastro de objetivos de treino e RF38 acrescenta o cadastro de categorias com código automático em 15/11/2026. RF39 acrescenta o cadastro de modalidade em SifitBox – Turmas. RF40 acrescenta a exclusão de turmas e modalidades. RF41 acrescenta o cadastro de turma. RF42 a RF56 acrescentam Pagar.me, Configurações, Despesas Fixas e Relatórios em 15/11/2026. RF57 acrescenta a exclusão de grupo (treino) e RF58 acrescenta a edição de grupo (treino), ambos também em 15/11/2026. RF59 acrescenta o cadastro de anamnese, também em 15/11/2026. RF60 acrescenta a gestão de modelos de anamnese (busca, cadastro, edição e exclusão), em 16/11/2026. RF61 acrescenta a gestão de categorias de anamnese (filtro, busca, cadastro, edição, cancelamento de edição e exclusão), também em 16/11/2026. RF62 acrescenta a edição de pergunta de anamnese, reprovada por HTTP 500, também em 16/11/2026. RF65–RF73 cobrem validações, operações e buscas de Colaboradores, também em 15/11/2026. RF74–RF84 acrescentam Prospecção e Bandeiras de Cartão a partir de resumos fornecidos, em 16/11/2026. RF85 a RF90 acrescentam Prospecção (leads) em 15/11/2026. RF91 a RF103 acrescentam Contas a Pagar, Modelos de Contrato e Planos em 15/11/2026. RF104 a RF108 acrescentam Tipos de Pagamento em 15/11/2026. RF109–RF115 cobre Modelos de Ficha com evidências gravadas em 16/11/2026. Os critérios abaixo constituem a referência de QA para esses fluxos; não representam validação de uma especificação formal pelo responsável pelo produto.
+Esta análise documenta 118 requisitos de QA para os cenários relacionados abaixo, com base nos relatos e nas evidências fornecidas. RF01–RF04 e suas análises históricas foram preservados; RF05–RF20 ampliam a cobertura em 14/11/2026; RF21 acrescenta Avaliações; RF22–RF28 acrescentam Exercícios; RF29–RF33 acrescentam Grupos Musculares; RF34 acrescenta o carregamento do dashboard RF35 acrescenta o cadastro de objetivos de treino e RF38 acrescenta o cadastro de categorias com código automático em 15/11/2026. RF39 acrescenta o cadastro de modalidade em SifitBox – Turmas. RF40 acrescenta a exclusão de turmas e modalidades. RF41 acrescenta o cadastro de turma. RF42 a RF56 acrescentam Pagar.me, Configurações, Despesas Fixas e Relatórios em 15/11/2026. RF57 acrescenta a exclusão de grupo (treino) e RF58 acrescenta a edição de grupo (treino), ambos também em 15/11/2026. RF59 acrescenta o cadastro de anamnese, também em 15/11/2026. RF60 acrescenta a gestão de modelos de anamnese (busca, cadastro, edição e exclusão), em 16/11/2026. RF61 acrescenta a gestão de categorias de anamnese (filtro, busca, cadastro, edição, cancelamento de edição e exclusão), também em 16/11/2026. RF62 acrescenta a edição de pergunta de anamnese, reprovada por HTTP 500, também em 16/11/2026. RF65–RF73 cobrem validações, operações e buscas de Colaboradores, também em 15/11/2026. RF74–RF84 acrescentam Prospecção e Bandeiras de Cartão a partir de resumos fornecidos, em 16/11/2026. RF85 a RF90 acrescentam Prospecção (leads) em 15/11/2026. RF91 a RF103 acrescentam Contas a Pagar, Modelos de Contrato e Planos em 15/11/2026. RF104 a RF108 acrescentam Tipos de Pagamento em 15/11/2026. RF109–RF115 cobre Modelos de Ficha com evidências gravadas em 16/11/2026. Os critérios abaixo constituem a referência de QA para esses fluxos; não representam validação de uma especificação formal pelo responsável pelo produto.
 
 ## 📋 Visão geral dos requisitos
 
@@ -129,6 +129,7 @@ Esta análise documenta 117 requisitos de QA para os cenários relacionados abai
 | [RF119](#rf119) | Conferir a configuração Academia marcada como Box? | Média, proposta | [CT-RF119](Cenario_Teste/CT-RF119_Configuracoes_Academia_Marcada_Box.md) |
 | [RF120](#rf120) | Conferir a configuração de acesso ao sistema desktop | Média, proposta | [CT-RF120](Cenario_Teste/CT-RF120_Configuracoes_Acesso_Desktop.md) |
 | [RF121](#rf121) | Cadastrar um modelo de ficha com nome e personal | Alta, proposta | [CT-RF121](Cenario_Teste/CT-RF121_Cadastro_Modelo_Ficha_Erro_500.md) |
+| [RF122](#rf122) | Filtrar Resultados da Inteligência pelos últimos 90 dias | Média, proposta | [CT-RF122](Cenario_Teste/CT-RF122_Resultados_IA_Filtro_90_Dias.md) |
 
 ---
 
@@ -2747,6 +2748,31 @@ A aprovação cobre Configurações no navegador. A autenticação e o uso efeti
 
 Uma tentativa foi registrada. A gravação não confirma causa técnica, persistência parcial ou abrangência para outros nomes e personais. Os CT-RF109 e CT-RF110 cobrem, respectivamente, a validação de nome vazio e o cancelamento.
 
+<a id="rf122"></a>
+
+## RF122 — Filtrar Resultados da Inteligência pelos últimos 90 dias
+
+| Campo | Descrição |
+| --- | --- |
+| Requisito de QA | Atualizar os cartões e a linha do tempo quando o usuário seleciona Últimos 90 dias em Resultados da Inteligência. |
+| Ator | Usuário autenticado com permissão para a operação. |
+| Pré-condições | Sessão autenticada com acesso a Resultados IA e automações registradas em datas que diferenciem os períodos de 7, 30 e 90 dias. |
+| Gatilho | Selecionar Últimos 90 dias e alternar para Últimos 30 dias e de volta. |
+| Caso | [CT-RF122](Cenario_Teste/CT-RF122_Resultados_IA_Filtro_90_Dias.md) |
+| Situação observada | Aprovado conforme a gravação. Cartões e linha do tempo acompanharam a troca de 7, 30 e 90 dias. Os resultados de 90 dias se repetiram. |
+| Defeito | Nenhum no fluxo avaliado |
+| Evidências | [Jam — PED-12 — Últimos 90 dias](https://jam.dev/c/1728cfc2-1d36-4ea4-ab68-68a84458c359) e [Evidências](Evidencias/CT-RF122_Resultados_IA_Filtro_90_Dias/README.md). |
+
+### Critérios de aceitação do RF122
+
+1. O filtro de 90 dias permanece destacado após carregar.
+2. Os cartões e a linha do tempo correspondem à resposta para o período selecionado.
+3. Alternar entre 30 e 90 dias atualiza os resultados e reaplicar o mesmo filtro reproduz o resultado da base estável.
+
+### Pontos a confirmar e limites do RF122
+
+A aprovação cobre a troca de filtros e a correspondência entre interface e resposta da API. O recorte nas datas-limite e a regra de cartões que permaneceram constantes não foram conferidos com uma base controlada.
+
 ---
 
 ## 🔗 Rastreabilidade
@@ -2867,6 +2893,7 @@ Uma tentativa foi registrada. A gravação não confirma causa técnica, persist
 | RF119 | [CT-RF119](Cenario_Teste/CT-RF119_Configuracoes_Academia_Marcada_Box.md) | Nenhum no fluxo avaliado | Aprovado conforme a gravação | [Evidências](Evidencias/CT-RF119_Configuracoes_Academia_Marcada_Box/README.md) e [Jam — PED-22 — Academia marcada como Box](https://jam.dev/c/16dc862d-c3f9-4392-9037-526818e86cd6) |
 | RF120 | [CT-RF120](Cenario_Teste/CT-RF120_Configuracoes_Acesso_Desktop.md) | Nenhum no fluxo avaliado | Aprovado conforme a gravação | [Evidências](Evidencias/CT-RF120_Configuracoes_Acesso_Desktop/README.md) e [Jam — PED-23 — Acesso desktop](https://jam.dev/c/466be253-ad9a-4856-b567-fb17e1fdd479) |
 | RF121 | [CT-RF121](Cenario_Teste/CT-RF121_Cadastro_Modelo_Ficha_Erro_500.md) | [BUG-045](Relatorio-de-Bugs.md#bug-045), em triagem | Reprovado nas evidências | [Evidências](Evidencias/CT-RF121_Cadastro_Modelo_Ficha_Erro_500/README.md) e [Jam — PED-24 — Cadastro de modelo de ficha](https://jam.dev/c/04e2cae2-f3f2-43ff-8361-b3b9d9f50d35) |
+| RF122 | [CT-RF122](Cenario_Teste/CT-RF122_Resultados_IA_Filtro_90_Dias.md) | Nenhum no fluxo avaliado | Aprovado conforme a gravação | [Evidências](Evidencias/CT-RF122_Resultados_IA_Filtro_90_Dias/README.md) e [Jam — PED-12 — Últimos 90 dias](https://jam.dev/c/1728cfc2-1d36-4ea4-ab68-68a84458c359) |
 
 ---
 
@@ -3695,6 +3722,12 @@ CT-RF116–CT-RF121 amplia a cobertura de Configurações e Modelos de Ficha com
 - RF119: Não → Sim → Não. Seletor, cartão SifitBox e menu Principal acompanharam o estado após recarga. [Jam — PED-22 — Academia marcada como Box](https://jam.dev/c/16dc862d-c3f9-4392-9037-526818e86cd6).
 - RF120: Não → Sim → Não. A API, o seletor e o cartão Desktop refletiram o valor salvo nas duas recargas. [Jam — PED-23 — Acesso desktop](https://jam.dev/c/466be253-ad9a-4856-b567-fb17e1fdd479).
 - RF121: Cadastro preenchido retornou HTTP 500. A interface exibiu “Erro ao salvar modelo.” [Jam — PED-24 — Cadastro de modelo de ficha](https://jam.dev/c/04e2cae2-f3f2-43ff-8361-b3b9d9f50d35).
+
+### Base da análise de Inteligência — revisão de 17/11/2026
+
+CT-RF122 cobre Inteligência com gravações de 16/11/2026 às 21:50:51 BRT.
+
+- RF122: Cartões e linha do tempo acompanharam a troca de 7, 30 e 90 dias. Os resultados de 90 dias se repetiram. [Jam — PED-12 — Últimos 90 dias](https://jam.dev/c/1728cfc2-1d36-4ea4-ab68-68a84458c359).
 
 ---
 

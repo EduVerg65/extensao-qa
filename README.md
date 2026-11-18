@@ -2,13 +2,13 @@
 
 Repositório de documentação de QA manual do **SIFIT**, sistema de gestão de academias. Reúne requisitos, plano, cenários BDD, resultados, defeitos e evidências com links do Jam.
 
-**Atualização documental:** 17/11/2026. Integrados CT-RF116–CT-RF121 e RF116–RF121 para Configurações e Modelos de Ficha. A revisão utiliza as gravações e os eventos do Jam.
+**Atualização documental:** 17/11/2026. Integrados CT-RF122 e RF122 para Inteligência. A revisão utiliza gravações e eventos do Jam.
 
 ## 📊 Situação consolidada
 
 | Cenários documentados | Aprovados | Reprovados | A validar | Defeitos registrados | Casos com reteste corretivo pendente |
 | :---: | :---: | :---: | :---: | :---: | :---: |
-| 117 | 49 | 49 | 19 | 45 (10 abertos + 35 em triagem) | 49 |
+| 118 | 50 | 49 | 19 | 45 (10 abertos + 35 em triagem) | 49 |
 
 As classificações se baseiam nas fontes indicadas em cada cenário. CT-RF09/10 compartilham BUG-005 e CT-RF53–CT-RF56 compartilham BUG-023. As 49 reprovações correspondem a 45 defeitos registrados. BUG-011–BUG-045 aguardam triagem.
 
@@ -16,9 +16,9 @@ As classificações se baseiam nas fontes indicadas em cada cenário. CT-RF09/10
 
 | Documento | Conteúdo |
 | --- | --- |
-| [Análise de requisitos](SIFIT/Analise%20de%20requisitos.md) | RF01–RF35, RF38–RF62 e RF65–RF121, critérios de aceitação, dúvidas de regra e rastreabilidade. |
+| [Análise de requisitos](SIFIT/Analise%20de%20requisitos.md) | RF01–RF35, RF38–RF62 e RF65–RF122, critérios de aceitação, dúvidas de regra e rastreabilidade. |
 | [Plano de testes](SIFIT/Plano%20de%20testes.md) | Escopo, ambientes, preparação, critérios, regressão e retestes. |
-| [Índice dos cenários](SIFIT/Cenario_Teste/README.md) | 117 cenários com pré-condições, BDD, passos, esperado, obtido e encaminhamento. |
+| [Índice dos cenários](SIFIT/Cenario_Teste/README.md) | 118 cenários com pré-condições, BDD, passos, esperado, obtido e encaminhamento. |
 | [Relatório de bugs](SIFIT/Relatorio-de-Bugs.md) | BUG-001–BUG-045: reprodução, impacto, evidências, severidade/prioridade propostas e reteste. |
 | [Relatório dos testes](SIFIT/Relatorio%20dos%20testes.md) | Resultados consolidados, cobertura, limites e pendências. |
 | [Índice das evidências](SIFIT/Evidencias/README.md) | Jam por cenário e arquivos locais dos novos casos. |
@@ -150,6 +150,7 @@ extensao-qa/
 | [CT-RF119](SIFIT/Cenario_Teste/CT-RF119_Configuracoes_Academia_Marcada_Box.md) | Conferir a configuração Academia marcada como Box? | Aprovado conforme a gravação | — | [Jam — PED-22 — Academia marcada como Box](https://jam.dev/c/16dc862d-c3f9-4392-9037-526818e86cd6) |
 | [CT-RF120](SIFIT/Cenario_Teste/CT-RF120_Configuracoes_Acesso_Desktop.md) | Conferir a configuração de acesso ao sistema desktop | Aprovado conforme a gravação | — | [Jam — PED-23 — Acesso desktop](https://jam.dev/c/466be253-ad9a-4856-b567-fb17e1fdd479) |
 | [CT-RF121](SIFIT/Cenario_Teste/CT-RF121_Cadastro_Modelo_Ficha_Erro_500.md) | Cadastrar um modelo de ficha com nome e personal | Reprovado nas evidências | [BUG-045](SIFIT/Relatorio-de-Bugs.md#bug-045), em triagem | [Jam — PED-24 — Cadastro de modelo de ficha](https://jam.dev/c/04e2cae2-f3f2-43ff-8361-b3b9d9f50d35) |
+| [CT-RF122](SIFIT/Cenario_Teste/CT-RF122_Resultados_IA_Filtro_90_Dias.md) | Filtrar Resultados da Inteligência pelos últimos 90 dias | Aprovado conforme a gravação | — | [Jam — PED-12 — Últimos 90 dias](https://jam.dev/c/1728cfc2-1d36-4ea4-ab68-68a84458c359) |
 
 ## 🔬 Como este projeto funciona
 

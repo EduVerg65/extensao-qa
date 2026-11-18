@@ -1,6 +1,6 @@
 # 🧪 Índice dos cenários de teste — SIFIT
 
-**Atualização:** 17/11/2026. 117 casos documentados: 49 aprovados, 49 reprovados e 19 a validar. 45 defeitos registrados (10 abertos e 35 em triagem) e 49 casos com reteste corretivo pendente. Escopo: CT-RF01–CT-RF35, CT-RF38–CT-RF62 e CT-RF65–CT-RF121.
+**Atualização:** 17/11/2026. 118 casos documentados: 50 aprovados, 49 reprovados e 19 a validar. 45 defeitos registrados (10 abertos e 35 em triagem) e 49 casos com reteste corretivo pendente. Escopo: CT-RF01–CT-RF35, CT-RF38–CT-RF62 e CT-RF65–CT-RF122.
 
 | Caso | Funcionalidade | Resultado | Defeito | Jam |
 | --- | --- | --- | --- | --- |
@@ -298,5 +298,13 @@ A revisão de Modelos de Ficha inclui CT-RF109–CT-RF115 com base em 6 gravaç�
 | [CT-RF121](CT-RF121_Cadastro_Modelo_Ficha_Erro_500.md) | Cadastrar um modelo de ficha com nome e personal | Reprovado nas evidências | [BUG-045](../Relatorio-de-Bugs.md#bug-045), em triagem | [Jam — PED-24 — Cadastro de modelo de ficha](https://jam.dev/c/04e2cae2-f3f2-43ff-8361-b3b9d9f50d35) |
 
 CT-RF116–CT-RF121 amplia a cobertura de Configurações e Modelos de Ficha com gravações de 16/11/2026 entre 22:03:53 e 22:18:52 BRT. A revisão é documental.
+
+## Inclusão de 17/11/2026 — Inteligência (CT-RF122)
+
+| Caso | Funcionalidade | Resultado | Defeito | Jam |
+| --- | --- | --- | --- | --- |
+| [CT-RF122](CT-RF122_Resultados_IA_Filtro_90_Dias.md) | Filtrar Resultados da Inteligência pelos últimos 90 dias | Aprovado conforme a gravação | — | [Jam — PED-12 — Últimos 90 dias](https://jam.dev/c/1728cfc2-1d36-4ea4-ab68-68a84458c359) |
+
+CT-RF122 cobre Inteligência com gravações de 16/11/2026 às 21:50:51 BRT. A revisão é documental.
 
 [← Início](../../README.md) · [Requisitos](../Analise%20de%20requisitos.md) · [Plano](../Plano%20de%20testes.md) · [Evidências](../Evidencias/README.md)
