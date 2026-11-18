@@ -1,0 +1,24 @@
+CT-RF146 — Persistir a desativação do Pagamento Online
+Fonte: Jam 2 — Desativação do Pagamento Online. Gravação restrita por conter dados de integração.
+Gravação: 16/11/2026, 23:23:27 BRT. Duração: 15,84 s.
+Revisão documental: 17/11/2026.
+Página: https://sifit.centrion.com.br/configuracoes
+Foco deste caso: Confirmar que a opção Pagamento Online pode ser alterada para Não e mantém esse valor após recarregar.
+
+Cronologia (ações e eventos capturados no Jam):
+0:03–0:05  Seleciona Não e salva as configurações.
+0:08–0:11  Recarrega a página e volta a Pagamento. O seletor mostra Não.
+0:12–0:15  Seleciona Sim e salva para restaurar o valor inicial.
+
+Rede do conjunto gravado (eventos relevantes ao caso):
+0:05,49  POST /api/configuracoes/alterar/1 com pagarme: nao (HTTP 200, verifica_erro: false).
+0:08,46  GET /api/configuracoes/1 (HTTP 200), com pagarme: nao.
+0:14,43  POST com pagarme: sim para restauração (HTTP 200, verifica_erro: false).
+
+Quadros consultados (reprodução do Jam):
+- Pagamento Online retorna como Não após reabrir a aba.
+- Pagamento Online alterado para Sim antes do salvamento de restauração.
+
+Observações e verificações futuras:
+- A aprovação cobre a persistência de Não. A gravação termina após o POST de restauração, sem nova leitura de Sim. Cobrança e validação do token não foram exercitadas.
+- Usar como regressão para desativação e confirmar a reativação com nova leitura em reteste.
