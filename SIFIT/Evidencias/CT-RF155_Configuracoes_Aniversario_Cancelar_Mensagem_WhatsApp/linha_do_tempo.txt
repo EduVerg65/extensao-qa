@@ -1,0 +1,24 @@
+CT-RF155 — Cancelar a edição da mensagem de aniversário do WhatsApp
+Fonte: Jam 5 — Cancelamento da edição da mensagem de WhatsApp. Gravação restrita por conter dados de integração.
+Gravação: 16/11/2026, 23:17:29 BRT. Duração: 20,95 s.
+Revisão documental: 18/11/2026.
+Página: https://sifit.centrion.com.br/configuracoes
+Foco deste caso: Verificar que Cancelar descarta a edição do texto e a seleção temporária do canal WhatsApp.
+
+Cronologia (ações e eventos capturados no Jam):
+0:01–0:09  Marca WhatsApp e substitui o texto no formulário.
+0:10,18  Clica em Cancelar e retorna à Página Inicial.
+0:14–0:16  Reabre Configurações → Aniversário. WhatsApp está desmarcado.
+0:18–0:20  Marca WhatsApp para conferir o texto original.
+
+Rede do conjunto gravado (eventos relevantes ao caso):
+A captura não mostra POST para /api/configuracoes/alterar/1 no fluxo de edição e cancelamento.
+0:14,74  GET /api/configuracoes/1 (HTTP 200) na volta a Configurações. O canal retorna com enviar_mensagens_aniversario_whats: nao e o texto anterior.
+
+Quadros consultados (reprodução do Jam):
+- Texto temporário no campo WhatsApp antes de Cancelar.
+- Texto anterior exibido após retornar e selecionar WhatsApp novamente.
+
+Observações e verificações futuras:
+- O resultado cobre o cancelamento antes de salvar na aba Aniversário. O envio da mensagem não foi exercitado.
+- Usar como regressão do cancelamento e repetir com os demais canais da aba.
