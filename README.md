@@ -2,24 +2,24 @@
 
 Repositório de documentação de QA manual do **SIFIT**, sistema de gestão de academias. Reúne requisitos, plano, cenários BDD, resultados, defeitos e evidências com links do Jam.
 
-**Atualização documental:** 18/11/2026. Integrados CT-RF157–CT-RF162 e RF157–RF162 para Aplicativo e Configurações / Biometria. A revisão utiliza gravações e eventos do Jam.
+**Atualização documental:** 18/11/2026. Integrados CT-RF157–CT-RF163 e RF157–RF163 para Aplicativo e Configurações / Biometria. A revisão utiliza gravações e eventos do Jam.
 
 ## 📊 Situação consolidada
 
 | Cenários documentados | Aprovados | Reprovados | A validar | Defeitos registrados | Casos com reteste corretivo pendente |
 | :---: | :---: | :---: | :---: | :---: | :---: |
-| 158 | 80 | 57 | 21 | 52 (10 abertos + 42 em triagem) | 57 |
+| 159 | 80 | 58 | 21 | 53 (10 abertos + 43 em triagem) | 58 |
 
-As classificações se baseiam nas fontes indicadas em cada cenário. CT-RF09/10 compartilham BUG-005 e CT-RF53–CT-RF56 compartilham BUG-023. CT-RF135 e CT-RF136 compartilham o BUG-049. As 57 reprovações correspondem a 52 defeitos registrados. BUG-011–BUG-052 aguardam triagem.
+As classificações se baseiam nas fontes indicadas em cada cenário. CT-RF09/10 compartilham BUG-005 e CT-RF53–CT-RF56 compartilham BUG-023. CT-RF135 e CT-RF136 compartilham o BUG-049. As 58 reprovações correspondem a 53 defeitos registrados. BUG-011–BUG-053 aguardam triagem.
 
 ## 📚 Documentos do projeto
 
 | Documento | Conteúdo |
 | --- | --- |
-| [Análise de requisitos](SIFIT/Analise%20de%20requisitos.md) | RF01–RF35, RF38–RF62 e RF65–RF162, critérios de aceitação, dúvidas de regra e rastreabilidade. |
+| [Análise de requisitos](SIFIT/Analise%20de%20requisitos.md) | RF01–RF35, RF38–RF62 e RF65–RF163, critérios de aceitação, dúvidas de regra e rastreabilidade. |
 | [Plano de testes](SIFIT/Plano%20de%20testes.md) | Escopo, ambientes, preparação, critérios, regressão e retestes. |
-| [Índice dos cenários](SIFIT/Cenario_Teste/README.md) | 158 cenários com pré-condições, BDD, passos, esperado, obtido e encaminhamento. |
-| [Relatório de bugs](SIFIT/Relatorio-de-Bugs.md) | BUG-001–BUG-052: reprodução, impacto, evidências, severidade/prioridade propostas e reteste. |
+| [Índice dos cenários](SIFIT/Cenario_Teste/README.md) | 159 cenários com pré-condições, BDD, passos, esperado, obtido e encaminhamento. |
+| [Relatório de bugs](SIFIT/Relatorio-de-Bugs.md) | BUG-001–BUG-053: reprodução, impacto, evidências, severidade/prioridade propostas e reteste. |
 | [Relatório dos testes](SIFIT/Relatorio%20dos%20testes.md) | Resultados consolidados, cobertura, limites e pendências. |
 | [Índice das evidências](SIFIT/Evidencias/README.md) | Jam por cenário e arquivos locais dos novos casos. |
 
@@ -191,6 +191,7 @@ extensao-qa/
 | [CT-RF160](SIFIT/Cenario_Teste/CT-RF160_Aplicativo_Postagens_Filtros_Estados_Vazios.md) | Alternar o filtro de postagens e abrir a lista completa | Aprovado conforme a gravação | — | Jam 4 — Filtros e lista completa de postagens (gravação restrita por conter dados de integração ou dados de alunos) |
 | [CT-RF161](SIFIT/Cenario_Teste/CT-RF161_Aplicativo_Denuncias_Filtros_Estados_Vazios.md) | Alternar o filtro de denúncias com a lista vazia | Aprovado conforme a gravação | — | Jam 5 — Filtros de denúncias sem registros (gravação restrita por conter dados de integração ou dados de alunos) |
 | [CT-RF162](SIFIT/Cenario_Teste/CT-RF162_Configuracoes_Biometria_Cancelar_Edicao_Senha.md) | Cancelar a edição da senha de Biometria | Aprovado conforme a gravação | — | Jam 6 — Cancelamento da edição no formulário de Biometria (gravação restrita por conter dados de integração ou dados de alunos) |
+| [CT-RF163](SIFIT/Cenario_Teste/CT-RF163_Configuracoes_Biometria_Rejeitar_IP_Invalido.md) | Rejeitar um valor sem formato de IP em Biometria | Reprovado nas evidências | [BUG-053](SIFIT/Relatorio-de-Bugs.md#bug-053), em triagem | Jam 7 — Validação de IP do aparelho (gravação restrita por conter dados de integração ou dados de alunos) |
 
 ## 🔬 Como este projeto funciona
 

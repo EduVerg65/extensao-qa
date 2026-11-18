@@ -1,10 +1,10 @@
 # 🧪 Plano de Testes — SIFIT
 
-**Atualização:** 18/11/2026 — 158 cenários documentados (CT-RF01–CT-RF35, CT-RF38–CT-RF62 e CT-RF65–CT-RF162), com inclusão de CT-RF42 a CT-RF56 / Pagar.me, Configurações, Despesas Fixas e Relatórios, CT-RF57 e CT-RF58 / Grupos (treino), CT-RF59 / Fichas de Anamnese, CT-RF60 / Modelos de Anamnese, CT-RF61 / Categorias de Anamnese, CT-RF62 / Perguntas Anamnese, CT-RF65 a CT-RF73 / Colaboradores e CT-RF74 a CT-RF108 / Prospecção, Bandeiras de Cartão, Contas a Pagar, Modelos de Contrato, Planos e Tipos de Pagamento, além de Modelos de Ficha (CT-RF109–CT-RF115) e Configurações e Modelos de Ficha (CT-RF116–CT-RF121) e Inteligência e Configurações (CT-RF122–CT-RF127) e Inteligência e Automação (CT-RF128–CT-RF133) e ampliação da cobertura da Central de Automações (CT-RF134–CT-RF138) e integração de WhatsApp (CT-RF139–CT-RF144) e novos cenários de Configurações (CT-RF145–CT-RF150) e Configurações de Avaliação e Aniversário (CT-RF151–CT-RF156) e Aplicativo e Configurações / Biometria (CT-RF157–CT-RF162). BUG-011–BUG-052 em triagem.
+**Atualização:** 18/11/2026 — 159 cenários documentados (CT-RF01–CT-RF35, CT-RF38–CT-RF62 e CT-RF65–CT-RF163), com inclusão de CT-RF42 a CT-RF56 / Pagar.me, Configurações, Despesas Fixas e Relatórios, CT-RF57 e CT-RF58 / Grupos (treino), CT-RF59 / Fichas de Anamnese, CT-RF60 / Modelos de Anamnese, CT-RF61 / Categorias de Anamnese, CT-RF62 / Perguntas Anamnese, CT-RF65 a CT-RF73 / Colaboradores e CT-RF74 a CT-RF108 / Prospecção, Bandeiras de Cartão, Contas a Pagar, Modelos de Contrato, Planos e Tipos de Pagamento, além de Modelos de Ficha (CT-RF109–CT-RF115) e Configurações e Modelos de Ficha (CT-RF116–CT-RF121) e Inteligência e Configurações (CT-RF122–CT-RF127) e Inteligência e Automação (CT-RF128–CT-RF133) e ampliação da cobertura da Central de Automações (CT-RF134–CT-RF138) e integração de WhatsApp (CT-RF139–CT-RF144) e novos cenários de Configurações (CT-RF145–CT-RF150) e Configurações de Avaliação e Aniversário (CT-RF151–CT-RF156) e Aplicativo e Configurações / Biometria (CT-RF157–CT-RF163). BUG-011–BUG-053 em triagem.
 
 **Padronização documental:** 13/11/2026, com resultados e pendências preservados.
 
-**Escopo:** 158 casos (CT-RF01–CT-RF35, CT-RF38–CT-RF62 e CT-RF65–CT-RF162) — autenticação, recuperação de senha, perfil, Clientes, financeiro, página inicial e dashboard, modalidades / tema de SifitBox, Categorias Crossfit, Avaliações, Exercícios, Grupos Musculares, Objetivos de Treino, Grupos (treino), Fichas de Anamnese, gestão de Modelos de Anamnese, gestão de Categorias de Anamnese, edição de Perguntas Anamnese, validações/funções/exclusão/busca de Colaboradores, Prospecção, Bandeiras de Cartão, Contas a Pagar, Modelos de Contrato, Planos, Tipos de Pagamento, Modelos de Ficha, Central de Automações, Integrações de WhatsApp e Configurações de Avaliação, Aniversário, Pagamento, Design e Biometria, além de Aplicativo.
+**Escopo:** 159 casos (CT-RF01–CT-RF35, CT-RF38–CT-RF62 e CT-RF65–CT-RF163) — autenticação, recuperação de senha, perfil, Clientes, financeiro, página inicial e dashboard, modalidades / tema de SifitBox, Categorias Crossfit, Avaliações, Exercícios, Grupos Musculares, Objetivos de Treino, Grupos (treino), Fichas de Anamnese, gestão de Modelos de Anamnese, gestão de Categorias de Anamnese, edição de Perguntas Anamnese, validações/funções/exclusão/busca de Colaboradores, Prospecção, Bandeiras de Cartão, Contas a Pagar, Modelos de Contrato, Planos, Tipos de Pagamento, Modelos de Ficha, Central de Automações, Integrações de WhatsApp e Configurações de Avaliação, Aniversário, Pagamento, Design e Biometria, além de Aplicativo.
 
 ## 📌 1. Identificação
 
@@ -14,13 +14,13 @@
 | Tipo de teste | Funcional manual, com análise exploratória e de evidências. |
 | Versão avaliada | Não confirmada; registrar por caso no reteste. |
 | Funcionalidades | Autenticação positiva e negativa, recuperação, Perfil, filtros de Clientes, financeiro, período, personais, modalidades / tema, Categorias Crossfit, Avaliações e Exercícios. |
-| Situação | 158 casos documentados: 80 aprovados, 57 reprovados e 21 a validar. 52 defeitos registrados (10 abertos e 42 em triagem) e 57 casos com reteste corretivo pendente. |
+| Situação | 159 casos documentados: 80 aprovados, 58 reprovados e 21 a validar. 53 defeitos registrados (10 abertos e 43 em triagem) e 58 casos com reteste corretivo pendente. |
 
 ---
 
 ## 🎯 2. Objetivo
 
-Verificar os fluxos dos 158 cenários documentados, comparando os critérios de aceitação com as evidências de autenticação, recuperação, perfil, Clientes, financeiro, página inicial, SifitBox, Categorias Crossfit, Avaliações, Exercícios, Grupos Musculares, Fichas de Anamnese, Colaboradores, Prospecção, Bandeiras de Cartão, Contas a Pagar, Modelos de Contrato, Planos, Tipos de Pagamento, Modelos de Ficha, Central de Automações, Integrações de WhatsApp e Configurações de Avaliação, Aniversário, Pagamento, Design e Biometria, além de Aplicativo. Manter rastreabilidade entre requisitos, casos, Jam, vídeos, resultados e defeitos, distinguindo revisões documentais de novas execuções.
+Verificar os fluxos dos 159 cenários documentados, comparando os critérios de aceitação com as evidências de autenticação, recuperação, perfil, Clientes, financeiro, página inicial, SifitBox, Categorias Crossfit, Avaliações, Exercícios, Grupos Musculares, Fichas de Anamnese, Colaboradores, Prospecção, Bandeiras de Cartão, Contas a Pagar, Modelos de Contrato, Planos, Tipos de Pagamento, Modelos de Ficha, Central de Automações, Integrações de WhatsApp e Configurações de Avaliação, Aniversário, Pagamento, Design e Biometria, além de Aplicativo. Manter rastreabilidade entre requisitos, casos, Jam, vídeos, resultados e defeitos, distinguindo revisões documentais de novas execuções.
 
 ---
 
@@ -103,7 +103,7 @@ Integração documental dos arquivos RESUMO.txt fornecidos em `C:\Users\Leonardo
 
 **Configurações / Avaliação e Aniversário — CT-RF151–CT-RF156:** desativar a cobrança da avaliação do cliente, alterar o tipo de avaliação para Bioimpedância, habilitar Teste Físico nas configurações de avaliação, desabilitar o envio automático de aniversário, cancelar a edição da mensagem de aniversário do WhatsApp, inserir variáveis na mensagem de aniversário do WhatsApp.
 
-**Aplicativo e Configurações / Biometria — CT-RF157–CT-RF162:** consultar os detalhes de uma notificação, impedir o envio de uma notificação sem mensagem, criar uma notificação e conferir a prévia e a listagem, alternar o filtro de postagens e abrir a lista completa, alternar o filtro de denúncias com a lista vazia, cancelar a edição da senha de Biometria.
+**Aplicativo e Configurações / Biometria — CT-RF157–CT-RF163:** consultar os detalhes de uma notificação, impedir o envio de uma notificação sem mensagem, criar uma notificação e conferir a prévia e a listagem, alternar o filtro de postagens e abrir a lista completa, alternar o filtro de denúncias com a lista vazia, cancelar a edição da senha de Biometria, rejeitar um valor sem formato de IP em Biometria.
 
 **Limites da cobertura atual:**
 
@@ -531,14 +531,14 @@ Para o reteste, preparar aluno existente selecionável pela busca, personal habi
 | Dados e permissões | Conta com permissão para editar Configurações. Preparar valores de referência nos seletores de Avaliação e uma mensagem de WhatsApp cadastrada na aba Aniversário. |
 | Preparação | Registrar valores iniciais, conferir a consulta após salvar ou cancelar e usar dados de teste nas mensagens. |
 
-### Aplicativo e Configurações / Biometria — ambiente e preparação (CT-RF157–CT-RF162)
+### Aplicativo e Configurações / Biometria — ambiente e preparação (CT-RF157–CT-RF163)
 
 | Item | Definição |
 | --- | --- |
 | Páginas | https://sifit.centrion.com.br/aplicativo, https://sifit.centrion.com.br/configuracoes |
 | Backend de referência | https://backendsifit.centrion.com.br |
 | Navegador / sistema / vídeo | Chrome 157.0.8103.79 / Windows 10 (x86) / 1918 × 998. |
-| Gravações | 16/11/2026 entre 22:39:05 e 23:02:14 BRT. |
+| Gravações | 16/11/2026 entre 22:39:05 e 23:03:49 BRT. |
 | Dados e permissões | Conta de teste com acesso a Aplicativo e Configurações. Preparar avisos e registros de teste e valores conhecidos para o aparelho de Biometria. |
 | Preparação | Conferir a requisição e a interface quando aplicável. Usar recortes que preservem credenciais, valores de conexão e dados de alunos. |
 
@@ -693,6 +693,7 @@ Para o reteste, preparar aluno existente selecionável pela busca, personal habi
 | [RF160](Analise%20de%20requisitos.md#rf160) | [CT-RF160](Cenario_Teste/CT-RF160_Aplicativo_Postagens_Filtros_Estados_Vazios.md) | Funcional manual / filtragem de lista vazia | Aprovado conforme a gravação | Nenhum no fluxo avaliado | Repetir com postagens pendentes e aprovadas para conferir a seleção de registros e o total do diálogo. |
 | [RF161](Analise%20de%20requisitos.md#rf161) | [CT-RF161](Cenario_Teste/CT-RF161_Aplicativo_Denuncias_Filtros_Estados_Vazios.md) | Funcional manual / filtragem de lista vazia | Aprovado conforme a gravação | Nenhum no fluxo avaliado | Retestar com denúncias de teste em estados diferentes e conferir os registros exibidos em cada filtro. |
 | [RF162](Analise%20de%20requisitos.md#rf162) | [CT-RF162](Cenario_Teste/CT-RF162_Configuracoes_Biometria_Cancelar_Edicao_Senha.md) | Funcional manual / cancelamento | Aprovado conforme a gravação | Nenhum no fluxo avaliado | Usar como regressão do cancelamento e repetir com outros campos de Biometria em um ambiente de teste. |
+| [RF163](Analise%20de%20requisitos.md#rf163) | [CT-RF163](Cenario_Teste/CT-RF163_Configuracoes_Biometria_Rejeitar_IP_Invalido.md) | Funcional manual / validação | Reprovado nas evidências | [BUG-053](Relatorio-de-Bugs.md#bug-053), em triagem | Confirmar o formato aceito pelo produto e retestar com endereços válidos e entradas inválidas em um equipamento de teste. |
 
 ---
 
@@ -992,7 +993,7 @@ Todas essas variações permanecem planejadas e não são contadas como execuç�
 5. CT-RF155: Usar como regressão do cancelamento e repetir com os demais canais da aba.
 6. CT-RF156: Usar como regressão do editor e testar a substituição dos marcadores em um envio controlado com dados de teste.
 
-### Aplicativo e Configurações / Biometria — próximos testes (CT-RF157–CT-RF162)
+### Aplicativo e Configurações / Biometria — próximos testes (CT-RF157–CT-RF163)
 
 1. CT-RF157: Usar como regressão da consulta e comparar dois avisos de teste diferentes para conferir o vínculo com a linha selecionada.
 2. CT-RF158: Usar como regressão do formulário vazio e repetir com entrada composta apenas de espaços.
@@ -1000,6 +1001,7 @@ Todas essas variações permanecem planejadas e não são contadas como execuç�
 4. CT-RF160: Repetir com postagens pendentes e aprovadas para conferir a seleção de registros e o total do diálogo.
 5. CT-RF161: Retestar com denúncias de teste em estados diferentes e conferir os registros exibidos em cada filtro.
 6. CT-RF162: Usar como regressão do cancelamento e repetir com outros campos de Biometria em um ambiente de teste.
+7. CT-RF163: Confirmar o formato aceito pelo produto e retestar com endereços válidos e entradas inválidas em um equipamento de teste.
 
 ---
 
@@ -1093,6 +1095,7 @@ Todas essas variações permanecem planejadas e não são contadas como execuç�
 | Integração de CT-RF160 / RF160 | Realizada | 18/11/2026, revisão documental. |
 | Integração de CT-RF161 / RF161 | Realizada | 18/11/2026, revisão documental. |
 | Integração de CT-RF162 / RF162 | Realizada | 18/11/2026, revisão documental. |
+| Integração de CT-RF163 / RF163 | Realizada | 18/11/2026, revisão documental. |
 | Confirmação da regra do status e da exclusão de tipos de pagamento em uso, e da filtragem da listagem | Pendente | RF104, RF105 e RF107; depende do responsável pelo produto. |
 | Confirmação da obrigatoriedade do colaborador, dos filtros de contas e da regra do cartão Ativos | Pendente | RF91, RF92, RF93 e RF102; depende do responsável pelo produto. |
 | Confirmação da regra do telefone e da duplicidade de criação de leads | Pendente | RF88 e RF89; depende do responsável pelo produto. |
@@ -1135,7 +1138,7 @@ Há dez defeitos abertos (BUG-001 a BUG-010) e trinta e três em triagem (BUG-01
 
 ## 📁 13. Entregáveis e documentos associados
 
-Os entregáveis são a análise RF01–RF35, RF38–RF62 e RF65–RF162, este plano, os 158 cenários BDD, as evidências disponíveis e os relatórios atualizados. CT-RF21 possui relato original, link do Jam, quadros, cronologia, requisição/resposta sem autenticação e metadados locais; o vídeo permanece no Jam. Os vídeos e demais evidências anteriores citados nos documentos de 14/11/2026 não estavam nesta cópia do repositório em 15/11/2026; consultar o índice de evidências para a disponibilidade. 80 casos estão aprovados no alcance das evidências. 57 reprovados aguardam reteste, incluindo CT-RF22/24/26/27/28/29/30/35/41/45/51/53/54/55/56/57/58/59/65/66/67/68/69/70/71/73/81/82/83/89/92/98/102/105/107 em triagem, e 21 a validar dependem de regra/contexto ou persistência. CT-RF23–25, CT-RF35, CT-RF38–CT-RF56 e CT-RF85–CT-RF108 possuem pasta local com resumo, cronologia e origem (CT-RF35, CT-RF38–CT-RF56 e CT-RF85–CT-RF108 incluem também capturas extraídas do Jam e hashes; CT-RF50–CT-RF56 incluem os PDFs baixados); os vídeos permanecem no Jam. CT-RF29–CT-RF33, CT-RF57, CT-RF58 e CT-RF59 têm como fonte gravações únicas, cujos painéis foram lidos diretamente; as pastas locais de evidências desses casos ainda não foram criadas.
+Os entregáveis são a análise RF01–RF35, RF38–RF62 e RF65–RF163, este plano, os 159 cenários BDD, as evidências disponíveis e os relatórios atualizados. CT-RF21 possui relato original, link do Jam, quadros, cronologia, requisição/resposta sem autenticação e metadados locais; o vídeo permanece no Jam. Os vídeos e demais evidências anteriores citados nos documentos de 14/11/2026 não estavam nesta cópia do repositório em 15/11/2026; consultar o índice de evidências para a disponibilidade. 80 casos estão aprovados no alcance das evidências. 58 reprovados aguardam reteste, incluindo CT-RF22/24/26/27/28/29/30/35/41/45/51/53/54/55/56/57/58/59/65/66/67/68/69/70/71/73/81/82/83/89/92/98/102/105/107 em triagem, e 21 a validar dependem de regra/contexto ou persistência. CT-RF23–25, CT-RF35, CT-RF38–CT-RF56 e CT-RF85–CT-RF108 possuem pasta local com resumo, cronologia e origem (CT-RF35, CT-RF38–CT-RF56 e CT-RF85–CT-RF108 incluem também capturas extraídas do Jam e hashes; CT-RF50–CT-RF56 incluem os PDFs baixados); os vídeos permanecem no Jam. CT-RF29–CT-RF33, CT-RF57, CT-RF58 e CT-RF59 têm como fonte gravações únicas, cujos painéis foram lidos diretamente; as pastas locais de evidências desses casos ainda não foram criadas.
 
 - [Análise de requisitos](Analise%20de%20requisitos.md)
 - [Caso CT-RF01](Cenario_Teste/CT-RF01_Esqueci-senha.md)
@@ -1259,7 +1262,8 @@ Os entregáveis são a análise RF01–RF35, RF38–RF62 e RF65–RF162, este pl
 - [CT-RF160](Cenario_Teste/CT-RF160_Aplicativo_Postagens_Filtros_Estados_Vazios.md) e [Evidências](Evidencias/CT-RF160_Aplicativo_Postagens_Filtros_Estados_Vazios/README.md)
 - [CT-RF161](Cenario_Teste/CT-RF161_Aplicativo_Denuncias_Filtros_Estados_Vazios.md) e [Evidências](Evidencias/CT-RF161_Aplicativo_Denuncias_Filtros_Estados_Vazios/README.md)
 - [CT-RF162](Cenario_Teste/CT-RF162_Configuracoes_Biometria_Cancelar_Edicao_Senha.md) e [Evidências](Evidencias/CT-RF162_Configuracoes_Biometria_Cancelar_Edicao_Senha/README.md)
-- [Índice dos 158 cenários](Cenario_Teste/README.md)
+- [CT-RF163](Cenario_Teste/CT-RF163_Configuracoes_Biometria_Rejeitar_IP_Invalido.md) e [Evidências](Evidencias/CT-RF163_Configuracoes_Biometria_Rejeitar_IP_Invalido/README.md)
+- [Índice dos 159 cenários](Cenario_Teste/README.md)
 - [Índice das evidências e dos Jams](Evidencias/README.md)
 - [Manifesto de integridade dos novos arquivos](Evidencias/manifesto_sha256.json)
 

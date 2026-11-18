@@ -237,7 +237,7 @@ CT-RF145–CT-RF150 cobrem funcionalidades de Configurações com gravações de
 
 CT-RF151–CT-RF156 cobrem as abas Avaliação e Aniversário com gravações de 16/11/2026 entre 23:10:04 e 23:20:07 BRT. As pastas reúnem origem, cronologia e recortes identificados com SHA-256.
 
-## Inclusão de 18/11/2026 — Aplicativo e Configurações / Biometria (CT-RF157–CT-RF162)
+## Inclusão de 18/11/2026 — Aplicativo e Configurações / Biometria (CT-RF157–CT-RF163)
 
 | Caso | Evidência | Resultado |
 | --- | --- | --- |
@@ -247,5 +247,6 @@ CT-RF151–CT-RF156 cobrem as abas Avaliação e Aniversário com gravações de
 | [CT-RF160](../Cenario_Teste/CT-RF160_Aplicativo_Postagens_Filtros_Estados_Vazios.md) | [Alternar o filtro de postagens e abrir a lista completa](CT-RF160_Aplicativo_Postagens_Filtros_Estados_Vazios/README.md) | Aprovado conforme a gravação |
 | [CT-RF161](../Cenario_Teste/CT-RF161_Aplicativo_Denuncias_Filtros_Estados_Vazios.md) | [Alternar o filtro de denúncias com a lista vazia](CT-RF161_Aplicativo_Denuncias_Filtros_Estados_Vazios/README.md) | Aprovado conforme a gravação |
 | [CT-RF162](../Cenario_Teste/CT-RF162_Configuracoes_Biometria_Cancelar_Edicao_Senha.md) | [Cancelar a edição da senha de Biometria](CT-RF162_Configuracoes_Biometria_Cancelar_Edicao_Senha/README.md) | Aprovado conforme a gravação |
+| [CT-RF163](../Cenario_Teste/CT-RF163_Configuracoes_Biometria_Rejeitar_IP_Invalido.md) | [Rejeitar um valor sem formato de IP em Biometria](CT-RF163_Configuracoes_Biometria_Rejeitar_IP_Invalido/README.md) | Reprovado nas evidências |
 
-CT-RF157–CT-RF162 cobrem Aplicativo e a aba Biometria com gravações de 16/11/2026 entre 22:39:05 e 23:02:14 BRT. As pastas reúnem origem, cronologia e recortes identificados com SHA-256.
+CT-RF157–CT-RF163 cobrem Aplicativo e a aba Biometria com gravações de 16/11/2026 entre 22:39:05 e 23:03:49 BRT. As pastas reúnem origem, cronologia e recortes identificados com SHA-256.

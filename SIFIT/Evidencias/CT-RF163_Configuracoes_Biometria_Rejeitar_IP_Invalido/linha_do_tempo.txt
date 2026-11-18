@@ -1,0 +1,23 @@
+CT-RF163 — Rejeitar um valor sem formato de IP em Biometria
+Fonte: Jam 7 — Validação de IP do aparelho. Gravação restrita por conter dados de integração ou dados de alunos.
+Gravação: 16/11/2026, 23:03:49 BRT. Duração: 27,52 s.
+Revisão documental: 18/11/2026.
+Página: https://sifit.centrion.com.br/configuracoes
+Foco deste caso: Impedir que uma sequência numérica sem formato de endereço IP substitua o valor configurado para o aparelho.
+
+Cronologia (ações e eventos capturados no Jam):
+0:00–0:14  Edita o formulário e deixa o campo IP com uma sequência de dígitos sem separadores.
+0:14,61  Salva o formulário e recebe HTTP 200.
+0:18,41–0:22  Recarrega e volta a Biometria. A consulta e o campo mostram a entrada inválida.
+
+Rede do conjunto gravado (eventos relevantes ao caso):
+0:14,61  POST /api/configuracoes/alterar/1 (HTTP 200). A captura desse evento não inclui o corpo do POST.
+0:18,41  GET /api/configuracoes/1 (HTTP 200), com ip_aparelho composto por nove dígitos sem separadores.
+
+Quadros consultados (reprodução do Jam):
+- Campo IP em edição antes de salvar, com dados de conexão ocultos.
+- Campo IP após recarregar, com os valores de integração ocultos.
+
+Observações e verificações futuras:
+- A leitura posterior comprova o valor armazenado. A gravação não verifica a tentativa de conexão ao aparelho.
+- Confirmar o formato aceito pelo produto e retestar com endereços válidos e entradas inválidas em um equipamento de teste.

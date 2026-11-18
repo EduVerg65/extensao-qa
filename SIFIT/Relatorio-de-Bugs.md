@@ -1,12 +1,12 @@
 # 🐞 Relatório de Bugs — SIFIT
 
-**Escopo:** defeitos de 158 casos documentados (CT-RF01–CT-RF35, CT-RF38–CT-RF62 e CT-RF65–CT-RF162): recuperação, Perfil, Clientes, financeiro, página inicial e dashboard, tema, modalidades, categorias, avaliações, exercícios, grupos musculares, objetivos de treino, SifitBox – Turmas, Pagar.me, configurações, despesas fixas, relatórios, grupos (treino), fichas de anamnese, colaboradores, modelos de anamnese, categorias de anamnese, perguntas de anamnese, Prospecção, Bandeiras de Cartão, Contas a Pagar, Modelos de Contrato, Planos, Tipos de Pagamento, Modelos de Ficha, Central de Automações, Integrações de WhatsApp e Configurações de Avaliação, Aniversário, Pagamento, Design e Biometria, além de Aplicativo. CT-RF60 (Modelos de Anamnese) e CT-RF61 (Categorias de Anamnese) são aprovados conforme a gravação, sem defeito identificado. CT-RF62 (Perguntas Anamnese) é reprovado nas evidências e acrescenta o BUG-044 (44 defeitos registrados).
+**Escopo:** defeitos de 159 casos documentados (CT-RF01–CT-RF35, CT-RF38–CT-RF62 e CT-RF65–CT-RF163): recuperação, Perfil, Clientes, financeiro, página inicial e dashboard, tema, modalidades, categorias, avaliações, exercícios, grupos musculares, objetivos de treino, SifitBox – Turmas, Pagar.me, configurações, despesas fixas, relatórios, grupos (treino), fichas de anamnese, colaboradores, modelos de anamnese, categorias de anamnese, perguntas de anamnese, Prospecção, Bandeiras de Cartão, Contas a Pagar, Modelos de Contrato, Planos, Tipos de Pagamento, Modelos de Ficha, Central de Automações, Integrações de WhatsApp e Configurações de Avaliação, Aniversário, Pagamento, Design e Biometria, além de Aplicativo. CT-RF60 (Modelos de Anamnese) e CT-RF61 (Categorias de Anamnese) são aprovados conforme a gravação, sem defeito identificado. CT-RF62 (Perguntas Anamnese) é reprovado nas evidências e acrescenta o BUG-044 (44 defeitos registrados).
 
 **Ambientes:** CT-RF01 em https://sifitalfa.centrion.com.br/login; CT-RF02_ERRO em https://sifit.centrion.com.br/profile. CT-RF03: URL do frontend não confirmada; backend informado em `https://backendsifit.centrion.com.br/api/clientesPorNome/1`.
 
 **Datas das gravações do Jam:** CT-RF01 em 23/10/2026; CT-RF02_ERRO em 22/10/2026 às 21:45 BRT; CT-RF03 não confirmada.
 
-**Atualização documental:** 18/11/2026 — 52 defeitos registrados: 10 abertos (BUG-001 a BUG-010) e 42 em triagem (BUG-011 a BUG-052). BUG-019 registra o HTTP 500 no cadastro de objetivo de treino, BUG-020 a ausência de retorno visível no cadastro de turma sem modalidade, BUG-024 e BUG-025 cobrem Grupos (treino), BUG-026–BUG-031 cobrem Colaboradores e BUG-032 o HTTP 500 no cadastro de anamnese (aplicar e rascunho), todos sem causa técnica confirmada. CT-RF60 (Modelos de Anamnese) e CT-RF61 (Categorias de Anamnese), incluídos em 16/11/2026, são aprovados conforme a gravação e não geram novo defeito. BUG-038 a BUG-041 cobrem Prospecção (telefone), Contas a Pagar, Modelos de Contrato e Planos; BUG-042 e BUG-043 cobrem Tipos de Pagamento (status e exclusão); BUG-044, também em 16/11/2026, registra o HTTP 500 na edição do tipo de resposta de pergunta de anamnese (CT-RF62); BUG-035 e BUG-036 cobrem Bandeiras; BUG-037 registra o relato de cadastro de lead apenas com nome, com regra a confirmar. As análises anteriores foram preservadas.
+**Atualização documental:** 18/11/2026 — 53 defeitos registrados: 10 abertos (BUG-001 a BUG-010) e 43 em triagem (BUG-011 a BUG-053). BUG-019 registra o HTTP 500 no cadastro de objetivo de treino, BUG-020 a ausência de retorno visível no cadastro de turma sem modalidade, BUG-024 e BUG-025 cobrem Grupos (treino), BUG-026–BUG-031 cobrem Colaboradores e BUG-032 o HTTP 500 no cadastro de anamnese (aplicar e rascunho), todos sem causa técnica confirmada. CT-RF60 (Modelos de Anamnese) e CT-RF61 (Categorias de Anamnese), incluídos em 16/11/2026, são aprovados conforme a gravação e não geram novo defeito. BUG-038 a BUG-041 cobrem Prospecção (telefone), Contas a Pagar, Modelos de Contrato e Planos; BUG-042 e BUG-043 cobrem Tipos de Pagamento (status e exclusão); BUG-044, também em 16/11/2026, registra o HTTP 500 na edição do tipo de resposta de pergunta de anamnese (CT-RF62); BUG-035 e BUG-036 cobrem Bandeiras; BUG-037 registra o relato de cadastro de lead apenas com nome, com regra a confirmar. As análises anteriores foram preservadas.
 
 **Gravação de CT-RF104–CT-RF108:** 15/11/2026, Tipos de Pagamento, 22:03 BRT, Chrome 157.0.8103.78 / Windows 11; uma única gravação; evidência e limites no BUG-042 e no BUG-043.
 
@@ -92,8 +92,9 @@
 | [BUG-050](#bug-050) | API de conexão do WhatsApp indica sucesso quando a tentativa falha | Média / Média, propostas | Em triagem. Reteste após correção. | [CT-RF143](Cenario_Teste/CT-RF143_Integracoes_WhatsApp_Conectar_Evolution.md) |
 | [BUG-051](#bug-051) | Configurações persiste código inválido na Cor Secundária | Média / Média, propostas | Em triagem. Reteste após correção. | [CT-RF148](Cenario_Teste/CT-RF148_Configuracoes_Design_Validar_Cor_Secundaria.md) |
 | [BUG-052](#bug-052) | Design omite o limite de 6 MB ao rejeitar o salvamento do logo | Baixa / Baixa, propostas | Em triagem. Reteste após correção. | [CT-RF149](Cenario_Teste/CT-RF149_Configuracoes_Design_Logo_Limite_Tamanho.md) |
+| [BUG-053](#bug-053) | Biometria persiste valor sem formato de IP no campo do aparelho | Média / Média, propostas | Em triagem. Reteste após correção. | [CT-RF163](Cenario_Teste/CT-RF163_Configuracoes_Biometria_Rejeitar_IP_Invalido.md) |
 
-BUG-001–BUG-010 aguardam correção e reteste. BUG-011–BUG-052 aguardam confirmação das premissas e triagem antes do encaminhamento de correção. As causas técnicas permanecem não confirmadas; o BUG-003 se apoia no relato e nas capturas fornecidos, com os limites registrados no caso.
+BUG-001–BUG-010 aguardam correção e reteste. BUG-011–BUG-053 aguardam confirmação das premissas e triagem antes do encaminhamento de correção. As causas técnicas permanecem não confirmadas; o BUG-003 se apoia no relato e nas capturas fornecidos, com os limites registrados no caso.
 
 ---
 
@@ -2198,6 +2199,50 @@ Retestar com arquivos de tamanho conhecido no entorno do limite e confirmar a me
 
 ---
 
+<a id="bug-053"></a>
+
+## BUG-053 — Biometria persiste valor sem formato de IP no campo do aparelho
+
+| Campo | Descrição |
+| --- | --- |
+| Status | Em triagem. Reteste após correção. |
+| Severidade / prioridade | Média / Média, propostas para triagem. |
+| Módulo | Configurações / Biometria |
+| Requisito | [RF163](Analise%20de%20requisitos.md#rf163) |
+| Caso reprovado | [CT-RF163](Cenario_Teste/CT-RF163_Configuracoes_Biometria_Rejeitar_IP_Invalido.md) |
+| Data da evidência / revisão | 16/11/2026, 23:03:49 BRT / 18/11/2026. |
+| Página | https://sifit.centrion.com.br/configuracoes |
+| Ambiente | Chrome 157.0.8103.79 / Windows 10 (x86). Versão da aplicação e zoom a confirmar. |
+| Frequência conhecida | Uma tentativa seguida de nova consulta. |
+
+### Pré-condições e reprodução
+
+Sessão autenticada em Biometria com permissão para alterar os dados de um aparelho de teste.
+
+1. Registrar o endereço de teste configurado em Biometria.
+2. Substituir o campo IP por uma sequência numérica sem separadores.
+3. Acionar Salvar Configurações e verificar a resposta.
+
+### Esperado e obtido
+
+**Esperado:** A aplicação recusa a entrada sem formato de IP, informa o campo a corrigir e mantém a configuração anterior.
+
+**Obtido:** O salvamento retornou HTTP 200. Depois de recarregar, o GET devolveu a sequência numérica sem separadores em `ip_aparelho`. O formulário reaberto manteve essa entrada.
+
+### Evidências técnicas
+
+- 0:14,61  POST `/api/configuracoes/alterar/1` (HTTP 200). A captura desse evento não inclui o corpo do POST.
+- 0:18,41  GET `/api/configuracoes/1` (HTTP 200), com `ip_aparelho` composto por nove dígitos sem separadores.
+- Jam 7 — Validação de IP do aparelho (gravação restrita por conter dados de integração ou dados de alunos) e [Evidências](Evidencias/CT-RF163_Configuracoes_Biometria_Rejeitar_IP_Invalido/README.md).
+
+### Análise, impacto e encaminhamento
+
+O dado sem formato de IP substitui a configuração do aparelho e pode impedir o uso da integração. A leitura posterior comprova o valor armazenado. A gravação não verifica a tentativa de conexão ao aparelho.
+
+Confirmar o formato aceito pelo produto e retestar com endereços válidos e entradas inválidas em um equipamento de teste.
+
+---
+
 ## Modelos de Ficha — revisão de 17/11/2026
 
 A revisão de Modelos de Ficha inclui CT-RF109–CT-RF115 com base em 6 gravações do Jam de 16/11/2026. A revisão documental foi feita em 17/11/2026. A triagem documental de [CT-RF109](Cenario_Teste/CT-RF109_Modelo_Ficha_Sem_Nome.md), [CT-RF110](Cenario_Teste/CT-RF110_Cancelar_Cadastro_Modelo_Ficha.md), [CT-RF111](Cenario_Teste/CT-RF111_Busca_Modelo_Ficha_Codigo_Inexistente.md), [CT-RF112](Cenario_Teste/CT-RF112_Busca_Modelo_Ficha_Titulo_Inexistente.md), [CT-RF113](Cenario_Teste/CT-RF113_Busca_Modelo_Ficha_Filtros_Combinados.md), [CT-RF114](Cenario_Teste/CT-RF114_Limpeza_Filtros_Modelos_Ficha.md), [CT-RF115](Cenario_Teste/CT-RF115_Nova_Busca_Modelos_Ficha_Sem_Filtros.md) registrou 4 caso(s) de Modelos de Ficha a validar e zero novos defeitos confirmados.
@@ -2230,9 +2275,9 @@ CT-RF145–CT-RF150 cobrem funcionalidades de Configurações com gravações de
 
 CT-RF151–CT-RF156 cobrem as abas Avaliação e Aniversário com gravações de 16/11/2026 entre 23:10:04 e 23:20:07 BRT. Casos aprovados: 6. Reprovados: 0. A validar: 0. Nenhum defeito identificado nos fluxos gravados.
 
-## Aplicativo e Configurações / Biometria — revisão de 18/11/2026 (CT-RF157–CT-RF162)
+## Aplicativo e Configurações / Biometria — revisão de 18/11/2026 (CT-RF157–CT-RF163)
 
-CT-RF157–CT-RF162 cobrem Aplicativo e a aba Biometria com gravações de 16/11/2026 entre 22:39:05 e 23:02:14 BRT. Casos aprovados: 6. Reprovados: 0. A validar: 0.
+CT-RF157–CT-RF163 cobrem Aplicativo e a aba Biometria com gravações de 16/11/2026 entre 22:39:05 e 23:03:49 BRT. Casos aprovados: 6. Reprovados: 1. A validar: 0. Defeitos do lote: [BUG-053](#bug-053).
 
 ## Pontos a validar — sem defeito confirmado
 
@@ -2260,7 +2305,7 @@ CT-RF157–CT-RF162 cobrem Aplicativo e a aba Biometria com gravações de 16/11
 | [CT-RF140](Cenario_Teste/CT-RF140_Integracoes_WhatsApp_Validar_URL_API.md) | Isolar a URL no reteste, mantendo a instância e a chave preenchidas, e confirmar o formato aceito com produto. O Nome da Instância vazio impede atribuir a ausência de POST à regra de URL. A gravação não demonstra qual validação bloqueou a tentativa. | Jam 2 — Validação da URL da API (gravação restrita por conter dados de integração) e [Evidências](Evidencias/CT-RF140_Integracoes_WhatsApp_Validar_URL_API/README.md) |
 | [CT-RF127](Cenario_Teste/CT-RF127_Configuracoes_Dias_Ausencia_Texto.md) | Confirmar a regra de vazio com o produto e repetir a digitação e a colagem de texto, conferindo também a recarga. A rejeição da digitação de letras foi observada. A regra para o campo vazio permanece pendente no CT-RF116. A persistência de zero nesta gravação não foi verificada após recarga. | [Jam — PED-18 — Dias de ausência com texto](https://jam.dev/c/c578ed7a-c11c-4cef-8a6c-84d0244f21a5) e [Evidências](Evidencias/CT-RF127_Configuracoes_Dias_Ausencia_Texto/README.md) |
 
-A contagem de 52 defeitos registrados considera os itens do resumo de bugs. BUG-011–BUG-052 estão em triagem. Os pontos desta tabela aguardam confirmação antes de receber um registro de defeito.
+A contagem de 53 defeitos registrados considera os itens do resumo de bugs. BUG-011–BUG-053 estão em triagem. Os pontos desta tabela aguardam confirmação antes de receber um registro de defeito.
 
 
 **Exclusão de exercício:** CT-RF23 está aprovado no trecho consultado, com remoção e total 11 para 10; não gerou defeito adicional. Persistência e efeitos sobre vínculos permanecem como verificações complementares.
