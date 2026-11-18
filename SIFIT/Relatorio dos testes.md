@@ -1,10 +1,10 @@
 # 📊 Relatório de Testes — SIFIT
 
-**Escopo:** 137 casos documentados (CT-RF01–CT-RF35, CT-RF38–CT-RF62 e CT-RF65–CT-RF141) — autenticação, recuperação, perfil, Clientes, financeiro, página inicial e dashboard, modalidades / tema de SifitBox, Categorias Crossfit, Avaliações, Exercícios, Grupos Musculares, Objetivos de Treino cadastro de categorias com código automático, SifitBox – Turmas, Pagar.me, Configurações, Despesas Fixas, Relatórios, Grupos (treino), Fichas de Anamnese, gestão de Modelos de Anamnese, gestão de Categorias de Anamnese, edição de Perguntas Anamnese, validações/funções/exclusão/busca de Colaboradores, Prospecção, Bandeiras de Cartão, Contas a Pagar, Modelos de Contrato, Planos, Tipos de Pagamento, Modelos de Ficha, Central de Automações e Integrações de WhatsApp.
+**Escopo:** 138 casos documentados (CT-RF01–CT-RF35, CT-RF38–CT-RF62 e CT-RF65–CT-RF142) — autenticação, recuperação, perfil, Clientes, financeiro, página inicial e dashboard, modalidades / tema de SifitBox, Categorias Crossfit, Avaliações, Exercícios, Grupos Musculares, Objetivos de Treino cadastro de categorias com código automático, SifitBox – Turmas, Pagar.me, Configurações, Despesas Fixas, Relatórios, Grupos (treino), Fichas de Anamnese, gestão de Modelos de Anamnese, gestão de Categorias de Anamnese, edição de Perguntas Anamnese, validações/funções/exclusão/busca de Colaboradores, Prospecção, Bandeiras de Cartão, Contas a Pagar, Modelos de Contrato, Planos, Tipos de Pagamento, Modelos de Ficha, Central de Automações e Integrações de WhatsApp.
 
-**Datas das gravações do Jam:** CT-RF01 em 23/10/2026; CT-RF02_ERRO em 22/10/2026 às 21:45 BRT; CT-RF03 não confirmada; CT-RF04_loginComSucesso em 13/11/2026; CT-RF05–CT-RF20 em 14/11/2026; CT-RF21 em 15/11/2026 às 15:07:51,265 BRT; CT-RF22–28 em 15/11/2026 às 15:25, 15:40, 15:38, 15:35, 16:11, 16:08 e 16:07 BRT; CT-RF29–33 em 15/11/2026 às 15h56 BRT (uma única gravação); CT-RF34 em 15/11/2026 às 17:23 BRT; CT-RF35 em 15/11/2026 às 18:13 BRT; CT-RF38 em 15/11/2026 às 18:41 BRT; CT-RF39–41 em 15/11/2026 às 18:51 BRT (uma única gravação); CT-RF42–45 às 19:06, CT-RF46–49 às 19:07 e CT-RF50–56 às 19:09 BRT (uma gravação por grupo); CT-RF57 e CT-RF58 em 15/11/2026 às 21h03 BRT (mesma gravação); CT-RF59 em 15/11/2026 às 22h07 BRT; CT-RF60 em 15/11/2026 às 23h34 BRT; CT-RF61 em 16/11/2026 às 15h24 BRT; CT-RF62 em 16/11/2026 às 15h57 BRT. CT-RF74–CT-RF84: 16/11/2026 conforme os resumos, sem horário informado. CT-RF85–90 às 21:52, CT-RF91–95 às 21:58, CT-RF96–98 às 21:55 e CT-RF99–103 às 21:54 e CT-RF104–108 às 22:03 BRT em 15/11/2026 (uma gravação por grupo). CT-RF109–CT-RF115 em 16/11/2026 entre 22:19:51 e 22:29:07 BRT. CT-RF116–CT-RF121 amplia a cobertura de Configurações e Modelos de Ficha com gravações de 16/11/2026 entre 22:03:53 e 22:18:52 BRT. CT-RF122–CT-RF127 cobre Inteligência e Configurações com gravações de 16/11/2026 entre 21:50:51 e 22:02:16 BRT. CT-RF128–CT-RF133 cobre Inteligência e Automação com gravações de 16/11/2026 entre 21:40:31 e 21:49:48 BRT. CT-RF134–CT-RF138 cobrem a Central de Automações com gravações de 16/11/2026 entre 21:25:26 e 21:38:29 BRT. CT-RF139–CT-RF141 cobrem a integração do WhatsApp com gravações de 16/11/2026 entre 23:37:22 e 23:41:03 BRT.
+**Datas das gravações do Jam:** CT-RF01 em 23/10/2026; CT-RF02_ERRO em 22/10/2026 às 21:45 BRT; CT-RF03 não confirmada; CT-RF04_loginComSucesso em 13/11/2026; CT-RF05–CT-RF20 em 14/11/2026; CT-RF21 em 15/11/2026 às 15:07:51,265 BRT; CT-RF22–28 em 15/11/2026 às 15:25, 15:40, 15:38, 15:35, 16:11, 16:08 e 16:07 BRT; CT-RF29–33 em 15/11/2026 às 15h56 BRT (uma única gravação); CT-RF34 em 15/11/2026 às 17:23 BRT; CT-RF35 em 15/11/2026 às 18:13 BRT; CT-RF38 em 15/11/2026 às 18:41 BRT; CT-RF39–41 em 15/11/2026 às 18:51 BRT (uma única gravação); CT-RF42–45 às 19:06, CT-RF46–49 às 19:07 e CT-RF50–56 às 19:09 BRT (uma gravação por grupo); CT-RF57 e CT-RF58 em 15/11/2026 às 21h03 BRT (mesma gravação); CT-RF59 em 15/11/2026 às 22h07 BRT; CT-RF60 em 15/11/2026 às 23h34 BRT; CT-RF61 em 16/11/2026 às 15h24 BRT; CT-RF62 em 16/11/2026 às 15h57 BRT. CT-RF74–CT-RF84: 16/11/2026 conforme os resumos, sem horário informado. CT-RF85–90 às 21:52, CT-RF91–95 às 21:58, CT-RF96–98 às 21:55 e CT-RF99–103 às 21:54 e CT-RF104–108 às 22:03 BRT em 15/11/2026 (uma gravação por grupo). CT-RF109–CT-RF115 em 16/11/2026 entre 22:19:51 e 22:29:07 BRT. CT-RF116–CT-RF121 amplia a cobertura de Configurações e Modelos de Ficha com gravações de 16/11/2026 entre 22:03:53 e 22:18:52 BRT. CT-RF122–CT-RF127 cobre Inteligência e Configurações com gravações de 16/11/2026 entre 21:50:51 e 22:02:16 BRT. CT-RF128–CT-RF133 cobre Inteligência e Automação com gravações de 16/11/2026 entre 21:40:31 e 21:49:48 BRT. CT-RF134–CT-RF138 cobrem a Central de Automações com gravações de 16/11/2026 entre 21:25:26 e 21:38:29 BRT. CT-RF139–CT-RF142 cobrem a integração do WhatsApp com gravações de 16/11/2026 entre 23:37:22 e 23:42:47 BRT.
 
-**Data da revisão documental:** 17/11/2026, com integração de CT-RF139–CT-RF141 (Configurações / Integrações / WhatsApp).
+**Data da revisão documental:** 17/11/2026, com integração de CT-RF139–CT-RF142 (Configurações / Integrações / WhatsApp).
 
 **Origem do resultado:** análise de evidências fornecidas; sem nova execução no sistema nesta revisão.
 
@@ -40,11 +40,11 @@ CT-RF128–CT-RF133 cobre Inteligência e Automação com gravações de 16/11/2
 
 CT-RF134–CT-RF138 cobrem a Central de Automações com gravações de 16/11/2026 entre 21:25:26 e 21:38:29 BRT. Casos aprovados: 3. Reprovados: 2. A validar: 0.
 
-CT-RF139–CT-RF141 cobrem a integração do WhatsApp com gravações de 16/11/2026 entre 23:37:22 e 23:41:03 BRT. Casos aprovados: 2. Reprovados: 0. A validar: 1.
+CT-RF139–CT-RF142 cobrem a integração do WhatsApp com gravações de 16/11/2026 entre 23:37:22 e 23:42:47 BRT. Casos aprovados: 3. Reprovados: 0. A validar: 1.
 
 | Casos documentados | Aprovados | Reprovados | A validar | Defeitos registrados | Casos com reteste corretivo pendente |
 | :---: | :---: | :---: | :---: | :---: | :---: |
-| 137 | 62 | 54 | 21 | 49 (10 abertos + 39 em triagem) | 54 |
+| 138 | 63 | 54 | 21 | 49 (10 abertos + 39 em triagem) | 54 |
 
 Os 48 retestes incluem CT-RF22/24/26/27/28/29/30/35/41/45/51/53/54/55/56/57/58/59/62/65/66/67/68/69/70/71/73/81/82/83/89/92/98/102/105/107, sujeitos à confirmação funcional e técnica. As contagens representam os casos documentados com base nas fontes indicadas, sem novas execuções nesta revisão. As nove variações planejadas para o reteste do CT-RF03 não foram executadas e não são contabilizadas como testes adicionais realizados.
 
@@ -188,6 +188,7 @@ Os 48 retestes incluem CT-RF22/24/26/27/28/29/30/35/41/45/51/53/54/55/56/57/58/5
 | [CT-RF139](Cenario_Teste/CT-RF139_Integracoes_WhatsApp_Mascarar_API_Key.md) | [RF139](Analise%20de%20requisitos.md#rf139) | A API Key aparece mascarada antes e durante a edição. Ao reabrir a aba, o campo continua mascarado e a digitação sem salvar não resulta em uma gravação. | A API Key permaneceu mascarada na edição e na reabertura da aba. A gravação não registrou POST de salvamento. | Aprovado conforme a gravação | Nenhum no fluxo avaliado |
 | [CT-RF140](Cenario_Teste/CT-RF140_Integracoes_WhatsApp_Validar_URL_API.md) | [RF140](Analise%20de%20requisitos.md#rf140) | Com os demais campos válidos, o sistema rejeita a URL fora do formato aceito, sinaliza o campo e mantém a configuração anterior. | A tentativa com URL fora do formato também tinha a instância vazia. Houve reconsulta sem POST de configuração, e a regra da URL ficou a validar. | A validar — regra ou contexto pendente | Sem defeito confirmado |
 | [CT-RF141](Cenario_Teste/CT-RF141_Integracoes_WhatsApp_Instancia_Obrigatoria.md) | [RF141](Analise%20de%20requisitos.md#rf141) | O formulário permite salvar com o campo preenchido. A tentativa com o campo vazio não altera a configuração armazenada. | O nome preenchido foi salvo. As tentativas com a instância vazia ficaram sem POST e o valor anterior voltou ao reabrir. | Aprovado conforme a gravação | Nenhum no fluxo avaliado |
+| [CT-RF142](Cenario_Teste/CT-RF142_Integracoes_WhatsApp_Persistir_Ativo.md) | [RF142](Analise%20de%20requisitos.md#rf142) | Marcar e desmarcar Ativo altera o valor persistido da opção e a interface reflete o valor retornado pelo GET após cada salvamento. | Os dois estados de Ativo foram salvos e confirmados por GET, com a conexão permanecendo desconectada. | Aprovado conforme a gravação | Nenhum no fluxo avaliado |
 
 ---
 
@@ -582,14 +583,14 @@ O domínio do CT-RF02_ERRO é diferente do domínio `sifitalfa.centrion.com.br` 
 | Dados e permissões | Conta autorizada a acessar a Central. Preparar automações com estados iniciais conhecidos e, para consulta, um relatório de risco existente. |
 | Preparação | Registrar o estado inicial, os controles usados e as respostas relevantes. Usar apenas dados agregados nas evidências de risco. |
 
-### Configurações / Integrações / WhatsApp (CT-RF139–CT-RF141)
+### Configurações / Integrações / WhatsApp (CT-RF139–CT-RF142)
 
 | Item | Definição |
 | --- | --- |
 | Páginas | https://sifit.centrion.com.br/configuracoes |
 | Backend de referência | https://backendsifit.centrion.com.br |
 | Navegador / sistema / vídeo | Chrome 157.0.8103.79 / Windows 10 (x86) / 1918 × 998. |
-| Gravações | 16/11/2026 entre 23:37:22 e 23:41:03 BRT. |
+| Gravações | 16/11/2026 entre 23:37:22 e 23:42:47 BRT. |
 | Dados e permissões | Conta autorizada a acessar Configurações e provedor de teste. Preparar dados de integração de teste, estado inicial conhecido e falha controlada para reteste. |
 | Preparação | Registrar os estados do formulário e os retornos relevantes. Manter valores de credenciais e dados de integração fora dos recortes. |
 
@@ -685,6 +686,7 @@ O domínio do CT-RF02_ERRO é diferente do domínio `sifitalfa.centrion.com.br` 
 | Jam 1 — Mascaramento da API Key (gravação restrita por conter dados de integração) e [Evidências](Evidencias/CT-RF139_Integracoes_WhatsApp_Mascarar_API_Key/README.md) | CT-RF139: A API Key permaneceu mascarada na edição e na reabertura da aba. A gravação não registrou POST de salvamento. |
 | Jam 2 — Validação da URL da API (gravação restrita por conter dados de integração) e [Evidências](Evidencias/CT-RF140_Integracoes_WhatsApp_Validar_URL_API/README.md) | CT-RF140: A tentativa com URL fora do formato também tinha a instância vazia. Houve reconsulta sem POST de configuração, e a regra da URL ficou a validar. |
 | Jam 3 — Obrigatoriedade do Nome da Instância (gravação restrita por conter dados de integração) e [Evidências](Evidencias/CT-RF141_Integracoes_WhatsApp_Instancia_Obrigatoria/README.md) | CT-RF141: O nome preenchido foi salvo. As tentativas com a instância vazia ficaram sem POST e o valor anterior voltou ao reabrir. |
+| Jam 4 — Persistência da opção Ativo (gravação restrita por conter dados de integração) e [Evidências](Evidencias/CT-RF142_Integracoes_WhatsApp_Persistir_Ativo/README.md) | CT-RF142: Os dois estados de Ativo foram salvos e confirmados por GET, com a conexão permanecendo desconectada. |
 
 A mensagem de credenciais incorretas já aparece no início do vídeo do Jam; não foi considerada uma resposta ao clique em "Esqueci minha senha". A ausência de requisição, isoladamente, não caracteriza defeito se a interface abrir um formulário local. Aqui, o resultado reprovado decorre de o fluxo não abrir.
 
@@ -1095,15 +1097,16 @@ Na inclusão dos CT-RF128 a CT-RF133, o consolidado era de 129 casos documentado
 
 Na inclusão dos CT-RF134 a CT-RF138, o consolidado era de 134 casos documentados: 60 aprovados, 54 reprovados e 20 a validar. 49 defeitos registrados (10 abertos e 39 em triagem) e 54 casos com reteste corretivo pendente.
 
-## Inclusão de 17/11/2026 — Configurações / Integrações / WhatsApp (CT-RF139–CT-RF141)
+## Inclusão de 17/11/2026 — Configurações / Integrações / WhatsApp (CT-RF139–CT-RF142)
 
 | Caso | Situação | Encaminhamento |
 | --- | --- | --- |
 | [CT-RF139](Cenario_Teste/CT-RF139_Integracoes_WhatsApp_Mascarar_API_Key.md) | Aprovado conforme a gravação | Usar como regressão de interface com uma chave de teste e conferir o mascaramento também pelo teclado. |
 | [CT-RF140](Cenario_Teste/CT-RF140_Integracoes_WhatsApp_Validar_URL_API.md) | A validar — regra ou contexto pendente | Isolar a URL no reteste, mantendo a instância e a chave preenchidas, e confirmar o formato aceito com produto. |
 | [CT-RF141](Cenario_Teste/CT-RF141_Integracoes_WhatsApp_Instancia_Obrigatoria.md) | Aprovado conforme a gravação | Usar como regressão e verificar tratamento de espaços em branco e mensagem de campo obrigatório. |
+| [CT-RF142](Cenario_Teste/CT-RF142_Integracoes_WhatsApp_Persistir_Ativo.md) | Aprovado conforme a gravação | Usar como regressão de persistência e validar o efeito de Ativo sobre automações em um teste dedicado. |
 
-137 casos documentados: 62 aprovados, 54 reprovados e 21 a validar. 49 defeitos registrados (10 abertos e 39 em triagem) e 54 casos com reteste corretivo pendente.
+138 casos documentados: 63 aprovados, 54 reprovados e 21 a validar. 49 defeitos registrados (10 abertos e 39 em triagem) e 54 casos com reteste corretivo pendente.
 
 ---
 

@@ -1,0 +1,25 @@
+CT-RF142 — Persistir a opção Ativo da integração de WhatsApp
+Fonte: Jam 4 — Persistência da opção Ativo. Gravação restrita por conter dados de integração.
+Gravação: 16/11/2026, 23:42:47 BRT. Duração: 29,40 s.
+Revisão documental: 17/11/2026.
+Página: https://sifit.centrion.com.br/configuracoes
+Foco deste caso: Confirmar que a configuração grava e reconsulta os estados marcado e desmarcado da opção Ativo.
+
+Cronologia (ações e eventos capturados no Jam):
+0:02–0:11  Alterna Ativo em tentativas iniciais com o Nome da Instância vazio.
+0:13–0:16  Recarrega e reabre Integrações. A configuração começa com Ativo desmarcado.
+0:18–0:22  Com a instância preenchida, marca Ativo e salva. A reconsulta confirma ativo.
+0:24–0:29  Desmarca, salva e confirma a volta ao estado inicial.
+
+Rede do conjunto gravado (eventos relevantes ao caso):
+0:15,70  GET /api/empresa/whatsapp/1 (HTTP 200), ativo: false.
+0:19,82–0:19,95  POST com ativo: 1 e verifica_erro: false, seguido de GET com ativo: true (HTTP 200).
+0:25,23–0:25,54  POST com ativo: 0 e verifica_erro: false, seguido de GET com ativo: false (HTTP 200).
+
+Quadros consultados (reprodução do Jam):
+- Opção Ativo marcada após a confirmação pela API.
+- Opção Ativo desmarcada após a gravação final.
+
+Observações e verificações futuras:
+- A aprovação é restrita à persistência da opção. A execução de automações e o envio de mensagens não foram exercitados.
+- Usar como regressão de persistência e validar o efeito de Ativo sobre automações em um teste dedicado.

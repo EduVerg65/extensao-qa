@@ -198,12 +198,13 @@ CT-RF128–CT-RF133 cobre Inteligência e Automação com gravações de 16/11/2
 
 CT-RF134–CT-RF138 cobrem a Central de Automações com gravações de 16/11/2026 entre 21:25:26 e 21:38:29 BRT. As pastas reúnem origem, cronologia e recortes identificados com SHA-256.
 
-## Inclusão de 17/11/2026 — Configurações / Integrações / WhatsApp (CT-RF139–CT-RF141)
+## Inclusão de 17/11/2026 — Configurações / Integrações / WhatsApp (CT-RF139–CT-RF142)
 
 | Caso | Evidência | Resultado |
 | --- | --- | --- |
 | [CT-RF139](../Cenario_Teste/CT-RF139_Integracoes_WhatsApp_Mascarar_API_Key.md) | [Mascarar a API Key no formulário de WhatsApp](CT-RF139_Integracoes_WhatsApp_Mascarar_API_Key/README.md) | Aprovado conforme a gravação |
 | [CT-RF140](../Cenario_Teste/CT-RF140_Integracoes_WhatsApp_Validar_URL_API.md) | [Validar uma URL da API sem formato de endereço](CT-RF140_Integracoes_WhatsApp_Validar_URL_API/README.md) | A validar — regra ou contexto pendente |
 | [CT-RF141](../Cenario_Teste/CT-RF141_Integracoes_WhatsApp_Instancia_Obrigatoria.md) | [Bloquear o salvamento com Nome da Instância vazio](CT-RF141_Integracoes_WhatsApp_Instancia_Obrigatoria/README.md) | Aprovado conforme a gravação |
+| [CT-RF142](../Cenario_Teste/CT-RF142_Integracoes_WhatsApp_Persistir_Ativo.md) | [Persistir a opção Ativo da integração de WhatsApp](CT-RF142_Integracoes_WhatsApp_Persistir_Ativo/README.md) | Aprovado conforme a gravação |
 
-CT-RF139–CT-RF141 cobrem a integração do WhatsApp com gravações de 16/11/2026 entre 23:37:22 e 23:41:03 BRT. As pastas reúnem origem, cronologia e recortes identificados com SHA-256.
+CT-RF139–CT-RF142 cobrem a integração do WhatsApp com gravações de 16/11/2026 entre 23:37:22 e 23:42:47 BRT. As pastas reúnem origem, cronologia e recortes identificados com SHA-256.
